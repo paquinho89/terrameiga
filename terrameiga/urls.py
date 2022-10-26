@@ -21,7 +21,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name = "templates/home_page.html")),
+    path('', TemplateView.as_view(template_name = "templates/home_page_galego.html"), name="home_page_galego"),
+    path('castellano/', TemplateView.as_view(template_name = "templates/home_page_castellano.html"), name="home_page_castellano"),
+    path('english/', TemplateView.as_view(template_name = "templates/home_page_english.html"), name="home_page_english"),
+
+    path('percorrido-gl/', TemplateView.as_view(template_name = "templates/route_gl.html"), name="route_gl"),
 ]
 
 if settings.DEBUG:
