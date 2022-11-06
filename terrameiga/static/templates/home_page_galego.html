@@ -53,8 +53,8 @@
             </li>
           </ul>
           <form class="d-flex-danger" role="search">
-            <button class="btn btn-outline-light" type="submit"><strong>Área personal</strong></button>
-            <button class="btn btn-outline-danger" type="submit"><strong>Rexístrarse</strong></button>
+            <a class="btn btn-outline-light" href="{% url 'sign_in_gl' %}" type="submit"><strong>Área Persoal</strong></a>
+            <a class="btn btn-outline-danger" href="{% url 'registration_gl' %}" type="submit"><strong>Rexístrarse</strong></a>
           </form>
           
         </div>
@@ -74,8 +74,8 @@
         <div class="carousel-caption" style="color: black;"> 
           <h5>Inscripción gratuíta</h5>
           <p><i>Ti dis: Galicia é ben pequena. Eu dígoche: Galicia é un mundo. Cada Terra é coma se fora o mundo enteiro. Poderala andar en pouco tempo de norte a sur, de leste a oeste noutro tanto; poderala volver a andar outra vez e máis. Non a has dar andado. E cada vez que a andes has atopar cousas novas e outras has botalas de menos. Pode ela ser pequena en extensión. En fondura, en entidade, é tan grande como queiras, e dende logo, moito meirande de como ti a ves.</i> Vicente Risco - Leria</p>
-          <a class="btn btn-outline-light btn-lg m-2" href="novaera.gal" role="button" target="_blank">Rexístrate</a>
-        </div>
+          <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_in_gl' %}" role="button" target="_blank">Rexístrate</a>
+        </div> 
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src='{% static "imaxes/image_2.jpg" %}' alt="Second slide">

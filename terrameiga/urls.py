@@ -26,6 +26,14 @@ urlpatterns = [
     path('english/', TemplateView.as_view(template_name = "templates/home_page_english.html"), name="home_page_english"),
 
     path('percorrido-gl/', TemplateView.as_view(template_name = "templates/route_gl.html"), name="route_gl"),
+
+    path('sign_in_gl/', TemplateView.as_view(template_name = "templates/sign_in_gl.html"), name="sign_in_gl"),
+
+    path('registration_gl/', TemplateView.as_view(template_name = "templates/registration_gl.html"), name="registration_gl"),
+
+    path('profile_account_gl/', TemplateView.as_view(template_name = "templates/profile_account_gl.html"), name="profile_account_gl"),
+
+    path('registration_2_gl/', TemplateView.as_view(template_name = "templates/registration_2_gl.html"), name="registration_2_gl"),
 ]
 
 if settings.DEBUG:
