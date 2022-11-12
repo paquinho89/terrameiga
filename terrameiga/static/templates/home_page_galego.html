@@ -33,9 +33,9 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#"><strong>TerraMeiga</strong></a>
         <form class="d-flex-danger" role="search">
-          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_galego' %}">GL</a>
-          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_castellano' %}">ES</a>
-          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_english' %}">EN</a>
+          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_gl' %}">GL</a>
+          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_es' %}">ES</a>
+          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_en' %}">EN</a>
         </form>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -43,20 +43,19 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home_page_galego' %}" style = "margin-left: 10px;">Inicio</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home_page_gl' %}" style = "margin-left: 10px;">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'route_gl' %}" style = "margin-left: 10px;">Percorrido</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style = "margin-left: 10px;">Máis info</a>
+              <a class="nav-link" href="{% url 'info_gl' %}" style = "margin-left: 10px;">Máis info</a>
             </li>
           </ul>
           <form class="d-flex-danger" role="search">
             <a class="btn btn-outline-light" href="{% url 'sign_in_gl' %}" type="submit"><strong>Área Persoal</strong></a>
             <a class="btn btn-outline-danger" href="{% url 'registration_gl' %}" type="submit"><strong>Rexístrarse</strong></a>
           </form>
-          
         </div>
       </div>
     </nav>
@@ -71,23 +70,23 @@
     <div class="carousel-inner mt-5">
       <div class="carousel-item active">
         <img class="d-block w-100" src='{% static "imaxes/image_1.jpg" %}' alt="First slide">
-        <div class="carousel-caption" style="color: black;"> 
+        <div class="carousel-caption" style="color: white;"> 
           <h5>Inscripción gratuíta</h5>
-          <p><i>Ti dis: Galicia é ben pequena. Eu dígoche: Galicia é un mundo. Cada Terra é coma se fora o mundo enteiro. Poderala andar en pouco tempo de norte a sur, de leste a oeste noutro tanto; poderala volver a andar outra vez e máis. Non a has dar andado. E cada vez que a andes has atopar cousas novas e outras has botalas de menos. Pode ela ser pequena en extensión. En fondura, en entidade, é tan grande como queiras, e dende logo, moito meirande de como ti a ves.</i> Vicente Risco - Leria</p>
-          <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_in_gl' %}" role="button" target="_blank">Rexístrate</a>
+          <p>O número máximo de participantes será de 100</p>
+          <a class="btn btn-outline-light btn-lg m-2" href="{% url 'registration_gl' %}" role="button" target="_blank">Rexístrate</a>
         </div> 
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src='{% static "imaxes/image_2.jpg" %}' alt="Second slide">
-        <div class="carousel-caption" style="color: black;">
+        <div class="carousel-caption" style="color: white;">
           <h5>600 km e  máis de 20.000 metros de ascensión</h5>
           <p>Descrube a cara salvaxe de Galicia</p>
-          <a class="btn btn-outline-light btn-lg m-2" href="novaera.gal" role="button" target="_blank">Percorrido</a>
+          <a class="btn btn-outline-light btn-lg m-2" href="{% url 'route_gl' %}" role="button" target="_blank">Percorrido</a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src='{% static "imaxes/image_3.jpg" %}' alt="Third slide">
-        <div class="carousel-caption" style="color: black;">
+        <div class="carousel-caption" style="color: white;">
           <h5>Seguimento de cada participante</h5>
           <p>Controlaráse a posición de cada participante cun tracker</p>
           <a class="btn btn-outline-light btn-lg m-2" href="novaera.gal" role="button" target="_blank">Mapa</a>
@@ -136,12 +135,17 @@
 
     <div class="row featurette">
       <div class="col-md-7">
+        <a href="{% url 'registration_gl' %}" style="text-decoration:none">
         <h2 class="featurette-heading fw-normal lh-1">Inscripción gratuíta.<span class="text-muted"> Prazas limitadas</span></h2>
-        <p class="lead">A inscripción a carreira é totalmente gratuíta</p>
+        </a>
+        <p class="lead">A inscripción a carreira é totalmente gratuíta e contará cun máximo de 100 corredores.</p>
+        <p class="lead">A saída dará comezo o día 17 de Maio do 2022</p>
       </div>
       <div class="col-md-5">
         <!--<svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>-->
+        <a href="{% url 'registration_gl' %}">
         <img class="bd-placeholder-img" width="500" height="500" src='{% static "imaxes/image_1.jpg" %}' alt="Third slide">
+        </a>
       </div>
     </div>
 
@@ -149,11 +153,15 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
+        <a href="{% url 'route_gl' %}" style="text-decoration:none">
         <h2 class="featurette-heading fw-normal lh-1">Percorrido <span class="text-muted">600km e 20.000 metros de ascensión acumulada</span></h2>
+        </a>
         <p class="lead">Un percorrido que te levará o corazón de Galicia. 80% terra e 20% asfalto. Consulta o percorrido da proba no seguinte enlance</p>
       </div>
       <div class="col-md-5 order-md-1">
+        <a href="{% url 'route_gl' %}">
         <img class="bd-placeholder-img" width="500" height="500" src='{% static "imaxes/image_2.jpg" %}' alt="Third slide">
+        </a>
       </div>
     </div>
 
@@ -247,8 +255,8 @@
   
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com / Neste sitio web non utilizamos cookies</a>
+      © 2022 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">Terrameiga.com / Neste sitio web non utilizamos cookies</a>
     </div>
     <!-- Copyright -->
   </footer>

@@ -9,7 +9,6 @@
 
 <body>
       <!--Main Navigation-->
-  <header>
     <style>
       /*#intro {
         background-image: url('{% static "imaxes/image_4_registration.jpg" %}');
@@ -43,13 +42,13 @@
     </style>
     
     <header>
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><strong>TerraMeiga</strong></a>
           <form class="d-flex-danger" role="search">
-            <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_galego' %}">GL</a>
-            <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_castellano' %}">ES</a>
-            <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_english' %}">EN</a>
+            <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_gl' %}">GL</a>
+            <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_es' %}">ES</a>
+            <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page_en' %}">EN</a>
           </form>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -57,13 +56,13 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home_page_galego' %}" style = "margin-left: 10px;">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="#" style = "margin-left: 10px;">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'route_gl' %}" style = "margin-left: 10px;">Percorrido</a>
+                <a class="nav-link" href="#" style = "margin-left: 10px;">Recorrido</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style = "margin-left: 10px;">Máis info</a>
+                <a class="nav-link" style = "margin-left: 10px;">Más info</a>
               </li>
             </ul>
             <form class="d-flex-danger" role="search">

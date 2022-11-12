@@ -21,11 +21,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name = "templates/home_page_galego.html"), name="home_page_galego"),
-    path('castellano/', TemplateView.as_view(template_name = "templates/home_page_castellano.html"), name="home_page_castellano"),
-    path('english/', TemplateView.as_view(template_name = "templates/home_page_english.html"), name="home_page_english"),
+    path('', TemplateView.as_view(template_name = "templates/home_page_galego.html"), name="home_page_gl"),
+    path('castellano/', TemplateView.as_view(template_name = "templates/home_page_castellano.html"), name="home_page_es"),
+    path('english/', TemplateView.as_view(template_name = "templates/home_page_english.html"), name="home_page_en"),
 
-    path('percorrido-gl/', TemplateView.as_view(template_name = "templates/route_gl.html"), name="route_gl"),
+    path('route_gl/', TemplateView.as_view(template_name = "templates/route_gl.html"), name="route_gl"),
+
+    path('info_gl/', TemplateView.as_view(template_name = "templates/info_gl.html"), name="info_gl"),
 
     path('sign_in_gl/', TemplateView.as_view(template_name = "templates/sign_in_gl.html"), name="sign_in_gl"),
 
@@ -33,7 +35,8 @@ urlpatterns = [
 
     path('profile_account_gl/', TemplateView.as_view(template_name = "templates/profile_account_gl.html"), name="profile_account_gl"),
 
-    path('registration_2_gl/', TemplateView.as_view(template_name = "templates/registration_2_gl.html"), name="registration_2_gl"),
+    path('riders_gl/', TemplateView.as_view(template_name = "templates/riders_gl.html"), name="riders_gl"),
+
 ]
 
 if settings.DEBUG:
