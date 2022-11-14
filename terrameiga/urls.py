@@ -31,7 +31,7 @@ urlpatterns = [
 
     path('sign_in_gl/', TemplateView.as_view(template_name = "templates/sign_in_gl.html"), name="sign_in_gl"),
 
-    path('registration_gl/', TemplateView.as_view(template_name = "templates/registration_gl.html"), name="registration_gl"),
+    path('registration_gl/', TemplateView.as_view(template_name = "templates/registration_1_gl.html"), name="registration_gl"),
 
     path('profile_account_gl/', TemplateView.as_view(template_name = "templates/profile_account_gl.html"), name="profile_account_gl"),
 
