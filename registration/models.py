@@ -38,22 +38,22 @@ def email_validation(self):
 
 
 # Create your models here.
-class rider (models.Model):
+class rider_model (models.Model):
     name = models.CharField(blank=False, null=False, max_length=75)
     surname_1 = models.CharField(blank=False, null=False, max_length=75)
     surname_2 = models.CharField(blank=False, null=False, max_length=75)
-    telephone = 
-    photo = models.ImageField(upload_to=upload_image_path, null=True, blank = True)
-    nationality = models.CharField(max_length=11, choices=evento_choices)
-    languages = models.CharField(max_length=11, choices=evento_choices)
+    #country_telephone_code =
+    telephone = models.IntegerField(blank=False, null=False, max_length=75)
+    #photo = models.ImageField(upload_to=upload_image_path, null=True, blank = True)
+    #languages = models.CharField(max_length=11, choices=evento_choices)
     country = models.CharField(max_length=11, choices=evento_choices)
-    region = models.CharField(max_length=11, choices=evento_choices)
+    #region = models.CharField(max_length=11, choices=evento_choices)
     email = models.EmailField(blank=False, max_length=255, validators=[email_validation])
-    password =
-    password_repetition =
+    #password =
+    #password_repetition =
 
-    bicycle_brand = models.CharField(blank=False, null=False, max_length=75)
-    bicycle_model = models.CharField(blank=False, null=False, max_length=75)
-    wheel_dyameter = models.DecimalField(max_digits=5, decimal_places=2)
-    tyre_thickness = models.DecimalField(max_digits=5, decimal_places=2)
-    navigation_system = models.CharField(blank=False, null=False, max_length=75)
+    #bicycle_brand = models.CharField(blank=False, null=False, max_length=75)
+    #bicycle_model = models.CharField(blank=False, null=False, max_length=75)
+    #wheel_dyameter = models.DecimalField(max_digits=5, decimal_places=2)
+    #tyre_thickness = models.DecimalField(max_digits=5, decimal_places=2)
+    #navigation_system = models.CharField(blank=False, null=False, max_length=75)
