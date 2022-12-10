@@ -4,6 +4,7 @@ import random
 import re
 from django.core.exceptions import ValidationError
 
+
 #Estas 2 funcions son para cambiarlle o nome a foto do corredor e que aparezca guay no model do admin con outro nome
 
 def get_filename_extension (filepath):
@@ -22,11 +23,10 @@ def upload_image_path(instance, filename):
     final_filename='{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
     return "media_files/{new_filename}/{final_filename}".format(new_filename=new_filename, final_filename=final_filename)
 
-
 #Email validation:
 #Eiqui o que se fai é comprobar se o e-mail está na lista negra dos dominios. Básicamente o que trato de facer e que non me metan correos spam
 def email_validation(self):
-    with open("terrameiga/static/email_black_list.txt", "r") as file_spam_emails:
+    with open("terrameiga/static/lists/email_black_list.txt", "r") as file_spam_emails:
         #O splitlines é para convertilo a unha lista
         blacklist = file_spam_emails.read().splitlines()
         #Miramos se todo o que está despois do @ está contida na lista negra dos e-mails
@@ -36,24 +36,34 @@ def email_validation(self):
         else:
              return self
 
+#COUNTRY LIST
+#Esta función e para traer todos os countries que están nos .txt
+#Teño que crear unha tupla porque é o que lle hai que pasar o dropdown
+with open("terrameiga/static/lists/country_list_en.txt", "r") as country_list_file:
+    country_list = [tuple([country,country]) for country in country_list_file]
+
+#REGION LIST
+#Esta función e para traer todos os regions que están nos .txt
+#Teño que crear unha tupla porque é o que lle hai que pasar o dropdown
+with open("terrameiga/static/lists/spanish_regions_en.txt", "r") as region_list_file:
+    region_list = [tuple([region,region]) for region in region_list_file]
 
 # Create your models here.
 class rider_model (models.Model):
-    name = models.CharField(blank=False, null=False, max_length=75)
-    surname_1 = models.CharField(blank=False, null=False, max_length=75)
-    surname_2 = models.CharField(blank=False, null=False, max_length=75)
-    #country_telephone_code =
-    telephone = models.IntegerField(blank=False, null=False, max_length=75)
-    #photo = models.ImageField(upload_to=upload_image_path, null=True, blank = True)
-    #languages = models.CharField(max_length=11, choices=evento_choices)
-    country = models.CharField(max_length=11, choices=evento_choices)
-    #region = models.CharField(max_length=11, choices=evento_choices)
     email = models.EmailField(blank=False, max_length=255, validators=[email_validation])
-    #password =
-    #password_repetition =
-
-    #bicycle_brand = models.CharField(blank=False, null=False, max_length=75)
-    #bicycle_model = models.CharField(blank=False, null=False, max_length=75)
-    #wheel_dyameter = models.DecimalField(max_digits=5, decimal_places=2)
-    #tyre_thickness = models.DecimalField(max_digits=5, decimal_places=2)
-    #navigation_system = models.CharField(blank=False, null=False, max_length=75)
+    password = models.CharField(blank=False, max_length=255)
+    password_repetition = models.CharField(blank=False, max_length=255)
+    name = models.CharField(blank=False, null=False, max_length=75)
+    surname = models.CharField(blank=False, null=False, max_length=75)
+    birth_date = models.DateField (blank=False)
+    country = models.CharField(max_length=33, choices = country_list)
+    region = models.CharField(max_length=20, choices=region_list)
+    languages = models.CharField(max_length=20, choices=region_list)
+    #country_telephone_code =
+    telephone = models.IntegerField(blank=False, null=False)
+    #O null=True é para que acepte valores en blano no data base e o blank=True é para que o valor non sexa requerido por Django, desta forma non fai falta que exista unha imaxe
+    photo = models.ImageField(upload_to=upload_image_path, null=True, blank = True)
+    
+    bicycle_brand = models.CharField(blank=False, null=False, max_length=75)
+    bicycle_model = models.CharField(blank=False, null=False, max_length=75)
+    navigation_system = models.CharField(blank=False, null=False, max_length=75)
