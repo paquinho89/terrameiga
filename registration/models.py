@@ -50,20 +50,20 @@ with open("terrameiga/static/lists/spanish_regions_en.txt", "r") as region_list_
 
 # Create your models here.
 class rider_model (models.Model):
-    email = models.EmailField(blank=False, max_length=255, validators=[email_validation])
-    password = models.CharField(blank=False, max_length=255)
-    password_repetition = models.CharField(blank=False, max_length=255)
-    name = models.CharField(blank=False, null=False, max_length=75)
-    surname = models.CharField(blank=False, null=False, max_length=75)
-    birth_date = models.DateField (blank=False)
-    country = models.CharField(max_length=33, choices = country_list)
-    region = models.CharField(max_length=20, choices=region_list)
-    languages = models.CharField(max_length=20, choices=region_list)
+    email = models.EmailField(blank=False, null=False, max_length=255, validators=[email_validation])
+    password = models.CharField(blank=False, null=False, max_length=255)
+    password_repetition = models.CharField(blank=False, null=False, max_length=255)
+    #name = models.CharField(blank=False, null=False, max_length=75)
+    #surname = models.CharField(blank=False, null=False, max_length=75)
+    #birth_date = models.DateField (blank=False)
+    #country = models.CharField(max_length=33, choices = country_list)
+    ##region = models.CharField(max_length=20, choices=region_list)
+        
     #country_telephone_code =
-    telephone = models.IntegerField(blank=False, null=False)
-    #O null=True é para que acepte valores en blano no data base e o blank=True é para que o valor non sexa requerido por Django, desta forma non fai falta que exista unha imaxe
-    photo = models.ImageField(upload_to=upload_image_path, null=True, blank = True)
+    #telephone = models.IntegerField(blank=False, null=False)
+    #O null=True é para que acepte valores en blanco no data base e o blank=True é para que o valor non sexa requerido por Django, desta forma non fai falta que exista unha imaxe
+    #photo = models.ImageField(upload_to=upload_image_path, null=True, blank = True)
     
-    bicycle_brand = models.CharField(blank=False, null=False, max_length=75)
-    bicycle_model = models.CharField(blank=False, null=False, max_length=75)
-    navigation_system = models.CharField(blank=False, null=False, max_length=75)
+    #bicycle_brand = models.CharField(blank=False, null=False, max_length=75)
+    #bicycle_model = models.CharField(blank=False, null=False, max_length=75)
+    #navigation_system = models.CharField(blank=False, null=False, max_length=75)

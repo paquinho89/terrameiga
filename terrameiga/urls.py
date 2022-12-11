@@ -18,7 +18,8 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from registration.views import registration_view_1, registration_view_2, registration_view_3
+from registration.views import registration_view_1
+#, registration_view_2, registration_view_3
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -33,8 +34,8 @@ urlpatterns = [
     path('sign_in_gl/', TemplateView.as_view(template_name = "templates/sign_in_gl.html"), name="sign_in_gl"),
 
     path('registration_1_gl/', registration_view_1, name="registration_1_gl"),
-    path('registration_2_gl/', registration_view_2, name="registration_2_gl"),
-    path('registration_3_gl/', registration_view_3, name="registration_3_gl"),
+    # path('registration_2_gl/', registration_view_2, name="registration_2_gl"),
+    # path('registration_3_gl/', registration_view_3, name="registration_3_gl"),
 
     path('profile_account_gl/', TemplateView.as_view(template_name = "templates/profile_account_gl.html"), name="profile_account_gl"),
 
