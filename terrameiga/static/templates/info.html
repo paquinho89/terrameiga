@@ -1,0 +1,113 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<!-- Bootstrap CSS --> <!--Esto é o css qie está cargado en internet. Se te fixas é unha stylesheet onde todos os formatos css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>TerraMeiga</strong></a>
+        <form class="d-flex-danger" role="search">
+          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page' %}">GL</a>
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}" style = "margin-left: 10px;">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px;">Percorrido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'info' %}" style = "margin-left: 10px;">Máis info</a>
+            </li>
+          </ul>
+          <form class="d-flex-danger" role="search">
+            <a class="btn btn-outline-light" href="{% url 'sign_in' %}" type="submit"><strong>Área Persoal</strong></a>
+            <a class="btn btn-outline-danger" href="{% url 'sign_up' %}" type="submit"><strong>Rexístrarse</strong></a>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
+            <div class="list-group list-group-flush">
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
+            </div>
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper mt-5">
+            <!-- Page content-->
+            <div class="container-fluid">
+                <h1 class="mt-4">Información</h1>
+                    <h2>Punto de saída da carreira</h2>
+                        <p>A saída dará comezo dende Verín</p>
+                    <h2>Como chegar</h2>
+                        <p>Verín sitúase  no sur da provincia de Ourense, a 10km da fronteira portuguesa. Os principias medios de transaporte son:</p>
+                    <ul>
+                        <li>Tren</li>
+                            <p>A 35 km de distancia sitúase a estación AVE de A Gudiña - Porta de Galicia</p>
+                            <p>Existe un bus dende a estación ata Verín, pero a mellor opción é a de ir en bicicleta. É un percorrido agradable con pouco tráfico e con bastante baixada</p>
+
+                        <li>Autobús</li>
+                            <p>Esto é vos unha merda</p>
+                        <li>Coche</li>
+                            <p>Verín sitúase no cruce da A52 (Autovía das Rías Baixas) con fdk (Autovía portuguesa)</p>
+                        <li>Avión</li>
+                            <p>O aerporto con máis voos internacionais serña Porto. Para vir dende Porto a Verín pódese vir en Bus ata Chaves e despois son 30km chairos </p>
+                    </ul>
+                    <h2>Aloxamentos</h2>
+                        <p>Cada persona podrá organizarse como ela mellor queira. Existirán onde se pode durmir en hospedaxe se se require ou pernoctar en calqueira sitio</p>
+                    <h2>Onde comer</h2>
+                        <p>Durante a ruta pódense encontrar bos establecementos para recuperar enerxías</p>
+                    <h2>Tempo</h2>
+                        <p>Galicia caracterízase por ter un tempo cambiante. Ben preparado para xornadas de choiva. Mételle un enlace a meteo galicia</p>
+                    <h2>Entorno</h2>
+                    <h2>Normas</h2>
+                        <ul>
+                            <li>Queda terminantemente prohibido tira lixo no monte. Será motivo de descalificación</li>
+                            <li>Queda terminantemente prohibido facer lume</li>
+                            <li>Queda terminantemente prohibido subirse a un coche ou ser arrastrado por calquera medio de locomoción</li>
+                        </ul>
+                    <h2>Perigos</h2>
+                    <ul>
+                      <li>Nalgúns camiños da serra é habitual atopar gando no camiño</li>
+                      <li>Poden existir pistas con moita pedra na que se require gran destreza coa bicicleta</li>
+                      <li>Queda terminantemente prohibido subirse a un coche ou ser arrastrado por calquera medio de locomoción</li>
+                  </ul>
+                    <h2>Condicións legais</h2>
+                    <h2>Normas</h2>
+                    <ul>
+                        <li>A organización quedará exenta de calquera accidente que se poda ocasinar na carreira</li>
+                        <li>Non se pode salir da ruta establecida pola organización a non ser que sexa por motivos mecánicos de abitullament. En ningún caso se poderá atallar</li>
+                        <li>Pode existir tramos que puderon sufrir alteracións por circunstancias varias. Nese caso, podrá tomar unha vía alternativa</li>
+                        <li>Queda terminantemente prohibido subirse a un coche ou ser arrastrado por calquera medio de locomoción</li>
+                        <li>É obrigatorio circular pola marxe dereita da estrada, deixando o máximo espazo posible aos coches para que fagan o adiantamento</li>
+                    </ul>
+                    <h2>Filosofía da carreira</h2> 
+                    <p>Terra meiga non é un paseo dun día en bicicleta. Requírese estar longas xornadas en bicicleta e requírese destreza con esta. a proba é dura</p>
+            </div>
+        </div>
+    </div>
+
+<body>
+  
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

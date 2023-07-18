@@ -1,0 +1,110 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<!-- Bootstrap CSS --> <!--Esto é o css qie está cargado en internet. Se te fixas é unha stylesheet onde todos os formatos css-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<style>
+  .carousel {
+  object-fit: cover;
+  object-position: center;
+  height: 50vh;
+  width: 100vw;
+}
+.carousel-inner {
+  object-fit: cover;
+  object-position: center;
+  height: 50vh;
+  width: 100vw;
+}
+.carousel-item {
+  object-fit: cover;
+  object-position: center;
+  height: 35vh;
+  width: 100vw;
+}
+</style>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><strong>TerraMeiga</strong></a>
+        <form class="d-flex-danger" role="search">
+          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'route' %}">GL</a>
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}" style = "margin-left: 10px;">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px;">Percorrido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'info' %}" style = "margin-left: 10px;">Máis info</a>
+            </li>
+          </ul>
+          <form class="d-flex-danger" role="search">
+            <a class="btn btn-outline-light" href="{% url 'sign_in' %}" type="submit"><strong>Área Persoal</strong></a>
+            <a class="btn btn-outline-danger" href="{% url 'sign_up' %}" type="submit"><strong>Rexístrarse</strong></a>
+          </form>
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page content-->
+  
+    <div class="text-left mt-5">
+        <ul class="lead">DAY
+            <li>Km completed: 12,525km </li>
+            <!--As bandeiras quítoas do seguinte link: https://www.quackit.com/html/html_editors/scratchpad/?app=charset_ref&hexadecimal=1F1E6,1F1E9&decimal=127462,127465&unicodeName=Andorra-->
+            <li>Country: España &#x1F1E6;&#x1F1E9; </li>
+            <li>Extension: </li>
+            <li>Comparison: {{ country_html.surface_comparison }} </li>
+            <li>Population: {{ journey_day_html }} </li>
+            <li>Density population: </li>
+            <li>Capital town: </li>
+        </ul>
+    </div>
+  
+  <!-- How to embed a koomot map into html: https://www.komoot.es/b2b/embed-->
+  <div>
+    <iframe src="https://www.komoot.es/tour/947537380/embed?profile=1" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+
+<div class="container">
+<!-- Three columns of text -->
+<div class="container marketing">
+  <div class="row pt-4">
+    <h1>Money</h1>
+    <div class="col-lg-4">
+      <h3 class="fw-normal">Money Spent by km in each country</h3>
+      <p>600 km</p>
+      <p><a class="btn btn-secondary" href="#">Rexístrate &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <h2 class="fw-normal">Total money spent in each country</h2>
+      <p>40.000 metros de ascensión acumulada</p>
+      <p><a class="btn btn-secondary" href="#">Recorrido &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <h2 class="fw-normal">Where is the money spent</h2>
+      <p>Se non chove, choverá</p>
+      <p><a class="btn btn-secondary" href="#">Máis info &raquo;</a></p>
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
+</div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

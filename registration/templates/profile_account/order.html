@@ -1,0 +1,45 @@
+{% extends 'profile_account/base_profile_account.html' %}
+<!--To load the Django library to translate your text.-->
+
+{% load i18n %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+    <div class="tab-pane fade show active" id="package_status" role="tabpanel" aria-labelledby="account-tab">
+        <h3 class="mb-4">Order status</h3>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="form-group">
+                    <img class="card-img-top" src="{% static 'icons/delivery-man_colored.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <img class="card-img-top" src="{% static 'icons/right-arrow_colored.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <img class="card-img-top" src="{% static 'icons/truck_uncolored.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <img class="card-img-top" src="{% static 'icons/right-arrow_uncolored.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <img class="card-img-top" src="{% static 'icons/door-delivery_uncolored.png' %}" alt="..." />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
