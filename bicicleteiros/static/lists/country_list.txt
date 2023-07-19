@@ -6,7 +6,6 @@ Croatia
 Bosnia and Herzegovina
 Montenegro
 Albania
-Kosovo
 Greece
 Hungary
 Romania
@@ -35,6 +34,3 @@ China
 South Korea
 Japan
 United States
-
-
-

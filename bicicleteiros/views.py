@@ -1,27 +1,7 @@
 from django.shortcuts import render
 from .models import country_information_model, summary_day_model, starting_date
 from datetime import datetime, date
-#Packages to create the local clock
-# from tkinter  import *
-# from tkinter.ttk import *
-# from time import strftime
-
-# root = Tk()
-# root.title ("clock")
-
-# label = Label(root, font=("ds-digital", 80), background="black", foreground="cyan")
-# label.pack(anchor='center')
-
-# def local_clock ():
-#     string = strftime('%H:%M:%S')
-#     label.config(text=string)
-#     label.after(1000, local_clock)
-
-# label = Label(root, font=("ds-digital", 80), background="black", foreground="cyan")
-# label.pack(anchor='center')
-
-# local_clock()
-# mainloop()
+import re
 
 # Create your views here.
 
@@ -38,11 +18,14 @@ def country_data_view (request):
     currency_country = country_information_model.objects.get(country = current_country).currency
     currency_country = country_information_model.objects.get(country = current_country).currency
     time_zone_value = country_information_model.objects.get(country = current_country).time_zone
-    print(time_zone_value)
+    flag_url = str("/country_flags/" + current_country.lower() + "-flag.gif")
+    country_url = current_country.lower()
     
     context = {
         'journey_day_html' : day_in_journey_just_days,
         'current_country_html' : current_country,
+        'country_url' : country_url,
+        'flag_url_html' : flag_url,
         'capital_city_html' : capital_city,
         'surface_html' : surface_country,
         'population_html' : population_country,
