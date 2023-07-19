@@ -1,0 +1,45 @@
+Euro (€)
+Lek (Lek)
+Forint (Ft)
+Romanian Leu (lei)
+Serbian Dinar (Дин)
+Bulgaria Lev (лв)
+Turkey Lira (₺)
+Iran Rial (﷼)
+Georgian lari (₾)
+Armenian dram (֏)
+Azerbaijani manat (₼)
+Russian ruble (₽)
+Kazakhstani tenge (₸)
+Turkmenistani manat (m)
+Uzbekistani sum (soum)
+Tajikistani somoni (SM)
+Kyrgyz som (som)
+Pakistani rupee (Rs)
+Indian rupee (₹)
+Nepalese rupee (NPR)
+Bangladeshi taka (৳)
+Burmese kyat (MMK)
+Thai baht (฿)
+Lao kip (₭)
+Vietnamese đồng (₫)
+Renminbi (¥)
+South Korean won (₩)
+Japanese yen (¥)
+United States dollar ($)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
