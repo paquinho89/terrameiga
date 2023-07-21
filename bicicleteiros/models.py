@@ -45,17 +45,11 @@ class summary_day_model(models.Model):
     money_burocracy = models.DecimalField(max_digits=6, decimal_places=2, blank = True, null=True)
     money_others = models.DecimalField(max_digits=6, decimal_places=2, blank = True, null=True)
     #currency cambiado a Euros
-    km_first_stop = models.IntegerField(blank = True, null=True)
-    km_second_stop = models.IntegerField(blank = True, null=True)
-    km_third_stop = models.IntegerField(blank = True, null=True)
-    km_fourth_stop = models.IntegerField(blank = True, null=True)
-    altitude_first_stop = models.IntegerField(blank = True, null=True)
-    altitude_second_stop = models.IntegerField(blank = True, null=True)
-    altitude_third_stop = models.IntegerField(blank = True, null=True)
-    altitude_fourth_stop = models.IntegerField(blank = True, null=True)
+    km_day = models.IntegerField(blank = True, null=True)
+    altitude_day = models.IntegerField(blank = True, null=True)
 
     def __str__(self):
-        return (str(self.journey_day_model) + ' day' )
+        return (str(self.journey_day_model) + ' days' )
 
 
 class country_information_model(models.Model):
