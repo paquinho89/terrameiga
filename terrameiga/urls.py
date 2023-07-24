@@ -62,7 +62,8 @@ urlpatterns = [
     
     path('route/', TemplateView.as_view(template_name = "templates/route.html"), name="route"),
 
-    path('info/', TemplateView.as_view(template_name = "templates/info.html"), name="info"),
+    path('xornadas/', TemplateView.as_view(template_name = "templates/xornadas_culturais.html"), name="info"),
+    path('eliminar/', TemplateView.as_view(template_name = "templates/eliminar.html"), name="eliminar"),
 
 ]
 
