@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import country_information_model, summary_day_model, starting_date
 from datetime import datetime, date
 from django.db.models import Sum
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -35,4 +36,14 @@ def country_data_view (request):
         'time_zone_html' : time_zone_value
     }
     return render (request, 'bicicleteiros_home_page.html', context)
+
+def money_per_km_graph_view (request):
+    data = {
+        "sales": 100,
+        "customers": 10,
+    }
+    # Returninn Json data as Json is the data is the javasrpit object notation which allow us use the data in javasrit so
+    # in the html file as well.
+    # This is a http response but in Json way.
+    return JsonResponse(data)
 
