@@ -175,3 +175,6 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'paquinho89@gmail.com'
 EMAIL_HOST_PASSWORD = 'lfalufgrrjwftmsp'
+
+
+

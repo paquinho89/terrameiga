@@ -44,12 +44,18 @@ class summary_day_model(models.Model):
     money_transport = models.DecimalField(max_digits=6, decimal_places=2, blank = True, null=True)
     money_burocracy = models.DecimalField(max_digits=6, decimal_places=2, blank = True, null=True)
     money_others = models.DecimalField(max_digits=6, decimal_places=2, blank = True, null=True)
+    total_money = models.IntegerField(blank=True, null=True)
     #currency cambiado a Euros
     km_day = models.IntegerField(blank = True, null=True)
     altitude_day = models.IntegerField(blank = True, null=True)
 
     def __str__(self):
         return (str(self.journey_day_model) + ' days' )
+    
+    #Sum all the money from the different sources
+    # def total_money_function(self):
+    #     self.total_money = self.money_supermarket + self.money_restaurant + self.money_accommodation
+    #     return super(summary_day_model, self).save()
 
 
 class country_information_model(models.Model):

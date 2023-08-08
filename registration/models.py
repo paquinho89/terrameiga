@@ -33,7 +33,7 @@ class CustomUser(AbstractUser):
     #This sets the field that will act as a unique identifier of the User model. We are setting it to the email field.
     USERNAME_FIELD = 'email'
     #This sets any other required field for the User model.
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username']
 
 
 
