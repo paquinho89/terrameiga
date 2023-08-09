@@ -29,6 +29,24 @@ night_type_choices = (
     ('accommodation', 'accommodation')
 )
 
+
+class country_information_model(models.Model):
+    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True)
+    capital_town = models.CharField(max_length=33, blank=True, null=True)
+    surface = models.IntegerField(blank=True, null=True)
+    population = models.IntegerField(blank=True, null=True)
+    population_density = models.IntegerField(blank=True, null=True)
+    rent_per_capita = models.IntegerField(blank=True, null=True)
+    currency = models.CharField(max_length=50, choices= currency_list_fixed, blank=True, null=True)
+    currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = True, null=True)
+    time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
+    visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
+    visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    visa_bribe = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+
+    def __str__(self):
+        return (self.country)  
+
 #THIS IS TO POPULATE THE DAY OF THE JOURNEY
 #IMPORTANTE!!!: Eiqui tes que cambiar a data e por a data na que comezas a viaxe.
 starting_date = datetime(2023, 7, 1).date()
@@ -51,6 +69,8 @@ class summary_day_model(models.Model):
     money_others = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
     total_money = models.IntegerField(blank = True, null=True)
     #currency cambiado a Euros
+    currency_change = models.ForeignKey(country_information_model, on_delete=models.CASCADE)
+    
     km_day = models.IntegerField(blank = True, null=True)
     altitude_day = models.IntegerField(blank = True, null=True)
 
@@ -63,22 +83,7 @@ class summary_day_model(models.Model):
         return (str(self.journey_day_model) + ' days' )
     
 
-class country_information_model(models.Model):
-    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True)
-    capital_town = models.CharField(max_length=33, blank=True, null=True)
-    surface = models.IntegerField(blank=True, null=True)
-    population = models.IntegerField(blank=True, null=True)
-    population_density = models.IntegerField(blank=True, null=True)
-    rent_per_capita = models.IntegerField(blank=True, null=True)
-    currency = models.CharField(max_length=50, choices= currency_list_fixed, blank=True, null=True)
-    currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = True, null=True)
-    time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
-    visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
-    visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
-    visa_bribe = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
 
-    def __str__(self):
-        return (self.country)  
 
 
 
