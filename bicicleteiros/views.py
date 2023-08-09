@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import country_information_model, summary_day_model, starting_date
 from datetime import datetime, date
-from django.db.models import Sum
+from django.db.models import Sum, Count
 from django.http import JsonResponse
 
 # Create your views here.
@@ -24,7 +24,7 @@ def country_data_view (request):
     total_km = total_km_dictionary['km_day__sum']
     flag_url = str("/static/country_flags/" + current_country.lower() + "-flag.gif")
 
-    m=summary_day_model.objects.annotate(day_in_journey = Sum('money_equipment')).annotate(day_in_journey = Sum('money_restaurant'))
+    m=summary_day_model.objects.annotate(day_in_journey = Sum('money_supermarket')+Sum('money_restaurant')).values()
     
     print('total_money')
     print(m)

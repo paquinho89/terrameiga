@@ -1,0 +1,16 @@
+python manage.py shell
+from bicicleteiros.models import summary_day_model
+summary_day_model.objects.all().delete() 
+
+#To clean the database
+python manage.py flush
+
+
+#RESETEO DAS BASES DE DATOS DA PÁXINA WEB
+- Eliminar todos os datos e todos os usuarios da base de datos
+- Eliminar todos os archivos de migrations
+- Eliminar a .db file ou senon cambialle o nome
+- Facemos un "python manage.py makemigrations
+- Facemos un "python manage.py migrate --run-syncdb"
+- E por último "python manage.py createsuperuser"
+
