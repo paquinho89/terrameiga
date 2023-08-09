@@ -24,10 +24,8 @@ def country_data_view (request):
     total_km = total_km_dictionary['km_day__sum']
     flag_url = str("/static/country_flags/" + current_country.lower() + "-flag.gif")
 
-    m=summary_day_model.objects.annotate(day_in_journey = Sum('money_supermarket')+Sum('money_restaurant')).values()
-    
-    print('total_money')
-    print(m)
+    currency_change = country_information_model.objects.get(country = current_country).currency_change_euro
+    print (currency_change)
 
     graph_country_data = country_information_model.objects.all()
     graph_day_data = summary_day_model.objects.all()

@@ -38,7 +38,7 @@ class country_information_model(models.Model):
     population_density = models.IntegerField(blank=True, null=True)
     rent_per_capita = models.IntegerField(blank=True, null=True)
     currency = models.CharField(max_length=50, choices= currency_list_fixed, blank=True, null=True)
-    currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = True, null=True)
+    currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = True, null=True, unique=True)
     time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
     visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
     visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
@@ -56,8 +56,10 @@ day_in_the_journey = today_date - starting_date
 day_in_the_journey_final = str(day_in_the_journey).split(" ",1)[0]
 
 class summary_day_model(models.Model):
-    journey_day_model = models.IntegerField(default=int(day_in_the_journey_final), null=True) 
-    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True)
+    journey_day_model = models.IntegerField(default=int(day_in_the_journey_final), null=True)
+    km_day = models.IntegerField(blank = True, null=True)
+    altitude_day = models.IntegerField(blank = True, null=True) 
+    country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
     day_type = models.CharField(max_length=33, choices=day_type_choices, blank=True, null=True)
     night_type = models.CharField(max_length=33, choices=night_type_choices, blank=True, null=True)
     money_supermarket = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
@@ -67,17 +69,30 @@ class summary_day_model(models.Model):
     money_transport = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
     money_burocracy = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
     money_others = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
-    total_money = models.IntegerField(blank = True, null=True)
-    #currency cambiado a Euros
-    currency_change = models.ForeignKey(country_information_model, on_delete=models.CASCADE)
-    
-    km_day = models.IntegerField(blank = True, null=True)
-    altitude_day = models.IntegerField(blank = True, null=True)
+    money_supermarket_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    money_restaurant_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    money_accommodation_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    money_equipment_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    money_transport_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    money_burocracy_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    money_others_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    total_money_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
 
     #Sum all the money from the different sources to auto-populate the "total_money" column with the sum of all the money spent in that day.
     def save(self):
-        self.total_money = sum([self.money_supermarket, self.money_restaurant, self.money_accommodation, self.money_equipment, self.money_transport, self.money_burocracy, self.money_others])
+        self.money_supermarket_euros =      sum([self.money_supermarket*self.country.currency_change_euro])
+        self.money_restaurant_euros =       sum([self.money_restaurant*self.country.currency_change_euro])
+        self.money_accommodation_euros =    sum([self.money_accommodation*self.country.currency_change_euro])
+        self.money_equipment_euros =        sum([self.money_equipment*self.country.currency_change_euro])
+        self.money_transport_euros =        sum([self.money_transport*self.country.currency_change_euro])
+        self.money_burocracy_euros =        sum([self.money_burocracy*self.country.currency_change_euro])
+        self.money_others_euros =           sum([self.money_others*self.country.currency_change_euro])
+        self.total_money_euros =            sum([self.money_supermarket*self.country.currency_change_euro, self.money_restaurant*self.country.currency_change_euro, 
+                                                 self.money_accommodation*self.country.currency_change_euro, self.money_equipment*self.country.currency_change_euro, 
+                                                 self.money_transport*self.country.currency_change_euro, self.money_burocracy*self.country.currency_change_euro, 
+                                                 self.money_others*self.country.currency_change_euro])
         return super().save()
+
 
     def __str__(self):
         return (str(self.journey_day_model) + ' days' )
