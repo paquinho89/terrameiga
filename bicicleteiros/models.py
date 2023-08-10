@@ -60,6 +60,10 @@ class summary_day_model(models.Model):
     km_day = models.IntegerField(blank = True, null=True)
     altitude_day = models.IntegerField(blank = True, null=True) 
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
+    #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
+    # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
+    # De todos os xeitos o "country_name" calcúlase automáticamente xa que colle o mesmo valor que o country.
+    country_name = models.CharField(max_length=33, blank=True, null=True)
     day_type = models.CharField(max_length=33, choices=day_type_choices, blank=True, null=True)
     night_type = models.CharField(max_length=33, choices=night_type_choices, blank=True, null=True)
     money_supermarket = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
@@ -76,9 +80,9 @@ class summary_day_model(models.Model):
     money_transport_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
     money_burocracy_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
     money_others_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
-    total_money_euros = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    total_money_euros = models.IntegerField(blank = True, null=True)
 
-    #Sum all the money from the different sources to auto-populate the "total_money" column with the sum of all the money spent in that day.
+    #Convert the money into Euros base on the currency change of the "country_information_model".
     def save(self):
         self.money_supermarket_euros =      sum([self.money_supermarket*self.country.currency_change_euro])
         self.money_restaurant_euros =       sum([self.money_restaurant*self.country.currency_change_euro])
@@ -91,6 +95,7 @@ class summary_day_model(models.Model):
                                                  self.money_accommodation*self.country.currency_change_euro, self.money_equipment*self.country.currency_change_euro, 
                                                  self.money_transport*self.country.currency_change_euro, self.money_burocracy*self.country.currency_change_euro, 
                                                  self.money_others*self.country.currency_change_euro])
+        self.country_name = self.country
         return super().save()
 
 

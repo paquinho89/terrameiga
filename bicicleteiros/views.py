@@ -22,10 +22,12 @@ def country_data_view (request):
     time_zone_value = country_information_model.objects.get(country = current_country).time_zone
     total_km_dictionary = summary_day_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
-    flag_url = str("/static/country_flags/" + current_country.lower() + "-flag.gif")
+    flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
+    #annotate is the same as doing a 'group_by'
+    money_per_country = summary_day_model.objects.values(str('country_name')).annotate(Sum('total_money_euros'))
+    print ('money_per_country')
+    print (money_per_country)
 
-    currency_change = country_information_model.objects.get(country = current_country).currency_change_euro
-    print (currency_change)
 
     graph_country_data = country_information_model.objects.all()
     graph_day_data = summary_day_model.objects.all()
@@ -46,7 +48,8 @@ def country_data_view (request):
         'time_zone_html' : time_zone_value,
 
         'graph_country_data_html' : graph_country_data,
-        'graph_day_data_html' : graph_day_data
+        'graph_day_data_html' : graph_day_data,
+        'money_per_country_html': money_per_country
     }
     return render (request, 'bicicleteiros_home_page.html', context)
 

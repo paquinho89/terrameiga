@@ -106,17 +106,18 @@
       <h2>Money spent per day</h2>
       <canvas id="money_per_day"  class="chart-container" width="400" height="400"></canvas>
     </div>
-    <!--CHART 2-->
+    
     <div class="container-fluid">
       <h2>Km e desnivel done per day</h2>
       <canvas id="km_per_day"  class="chart-container" width="400" height="400"></canvas>
     </div>
   </div>
 
+  <!--CHART 2-->
   <div class="col-lg-3">
     <div class="container-fluid">
       <h2>Total money spent in each country</h2>
-      <canvas id="total_money"  class="chart-container" width="400" height="400"></canvas>
+      <canvas id="money_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
     <div class="container-fluid">
       <h2>Total Km e desnivel per country</h2>
@@ -157,7 +158,7 @@
       labels: [{% for day in graph_day_data_html %} '{{day.journey_day_model}}', {% endfor %}],
       datasets: [{
         label: 'Euros - €',
-        data: [{% for money in graph_day_data_html %} '{{money.km_day}}', {% endfor %}],
+        data: [{% for money in graph_day_data_html %} '{{money.total_money_euros}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
                         'rgba(255, 99, 132, 0.2)', 
@@ -190,14 +191,14 @@
 
 <!--Script CHART 2-->
 <script>
-  const graph_total_money = document.getElementById('total_money');
-  new Chart(graph_total_money, {
+  const graph_money_per_country = document.getElementById('money_per_country');
+  new Chart(graph_money_per_country, {
     type: 'bar',
     data: {
-      labels: [{% for country in graph_country_data_html %} '{{country.country}}', {% endfor %}],
+      labels: [{% for country in money_per_country_html %} '{{country.country_name}}', {% endfor %}],
       datasets: [{
-        label: 'Population of the country',
-        data: [{% for country in graph_country_data_html %} '{{country.population}}', {% endfor %}],
+        label: 'Euros - €',
+        data: [{% for money in money_per_country_html %} '{{money.total_money_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
                         'rgba(255, 99, 132, 0.2)', 
