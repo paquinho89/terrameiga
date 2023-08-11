@@ -31,7 +31,7 @@ night_type_choices = (
 
 
 class country_information_model(models.Model):
-    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True)
+    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
     capital_town = models.CharField(max_length=33, blank=True, null=True)
     surface = models.IntegerField(blank=True, null=True)
     population = models.IntegerField(blank=True, null=True)
@@ -95,7 +95,7 @@ class summary_day_model(models.Model):
                                                  self.money_accommodation*self.country.currency_change_euro, self.money_equipment*self.country.currency_change_euro, 
                                                  self.money_transport*self.country.currency_change_euro, self.money_burocracy*self.country.currency_change_euro, 
                                                  self.money_others*self.country.currency_change_euro])
-        self.country_name = self.country
+        self.country_name = str(self.country)
         return super().save()
 
 

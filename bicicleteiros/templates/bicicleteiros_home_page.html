@@ -106,7 +106,7 @@
       <h2>Money spent per day</h2>
       <canvas id="money_per_day"  class="chart-container" width="400" height="400"></canvas>
     </div>
-    
+    <!--CHART 5-->
     <div class="container-fluid">
       <h2>Km e desnivel done per day</h2>
       <canvas id="km_per_day"  class="chart-container" width="400" height="400"></canvas>
@@ -119,22 +119,22 @@
       <h2>Total money spent in each country</h2>
       <canvas id="money_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
+  <!--CHART 5-->
     <div class="container-fluid">
       <h2>Total Km e desnivel per country</h2>
       <canvas id="km_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
   </div>
 
+  <!--CHART 3-->
   <div class="col-lg-3">
     <div class="container-fluid">
       <h2>How the money was spent?</h2>
       <canvas id="spent_type"  class="chart-container" width="400" height="400"></canvas>
     </div>
-    <!--CHART 5-->
   </div>
-
+  <!--CHART 4-->
   <div class="col-lg-3">
-    <!--CHART 5-->
     <div class="container-fluid">
       <h2>Total money spent so far</h2>
         <div class="card" style="width: 18rem;">
@@ -155,10 +155,10 @@
   new Chart(var_money_per_day, {
     type: 'bar',
     data: {
-      labels: [{% for day in graph_day_data_html %} '{{day.journey_day_model}}', {% endfor %}],
+      labels: [{% for day in graph_money_per_day_html %} '{{day.journey_day_model}}', {% endfor %}],
       datasets: [{
         label: 'Euros - €',
-        data: [{% for money in graph_day_data_html %} '{{money.total_money_euros}}', {% endfor %}],
+        data: [{% for money in graph_money_per_day_html %} '{{money.total_money_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
                         'rgba(255, 99, 132, 0.2)', 
@@ -195,10 +195,10 @@
   new Chart(graph_money_per_country, {
     type: 'bar',
     data: {
-      labels: [{% for country in money_per_country_html %} '{{country.country_name}}', {% endfor %}],
+      labels: [{% for country in graph_money_per_country_html %} '{{country.country_name}}', {% endfor %}],
       datasets: [{
         label: 'Euros - €',
-        data: [{% for money in money_per_country_html %} '{{money.total_money_euros__sum}}', {% endfor %}],
+        data: [{% for money in graph_money_per_country_html %} '{{money.total_money_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
                         'rgba(255, 99, 132, 0.2)', 
@@ -235,10 +235,10 @@
   new Chart(graph_spent_type, {
     type: 'pie',
     data: {
-      labels: [{% for country in graph_data_html %} '{{country.country}}', {% endfor %}],
+      labels: [{% for type in graph_money_type_html %} '{{country.country}}', {% endfor %}],
       datasets: [{
         label: 'Population of the country',
-        data: [{% for country in graph_data_html %} '{{country.surface}}', {% endfor %}],
+        data: [{% for country in graph_money_type_html %} '{{country.surface}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
                         'rgba(255, 99, 132, 0.2)', 
