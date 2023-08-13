@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import country_information_model, summary_day_model, starting_date
+from .models import country_information_model, money_model, km_altitude_model, starting_date
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
@@ -7,11 +7,11 @@ from django.http import JsonResponse
 # Create your views here.
 
 def country_data_view (request):
-    all_entry_days= summary_day_model.objects.all()
-    #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Esto falo porque nun mesmo día podes estar en máis dun país.
+    all_entry_days= money_model.objects.all()
+    #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
     all_entry_days_last=all_entry_days.last()
     #Da última entrada collemos do día collemos o día da viaxe na que estamos
-    current_journey_day = all_entry_days_last.journey_day_model
+    current_journey_day = all_entry_days_last.journey_day
     #Da última entrada collemos o país
     current_country = all_entry_days_last.country
     #current_country = summary_day_model.objects.get(journey_day_model = str(day_in_journey).split(" ",1)[0] ).country
@@ -27,13 +27,16 @@ def country_data_view (request):
     currency_country = country_information_model.objects.get(country = current_country).currency
     currency_country = country_information_model.objects.get(country = current_country).currency
     time_zone_value = country_information_model.objects.get(country = current_country).time_zone
-    total_km_dictionary = summary_day_model.objects.aggregate(Sum('km_day'))
+    total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
     flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
     #annotate is the same as doing a 'group_by'
-    money_per_day = summary_day_model.objects.values(str('journey_day_model')).annotate(Sum('total_money_euros'))
-    money_per_country = summary_day_model.objects.values(str('country_name')).annotate(Sum('total_money_euros'))
-    #money_type = 
+    money_per_day = money_model.objects.values(str('journey_day')).annotate(Sum('expense_euros'))
+    money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros'))
+    money_type = money_model.objects.values(str('expense_type')).annotate(Sum('expense_euros'))
+    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
+    total_money = total_money_dict['expense_euros__sum']
+    print (total_money)
     
 
 
@@ -57,6 +60,10 @@ def country_data_view (request):
 
         'graph_money_per_day_html' : money_per_day,
         'graph_money_per_country_html': money_per_country,
+        'graph_money_per_type_html': money_type,
+        'graph_total_money_html': total_money,
+        
+        
         'graph_money_type_html' :all_entry_days
     }
     return render (request, 'bicicleteiros_home_page.html', context)
