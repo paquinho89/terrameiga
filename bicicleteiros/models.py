@@ -41,6 +41,7 @@ expense_type_choices = (
 
 class country_information_model(models.Model):
     country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
+    country_number = models.IntegerField(blank=True, null=True)
     capital_town = models.CharField(max_length=33, blank=True, null=True)
     surface = models.IntegerField(blank=True, null=True)
     population = models.IntegerField(blank=True, null=True)
@@ -67,6 +68,7 @@ day_in_the_journey_final = str(day_in_the_journey).split(" ",1)[0]
 class money_model(models.Model):
     journey_day = models.IntegerField(default=int(day_in_the_journey_final), null=True) 
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
+    country_number = models.IntegerField(blank=True, null=True)
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
     # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
     # De todos os xeitos o "country_name" calcúlase automáticamente xa que colle o mesmo valor que o country.
@@ -79,6 +81,7 @@ class money_model(models.Model):
     def save(self):
         self.expense_euros = sum([self.expense*self.country.currency_change_euro])
         self.country_name = str(self.country)
+        self.country_number = str(self.country.country_number)
         return super().save()
 
     def __str__(self):
@@ -87,6 +90,7 @@ class money_model(models.Model):
 class km_altitude_model (models.Model):
     journey_day = models.IntegerField(default=int(day_in_the_journey_final), null=True)
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
+    country_number = models.IntegerField(blank=True, null=True)
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
     # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
     # De todos os xeitos o "country_name" calcúlase automáticamente xa que colle o mesmo valor que o country.
@@ -99,6 +103,7 @@ class km_altitude_model (models.Model):
     #Convert the money into Euros based on the currency change of the "country_information_model".
     def save(self):
         self.country_name = str(self.country)
+        self.country_number = str(self.country.country_number)
         return super().save()
     
     def __str__(self):

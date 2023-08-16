@@ -14,9 +14,7 @@ def country_data_view (request):
     current_journey_day = all_entry_days_last.journey_day
     #Da última entrada collemos o país
     current_country = all_entry_days_last.country
-    #current_country = summary_day_model.objects.get(journey_day_model = str(day_in_journey).split(" ",1)[0] ).country
-    print('eiqui')
-    print(current_country)
+    country_number_country = country_information_model.objects.get(country= current_country).country_number
     visa_required = country_information_model.objects.get(country = current_country).visa_requerided
     visa_price = country_information_model.objects.get(country = current_country).visa_price
     capital_city = country_information_model.objects.get(country = current_country).capital_town
@@ -32,11 +30,13 @@ def country_data_view (request):
     flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
     #annotate is the same as doing a 'group_by'
     money_per_day = money_model.objects.values(str('journey_day')).annotate(Sum('expense_euros'))
-    money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros'))
+    money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros')).order_by('country_number')
     money_type = money_model.objects.values(str('expense_type')).annotate(Sum('expense_euros'))
     total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
     total_money = total_money_dict['expense_euros__sum']
-    print (total_money)
+    km_altitude_per_day = km_altitude_model.objects.values(str('journey_day')).annotate(Sum('km_day'),Sum('altitude_day'))
+    km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
+    print(km_altitude_per_country)
     
 
 
@@ -45,6 +45,7 @@ def country_data_view (request):
     
     context = {
         'journey_day_html' : current_journey_day ,
+        'country_number_html' : country_number_country,
         'total_km_html' : total_km,
         'current_country_html' : current_country,
         'visa_required_html' : visa_required,
@@ -62,6 +63,8 @@ def country_data_view (request):
         'graph_money_per_country_html': money_per_country,
         'graph_money_per_type_html': money_type,
         'graph_total_money_html': total_money,
+        'graph_km_altitud_per_day_html': km_altitude_per_day,
+        'graph_km_altitud_per_country_html': km_altitude_per_country,
         
         
         'graph_money_type_html' :all_entry_days

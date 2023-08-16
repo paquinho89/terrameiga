@@ -65,6 +65,7 @@
             <!--As bandeiras quítoas do seguinte link: https://www.quackit.com/html/html_editors/scratchpad/?app=charset_ref&hexadecimal=1F1E6,1F1E9&decimal=127462,127465&unicodeName=Andorra-->
             <li>Country: {{ current_country_html }} &#x1F1E6;&#x1F1E9; </li>
             <li>{{flag_url_html}}</li>
+            <li>Country Number: <strong>{{country_number_html}}</strong></li>
             <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
             <li><img class="d-block w-10" width="200" height="150" src='{{flag_url_html}}' alt="First slide"></li>
             <li>Visa required: {{ visa_required_html }} ({{ visa_price_html }} Euros) </li>
@@ -119,10 +120,10 @@
       <h2>Total money spent in each country</h2>
       <canvas id="money_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
-  <!--CHART 5-->
+  <!--CHART 6-->
     <div class="container-fluid">
       <h2>Total Km e desnivel per country</h2>
-      <canvas id="km_per_country"  class="chart-container" width="400" height="400"></canvas>
+      <canvas id="km_altitude_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
   </div>
 
@@ -181,8 +182,18 @@
     options: {
       responsive: false,
       scales: {
+        x:{
+          title:{
+            display: true,
+            text: 'Day'
+          } 
+        },
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Euros - €'
+          }
         }
       }
     }
@@ -222,7 +233,11 @@
       responsive: false,
       scales: {
         y: {
-          beginAtZero: true
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Euros - €'
+          }
         }
       }
     }
@@ -233,11 +248,11 @@
 <script>
   const graph_spent_type = document.getElementById('spent_type');
   new Chart(graph_spent_type, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
       labels: [{% for type in graph_money_per_type_html %} '{{type.expense_type}}', {% endfor %}],
       datasets: [{
-        label: 'Population of the country',
+        label: 'Euros - € ',
         data: [{% for money in graph_money_per_type_html %} '{{money.expense_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
@@ -257,95 +272,125 @@
                         'rgba(255, 159, 64, 1)'
                     ]
       }]
-    },
-    options: {
-      responsive: false,
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
     }
   })
 </script>
+
 
 <!--Script CHART 5-->
 <script>
   const graph_km_altitude_per_day = document.getElementById('km_altitude_per_day');
   new Chart(graph_km_altitude_per_day, {
-    type: 'line',
     data: {
-      labels: [{% for type in graph_money_per_type_html %} '{{type.expense_type}}', {% endfor %}],
-      datasets: [{
-        label: 'Population of the country',
-        data: [{% for money in graph_money_per_type_html %} '{{money.expense_euros__sum}}', {% endfor %}],
-        borderWidth: 1,
-        backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', 
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ]
-      }]
+      labels: [{% for day in graph_km_altitud_per_day_html %} '{{day.journey_day}}', {% endfor %}],
+      datasets: [
+        {
+          label: 'Km per day',
+          data: [{% for km in graph_km_altitud_per_day_html %} '{{km.km_day__sum}}', {% endfor %}],
+          type: 'bar',
+          yAxisID: 'y',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Meters of climbing',
+          data: [{% for altitude in graph_km_altitud_per_day_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
+          type: 'line',
+          yAxisID: 'y1',
+          backgroundColor: 'rgba(54, 162, 235, 1)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }
+      ]
     },
     options: {
       responsive: false,
       scales: {
+        x:{
+          title:{
+            display: true,
+            text: 'Day'
+          } 
+        },
         y: {
-          beginAtZero: true
-        }
+            type: 'linear',
+            position: 'left',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'quilómetros'
+              }
+          },
+          y1:{
+            type: 'linear',
+            grid: {
+              display: false
+              },
+            position: 'right',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'metros de ascenso'
+              }
+          }
       }
     }
-  })
+  });
 </script>
 
-<!--Script CHART 5-->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!--Script CHART 6-->
 <script>
-  const var_km_per_country = document.getElementById('km_per_country');
-
-  new Chart(var_km_per_country, {
-    type: 'bar',
+  const graph_km_altitude_per_country = document.getElementById('km_altitude_per_country');
+  new Chart(graph_km_altitude_per_country, {
     data: {
-      labels: [{% for country in graph_data_html %} '{{country.country}}', {% endfor %}],
-      datasets: [{
-        label: 'Surface of the country',
-        data: [{% for country in graph_data_html %} '{{country.population}}', {% endfor %}],
-        borderWidth: 1,
-        backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', 
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ]
-      }]
+      labels: [{% for country in graph_km_altitud_per_country_html %} '{{country.country_name}}', {% endfor %}],
+      datasets: [
+        {
+          label: 'Km per day',
+          data: [{% for km in graph_km_altitud_per_country_html %} '{{km.km_day__sum}}', {% endfor %}],
+          type: 'bar',
+          yAxisID: 'y',
+          backgroundColor: 'rgba(255, 99, 132, 0.2)',
+          borderColor: 'rgba(255, 99, 132, 1)',
+          borderWidth: 1
+        },
+        {
+          label: 'Meters of climbing',
+          data: [{% for altitude in graph_km_altitud_per_country_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
+          type: 'line',
+          yAxisID: 'y1',
+          backgroundColor: 'rgba(54, 162, 235, 1)',
+          borderColor: 'rgba(54, 162, 235, 1)',
+          borderWidth: 1
+        }
+      ]
     },
     options: {
       responsive: false,
       scales: {
         y: {
-          beginAtZero: true
-        }
+            type: 'linear',
+            position: 'left',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'quilómetros'
+              }
+          },
+          y1:{
+            type: 'linear',
+            grid: {
+              display: false
+              },
+            position: 'right',
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'metros de ascenso'
+              }
+          }
+        
       }
     }
   });
