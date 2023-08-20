@@ -31,17 +31,16 @@
   .card{
   background-color: #28231D;
   }
-  
 
-#button_area_persoal {
-  color: rgb(83, 158, 138);
-  border-color: rgb(83, 158, 138);
-  
-}
-#button_rexistro {
-  color: rgb(246, 158, 138);
-  border-color: rgb(246, 158, 138);
-}
+  #button_area_persoal {
+    color: rgb(83, 158, 138);
+    border-color: rgb(83, 158, 138);
+    
+  }
+  #button_rexistro {
+    color: rgb(246, 158, 138);
+    border-color: rgb(246, 158, 138);
+  }
 
 /*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
 no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
@@ -134,39 +133,46 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
     },1000)
   </script>
 
-  <!-- Three columns of text -->
-<div class="row mt-4">
-  <div class="col-lg-4 card">
-    <!--CHART 1-->
-    <div class="container-fluid">
-      <canvas id="money_per_day"  class="chart-container" width="400" height="400"></canvas>
+<h1 class="text-center">
+  Data of the journey
+</h1>
+
+<!--CHART 1-->
+  <div class="row mt-1">
+  <div class="col-lg-12 card">
+    <div class="container-fluid mb-1" style="width: 100%; height: 70vh">
+      <canvas id="money_per_day"  class="chart-container"></canvas>
     </div>
   </div>
-    <!--CHART 2-->
-  <div class="col-lg-4 card">
-    <div class="container-fluid">
-      <canvas id="money_per_country"  class="chart-container" width="400" height="400"></canvas>
-    </div>
-  </div>
-  <!--CHART 3-->
-  <div class="col-lg-4 card">
-    <div class="container-fluid">
-      <canvas id="spent_type"  class="chart-container" width="400" height="400"></canvas>
+<!--CHART 2-->
+<div class="row mt-2">
+  <div class="col-lg-12 card">
+    <div class="container-fluid" style="width: 100%; height: 70vh">
+      <canvas id="money_per_country"  class="chart-container"></canvas>
     </div>
   </div>
 </div>
-
-<div class="row mt-4">
-  <!--CHART 4-->
-  <div class="col-lg-6 card">
-    <div class="container-fluid">
-      <canvas id="km_altitude_per_day"  class="chart-container" width="400" height="400"></canvas>
+<!--CHART 3-->
+<div class="row mt-2">
+  <div class="col-lg-12 card">
+    <div class="container-fluid" style="width: 100%; height: 70vh">
+      <canvas id="spent_type"  class="chart-container"></canvas>
     </div>
   </div>
+</div>
+<!--CHART 4-->
+<div class="row mt-2">
+  <div class="col-lg-12 card">
+    <div class="container-fluid" style="width: 100%; height: 70vh">
+      <canvas id="km_altitude_per_day"  class="chart-container"></canvas>
+    </div>
+  </div>
+</div>
   <!--CHART 5-->
-  <div class="col-lg-6 card">
-    <div class="container-fluid">
-      <canvas id="km_altitude_per_country"  class="chart-container" width="400" height="400"></canvas>
+<div class="row mt-2">
+  <div class="col-lg-12 card">
+    <div class="container-fluid" style="width: 100%; height: 70vh">
+      <canvas id="km_altitude_per_country"  class="chart-container"></canvas>
     </div>
   </div>
 </div>
@@ -186,30 +192,18 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
         data: [{% for money in graph_money_per_day_html %} '{{money.expense_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', 
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(83, 158, 138, 1)'
                     ]
       }]
     },
     options: {
-      responsive: false,
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
                title: {
                   display: true,
                   text: 'Expenses per day',
-                  color: 'white',
+                  color: 'rgba(191, 191, 191, 1)',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -222,16 +216,25 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
             },
       scales: {
         x:{
+          grid: {
+            display: false,
+            color: 'rgba(65, 56, 57)'
+          },
           title:{
             display: true,
-            text: 'Day'
+            text: 'Day',
+            color: 'rgba(191, 191, 191)'
           } 
         },
         y: {
           beginAtZero: true,
+          grid: {
+            color: 'rgba(65, 56, 57)'
+          },
           title: {
             display: true,
-            text: 'Euros - €'
+            text: 'Euros - €',
+            color: 'rgba(191, 191, 191)'
           }
         }
       }
@@ -251,30 +254,18 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
         data: [{% for money in graph_money_per_country_html %} '{{money.expense_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', 
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ]
+                          'rgba(83, 158, 138, 1)'
+                          ]
       }]
     },
     options: {
-      responsive: false,
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
                title: {
                   display: true,
                   text: 'Expenses per Country',
-                  color: 'white',
+                  color: 'rgba(191, 191, 191, 1)',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -288,9 +279,14 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
       scales: {
         y: {
           beginAtZero: true,
+          grid: {
+            display: true,
+            color: 'rgba(65, 56, 57)'
+          },
           title: {
             display: true,
-            text: 'Euros - €'
+            text: 'Euros - €',
+            color: 'rgba(191, 191, 191)'
           }
         }
       }
@@ -308,42 +304,39 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
       datasets: [{
         label: 'Euros - € ',
         data: [{% for money in graph_money_per_type_html %} '{{money.expense_euros__sum}}', {% endfor %}],
-        borderWidth: 1,
+        
         backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', 
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 99, 132, 0.6)', 
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(12, 4, 4, 0.8)'
                     ]
       }]
     },
     options: {
-      responsive: false,
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
-               title: {
-                  display: true,
-                  text: 'Expenses Categories',
-                  color: 'white',
-                  position: 'top',
-                  align: 'center',
-                  font: {
-                     weight: 'bold',
-                     size: 24
-                  },
-                  padding: 8,
-                  fullSize: true,
+                title: {
+                text: 'Expenses Categories',
+                position: 'top',
+                align: 'center',
+                font: {
+                    weight: 'bold',
+                    size: 24
+                },
+                padding: 8,
+                fullSize: true,
                }
+            },
+      elements: {
+        arc: {
+            borderWidth: 0
             }
+      }
     }
   })
 </script>
@@ -361,28 +354,26 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
           data: [{% for km in graph_km_altitud_per_day_html %} '{{km.km_day__sum}}', {% endfor %}],
           type: 'bar',
           yAxisID: 'y',
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
-          borderWidth: 1
+          backgroundColor: 'rgba(185, 74, 243, 0.6)'
         },
         {
           label: 'Meters of climbing',
           data: [{% for altitude in graph_km_altitud_per_day_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
           type: 'line',
           yAxisID: 'y1',
-          backgroundColor: 'rgba(54, 162, 235, 1)',
-          borderColor: 'rgba(54, 162, 235, 1)',
-          borderWidth: 1
+          backgroundColor: 'rgba(251, 147, 69, 1)',
+          borderColor: 'rgba(251, 147, 69, 1)'
         }
       ]
     },
     options: {
-      responsive: false,
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
                title: {
                   display: true,
+                  color: 'rgba(191, 191, 191, 1)',
                   text: 'Km and altitude per day',
-                  color: 'white',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -397,16 +388,22 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
         x:{
           title:{
             display: true,
-            text: 'Day'
+            text: 'Day',
+            color: 'rgba(191, 191, 191)'
           } 
         },
         y: {
             type: 'linear',
+            grid: {
+                display: true,
+                color: 'rgba(65, 56, 57)'
+              },
             position: 'left',
             beginAtZero: true,
             title: {
               display: true,
-              text: 'km'
+              text: 'km',
+              color: 'rgba(191, 191, 191)'
               }
           },
           y1:{
@@ -418,7 +415,8 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Climbing meters'
+              text: 'Climbing meters',
+              color: 'rgba(191, 191, 191)'
               }
           }
       }
@@ -438,8 +436,7 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
           data: [{% for km in graph_km_altitud_per_country_html %} '{{km.km_day__sum}}', {% endfor %}],
           type: 'bar',
           yAxisID: 'y',
-          backgroundColor: 'rgba(255, 99, 132, 0.2)',
-          borderColor: 'rgba(255, 99, 132, 1)',
+          backgroundColor: 'rgba(185, 74, 243, 0.6)',
           borderWidth: 1
         },
         {
@@ -447,19 +444,20 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
           data: [{% for altitude in graph_km_altitud_per_country_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
           type: 'line',
           yAxisID: 'y1',
-          backgroundColor: 'rgba(54, 162, 235, 1)',
-          borderColor: 'rgba(54, 162, 235, 1)',
+          backgroundColor: 'rgba(251, 147, 69, 1)',
+          borderColor: 'rgba(251, 147, 69, 1)',
           borderWidth: 1
         }
       ]
     },
     options: {
-      responsive: false,
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
                title: {
                   display: true,
+                  color: 'rgba(191, 191, 191, 1)',
                   text: 'Km and Climbing per country',
-                  color: 'white',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -477,19 +475,22 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
             beginAtZero: true,
             title: {
               display: true,
-              text: 'km'
+              text: 'km',
+              color: 'rgba(191, 191, 191)'
               }
           },
           y1:{
             type: 'linear',
             grid: {
-              display: false
+                display: true,
+                color: 'rgba(65, 56, 57)'
               },
             position: 'right',
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Climbing meters'
+              text: 'Climbing meters',
+              color: 'rgba(191, 191, 191)'
               }
           }
         
