@@ -17,7 +17,6 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 print ("base dir path", BASE_DIR)
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -130,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # as the browser.
 
 LANGUAGE_CODE = 'gl-es'
-
+#ESto é para o tema de ter múltiples idiomas na páxina web.
 LOCALE_PATHS = [
    os.path.join(BASE_DIR, 'locale')
 ]
@@ -154,7 +153,7 @@ STATICFILES_DIRS=[
    BASE_DIR / "terrameiga/static/"
 ]
 
-print("non sales" ,STATICFILES_DIRS)
+print("ruta do static_dir" ,STATICFILES_DIRS)
 
 #MEDIA FILES: Estes son arquivos que suben os usuarios da web
 MEDIA_URL = '/media/'
@@ -166,7 +165,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#SMTP Configuration
+#SMTP Configuration para envío de emails
 # https://www.youtube.com/watch?v=sFPcd6myZrY
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

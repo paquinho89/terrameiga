@@ -7,79 +7,123 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <style>
-  .carousel {
-  object-fit: cover;
-  object-position: center;
-  height: 50vh;
-  width: 100vw;
+  body{
+    background-color:black;
+  }
+  ul{
+    color: white;
+  }
+  li{
+    color: white;
+    list-style-type: none;
+    
+  }
+  a{
+    color: white;
+  }
+  h4{
+    color: white;
+  }
+
+  hr{
+    color: white;
+  }
+  .card{
+  background-color: #28231D;
+  }
+  
+
+#button_area_persoal {
+  color: rgb(83, 158, 138);
+  border-color: rgb(83, 158, 138);
+  
 }
-.carousel-inner {
-  object-fit: cover;
-  object-position: center;
-  height: 50vh;
-  width: 100vw;
+#button_rexistro {
+  color: rgb(246, 158, 138);
+  border-color: rgb(246, 158, 138);
 }
-.carousel-item {
-  object-fit: cover;
-  object-position: center;
-  height: 35vh;
-  width: 100vw;
+
+/*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
+no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+/*E esto é para cambiar o borde do botón. Neste caso, como non é unha imaxe svg, incido sobre o elemento do css*/
+.navbar-toggler{
+  border: 1px solid rgb(246, 158, 138);
+}
+
+
 </style>
 
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><strong>TerraMeiga</strong></a>
-        <form class="d-flex-danger" role="search">
-          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'route' %}">GL</a>
-        </form>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}" style = "margin-left: 10px;">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px;">Percorrido</a>
-            </li>
-          </ul>
-          <form class="d-flex-danger" role="search">
-            <a class="btn btn-outline-light" href="{% url 'sign_in' %}" type="submit"><strong>Área Persoal</strong></a>
-            <a class="btn btn-outline-danger" href="{% url 'sign_up' %}" type="submit"><strong>Rexístrarse</strong></a>
-          </form>
-          
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Page content-->
-  
-    <div class="text-left mt-5">
-        <ul class="lead">DAY: {{ journey_day_html }}
-            <li>Km completed: {{ total_km_html }} km </li>
-            <!--As bandeiras quítoas do seguinte link: https://www.quackit.com/html/html_editors/scratchpad/?app=charset_ref&hexadecimal=1F1E6,1F1E9&decimal=127462,127465&unicodeName=Andorra-->
-            <li>Country: {{ current_country_html }} &#x1F1E6;&#x1F1E9; </li>
-            <li>{{flag_url_html}}</li>
-            <li>Country Number: <strong>{{country_number_html}}</strong></li>
-            <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
-            <li><img class="d-block w-10" width="200" height="150" src='{{flag_url_html}}' alt="First slide"></li>
-            <li>Visa required: {{ visa_required_html }} ({{ visa_price_html }} Euros) </li>
-            <li>Capital: {{ capital_city_html }} </li>
-            <li>Surface: {{ surface_html }} </li>
-            <li>Population: {{ population_html }} </li>
-            <li>Density population: {{ density_population_html }} </li>
-            <li>Renta per capita: {{ rent_per_capita_html }} </li>
-            <li>Currency: {{ currency_html }} </li>
-            <li>Local Time: <label id="current-time"></label> </li>
-            <li>Comparison: Na comparación vou por os datos de España sen facer ningún calculo e pista. Así a xente pode contrastar os datos por si sola </li>
-            
+  <nav class="navbar navbar-expand-md" style="background-color: #0C0404;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: rgb(246, 197, 190);">
+        <img src="/static/pictures/favicon.jpeg" width="35" height="35" class="d-inline-block align-top" alt="">
+          <strong>TerraMeiga</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Chat</a>
+          </li>
+          <li class="nav-item">
+            <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Vídeos</a>
+          </li>
+          <li class="nav-item">
+            <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Fotos</a>
+          </li>
         </ul>
+        <form class="d-flex-danger" role="search">
+          <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'sign_in' %}" type="submit"><strong>Área Persoal</strong></a>
+          <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'sign_up' %}" type="submit"><strong>Rexístrarse</strong></a>
+        </form>
+      </div>
     </div>
+  </nav>
+</header>
+
+<!-- Page content-->
+<div class="row">
+  <div class="text-left card col-lg-3">
+    <ul>
+    <h4 class="mt-2">
+      <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
+      DAY  {{ journey_day_html }}<img style="float: right;" width="75" height="37" src='{{flag_url_html}}' alt="First slide">
+    </h4>
+    <hr>
+      <li>Km completed: <strong>{{ total_km_html }} km </strong></li>
+      <li class="mt-2">Total Expenses: <strong>{{ graph_total_money_html }} € </strong></li>
+      <li class="mt-2">Country: <strong>{{ current_country_html }} (#{{country_number_html}})</strong></li>
+      <li class="mt-2">Capital: <strong>{{ capital_city_html }}</strong></li>
+      <li class="mt-2">Visa required: <strong>{{ visa_required_html }} ({{ visa_price_html }} Euros)</strong></li>
+    <hr>
+    <h5>Country Information:</h5>
+    <hr>
+      <li class="mt-3">Surface: <strong>{{ surface_html }} km2 </strong><br> 
+        <label style="font-style: italic;">(Spain: 505.994 km2)</label></li>
+      <li class="mt-2">Population: <strong>{{ population_html }} px </strong> <br>
+        <label style="font-style: italic;">(Spain: 48.300.000 px)</label></li>
+      <li class="mt-2">Density population: <strong>{{ density_population_html }} km2 </strong> <br>
+        <label style="font-style: italic;">(Spain: 94 people per km2)</label> </li>
+      <li class="mt-2">Renta per capita: <strong>{{ rent_per_capita_html }} €</strong> <br>
+        <label style="font-style: italic;">(Spain: 27.870 €)</label> </li>
+      <li class="mt-2">Currency: <strong>{{ currency_html }}</strong> </li>
+      <li class="mt-2">Local Time: <strong><label id="current-time"></label></strong> </li>
+    </ul>
+  </div>
+  <div class="col-lg-9">
+    <iframe src="https://www.komoot.es/tour/947537380/embed?profile=1" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
   <!--ESTO É CÓDIGO DE JAVASCRIPT PARA CREAR UN RELOXO-->
   <!--The timezones are get from this page (zone ID column): https://nodatime.org/TimeZones-->
   <script>
@@ -89,60 +133,40 @@
       time.innerHTML = d.toLocaleTimeString('en-US', {timeZone: "{{time_zone_html}}", timeZoneName: "short", hour12: false })
     },1000)
   </script>
-  
-  <!-- How to embed a koomot map into html: https://www.komoot.es/b2b/embed-->
-  <div>
-    <iframe src="https://www.komoot.es/tour/947537380/embed?profile=1" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-  </div>
-</div>
-
-
-<h1>Pepe</h1>
 
   <!-- Three columns of text -->
-<div class="row">
-  <div class="col-lg-3">
+<div class="row mt-4">
+  <div class="col-lg-4 card">
     <!--CHART 1-->
     <div class="container-fluid">
-      <h2>Money spent per day</h2>
       <canvas id="money_per_day"  class="chart-container" width="400" height="400"></canvas>
     </div>
-    <!--CHART 5-->
-    <div class="container-fluid">
-      <h2>Km e desnivel done per day</h2>
-      <canvas id="km_altitude_per_day"  class="chart-container" width="400" height="400"></canvas>
-    </div>
   </div>
-
-  <!--CHART 2-->
-  <div class="col-lg-3">
+    <!--CHART 2-->
+  <div class="col-lg-4 card">
     <div class="container-fluid">
-      <h2>Total money spent in each country</h2>
       <canvas id="money_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
-  <!--CHART 6-->
-    <div class="container-fluid">
-      <h2>Total Km e desnivel per country</h2>
-      <canvas id="km_altitude_per_country"  class="chart-container" width="400" height="400"></canvas>
-    </div>
   </div>
-
   <!--CHART 3-->
-  <div class="col-lg-3">
+  <div class="col-lg-4 card">
     <div class="container-fluid">
-      <h2>How the money was spent?</h2>
       <canvas id="spent_type"  class="chart-container" width="400" height="400"></canvas>
     </div>
   </div>
+</div>
+
+<div class="row mt-4">
   <!--CHART 4-->
-  <div class="col-lg-3">
+  <div class="col-lg-6 card">
     <div class="container-fluid">
-      <h2>Total money spent so far (€)</h2>
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">{{graph_total_money_html}}</h5>
-          </div>
-        </div>
+      <canvas id="km_altitude_per_day"  class="chart-container" width="400" height="400"></canvas>
+    </div>
+  </div>
+  <!--CHART 5-->
+  <div class="col-lg-6 card">
+    <div class="container-fluid">
+      <canvas id="km_altitude_per_country"  class="chart-container" width="400" height="400"></canvas>
     </div>
   </div>
 </div>
@@ -181,6 +205,21 @@
     },
     options: {
       responsive: false,
+      plugins: {
+               title: {
+                  display: true,
+                  text: 'Expenses per day',
+                  color: 'white',
+                  position: 'top',
+                  align: 'center',
+                  font: {
+                     weight: 'bold',
+                     size: 24
+                  },
+                  padding: 8,
+                  fullSize: true,
+               }
+            },
       scales: {
         x:{
           title:{
@@ -231,6 +270,21 @@
     },
     options: {
       responsive: false,
+      plugins: {
+               title: {
+                  display: true,
+                  text: 'Expenses per Country',
+                  color: 'white',
+                  position: 'top',
+                  align: 'center',
+                  font: {
+                     weight: 'bold',
+                     size: 24
+                  },
+                  padding: 8,
+                  fullSize: true,
+               }
+            },
       scales: {
         y: {
           beginAtZero: true,
@@ -272,12 +326,30 @@
                         'rgba(255, 159, 64, 1)'
                     ]
       }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+               title: {
+                  display: true,
+                  text: 'Expenses Categories',
+                  color: 'white',
+                  position: 'top',
+                  align: 'center',
+                  font: {
+                     weight: 'bold',
+                     size: 24
+                  },
+                  padding: 8,
+                  fullSize: true,
+               }
+            }
     }
   })
 </script>
 
 
-<!--Script CHART 5-->
+<!--Script CHART 4-->
 <script>
   const graph_km_altitude_per_day = document.getElementById('km_altitude_per_day');
   new Chart(graph_km_altitude_per_day, {
@@ -306,6 +378,21 @@
     },
     options: {
       responsive: false,
+      plugins: {
+               title: {
+                  display: true,
+                  text: 'Km and altitude per day',
+                  color: 'white',
+                  position: 'top',
+                  align: 'center',
+                  font: {
+                     weight: 'bold',
+                     size: 24
+                  },
+                  padding: 8,
+                  fullSize: true,
+               }
+            },
       scales: {
         x:{
           title:{
@@ -319,7 +406,7 @@
             beginAtZero: true,
             title: {
               display: true,
-              text: 'quilómetros'
+              text: 'km'
               }
           },
           y1:{
@@ -331,7 +418,7 @@
             beginAtZero: true,
             title: {
               display: true,
-              text: 'metros de ascenso'
+              text: 'Climbing meters'
               }
           }
       }
@@ -339,7 +426,7 @@
   });
 </script>
 
-<!--Script CHART 6-->
+<!--Script CHART 5-->
 <script>
   const graph_km_altitude_per_country = document.getElementById('km_altitude_per_country');
   new Chart(graph_km_altitude_per_country, {
@@ -368,6 +455,21 @@
     },
     options: {
       responsive: false,
+      plugins: {
+               title: {
+                  display: true,
+                  text: 'Km and Climbing per country',
+                  color: 'white',
+                  position: 'top',
+                  align: 'center',
+                  font: {
+                     weight: 'bold',
+                     size: 24
+                  },
+                  padding: 8,
+                  fullSize: true,
+               }
+            },
       scales: {
         y: {
             type: 'linear',
@@ -375,7 +477,7 @@
             beginAtZero: true,
             title: {
               display: true,
-              text: 'quilómetros'
+              text: 'km'
               }
           },
           y1:{
@@ -387,7 +489,7 @@
             beginAtZero: true,
             title: {
               display: true,
-              text: 'metros de ascenso'
+              text: 'Climbing meters'
               }
           }
         
@@ -400,3 +502,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
+
+
+</body>
