@@ -33,7 +33,6 @@ expense_type_choices = (
     ('supermarket_expense', 'supermarket_expense'),
     ('restaurant_expense', 'restaurant_expense'),
     ('accommodation_expense', 'accommodation_expense'),
-    ('equipment_expense', 'equipment_expense'),
     ('transport_expense', 'transport_expense'),
     ('bureaucracy_expense', 'bureaucracy_expense'),
     ('other_expense', 'other_expense')
