@@ -3,6 +3,11 @@ from .models import country_information_model, money_model, km_altitude_model, s
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
+from bicicleteiros.forms import chat_form
+from django.shortcuts import render, redirect
+#Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
+from django.contrib import messages
+
 
 # Create your views here.
 
@@ -36,7 +41,29 @@ def country_data_view (request):
     total_money = total_money_dict['expense_euros__sum']
     km_altitude_per_day = km_altitude_model.objects.values(str('journey_day')).annotate(Sum('km_day'),Sum('altitude_day'))
     km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
-    print(km_altitude_per_country)
+    # Form configuration for the comments:
+    form_chat = chat_form(data=request.POST)
+    # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
+    if request.method == 'POST':
+        #Check whether it is valid:
+        if form_chat.is_valid():
+            # Create the comment object e gardámolo
+            form_chat.save(commit=True)
+            #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
+            messages.success(request, 'Grazas por participar nesta aventura!')
+            #artigos_content e que para que me retorne a vista do blog
+            return redirect('bicleteiros_home_page')
+        else:
+            #Comentando a seguinte línea o formulario non se vacía despois do error. 
+            #newsletter_email = form_newsletter()
+            # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+            # asigne o formato de error (O borde en vermello)
+            for field, errors in form_chat.errors.items():
+                form_chat[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+            #Esto imprime o error xusto debaixo do cajetín para inserir o correo
+            messages.error(request, form_chat.errors)
+            #messages.error(request, "Insira un enderezo de correo electrónico válido!")
+
     
 
 
@@ -58,6 +85,8 @@ def country_data_view (request):
         'rent_per_capita_html' : rent_per_capita_country,
         'currency_html' : currency_country,
         'time_zone_html' : time_zone_value,
+
+        'chat_form_html': form_chat,
 
         'graph_money_per_day_html' : money_per_day,
         'graph_money_per_country_html': money_per_country,

@@ -162,39 +162,21 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
                   <br>
                   <p style="color: rgba(191, 191, 191, 1)">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
               </div>
-              <div class="text-justify darker mt-4 float-right">
-                  <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
-                  <h4>Rob Simpson</h4>
-                  <span>- 20 October, 2018</span>
-                  <br>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-              </div>
-              <div class="comment mt-4 text-justify">
-                  <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-                  <h4>Jhon Doe</h4>
-                  <span>- 20 October, 2018</span>
-                  <br>
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-              </div>
-              <div class="darker mt-4 text-justify">
-                  <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
-                  <h4>Rob Simpson</h4>
-                  <span>- 20 October, 2018</span>
-                  <br>
-                  <p >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-              </div>
+              
           </div>
           <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
               <form id="algin-form">
-                  <div class="form-group">
-                      <h3 style="color: white">Leave a comment</h3>
-                      <label for="message" style="color: rgba(191, 191, 191, 1)">Message</label>
-                      <textarea name="msg" id=""msg cols="30" rows="5" class="form-control" style="background-color: #28231D; color:white"></textarea>
-                  </div>
-                  <div class="form-group">
-                      <a class="btn btn-outline-light mt-2" id="button_postcomment" href="{% url 'sign_in' %}" type="submit"><strong>Post Comment</strong></a>
-                      <button type="button" id="button_postcomment" class="btn-light" style="color: black">Este non vale</button>
-                  </div>
+                {% csrf_token %}
+                <div class="form-group">
+                    <h3 style="color: white">Leave a comment</h3>
+                    <label for="message" style="color: rgba(191, 191, 191, 1)">Message</label>
+                    <textarea name="msg" id=""msg cols="30" rows="5" class="form-control" style="background-color: #28231D; color:white"></textarea>
+                    {{ chat_form_html.comentario }}
+                </div>
+                <div class="form-group">
+                    <a class="btn btn-outline-light mt-2" id="button_postcomment" href="{% url 'sign_in' %}" type="submit"><strong>Post Comment</strong></a>
+                    <button type="button" id="button_postcomment" class="btn-light" style="color: black">Este non vale</button>
+                </div>
               </form>
           </div>
       </div>

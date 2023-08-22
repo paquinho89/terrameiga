@@ -38,6 +38,21 @@ expense_type_choices = (
     ('other_expense', 'other_expense')
 )
 
+#Modelo para os comentarios:
+class chat_comments(models.Model):
+    comentario = models.TextField(blank=False)
+    #Teño que utilizar DateField e non podo utilizar o DateTimeField porque na base de datos de Postgress
+    #de Railway non me acepta o datetime field.
+    date_added = models.DateField (default=datetime.now, blank=True, null=True)
+    #date_added = models.DateTimeField (default=datetime.now, blank=True)
+
+    #Esto é para que me ordene os comentarios na páxina por data
+    class Meta:
+        ordering = ['date_added']
+
+    def __str__(self):
+        return (self.comentario)
+
 class country_information_model(models.Model):
     country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
     country_number = models.IntegerField(blank=True, null=True)
