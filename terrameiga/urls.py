@@ -25,7 +25,6 @@ from bicicleteiros.views import country_data_view
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
     path('', newsletter_home_page_view, name="home_page"),
     path('sign_up/', sign_up_view, name="sign_up"),
@@ -46,6 +45,7 @@ urlpatterns = [
 
     #BICICLETEIROS_URLs
     path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
+    path('bicicleteiros_no_registration/', TemplateView.as_view(template_name = "bicicleteiros_home_page_no_registration.html"), name="order"),
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),

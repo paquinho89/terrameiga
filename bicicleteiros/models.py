@@ -1,6 +1,7 @@
 from django.db import models
 import re
 from datetime import datetime
+from django.utils import timezone
 
 
 with open("bicicleteiros/static/lists/country_list.txt", "r") as country_list_file:
@@ -39,23 +40,23 @@ expense_type_choices = (
 )
 
 #Modelo para os comentarios:
-class chat_comments(models.Model):
+class chat_comments_model(models.Model):
     comentario = models.TextField(blank=False)
     #Teño que utilizar DateField e non podo utilizar o DateTimeField porque na base de datos de Postgress
     #de Railway non me acepta o datetime field.
-    date_added = models.DateField (default=datetime.now, blank=True, null=True)
-    #date_added = models.DateTimeField (default=datetime.now, blank=True)
+    #date_added = models.DateField (default=datetime.now, blank=True, null=True)
+    date_added = models.DateTimeField (default=timezone.now, blank=True)
 
     #Esto é para que me ordene os comentarios na páxina por data
     class Meta:
-        ordering = ['date_added']
+        ordering = ['-date_added']
 
     def __str__(self):
         return (self.comentario)
 
 class country_information_model(models.Model):
     country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
-    country_number = models.IntegerField(blank=True, null=True)
+    country_number = models.IntegerField(blank=False, null=False)
     capital_town = models.CharField(max_length=33, blank=True, null=True)
     surface = models.IntegerField(blank=True, null=True)
     population = models.IntegerField(blank=True, null=True)

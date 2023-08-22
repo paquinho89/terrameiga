@@ -37,13 +37,13 @@ body{
 </style>
 
 <!--Esto utilízase para imprimir as mensaxes de que a sesión foi iniciada con éxito-->
-<div id="content" class="mt-5 fixed-top">
+<div id="content" class="mt-4 fixed-top">
   {% if messages %}
   {% for m in messages %}
   <!--Esto é para que me imprima solo a última mensaxe das alertas que é a que se corresponde coa mensaxe de sucess-->
   <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
     {% if forloop.last %}
-    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
+    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg_bicicleteiros" role="alert">
       <strong>{{ m }}</strong>
     </div>
     {% endif %}
@@ -54,8 +54,8 @@ body{
 <!--O 9000 está a endicar o tempo que está a alerta visible. Despois a alerta desaparece.-->
 <script>
   setTimeout(function(){
-      if ($('#msg').length > 0) {
-          $('#msg').remove();
+      if ($('#msg_bicicleteiros').length > 0) {
+          $('#msg_bicicleteiros').remove();
       }
   }, 7000)
 </script>

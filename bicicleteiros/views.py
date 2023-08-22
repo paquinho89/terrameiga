@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from .models import country_information_model, money_model, km_altitude_model, starting_date
+from .models import country_information_model, money_model, km_altitude_model, starting_date, chat_comments_model
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
 from bicicleteiros.forms import chat_form
+from newsletter.forms import form_newsletter
 from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
@@ -41,16 +42,19 @@ def country_data_view (request):
     total_money = total_money_dict['expense_euros__sum']
     km_altitude_per_day = km_altitude_model.objects.values(str('journey_day')).annotate(Sum('km_day'),Sum('altitude_day'))
     km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
-    # Form configuration for the comments:
+    # Form configuration for the COMMENTS of the CHAT:
     form_chat = chat_form(data=request.POST)
+    
     # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
     if request.method == 'POST':
+        print('é POST')
         #Check whether it is valid:
         if form_chat.is_valid():
             # Create the comment object e gardámolo
-            form_chat.save(commit=True)
+            new_comment_chat = form_chat.save(commit=False)
+            new_comment_chat.save()
             #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
-            messages.success(request, 'Grazas por participar nesta aventura!')
+            messages.success(request, 'Grazas por participar nesta aventura e engadir o teu comentario!')
             #artigos_content e que para que me retorne a vista do blog
             return redirect('bicleteiros_home_page')
         else:
@@ -64,11 +68,30 @@ def country_data_view (request):
             messages.error(request, form_chat.errors)
             #messages.error(request, "Insira un enderezo de correo electrónico válido!")
 
-    
-
-
-    graph_country_data = country_information_model.objects.all()
-    #graph_day_data = summary_day_model.objects.all()
+    #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
+    chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
+    print(chat_comments_all)
+    #FORM FOR THE NEWSLETTER
+    newsletter_email = form_newsletter(data=request.POST)
+    # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
+    if request.method == 'POST':
+        # check whether it's valid:
+        if newsletter_email.is_valid():
+            new_subscriber_email = newsletter_email.save(commit=False)
+            new_subscriber_email.save()
+            messages.success(request, 'Thanks for subscribing to our newsletter. No worries, we will not send you a lot of emails')
+            return redirect('bicleteiros_home_page')
+    # if a GET (or any other method) we'll create a blank form
+    else:
+        #Comentando a seguinte línea o formulario non se vacía despois do error. 
+        #newsletter_email = form_newsletter()
+        # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+        # asigne o formato de error (O borde en vermello)
+        for field, errors in newsletter_email.errors.items():
+            newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        #Esto imprime o error xusto debaixo do cajetín para inserir o correo
+        messages.error(request, newsletter_email.errors)
+        #messages.error(request, "Insira un enderezo de correo electrónico válido!")
     
     context = {
         'journey_day_html' : current_journey_day ,
@@ -87,6 +110,7 @@ def country_data_view (request):
         'time_zone_html' : time_zone_value,
 
         'chat_form_html': form_chat,
+        'chat_comments_all_html' : chat_comments_all,
 
         'graph_money_per_day_html' : money_per_day,
         'graph_money_per_country_html': money_per_country,
@@ -94,6 +118,8 @@ def country_data_view (request):
         'graph_total_money_html': total_money,
         'graph_km_altitud_per_day_html': km_altitude_per_day,
         'graph_km_altitud_per_country_html': km_altitude_per_country,
+
+        'form_newsletter_html':newsletter_email,
         
         
         'graph_money_type_html' :all_entry_days
