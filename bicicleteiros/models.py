@@ -2,6 +2,7 @@ from django.db import models
 import re
 from datetime import datetime
 from django.utils import timezone
+from registration.models import CustomUser
 
 
 with open("bicicleteiros/static/lists/country_list.txt", "r") as country_list_file:
@@ -46,6 +47,7 @@ class chat_comments_model(models.Model):
     #de Railway non me acepta o datetime field.
     #date_added = models.DateField (default=datetime.now, blank=True, null=True)
     date_added = models.DateTimeField (default=timezone.now, blank=True)
+    username_comment = models.CharField(max_length=33, blank=True, null=True)
 
     #Esto é para que me ordene os comentarios na páxina por data
     class Meta:

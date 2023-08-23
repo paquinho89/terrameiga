@@ -83,7 +83,7 @@ def sign_up_email_validation_confirmation_view (request, uidb64, token):
 def log_out_view (request):
    logout(request)
    messages.add_message(request, messages.INFO, "You have been logged out!")
-   return redirect('home_page')
+   return redirect('bicleteiros_home_page_no_registered')
 
 # Create your views here.
 def sign_in_view(request):
@@ -106,7 +106,7 @@ def sign_in_view(request):
                         </p>
                         """
                     )
-        return redirect('personal_data')
+        return redirect('bicleteiros_home_page')
     else:
       for field, error in sign_in_form_variable.errors.items():
         # Eiqui o que fago e que recorra os distintos fields do form e que lle 

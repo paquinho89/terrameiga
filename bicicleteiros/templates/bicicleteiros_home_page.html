@@ -126,13 +126,19 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
           </li>
         </ul>
         <form class="d-flex-danger" role="search">
-          <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'sign_in' %}" type="submit"><strong>Área Persoal</strong></a>
-          <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'sign_up' %}" type="submit"><strong>Rexístrarse</strong></a>
+          <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'personal_data' %}" type="submit"><strong>Personal Area</strong></a>
+          <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'log_out' %}" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+            </svg>
+            <strong>{{ user.username }} || Log Out</strong>
+          </a>
         </form>
       </div>
     </div>
   </nav>
 </header>
+              
 
 <!-- Page content-->
 <div class="row">
@@ -187,7 +193,7 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
               <h1 style="color: white">Comments</h1>
               <div class="comment mt-4 text-justify float-left" id="chat_box">
                   {% for chat_comments in chat_comments_all_html %}
-                  <h6 style="color: rgba(191, 191, 191, 1)"><img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40"><strong> Jhon Doe</strong> // {{ chat_comments.date_added }} </h6>
+                  <h6 style="color: rgba(191, 191, 191, 1)"><img src="/static/pictures/bike_avatars/touring_bike.jpg" alt="" class="rounded-circle" width="50" height="50"><strong> {{ chat_comments.username_comment }}</strong> // {{ chat_comments.date_added }} </h6>
                   <p style="color: rgba(191, 191, 191, 1)">{{ chat_comments.comentario }}</p>
                   {% endfor %}
               </div>
