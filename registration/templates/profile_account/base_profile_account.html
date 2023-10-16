@@ -44,42 +44,44 @@
 </head>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md" style="background-color: #0C0404;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><strong>TerraMeiga</strong></a>
-        <div class="d-flex-danger" role="search">
-          <a type="button" class="btn btn-secondary btn-sm" href="{% url 'home_page' %}">GL</a>
-		</div>
+        <a class="navbar-brand" href="#" style="color: rgb(246, 197, 190);">
+          <img src="/static/pictures/favicon.jpeg" width="35" height="35" class="d-inline-block align-top" alt="">
+            <strong>TerraMeiga</strong>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" style = "margin-left: 10px;">{% trans "Home" %}</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'bicleteiros_home_page' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Videos</a>
+            </li>
+            <li class="nav-item">
+              <a type="button" class="nav-link" href="{% url 'route' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Fotos</a>
+            </li>
+            <li class="nav-item">
+              <a type="button" class="nav-link" href="{% url 'bicleteiros_estadisticas' %}" style = "margin-left: 10px; color: rgb(246, 197, 190)">Estadísticas</a>
             </li>
           </ul>
-			{% if user.is_authenticated %}
-			<div class="d-flex-danger" role="search">
-				<a class="btn btn-outline-light" href="{% url 'personal_data' %}" type="submit"><strong>{% trans "My Account" %}</strong></a>
-				<a class="btn btn-outline-light" href="{% url 'home_page' %}" type="submit"><strong>{% trans "Home" %}</strong></a>
-			
-			<a class="btn btn-outline-danger" href="{% url 'log_out' %}" type="submit">
-				<strong>
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-				<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-				</svg>{% trans "Welcome " %}{{request.user.username}} || {% trans "Log out" %}</strong></a>
-			{% else %}
-			<a class="btn btn-outline-danger" href="{% url 'sign_in' %}" type="submit"><strong>
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-				<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-			</svg>{% trans "My Account" %}</strong></a>
-			</div>
-			{% endif %}
+          <form class="d-flex-danger" role="search">
+            <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'personal_data' %}" type="submit"><strong>Personal Area</strong></a>
+            <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'log_out' %}" type="submit">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+              <strong>{{ user.username }} || Log Out</strong>
+            </a>
+          </form>
         </div>
       </div>
     </nav>
   </header>
+  
 	<section class="py-5 my-5">
 		<div class="container">
 			<div class="bg-white shadow rounded-lg d-block d-sm-flex">

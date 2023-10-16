@@ -229,7 +229,7 @@ def password_new_password_view(request, uidb64, token):
   context = {
     'reset_password_form' : password_reset_form
   }
-  return render (request, 'password_reset_confirm.html', context)
+  return render (request, 'password_reset_complete.html', context)
 
 
 def profile_account(request):
