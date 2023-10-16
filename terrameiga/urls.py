@@ -19,14 +19,12 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from registration.views import sign_in_view, sign_up_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, sign_up_email_validation_confirmation_view, profile_account, index
-from newsletter.views import newsletter_home_page_view
-from bicicleteiros.views import country_data_view, country_data_no_registered_view
+from bicicleteiros.views import country_data_view, country_data_no_registered_view, estadistica_data_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', newsletter_home_page_view, name="home_page"),
     path('sign_up/', sign_up_view, name="sign_up"),
     path('account_confirmation_email_sent/', TemplateView.as_view(template_name = "account_confirm_email_sent.html"), name="account_confirmation_email_sent"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),
@@ -46,6 +44,7 @@ urlpatterns = [
     #BICICLETEIROS_URLs
     path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
     path('bicicleteiros_no_registration/', country_data_no_registered_view, name="bicleteiros_home_page_no_registered"),
+    path('bicicleteiros_estadísticas/', estadistica_data_view, name="bicleteiros_estadisticas"),
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),

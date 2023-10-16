@@ -10,5 +10,6 @@ class chat_form(forms.ModelForm):
 #Esto dos widgets é para meter o formato de bootstrap no form. {{ form }} que está en artigos_content.html.
 #O attrs é CSS style
         widgets = {
-            'comentario': forms.Textarea (attrs = {'class': 'form-control', 'style': "background-color: #28231D; color:white"})
+            'comentario': forms.Textarea (attrs = {'class': 'form-control', 'style': "background-color: black; color:white", 'placeholder':'Write your text here',
+                                                    'rows':1, 'cols':300})
         }

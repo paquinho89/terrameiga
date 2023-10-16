@@ -4,7 +4,6 @@ from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
 from bicicleteiros.forms import chat_form
-from newsletter.forms import form_newsletter
 from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
@@ -98,15 +97,6 @@ def country_data_view (request):
     total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
     flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
-    #annotate is the same as doing a 'group_by'
-    money_per_day = money_model.objects.values(str('journey_day')).annotate(Sum('expense_euros'))
-    money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros')).order_by('country_number')
-    money_type = money_model.objects.values(str('expense_type')).annotate(Sum('expense_euros'))
-    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
-    total_money = total_money_dict['expense_euros__sum']
-    km_altitude_per_day = km_altitude_model.objects.values(str('journey_day')).annotate(Sum('km_day'),Sum('altitude_day'))
-    km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
-    # 
     # Form configuration for the COMMENTS of the CHAT:
     form_chat = chat_form(data=request.POST)
     # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
@@ -134,27 +124,8 @@ def country_data_view (request):
 
     #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
     chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
-    #FORM FOR THE NEWSLETTER
-    newsletter_email = form_newsletter(data=request.POST)
-    # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
-    if request.method == 'POST':
-        # check whether it's valid:
-        if newsletter_email.is_valid():
-            new_subscriber_email = newsletter_email.save(commit=False)
-            new_subscriber_email.save()
-            messages.success(request, 'Thanks for subscribing to our newsletter. No worries, we will not send you a lot of emails')
-            return redirect('bicleteiros_home_page')
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        #Comentando a seguinte línea o formulario non se vacía despois do error. 
-        #newsletter_email = form_newsletter()
-        # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
-        # asigne o formato de error (O borde en vermello)
-        for field, errors in newsletter_email.errors.items():
-            newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        #Esto imprime o error xusto debaixo do cajetín para inserir o correo
-        messages.error(request, newsletter_email.errors)
-        #messages.error(request, "Insira un enderezo de correo electrónico válido!")
+    #Contamos o número total de comentarios para polo na páxina
+    number_comments=chat_comments_model.objects.all().count()
     
     context = {
         'journey_day_html' : current_journey_day ,
@@ -174,6 +145,26 @@ def country_data_view (request):
 
         'chat_form_html': form_chat,
         'chat_comments_all_html' : chat_comments_all,
+        'chat_number_comments_html' : number_comments,
+        
+        'graph_money_type_html' :all_entry_days
+    }
+    return render (request, 'bicicleteiros_home_page.html', context)
+
+
+
+def estadistica_data_view (request):
+    all_entry_days= money_model.objects.all()
+    #annotate is the same as doing a 'group_by'
+    money_per_day = money_model.objects.values(str('journey_day')).annotate(Sum('expense_euros'))
+    money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros')).order_by('country_number')
+    money_type = money_model.objects.values(str('expense_type')).annotate(Sum('expense_euros'))
+    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
+    total_money = total_money_dict['expense_euros__sum']
+    km_altitude_per_day = km_altitude_model.objects.values(str('journey_day')).annotate(Sum('km_day'),Sum('altitude_day'))
+    km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
+    
+    context = {
 
         'graph_money_per_day_html' : money_per_day,
         'graph_money_per_country_html': money_per_country,
@@ -181,11 +172,8 @@ def country_data_view (request):
         'graph_total_money_html': total_money,
         'graph_km_altitud_per_day_html': km_altitude_per_day,
         'graph_km_altitud_per_country_html': km_altitude_per_country,
-
-        'form_newsletter_html':newsletter_email,
-        
         
         'graph_money_type_html' :all_entry_days
     }
-    return render (request, 'bicicleteiros_home_page.html', context)
+    return render (request, 'bicicleteiros_estadísticas.html', context)
 
