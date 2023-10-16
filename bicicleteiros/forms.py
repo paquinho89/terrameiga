@@ -11,5 +11,5 @@ class chat_form(forms.ModelForm):
 #O attrs é CSS style
         widgets = {
             'comentario': forms.Textarea (attrs = {'class': 'form-control', 'style': "background-color: black; color:white", 'placeholder':'Write your text here',
-                                                    'rows':1, 'cols':300})
+                                                    'rows':1})
         }

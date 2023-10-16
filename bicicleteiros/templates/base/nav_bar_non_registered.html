@@ -25,22 +25,6 @@
   .navbar-toggler{
     border: 1px solid rgb(246, 158, 138);
   }
-  #button_area_persoal {
-    color: rgb(83, 158, 138);
-    border-color: rgb(83, 158, 138);  
-    }
-  #button_area_persoal:hover {
-    color: white;
-    background-color: rgb(83, 158, 138);
-    }
-  #button_rexistro {
-    color: rgb(246, 158, 138);
-    border-color: rgb(246, 158, 138);
-    }
-  #button_rexistro:hover {
-    color: white;
-    background-color: rgb(246, 158, 138);
-    }
 </style>
 
 <!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
@@ -86,10 +70,6 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
           </ul>
-          <form class="d-flex-danger" role="search">
-            <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'sign_in' %}" type="submit"><strong>Log In</strong></a>
-            <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'sign_up' %}" type="submit"><strong>Sign Up</strong></a>
-          </form>
         </div>
       </div>
     </nav>

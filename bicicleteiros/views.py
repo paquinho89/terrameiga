@@ -33,27 +33,6 @@ def country_data_no_registered_view (request):
     flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
     total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
     total_money = total_money_dict['expense_euros__sum']
-    #FORM FOR THE NEWSLETTER
-    newsletter_email = form_newsletter(data=request.POST)
-    # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
-    if request.method == 'POST':
-        # check whether it's valid:
-        if newsletter_email.is_valid():
-            new_subscriber_email = newsletter_email.save(commit=False)
-            new_subscriber_email.save()
-            messages.success(request, 'Thanks for subscribing to our newsletter. No worries, we will not send you a lot of emails')
-            return redirect('bicleteiros_home_page_no_registered')
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        #Comentando a seguinte línea o formulario non se vacía despois do error. 
-        #newsletter_email = form_newsletter()
-        # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
-        # asigne o formato de error (O borde en vermello)
-        for field, errors in newsletter_email.errors.items():
-            newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        #Esto imprime o error xusto debaixo do cajetín para inserir o correo
-        messages.error(request, newsletter_email.errors)
-        #messages.error(request, "Insira un enderezo de correo electrónico válido!")
     
     context = {
         'journey_day_html' : current_journey_day ,
@@ -70,9 +49,7 @@ def country_data_no_registered_view (request):
         'density_population_html' : population_dens,
         'rent_per_capita_html' : rent_per_capita_country,
         'currency_html' : currency_country,
-        'time_zone_html' : time_zone_value,
-
-        'form_newsletter_html':newsletter_email,
+        'time_zone_html' : time_zone_value
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
 
