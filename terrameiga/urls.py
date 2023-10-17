@@ -28,7 +28,6 @@ urlpatterns = [
     path('sign_up/', sign_up_view, name="sign_up"),
     path('account_confirmation_email_sent/', TemplateView.as_view(template_name = "account_confirm_email_sent.html"), name="account_confirmation_email_sent"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),
-    path('sign_in/', sign_in_view, name="sign_in"),
     path('log_out/', log_out_view, name="log_out"),    
     path('account/personal_data/', personal_data_view, name="personal_data"),
     path('account/password/', password_update_view, name="password"),
@@ -42,9 +41,13 @@ urlpatterns = [
     path('reset_password/<uidb64>/<token>/', password_new_password_view, name="password_reset_confirm"),
 
     #BICICLETEIROS_URLs
+    path('', country_data_no_registered_view, name="home_page_no_registered"),
     path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
-    path('bicicleteiros_no_registration/', country_data_no_registered_view, name="bicleteiros_home_page_no_registered"),
     path('bicicleteiros_estadísticas/', estadistica_data_view, name="bicleteiros_estadisticas"),
+    #REGISTRATION_URLs
+    path('sign_in/', sign_in_view, name="sign_in"),
+
+
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),

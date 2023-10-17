@@ -7,8 +7,11 @@
 {% block content %} 
 
 <style>
-  #background_sign_in {
+  #body_sign_in {
     background-color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
   }
   p { 
    color: rgba(191, 191, 191, 1); 
@@ -18,17 +21,17 @@
   }
 </style>
 
-<section id="background_sign_in" class="vh-100">
+<body id="body_sign_in" class="vh-100">
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px; background-color:#28231D;">
+          <div class="card text-black" style="border-radius: 25px; background-color:black">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">{% trans "Sign in_eglish" %}
+                  <p class="text-left h1 fw-bold mx-1 mt-2">{% trans "Sign in" %}
                   </p>
-                  <form class="mx-1 mx-md-4" method="post" novalidate>
+                  <form class=" mx-md-4" method="post" novalidate>
                     {% csrf_token %}
                       {% for field in sign_in_form.visible_fields %}
                         <tr>
@@ -39,7 +42,10 @@
                             {% elif forloop.counter == 2 %}
                             <label>Password</label>
                             {% endif %}
+                            <!--O div métollo para que me quede a barra de meter o texto debaixo da label-->
+                            <div>
                             {{ field }}
+                            </div>
                             <!--Co "if messages" solo imprimo o error se hai alerta,se non hai non imprimo o erro-->
                             {% if messages %}
                             <label style="color: red;">{{ field.errors }}</label>
@@ -48,33 +54,35 @@
                         </tr>
                       {% endfor %}
                     
-                    <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="d-flex flex-row align-items-left">
                       <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                       <div class="form-outline flex-fill mb-0">
                       </div>
                     </div>
 
-                    <div class="d-flex justify-content-center mx-4 mb-2 mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg" href="#" type="submit"><strong>{% trans "Sign in" %}</strong></button>
+                    <div class="d-flex justify-content-left mb-lg-4 mt-1">
+                      <button id="sign_in_button" type="submit" class="btn-lg mt-2" href="#" type="submit">
+                        <strong>{% trans "Sign in" %}</strong>
+                      </button>
                     </div>
  
-                    <div class="form-check d-flex justify-content-center mb-5">
-                      <label class="form-check-label" for="form2Example3">
-                        &#128531<a href="{% url 'reset_password' %}" class="text-dark"><p>{% trans "Did you forget your password?" %}</p></a>
+                    <div class="form-check d-flex justify-content-left">
+                      <label class="form-check-label mt-2" for="form2Example3">
+                        <a href="{% url 'reset_password' %}" class="text-dark"><p><strong>{% trans "Did you forget your password?" %}</strong></p></a>
                       </label>
                     </div>
 
-                    <div class="form-check d-flex justify-content-center mb-5">
+                    <div class="form-check d-flex justify-content-left">
                       <label class="form-check-label text-dark" for="form2Example3">
-                        <a href="{% url 'sign_up' %}" class="text-dark"><p>&#128533{% trans "Create a new TerraMeiga account" %}</p></a>
+                        <a href="{% url 'sign_up' %}" class="text-dark"><p><strong>{% trans "Create a new TerraMeiga account" %}</strong></p></a>
                       </label>
                     </div>
                   </form>
   
                 </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-left order-1 order-lg-2">
   
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  <img src='{% static "imaxes/sign_in.jpg" %}'
                     class="img-fluid" alt="Sample image">
                 </div>
               </div>
@@ -83,7 +91,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </body>
 
 <!-- ESTO VALE PARA QUE SE DEPLEGUEN OS DROPDOWNS, SEN ESTO NON FUNCIONA -->
 <!-- Optional JavaScript -->
