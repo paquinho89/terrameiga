@@ -16,6 +16,7 @@ class sign_in_form_1(AuthenticationForm):
             'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
             'password' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'min 8 caracteres'}),
         }
+        __all__ = ['email', 'password']
 
 class sign_up_form_2(UserCreationForm):
     class Meta:
@@ -23,7 +24,7 @@ class sign_up_form_2(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
             
         widgets = {
-            'username' : forms.TextInput(attrs = {'class': 'form-control', 'placeholder':'pepe@gmail.com'}),
+            'username' : forms.TextInput(attrs = {'class': 'form-control', 'placeholder':'Brasinda'}),
             'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
             'password1' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
             'password2' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),

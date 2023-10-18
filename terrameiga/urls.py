@@ -25,7 +25,6 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sign_up/', sign_up_view, name="sign_up"),
     path('account_confirmation_email_sent/', TemplateView.as_view(template_name = "account_confirm_email_sent.html"), name="account_confirmation_email_sent"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),
     path('log_out/', log_out_view, name="log_out"),    
@@ -46,6 +45,8 @@ urlpatterns = [
     path('bicicleteiros_estadísticas/', estadistica_data_view, name="bicleteiros_estadisticas"),
     #REGISTRATION_URLs
     path('sign_in/', sign_in_view, name="sign_in"),
+    path('sign_up/', sign_up_view, name="sign_up"),
+    #Eliminar path('proba/', sign_up_view_proba_eliminar, name="proba"),
 
 
 

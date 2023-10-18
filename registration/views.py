@@ -56,12 +56,13 @@ def sign_up_view(request):
                           """  + user_name)
       return redirect('account_confirmation_email_sent')
     else:
+      
       # Eiqui o que fago e que recorra os distintos fields do form e que lle 
       # asigne o formato de error (O borde en vermello)
        for field, error in sign_up_form_variable.errors.items():
-          sign_up_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-          #Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
-          messages.add_message(request, messages.WARNING, error)
+        sign_up_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        #Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
+        messages.add_message(request, messages.SUCCESS, error)
        
   context = {
         'sign_up_form':sign_up_form_variable
@@ -83,7 +84,7 @@ def sign_up_email_validation_confirmation_view (request, uidb64, token):
 def log_out_view (request):
    logout(request)
    messages.add_message(request, messages.INFO, "You have been logged out!")
-   return redirect('bicleteiros_home_page_no_registered')
+   return redirect('home_page_no_registered')
 
 # Create your views here.
 def sign_in_view(request):
@@ -111,9 +112,11 @@ def sign_in_view(request):
       for field, error in sign_in_form_variable.errors.items():
         # Eiqui o que fago e que recorra os distintos fields do form e que lle 
       # asigne o formato de error (O borde en vermello)
+        print(field)
         sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
       # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
-        messages.add_message(request, messages.WARNING, error)
+        #messages.add_message(request, messages.ERROR, error)
+        messages.add_message(request, messages.ERROR, "As credenciales non son válidas. Teña en conta que se fai distinción entre maíusculas e minúsculas")
       return redirect('sign_in')
   context = {
         "sign_in_form": sign_in_form_variable
