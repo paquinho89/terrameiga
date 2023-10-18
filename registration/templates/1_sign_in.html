@@ -4,6 +4,30 @@
 
 {% load static %}
 
+<!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
+<div id="content" class="mt-5 fixed-top">
+  {% if messages %}
+  {% for m in messages %}
+  <!--Esto é para que me imprima solo a última mensaxe das alertas que é a que se corresponde coa mensaxe de sucess-->
+  <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
+    {% if forloop.last %}
+    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
+      <strong>{{ m }}</strong>
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+</div>
+<!--Eiqui estou decindo canto tempo ten que estar a alerta unha vez que se completou a acción-->
+<!--O 9000 está a endicar o tempo que está a alerta visible. Despois a alerta desaparece.-->
+<script>
+  setTimeout(function(){
+      if ($('#msg').length > 0) {
+          $('#msg').remove();
+      }
+  }, 7000)
+</script>
+
 {% block content %} 
 
 <style>
@@ -46,10 +70,12 @@
                             <div>
                             {{ field }}
                             </div>
-                            <!--Co "if messages" solo imprimo o error se hai alerta,se non hai non imprimo o erro-->
+                            <!--Co "if messages" solo imprimo o error se hai alerta,se non hai non imprimo o erro. Vouno comentar porque non quero que aparezca texto debaixo do cajetín-->
+                            <!--
                             {% if messages %}
                             <label style="color: red;">{{ field.errors }}</label>
                             {% endif %}
+                            -->
                           </td>
                         </tr>
                       {% endfor %}

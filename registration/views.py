@@ -26,6 +26,9 @@ def index(request):
   return render(request, "templates/home_page_castellano.html", context)
 
 def sign_up_view(request):
+  # Con esto o que fago é abrir o documento para leelo e que despois aparezca no html. Deste xeito o chorretón de texto non está no html e todo queda máis ordenado
+  with open('terrameiga/static/lists/privacy_policy.txt', 'r') as file:
+    privacy_policy = file.read()
   # create a form instance and populate it with data from the request:
   sign_up_form_variable = sign_up_form_2(data=request.POST)
   if request.method == 'POST':
@@ -62,10 +65,11 @@ def sign_up_view(request):
        for field, error in sign_up_form_variable.errors.items():
         sign_up_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         #Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
-        messages.add_message(request, messages.SUCCESS, error)
+        messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
        
   context = {
-        'sign_up_form':sign_up_form_variable
+        'sign_up_form':sign_up_form_variable,
+        'privacy_policy_html': privacy_policy
   }
   return render (request, '2_sign_up.html', context)
 
@@ -110,13 +114,11 @@ def sign_in_view(request):
         return redirect('bicleteiros_home_page')
     else:
       for field, error in sign_in_form_variable.errors.items():
-        # Eiqui o que fago e que recorra os distintos fields do form e que lle 
-      # asigne o formato de error (O borde en vermello)
-        print(field)
+        # Eiqui o que fago e que recorra os distintos fields do form e que lle asigne o formato de error (O borde en vermello)
         sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
       # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         #messages.add_message(request, messages.ERROR, error)
-        messages.add_message(request, messages.ERROR, "As credenciales non son válidas. Teña en conta que se fai distinción entre maíusculas e minúsculas")
+      messages.add_message(request, messages.ERROR, "There is no user with those credentials. Try again or create a new TerraMeiga account")
       return redirect('sign_in')
   context = {
         "sign_in_form": sign_in_form_variable

@@ -1,0 +1,97 @@
+Privacy Policy 
+<br>
+Effective Date: 01-March-2024<br>
+<br>
+<strong>1. Introduction</strong>
+<br>
+   This Privacy Policy outlines how [Your Company Name] ("we," "us," or "our") collects, uses, shares, and protects personal data as required by the General Data Protection Regulation (GDPR). By using our website [Your Website URL] ("the Website"), you consent to the practices described in this Privacy Policy.
+<br>
+<strong>2. Definitions</strong>
+<br>
+   a. "Personal Data" means any information that relates to an identified or identifiable natural person (a "Data Subject").
+<br>
+   b. "Data Processing" includes any operation or set of operations performed on personal data, such as collection, recording, organization, structuring, storage, adaptation, alteration, retrieval, consultation, use, disclosure, dissemination, alignment, combination, restriction, erasure, or destruction.
+<br>
+<strong>3. Information We Collect</strong>
+<br>
+   a. Personal Data: We may collect personal data, including but not limited to your name, email address, phone number, and other details you provide when contacting us or using our services.
+<br>
+   b. Usage Information: We automatically collect information about your usage of the Website, including your IP address, browser type, device information, and pages visited.
+<br>
+   c. Cookies: We use cookies and similar tracking technologies to enhance your experience on the Website. For more information, please refer to our Cookie Policy.
+<br>
+<strong>4. Legal Basis for Data Processing</strong>
+<br>
+   We may process personal data based on one or more of the following legal bases:
+<br>
+   a. Consent: We may process data with your explicit consent.
+<br>
+   b. Contractual Necessity: We process data to fulfill a contract with you.
+<br>
+   c. Legal Obligation: We may process data to comply with legal obligations.
+<br>
+   d. Legitimate Interests: We may process data based on our legitimate interests, provided they do not override your rights and interests.
+<br>
+<strong>5. Data Use</strong>
+<br>
+   We may use personal data for the following purposes:
+<br>
+   a. To provide and maintain the Website.
+<br>
+   b. To communicate with you and respond to your inquiries.
+<br>
+   c. To improve the Website and its content.
+<br>
+   d. To analyze usage patterns and conduct research.
+<br>
+   e. To comply with legal obligations.
+<br>
+<strong>6. Data Sharing</strong>
+<br>
+   We do not sell or rent your personal data to third parties. However, we may share your data with:
+<br>
+   a. Service Providers: We may share data with service providers who help us operate the Website and provide our services.
+<br>
+   b. Legal Compliance: We may disclose data to comply with legal requirements, protect our rights, or respond to a legal request.
+<br>
+<strong>7. Data Transfer</strong>
+<br>
+   Your data may be transferred to, processed in, and stored in countries outside the European Economic Area (EEA). We ensure that such transfers comply with GDPR requirements and protect your data.
+<br>
+<strong>8. Data Retention</strong>
+<br>
+   We will retain your personal data for as long as necessary to fulfill the purposes for which it was collected, as required by legal obligations, or as otherwise stated in this Privacy Policy.
+<br>
+<strong>9. Data Security</strong>
+<br>
+   We implement appropriate security measures to protect your personal data from unauthorized access and disclosure. However, no data transmission or storage is entirely secure.
+<br>
+<strong>10. Your Rights</strong>
+<br>
+   Under GDPR, you have rights regarding your personal data, including:
+<br>
+   a. Right to Access: You can request access to your personal data.
+<br>
+   b. Right to Rectification: You can request the correction of inaccurate data.
+<br>
+   c. Right to Erasure: You can request the deletion of your data under specific circumstances.
+<br>
+   d. Right to Restriction of Processing: You can request limitations on data processing.
+<br>
+   e. Right to Data Portability: You can request your data in a structured, commonly used format.
+<br>
+   f. Right to Object: You can object to the processing of your data.
+<br>
+   g. Right to Withdraw Consent: If processing is based on consent, you can withdraw it at any time.
+<br>
+   To exercise your rights, please contact us at [Your Contact Information].
+<br>
+<strong>11. Contact Us</strong>
+<br>
+   If you have questions or concerns about this Privacy Policy or our data practices, please contact us at [Your Contact Information].
+<br>
+<strong>12. Changes to this Privacy Policy</strong>
+<br>
+   We reserve the right to modify this Privacy Policy at any time. Please review it periodically for updates.
+<br>
+<strong>This Privacy Policy was last updated on [Date of Last Update].</strong>

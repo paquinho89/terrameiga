@@ -16,7 +16,6 @@ class sign_in_form_1(AuthenticationForm):
             'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
             'password' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'min 8 caracteres'}),
         }
-        __all__ = ['email', 'password']
 
 class sign_up_form_2(UserCreationForm):
     class Meta:
