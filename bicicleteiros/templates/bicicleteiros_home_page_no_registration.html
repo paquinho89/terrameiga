@@ -8,7 +8,40 @@
 <style>
   body{
     background-color:black;
-  }    
+  }
+  /*Esto é para darlle formato aos message.ERRORS porque por defecto non traen formato*/
+  .alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    position:absolute;
+    position: sticky;
+    top: 0
+    }
+  /*Esto é para darlle formato ao botón da cruz que pecha a alerta da mensaxe de error*/
+  .alert-error .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px; /* Adjust the font size as needed */
+      }
+  /*Esto é para darlle formato ao botón da cruz que pecha a alerta do mensxe de success*/
+  .alert-success .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px; /* Adjust the font size as needed */
+      }
   /*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
   no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
   .navbar-toggler-icon {
@@ -57,6 +90,8 @@
   <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
     {% if forloop.last %}
     <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
+      <!--Esto é para que mostre un botón que permita pechar a mensaxe que se mostra-->
+		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <strong>{{ m }}</strong>
     </div>
     {% endif %}

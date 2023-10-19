@@ -105,18 +105,16 @@ def sign_in_view(request):
         login(request, user_auth)
         messages.success(request,
                         """
-                        <h2>Password reset sent</h2><hr>
-                        <p>
-                            Eiqui metes o que quieras
-                        </p>
+                        Welcome! You can check everything of the Paquinho's journey. 
                         """
                     )
         return redirect('bicleteiros_home_page')
     else:
-      for field, error in sign_in_form_variable.errors.items():
+      #Comento esto porque para o formulario que hai de AuthenticationForm preconfigurado por Django esta esto non me funciona.
+      #for field, error in sign_in_form_variable.errors.items():
         # Eiqui o que fago e que recorra os distintos fields do form e que lle asigne o formato de error (O borde en vermello)
-        sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-      # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
+        #sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         #messages.add_message(request, messages.ERROR, error)
       messages.add_message(request, messages.ERROR, "There is no user with those credentials. Try again or create a new TerraMeiga account")
       return redirect('sign_in')
@@ -138,7 +136,9 @@ def personal_data_view(request):
       messages.add_message(request, messages.SUCCESS, 'Your personal data has been updated')
       return redirect('personal_data')
     else:
-      messages.add_message(request, messages.WARNING, 'os datos non se puderon actualizar')
+      for field, error in form_personal_data.errors.items():
+          form_personal_data[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+      messages.add_message(request, messages.ERROR, 'The data could not be updated. Please check the below errors')
   context = {
       'personal_data_update_form':form_personal_data
   }
@@ -151,10 +151,14 @@ def password_update_view(request):
         user = form_password_update.save()
         # Importante
         update_session_auth_hash(request, user)
-        messages.add_message(request, messages.SUCCESS, 'Your password has been updated')
+        messages.add_message(request, messages.SUCCESS, 'Your password has been updated!')
         return redirect('password')
     else:
-        messages.add_message(request, messages.WARNING, 'The password could not be updated')
+        # Eiqui o que fago e que recorra os distintos fields do form e que lle 
+        # asigne o formato de error (O borde en vermello)
+        for field, error in form_password_update.errors.items():
+          form_password_update[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+          messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
   context = {
       'password_update_form': form_password_update
   }

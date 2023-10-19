@@ -1,69 +1,86 @@
-{% extends 'profile_account/base_profile_account.html' %}
+{% extends 'base/base_registered.html' %}
 <!--To load the Django library to translate your text.-->
-
 {% load i18n %}
 
 {% load static %}
 
 {% block content %}
 
-
-    <!--{% for field in personal_data_update_form.visible_fields %}
-    <tr>
-        <td>
-        {{ field }}
-        Co "if messages" solo imprimo o error se hai alerta,se non hai non imprimo o erro
-        {% if messages %}
-        <label style="color: red;">{{ field.errors }}</label>
-        {% endif %}
-        </td>
-    </tr>
-    {% endfor %}-->
-
-    <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
-        <div class="tab-pane fade show active" id="personal_data" role="tabpanel" aria-labelledby="account-tab">
-            <h3 class="mb-4">{% trans "Personal Data" %}</h3>
-            <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
-                {% csrf_token %}
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>{% trans "Email" %}</label>
-                            {{ personal_data_update_form.email }}
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>{% trans "Name" %}</label>
-                            {{ personal_data_update_form.username }}
-                        </div>
-                    </div>
-                    <div class="dropdown col-md-6">
-                        <div class="dropdown form-group">
-                            <label>{% trans "Country" %}</label>
-                            {{ personal_data_update_form.country }}
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>{% trans "Language" %}</label>
-                            {{ personal_data_update_form.language }}
-                        </div>
-                    </div>
+<section class="py-5 my-5">
+	<div class="container">
+		<div class="bg-white shadow rounded-lg d-block d-sm-flex">
+			<div class="profile-tab-nav border-right" id="navigation_personal_area_section">
+				<div class="p-4">
+					<h4 class="text-center">{{request.user.email}}</h4>
+				</div>
+                <!--The tab -->
+				<ul class="nav nav-pills">
+					<li class="nav-item">
+					  <a class="nav-link active" href="{% url 'personal_data' %}">Personal Data</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="{% url 'password' %}">Password</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="{% url 'delete_account' %}">Delete Account</a>
+					</li>
+				  </ul>
+                  <!--End tab -->
                 </div>
-                <div>
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">Update</button>
-                    </div>
+			</div>
+            <div id="personal_data_section" class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="personal_data" role="tabpanel" aria-labelledby="account-tab">
+                    <h3 class="mb-4"><strong>{% trans "Personal Data" %}</strong></h3>
+                    <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    {{ personal_data_update_form.email }}
+                                    {% if messages %}
+                                    <label id="label_error" style="color: red;">{{ personal_data_update_form.email.errors }}</label>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label>Username</label>
+                                    {{ personal_data_update_form.username }}
+                                    {% if messages %}
+                                    <label id="label_error" style="color: red;">{{ personal_data_update_form.username.errors }}</label>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    {{ personal_data_update_form.country }}
+                                    {% if messages %}
+                                    <label id="label_error" style="color: red;">{{ personal_data_update_form.country.errors }}</label>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-group">
+                                    <label>Language</label>
+                                    {{ personal_data_update_form.language }}
+                                    {% if messages %}
+                                    <label id="label_error" style="color: red;">{{ personal_data_update_form.language.errors }}</label>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                            <div class="form-group">
+                                <button id="update_personal_data_button" type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">Update your data</button>
+                            </div>
+                        </div>
+                    </form>
+                    
                 </div>
-            </form>
-            <!--<form class="mx-1 mx-md-4" method="POST" action="" novalidate>
-                {% csrf_token %}
-                    {{ personal_data_update_form }}
-                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">Update</button>
-                </div>
-            </form>-->
+            </div>
         </div>
     </div>
+</section>
 {% endblock content %}

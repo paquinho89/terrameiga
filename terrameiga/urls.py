@@ -28,7 +28,7 @@ urlpatterns = [
     path('account_confirmation_email_sent/', TemplateView.as_view(template_name = "account_confirm_email_sent.html"), name="account_confirmation_email_sent"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),
     path('log_out/', log_out_view, name="log_out"),    
-    path('account/personal_data/', personal_data_view, name="personal_data"),
+    
     path('account/password/', password_update_view, name="password"),
     path('account/delete_account/', delete_account_view, name="delete_account"),
     #USER RESET PASSWORD URLs
@@ -43,10 +43,11 @@ urlpatterns = [
     path('', country_data_no_registered_view, name="home_page_no_registered"),
     path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
     path('bicicleteiros_estadísticas/', estadistica_data_view, name="bicleteiros_estadisticas"),
+    path('account/personal_data/', personal_data_view, name="personal_data"),
     #REGISTRATION_URLs
     path('sign_in/', sign_in_view, name="sign_in"),
     path('sign_up/', sign_up_view, name="sign_up"),
-    #Eliminar path('proba/', sign_up_view_proba_eliminar, name="proba"),
+    path('proba/', TemplateView.as_view(template_name = "templates/eliminar_proba.html"), name="proba"),
 
 
 

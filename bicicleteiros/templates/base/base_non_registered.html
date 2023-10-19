@@ -1,10 +1,37 @@
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
+
 {% load static %}
+
+<!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
+<div id="content" class="mt-5 fixed-top">
+  {% if messages %}
+  {% for m in messages %}
+  <!--Esto é para que me imprima solo a última mensaxe das alertas que é a que se corresponde coa mensaxe de sucess-->
+  <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
+    {% if forloop.last %}
+    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
+      <!--Esto é para que mostre un botón que permita pechar a mensaxe que se mostra-->
+		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>{{ m }}</strong>
+    </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+</div>
+<!--Eiqui estou decindo canto tempo ten que estar a alerta unha vez que se completou a acción-->
+<!--O 9000 está a endicar o tempo que está a alerta visible. Despois a alerta desaparece.-->
+<script>
+  setTimeout(function(){
+      if ($('#msg').length > 0) {
+          $('#msg').remove();
+      }
+  }, 7000)
+</script>
 
 <!--Nav Bar-->
 {% include 'base/nav_bar_non_registered.html' %}
 <!--End Nav Bar-->
-
-
 
 <!doctype html>
 <html lang="en">
@@ -22,9 +49,30 @@
     position: sticky;
     top: 0
     }
-  #newsletter_message_error {
-    color:red
-    }
+  /*Esto é para darlle formato ao botón da cruz que pecha a alerta da mensaxe de error*/
+  .alert-error .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px; /* Adjust the font size as needed */
+      }
+  /*Esto é para darlle formato ao botón da cruz que pecha a alerta do mensxe de success*/
+  .alert-success .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px; /* Adjust the font size as needed */
+      }
   #body_sign_in {
     background-color: black;
     margin-top: 0;

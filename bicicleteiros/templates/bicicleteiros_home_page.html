@@ -1,3 +1,5 @@
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
 
 {% extends 'base/base_registered.html' %}
 {% load static %}
@@ -5,9 +7,6 @@
 {% block content %} 
 
 <body>
-<!--Nav Bar-->
-{% include 'base/nav_bar.html' %}   
-<!--end Nav Bar-->
 
 <!-- Page content-->
 <div class="row">
