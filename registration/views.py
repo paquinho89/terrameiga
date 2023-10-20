@@ -83,7 +83,8 @@ def sign_up_email_validation_confirmation_view (request, uidb64, token):
   #Con esta función fago log-in sen necesidade de introducir a contraseña. Ten en conta que eu nesta función non teño contraseña porque Django encríptaa e
   # non hai forma de desencriptala
   login(request, user)
-  return redirect('personal_data')
+  messages.add_message(request, messages.SUCCESS, "YOUR ACCOUNT HAS BEEN CREATED. Thanks for being part of this adventure!")
+  return redirect('bicleteiros_home_page')
 
 def log_out_view (request):
    logout(request)
@@ -176,11 +177,11 @@ def delete_account_view (request):
       if str(text_delete_form) == str("terrameiga"):
         current_user.delete()
         messages.add_message(request, messages.SUCCESS, 'Your account has been deleted')
-        return redirect('home_page')
+        return redirect('home_page_no_registered')
       else:
         #Esto é para que se vacíe o formulario por se hai un erro
         delete_account_form_variable = delete_account_form()
-        messages.add_message(request, messages.SUCCESS, 'Please type "terrameiga"')
+        messages.add_message(request, messages.ERROR, 'Please, type "terrameiga". The text has to be in lower case')
     else:
       messages.add_message(request, messages.SUCCESS, 'The form is not valid')
   context = {

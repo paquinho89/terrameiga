@@ -171,10 +171,16 @@
     }
     /*Con esto oculta a barra horizontal*/
     body{
-        overflow-x: hidden;
-        background-color: black;
-        /*Para que non existan márxenes nin na esquerda nin na dereita*/
-        margin: 0;
+      background-color: black;
+      overflow-x: hidden;
+      margin-top: 0;
+      margin-bottom: 0;
+      height: auto;
+      /*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     #background_sign_in {
         background-color: black;
