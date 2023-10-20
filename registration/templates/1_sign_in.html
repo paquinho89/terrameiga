@@ -4,46 +4,7 @@
 
 {% load static %}
 
-<!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
-<div id="content" class="mt-5 fixed-top">
-  {% if messages %}
-  {% for m in messages %}
-  <!--Esto é para que me imprima solo a última mensaxe das alertas que é a que se corresponde coa mensaxe de sucess-->
-  <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
-    {% if forloop.last %}
-    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
-      <strong>{{ m }}</strong>
-    </div>
-    {% endif %}
-  {% endfor %}
-{% endif %}
-</div>
-<!--Eiqui estou decindo canto tempo ten que estar a alerta unha vez que se completou a acción-->
-<!--O 9000 está a endicar o tempo que está a alerta visible. Despois a alerta desaparece.-->
-<script>
-  setTimeout(function(){
-      if ($('#msg').length > 0) {
-          $('#msg').remove();
-      }
-  }, 7000)
-</script>
-
 {% block content %} 
-
-<style>
-  #body_sign_in {
-    background-color: black;
-    margin-top: 0;
-    margin-bottom: 0;
-    height: auto;
-/*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
- 
-</style>
 
 <body id="body_sign_in">
     <div id="wrapper" class="container h-100">
@@ -79,12 +40,6 @@
                           </td>
                         </tr>
                       {% endfor %}
-                    
-                    <div class="d-flex flex-row align-items-left">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                      </div>
-                    </div>
 
                     <div class="d-flex justify-content-left mb-lg-4 mt-1">
                       <button id="sign_in_button" type="submit" class="btn-lg mt-2" href="#" type="submit">

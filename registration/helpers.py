@@ -7,6 +7,8 @@ import os
 from django.core.mail import send_mail
 from django.conf import settings
 
+from django.template.loader import render_to_string
+
 
 
 
@@ -44,13 +46,19 @@ def email_validation(self):
             return self
         
 
-#Fuction to send an email to confirm the email of the new user which just signed up
+#Function to send an email to confirm the email of the new user which just signed up
 def send_confirm_email (email, uidb64, token):
-    subject = "TerraMeiga - Please, confirm your email"
-    message = f'Click in the following ling to confirm the email and create your account http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/'
-    email_from = settings. EMAIL_HOST_USER
+    subject = "TerraMeiga - Email Confirmation"
+    #message = f'Click in the following link to confirm your email and create your account http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/'
+    message = render_to_string('email_body.html', {
+        'confirmation_link': f'http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/',
+    })
+    #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
+    sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
+
     recipient_list = [email]
-    send_mail(subject, message, email_from, recipient_list)
+    # Send the email with HTML content
+    send_mail(subject, '', sender_email, recipient_list, html_message=message)
     return True
 
 # Function to send the email to reset the password in case it has been forgotten.
