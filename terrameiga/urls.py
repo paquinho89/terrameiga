@@ -32,11 +32,6 @@ urlpatterns = [
     path('account/delete_account/', delete_account_view, name="delete_account"),
     #USER RESET PASSWORD URLs
     path('reset_password/', password_reset_view, name="reset_password"),
-    #Para máis info sobre estas vistas perconfiguradas para manejar o reseteo de contraseñas, visita a documentación oficial de django
-    #https://docs.djangoproject.com/en/4.2/topics/auth/default/
-    # ou este vídeo: https://www.youtube.com/watch?v=sFPcd6myZrY
-    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),  name="password_reset_done"),
-    path('reset_password/<uidb64>/<token>/', password_new_password_view, name="password_reset_confirm"),
 
     #BICICLETEIROS_URLs
     path('', country_data_no_registered_view, name="home_page_no_registered"),
@@ -47,9 +42,12 @@ urlpatterns = [
     path('sign_in/', sign_in_view, name="sign_in"),
     path('sign_up/', sign_up_view, name="sign_up"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),
-    path('proba/', TemplateView.as_view(template_name = "email_body.html"), name="proba"),
-
-
+    #Para máis info sobre estas vistas perconfiguradas para manejar o reseteo de contraseñas, visita a documentación oficial de django
+    #https://docs.djangoproject.com/en/4.2/topics/auth/default/
+    # ou este vídeo: https://www.youtube.com/watch?v=sFPcd6myZrY
+    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),  name="password_reset_done"),
+    path('password_reset_confirmation/<uidb64>/<token>/', password_new_password_view, name="password_reset_confirm"),
+    path('proba/', TemplateView.as_view(template_name = "password_reset_complete.html"), name="proba"),
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),

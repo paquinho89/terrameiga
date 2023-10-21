@@ -50,12 +50,11 @@ def email_validation(self):
 def send_confirm_email (email, uidb64, token):
     subject = "TerraMeiga - Email Confirmation"
     #message = f'Click in the following link to confirm your email and create your account http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/'
-    message = render_to_string('email_body.html', {
+    message = render_to_string('email_body_confirmation.html', {
         'confirmation_link': f'http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/',
     })
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
-
     recipient_list = [email]
     # Send the email with HTML content
     send_mail(subject, '', sender_email, recipient_list, html_message=message)
@@ -63,11 +62,16 @@ def send_confirm_email (email, uidb64, token):
 
 # Function to send the email to reset the password in case it has been forgotten.
 def send_reset_password_mail (email, uidb64,  token):
-    subject = "TerraMeiga - Reset your password"
-    message = f'Please, click on the link to reset your password http://127.0.0.1:8000/reset_password/{uidb64}/{token}/'
-    email_from = settings.EMAIL_HOST_USER
+    subject = "TerraMeiga - Password Recovery"
+    #message = f'Please, click on the link to reset your password http://127.0.0.1:8000/reset_password/{uidb64}/{token}/'
+    message = render_to_string('email_body_password.html', {
+        'confirmation_link': f'http://127.0.0.1:8000/password_reset_confirmation/{uidb64}/{token}/',
+    })
+    #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
+    sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
     recipient_list = [email]
-    send_mail(subject, message, email_from, recipient_list)
+    # Send the email with HTML content
+    send_mail(subject, '', sender_email, recipient_list, html_message=message)
     return True
 
 

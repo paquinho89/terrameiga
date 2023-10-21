@@ -214,9 +214,9 @@ def password_reset_view(request):
         messages.add_message(request, messages.SUCCESS, 'An email was sent to your email inbox')
         return redirect('password_reset_done')
       else:
-        messages.add_message(request, messages.WARNING, 'The email does not exist in our data base')
+        messages.add_message(request, messages.ERROR, 'The email does not exist in our data base')
     else:
-      messages.add_message(request, messages.WARNING, 'Email not valid')
+      messages.add_message(request, messages.ERROR, 'Email not valid')
 
   context = {
     'email_recovery' : password_recovery_form_variable
