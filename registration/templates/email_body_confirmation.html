@@ -20,8 +20,9 @@
                             <p>Hello!</p>
                             <p>Thank you for signing up with TerraMeiga and supporting me on this adventure. To complete your registration, please click the following link to confirm your email:</p>
                             <!--IMPORTANTE: As imaxes non se van a renderizar no email porque o dominio (127.0.0.1:8000), é un dominio local. No momento que metas o dominio
-                            as imaxes deberíanse renderizar no email que lle chega ao user porque é un dominio seguro é hotmail/gmail/apple non o bloquea.-->
-                            <a href="http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/" style="color: rgb(83, 158, 138)"><strong>Confirm Your Email</strong></a>
+                            as imaxes deberíanse renderizar no email que lle chega ao user porque é un dominio seguro é hotmail/gmail/apple non o bloquea. Terás que cambiar a url no
+                            arquivo de helpers.px-->
+                            <a href="{{ confirmation_link }}" style="color: rgb(83, 158, 138)"><strong>Confirm Your Email</strong></a>
                             <p style="margin-top: 10px;">If you did not register on TerraMeiga, you can safely ignore this email.</p>
                             <p>Happy biking!</p>
                         </td>

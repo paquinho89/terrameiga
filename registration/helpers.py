@@ -49,7 +49,10 @@ def email_validation(self):
 #Function to send an email to confirm the email of the new user which just signed up
 def send_confirm_email (email, uidb64, token):
     subject = "TerraMeiga - Email Confirmation"
-    #message = f'Click in the following link to confirm your email and create your account http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/'
+    # message = f'Click in the following link to confirm your email and create your account http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/'
+    # IMPORTANTE: As imaxes non se van a renderizar no email porque o dominio (127.0.0.1:8000), é un dominio local. No momento que metas o dominio
+    # as imaxes deberíanse renderizar no email que lle chega ao user porque é un dominio seguro é hotmail/gmail/apple non o bloquea. Terás que cambiar a url no
+    # arquivo de helpers.px
     message = render_to_string('email_body_confirmation.html', {
         'confirmation_link': f'http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/',
     })
@@ -65,7 +68,7 @@ def send_reset_password_mail (email, uidb64,  token):
     subject = "TerraMeiga - Password Recovery"
     #message = f'Please, click on the link to reset your password http://127.0.0.1:8000/reset_password/{uidb64}/{token}/'
     message = render_to_string('email_body_password.html', {
-        'confirmation_link': f'http://127.0.0.1:8000/password_reset_confirmation/{uidb64}/{token}/',
+        'password_recovery_link': f'http://127.0.0.1:8000/password_recovery_update/{uidb64}/{token}/',
     })
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"

@@ -83,7 +83,7 @@ def sign_up_email_validation_confirmation_view (request, uidb64, token):
   #Con esta función fago log-in sen necesidade de introducir a contraseña. Ten en conta que eu nesta función non teño contraseña porque Django encríptaa e
   # non hai forma de desencriptala
   login(request, user)
-  messages.add_message(request, messages.SUCCESS, "YOUR ACCOUNT HAS BEEN CREATED. Thanks for being part of this adventure!")
+  messages.add_message(request, messages.SUCCESS, "Your account was succesfully created. Thanks for being part of this adventure!")
   return redirect('bicleteiros_home_page')
 
 def log_out_view (request):
@@ -146,8 +146,8 @@ def personal_data_view(request):
   return render (request, 'profile_account/personal_data.html/', context)
 
 def password_update_view(request):
-  form_password_update = password_update_form(request.user, request.POST)
   if request.method == 'POST':
+    form_password_update = password_update_form(request.user, request.POST)
     if form_password_update.is_valid():
         user = form_password_update.save()
         # Importante
@@ -160,6 +160,10 @@ def password_update_view(request):
         for field, error in form_password_update.errors.items():
           form_password_update[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
           messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
+  else:
+        # If it's a GET request, create an empty form
+        form_password_update = password_update_form(request.user)
+
   context = {
       'password_update_form': form_password_update
   }
@@ -189,7 +193,6 @@ def delete_account_view (request):
   }
   return render (request, 'profile_account/delete_account.html', context)
 
-      
 
 def password_reset_view(request):
   password_recovery_form_variable = password_reset_form (data=request.POST)
@@ -202,7 +205,6 @@ def password_reset_view(request):
       #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
       email_form =  CustomUser.objects.filter(email=email_form_str).first()
       if CustomUser.objects.filter(email=email_form).exists():
-        print('existe')
         #This is to generate a random token to include in the link which will be sent to the customer and he/she will be able to reset the password.
         token = str(uuid.uuid4())
         #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
@@ -223,7 +225,7 @@ def password_reset_view(request):
   }
   return render (request, 'password_reset.html', context)
 
-
+#This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
 def password_new_password_view(request, uidb64, token):
   uid = force_str(urlsafe_base64_decode(uidb64))
   user = CustomUser.objects.get(pk=uid)
@@ -231,11 +233,12 @@ def password_new_password_view(request, uidb64, token):
   if request.method == 'POST':
     if password_reset_form.is_valid():
       password_reset_form.save()
-      messages.add_message(request, messages.SUCCESS, 'Your password has been reseted with your email')
-      return redirect('sign_in')
+      #Logeamos o usuario directamente
+      login(request, user)
+      messages.add_message(request, messages.SUCCESS, 'Your password has been changed')
+      return redirect('bicleteiros_home_page')
     else:
-      messages.add_message(request, messages.WARNING, "The password is not maching or the link is not valid anymore")
-
+      messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
   context = {
     'reset_password_form' : password_reset_form
   }

@@ -53,80 +53,88 @@ def country_data_no_registered_view (request):
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
 
+
 def country_data_view (request):
-    all_entry_days= money_model.objects.all()
-    #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
-    all_entry_days_last=all_entry_days.last()
-    #Da última entrada collemos do día collemos o día da viaxe na que estamos
-    current_journey_day = all_entry_days_last.journey_day
-    #Da última entrada collemos o país
-    current_country = all_entry_days_last.country
-    country_number_country = country_information_model.objects.get(country= current_country).country_number
-    visa_required = country_information_model.objects.get(country = current_country).visa_requerided
-    visa_price = country_information_model.objects.get(country = current_country).visa_price
-    capital_city = country_information_model.objects.get(country = current_country).capital_town
-    population_country = country_information_model.objects.get(country = current_country).population
-    population_dens = country_information_model.objects.get(country = current_country).population_density
-    rent_per_capita_country = country_information_model.objects.get(country = current_country).rent_per_capita
-    surface_country = country_information_model.objects.get(country = current_country).surface
-    currency_country = country_information_model.objects.get(country = current_country).currency
-    time_zone_value = country_information_model.objects.get(country = current_country).time_zone
-    total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
-    total_km = total_km_dictionary['km_day__sum']
-    flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
-    # Form configuration for the COMMENTS of the CHAT:
-    form_chat = chat_form(data=request.POST)
-    # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
-    if request.method == 'POST':
-        #Check whether it is valid:
-        if form_chat.is_valid():
-            post_comment = form_chat.cleaned_data.get('comentario')
-            #Gardo o comentario e o user que puxo o comentario no modelo de "chat_comments_model". Desta forma podo mostar o usuario que puxo o comentario.
-            new_instance = chat_comments_model (comentario= post_comment, username_comment = request.user.username)
-            new_instance.save()
-            #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
-            messages.success(request, 'Grazas por participar nesta aventura e engadir o teu comentario!')
-            #artigos_content e que para que me retorne a vista do blog
-            return redirect('bicleteiros_home_page')
-        else:
-            #Comentando a seguinte línea o formulario non se vacía despois do error. 
-            #newsletter_email = form_newsletter()
-            # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
-            # asigne o formato de error (O borde en vermello)
-            for field, errors in form_chat.errors.items():
-                form_chat[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-            #Esto imprime o error xusto debaixo do cajetín para inserir o correo
-            messages.error(request, form_chat.errors)
-            #messages.error(request, "Insira un enderezo de correo electrónico válido!")
+    #Co request.user fago que solo os usuarios que están rexistrados podan acceder a páxina de bicicleteiros (na que se mostra a miña posición)
+    #No caso de que non estén rexistrados, mándoos a páxina de home_page_no_registered.
+    if request.user.is_authenticated:
+        all_entry_days= money_model.objects.all()
+        #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
+        all_entry_days_last=all_entry_days.last()
+        #Da última entrada collemos do día collemos o día da viaxe na que estamos
+        current_journey_day = all_entry_days_last.journey_day
+        #Da última entrada collemos o país
+        current_country = all_entry_days_last.country
+        country_number_country = country_information_model.objects.get(country= current_country).country_number
+        visa_required = country_information_model.objects.get(country = current_country).visa_requerided
+        visa_price = country_information_model.objects.get(country = current_country).visa_price
+        capital_city = country_information_model.objects.get(country = current_country).capital_town
+        population_country = country_information_model.objects.get(country = current_country).population
+        population_dens = country_information_model.objects.get(country = current_country).population_density
+        rent_per_capita_country = country_information_model.objects.get(country = current_country).rent_per_capita
+        surface_country = country_information_model.objects.get(country = current_country).surface
+        currency_country = country_information_model.objects.get(country = current_country).currency
+        time_zone_value = country_information_model.objects.get(country = current_country).time_zone
+        total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
+        total_km = total_km_dictionary['km_day__sum']
+        flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
+        # Form configuration for the COMMENTS of the CHAT:
+        form_chat = chat_form(data=request.POST)
+        # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
+        if request.method == 'POST':
+            #Check whether it is valid:
+            if form_chat.is_valid():
+                post_comment = form_chat.cleaned_data.get('comentario')
+                #Gardo o comentario e o user que puxo o comentario no modelo de "chat_comments_model". Desta forma podo mostar o usuario que puxo o comentario.
+                new_instance = chat_comments_model (comentario= post_comment, username_comment = request.user.username)
+                new_instance.save()
+                #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
+                messages.success(request, 'Grazas por participar nesta aventura e engadir o teu comentario!')
+                #artigos_content e que para que me retorne a vista do blog
+                return redirect('bicleteiros_home_page')
+            else:
+                #Comentando a seguinte línea o formulario non se vacía despois do error. 
+                #newsletter_email = form_newsletter()
+                # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+                # asigne o formato de error (O borde en vermello)
+                for field, errors in form_chat.errors.items():
+                    form_chat[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+                #Esto imprime o error xusto debaixo do cajetín para inserir o correo
+                messages.error(request, form_chat.errors)
+                #messages.error(request, "Insira un enderezo de correo electrónico válido!")
 
-    #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
-    chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
-    #Contamos o número total de comentarios para polo na páxina
-    number_comments=chat_comments_model.objects.all().count()
-    
-    context = {
-        'journey_day_html' : current_journey_day ,
-        'country_number_html' : country_number_country,
-        'total_km_html' : total_km,
-        'current_country_html' : current_country,
-        'visa_required_html' : visa_required,
-        'visa_price_html' : visa_price,
-        'flag_url_html' : flag_url,
-        'capital_city_html' : capital_city,
-        'surface_html' : surface_country,
-        'population_html' : population_country,
-        'density_population_html' : population_dens,
-        'rent_per_capita_html' : rent_per_capita_country,
-        'currency_html' : currency_country,
-        'time_zone_html' : time_zone_value,
-
-        'chat_form_html': form_chat,
-        'chat_comments_all_html' : chat_comments_all,
-        'chat_number_comments_html' : number_comments,
+        #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
+        chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
+        #Contamos o número total de comentarios para polo na páxina
+        number_comments=chat_comments_model.objects.all().count()
         
-        'graph_money_type_html' :all_entry_days
-    }
-    return render (request, 'bicicleteiros_home_page.html', context)
+        context = {
+            'journey_day_html' : current_journey_day ,
+            'country_number_html' : country_number_country,
+            'total_km_html' : total_km,
+            'current_country_html' : current_country,
+            'visa_required_html' : visa_required,
+            'visa_price_html' : visa_price,
+            'flag_url_html' : flag_url,
+            'capital_city_html' : capital_city,
+            'surface_html' : surface_country,
+            'population_html' : population_country,
+            'density_population_html' : population_dens,
+            'rent_per_capita_html' : rent_per_capita_country,
+            'currency_html' : currency_country,
+            'time_zone_html' : time_zone_value,
+
+            'chat_form_html': form_chat,
+            'chat_comments_all_html' : chat_comments_all,
+            'chat_number_comments_html' : number_comments,
+            
+            'graph_money_type_html' :all_entry_days
+        }
+        return render (request, 'bicicleteiros_home_page.html', context)
+    else:
+        # User is not authenticated, redirect to the sign_in page
+        messages.error(request, 'You must be logged in to access this page.')
+        return redirect('sign_in')  # Change 'login' to your actual login URL name
 
 
 

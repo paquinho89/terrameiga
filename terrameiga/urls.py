@@ -46,8 +46,8 @@ urlpatterns = [
     #https://docs.djangoproject.com/en/4.2/topics/auth/default/
     # ou este vídeo: https://www.youtube.com/watch?v=sFPcd6myZrY
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),  name="password_reset_done"),
-    path('password_reset_confirmation/<uidb64>/<token>/', password_new_password_view, name="password_reset_confirm"),
-    path('proba/', TemplateView.as_view(template_name = "password_reset_complete.html"), name="proba"),
+    path('password_recovery_update/<uidb64>/<token>/', password_new_password_view, name="password_recovery_update"),
+    path('proba/', password_new_password_view, name="proba"),
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),
