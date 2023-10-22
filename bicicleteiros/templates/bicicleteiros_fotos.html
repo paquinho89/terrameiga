@@ -1,3 +1,196 @@
-<!--Bótalle un ollo a esta páxina que hai un template eiqui que me mola muitísimo
-https://themewagon.com/themes/free-bootstrap-4-html5-photography-website-template-photographer/
--->
+{% extends 'base/base_registered.html' %}
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
+
+{% load static %}
+
+{% block content %} 
+
+ 
+<body>
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- =======Page Header ======= -->
+    <div class="page-header d-flex align-items-center">
+      <div class="container position-relative">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6 text-center mb-4">
+            <h2><strong>Spain</strong></h2>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Page Header -->
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div>
+
+        <div class="row gy-4 justify-content-center">
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/email_confirmation.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/email_confirmation.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-2.jpg" title="Gallery 2" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/password_recovery.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-3.jpg" title="Gallery 3" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/password_recovery_update.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href='{% static "imaxes/password_recovery_update.jpg" %}' title="Gallery 4" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/password_recovery_email_confirmation.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-5.jpg" title="Gallery 5" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/image_4_registration.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-6.jpg" title="Gallery 6" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/password_recovery.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-7.jpg" title="Gallery 7" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item">
+              <img src='{% static "imaxes/image_2.jpg" %}' class="img-fluid" alt="" id="picture_object">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-8.jpg" title="Gallery 8" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/email_confirmation.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/email_confirmation.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-2.jpg" title="Gallery 2" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/password_recovery.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-3.jpg" title="Gallery 3" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/password_recovery_update.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href='{% static "imaxes/password_recovery_update.jpg" %}' title="Gallery 4" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/password_recovery_email_confirmation.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-5.jpg" title="Gallery 5" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/image_4_registration.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-6.jpg" title="Gallery 6" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/password_recovery.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-7.jpg" title="Gallery 7" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item -->
+            <div id="picture" class="col-xl-3 col-lg-4 col-md-6">
+              <div class="gallery-item">
+                <img src='{% static "imaxes/image_2.jpg" %}' class="img-fluid" alt="" id="picture_object">
+                <div class="gallery-links d-flex align-items-center justify-content-center">
+                  <a href="assets/img/gallery/gallery-8.jpg" title="Gallery 8" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                  <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div><!-- End Gallery Item --> 
+      </div>
+    </section><!-- End Gallery Section -->
+
+  </main><!-- End #main -->
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+{% endblock %}

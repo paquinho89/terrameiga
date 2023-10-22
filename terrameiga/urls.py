@@ -47,7 +47,8 @@ urlpatterns = [
     # ou este vídeo: https://www.youtube.com/watch?v=sFPcd6myZrY
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),  name="password_reset_done"),
     path('password_recovery_update/<uidb64>/<token>/', password_new_password_view, name="password_recovery_update"),
-    path('proba/', password_new_password_view, name="proba"),
+    path('bicicleteiros_pictures/', TemplateView.as_view(template_name = "bicicleteiros_fotos.html"), name="bicicleteiros_pictures"),
+    path('proba/', TemplateView.as_view(template_name = "bicicleteiros_fotos.html"), name="proba"),
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),
