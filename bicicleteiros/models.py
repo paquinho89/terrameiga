@@ -3,6 +3,7 @@ import re
 from datetime import datetime
 from django.utils import timezone
 from registration.models import CustomUser
+import random, os
 
 
 with open("bicicleteiros/static/lists/country_list.txt", "r") as country_list_file:
@@ -131,7 +132,31 @@ class videos_model (models.Model):
     youtube_link = models.CharField(max_length=1000, null=True, blank = True)
 
     def __str__(self):
-        return 'Week ' + str(self.week)  
+        return 'Week ' + str(self.week)
+
+
+def get_filename_extension (filepath):
+    #Esto colle a parte final da ruta, que será algo como "C/Users/Desktop/hat.png"
+    #Pois o os.path.basename o que está facendo e coller solo o "hat.png"
+    base_name=os.path.basename(filepath)
+    #Esto dividi o "hat.png" en hat (que será o name) e na ext (extensión), que será "png"
+    name, ext =os.path.splitext(base_name)
+    return name, ext
+
+def upload_image_path(instance, filename):
+    #This is given a random number as a name to the picture uploaded for the file
+    new_filename=random.randint(1,999)
+    name, ext= get_filename_extension(filename)
+    final_filename='{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
+    return "media_files/{new_filename}/{final_filename}".format(new_filename=new_filename, final_filename=final_filename)
+
+
+class photos_model (models.Model):
+    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
+    image_file = models.ImageField(upload_to=upload_image_path, null=True, blank = True, verbose_name="TerraMeiga_picture")
+
+    # def __str__(self):
+    #     return 'Week ' + str(self.week)  
 
 
 

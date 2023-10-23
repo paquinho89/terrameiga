@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import country_information_model, money_model, km_altitude_model, starting_date, chat_comments_model, CustomUser, videos_model
+from .models import country_information_model, money_model, km_altitude_model, starting_date, chat_comments_model, CustomUser, videos_model, photos_model
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
@@ -135,6 +135,12 @@ def country_data_view (request):
         # User is not authenticated, redirect to the sign_in page
         messages.error(request, 'You must be logged in to access this page.')
         return redirect('sign_in')  # Change 'login' to your actual login URL name
+
+def photos_view (request):
+    #Collemos todos os links das imaxes que temos
+    all_photos = photos_model.all()
+    print(all_photos)
+    return render(request, 'bicicleteiros_fotos.html')
 
 def videos_view (request):
     #Co values_list e o flat=True obteño solo os links de YouTube que é o que me interesa.
