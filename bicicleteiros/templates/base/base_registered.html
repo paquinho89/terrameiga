@@ -90,6 +90,9 @@ li{
     color: red;
     list-style-type: none;
 }
+#data_home_page{
+    color: white;
+}
 a{
     color: white;
 }
@@ -196,16 +199,23 @@ no STROKE configuro o color que me parece. O díxito final é a transparecia que
 /*Esto é para os tamaños das fotos no html de bicicleteiros_fotos.html*/
 #picture {
         margin: 0;
+        margin-bottom: 0;
+        margin-top: 0;
         padding: 0;
       }
-      #picture_object{
+#picture_object{
         width: 100%;
         height: 200px;
-        object-fit: cover;
-      }
+        object-fit: cover; /*Con esto a imaxe queda mellor e non se estira nin se estreita. Queda do se tamaño*/
+}   
 h2 { 
-color: rgba(191, 191, 191, 1); 
-};
+    color: rgba(191, 191, 191, 1); 
+}
+/*Esto é para darlle tamaño ao vídeos*/
+iframe{
+    width: 100%;
+    height: 200px;
+}
 </style>
 
 <!--Nav Bar-->

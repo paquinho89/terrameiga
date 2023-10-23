@@ -125,7 +125,13 @@ class km_altitude_model (models.Model):
     
     def __str__(self):
         return (str(self.journey_day) + ' days ' + self.country_name )
-    
+
+class videos_model (models.Model):
+    week = models.IntegerField(null=False, blank = False)
+    youtube_link = models.CharField(max_length=1000, null=True, blank = True)
+
+    def __str__(self):
+        return 'Week ' + str(self.week)  
 
 
 

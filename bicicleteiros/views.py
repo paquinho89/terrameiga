@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import country_information_model, money_model, km_altitude_model, starting_date, chat_comments_model, CustomUser
+from .models import country_information_model, money_model, km_altitude_model, starting_date, chat_comments_model, CustomUser, videos_model
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
@@ -7,7 +7,7 @@ from bicicleteiros.forms import chat_form
 from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
-
+import re
 
 # Create your views here.
 def country_data_no_registered_view (request):
@@ -136,7 +136,20 @@ def country_data_view (request):
         messages.error(request, 'You must be logged in to access this page.')
         return redirect('sign_in')  # Change 'login' to your actual login URL name
 
+def videos_view (request):
+    #Co values_list e o flat=True obteño solo os links de YouTube que é o que me interesa.
+    all_links = videos_model.objects.values_list('youtube_link', flat=True)
+    list_link_last_characters = []
+    for str_link in all_links:
+        #Collemos solo o final do link de YoutTube que é onde está o código que me interesa.
+        last_characters = str_link.rsplit('=',1)[1]
+        list_link_last_characters.append(last_characters)
+        
+    context={
+        'all_links_last_characters_html' : list_link_last_characters
+    }
 
+    return render (request, 'bicicleteiros_videos.html', context)
 
 def estadistica_data_view (request):
     all_entry_days= money_model.objects.all()
