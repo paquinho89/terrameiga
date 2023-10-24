@@ -144,20 +144,24 @@ def get_filename_extension (filepath):
     return name, ext
 
 def upload_image_path(instance, filename):
+    #The **instance** argument refers to the model instance the image is associated with
+    #The **filename** argument is the original name of the uploaded file and it has to be like that because the upload_to.
+    #I am not using filename, however I have to include it as the "upload_to" APIs function in the "image_file" field of the model expects 2 arguments.
+    #This is taking the country the picture is associated with and naming the folder with the country of the picture
+    folder_name=instance.country
     #This is given a random number as a name to the picture uploaded for the file
-    new_filename=random.randint(1,999)
-    name, ext= get_filename_extension(filename)
-    final_filename='{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
-    return "media_files/{new_filename}/{final_filename}".format(new_filename=new_filename, final_filename=final_filename)
+    file_name=random.randint(1,999)
+    name, ext= get_filename_extension(str(instance.image_file))
+    final_filename='{file_name}{ext}'.format(file_name=file_name, ext=ext)
+    return "media_files/{folder_name}/{final_filename}".format(folder_name=folder_name, final_filename=final_filename)
 
 
 class photos_model (models.Model):
-    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
+    country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
     image_file = models.ImageField(upload_to=upload_image_path, null=True, blank = True, verbose_name="TerraMeiga_picture")
 
-    # def __str__(self):
-    #     return 'Week ' + str(self.week)  
-
+    def __str__(self):
+        return str(self.country) + ' ' + str(self.image_file)  
 
 
 

@@ -157,6 +157,9 @@ print("ruta do static_dir" ,STATICFILES_DIRS)
 #MEDIA FILES: Estes son arquivos que suben os usuarios da web
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+print('MEDIA URLS')
+print(MEDIA_ROOT)
+print(MEDIA_URL)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -173,6 +176,8 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = 'paquinho89@gmail.com'
 EMAIL_HOST_PASSWORD = 'lfalufgrrjwftmsp'
+
+
 
 
 

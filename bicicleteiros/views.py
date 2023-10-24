@@ -138,9 +138,23 @@ def country_data_view (request):
 
 def photos_view (request):
     #Collemos todos os links das imaxes que temos
-    all_photos = photos_model.all()
-    print(all_photos)
-    return render(request, 'bicicleteiros_fotos.html')
+    all_photos = photos_model.objects.all()
+    #Poño nunha lista todos os países onde subín fotos de ese país.
+    country_dict = {}
+    for country_file_name in all_photos:
+        country = str(country_file_name).rsplit(" ",1)[0]
+        last_characters_file_name= str(country_file_name).rsplit("/",1)[-1]
+        # Check if the country is already in the dictionary. If it is not in the dict, it creates a list for the new country where all the file_names are going to be stored for that country.
+        # {'Spain': [list], 'France': [list]}
+        if country not in country_dict:
+            country_dict[country] = []
+        #Append the file name to the list of each specific country
+        country_dict[country].append(last_characters_file_name)
+
+    context = {
+        'country_dict_html' : country_dict
+    }
+    return render(request, 'bicicleteiros_fotos.html', context)
 
 def videos_view (request):
     #Co values_list e o flat=True obteño solo os links de YouTube que é o que me interesa.
