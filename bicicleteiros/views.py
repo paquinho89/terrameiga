@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import country_information_model, money_model, km_altitude_model, chat_comments_model, CustomUser, videos_model, photos_model
+from .models import country_information_model, money_model, km_altitude_model, chat_comments_model, chat_comments_replies_model, CustomUser, videos_model, photos_model
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
-from bicicleteiros.forms import chat_form
+from bicicleteiros.forms import chat_form, chat_replies_form
 from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
@@ -83,6 +83,7 @@ def country_data_view (request):
         total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
         total_km = total_km_dictionary['km_day__sum']
         flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
+
         # Form configuration for the COMMENTS of the CHAT:
         form_chat = chat_form(data=request.POST)
         # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
@@ -98,15 +99,37 @@ def country_data_view (request):
                 #artigos_content e que para que me retorne a vista do blog
                 return redirect('bicleteiros_home_page')
             else:
-                #Comentando a seguinte línea o formulario non se vacía despois do error. 
-                #newsletter_email = form_newsletter()
                 # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
                 # asigne o formato de error (O borde en vermello)
                 for field, errors in form_chat.errors.items():
                     form_chat[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
                 #Esto imprime o error xusto debaixo do cajetín para inserir o correo
                 messages.error(request, form_chat.errors)
-                #messages.error(request, "Insira un enderezo de correo electrónico válido!")
+        
+        # Form configuration for the COMMENT REPLIES of the CHAT:
+        form_chat_reply = chat_replies_form(data=request.POST)
+        # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
+        if request.method == 'POST':
+            #Check whether it is valid:
+            if form_chat_reply.is_valid():
+                #Collemos o texto do reply
+                reply_text_var = form_chat_reply.cleaned_data.get('reply_text')
+                # ESto é para que se asigne o reply ao comentario raíz. Fago que o 'original_comment' do modelo 'chat_comments_replies_model' sexa igual que o "comentario" do 'chat_comments_model'
+                #Gardo os datos no modelo "chat_comments_replies_model". Nota, para o original_comment que é o campo común entre os 2 modelos ('chat_comments_replies_model' & 'chat_comments_model')
+                #teño que meter o post_comment que é unha variable que collo anteriormente que ten o texto do comentario raíz
+                new_instance_reply = chat_comments_replies_model (reply_text= reply_text_var, username_reply = request.user.username, original_comment = post_comment)
+                new_instance_reply.save()
+                #Esto é para que me mostre a mensaxe de que se engadiu o reply o comentario
+                messages.success(request, 'Your reply has been successfully included!')
+                #artigos_content e que para que me retorne a vista do blog
+                return redirect('bicleteiros_home_page')
+            else:
+                # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+                # asigne o formato de error (O borde en vermello)
+                for field, errors in form_chat_reply.errors.items():
+                    form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+                #Esto imprime o error xusto debaixo do cajetín para inserir o correo
+                messages.error(request, form_chat_reply.errors)
 
         #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
         chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')

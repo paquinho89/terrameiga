@@ -56,6 +56,14 @@ class chat_comments_model(models.Model):
 
     def __str__(self):
         return (self.comentario)
+    
+#Modelo no que se gardarán as replies dos comentarios
+class chat_comments_replies_model(models.Model):
+    original_comment = models.ForeignKey(chat_comments_model, on_delete=models.CASCADE, related_name='replies')
+    reply_text = models.TextField(blank=True)
+    date_added = models.DateTimeField(default=timezone.now, blank=True)
+    username_reply = models.CharField(max_length=33, blank=True, null=True)
+
 
 class country_information_model(models.Model):
     country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)

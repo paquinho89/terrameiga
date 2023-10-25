@@ -63,9 +63,12 @@
           <div class="form-group">
             <h3 style="color: white">Anything you want to say or ask me?</h3>
               {{ chat_form_html.comentario }}
+              {% if messages %}
+                <label id="label_error" style="color: red;">{{ chat_form_html.comentario.errors }}</label>
+              {% endif %}
           </div>
           <div class="form-group">
-            <button type="submit" class="btn btn-outline-light mt-2" id="button_postcomment" href="{% url 'sign_in' %}"><strong>Post Comment</strong></button>
+            <button type="submit" class="btn btn-outline-light mt-2" id="button_postcomment" href=""><strong>Post Comment</strong></button>
           </div>
         </form>
       
