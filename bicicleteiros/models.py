@@ -43,6 +43,7 @@ expense_type_choices = (
 
 #Modelo para os comentarios:
 class chat_comments_model(models.Model):
+    slug = models.SlugField(blank=True, unique=True, verbose_name="Deixar_en_blanco")
     comentario = models.TextField(blank=False)
     #Teño que utilizar DateField e non podo utilizar o DateTimeField porque na base de datos de Postgress
     #de Railway non me acepta o datetime field.

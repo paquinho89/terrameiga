@@ -77,12 +77,38 @@
             {% for chat_comments in chat_comments_all_html %}
             <h6 style="color: rgba(191, 191, 191, 1)"><img src="/static/pictures/bike_avatars/touring_bike.jpg" alt="" class="rounded-circle" width="50" height="50"><strong> {{ chat_comments.username_comment }}</strong> - {{ chat_comments.date_added }} </h6>
             <p style="color: rgba(191, 191, 191, 1)">{{ chat_comments.comentario }}</p>
+              <label data-toggle="modal" data-target="#exampleModalCenter" style="color: white;">Reply</label>
+            <p style="color: white;">See all replies</p>
             {% endfor %}
           </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div id="delete_account_section" class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Write your reply</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <label>Write your reply</label>
+                  <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
+                  {% csrf_token %}
+                      {{ form_chat_reply_html.reply_text }}
+                      <button type="submit" class="btn btn-danger mt-3">Reply</button>
+                      <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancel</button>
+                  </form>
+          </div>
+          
+      </div>
+  </div>
+</div>
 
 </body>
 

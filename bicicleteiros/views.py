@@ -156,6 +156,7 @@ def country_data_view (request):
             'chat_form_html': form_chat,
             'chat_comments_all_html' : chat_comments_all,
             'chat_number_comments_html' : number_comments,
+            'form_chat_reply_html' : form_chat_reply,
             
             'graph_money_type_html' :all_entry_days
         }
