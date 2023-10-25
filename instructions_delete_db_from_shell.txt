@@ -14,3 +14,5 @@ python manage.py flush
 - Facemos un "python manage.py migrate --run-syncdb"
 - E por último "python manage.py createsuperuser"
 
+
+

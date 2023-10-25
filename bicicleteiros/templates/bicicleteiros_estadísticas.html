@@ -13,7 +13,7 @@
   <div class="row mt-1">
   <div class="col-lg-12 card">
     <div class="container-fluid mb-1" style="width: 100%; height: 50vh">
-      <canvas id="money_per_day"  class="chart-container"></canvas>
+      <canvas id="money_per_week"  class="chart-container"></canvas>
     </div>
   </div>
 <!--CHART 2-->
@@ -37,7 +37,7 @@
 <div class="row mt-2">
   <div class="col-lg-12 card">
     <div class="container-fluid" style="width: 100%; height: 50vh">
-      <canvas id="km_altitude_per_day"  class="chart-container"></canvas>
+      <canvas id="km_altitude_per_week"  class="chart-container"></canvas>
     </div>
   </div>
 </div>
@@ -53,14 +53,14 @@
 <!--Script CHART 1-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const var_money_per_day = document.getElementById('money_per_day');
+  const var_money_per_day = document.getElementById('money_per_week');
   const chartConfig = {
     type: 'bar',
     data: {
-      labels: [{% for day in graph_money_per_day_html %} '{{day.journey_day}}', {% endfor %}],
+      labels: [{% for week in graph_money_per_week_html %} '{{week.week}}', {% endfor %}],
       datasets: [{
         label: 'Euros - €',
-        data: [{% for money in graph_money_per_day_html %} '{{money.expense_euros__sum}}', {% endfor %}],
+        data: [{% for money in graph_money_per_week_html %} '{{money.expense_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
                         'rgba(83, 158, 138, 1)'
@@ -73,7 +73,7 @@
       plugins: {
               title: {
                   display: true,
-                  text: 'Expenses per day',
+                  text: 'Expenses per week',
                   color: 'rgba(191, 191, 191, 1)',
                   position: 'top',
                   align: 'center',
@@ -101,7 +101,7 @@
           },
           title:{
             display: true,
-            text: 'Day',
+            text: 'Week',
             color: 'rgba(191, 191, 191)'
           } 
         },
@@ -259,21 +259,21 @@
 
 <!--Script CHART 4-->
 <script>
-  const graph_km_altitude_per_day = document.getElementById('km_altitude_per_day');
-  new Chart(graph_km_altitude_per_day, {
+  const graph_km_altitude_per_week = document.getElementById('km_altitude_per_week');
+  new Chart(graph_km_altitude_per_week, {
     data: {
-      labels: [{% for day in graph_km_altitud_per_day_html %} '{{day.journey_day}}', {% endfor %}],
+      labels: [{% for week in graph_km_altitud_per_week_html %} '{{week.week}}', {% endfor %}],
       datasets: [
         {
-          label: 'Km per day',
-          data: [{% for km in graph_km_altitud_per_day_html %} '{{km.km_day__sum}}', {% endfor %}],
+          label: 'Km per week',
+          data: [{% for week in graph_km_altitud_per_week_html %} '{{week.km_day__sum}}', {% endfor %}],
           type: 'bar',
           yAxisID: 'y',
           backgroundColor: 'rgba(185, 74, 243, 0.6)'
         },
         {
           label: 'Meters of climbing',
-          data: [{% for altitude in graph_km_altitud_per_day_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
+          data: [{% for altitude in graph_km_altitud_per_week_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
           type: 'line',
           yAxisID: 'y1',
           backgroundColor: 'rgba(251, 147, 69, 1)',
@@ -288,7 +288,7 @@
                title: {
                   display: true,
                   color: 'rgba(191, 191, 191, 1)',
-                  text: 'Km and Climbing per day',
+                  text: 'Km and Climbing per week',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -311,7 +311,7 @@
           },
           title:{
             display: true,
-            text: 'Day',
+            text: 'Week',
             color: 'rgba(191, 191, 191)'
           } 
         },

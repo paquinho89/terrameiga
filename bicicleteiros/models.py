@@ -50,7 +50,7 @@ class chat_comments_model(models.Model):
     date_added = models.DateTimeField (default=timezone.now, blank=True)
     username_comment = models.CharField(max_length=33, blank=True, null=True)
 
-    #Esto é para que me ordene os comentarios na páxina por data
+    #Esto é para que me ordene os comentarios na páxina por data. Os comentarios máis recentes que se posicionen arriba
     class Meta:
         ordering = ['-date_added']
 
@@ -75,16 +75,19 @@ class country_information_model(models.Model):
     def __str__(self):
         return (self.country)  
 
-#THIS IS TO POPULATE THE DAY OF THE JOURNEY
+#Agora obteño a semana na que estou dependendo da data de inicio
+#We get the day of the year
 #IMPORTANTE!!!: Eiqui tes que cambiar a data e por a data na que comezas a viaxe.
-starting_date = datetime(2023, 7, 1).date()
-
-today_date = datetime.now().date()
-day_in_the_journey = today_date - starting_date
-day_in_the_journey_final = str(day_in_the_journey).split(" ",1)[0]
+starting_day_of_year = datetime(2023,10,1).timetuple().tm_yday
+current_day_of_year = datetime.now().timetuple().tm_yday
+#Sumamos 1 para que o primer día me conte como o day 1
+day_in_the_journey = (current_day_of_year - starting_day_of_year)+1
+#Suamos 1 para que a primeira semana conte como semana 1 e non como semana 0.
+week_day = ((current_day_of_year - starting_day_of_year)/7)+1
 
 class money_model(models.Model):
-    journey_day = models.IntegerField(default=int(day_in_the_journey_final), null=True) 
+    journey_day = models.IntegerField(default=int(day_in_the_journey), null=True)
+    week = models.IntegerField(default=int(week_day), null=True) 
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
     country_number = models.IntegerField(blank=True, null=True)
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
@@ -106,7 +109,8 @@ class money_model(models.Model):
         return (str(self.journey_day) + ' days ' + self.expense_type + ' ' + self.country_name)
     
 class km_altitude_model (models.Model):
-    journey_day = models.IntegerField(default=int(day_in_the_journey_final), null=True)
+    journey_day = models.IntegerField(default=int(day_in_the_journey), null=True)
+    week = models.IntegerField(default=int(week_day), null=True)
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
     country_number = models.IntegerField(blank=True, null=True)
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
@@ -128,8 +132,11 @@ class km_altitude_model (models.Model):
         return (str(self.journey_day) + ' days ' + self.country_name )
 
 class videos_model (models.Model):
-    week = models.IntegerField(null=False, blank = False)
+    week = models.IntegerField(default=int(week_day), null=True)
     youtube_link = models.CharField(max_length=1000, null=True, blank = True)
+    #Esto é para que me ordene os vídeos pondo os máis recentes arriba na lista.
+    class Meta:
+        ordering = ['-week']
 
     def __str__(self):
         return 'Week ' + str(self.week)
@@ -158,7 +165,17 @@ def upload_image_path(instance, filename):
 
 class photos_model (models.Model):
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
+    country_number = models.IntegerField(blank=True, null=True, verbose_name="deixar_en_blanco")
     image_file = models.ImageField(upload_to=upload_image_path, null=True, blank = True, verbose_name="TerraMeiga_picture")
+
+    #Esto é para que me ordene os vídeos pondo os máis recentes arriba na lista.
+    class Meta:
+        ordering = ['-country_number']
+
+    #Auto-completar o country_number automáticamente dependendo do country que se seleccione.
+    def save(self):
+        self.country_number = str(self.country.country_number)
+        return super().save()
 
     def __str__(self):
         return str(self.country) + ' ' + str(self.image_file)  

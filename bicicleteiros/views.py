@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import country_information_model, money_model, km_altitude_model, starting_date, chat_comments_model, CustomUser, videos_model, photos_model
+from .models import country_information_model, money_model, km_altitude_model, chat_comments_model, CustomUser, videos_model, photos_model
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
@@ -16,6 +16,8 @@ def country_data_no_registered_view (request):
     all_entry_days_last=all_entry_days.last()
     #Da última entrada collemos do día collemos o día da viaxe na que estamos
     current_journey_day = all_entry_days_last.journey_day
+    #Da última entrada collemos a semana
+    current_week = all_entry_days_last.week
     #Da última entrada collemos o país
     current_country = all_entry_days_last.country
     country_number_country = country_information_model.objects.get(country= current_country).country_number
@@ -36,6 +38,7 @@ def country_data_no_registered_view (request):
     
     context = {
         'journey_day_html' : current_journey_day ,
+        'current_week_html' : current_week,
         'country_number_html' : country_number_country,
         'total_km_html' : total_km,
         'total_expenses_html' :total_money,
@@ -59,10 +62,12 @@ def country_data_view (request):
     #No caso de que non estén rexistrados, mándoos a páxina de home_page_no_registered.
     if request.user.is_authenticated:
         all_entry_days= money_model.objects.all()
-        #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
+        #Collemos a última entrada do día para que así podas incluir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
         all_entry_days_last=all_entry_days.last()
         #Da última entrada collemos do día collemos o día da viaxe na que estamos
         current_journey_day = all_entry_days_last.journey_day
+        #Da última entrada collemos a semana
+        current_week = all_entry_days_last.week
         #Da última entrada collemos o país
         current_country = all_entry_days_last.country
         country_number_country = country_information_model.objects.get(country= current_country).country_number
@@ -110,6 +115,7 @@ def country_data_view (request):
         
         context = {
             'journey_day_html' : current_journey_day ,
+            'current_week_html' : current_week,
             'country_number_html' : country_number_country,
             'total_km_html' : total_km,
             'current_country_html' : current_country,
@@ -174,21 +180,21 @@ def videos_view (request):
 def estadistica_data_view (request):
     all_entry_days= money_model.objects.all()
     #annotate is the same as doing a 'group_by'
-    money_per_day = money_model.objects.values(str('journey_day')).annotate(Sum('expense_euros'))
+    money_per_week = money_model.objects.values(str('week')).annotate(Sum('expense_euros'))
     money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros')).order_by('country_number')
     money_type = money_model.objects.values(str('expense_type')).annotate(Sum('expense_euros'))
     total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
     total_money = total_money_dict['expense_euros__sum']
-    km_altitude_per_day = km_altitude_model.objects.values(str('journey_day')).annotate(Sum('km_day'),Sum('altitude_day'))
+    km_altitude_per_week = km_altitude_model.objects.values(str('week')).annotate(Sum('km_day'),Sum('altitude_day'))
     km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
     
     context = {
 
-        'graph_money_per_day_html' : money_per_day,
+        'graph_money_per_week_html' : money_per_week,
         'graph_money_per_country_html': money_per_country,
         'graph_money_per_type_html': money_type,
         'graph_total_money_html': total_money,
-        'graph_km_altitud_per_day_html': km_altitude_per_day,
+        'graph_km_altitud_per_week_html': km_altitude_per_week,
         'graph_km_altitud_per_country_html': km_altitude_per_country,
         
         'graph_money_type_html' :all_entry_days
