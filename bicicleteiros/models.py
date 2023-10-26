@@ -43,24 +43,24 @@ expense_type_choices = (
 
 #Modelo para os comentarios:
 class chat_comments_model(models.Model):
-    slug = models.SlugField(blank=True, unique=True, verbose_name="Deixar_en_blanco")
     comentario = models.TextField(blank=False)
     #Teño que utilizar DateField e non podo utilizar o DateTimeField porque na base de datos de Postgress
     #de Railway non me acepta o datetime field.
     #date_added = models.DateField (default=datetime.now, blank=True, null=True)
     date_added = models.DateTimeField (default=timezone.now, blank=True)
     username_comment = models.CharField(max_length=33, blank=True, null=True)
+    number_of_replies = models.IntegerField(blank=True, null=True)
 
     #Esto é para que me ordene os comentarios na páxina por data. Os comentarios máis recentes que se posicionen arriba
     class Meta:
         ordering = ['-date_added']
 
     def __str__(self):
-        return (self.comentario)
+        return (str(self.pk))
     
 #Modelo no que se gardarán as replies dos comentarios
 class chat_comments_replies_model(models.Model):
-    original_comment = models.ForeignKey(chat_comments_model, on_delete=models.CASCADE, related_name='replies')
+    pk_original_comment = models.ForeignKey(chat_comments_model, on_delete=models.CASCADE, related_name='replies')
     reply_text = models.TextField(blank=True)
     date_added = models.DateTimeField(default=timezone.now, blank=True)
     username_reply = models.CharField(max_length=33, blank=True, null=True)

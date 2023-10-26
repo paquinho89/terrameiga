@@ -18,10 +18,11 @@ class chat_form(forms.ModelForm):
 class chat_replies_form(forms.ModelForm):
     class Meta:
         model=chat_comments_replies_model
-        fields = ['reply_text']
+        fields = ['reply_text', 'pk_original_comment']
 #Esto dos widgets é para meter o formato de bootstrap no form. {{ form }} que está en artigos_content.html.
 #O attrs é CSS style
         widgets = {
             'reply_text': forms.Textarea (attrs = {'class': 'form-control', 'style': "background-color: red; color:white", 'placeholder':'Write here your reply',
-                                                    'rows':1})
+                                                    'rows':1}),
+            'pk_original_comment': forms.Textarea()
         }

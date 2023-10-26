@@ -75,42 +75,62 @@
         <h4 style="color: white">Comments ({{chat_number_comments_html}})</h4>
           <div class="comment mt-4 text-justify float-left" id="chat_box">
             {% for chat_comments in chat_comments_all_html %}
-            <h6 style="color: rgba(191, 191, 191, 1)"><img src="/static/pictures/bike_avatars/touring_bike.jpg" alt="" class="rounded-circle" width="50" height="50"><strong> {{ chat_comments.username_comment }}</strong> - {{ chat_comments.date_added }} </h6>
-            <p style="color: rgba(191, 191, 191, 1)">{{ chat_comments.comentario }}</p>
-              <label data-toggle="modal" data-target="#exampleModalCenter" style="color: white;">Reply</label>
-            <p style="color: white;">See all replies</p>
+              <h6 style="color: rgba(191, 191, 191, 1)">
+                  <img src="/static/pictures/bike_avatars/touring_bike.jpg" alt="" class="rounded-circle" width="50" height="50">
+                  <strong> {{ chat_comments.username_comment }}</strong> - {{ chat_comments.date_added }}
+              </h6>
+              <p style="color: rgba(191, 191, 191, 1)">{{ chat_comments.comentario }}</p>
+              <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
+                  thanks to the function created in javascript (setCommentPK)-->
+              <label onclick="setCommentPK( {{chat_comments.pk}} )"" data-toggle="modal" data-target="#exampleModalCenter" data-comment-pk="{{ chat_comments.pk }}" style="color: white;">Reply </label>
+                <p style="color: white;">See all replies ({{chat_comments.number_of_replies}})</p>
+                {% for reply in replies_comments_all_html %}
+                <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
+                {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
+                  <p style="color: white;">{{ reply.reply_text }}</p>
+                {% endif %}
+              {% endfor %}
             {% endfor %}
-          </div>
-      </div>
-    </div>
-  </div>
-</section>
+            
 
-<!-- Modal -->
+<!-- Modal for replies -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-      <div id="delete_account_section" class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Write your reply</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-          </div>
-          <div class="modal-body">
-              <label>Write your reply</label>
-                  <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
-                  {% csrf_token %}
-                      {{ form_chat_reply_html.reply_text }}
-                      <button type="submit" class="btn btn-danger mt-3">Reply</button>
-                      <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancel</button>
-                  </form>
-          </div>
-          
-      </div>
-  </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div id="delete_account_section" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Write your reply for Comment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <label>Write your reply</label>
+                <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
+                    {% csrf_token %}
+                    <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
+                      Ten type='hidden' porque non quero que se mostre-->
+                    <input type="hidden" name="pk_original_comment" id="comment-pk">
+                    <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
+                    <!--{{ form_chat_reply_html.pk_original_comment }}-->
+                    {{ form_chat_reply_html.reply_text }}
+                    <button type="submit" class="btn btn-danger mt-3">Reply</button>
+                    <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
+
+<!--This is the javascript function which captures the chat_comments.pk when the "Reply" button is clicked.-->
+<script>
+  function setCommentPK(pk) {
+      document.getElementById('comment-pk').value = pk;
+  }
+</script>
+
+
 
 {% endblock content %}
 
