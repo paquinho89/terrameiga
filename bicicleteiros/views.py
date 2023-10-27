@@ -130,11 +130,13 @@ def country_data_view (request):
                 #Actualizamos o comentario
                 comment_entry_to_update.number_of_replies = number_replies_per_comment
                 comment_entry_to_update.save()
+
                 
                 #Esto é para que me mostre a mensaxe de que se engadiu o reply o comentario
                 messages.success(request, 'Your reply has been successfully included!')
                 #artigos_content e que para que me retorne a vista do blog
                 return redirect('bicleteiros_home_page')
+            
             else:
                 # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
                 # asigne o formato de error (O borde en vermello)
@@ -150,6 +152,13 @@ def country_data_view (request):
         #Eiqui collo as replies dos cometarios
         replies_comments_all = chat_comments_replies_model.objects.all()
 
+        # Include selected_comment_pk in the context
+        selected_comment_pk = None
+        if 'comment-pk' in request.POST:
+            selected_comment_pk = request.POST['comment-pk']
+
+        
+        
         
         context = {
             'journey_day_html' : current_journey_day ,
@@ -173,6 +182,8 @@ def country_data_view (request):
             'chat_number_comments_html' : number_comments,
             'form_chat_reply_html' : form_chat_reply,
             'replies_comments_all_html' : replies_comments_all,
+            'selected_comment_pk_html':selected_comment_pk,
+            
             
             'graph_money_type_html' :all_entry_days
         }

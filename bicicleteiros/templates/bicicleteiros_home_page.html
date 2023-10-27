@@ -82,8 +82,8 @@
               <p style="color: rgba(191, 191, 191, 1)">{{ chat_comments.comentario }}</p>
               <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
                   thanks to the function created in javascript (setCommentPK)-->
-              <label onclick="setCommentPK( {{chat_comments.pk}} )"" data-toggle="modal" data-target="#exampleModalCenter" data-comment-pk="{{ chat_comments.pk }}" style="color: white;">Reply </label>
-                <p style="color: white;">See all replies ({{chat_comments.number_of_replies}})</p>
+              <label onclick="setCommentPK( {{chat_comments.pk}} )"" data-toggle="modal" data-target="#exampleModalCenter" data-comment-pk="{{ chat_comments.pk }}" style="color: white;">Reply / See all comments ({{chat_comments.number_of_replies}})</label>
+
                 {% for reply in replies_comments_all_html %}
                 <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
                 {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
@@ -93,42 +93,93 @@
             {% endfor %}
             
 
-<!-- Modal for replies -->
+<!-- Modal for replying a comment -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div id="delete_account_section" class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Write your reply for Comment</h5>
+                <h5 id="comment-div" class="modal-title" id="exampleModalLongTitle">
+                  {% for chat_comments in chat_comments_all_html %}
+                    {% if chat_comments.pk == selected_comment_pk_html %}
+                    <strong> {{ chat_comments.username_comment }}</strong> - {{ chat_comments.date_added }}
+                    <p style="color: white;">{{ chat_comments.comentario }}</p>
+                    {% endif %}
+                  {% endfor %}
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <label>Write your reply</label>
                 <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
                     {% csrf_token %}
                     <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
                       Ten type='hidden' porque non quero que se mostre-->
-                    <input type="hidden" name="pk_original_comment" id="comment-pk">
+                    <input name="pk_original_comment" id="comment-pk">
                     <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
-                    <!--{{ form_chat_reply_html.pk_original_comment }}-->
                     {{ form_chat_reply_html.reply_text }}
                     <button type="submit" class="btn btn-danger mt-3">Reply</button>
                     <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancel</button>
                 </form>
-            </div>
+                <div id="replies-div">
+                  {% for reply in replies_comments_all_html %}
+                      <!-- Check if this reply is associated with the selected comment -->
+                      {% if reply.pk_original_comment.pk == selected_comment_pk_html %}
+                          <p style="color: white;">{{ reply.reply_text }}</p>
+                      {% endif %}
+                  {% endfor %}
+                  
+              </div>
         </div>
     </div>
 </div>
+
 
 </body>
 
 <!--This is the javascript function which captures the chat_comments.pk when the "Reply" button is clicked.-->
 <script>
-  function setCommentPK(pk) {
-      document.getElementById('comment-pk').value = pk;
+  var selected_comment_pk = null;
+
+  function setCommentPK(pk_comment) {
+      selected_comment_pk = pk_comment;
+      document.getElementById('comment-pk').value = pk_comment; //Collemos o input con id="comment-pk" e asignámoslle o valor do pk
+      updateCommentRepliesDiv(pk_comment); // Update the content of the replies div with the selected comment's replies
   }
+
+
+  function updateCommentRepliesDiv(selectedCommentPK) {
+      var repliesDiv = document.getElementById('replies-div'); //Ao elemento div con id="replies-div" pasa a chamalo repliesDiv. 
+      var commentDiv = document.getElementById('comment-div'); //Ao elemento div con id="replies-div" pasa a chamalo repliesDiv. 
+      repliesDiv.innerHTML = '';  // Clear the existing content
+      commentDiv.innerHTML = '';  // Clear the existing content
+
+
+      // Loop through the replies and display those associated with the selected comment
+      {% for chat_comments in chat_comments_all_html %}
+          if ({{ chat_comments.pk }} === selectedCommentPK) {
+              var commentUsername = "{{ chat_comments.username_comment|escapejs }}";
+              var commentDateAdded = "{{ chat_comments.date_added }}";
+              var commentText = "{{ chat_comments.comentario|escapejs }}";
+              commentDiv.innerHTML += '<p>'+'<strong>' + commentUsername + '</strong>' + commentDateAdded + '</p>' + '<p style="color: white;">' + commentText + '</p>';
+          }
+      {% endfor %}
+
+      {% for reply in replies_comments_all_html %}
+          if ({{ reply.pk_original_comment }} === selectedCommentPK) {
+              var replyText = "{{ reply.reply_text|escapejs }}";
+              repliesDiv.innerHTML += '<p style="color: white;">' + replyText + '</p>';
+          }
+      {% endfor %}
+  }
+
+
+ 
+
+   
+ 
 </script>
+
 
 
 

@@ -14,6 +14,8 @@ class chat_form(forms.ModelForm):
                                                     'rows':1})
         }
 
+
+
 #Form for the replies
 class chat_replies_form(forms.ModelForm):
     class Meta:
