@@ -111,7 +111,7 @@ def sign_in_view(request):
                     )
         return redirect('bicleteiros_home_page')
     else:
-      #Comento esto porque para o formulario que hai de AuthenticationForm preconfigurado por Django esta esto non me funciona.
+      #Comento esto porque para o formulario que hai de AuthenticationForm preconfigurado por Django esto non me funciona.
       #for field, error in sign_in_form_variable.errors.items():
         # Eiqui o que fago e que recorra os distintos fields do form e que lle asigne o formato de error (O borde en vermello)
         #sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})

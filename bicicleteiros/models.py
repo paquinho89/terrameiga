@@ -49,7 +49,7 @@ class chat_comments_model(models.Model):
     #date_added = models.DateField (default=datetime.now, blank=True, null=True)
     date_added = models.DateTimeField (default=timezone.now, blank=True)
     username_comment = models.CharField(max_length=33, blank=True, null=True)
-    number_of_replies = models.IntegerField(blank=True, null=True)
+    number_of_replies = models.IntegerField(blank=False, null=True, default=0)
 
     #Esto é para que me ordene os comentarios na páxina por data. Os comentarios máis recentes que se posicionen arriba
     class Meta:
@@ -61,9 +61,13 @@ class chat_comments_model(models.Model):
 #Modelo no que se gardarán as replies dos comentarios
 class chat_comments_replies_model(models.Model):
     pk_original_comment = models.ForeignKey(chat_comments_model, on_delete=models.CASCADE, related_name='replies')
-    reply_text = models.TextField(blank=True)
+    reply_text = models.TextField(blank=False)
     date_added = models.DateTimeField(default=timezone.now, blank=True)
     username_reply = models.CharField(max_length=33, blank=True, null=True)
+    
+    #Esto é para que me ordene os replies na páxina por data. Os comentarios máis recentes que se posicionen arriba
+    class Meta:
+        ordering = ['-date_added']
 
 
 class country_information_model(models.Model):
