@@ -85,10 +85,13 @@ def country_data_view (request):
         flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
 
         # CHAT:
-        form_chat = chat_form(data=request.POST)
-        form_chat_reply = chat_replies_form(data=request.POST)
+        #Doulle un valor por defecto ao formularios para que non me de ERROR e que non me aparezca ningunha alerta debaixo do formulario cando se carga por primeira vez a páxina.
+        form_chat = chat_form()
+        form_chat_reply = chat_replies_form()
         # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
         if request.method == 'POST':
+            form_chat = chat_form(data=request.POST)
+            form_chat_reply = chat_replies_form(data = request.POST)
             form_type = request.POST.get('form_type')
             # We check the what form it is and we execute the code accordingly for each form
             if form_type == 'comment':
@@ -98,6 +101,7 @@ def country_data_view (request):
                     #Gardo o comentario e o user que puxo o comentario no modelo de "chat_comments_model". Desta forma podo mostar o usuario que puxo o comentario.
                     new_instance = chat_comments_model (comentario= post_comment, username_comment = request.user.username)
                     new_instance.save()
+                    form_chat = chat_form()
                     #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
                     messages.success(request, 'Grazas por participar nesta aventura e engadir o teu comentario!')
                     #artigos_content e que para que me retorne a vista do blog
@@ -134,7 +138,7 @@ def country_data_view (request):
                     comment_entry_to_update.number_of_replies = number_replies_per_comment
                     comment_entry_to_update.save()
 
-                    #Esto é para que me mostre a mensaxe de que se engadiu o reply o comentario
+                    #Esto é para que me mostre a mensaxe de que se engadiu o reply
                     messages.success(request, 'Your reply has been successfully included!')
                     #artigos_content e que para que me retorne a vista do blog
                     return redirect('bicleteiros_home_page')

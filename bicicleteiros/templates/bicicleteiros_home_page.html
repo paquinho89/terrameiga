@@ -99,6 +99,7 @@
             <h3>Anything you want to say or ask me?</h3>
               {{ chat_form_html.comentario }}
               {% if messages %}
+                <!--Pondo errors.comentario, solo imprimo o comentario e non sale o field do modelo donde está vindo o erro-->
                 <label id="label_error" style="color: red;">{{ chat_form_html.errors.comentario }}</label>
               {% endif %}
           </div>
@@ -125,7 +126,7 @@
                 <p class="mb-0">
                   {{ chat_comments.comentario }}
                 </p>
-                <button onclick="setCommentPK( {{chat_comments.pk}} )"" data-toggle="modal" data-target="#exampleModalCenter" data-comment-pk="{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link" style="color: rgb(255, 255, 255, 0.8);">
+                <button onclick="setCommentPK( {{chat_comments.pk}} )" data-toggle="modal" data-target="#exampleModalCenter" data-comment-pk="{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link" style="color: rgb(255, 255, 255, 0.8);">
                   Reply / See all comments <strong>({{chat_comments.number_of_replies}})</strong>
                 </button>
               </div>
@@ -140,7 +141,7 @@
             
 
 <!-- Modal for replying a comment -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div id="delete_account_section" class="modal-content">
             <div class="modal-header">
@@ -160,7 +161,7 @@
                     <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
                     {{ form_chat_reply_html.reply_text }}
                       {% if messages %}
-                        <label id="label_error" style="color: red;">Include some text in the reply</label>
+                        <label id="label_error" style="color: red;">{{ form_chat_reply_html.errors.reply_text }}</label>
                       {% endif %}
                     <input type="hidden" name="form_type" value="reply"> <!-- Hidden input to identify reply form and work with the value in the views file -->
                     <button id="modal-button-reply" type="submit" class="btn mt-3">Reply</button>
