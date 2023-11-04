@@ -6,7 +6,7 @@
 
 
 <style>
-  h4{
+  h4, h5{
     color: rgb(255, 255, 255, 0.8);
   }
   p{
@@ -18,6 +18,21 @@
   }
   #add_reply_button:hover {
     background-color: rgb(246, 158, 138);
+  }
+  .close {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 40px; /* Adjust the font size as needed */
+      color: white
+    }
+  #data_home_page{
+    color: rgb(255, 255, 255, 0.8);
   }
 </style>
 
@@ -96,17 +111,17 @@
                 <!--<p class=" mb-0">
                   {{ chat_comments.username_comment }}
                 </p>-->
-                <p class="text-muted small mb-0"><i class="far fa-clock"></i> 
+                <p class="text-muted small mb-0">
                   {{ chat_comments.date_added }}
                 </p>
               </div>
               <div class="card-body">
-                <p class="fw-bold mb-0">
+                <p class="mb-0">
                   {{ chat_comments.comentario }}
                 </p>
                 <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
                 thanks to the function created in javascript (setCommentPK)-->
-                <button onclick="toggleComments({{ chat_comments.pk }}); setCommentPK( {{chat_comments.pk}} )" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link" style="color: rgb(255, 255, 255, 0.8);">
+                <button onclick="toggleComments({{ chat_comments.pk }})" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link text-muted small mb-0" style="color: rgb(255, 255, 255, 0.8);">
                   Add Comment / View Comments ({{chat_comments.number_of_replies}})
                 </button>
               </div>
@@ -123,16 +138,22 @@
                     <!--{{ form_chat_reply_html.pk_original_comment }}-->
                     {{ form_chat_reply_html.reply_text }}
                     <input type="hidden" name="form_type" value="reply">
-                    <button id="add_reply_button" type="submit" class="btn mt-3">Add Reply</button>
+                    <button id="add_reply_button" type="submit" class="btn mt-3" onclick="setCommentPK({{chat_comments.pk}}); window.location.href='#commentsSection_{{ chat_comments.pk }}';">Add Comment</button>
+                    <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="mt-4">
+                      Comments ({{chat_comments.number_of_replies}}):
+                    </h4>
                     {% for reply in replies_comments_all_html %}
-                    <div class="card" style="background-color:black; border: 1px;">
+                    <div class="card" style="background-color:rgb(51, 51, 51); border: 1px;">
                       <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
                       {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
                       <div class="card-header d-flex justify-content-between p-2" style="background-color: #28231D;">
                       </div>
                       <div class="card-header d-flex justify-content-between p-2">
-                        <p class="fw-bold mb-0">
-                          <strong>{{ reply.username_reply }}</strong>
+                        <p class="text-muted small mb-0">
+                          {{ reply.username_reply }}
                         </p>
                         <p class="text-muted small mb-0"><i class="far fa-clock"></i> 
                             {{ reply.date_added }}
@@ -170,10 +191,28 @@
         var commentsSection = document.getElementById('commentsSection_' + chatCommentId);
         if (commentsSection.style.display === 'none') {
             commentsSection.style.display = 'block';
+            //Esto é para establecer se a como true se a sección está aberta (modo block)
+            localStorage.setItem('comment_' + chatCommentId + '_isOpen', 'true');
+        } else {
+            commentsSection.style.display = 'none';
+            //Ou neste caso establecer como false a sección se está pechada. Estas variables serán utilizadas na seguinte función.
+            localStorage.setItem('comment_' + chatCommentId + '_isOpen', 'false');
+        }
+    }
+
+    //Esta función é para manter a sección dos comentarios da xente aberta despois de que se entregase o formulario ou se cargase a páxina.
+    //De esta forma o usuario pode ver na parte na que se cargou a súa mensaxe
+    document.addEventListener("DOMContentLoaded", function () {
+        {% for chat_comments in chat_comments_all_html %}
+        var storedState = localStorage.getItem('comment_{{ chat_comments.pk }}_isOpen');
+        var commentsSection = document.getElementById('commentsSection_{{ chat_comments.pk }}');
+        if (storedState === 'true') {
+            commentsSection.style.display = 'block';
         } else {
             commentsSection.style.display = 'none';
         }
-    }
+        {% endfor %}
+    });
 </script>
 
 {% endblock content %}
