@@ -1,48 +1,27 @@
 {% extends 'base/base_registered.html' %}
 <!--To load the Django library to translate your text.-->
 {% load i18n %}
-
 {% load static %}
-
 {% block content %} 
 
+
 <style>
-  #modal-button-reply {
-    color: white;
-    background-color: rgb(83, 158, 138);
-	}
-  #modal-button-reply:hover {
-    background-color: rgb(246, 158, 138);
-  }
-  #modal-button-cancel {
-    color: white;
-    background-color: rgb(128, 128, 128);
-	}
-  #modal-button-cancel:hover {
-    background-color: rgb(220, 53, 69);
-  }
   h4{
     color: rgb(255, 255, 255, 0.8);
   }
-  .container{
+  p{
     color: rgb(255, 255, 255, 0.8);
   }
-  
-  #comments li {
-    color: rgba(255, 255, 255, 0.8);
+  #add_reply_button {
+    color: white;
+    background-color: rgb(83, 158, 138);
   }
-
-  #comment-div{
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  #replies-div{
-    color: rgba(255, 255, 255, 0.8);
+  #add_reply_button:hover {
+    background-color: rgb(246, 158, 138);
   }
 </style>
 
 <body>
-
 <!-- Page content-->
 <div class="row">
   <div class="text-left card col-lg-3">
@@ -86,51 +65,91 @@
       time.innerHTML = d.toLocaleTimeString('en-US', {timeZone: "{{time_zone_html}}", timeZoneName: "short", hour12: false })
     },1000)
   </script>
-
 <!--CHAT AREA-->
 <!-- Main Body -->
-<section id="text-box-comment">
+<section>
   <div class="container mt-12">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-12 pb-12 mt-4">
-        <form method="post" novalidate id="commentForm" action="#text-box-comment">
+        <!--<form method="post" novalidate>
           {% csrf_token %}
           <div class="form-group">
-            <h3>Anything you want to say or ask me?</h3>
+            <h3 style="color: white">Anything you want to say or ask me?</h3>
               {{ chat_form_html.comentario }}
               {% if messages %}
-                <!--Pondo errors.comentario, solo imprimo o comentario e non sale o field do modelo donde está vindo o erro-->
-                <label id="label_error" style="color: red;">{{ chat_form_html.errors.comentario }}</label>
+                <label id="label_error" style="color: red;">{{ chat_form_html.comentario.errors }}</label>
               {% endif %}
           </div>
           <div class="form-group">
-            <input type="hidden" name="form_type" value="comment"> <!-- Hidden input to identify reply form and work with the value in the views file -->
-            <!--Eiqui linkeo o "submit" botón a sección da páxina do cajetín para por o comentario para que me volva a él despois dun fallo e fágoo co "onclick"-->
-            <button type="submit" class="btn btn-outline-light mt-2" id="button_postcomment"><strong>Post Comment</strong></button>
+            <input type="hidden" name="form_type" value="comment">
+            <button type="submit" class="btn btn-outline-light mt-2" id="button_postcomment" href=""><strong>Post Comment</strong></button>
           </div>
-        </form>
-      
-        <h4>Comments ({{chat_number_comments_html}})</h4>
+        </form>-->
+        <h4>
+          Highlights ({{chat_number_comments_html}})
+        </h4>
         {% for chat_comments in chat_comments_all_html %}
         <ul class="list-unstyled" id="comments">
           <li class="justify-content-between">
-            <!--<img src="" alt="avatar"class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">-->
             <div class="card">
               <div class="card-header d-flex justify-content-between p-3">
-                <p class="fw-bold mb-0">
-                  <strong> {{ chat_comments.username_comment }}</strong>
+                <!--<p class=" mb-0">
+                  {{ chat_comments.username_comment }}
+                </p>-->
+                <p class="text-muted small mb-0"><i class="far fa-clock"></i> 
+                  {{ chat_comments.date_added }}
                 </p>
-                <p class="text-muted small mb-0"><i class="far fa-clock"></i> {{ chat_comments.date_added }}</p>
               </div>
               <div class="card-body">
-                <p class="mb-0">
+                <p class="fw-bold mb-0">
                   {{ chat_comments.comentario }}
                 </p>
-                <button onclick="setCommentPK( {{chat_comments.pk}} )" data-toggle="modal" data-target="#exampleModalCenter" data-comment-pk="{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link" style="color: rgb(255, 255, 255, 0.8);">
-                  Reply / See all comments <strong>({{chat_comments.number_of_replies}})</strong>
+                <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
+                thanks to the function created in javascript (setCommentPK)-->
+                <button onclick="toggleComments({{ chat_comments.pk }}); setCommentPK( {{chat_comments.pk}} )" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link" style="color: rgb(255, 255, 255, 0.8);">
+                  Add Comment / View Comments ({{chat_comments.number_of_replies}})
                 </button>
               </div>
             </div>
+            <ul class="list-unstyled" id="comments">
+              <div id="commentsSection_{{ chat_comments.pk }}" style="display: none;" class="card">
+                <li class="justify-content-between">
+                  <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
+                    {% csrf_token %}
+                    <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
+                      Ten type='hidden' porque non quero que se mostre. Esto autopulase coa función de javascript (setCommentPK)-->
+                    <input type="hidden" name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">
+                    <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
+                    <!--{{ form_chat_reply_html.pk_original_comment }}-->
+                    {{ form_chat_reply_html.reply_text }}
+                    <input type="hidden" name="form_type" value="reply">
+                    <button id="add_reply_button" type="submit" class="btn mt-3">Add Reply</button>
+                    {% for reply in replies_comments_all_html %}
+                    <div class="card" style="background-color:black; border: 1px;">
+                      <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
+                      {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
+                      <div class="card-header d-flex justify-content-between p-2" style="background-color: #28231D;">
+                      </div>
+                      <div class="card-header d-flex justify-content-between p-2">
+                        <p class="fw-bold mb-0">
+                          <strong>{{ reply.username_reply }}</strong>
+                        </p>
+                        <p class="text-muted small mb-0"><i class="far fa-clock"></i> 
+                            {{ reply.date_added }}
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        <p class="mb-0">
+                          {{ reply.reply_text }}
+                        </p>
+                      </div>
+                      {% endif %}
+                    </div>
+                    {% endfor %}
+                  </form>
+                </li>
+              </div>
+            </ul>
           </li>
         </ul>
         {% endfor %}
@@ -139,114 +158,22 @@
   </div>
 </section>
             
-
-<!-- Modal for replying a comment -->
-<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div id="delete_account_section" class="modal-content">
-            <div class="modal-header">
-                <div id="comment-div" class="modal-title">
-                  <!--O contido que vai eiqui está na script de Javascript-->
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form class="mx-1 mx-md-4" method="POST" action="" novalidate id="replyForm">
-                    {% csrf_token %}
-                    <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
-                      Ten type='hidden' porque non quero que se mostre-->
-                    <input type="hidden" name="pk_original_comment" id="comment-pk">
-                    <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
-                    {{ form_chat_reply_html.reply_text }}
-                      {% if messages %}
-                        <label id="label_error" style="color: red;">{{ form_chat_reply_html.errors.reply_text }}</label>
-                      {% endif %}
-                    <input type="hidden" name="form_type" value="reply"> <!-- Hidden input to identify reply form and work with the value in the views file -->
-                    <button id="modal-button-reply" type="submit" class="btn mt-3">Reply</button>
-                    <button id="modal-button-cancel" type="button" class="btn mt-3" data-dismiss="modal">Cancel</button>
-                </form>
-                <h5><strong>Replies:</strong></h5>
-                <div id="replies-div">
-                  <!--O contido que vai eiqui está na script de Javascript-->
-              </div>
-        </div>
-    </div>
-</div>
-
-
 </body>
 
 <!--This is the javascript function which captures the chat_comments.pk when the "Reply" button is clicked.-->
 <script>
-
-  var selected_comment_pk = null;
-
-  function setCommentPK(pk_comment) {
-      selected_comment_pk = pk_comment;
-      document.getElementById('comment-pk').value = pk_comment; //Collemos o input con id="comment-pk" e asignámoslle o valor do pk
-      updateCommentRepliesDiv(pk_comment); // Update the content of the replies div with the selected comment's replies
+  function setCommentPK(pk) {
+      document.getElementById('comment-pk-' + pk).value = pk; //Con esta función asígnolle ao valor input(<input name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">), o pk do comentario cando se clica no botón "Reply/Show comments"
   }
 
-
-  function updateCommentRepliesDiv(selectedCommentPK) {
-      var repliesDiv = document.getElementById('replies-div'); //Ao elemento div con id="replies-div" pasa a chamalo repliesDiv. 
-      var commentDiv = document.getElementById('comment-div'); //Ao elemento div con id="replies-div" pasa a chamalo repliesDiv. 
-      repliesDiv.innerHTML = '';  // Clear the existing content
-      commentDiv.innerHTML = '';  // Clear the existing content
-
-
-      // Loop through the replies and display those associated with the selected comment
-      {% for chat_comments in chat_comments_all_html %}
-          if ({{ chat_comments.pk }} === selectedCommentPK) {
-              var commentUsername = "{{ chat_comments.username_comment|escapejs }}";
-              var commentDateAdded = "{{ chat_comments.date_added }}";
-              var commentText = "{{ chat_comments.comentario|escapejs }}";
-              //Eiqui meto o contido que vai no commentDiv
-              commentDiv.innerHTML += '<p style="font-size:big;">' + '<strong>' + commentUsername  + '</strong>' + ' - ' + commentDateAdded + '</p>' + '<p style="font-size:1.1em;">' + commentText + '</p>';
-          }
-      {% endfor %}
-
-      {% for reply in replies_comments_all_html %}
-          if ({{ reply.pk_original_comment }} === selectedCommentPK) {
-              var replyUser = "{{ reply.username_reply }}";
-              var replyDate = "{{ reply.date_added }}";
-              var replyText = "{{ reply.reply_text|escapejs }}";
-              //Eiqui meto o contido que vai no repliesDiv
-              repliesDiv.innerHTML += 
-                '<ul class="list-unstyled" id="comments" style="background-color:black;">' +
-                  '<li class="justify-content-between" style="background-color:black;">' +
-                    '<div class="card" style="background-color:black;">' +
-                      '<div class="card-header d-flex justify-content-between p-3" style="background-color:black;">' +
-                        '<p class="fw-bold mb-0">' +
-                          '<strong>' + replyUser + '</strong>' +
-                        '</p>' +
-                        '<p class="text-muted small mb-0">'+'<i class="far fa-clock">'+'</i>'+ replyDate + '</p>' +
-                      '</div>' +
-                      '<div class="card-body">' +
-                        '<p class="mb-0">' +
-                          replyText +
-                        '</p>' +
-                      '</div>' +
-                    '</div>' +
-                  '</li>' +
-                '</ul>'                        
-          }
-    {% endfor %}
-  }
-
-
- 
-
-   
- 
+  function toggleComments(chatCommentId) { //Con esto fago que ao clicar no botón the "reply/shos all commentes" me mostre os replies correspondientes a sección do comentario que estou clicando.
+        var commentsSection = document.getElementById('commentsSection_' + chatCommentId);
+        if (commentsSection.style.display === 'none') {
+            commentsSection.style.display = 'block';
+        } else {
+            commentsSection.style.display = 'none';
+        }
+    }
 </script>
 
-
-
-
 {% endblock content %}
-
-
-

@@ -86,15 +86,18 @@ def country_data_view (request):
 
         # CHAT:
         #Doulle un valor por defecto ao formularios para que non me de ERROR e que non me aparezca ningunha alerta debaixo do formulario cando se carga por primeira vez a páxina.
-        form_chat = chat_form()
-        form_chat_reply = chat_replies_form()
+        # form_chat = chat_form()
+        # form_chat_reply = chat_replies_form()
+        form_chat = chat_form(data=request.POST)
+        form_chat_reply = chat_replies_form(data = request.POST)
         # if this is a POST request we need to process the form data (Todos os comentarions que nos cheguen serán POST)
         if request.method == 'POST':
-            form_chat = chat_form(data=request.POST)
-            form_chat_reply = chat_replies_form(data = request.POST)
+            print('11111111111111')
             form_type = request.POST.get('form_type')
+            print(form_type)
             # We check the what form it is and we execute the code accordingly for each form
             if form_type == 'comment':
+                print('COMENT')
                 #Check whether it is valid:
                 if form_chat.is_valid():
                     post_comment = form_chat.cleaned_data.get('comentario')
@@ -117,10 +120,14 @@ def country_data_view (request):
             # REPLIES of the CHAT:
             # We check the what form it is and we execute the code accordingly for each form
             elif form_type == 'reply':
+                print('MARIA')
+                print('reply')
                 #Check whether it is valid:
                 if form_chat_reply.is_valid():
                     #Collemos o texto do reply
                     reply_text_var = form_chat_reply.cleaned_data.get('reply_text')
+                    print('PEPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE')
+                    print(reply_text_var)
                     #Collemos o pk que está gardado no campo 'pk_original_comment' do formulario 'form_chat_reply', porque no html coa axuda de Javascript autocompletaros o 'pk_original_comment'
                     # do formulario co pk do comentario orixinal. Esto é algo que se fai no html (bicicleteiros_home_page.html)
                     pk_original_comment_var = form_chat_reply.cleaned_data.get('pk_original_comment')
@@ -158,11 +165,6 @@ def country_data_view (request):
         #Eiqui collo as replies dos cometarios
         replies_comments_all = chat_comments_replies_model.objects.all()
 
-        # Include selected_comment_pk in the context
-        selected_comment_pk = None
-        if 'comment-pk' in request.POST:
-            selected_comment_pk = request.POST['comment-pk']
-
         
         context = {
             'journey_day_html' : current_journey_day ,
@@ -186,7 +188,6 @@ def country_data_view (request):
             'chat_number_comments_html' : number_comments,
             'form_chat_reply_html' : form_chat_reply,
             'replies_comments_all_html' : replies_comments_all,
-            'selected_comment_pk_html':selected_comment_pk,
             
             'graph_money_type_html' :all_entry_days
         }
