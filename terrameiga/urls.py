@@ -56,7 +56,7 @@ urlpatterns = [
     path('riders/', TemplateView.as_view(template_name = "templates/riders.html"), name="riders"),
     path('registration_orixinal/', TemplateView.as_view(template_name = "templates/registration_orixinal.html"), name = "registration_orixinal"),
     path('info/', TemplateView.as_view(template_name = "templates/info.html")),
-    path('castellano/', index, name="home_page_es"),
+    path('castellano/', TemplateView.as_view(template_name = "templates/home_page.html"), name="home_page"),
     path('route/', TemplateView.as_view(template_name = "templates/route.html"), name="route"),
 ]
 
