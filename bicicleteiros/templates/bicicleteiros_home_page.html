@@ -2,6 +2,7 @@
 <!--To load the Django library to translate your text.-->
 {% load i18n %}
 {% load static %}
+
 {% block content %} 
 
 
@@ -43,28 +44,28 @@
     <ul>
     <h4 class="mt-2">
       <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
-      WEEK {{current_week_html}} - Day {{ journey_day_html }}<img style="float: right;" width="75" height="37" src='{{flag_url_html}}' alt="First slide">
+      {% trans "WEEK" %} {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}<img style="float: right;" width="75" height="37" src='{{flag_url_html}}' alt="First slide">
     </h4>
     <hr>
-      <li id="data_home_page">Km completed: <strong>{{ total_km_html }} km </strong></li>
-      <li id="data_home_page" class="mt-2">Total Expenses: <strong>{{ graph_total_money_html }} € </strong></li>
-      <li id="data_home_page" class="mt-2">Country: <strong>{{ current_country_html }} (#{{country_number_html}})</strong></li>
-      <li id="data_home_page" class="mt-2">Capital: <strong>{{ capital_city_html }}</strong></li>
-      <li id="data_home_page" class="mt-2">Visa required: <strong>{{ visa_required_html }} ({{ visa_price_html }} Euros)</strong></li>
+      <li id="data_home_page">{% trans "Km completed:" %} <strong>{{ total_km_html }} km </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Total Expenses:" %} <strong>{{ graph_total_money_html }} € </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Country:" %} <strong>{{ current_country_html }} (#{{country_number_html}})</strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Capital:" %} <strong>{{ capital_city_html }}</strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Visa required:" %} <strong>{{ visa_required_html }} ({{ visa_price_html }} Euros)</strong></li>
     <hr>
-    <h5>Country Information:</h5>
+    <h5>{% trans "Country Information:</h5>
     <hr>
-      <li id="data_home_page" class="mt-3">Surface: <strong>{{ surface_html }} km2 </strong><br> 
+      <li id="data_home_page" class="mt-3">{% trans "Surface:" %} <strong>{{ surface_html }} km2 </strong><br> 
         <label style="font-style: italic;">(Spain: 505.994 km2)</label></li>
-      <li id="data_home_page" class="mt-2">Population: <strong>{{ population_html }} people </strong> <br>
+      <li id="data_home_page" class="mt-2">{% trans "Population:" %} <strong>{{ population_html }} people </strong> <br>
         <label style="font-style: italic;">(Spain: 48.300.000 people)</label></li>
-      <li id="data_home_page" class="mt-2">Density population: <strong>{{ density_population_html }} km2 </strong> <br>
+      <li id="data_home_page" class="mt-2">{% trans "Density population:" %} <strong>{{ density_population_html }} km2 </strong> <br>
         <label style="font-style: italic;">(Spain: 94 people per km2)</label> </li>
-      <li id="data_home_page" class="mt-2">Renta per capita: <strong>{{ rent_per_capita_html }} €</strong> <br>
+      <li id="data_home_page" class="mt-2">{% trans "Renta per capita:" %} <strong>{{ rent_per_capita_html }} €</strong> <br>
         <label style="font-style: italic;">(Spain: 27.870 €)</label> </li>
-      <li id="data_home_page" class="mt-2">Currency: <strong>{{ currency_html }}</strong> </li>
-      <li id="data_home_page" class="mt-2">Local Time: <strong><label id="current-time"></label></strong> </li>
-      <li id="data_home_page" class="mt-2">The most listen song on Spotify</li>
+      <li id="data_home_page" class="mt-2">{% trans "Currency:" %} <strong>{{ currency_html }}</strong> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Local Time:" %} <strong><label id="current-time"></label></strong> </li>
+      <li id="data_home_page" class="mt-2">{% trans "The most listen song on Spotify" %}</li>
     </ul>
   </div>
   <div class="col-lg-9">
@@ -101,7 +102,7 @@
           </div>
         </form>-->
         <h4>
-          Highlights ({{chat_number_comments_html}})
+          {% trans "Highlights" %} ({{chat_number_comments_html}})
         </h4>
         {% for chat_comments in chat_comments_all_html %}
         <ul class="list-unstyled" id="comments">
@@ -142,9 +143,9 @@
                     <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="mt-4">
+                    <h5 class="mt-4">
                       Comments ({{chat_comments.number_of_replies}}):
-                    </h4>
+                    </h5>
                     {% for reply in replies_comments_all_html %}
                     <div class="card" style="background-color:rgb(51, 51, 51); border: 1px;">
                       <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
@@ -180,7 +181,6 @@
 </section>
             
 </body>
-
 <!--This is the javascript function which captures the chat_comments.pk when the "Reply" button is clicked.-->
 <script>
   function setCommentPK(pk) {

@@ -1,9 +1,10 @@
 from django.contrib import admin
 
-from bicicleteiros.models import country_information_model, money_model, km_altitude_model, chat_comments_model, chat_comments_replies_model, videos_model, photos_model
+from bicicleteiros.models import currency, country_information_model, money_model, km_altitude_model, chat_comments_model, chat_comments_replies_model, videos_model, photos_model
 
 # Register your models here.
 
+admin.site.register(currency)
 admin.site.register(country_information_model)
 admin.site.register(money_model)
 admin.site.register(km_altitude_model)

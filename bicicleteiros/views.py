@@ -139,7 +139,7 @@ def country_data_view (request):
                     comment_entry_to_update.save()
 
                     #Esto é para que me mostre a mensaxe de que se engadiu o reply
-                    messages.success(request, 'Your reply has been successfully included!')
+                    messages.success(request, 'Thanks for your participation. Your reply has been successfully included!')
                     #artigos_content e que para que me retorne a vista do blog
                     return redirect('bicleteiros_home_page')
                 

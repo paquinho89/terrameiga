@@ -48,7 +48,7 @@ class chat_comments_model(models.Model):
     #de Railway non me acepta o datetime field.
     #date_added = models.DateField (default=datetime.now, blank=True, null=True)
     date_added = models.DateTimeField (default=timezone.now, blank=True)
-    username_comment = models.CharField(max_length=33, blank=True, null=True)
+    username_comment = models.CharField(max_length=33, blank=True, null=True, default="paquinho89")
     number_of_replies = models.IntegerField(blank=False, null=True, default=0)
 
     #Esto é para que me ordene os comentarios na páxina por data. Os comentarios máis recentes que se posicionen arriba
@@ -68,8 +68,19 @@ class chat_comments_replies_model(models.Model):
     #Esto é para que me ordene os replies na páxina por data. Os comentarios máis recentes que se posicionen arriba
     class Meta:
         ordering = ['-date_added']
+    
+    def __str__(self):
+        return (str(self.username_reply))
 
 
+class currency(models.Model):
+    currency = models.CharField(max_length=50, choices= currency_list_fixed, blank=False, null=False)
+    currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = False, null=False)
+    
+    def __str__(self):
+        return (self.currency)
+
+    
 class country_information_model(models.Model):
     country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
     country_number = models.IntegerField(blank=False, null=False)
@@ -78,8 +89,7 @@ class country_information_model(models.Model):
     population = models.IntegerField(blank=True, null=True)
     population_density = models.IntegerField(blank=True, null=True)
     rent_per_capita = models.IntegerField(blank=True, null=True)
-    currency = models.CharField(max_length=50, choices= currency_list_fixed, blank=True, null=True)
-    currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = True, null=True, unique=True)
+    currency = models.ForeignKey(currency, on_delete=models.PROTECT)
     time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
     visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
     visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
@@ -111,9 +121,9 @@ class money_model(models.Model):
     expense_type = models.CharField(max_length=33, choices=expense_type_choices, blank=True, null=True)
     expense_euros = models.IntegerField(blank = True, null=True)
 
-    #Convert the money into Euros base on the currency change of the "country_information_model".
+    #Convert the money into Euros base on the currency change of the "currency model".
     def save(self):
-        self.expense_euros = sum([self.expense*self.country.currency_change_euro])
+        self.expense_euros = sum([self.expense*self.country.currency.currency_change_euro])
         self.country_name = str(self.country)
         self.country_number = str(self.country.country_number)
         return super().save()

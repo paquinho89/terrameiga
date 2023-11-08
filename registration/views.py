@@ -49,14 +49,7 @@ def sign_up_view(request):
       uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
       send_confirm_email (email_form, uidb64, token)
       #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
-      messages.add_message(request, messages.SUCCESS,
-                          """
-                          <h2> Please, go to your email and verify your account</h2>
-                            <p>
-                             Welcome, you will enjoy the latest news about cycling and interesting items
-                             for your bike
-                            </p>
-                          """  + user_name)
+      messages.add_message(request, messages.SUCCESS,"Please, go to your email and verify your account. Thanks for your support, " + user_name)
       return redirect('account_confirmation_email_sent')
     else:
       
@@ -106,7 +99,7 @@ def sign_in_view(request):
         login(request, user_auth)
         messages.success(request,
                         """
-                        Welcome! You can check everything of the Paquinho's journey. 
+                        Welcome! Now you can enjoy with all the content from the journey. 
                         """
                     )
         return redirect('bicleteiros_home_page')
@@ -180,7 +173,7 @@ def delete_account_view (request):
       current_user = CustomUser.objects.get(id=request.user.id)
       if str(text_delete_form) == str("terrameiga"):
         current_user.delete()
-        messages.add_message(request, messages.SUCCESS, 'Your account has been deleted')
+        messages.add_message(request, messages.SUCCESS, 'Your account has been deleted. We hope see you back soon!')
         return redirect('home_page_no_registered')
       else:
         #Esto é para que se vacíe o formulario por se hai un erro
@@ -218,7 +211,9 @@ def password_reset_view(request):
       else:
         messages.add_message(request, messages.ERROR, 'The email does not exist in our data base')
     else:
-      messages.add_message(request, messages.ERROR, 'Email not valid')
+      for field, error in password_recovery_form_variable.errors.items():
+        password_recovery_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        messages.add_message(request, messages.ERROR, 'The email is not valid')
 
   context = {
     'email_recovery' : password_recovery_form_variable
@@ -238,7 +233,9 @@ def password_new_password_view(request, uidb64, token):
       messages.add_message(request, messages.SUCCESS, 'Your password has been changed')
       return redirect('bicleteiros_home_page')
     else:
-      messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
+      for field, error in password_reset_form.errors.items():
+        password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
   context = {
     'reset_password_form' : password_reset_form
   }

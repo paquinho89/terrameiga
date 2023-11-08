@@ -1,10 +1,10 @@
 Privacy Policy 
 <br>
-Effective Date: 01-March-2024<br>
+Effective Date: 01-Jan-2024<br>
 <br>
 <strong>1. Introduction</strong>
 <br>
-   This Privacy Policy outlines how [Your Company Name] ("we," "us," or "our") collects, uses, shares, and protects personal data as required by the General Data Protection Regulation (GDPR). By using our website [Your Website URL] ("the Website"), you consent to the practices described in this Privacy Policy.
+   This Privacy Policy outlines how TerraMeiga collects, uses, shares, and protects personal data as required by the General Data Protection Regulation (GDPR). By using our website terrameiga.bike, you consent to the practices described in this Privacy Policy.
 <br>
 <strong>2. Definitions</strong>
 <br>
@@ -16,9 +16,9 @@ Effective Date: 01-March-2024<br>
 <br>
    a. Personal Data: We may collect personal data, including but not limited to your name, email address, phone number, and other details you provide when contacting us or using our services.
 <br>
-   b. Usage Information: We automatically collect information about your usage of the Website, including your IP address, browser type, device information, and pages visited.
+   b. Usage Information: We automatically collect information about your usage of the Website, including browser type, device information, and pages visited.
 <br>
-   c. Cookies: We use cookies and similar tracking technologies to enhance your experience on the Website. For more information, please refer to our Cookie Policy.
+   c. Cookies: On this site we do not use cookies.
 <br>
 <strong>4. Legal Basis for Data Processing</strong>
 <br>
@@ -60,7 +60,7 @@ Effective Date: 01-March-2024<br>
 <br>
 <strong>8. Data Retention</strong>
 <br>
-   We will retain your personal data for as long as necessary to fulfill the purposes for which it was collected, as required by legal obligations, or as otherwise stated in this Privacy Policy.
+   We will retain your personal data for as long as you have an active account with us. Once you delete your account, we will delete all your Personal Identifiable Information (PII).
 <br>
 <strong>9. Data Security</strong>
 <br>
@@ -84,14 +84,14 @@ Effective Date: 01-March-2024<br>
 <br>
    g. Right to Withdraw Consent: If processing is based on consent, you can withdraw it at any time.
 <br>
-   To exercise your rights, please contact us at [Your Contact Information].
+   To exercise your rights, please contact us at paquinho89@gmail.com.
 <br>
 <strong>11. Contact Us</strong>
 <br>
-   If you have questions or concerns about this Privacy Policy or our data practices, please contact us at [Your Contact Information].
+   If you have questions or concerns about this Privacy Policy or our data practices, please contact us at paquinho89@gmail.com.
 <br>
 <strong>12. Changes to this Privacy Policy</strong>
 <br>
    We reserve the right to modify this Privacy Policy at any time. Please review it periodically for updates.
 <br>
-<strong>This Privacy Policy was last updated on [Date of Last Update].</strong>
+<strong>This Privacy Policy was last updated on 01-Jan-2024.</strong>

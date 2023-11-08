@@ -117,6 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
+# https://www.vitainbeta.org/how-to-install-homebrew-on-mac-linux-windows/
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 # To make the site available in other languages you have to install the gettext package following the video you have recorded
 # https://www.youtube.com/watch?v=eMI2mE8rG5w
@@ -127,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # However, MIDDLEWARE, there is 'django.middleware.locale.LocaleMiddleware', which detects the language of the browser and put the webiste in the same language
 # as the browser.
 
-LANGUAGE_CODE = 'gl-es'
+LANGUAGE_CODE = 'en-us'
 #ESto é para o tema de ter múltiples idiomas na páxina web.
 LOCALE_PATHS = [
    os.path.join(BASE_DIR, 'locale')
