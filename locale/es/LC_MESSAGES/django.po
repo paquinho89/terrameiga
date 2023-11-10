@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-10 10:10+0100\n"
+"POT-Creation-Date: 2023-11-10 12:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,18 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\bicicleteiros\templates\base\footer.html:30
-#, fuzzy
-#| msgid "Made with &#10084 by"
-msgid "Made with"
+msgid "Made with &#10084 by"
 msgstr "Hecho con &#10084 por"
-
-#: .\bicicleteiros\templates\base\footer.html:30
-msgid "by"
-msgstr ""
 
 #: .\bicicleteiros\templates\base\footer.html:31
 msgid "No cookies are used on the site"
-msgstr "En este sitio web no utilizamos cookies"
+msgstr "Este sitio web no utiliza cookies"
 
 #: .\bicicleteiros\templates\base\footer.html:32
 msgid "All reserved rights:"
@@ -42,7 +36,7 @@ msgstr "Inicio"
 
 #: .\bicicleteiros\templates\base\nav_bar.html:21
 msgid "Videos"
-msgstr "ViÃÂÃÂ­deos"
+msgstr "Ví­deos"
 
 #: .\bicicleteiros\templates\base\nav_bar.html:24
 msgid "Pictures"
@@ -71,83 +65,79 @@ msgstr "Día"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:49
 msgid "Km completed:"
-msgstr ""
+msgstr "Km completados:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:50
-#, fuzzy
-#| msgid "Expenses"
-msgid "Total Expenses:"
+msgid "Expenses:"
 msgstr "Gastos"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:51
-#, fuzzy
-#| msgid "Country"
 msgid "Country:"
-msgstr "País"
+msgstr "País:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:52
 msgid "Capital:"
-msgstr ""
+msgstr "Capital:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:53
-msgid "Visa required:"
-msgstr ""
+msgid "Visa:"
+msgstr "Visa:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:57
 msgid "Surface:"
-msgstr ""
+msgstr "Superficie:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:58
 msgid "(Spain: 505.994 km2)"
-msgstr ""
+msgstr "(España 505.994 km2)"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:59
 msgid "Population:"
-msgstr ""
+msgstr "Población"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:59
 msgid "people"
-msgstr ""
+msgstr "personas"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:60
 msgid "(Spain: 48.300.000 people)"
-msgstr ""
+msgstr "(España: 48.300.000 personas)"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:61
 msgid "Density population:"
-msgstr ""
+msgstr "Densidad poblacional"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:62
 msgid "(Spain: 94 people per km2)"
-msgstr ""
+msgstr "(España: 94 personas por km2)"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:63
 msgid "Renta per capita:"
-msgstr ""
+msgstr "Renta per capita:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:64
 msgid "(Spain: 27.870 €)"
-msgstr ""
+msgstr "(España: 27.870 €)"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:65
 msgid "Currency:"
-msgstr ""
+msgstr "Moneda:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:66
 msgid "Local Time:"
-msgstr ""
+msgstr "Hora local:"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:67
 msgid "The most listen song on Spotify"
-msgstr ""
+msgstr "Canción más escuchada en Spotify"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:68
 msgid "Interesting fact"
-msgstr ""
+msgstr "Dato interesante"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page.html:105
 msgid "Highlights"
-msgstr ""
+msgstr "Cosas a destacar"
 
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:184
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:204
@@ -160,8 +150,8 @@ msgstr "Iniciar Sesión"
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:205
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:214
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:223
-#: .\registration\templates\2_sign_up.html:14
-#: .\registration\templates\2_sign_up.html:72
+#: .\registration\templates\2_sign_up.html:16
+#: .\registration\templates\2_sign_up.html:74
 msgid "Sign Up"
 msgstr "Registrarse"
 
@@ -191,62 +181,72 @@ msgstr "Kilómetros"
 msgid "Videos and Pictures"
 msgstr "Vídeos y Fotos"
 
-#: .\registration\templates\1_sign_in.html:15
-#, fuzzy
-#| msgid "Sign In"
+#: .\registration\templates\1_sign_in.html:17
+#: .\registration\templates\1_sign_in.html:46
 msgid "Sign in"
 msgstr "Iniciar Sesión"
 
-#: .\registration\templates\1_sign_in.html:50
+#: .\registration\templates\1_sign_in.html:28
+#: .\registration\templates\profile_account\delete_account.html:20
+msgid "Password"
+msgstr "Contraseña"
+
+#: .\registration\templates\1_sign_in.html:54
 msgid "Did you forget your password?"
-msgstr ""
+msgstr "¿No recuerdas tu contraseña?"
 
-#: .\registration\templates\1_sign_in.html:56
-msgid "Create a new TerraMeiga account"
-msgstr ""
+#: .\registration\templates\1_sign_in.html:62
+msgid "Would you like to create an account?"
+msgstr "¿Quieres crear una cuenta?"
 
-#: .\registration\templates\2_sign_up.html:44
+#: .\registration\templates\2_sign_up.html:46
 msgid "Creating the account, you are accepting the"
-msgstr ""
+msgstr "Al crear la cuenta aceptas la"
 
-#: .\registration\templates\2_sign_up.html:44
-#: .\registration\templates\2_sign_up.html:53
+#: .\registration\templates\2_sign_up.html:46
+#: .\registration\templates\2_sign_up.html:55
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Política de Privacidad"
 
-#: .\registration\templates\2_sign_up.html:63
+#: .\registration\templates\2_sign_up.html:65
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
-#: .\registration\templates\2_sign_up.html:78
+#: .\registration\templates\2_sign_up.html:80
 msgid "Do you have already an account? sign in into your account"
-msgstr ""
+msgstr "¿Ya tienes una cuenta? Incia sesión"
 
 #: .\registration\templates\account_confirm_email_sent.html:16
 msgid "Email confirmation"
-msgstr ""
+msgstr "Confirmación del Email"
 
 #: .\registration\templates\account_confirm_email_sent.html:18
-msgid "To complete your registration, go to your email, open the "
+msgid ""
+"To complete your registration, go to your email, open the TerraMeiga email "
+"and click on the link."
 msgstr ""
+"Para completar tu registro, vete a tu correo electrónico, abre el email y "
+"haz click en el link"
 
 #: .\registration\templates\account_confirm_email_sent.html:21
 msgid "In case you do not find it, check on the spam folder!"
 msgstr ""
+"En el caso de que no lo encuentres, comprueba si está en la carpeta de "
+"correo no deseado"
 
 #: .\registration\templates\email_body_confirmation.html:7
 #: .\registration\templates\email_body_password.html:7
 msgid "Terra Meiga - Password Recovery"
-msgstr ""
+msgstr "Terra Meiga - Password Recovery"
 
 #: .\registration\templates\email_body_confirmation.html:14
 msgid "Email Confirmation"
-msgstr ""
+msgstr "Confirmación del Email"
 
 #: .\registration\templates\email_body_confirmation.html:22
 #: .\registration\templates\email_body_password.html:22
 msgid "Hello!"
-msgstr ""
+msgstr "¡Hola!"
 
 #: .\registration\templates\email_body_confirmation.html:23
 msgid ""
@@ -254,87 +254,80 @@ msgid ""
 "adventure. To complete your registration, please click the following link to "
 "confirm your email:"
 msgstr ""
+"Gracias por registrarte en TerraMeiga y apoyarme en esta aventura. Para "
+"completar tu registro debes de hacer click en 'Confirma tu email' "
 
 #: .\registration\templates\email_body_confirmation.html:27
 msgid "Confirm Your Email"
-msgstr ""
+msgstr "Confirma tu email"
 
 #: .\registration\templates\email_body_confirmation.html:28
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
 msgstr ""
+"En caso de que no te hayas registrado con TerraMeiga, puedes ignorar este "
+"email."
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
 msgid "Happy biking!"
-msgstr ""
+msgstr "¡Qué Disfrutes con la bici!"
 
 #: .\registration\templates\email_body_password.html:14
 #: .\registration\templates\password_reset.html:15
 #: .\registration\templates\password_reset_sent.html:16
-#, fuzzy
-#| msgid "Password"
 msgid "Password Recovery"
-msgstr "Contraseña"
+msgstr "Recuperar la contraseña"
 
 #: .\registration\templates\email_body_password.html:23
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
-msgstr ""
+msgstr "Si has olvidado tu contraseña, haz click en el siguiente link:"
 
 #: .\registration\templates\email_body_password.html:26
-#, fuzzy
-#| msgid "Password"
 msgid "Reset Password"
-msgstr "Contraseña"
+msgstr "Resetear la contraseña"
 
 #: .\registration\templates\email_body_password.html:27
 msgid "If you didn't request this password reset, please ignore this email."
 msgstr ""
+"En caso de que no hayas solicitado el cambio de contraseña, ignore este email"
 
 #: .\registration\templates\password_reset.html:30
-#, fuzzy
-#| msgid "Password"
 msgid "Get Password"
 msgstr "Contraseña"
 
 #: .\registration\templates\password_reset_complete.html:15
 #: .\registration\templates\password_reset_complete.html:22
-#, fuzzy
-#| msgid "Password"
 msgid "New Password"
 msgstr "Contraseña"
 
 #: .\registration\templates\password_reset_complete.html:31
-#, fuzzy
-#| msgid "Password"
 msgid "Repeat New Password"
-msgstr "Contraseña"
+msgstr "Repita su nueva contraseña"
 
 #: .\registration\templates\password_reset_complete.html:41
-#, fuzzy
-#| msgid "Password"
 msgid "Update Password"
-msgstr "Contraseña"
+msgstr "Actualizar Contraseña"
 
 #: .\registration\templates\password_reset_sent.html:18
 msgid ""
 "To recover your password, go to your email, open the 'TerraMeiga' email and "
 "click on the link."
 msgstr ""
+"Para recuperar su contraseña, vaya a su correo electrónico, abra el correo "
+"de TerraMeiga y haga click en el enlace."
 
 #: .\registration\templates\password_reset_sent.html:21
 msgid "In case you do not find the email, check on the spam folder!"
 msgstr ""
+"En caso de que no encuentre su correo electrónico, compruebe si está en la "
+"bandeja de correo no deseado."
 
 #: .\registration\templates\profile_account\delete_account.html:17
 msgid "Personal Data"
 msgstr "Datos Personales"
-
-#: .\registration\templates\profile_account\delete_account.html:20
-msgid "Password"
-msgstr "Contraseña"
 
 #: .\registration\templates\profile_account\delete_account.html:23
 #: .\registration\templates\profile_account\delete_account.html:35
@@ -343,8 +336,6 @@ msgid "Delete Account"
 msgstr "Eliminar Cuenta"
 
 #: .\registration\templates\profile_account\delete_account.html:31
-#, fuzzy
-#| msgid "Do you want to be part of this adventure?"
 msgid "Do you want to delete your account?"
 msgstr "Quieres eliminar tu cuenta?"
 

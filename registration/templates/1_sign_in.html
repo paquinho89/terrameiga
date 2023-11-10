@@ -1,4 +1,6 @@
 {% extends 'base/base_non_registered.html' %}
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
 
 {% load static %}
 
@@ -23,7 +25,7 @@
                             {% if forloop.counter == 1 %}
                             <label>Email</label>
                             {% elif forloop.counter == 2 %}
-                            <label>Password</label>
+                            <label>{% trans "Password" %}</label>
                             {% endif %}
                             <!--O div métollo para que me quede a barra de meter o texto debaixo da label-->
                             <div>
@@ -38,22 +40,25 @@
                           </td>
                         </tr>
                       {% endfor %}
-
                     <div class="d-flex justify-content-left mb-lg-4 mt-1">
                       <button id="sign_in_button" type="submit" class="btn-lg mt-2" href="#" type="submit">
-                        <strong>Sign in</strong>
+                        <strong>{% trans "Sign in" %}</strong>
                       </button>
                     </div>
  
-                    <div class="form-check d-flex justify-content-left">
+                    <div class="d-flex justify-content-left">
                       <label class="form-check-label mt-2" for="form2Example3">
-                        <a href="{% url 'reset_password' %}" class="text-dark"><p><strong>{% trans "Did you forget your password?" %}</strong></p></a>
+                        <a href="{% url 'reset_password' %}" class="text-dark">
+                          <p>
+                            <strong>{% trans "Did you forget your password?" %}</strong>
+                          </p>
+                        </a>
                       </label>
                     </div>
 
-                    <div class="form-check d-flex justify-content-left">
+                    <div class="d-flex justify-content-left">
                       <label class="form-check-label text-dark" for="form2Example3">
-                        <a href="{% url 'sign_up' %}" class="text-dark"><p><strong>{% trans "Create a new TerraMeiga account" %}</strong></p></a>
+                        <a href="{% url 'sign_up' %}" class="text-dark"><p><strong>{% trans "Would you like to create an account?" %}</strong></p></a>
                       </label>
                     </div>
                   </form>
