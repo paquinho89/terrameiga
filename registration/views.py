@@ -26,9 +26,6 @@ def index(request):
   return render(request, "templates/home_page_castellano.html", context)
 
 def sign_up_view(request):
-  # Con esto o que fago é abrir o documento para leelo e que despois aparezca no html. Deste xeito o chorretón de texto non está no html e todo queda máis ordenado
-  with open('terrameiga/static/lists/privacy_policy.txt', 'r') as file:
-    privacy_policy = file.read()
   # create a form instance and populate it with data from the request:
   sign_up_form_variable = sign_up_form_2(data=request.POST)
   if request.method == 'POST':
@@ -61,8 +58,7 @@ def sign_up_view(request):
         messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
        
   context = {
-        'sign_up_form':sign_up_form_variable,
-        'privacy_policy_html': privacy_policy
+        'sign_up_form':sign_up_form_variable
   }
   return render (request, '2_sign_up.html', context)
 

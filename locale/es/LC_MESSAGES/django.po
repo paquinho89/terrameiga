@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-10 12:03+0100\n"
+"POT-Creation-Date: 2023-11-10 16:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -150,8 +150,7 @@ msgstr "Iniciar Sesión"
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:205
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:214
 #: .\bicicleteiros\templates\bicicleteiros_home_page_no_registration.html:223
-#: .\registration\templates\2_sign_up.html:16
-#: .\registration\templates\2_sign_up.html:74
+#: .\registration\templates\2_sign_up.html:73
 msgid "Sign Up"
 msgstr "Registrarse"
 
@@ -182,22 +181,35 @@ msgid "Videos and Pictures"
 msgstr "Vídeos y Fotos"
 
 #: .\registration\templates\1_sign_in.html:17
-#: .\registration\templates\1_sign_in.html:46
+#: .\registration\templates\1_sign_in.html:45
 msgid "Sign in"
 msgstr "Iniciar Sesión"
 
 #: .\registration\templates\1_sign_in.html:28
+#: .\registration\templates\2_sign_up.html:29
 #: .\registration\templates\profile_account\delete_account.html:20
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\registration\templates\1_sign_in.html:54
+#: .\registration\templates\1_sign_in.html:53
 msgid "Did you forget your password?"
 msgstr "¿No recuerdas tu contraseña?"
 
-#: .\registration\templates\1_sign_in.html:62
+#: .\registration\templates\1_sign_in.html:61
 msgid "Would you like to create an account?"
 msgstr "¿Quieres crear una cuenta?"
+
+#: .\registration\templates\2_sign_up.html:16
+msgid "Account Creation"
+msgstr "Registro"
+
+#: .\registration\templates\2_sign_up.html:25
+msgid "Name"
+msgstr "Nombre"
+
+#: .\registration\templates\2_sign_up.html:31
+msgid "Repeat Password"
+msgstr "Repita la contraseña"
 
 #: .\registration\templates\2_sign_up.html:46
 msgid "Creating the account, you are accepting the"
@@ -208,31 +220,31 @@ msgstr "Al crear la cuenta aceptas la"
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
 
-#: .\registration\templates\2_sign_up.html:65
+#: .\registration\templates\2_sign_up.html:64
 msgid "Close"
 msgstr "Cerrar"
 
-#: .\registration\templates\2_sign_up.html:80
+#: .\registration\templates\2_sign_up.html:79
 msgid "Do you have already an account? sign in into your account"
 msgstr "¿Ya tienes una cuenta? Incia sesión"
 
-#: .\registration\templates\account_confirm_email_sent.html:16
-msgid "Email confirmation"
-msgstr "Confirmación del Email"
-
 #: .\registration\templates\account_confirm_email_sent.html:18
+msgid "Email confirmation"
+msgstr "Confirmación del email"
+
+#: .\registration\templates\account_confirm_email_sent.html:20
 msgid ""
 "To complete your registration, go to your email, open the TerraMeiga email "
 "and click on the link."
 msgstr ""
-"Para completar tu registro, vete a tu correo electrónico, abre el email y "
-"haz click en el link"
+"Para completar su registro, vaya a su correo electrónico, abra el email y "
+"haga click en el enlace"
 
-#: .\registration\templates\account_confirm_email_sent.html:21
+#: .\registration\templates\account_confirm_email_sent.html:23
 msgid "In case you do not find it, check on the spam folder!"
 msgstr ""
-"En el caso de que no lo encuentres, comprueba si está en la carpeta de "
-"correo no deseado"
+"En el caso de que no lo encuentre, puede que esté en la carpeta de correo no "
+"deseado"
 
 #: .\registration\templates\email_body_confirmation.html:7
 #: .\registration\templates\email_body_password.html:7
@@ -274,7 +286,7 @@ msgid "Happy biking!"
 msgstr "¡Qué Disfrutes con la bici!"
 
 #: .\registration\templates\email_body_password.html:14
-#: .\registration\templates\password_reset.html:15
+#: .\registration\templates\password_reset.html:17
 #: .\registration\templates\password_reset_sent.html:16
 msgid "Password Recovery"
 msgstr "Recuperar la contraseña"
@@ -294,9 +306,9 @@ msgid "If you didn't request this password reset, please ignore this email."
 msgstr ""
 "En caso de que no hayas solicitado el cambio de contraseña, ignore este email"
 
-#: .\registration\templates\password_reset.html:30
+#: .\registration\templates\password_reset.html:32
 msgid "Get Password"
-msgstr "Contraseña"
+msgstr "Resetear contraseña"
 
 #: .\registration\templates\password_reset_complete.html:15
 #: .\registration\templates\password_reset_complete.html:22

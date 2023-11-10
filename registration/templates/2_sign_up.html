@@ -13,7 +13,7 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-left">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <p class="text-left h1 fw-bold mx-1 mt-2">{% trans "Sign Up" %}
+                  <p class="text-left h3 fw-bold mx-1 mt-2">{% trans "Account Creation" %}
                   </p>
                   <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
                     {% csrf_token %}
@@ -22,13 +22,13 @@
                           <td>
                             <br>
                             {% if forloop.counter == 1 %}
-                            <label>Name</label>
+                            <label>{% trans "Name" %}</label>
                             {% elif forloop.counter == 2 %}
                             <label>Email</label>
                             {% elif forloop.counter == 3 %}
-                            <label>Password</label>
+                            <label>{% trans "Password" %}</label>
                             {% elif forloop.counter == 4 %}
-                            <label>Repeat Password</label>
+                            <label>{% trans "Repeat Password" %}</label>
                             {% endif %}
                             <!--Co div fago que a label aparezca xusto enriba do texto-->
                             <div>
@@ -58,8 +58,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              <!--O safe é para que o markdown funcion no .txt file da Privacy Policy-->
-                              <p>{{privacy_policy_html|safe}}</p>
+                              {% include 'privacy_policy.html' %}
                             </div>
                             <div class="modal-footer">
                               <button id="privacy_policy_close_button" type="button" class="btn btn-secondary" data-dismiss="modal"><strong>{% trans "Close" %}</strong></button>
