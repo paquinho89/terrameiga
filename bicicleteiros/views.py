@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
 import re
+#Paquete para traducir texto que se xenera nas view. Neste caso é o texto das alertas
+from django.utils.translation import gettext as _
 
 # Create your views here.
 def country_data_no_registered_view (request):
@@ -103,7 +105,7 @@ def country_data_view (request):
                     new_instance.save()
                     form_chat = chat_form()
                     #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
-                    messages.success(request, 'Grazas por participar nesta aventura e engadir o teu comentario!')
+                    messages.success(request, _('Grazas por participar nesta aventura e engadir o seu comentario!'))
                     #artigos_content e que para que me retorne a vista do blog
                     return redirect('bicleteiros_home_page')
                 else:
@@ -112,7 +114,7 @@ def country_data_view (request):
                     for field, errors in form_chat.errors.items():
                         form_chat[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
                     #Esto imprime o error xusto debaixo do cajetín para inserir o correo
-                    messages.error(request, 'Please, include some text in your comment')
+                    messages.error(request, _('Please, include some text in your comment'))
                     
             # REPLIES of the CHAT:
             # We check the what form it is and we execute the code accordingly for each form
@@ -139,7 +141,7 @@ def country_data_view (request):
                     comment_entry_to_update.save()
 
                     #Esto é para que me mostre a mensaxe de que se engadiu o reply
-                    messages.success(request, 'Thanks for your participation. Your reply has been successfully included!')
+                    messages.success(request, _('Thanks for your participation. Your reply has been successfully included!'))
                     #artigos_content e que para que me retorne a vista do blog
                     return redirect('bicleteiros_home_page')
                 
@@ -149,7 +151,7 @@ def country_data_view (request):
                     for field, errors in form_chat_reply.errors.items():
                         form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
                     #Esto imprime o error xusto debaixo do cajetín para inserir o correo
-                    messages.error(request, 'Please, include some text in your reply')
+                    messages.error(request, _('Please, include some text in your reply'))
 
         #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
         chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
@@ -158,7 +160,6 @@ def country_data_view (request):
         #Eiqui collo as replies dos cometarios
         replies_comments_all = chat_comments_replies_model.objects.all()
 
-        
         context = {
             'journey_day_html' : current_journey_day ,
             'current_week_html' : current_week,
@@ -187,7 +188,7 @@ def country_data_view (request):
         return render (request, 'bicicleteiros_home_page.html', context)
     else:
         # User is not authenticated, redirect to the sign_in page
-        messages.error(request, 'You must be logged in to access this page.')
+        messages.error(request, _('You must be logged in to access this page.'))
         return redirect('sign_in')  # Change 'login' to your actual login URL name
 
 def photos_view (request):
@@ -237,7 +238,6 @@ def estadistica_data_view (request):
     km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
     
     context = {
-
         'graph_money_per_week_html' : money_per_week,
         'graph_money_per_country_html': money_per_country,
         'graph_money_per_type_html': money_type,

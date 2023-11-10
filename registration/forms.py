@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from .models import CustomUser
 # from captcha.fields import ReCaptchaField
 # from captcha.widgets import ReCaptchaV2Checkbox
+#ESto son paquetes para traducir os textos. Eiqui o que quero traducir é o placeholder do formulario
+from django.utils.translation import gettext_lazy as _
 
 class sign_in_form_1(AuthenticationForm):
     class Meta:
@@ -49,7 +51,9 @@ class password_update_form(PasswordChangeForm):
 
 
 class delete_account_form(forms.Form):
-    text_to_delete = forms.CharField(label="terrameiga", max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'type "terrameiga"'}))
+    text_to_delete = forms.CharField(label="terrameiga", max_length=100, widget=forms.TextInput(attrs={
+                                                                                                        'class': 'form-control', 
+                                                                                                        'placeholder': _('type "terrameiga". Lowercase and without quotes')}))
     #captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
 

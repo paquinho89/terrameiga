@@ -1,4 +1,6 @@
 {% extends 'base/base_registered.html' %}
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
 
 {% load static %}
 
@@ -49,7 +51,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <label>{% trans "To delete your account type 'terrameiga'"%}</label>
+                            <label>{% trans "To delete your account type 'terrameiga'" %}</label>
                                 <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
                                 {% csrf_token %}
                                     {{ delete_form.text_to_delete }}

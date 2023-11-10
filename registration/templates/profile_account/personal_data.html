@@ -1,4 +1,6 @@
 {% extends 'base/base_registered.html' %}
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
 
 {% load static %}
 
@@ -14,13 +16,13 @@
                 <!--The tab -->
 				<ul class="nav nav-pills">
 					<li class="nav-item">
-					  <a id="personal_area_tab" class="nav-link active" href="{% url 'personal_data' %}">{% trans "Personal Data" }</a>
+					  <a id="personal_area_tab" class="nav-link active" href="{% url 'personal_data' %}">{% trans "Personal Data" %}</a>
 					</li>
 					<li class="nav-item">
-					  <a id="personal_area_tab" class="nav-link" href="{% url 'password' %}">{% trans "Password" }</a>
+					  <a id="personal_area_tab" class="nav-link" href="{% url 'password' %}">{% trans "Password" %}</a>
 					</li>
 					<li class="nav-item">
-					  <a id="personal_area_tab" class="nav-link" href="{% url 'delete_account' %}">{% trans "Delete Account" }</a>
+					  <a id="personal_area_tab" class="nav-link" href="{% url 'delete_account' %}">{% trans "Delete Account" %}</a>
 					</li>
 				  </ul>
                   <!--End tab -->
@@ -28,13 +30,13 @@
 			</div>
             <div id="personal_data_section" class="tab-content p-4 p-md-5" id="v-pills-tabContent">
                 <div class="tab-pane fade show active" id="personal_data" role="tabpanel" aria-labelledby="account-tab">
-                    <h3 class="mb-4"><strong>{% trans "Do you want to update your Personal Data?" }</strong></h3>
+                    <h3 class="mb-4"><strong>{% trans "Do you want to update your Personal Data?" %}</strong></h3>
                     <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label>{% trans "Email" }</label>
+                                    <label>{% trans "Email" %}</label>
                                     {{ personal_data_update_form.email }}
                                     {% if messages %}
                                     <label id="label_error" style="color: red;">{{ personal_data_update_form.email.errors }}</label>
@@ -43,7 +45,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label>{% trans "Username" }</label>
+                                    <label>{% trans "Username" %}</label>
                                     {{ personal_data_update_form.username }}
                                     {% if messages %}
                                     <label id="label_error" style="color: red;">{{ personal_data_update_form.username.errors }}</label>
@@ -52,7 +54,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label>{% trans "Country" }</label>
+                                    <label>{% trans "Country" %}</label>
                                     {{ personal_data_update_form.country }}
                                     {% if messages %}
                                     <label id="label_error" style="color: red;">{{ personal_data_update_form.country.errors }}</label>
@@ -61,7 +63,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
-                                    <label>{% trans "Language" }</label>
+                                    <label>{% trans "Language" %}</label>
                                     {{ personal_data_update_form.language }}
                                     {% if messages %}
                                     <label id="label_error" style="color: red;">{{ personal_data_update_form.language.errors }}</label>
@@ -71,7 +73,7 @@
                         </div>
                         <div class="col-md-6 mt-3">
                             <div class="form-group">
-                                <button id="update_personal_data_button" type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">{% trans "Update your data" }</button>
+                                <button id="update_personal_data_button" type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">{% trans "Update your data" %}</button>
                             </div>
                         </div>
                     </form>

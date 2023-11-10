@@ -14,16 +14,8 @@ import uuid
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
 from .helpers import send_reset_password_mail, send_confirm_email
-
 #Paquete para traducir texto que se xenera nas view. Neste caso é o texto das alertas
-#from django.utils.translation import gettext as _
-def index(request):
-   #text = _("Esto é texto aleatorio")
-   #return render(request, "home_page_castellano.html")
-  context = {
-    'texto': 'Hola'
-  }
-  return render(request, "templates/home_page_castellano.html", context)
+from django.utils.translation import gettext as _
 
 def sign_up_view(request):
   # create a form instance and populate it with data from the request:
@@ -46,7 +38,7 @@ def sign_up_view(request):
       uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
       send_confirm_email (email_form, uidb64, token)
       #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
-      messages.add_message(request, messages.SUCCESS,"Please, go to your email and verify your account. Thanks for your support, " + user_name)
+      messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
       return redirect('account_confirmation_email_sent')
     else:
       
@@ -55,7 +47,7 @@ def sign_up_view(request):
        for field, error in sign_up_form_variable.errors.items():
         sign_up_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         #Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
-        messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
+        messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
        
   context = {
         'sign_up_form':sign_up_form_variable
@@ -72,12 +64,12 @@ def sign_up_email_validation_confirmation_view (request, uidb64, token):
   #Con esta función fago log-in sen necesidade de introducir a contraseña. Ten en conta que eu nesta función non teño contraseña porque Django encríptaa e
   # non hai forma de desencriptala
   login(request, user)
-  messages.add_message(request, messages.SUCCESS, "Your account was succesfully created. Thanks for being part of this adventure!")
+  messages.add_message(request, messages.SUCCESS, _("Your account was succesfully created. Thanks for being part of this adventure!"))
   return redirect('bicleteiros_home_page')
 
 def log_out_view (request):
    logout(request)
-   messages.add_message(request, messages.INFO, "You have been logged out!")
+   messages.add_message(request, messages.SUCCESS, _("You have been logged out!"))
    return redirect('home_page_no_registered')
 
 # Create your views here.
@@ -93,11 +85,7 @@ def sign_in_view(request):
       user_auth = authenticate(request, email=email_form, password=password_form)
       if user_auth is not None:
         login(request, user_auth)
-        messages.success(request,
-                        """
-                        Welcome! Now it's time to enjoy all the content from the journey. 
-                        """
-                    )
+        messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
         return redirect('bicleteiros_home_page')
     else:
       #Comento esto porque para o formulario que hai de AuthenticationForm preconfigurado por Django esto non me funciona.
@@ -106,7 +94,7 @@ def sign_in_view(request):
         #sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         #messages.add_message(request, messages.ERROR, error)
-      messages.add_message(request, messages.ERROR, "There is no user with those credentials. Try again or create a new TerraMeiga account")
+      messages.add_message(request, messages.ERROR, _("There is no user with those credentials. Try again or create a TerraMeiga account"))
       return redirect('sign_in')
   context = {
         "sign_in_form": sign_in_form_variable
@@ -123,12 +111,12 @@ def personal_data_view(request):
       form_personal_data.save()
       #Como o sistema me fai log_out, eu poño función para manter a sesión iniciada.
       login(request, current_user)
-      messages.add_message(request, messages.SUCCESS, 'Your personal data has been updated')
+      messages.add_message(request, messages.SUCCESS, _("Your personal data has been updated"))
       return redirect('personal_data')
     else:
       for field, error in form_personal_data.errors.items():
           form_personal_data[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-      messages.add_message(request, messages.ERROR, 'The data could not be updated. Please check the below errors')
+      messages.add_message(request, messages.ERROR, _("The data could not be updated. Please check the below errors"))
   context = {
       'personal_data_update_form':form_personal_data
   }
@@ -141,14 +129,14 @@ def password_update_view(request):
         user = form_password_update.save()
         # Importante
         update_session_auth_hash(request, user)
-        messages.add_message(request, messages.SUCCESS, 'Your password has been updated!')
+        messages.add_message(request, messages.SUCCESS, _("Your password has been updated!"))
         return redirect('password')
     else:
         # Eiqui o que fago e que recorra os distintos fields do form e que lle 
         # asigne o formato de error (O borde en vermello)
         for field, error in form_password_update.errors.items():
           form_password_update[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-          messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
+          messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
   else:
         # If it's a GET request, create an empty form
         form_password_update = password_update_form(request.user)
@@ -169,14 +157,14 @@ def delete_account_view (request):
       current_user = CustomUser.objects.get(id=request.user.id)
       if str(text_delete_form) == str("terrameiga"):
         current_user.delete()
-        messages.add_message(request, messages.SUCCESS, 'Your account has been deleted. We hope see you back soon!')
+        messages.add_message(request, messages.SUCCESS, _('Your account has been deleted. We hope see you back soon!'))
         return redirect('home_page_no_registered')
       else:
         #Esto é para que se vacíe o formulario por se hai un erro
         delete_account_form_variable = delete_account_form()
-        messages.add_message(request, messages.ERROR, 'Please, type "terrameiga". The text has to be in lower case')
+        messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
     else:
-      messages.add_message(request, messages.SUCCESS, 'The form is not valid')
+      messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
   context = {
     'delete_form' : delete_account_form_variable
   }
@@ -202,14 +190,14 @@ def password_reset_view(request):
         #uid = request.user.id
         #print(uid)
         send_reset_password_mail ( email_form, uidb64, token)
-        messages.add_message(request, messages.SUCCESS, 'An email was sent to your email inbox')
+        messages.add_message(request, messages.SUCCESS, _('An email was sent to your email inbox'))
         return redirect('password_reset_done')
       else:
-        messages.add_message(request, messages.ERROR, 'The email does not exist in our data base')
+        messages.add_message(request, messages.ERROR, _('The email does not exist in our data base'))
     else:
       for field, error in password_recovery_form_variable.errors.items():
         password_recovery_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        messages.add_message(request, messages.ERROR, 'The email is not valid')
+        messages.add_message(request, messages.ERROR, _('The email is not valid'))
 
   context = {
     'email_recovery' : password_recovery_form_variable
@@ -226,12 +214,12 @@ def password_new_password_view(request, uidb64, token):
       password_reset_form.save()
       #Logeamos o usuario directamente
       login(request, user)
-      messages.add_message(request, messages.SUCCESS, 'Your password has been changed')
+      messages.add_message(request, messages.SUCCESS, _('Your password has been changed'))
       return redirect('bicleteiros_home_page')
     else:
       for field, error in password_reset_form.errors.items():
         password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        messages.add_message(request, messages.ERROR, "Check the below errors and try again!")
+        messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
   context = {
     'reset_password_form' : password_reset_form
   }
