@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #Esto é para detectar o idioma do usuario e que a páxina se moster no idioma que ten configurado
     #Se o non tes o idioma do usuario mostraráse o inglés por defecto
-    #'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'terrameiga.urls'

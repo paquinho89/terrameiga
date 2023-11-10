@@ -8,6 +8,7 @@
 
 <!doctype html>
 <html lang="en">
+<meta charset="UTF-8">
 
 <!-- Bootstrap CSS --> <!--Esto é para cargar o bootstrap. Se te fixas é unha stylesheet onde todos os formatos son css-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -64,18 +65,17 @@
     color: white;
     background-color: rgb(246, 158, 138);
     }
-  #button_area_persoal_card {
-  background-color: rgb(83, 158, 138);  
-  }
-  #button_area_persoal_card:hover {
-    color: rgb(246, 158, 138);
+  
+  #button_sign_in_carossell:hover {
+    color: white;
+    background-color: rgb(83, 158, 138);  
     }
-  #button_rexistro_card {
+  
+  #button_sign_up_carossell:hover {
+    color: white;
     background-color: rgb(246, 158, 138);
     }
-  #button_rexistro_card:hover {
-    color: rgb(83, 158, 138);
-    }
+  
   ul{
     color: rgb(255, 255, 255, 0.8);
     }
@@ -89,20 +89,6 @@
     h3{
     color: rgb(255, 255, 255, 0.8);
     }
-  #map {
-    filter: blur(10px);
-    }
-  /*Esto é para posicionar o texto no medio e medio do mapa que está difuminado*/
-  .text-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    }
-
     #body_home_page{
     background-color:black;
     overflow-x: hidden; /*Con esto oculto a barra de scroll down horizontal*/
@@ -131,23 +117,30 @@
 .carousel-item {
   object-fit: cover;
   object-position: center;
-  height: 35vh;
+  height: 50vh;
   width: 100vw;
 }
+.carousel-caption {
+  object-fit: cover;
+  object-position: center;
+  height: 40vh;
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for transparency */
+}
+
 .card{
     background-color: #28231D;
 }
 #journey_characteristics{
     color: rgb(255, 255, 255, 0.8);
 }
-#btn_journey_characteristics{
-    color: rgb(246, 158, 138);
-    border-color: rgb(246, 158, 138);
-}
-#btn_journey_characteristics:hover {
-    color: white;
-    background-color: rgb(246, 158, 138);
-    }
 </style>
 
 <!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
@@ -188,8 +181,8 @@
           <ul class="navbar-nav me-auto mb-md-0">
           </ul>
           <form class="d-flex-danger" role="search">
-            <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'sign_in' %}" type="submit"><strong>Sign In</strong></a>
-            <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'sign_up' %}" type="submit"><strong>Sign Up</strong></a>
+            <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'sign_in' %}" type="submit"><strong>{% trans "Sign In" %}</strong></a>
+            <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'sign_up' %}" type="submit"><strong>{% trans "Sign Up" %}</strong></a>
           </form>
         </div>
     </nav>
@@ -203,31 +196,31 @@
     </ol>
 
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img class="d-block w-100" src='{% static "imaxes/money.webp" %}' alt="First slide">
-            <div class="carousel-caption" style="color: white;"> 
-                <h5>Do you want to be part of this adventure? </h5>
-                <p>No worries, here everything is for free</p>
-                <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_up' %}" role="button">Sign Up</a>
-                <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_in' %}" role="button">Sign In</a>
-            </div> 
+      <div class="carousel-item active">
+        <img class="d-block w-100" src='{% static "imaxes/home_page_no_registration_1.jpg" %}' alt="First slide">
+        <div class="mask"></div>
+        <div class="carousel-caption">
+            <h5>{% trans "Do you want to be part of this adventure?" %}</h5>
+            <a class="btn btn-outline-light btn-lg m-2 mt-4" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell">{% trans "Sign In" %}</a>
+            <a class="btn btn-outline-light btn-lg m-2 mt-4" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell">{% trans "Sign Up" %}</a>
         </div>
+      </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src='{% static "imaxes/map_home_page_no_registered.jpg" %}' alt="Second slide">
-            <div class="carousel-caption" style="color: white;">
-                <h5>Do you want to be part of this adventure? </h5>
-                <p>No worries, here everything is for free</p>
-                <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_up' %}" role="button">Sign Up</a>
-                <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_in' %}" role="button">Sign In</a>
+            <img class="d-block w-100" src='{% static "imaxes/home_page_no_registration_2.jpg' alt="Second slide">
+            <div class="mask"></div>
+            <div class="carousel-caption">
+                <h5>{% trans "Do you want to be part of this adventure?" %}</h5>
+                <a class="btn btn-outline-light btn-lg m-2 mt-4" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell">{% trans "Sign In" %}</a>
+                <a class="btn btn-outline-light btn-lg m-2 mt-4" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell">{% trans "Sign Up" %}</a>
             </div>
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src='{% static "imaxes/password_recovery.jpg" %}' alt="Third slide">
-            <div class="carousel-caption" style="color: white;">
-                <h5>Do you want to be part of this adventure? </h5>
-                <p>No worries, here everything is for free</p>
-                <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_up' %}" role="button">Sign Up</a>
-                <a class="btn btn-outline-light btn-lg m-2" href="{% url 'sign_in' %}" role="button">Sign In</a>
+            <img class="d-block w-100" src='{% static "imaxes/home_page_no_registration_3.jpg" %}' alt="Third slide">
+            <div class="mask"></div>
+            <div class="carousel-caption">
+                <h5>{% trans "Do you want to be part of this adventure?" %}</h5>
+                <a class="btn btn-outline-light btn-lg m-2 mt-4" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell">{% trans "Sign In" %}</a>
+                <a class="btn btn-outline-light btn-lg m-2 mt-4" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell">{% trans "Sign Up" %}</a>
             </div>
         </div>
     </div>
@@ -242,8 +235,8 @@
 </div>
 
   <div class="container marketing">
-    <h2 class="text-center pt-5">Sign Up and check all the info:</h2>
-    <h3 class="text-center mt-4">(WEEK {{current_week_html}} - Day {{ journey_day_html }})</h3>
+    <h2 class="text-center py-4">{% trans "Week" %}  {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}</h2>
+    
     <!-- Section-->
     <section id="journey_characteristics">
       <div class="container px-4 px-lg-5">
@@ -251,13 +244,13 @@
               <div class="col mb-5">
                   <div class="card h-100">
                       <!-- Product image-->
-                      <img class="card-img-top" src="{% static 'imaxes/money.webp' %}" alt="..." />
+                      <img class="card-img-top" src="{% static 'imaxes/home_page_no_registration_1.jpg' %}" alt="..." />
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
-                              <!-- Product name-->
-                              <h5 class="fw-bolder">Expenses of the Journey</h5>
-                              <p class="mt-4">{{ total_expenses_html }} €</p>
+                            <h5 class="fw-bolder">{% trans "Country" %}</h5>
+                            <img class="mt-4" style="float: center;" width="75" height="37" src='{{flag_url_html}}' alt="First slide">
+                            <p>{{ current_country_html }} #{{country_number_html}}</p>
                           </div>
                       </div>
                   </div>
@@ -265,14 +258,12 @@
               <div class="col mb-5">
                   <div class="card h-100">
                       <!-- Product image-->
-                      <img class="card-img-top" src='{% static "imaxes/map_home_page_no_registered.jpg" %}' />
+                      <img class="card-img-top" src='{% static "imaxes/home_page_no_registration_2.jpg" %}' />
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
-                              <!-- Product name-->
-                              <h5 class="fw-bolder">Alive position</h5>
-                              <img class="mt-4" style="float: center;" width="75" height="37" src='{{flag_url_html}}' alt="First slide">
-                              <p>{{ current_country_html }} #{{country_number_html}}</p>
+                            <h5 class="fw-bolder">{% trans "Expenses" %}</h5>
+                            <p class="mt-4">{{ total_expenses_html }} €</p>
                           </div>
                       </div>
                   </div>
@@ -280,12 +271,12 @@
               <div class="col mb-5">
                   <div class="card h-100">
                       <!-- Product image-->
-                      <img class="card-img-top" src='{% static "imaxes/password_recovery.jpg" %}' alt="..." />
+                      <img class="card-img-top" src='{% static "imaxes/home_page_no_registration_3.jpg" %}' alt="..." />
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
                               <!-- Product name-->
-                              <h5 class="fw-bolder">Km and Climbing</h5>
+                              <h5 class="fw-bolder">{% trans "Kilometers" %}</h5>
                               <p class="mt-4">{{ total_km_html }} km </p>
                           </div>
                       </div>
@@ -294,12 +285,12 @@
               <div class="col mb-5">
                   <div class="card h-100">
                       <!-- Product image-->
-                      <img class="card-img-top" src='{% static "imaxes/video_home_page_no_registration.jpg" %}' alt="..." />
+                      <img class="card-img-top" src='{% static "imaxes/lume.jpg" %}' alt="..." />
                       <!-- Product details-->
                       <div class="card-body p-4">
                           <div class="text-center">
                               <!-- Product name-->
-                              <h5 class="fw-bolder">Videos and Pictures</h5>
+                              <h5 class="fw-bolder">{% trans "Videos and Pictures" %}</h5>
                           </div>
                       </div>
                   </div>
@@ -308,8 +299,6 @@
       </div>
     </section>
   </div><!-- /.container -->
-
-  {% endblocktrans %}
 
 <!-- FOOTER -->
 {% include 'base/footer.html' %}

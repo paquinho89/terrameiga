@@ -99,7 +99,7 @@ def sign_in_view(request):
         login(request, user_auth)
         messages.success(request,
                         """
-                        Welcome! Now you can enjoy with all the content from the journey. 
+                        Welcome! Now it's time to enjoy all the content from the journey. 
                         """
                     )
         return redirect('bicleteiros_home_page')

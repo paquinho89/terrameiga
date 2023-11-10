@@ -1,6 +1,4 @@
 {% extends 'base/base_non_registered.html' %}
-<!--To load the Django library to translate your text.-->
-{% load i18n %}
 
 {% load static %}
 
@@ -52,7 +50,7 @@
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLongTitle"><strong>Privacy Policy</strong></h5>
+                              <h5 class="modal-title" id="exampleModalLongTitle"><strong>{% trans "Privacy Policy" %}</strong></h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                               </button>
@@ -62,7 +60,7 @@
                               <p>{{privacy_policy_html|safe}}</p>
                             </div>
                             <div class="modal-footer">
-                              <button id="privacy_policy_close_button" type="button" class="btn btn-secondary" data-dismiss="modal"><strong>Close</strong></button>
+                              <button id="privacy_policy_close_button" type="button" class="btn btn-secondary" data-dismiss="modal"><strong>{% trans "Close" %}</strong></button>
                             </div>
                           </div>
                         </div>

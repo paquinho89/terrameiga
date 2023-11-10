@@ -1,6 +1,4 @@
 {% extends 'base/base_non_registered.html' %}
-<!--To load the Django library to translate your text.-->
-{% load i18n %}
 
 {% load static %}
 
@@ -17,10 +15,10 @@
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                     <p class="text-left h1 fw-bold mx-1 mt-2">{% trans "Email confirmation" %}</p>
                     <p class="text-left h6 mb-5 mx-1 mx-md-4 mt-4">
-                      {% trans "To complete your registration, go to your email, open the 'TerraMeiga' email and click on the link." %}
+                      {% trans "To complete your registration, go to your email, open the "TerraMeiga" email and click on the link." %}
                       <br>
                       <br>
-                      {% trans "In case you do not find the email, check on the spam folder!" %}
+                      {% trans "In case you do not find it, check on the spam folder!" %}
                     </p>
                     <div class="card-footer p-4 pt-0 border-top-0">
                       <div class="text-center">
