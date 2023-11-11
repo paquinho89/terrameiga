@@ -4,12 +4,8 @@ from datetime import datetime
 from django.utils import timezone
 from registration.models import CustomUser
 import random, os
+from bicicleteiros.static.lists.country_list import country_list_values
 
-
-with open("bicicleteiros/static/lists/country_list.txt", "r") as country_list_file:
-    country_list = tuple(country_list_file)
-    #A regular expresion é para eliminar o salto de línea que contén toda a lista e que me funcione despois no formulario. Co [0] estou collendo o primer resultado da función re.search
-    country_list_fixed = tuple(([re.search('[^\n]*',country)[0],re.search('[^\n]*',country)[0]]) for country in country_list)
 
 with open("bicicleteiros/static/lists/currency_list.txt", "r") as currency_list_file:
     currency_list = tuple(currency_list_file)
@@ -82,7 +78,7 @@ class currency(models.Model):
 
     
 class country_information_model(models.Model):
-    country = models.CharField(max_length=33, choices= country_list_fixed, blank=True, null=True, unique=True)
+    country = models.CharField(max_length=33, choices= country_list_values, blank=True, null=True, unique=True)
     country_number = models.IntegerField(blank=False, null=False)
     capital_town = models.CharField(max_length=33, blank=True, null=True)
     surface = models.IntegerField(blank=True, null=True)

@@ -105,7 +105,7 @@ def country_data_view (request):
                     new_instance.save()
                     form_chat = chat_form()
                     #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
-                    messages.success(request, _('Grazas por participar nesta aventura e engadir o seu comentario!'))
+                    messages.success(request, _('Thanks for participate and add your comment!'))
                     #artigos_content e que para que me retorne a vista do blog
                     return redirect('bicleteiros_home_page')
                 else:
@@ -188,7 +188,7 @@ def country_data_view (request):
         return render (request, 'bicicleteiros_home_page.html', context)
     else:
         # User is not authenticated, redirect to the sign_in page
-        messages.error(request, _('You must be logged in to access this page.'))
+        messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
         return redirect('sign_in')  # Change 'login' to your actual login URL name
 
 def photos_view (request):

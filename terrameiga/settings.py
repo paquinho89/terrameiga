@@ -15,7 +15,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print ("base dir path", BASE_DIR)
+print ("ruta do BASE_DIR", BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -53,14 +53,19 @@ AUTH_USER_MODEL = 'registration.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     #Esto é para detectar o idioma do usuario e que a páxina se moster no idioma que ten configurado
     #Se o non tes o idioma do usuario mostraráse o inglés por defecto
+    # LocaleMiddleware tries to determine the users language preference by following this algorithm:
+    # First, it looks for a django_language key in the current users session.
+    # Failing that, it looks for a cookie called django_language .
+    # Failing that, it looks at the Accept-Language HTTP header. This header is sent by your browser and tells the server which language(s) you prefer, in order of priority. Django tries each language in the header until it finds one with available translations.
+    # Failing that, it uses the global LANGUAGE_CODE setting.
     'django.middleware.locale.LocaleMiddleware',
 ]
 
@@ -69,8 +74,11 @@ ROOT_URLCONF = 'terrameiga.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #Indicamos hai que ir a buscar os templates
-        'DIRS': [BASE_DIR / 'terrameiga/static/'],
+        #Indicamos onde temos os templates para que os vaia a buscar
+        'DIRS': [BASE_DIR / 'terrameiga/static/templates/',
+                 BASE_DIR / 'registration/static/templates/',
+                 BASE_DIR / 'bicicleteiros/static/templates/',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,6 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Then, if you change the language code to a language that you have made the translation, all the web, as well as the alerts will be transalated to the language you chose
 # However, MIDDLEWARE, there is 'django.middleware.locale.LocaleMiddleware', which detects the language of the browser and put the webiste in the same language
 # as the browser.
+# TESTE  QUE LER ESTO: http://djangobook.py3k.cn/chapter18/en/
 
 LANGUAGE_CODE = 'en-us'
 #ESto é para o tema de ter múltiples idiomas na páxina web.
@@ -148,7 +157,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#IMPORTANTE: o STATICFILES_DIRS é para indicar onde metes os arquivos estáticos
+#IMPORTANTE: o STATICFILES_DIRS é para indicar onde metes os arquivos estáticos. Ollo, non ten nada que ver con templates
+#A ruta aos templates indícase arriba no "TEMPLATES".
 STATICFILES_DIRS=[
    BASE_DIR / "terrameiga/static/"
 ]
