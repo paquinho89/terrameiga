@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 import re
 #Paquete para traducir texto que se xenera nas view. Neste caso é o texto das alertas
-from django.utils.translation import gettext as _
+from django.utils.translation import gettext_lazy as _
 
 # Create your views here.
 def country_data_no_registered_view (request):
@@ -21,7 +21,8 @@ def country_data_no_registered_view (request):
     #Da última entrada collemos a semana
     current_week = all_entry_days_last.week
     #Da última entrada collemos o país
-    current_country = all_entry_days_last.country
+    #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
+    current_country = str(all_entry_days_last.country)
     country_number_country = country_information_model.objects.get(country= current_country).country_number
     visa_required = country_information_model.objects.get(country = current_country).visa_requerided
     visa_price = country_information_model.objects.get(country = current_country).visa_price
@@ -71,7 +72,8 @@ def country_data_view (request):
         #Da última entrada collemos a semana
         current_week = all_entry_days_last.week
         #Da última entrada collemos o país
-        current_country = all_entry_days_last.country
+        #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
+        current_country = str(all_entry_days_last.country)
         country_number_country = country_information_model.objects.get(country= current_country).country_number
         visa_required = country_information_model.objects.get(country = current_country).visa_requerided
         visa_price = country_information_model.objects.get(country = current_country).visa_price
@@ -85,6 +87,10 @@ def country_data_view (request):
         total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
         total_km = total_km_dictionary['km_day__sum']
         flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact
+        spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
+        spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
+        print(spotify_song_code_country)
 
         # CHAT:
         #Doulle un valor por defecto ao formularios para que non me de ERROR e que non me aparezca ningunha alerta debaixo do formulario cando se carga por primeira vez a páxina.
@@ -176,6 +182,8 @@ def country_data_view (request):
             'rent_per_capita_html' : rent_per_capita_country,
             'currency_html' : currency_country,
             'time_zone_html' : time_zone_value,
+            'interesting_fact_country_html' : interesting_fact_country,
+            'spotify_song_code_html' : spotify_song_code_country,
 
             'chat_form_html': form_chat,
             'chat_comments_all_html' : chat_comments_all,

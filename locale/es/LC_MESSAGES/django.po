@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-11 17:48+0100\n"
+"POT-Creation-Date: 2023-11-12 12:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,601 +26,593 @@ msgstr "Escriba aqui su comentario"
 msgid "Write here your reply"
 msgstr "Escriba aqui su comentario"
 
-#: .\bicicleteiros\static\lists\country_list.py:5
+#: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
 msgstr "Afganistán"
 
-#: .\bicicleteiros\static\lists\country_list.py:6
+#: .\bicicleteiros\static\lists\country_list.py:8
 msgid "Albania"
 msgstr "Albania"
 
-#: .\bicicleteiros\static\lists\country_list.py:7
+#: .\bicicleteiros\static\lists\country_list.py:9
 msgid "Algeria"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:8
+#: .\bicicleteiros\static\lists\country_list.py:10
 msgid "Andorra"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:9
+#: .\bicicleteiros\static\lists\country_list.py:11
 msgid "Angola"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:10
+#: .\bicicleteiros\static\lists\country_list.py:12
 msgid "Antigua and Barbuda"
 msgstr "Antigua y Barbuda"
 
-#: .\bicicleteiros\static\lists\country_list.py:11
+#: .\bicicleteiros\static\lists\country_list.py:13
 msgid "Argentina"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:12
+#: .\bicicleteiros\static\lists\country_list.py:14
 msgid "Armenia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:13
+#: .\bicicleteiros\static\lists\country_list.py:15
 msgid "Australia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:14
+#: .\bicicleteiros\static\lists\country_list.py:16
 msgid "Austria"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:15
+#: .\bicicleteiros\static\lists\country_list.py:17
 msgid "Azerbaijan"
 msgstr "Azerbaiyán"
 
-#: .\bicicleteiros\static\lists\country_list.py:16
+#: .\bicicleteiros\static\lists\country_list.py:18
 msgid "Bahamas"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:17
+#: .\bicicleteiros\static\lists\country_list.py:19
 msgid "Bahrain"
 msgstr "Baréin"
 
-#: .\bicicleteiros\static\lists\country_list.py:18
+#: .\bicicleteiros\static\lists\country_list.py:20
 msgid "Bangladesh"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:19
+#: .\bicicleteiros\static\lists\country_list.py:21
 msgid "Barbados"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:20
+#: .\bicicleteiros\static\lists\country_list.py:22
 msgid "Belarus"
 msgstr "Bielorrusia"
 
-#: .\bicicleteiros\static\lists\country_list.py:21
+#: .\bicicleteiros\static\lists\country_list.py:23
 msgid "Belgium"
 msgstr "Bélgica"
 
-#: .\bicicleteiros\static\lists\country_list.py:22
+#: .\bicicleteiros\static\lists\country_list.py:24
 msgid "Belize"
 msgstr "Belice"
 
-#: .\bicicleteiros\static\lists\country_list.py:23
+#: .\bicicleteiros\static\lists\country_list.py:25
 msgid "Benin"
 msgstr "Benín"
 
-#: .\bicicleteiros\static\lists\country_list.py:24
+#: .\bicicleteiros\static\lists\country_list.py:26
 msgid "Bhutan"
 msgstr "Bután"
 
-#: .\bicicleteiros\static\lists\country_list.py:25
+#: .\bicicleteiros\static\lists\country_list.py:27
 msgid "Bolivia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:26
+#: .\bicicleteiros\static\lists\country_list.py:28
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnia y Herzegovina"
 
-#: .\bicicleteiros\static\lists\country_list.py:27
+#: .\bicicleteiros\static\lists\country_list.py:29
 msgid "Botswana"
 msgstr "Botsuana"
 
-#: .\bicicleteiros\static\lists\country_list.py:28
+#: .\bicicleteiros\static\lists\country_list.py:30
 msgid "Brazil"
 msgstr "Brasil"
 
-#: .\bicicleteiros\static\lists\country_list.py:29
+#: .\bicicleteiros\static\lists\country_list.py:31
 msgid "Brunei"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:30
+#: .\bicicleteiros\static\lists\country_list.py:32
 msgid "Bulgaria"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:31
+#: .\bicicleteiros\static\lists\country_list.py:33
 msgid "Burkina Faso"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:32
+#: .\bicicleteiros\static\lists\country_list.py:34
 msgid "Burundi"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:33
+#: .\bicicleteiros\static\lists\country_list.py:35
 msgid "Côte d'Ivoire"
 msgstr "Costa de Marfil"
 
-#: .\bicicleteiros\static\lists\country_list.py:34
+#: .\bicicleteiros\static\lists\country_list.py:36
 msgid "Cabo Verde"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:35
+#: .\bicicleteiros\static\lists\country_list.py:37
 msgid "Cambodia"
 msgstr "Camboya"
 
-#: .\bicicleteiros\static\lists\country_list.py:36
+#: .\bicicleteiros\static\lists\country_list.py:38
 msgid "Cameroon"
 msgstr "Camerún"
 
-#: .\bicicleteiros\static\lists\country_list.py:37
+#: .\bicicleteiros\static\lists\country_list.py:39
 msgid "Canada"
 msgstr "Canadá"
 
-#: .\bicicleteiros\static\lists\country_list.py:38
+#: .\bicicleteiros\static\lists\country_list.py:40
 msgid "Central African Republic"
 msgstr "República Centroafricana"
 
-#: .\bicicleteiros\static\lists\country_list.py:39
+#: .\bicicleteiros\static\lists\country_list.py:41
 msgid "Chad"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:40
+#: .\bicicleteiros\static\lists\country_list.py:42
 msgid "Chile"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:41
+#: .\bicicleteiros\static\lists\country_list.py:43
 msgid "China"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:42
+#: .\bicicleteiros\static\lists\country_list.py:44
 msgid "Colombia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:43
+#: .\bicicleteiros\static\lists\country_list.py:45
 msgid "Comoros"
 msgstr "Comoras"
 
-#: .\bicicleteiros\static\lists\country_list.py:44
+#: .\bicicleteiros\static\lists\country_list.py:46
 msgid "Congo (Congo-Brazzaville)"
 msgstr "Congo"
 
-#: .\bicicleteiros\static\lists\country_list.py:45
+#: .\bicicleteiros\static\lists\country_list.py:47
 msgid "Costa Rica"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:46
+#: .\bicicleteiros\static\lists\country_list.py:48
 msgid "Croatia"
 msgstr "Croacia"
 
-#: .\bicicleteiros\static\lists\country_list.py:47
+#: .\bicicleteiros\static\lists\country_list.py:49
 msgid "Cuba"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:48
+#: .\bicicleteiros\static\lists\country_list.py:50
 msgid "Cyprus"
 msgstr "Chipre"
 
-#: .\bicicleteiros\static\lists\country_list.py:49
+#: .\bicicleteiros\static\lists\country_list.py:51
 msgid "Czechia (Czech Republic)"
 msgstr "Chequia"
 
-#: .\bicicleteiros\static\lists\country_list.py:50
+#: .\bicicleteiros\static\lists\country_list.py:52
 msgid "Democratic Republic of the Congo"
 msgstr "República Democrática del Congo"
 
-#: .\bicicleteiros\static\lists\country_list.py:51
+#: .\bicicleteiros\static\lists\country_list.py:53
 msgid "Denmark"
 msgstr "Dinamarca"
 
-#: .\bicicleteiros\static\lists\country_list.py:52
+#: .\bicicleteiros\static\lists\country_list.py:54
 msgid "Djibouti"
 msgstr "Yibuti"
 
-#: .\bicicleteiros\static\lists\country_list.py:53
+#: .\bicicleteiros\static\lists\country_list.py:55
 msgid "Dominica"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:54
+#: .\bicicleteiros\static\lists\country_list.py:56
 msgid "Dominican Republic"
 msgstr "República Dominicana"
 
-#: .\bicicleteiros\static\lists\country_list.py:55
+#: .\bicicleteiros\static\lists\country_list.py:57
 msgid "Ecuador"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:56
+#: .\bicicleteiros\static\lists\country_list.py:58
 msgid "Egypt"
 msgstr "Egipto"
 
-#: .\bicicleteiros\static\lists\country_list.py:57
+#: .\bicicleteiros\static\lists\country_list.py:59
 msgid "El Salvador"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:58
+#: .\bicicleteiros\static\lists\country_list.py:60
 msgid "Equatorial Guinea"
 msgstr "Guinea Ecuatorial"
 
-#: .\bicicleteiros\static\lists\country_list.py:59
+#: .\bicicleteiros\static\lists\country_list.py:61
 msgid "Eritrea"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:60
+#: .\bicicleteiros\static\lists\country_list.py:62
 msgid "Estonia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:61
+#: .\bicicleteiros\static\lists\country_list.py:63
 msgid "Eswatini"
 msgstr "Esuatini"
 
-#: .\bicicleteiros\static\lists\country_list.py:62
+#: .\bicicleteiros\static\lists\country_list.py:64
 msgid "Ethiopia"
 msgstr "Etiopía"
 
-#: .\bicicleteiros\static\lists\country_list.py:63
+#: .\bicicleteiros\static\lists\country_list.py:65
 msgid "Fiji"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:64
+#: .\bicicleteiros\static\lists\country_list.py:66
 msgid "Finland"
 msgstr "Finlandia"
 
-#: .\bicicleteiros\static\lists\country_list.py:65
+#: .\bicicleteiros\static\lists\country_list.py:67
 msgid "France"
 msgstr "Francia"
 
-#: .\bicicleteiros\static\lists\country_list.py:66
+#: .\bicicleteiros\static\lists\country_list.py:68
 msgid "Gabon"
 msgstr "Gabón"
 
-#: .\bicicleteiros\static\lists\country_list.py:67
+#: .\bicicleteiros\static\lists\country_list.py:69
 msgid "Gambia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:68
+#: .\bicicleteiros\static\lists\country_list.py:70
 msgid "Georgia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:69
+#: .\bicicleteiros\static\lists\country_list.py:71
 msgid "Germany"
 msgstr "Alemania"
 
-#: .\bicicleteiros\static\lists\country_list.py:70
+#: .\bicicleteiros\static\lists\country_list.py:72
 msgid "Ghana"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:71
+#: .\bicicleteiros\static\lists\country_list.py:73
 msgid "Greece"
 msgstr "Grecia"
 
-#: .\bicicleteiros\static\lists\country_list.py:72
+#: .\bicicleteiros\static\lists\country_list.py:74
 msgid "Grenada"
 msgstr "Granada"
 
-#: .\bicicleteiros\static\lists\country_list.py:73
+#: .\bicicleteiros\static\lists\country_list.py:75
 msgid "Guatemala"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:74
+#: .\bicicleteiros\static\lists\country_list.py:76
 msgid "Guinea"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:75
+#: .\bicicleteiros\static\lists\country_list.py:77
 msgid "Guinea-Bissau"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:76
+#: .\bicicleteiros\static\lists\country_list.py:78
 msgid "Guyana"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:77
+#: .\bicicleteiros\static\lists\country_list.py:79
 msgid "Haiti"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:78
+#: .\bicicleteiros\static\lists\country_list.py:80
 msgid "Holy See"
 msgstr "Vaticano"
 
-#: .\bicicleteiros\static\lists\country_list.py:79
+#: .\bicicleteiros\static\lists\country_list.py:81
 msgid "Honduras"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:80
+#: .\bicicleteiros\static\lists\country_list.py:82
 msgid "Hungary"
 msgstr "Hungría"
 
-#: .\bicicleteiros\static\lists\country_list.py:81
+#: .\bicicleteiros\static\lists\country_list.py:83
 msgid "Iceland"
 msgstr "Islandia"
 
-#: .\bicicleteiros\static\lists\country_list.py:82
+#: .\bicicleteiros\static\lists\country_list.py:84
 msgid "India"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:83
+#: .\bicicleteiros\static\lists\country_list.py:85
 msgid "Indonesia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:84
+#: .\bicicleteiros\static\lists\country_list.py:86
 msgid "Iran"
 msgstr "Irán"
 
-#: .\bicicleteiros\static\lists\country_list.py:85
+#: .\bicicleteiros\static\lists\country_list.py:87
 msgid "Iraq"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:86
+#: .\bicicleteiros\static\lists\country_list.py:88
 msgid "Ireland"
 msgstr "Irlanda"
 
-#: .\bicicleteiros\static\lists\country_list.py:87
+#: .\bicicleteiros\static\lists\country_list.py:89
 msgid "Israel"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:88
+#: .\bicicleteiros\static\lists\country_list.py:90
 msgid "Italy"
 msgstr "Italia"
 
-#: .\bicicleteiros\static\lists\country_list.py:89
+#: .\bicicleteiros\static\lists\country_list.py:91
 msgid "Jamaica"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:90
+#: .\bicicleteiros\static\lists\country_list.py:92
 msgid "Japan"
 msgstr "Japón"
 
-#: .\bicicleteiros\static\lists\country_list.py:91
+#: .\bicicleteiros\static\lists\country_list.py:93
 msgid "Jordan"
 msgstr "Jordania"
 
-#: .\bicicleteiros\static\lists\country_list.py:92
+#: .\bicicleteiros\static\lists\country_list.py:94
 msgid "Kazakhstan"
 msgstr "Kazajistán"
 
-#: .\bicicleteiros\static\lists\country_list.py:93
+#: .\bicicleteiros\static\lists\country_list.py:95
 msgid "Kenya"
 msgstr "Kenia"
 
-#: .\bicicleteiros\static\lists\country_list.py:94
+#: .\bicicleteiros\static\lists\country_list.py:96
 msgid "Kiribati"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:95
+#: .\bicicleteiros\static\lists\country_list.py:97
 msgid "Kuwait"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:96
+#: .\bicicleteiros\static\lists\country_list.py:98
 msgid "Kyrgyzstan"
 msgstr "Kirguistán"
 
-#: .\bicicleteiros\static\lists\country_list.py:97
+#: .\bicicleteiros\static\lists\country_list.py:99
 msgid "Laos"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:98
-msgid "Latvia"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:99
-msgid "Lebanon"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:100
-msgid "Lesotho"
-msgstr ""
+msgid "Latvia"
+msgstr "Letonia"
 
 #: .\bicicleteiros\static\lists\country_list.py:101
+msgid "Lebanon"
+msgstr "Líbano"
+
+#: .\bicicleteiros\static\lists\country_list.py:102
+msgid "Lesotho"
+msgstr "Lesoto"
+
+#: .\bicicleteiros\static\lists\country_list.py:103
 msgid "Liberia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:102
+#: .\bicicleteiros\static\lists\country_list.py:104
 msgid "Libya"
-msgstr ""
+msgstr "Libia"
 
-#: .\bicicleteiros\static\lists\country_list.py:103
+#: .\bicicleteiros\static\lists\country_list.py:105
 msgid "Liechtenstein"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:104
-msgid "Lithuania"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:105
-msgid "Luxembourg"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:106
+msgid "Lithuania"
+msgstr "Lituania"
+
+#: .\bicicleteiros\static\lists\country_list.py:107
+msgid "Luxembourg"
+msgstr "Luxemburgo"
+
+#: .\bicicleteiros\static\lists\country_list.py:108
 msgid "Madagascar"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:107
+#: .\bicicleteiros\static\lists\country_list.py:109
 msgid "Malawi"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:108
-msgid "Malaysia"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:109
-msgid "Maldives"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:110
+msgid "Malaysia"
+msgstr "Malasia"
+
+#: .\bicicleteiros\static\lists\country_list.py:111
+msgid "Maldives"
+msgstr "Maldivas"
+
+#: .\bicicleteiros\static\lists\country_list.py:112
 msgid "Mali"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:111
+#: .\bicicleteiros\static\lists\country_list.py:113
 msgid "Malta"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:112
+#: .\bicicleteiros\static\lists\country_list.py:114
 msgid "Marshall Islands"
-msgstr ""
+msgstr "Islas Marshall"
 
-#: .\bicicleteiros\static\lists\country_list.py:113
+#: .\bicicleteiros\static\lists\country_list.py:115
 msgid "Mauritania"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:114
-msgid "Mauritius"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:115
-msgid "Mexico"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:116
+msgid "Mauritius"
+msgstr "Mauricio"
+
+#: .\bicicleteiros\static\lists\country_list.py:117
+msgid "Mexico"
+msgstr "México"
+
+#: .\bicicleteiros\static\lists\country_list.py:118
 msgid "Micronesia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:117
-msgid "Moldova"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:118
-msgid "Monaco"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:119
+msgid "Moldova"
+msgstr "Moldovia"
+
+#: .\bicicleteiros\static\lists\country_list.py:120
+msgid "Monaco"
+msgstr "Mónaco"
+
+#: .\bicicleteiros\static\lists\country_list.py:121
 msgid "Mongolia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:120
+#: .\bicicleteiros\static\lists\country_list.py:122
 msgid "Montenegro"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:121
+#: .\bicicleteiros\static\lists\country_list.py:123
 msgid "Morocco"
-msgstr ""
+msgstr "Marruecos"
 
-#: .\bicicleteiros\static\lists\country_list.py:122
+#: .\bicicleteiros\static\lists\country_list.py:124
 msgid "Mozambique"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:123
-msgid "Myanmar (formerly Burma)"
-msgstr ""
+#: .\bicicleteiros\static\lists\country_list.py:125
+msgid "Myanmar"
+msgstr "Birmania"
 
-#: .\bicicleteiros\static\lists\country_list.py:124
+#: .\bicicleteiros\static\lists\country_list.py:126
 msgid "Namibia"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:125
+#: .\bicicleteiros\static\lists\country_list.py:127
 msgid "Nauru"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:126
+#: .\bicicleteiros\static\lists\country_list.py:128
 msgid "Nepal"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:127
-msgid "Netherlands"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:128
-msgid "New Zealand"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:129
+msgid "Netherlands"
+msgstr "Países Bajos"
+
+#: .\bicicleteiros\static\lists\country_list.py:130
+msgid "New Zealand"
+msgstr "Nueva Zelanda"
+
+#: .\bicicleteiros\static\lists\country_list.py:131
 msgid "Nicaragua"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:130
+#: .\bicicleteiros\static\lists\country_list.py:132
 msgid "Niger"
-msgstr ""
+msgstr "Níger"
 
-#: .\bicicleteiros\static\lists\country_list.py:131
+#: .\bicicleteiros\static\lists\country_list.py:133
 msgid "Nigeria"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:132
-msgid "North Korea"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:133
-msgid "North Macedonia"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:134
-msgid "Norway"
-msgstr ""
+msgid "North Korea"
+msgstr "Corea del Norte"
 
 #: .\bicicleteiros\static\lists\country_list.py:135
+msgid "Macedonia"
+msgstr "Macedonia"
+
+#: .\bicicleteiros\static\lists\country_list.py:136
+msgid "Norway"
+msgstr "Noruega"
+
+#: .\bicicleteiros\static\lists\country_list.py:137
 msgid "Oman"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:136
+#: .\bicicleteiros\static\lists\country_list.py:138
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistán"
 
-#: .\bicicleteiros\static\lists\country_list.py:137
+#: .\bicicleteiros\static\lists\country_list.py:139
 msgid "Palau"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:138
-msgid "Palestine State"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:139
-msgid "Panama"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:140
-msgid "Papua New Guinea"
-msgstr ""
+msgid "Palestine"
+msgstr "Palestina"
 
 #: .\bicicleteiros\static\lists\country_list.py:141
+msgid "Panama"
+msgstr "Panamá"
+
+#: .\bicicleteiros\static\lists\country_list.py:142
+msgid "Papua New Guinea"
+msgstr "Papúa Nueva Guinea"
+
+#: .\bicicleteiros\static\lists\country_list.py:143
 msgid "Paraguay"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:142
-msgid "Peru"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:143
-msgid "Philippines"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:144
-msgid "Poland"
-msgstr ""
+msgid "Peru"
+msgstr "Perú"
 
 #: .\bicicleteiros\static\lists\country_list.py:145
+msgid "Philippines"
+msgstr "Filipinas"
+
+#: .\bicicleteiros\static\lists\country_list.py:146
+msgid "Poland"
+msgstr "Polonia"
+
+#: .\bicicleteiros\static\lists\country_list.py:147
 msgid "Portugal"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:146
+#: .\bicicleteiros\static\lists\country_list.py:148
 msgid "Qatar"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:147
-msgid "Romania"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:148
-msgid "Russia"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:149
+msgid "Romania"
+msgstr "Rumanía"
+
+#: .\bicicleteiros\static\lists\country_list.py:150
+msgid "Russia"
+msgstr "Rusia"
+
+#: .\bicicleteiros\static\lists\country_list.py:151
 msgid "Rwanda"
 msgstr ""
 
-#: .\bicicleteiros\static\lists\country_list.py:150
-msgid "Saint Kitts and Nevis"
-msgstr ""
-
-#: .\bicicleteiros\static\lists\country_list.py:151
-msgid "Saint Lucia"
-msgstr ""
-
 #: .\bicicleteiros\static\lists\country_list.py:152
-msgid "Saint Vincent and the Grenadines"
-msgstr ""
+msgid "Saint Lucia"
+msgstr "Santa Lucía"
 
 #: .\bicicleteiros\static\lists\country_list.py:153
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 #: .\bicicleteiros\static\lists\country_list.py:154
 msgid "San Marino"
@@ -628,11 +620,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:155
 msgid "Sao Tome and Principe"
-msgstr ""
+msgstr "Santo Tomé y Príncipe"
 
 #: .\bicicleteiros\static\lists\country_list.py:156
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Arabia Saudí"
 
 #: .\bicicleteiros\static\lists\country_list.py:157
 msgid "Senegal"
@@ -648,39 +640,39 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:160
 msgid "Sierra Leone"
-msgstr ""
+msgstr "Sierra Leona"
 
 #: .\bicicleteiros\static\lists\country_list.py:161
 msgid "Singapore"
-msgstr ""
+msgstr "Singapur"
 
 #: .\bicicleteiros\static\lists\country_list.py:162
 msgid "Slovakia"
-msgstr ""
+msgstr "Eslovaquia"
 
 #: .\bicicleteiros\static\lists\country_list.py:163
 msgid "Slovenia"
-msgstr ""
+msgstr "Eslovenia"
 
 #: .\bicicleteiros\static\lists\country_list.py:164
 msgid "Solomon Islands"
-msgstr ""
+msgstr "Islas Salomón"
 
 #: .\bicicleteiros\static\lists\country_list.py:165
 msgid "Somalia"
-msgstr ""
+msgstr "Somolia"
 
 #: .\bicicleteiros\static\lists\country_list.py:166
 msgid "South Africa"
-msgstr ""
+msgstr "Sudáfrica"
 
 #: .\bicicleteiros\static\lists\country_list.py:167
 msgid "South Korea"
-msgstr ""
+msgstr "Corea del Sur"
 
 #: .\bicicleteiros\static\lists\country_list.py:168
 msgid "South Sudan"
-msgstr ""
+msgstr "Sudán del Sur"
 
 #: .\bicicleteiros\static\lists\country_list.py:169
 msgid "Spain"
@@ -688,33 +680,31 @@ msgstr "España"
 
 #: .\bicicleteiros\static\lists\country_list.py:170
 msgid "Sri Lanka"
-msgstr ""
+msgstr "Sri Lanka"
 
 #: .\bicicleteiros\static\lists\country_list.py:171
 msgid "Sudan"
-msgstr ""
+msgstr "Sudán"
 
 #: .\bicicleteiros\static\lists\country_list.py:172
-#, fuzzy
-#| msgid "Username"
 msgid "Suriname"
-msgstr "Nombre"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:173
 msgid "Sweden"
-msgstr ""
+msgstr "Suecia"
 
 #: .\bicicleteiros\static\lists\country_list.py:174
 msgid "Switzerland"
-msgstr ""
+msgstr "Suíza"
 
 #: .\bicicleteiros\static\lists\country_list.py:175
 msgid "Syria"
-msgstr ""
+msgstr "Siria"
 
 #: .\bicicleteiros\static\lists\country_list.py:176
 msgid "Tajikistan"
-msgstr ""
+msgstr "Tayikistán"
 
 #: .\bicicleteiros\static\lists\country_list.py:177
 msgid "Tanzania"
@@ -722,11 +712,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:178
 msgid "Thailand"
-msgstr ""
+msgstr "Tailandia"
 
 #: .\bicicleteiros\static\lists\country_list.py:179
 msgid "Timor-Leste"
-msgstr ""
+msgstr "Timor Oriental"
 
 #: .\bicicleteiros\static\lists\country_list.py:180
 msgid "Togo"
@@ -738,19 +728,19 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:182
 msgid "Trinidad and Tobago"
-msgstr ""
+msgstr "Trinidad y Tobago"
 
 #: .\bicicleteiros\static\lists\country_list.py:183
 msgid "Tunisia"
-msgstr ""
+msgstr "Túnez"
 
 #: .\bicicleteiros\static\lists\country_list.py:184
 msgid "Turkey"
-msgstr ""
+msgstr "Turquía"
 
 #: .\bicicleteiros\static\lists\country_list.py:185
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Turkmenistán"
 
 #: .\bicicleteiros\static\lists\country_list.py:186
 msgid "Tuvalu"
@@ -762,27 +752,27 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:188
 msgid "Ukraine"
-msgstr ""
+msgstr "Ucrania"
 
 #: .\bicicleteiros\static\lists\country_list.py:189
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "Emiratos Árabes Unidos"
 
 #: .\bicicleteiros\static\lists\country_list.py:190
 msgid "United Kingdom"
-msgstr ""
+msgstr "Reino Unido"
 
 #: .\bicicleteiros\static\lists\country_list.py:191
 msgid "United States of America"
-msgstr ""
+msgstr "Estados Unidos"
 
 #: .\bicicleteiros\static\lists\country_list.py:192
 msgid "Uruguay"
-msgstr ""
+msgstr "Uruguay"
 
 #: .\bicicleteiros\static\lists\country_list.py:193
 msgid "Uzbekistan"
-msgstr ""
+msgstr "Uzbekistán"
 
 #: .\bicicleteiros\static\lists\country_list.py:194
 msgid "Vanuatu"
@@ -956,24 +946,24 @@ msgstr "Vídeos y Fotos"
 msgid "Videos"
 msgstr "Ví­deos"
 
-#: .\bicicleteiros\views.py:108
+#: .\bicicleteiros\views.py:109
 msgid "Thanks for participate and add your comment!"
 msgstr "Gracias por participar y añadir su comentario!"
 
-#: .\bicicleteiros\views.py:117
+#: .\bicicleteiros\views.py:118
 msgid "Please, include some text in your comment"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:144
+#: .\bicicleteiros\views.py:145
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:154
+#: .\bicicleteiros\views.py:155
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:191
+#: .\bicicleteiros\views.py:192
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."

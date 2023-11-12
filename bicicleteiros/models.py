@@ -5,6 +5,7 @@ from django.utils import timezone
 from registration.models import CustomUser
 import random, os
 from bicicleteiros.static.lists.country_list import country_list_values
+from django.utils.translation import gettext_lazy as _
 
 
 with open("bicicleteiros/static/lists/currency_list.txt", "r") as currency_list_file:
@@ -89,10 +90,11 @@ class country_information_model(models.Model):
     time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
     visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
     visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
-    visa_bribe = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    interesting_fact = models.CharField(max_length=255, blank=True, null=True)
+    song_spotify = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):
-        return (self.country)  
+        return (self.country)
 
 #Agora obteño a semana na que estou dependendo da data de inicio
 #We get the day of the year
