@@ -6,6 +6,8 @@ from registration.models import CustomUser
 import random, os
 from bicicleteiros.static.lists.country_list import country_list_values
 from django.utils.translation import gettext_lazy as _
+#PAra o rich text do text field dos artigos no django/admin
+from ckeditor.fields import RichTextField
 
 
 with open("bicicleteiros/static/lists/currency_list.txt", "r") as currency_list_file:
@@ -40,7 +42,9 @@ expense_type_choices = (
 
 #Modelo para os comentarios:
 class chat_comments_model(models.Model):
-    comentario = models.TextField(blank=False)
+    comentario_en = RichTextField()
+    comentario_es = RichTextField()
+    comentario_gl = RichTextField()
     #Teño que utilizar DateField e non podo utilizar o DateTimeField porque na base de datos de Postgress
     #de Railway non me acepta o datetime field.
     #date_added = models.DateField (default=datetime.now, blank=True, null=True)

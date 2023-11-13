@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 12:18+0100\n"
+"POT-Creation-Date: 2023-11-13 19:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,10 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .\bicicleteiros\forms.py:18
-msgid "Write your text here"
-msgstr "Escriba aqui su comentario"
-
-#: .\bicicleteiros\forms.py:34
 msgid "Write here your reply"
 msgstr "Escriba aqui su comentario"
 
@@ -803,7 +799,7 @@ msgid "WEEK"
 msgstr "Semana"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:48
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:238
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
 msgid "Day"
 msgstr "Día"
 
@@ -876,14 +872,14 @@ msgid "Local Time:"
 msgstr "Hora local:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:69
-msgid "The most listen song on Spotify:"
-msgstr "Canción más escuchada en Spotify:"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:70
 msgid "Interesting fact:"
 msgstr "Dato interesante:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:107
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:71
+msgid "The most listen song on Spotify:"
+msgstr "Canción más escuchada en Spotify:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:97
 msgid "Highlights"
 msgstr "Cosas a destacar"
 
@@ -891,53 +887,58 @@ msgstr "Cosas a destacar"
 msgid "Add Comment / View Comments"
 msgstr "Comentar / Ver comentarios"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:144
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:143
 msgid "Add Comment"
 msgstr "Comentar"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:149
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:148
 msgid "Comments"
 msgstr "Comentarios"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:184
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:204
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:213
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:206
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:217
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:228
 msgid "Sign In"
 msgstr "Iniciar Sesión"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:185
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:205
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:214
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:207
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:218
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:229
 #: .\registration\templates\2_sign_up.html:73
 msgid "Sign Up"
 msgstr "Registrarse"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:203
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:212
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:221
-msgid "Do you want to be part of this adventure?"
-msgstr "Quieres unirte a la aventura?"
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:204
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:215
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:226
+msgid ""
+"I am a bike traveller who has created this website for those ones who want "
+"to follow me. Do you want to be part of this adventure and see all the "
+"content?"
+msgstr ""
+"Soy un ciclo viajero que ha creado esta plataforma para toda la gente que quiera "
+"seguirme. ¿Quieres formar parte de la aventura y disfrutar de todo el contenido?"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:238
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
 msgid "Week"
 msgstr "Semana"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:251
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:257
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:265
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:271
 msgid "Expenses"
 msgstr "Gastos"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:279
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:285
 msgid "Kilometers"
 msgstr "Kilómetros"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:293
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:299
 msgid "Videos and Pictures"
 msgstr "Vídeos y Fotos"
 
@@ -946,24 +947,16 @@ msgstr "Vídeos y Fotos"
 msgid "Videos"
 msgstr "Ví­deos"
 
-#: .\bicicleteiros\views.py:109
-msgid "Thanks for participate and add your comment!"
-msgstr "Gracias por participar y añadir su comentario!"
-
-#: .\bicicleteiros\views.py:118
-msgid "Please, include some text in your comment"
-msgstr "Tiene que añadir texto en el campo"
-
-#: .\bicicleteiros\views.py:145
+#: .\bicicleteiros\views.py:121
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:155
+#: .\bicicleteiros\views.py:130
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:192
+#: .\bicicleteiros\views.py:169
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1300,3 +1293,15 @@ msgstr "Configuración"
 #: .\terrameiga\static\templates\base\nav_bar.html:40
 msgid "Log Out"
 msgstr "Salir"
+
+#~ msgid "Write your text here"
+#~ msgstr "Escriba aqui su comentario"
+
+#~ msgid "Do you want to be part of this adventure?"
+#~ msgstr "Quieres unirte a la aventura?"
+
+#~ msgid "Thanks for participate and add your comment!"
+#~ msgstr "Gracias por participar y añadir su comentario!"
+
+#~ msgid "Please, include some text in your comment"
+#~ msgstr "Tiene que añadir texto en el campo"

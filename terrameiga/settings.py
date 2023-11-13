@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'registration',
     'products',
     'bicicleteiros',
+    #Esto é para o rich text
+    'ckeditor',
 
 ]
 # This is to indicate to Django that the user model is now this custom model (CustomeUser) instead of the User model

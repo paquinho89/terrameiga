@@ -1,24 +1,8 @@
 from django import forms
 from django.forms import ModelForm
-from bicicleteiros.models import chat_comments_model, chat_comments_replies_model
+from bicicleteiros.models import chat_comments_replies_model
 #ESto son paquetes para traducir os textos. Eiqui o que quero traducir é o placeholder do formulario
 from django.utils.translation import gettext_lazy as _
-
-
-class chat_form(forms.ModelForm):
-    class Meta:
-        model=chat_comments_model
-        fields = ['comentario']
-#Esto dos widgets é para meter o formato de bootstrap no form. {{ form }} que está en artigos_content.html.
-#O attrs é CSS style
-        widgets = {
-            'comentario': forms.Textarea (attrs = {
-                'class': 'form-control', 
-                'style': "background-color: black; color:white", 
-                'placeholder': _('Write your text here'),
-                'rows':1})
-        }
-
 
 
 #Form for the replies
