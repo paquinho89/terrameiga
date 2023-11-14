@@ -30,7 +30,8 @@ def sign_up_view(request):
       #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
       email_form_str = sign_up_form_variable.cleaned_data.get('email')
       password_form = sign_up_form_variable.cleaned_data.get('password1')
-      user = CustomUser.objects.create_user(user_name, email_form_str, password_form)
+      user = CustomUser.objects.create_user(user_name, email_form_str, password_form, language = str(get_language().rsplit("-")[0])) #Eiqui metémoslle o language que está habilitado no browser.
+      print(str(get_language().rsplit("-"))[0])
       #Con esto fago o usuario como non activo ata que confirme a súa conta de correo. Cando confime a conta o usario pasará a un estado de Activo.
       user.is_active = False
       user.save()
@@ -110,16 +111,9 @@ def personal_data_view(request):
   current_user = CustomUser.objects.get(id=request.user.id)
   #Neste caso, ao personal_data_form pasámoslle a info do user que será a que vaia a aparecer no formulario
   form_personal_data = personal_data_form(request.POST or None, instance=current_user)
-  # Gardamos o language do browser no field de language do modelo de CustomUser
 
-  #QUEDACHES EIQUI
-  form_personal_data.fields['language'].initial = get_language()
-  
+  print(str(get_language().rsplit("-")[0]))
 
-  current_language_ = get_language()
-  print(current_language_)
-  
- 
   if request.method == 'POST':
     if form_personal_data.is_valid():
       form_personal_data.save()

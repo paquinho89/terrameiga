@@ -17,9 +17,8 @@ with open("terrameiga/static/lists/languages.txt", "r") as language_list_file:
     language_list_fixed = tuple(([re.search('[^\n]*',language)[0],re.search('[^\n]*',language)[0]]) for language in language_list)
 
 language_choices = (
-    ('en-us', 'en-us'),
-    ('es', 'es')
-)
+    ('en', 'en'),
+    ('es', 'es'))
 
 # Create your models here.
 #I am creating this model from the AbstractUser model as I just want to make the email the unique identifier
@@ -28,7 +27,7 @@ class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
     #country = models.CharField(max_length=33, choices= country_list_values, blank=True, null=True)
     country = models.CharField(max_length=33, choices= country_list_values, blank=True, null=True)
-    language = models.CharField(max_length=33, blank=True, null=True, default = get_language())
+    language = models.CharField(max_length=33, blank=True, null=True, choices=language_choices)
     
     #This sets the field that will act as a unique identifier of the User model. We are setting it to the email field.
     USERNAME_FIELD = 'email'

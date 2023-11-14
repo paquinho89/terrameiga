@@ -40,7 +40,7 @@ class personal_data_form(forms.ModelForm):
             'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
             'username' : forms.TextInput(attrs = {'class': 'form-control', 'placeholder':'username'}),
             'country' : forms.Select(attrs = {'class': 'form-control'}),
-            'language' : forms.TextInput(attrs = {'class': 'form-control'}),
+            'language' : forms.Select(attrs = {'class': 'form-control'}),
         }
         #captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
