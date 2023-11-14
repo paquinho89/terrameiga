@@ -225,5 +225,13 @@ def estadistica_data_view (request):
         
         'graph_money_type_html' :all_entry_days
     }
-    return render (request, 'bicicleteiros_estadísticas.html', context)
+    #Como o arquivo de bicicleteiros_statics non o podo traducir e meter no .po file, teño que ter tantos html de statics como idiomas hai.
+    current_language_browser = get_language()
+
+    if "en" in current_language_browser:
+        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
+    elif "es" in current_language_browser:
+        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_es.html', context)
+    else:
+        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
 

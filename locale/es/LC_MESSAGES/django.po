@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-13 19:37+0100\n"
+"POT-Creation-Date: 2023-11-14 12:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,42 @@ msgstr ""
 #: .\bicicleteiros\forms.py:18
 msgid "Write here your reply"
 msgstr "Escriba aqui su comentario"
+
+#: .\bicicleteiros\models.py:26
+msgid "resting"
+msgstr "descanso"
+
+#: .\bicicleteiros\models.py:27
+msgid "cycling"
+msgstr "pedaleando"
+
+#: .\bicicleteiros\models.py:31
+msgid "outside"
+msgstr "afuera"
+
+#: .\bicicleteiros\models.py:32 .\bicicleteiros\models.py:38
+msgid "accommodation"
+msgstr "hospedaje"
+
+#: .\bicicleteiros\models.py:36
+msgid "supermarket"
+msgstr "supermercado"
+
+#: .\bicicleteiros\models.py:37
+msgid "restaurant"
+msgstr "restaurante"
+
+#: .\bicicleteiros\models.py:39
+msgid "transport"
+msgstr "transporte"
+
+#: .\bicicleteiros\models.py:40
+msgid "bureaucracy"
+msgstr "burocracia"
+
+#: .\bicicleteiros\models.py:41
+msgid "other"
+msgstr "otro"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -918,8 +954,9 @@ msgid ""
 "to follow me. Do you want to be part of this adventure and see all the "
 "content?"
 msgstr ""
-"Soy un ciclo viajero que ha creado esta plataforma para toda la gente que quiera "
-"seguirme. ¿Quieres formar parte de la aventura y disfrutar de todo el contenido?"
+"Soy un ciclo viajero que ha creado esta plataforma para toda la gente que "
+"quiera seguirme. ¿Quieres formar parte de la aventura y disfrutar de todo el "
+"contenido?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
 msgid "Week"

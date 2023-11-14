@@ -55,9 +55,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label>{% trans "Country" %}</label>
-                                    
                                     {{ personal_data_update_form.country }}
-                                    
                                     {% if messages %}
                                     <label id="label_error" style="color: red;">{{ personal_data_update_form.country.errors }}</label>
                                     {% endif %}

@@ -22,8 +22,10 @@ from registration.views import sign_in_view, sign_up_view, log_out_view, persona
 from bicicleteiros.views import country_data_view, country_data_no_registered_view, photos_view, videos_view, estadistica_data_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
 from django.contrib.auth import views as auth_views
+#Con esto fago que na url aparezca a url e o idioma. Por exemplo: terrameiga.bike/gl/
+from django.conf.urls.i18n import i18n_patterns
 
-urlpatterns = [
+urlpatterns =   i18n_patterns (
     path('admin/', admin.site.urls),
     #BICICLETEIROS_URLs
     path('', country_data_no_registered_view, name="home_page_no_registered"),
@@ -58,7 +60,7 @@ urlpatterns = [
     path('info/', TemplateView.as_view(template_name = "templates/info.html")),
     path('castellano/', TemplateView.as_view(template_name = "templates/home_page.html"), name="home_page"),
     path('route/', TemplateView.as_view(template_name = "templates/route.html"), name="route"),
-]
+)
 
 if settings.DEBUG:
     urlpatterns = list(urlpatterns) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

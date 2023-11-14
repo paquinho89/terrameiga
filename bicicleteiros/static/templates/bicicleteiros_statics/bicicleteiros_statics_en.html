@@ -1,4 +1,6 @@
 {% extends 'base/base_registered.html' %}
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
 {% load static %}
 
 {% block content %} 
@@ -6,7 +8,7 @@
 <body>
 
 <h2 class="py-4 text-center">
-  Data of the journey
+  Journey Data
 </h2>
 
 <!--CHART 1-->
@@ -53,18 +55,25 @@
 <!--Script CHART 1-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+  const translations = {
+        
+        // Add more translations as needed
+    };
+
   const var_money_per_day = document.getElementById('money_per_week');
   const chartConfig = {
     type: 'bar',
     data: {
-      labels: [{% for week in graph_money_per_week_html %} '{{week.week}}', {% endfor %}],
+      labels: [{% for week in graph_money_per_week_html %} 
+                '{{ week.week }}', 
+              {% endfor %}],
       datasets: [{
         label: 'Euros - €',
-        data: [{% for money in graph_money_per_week_html %} '{{money.expense_euros__sum}}', {% endfor %}],
+        data: [{% for money in graph_money_per_week_html %}
+                '{{money.expense_euros__sum}}', 
+              {% endfor %}],
         borderWidth: 1,
-        backgroundColor: [
-                        'rgba(83, 158, 138, 1)'
-                    ]
+        backgroundColor: ['rgba(83, 158, 138, 1)']
       }]
     },
     options: {
@@ -73,7 +82,7 @@
       plugins: {
               title: {
                   display: true,
-                  text: 'Expenses per week',
+                  text: "Expenses per week",
                   color: 'rgba(191, 191, 191, 1)',
                   position: 'top',
                   align: 'center',

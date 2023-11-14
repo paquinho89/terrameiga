@@ -16,6 +16,10 @@ from django.utils.encoding import force_bytes, force_str
 from .helpers import send_reset_password_mail, send_confirm_email
 #Paquete para traducir texto que se xenera nas view. Neste caso é o texto das alertas
 from django.utils.translation import gettext as _
+#Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware (é un paquete que está no settings)
+from django.utils.translation import get_language
+
+
 
 def sign_up_view(request):
   # create a form instance and populate it with data from the request:
@@ -106,6 +110,16 @@ def personal_data_view(request):
   current_user = CustomUser.objects.get(id=request.user.id)
   #Neste caso, ao personal_data_form pasámoslle a info do user que será a que vaia a aparecer no formulario
   form_personal_data = personal_data_form(request.POST or None, instance=current_user)
+  # Gardamos o language do browser no field de language do modelo de CustomUser
+
+  #QUEDACHES EIQUI
+  form_personal_data.fields['language'].initial = get_language()
+  
+
+  current_language_ = get_language()
+  print(current_language_)
+  
+ 
   if request.method == 'POST':
     if form_personal_data.is_valid():
       form_personal_data.save()

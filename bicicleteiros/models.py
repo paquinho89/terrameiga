@@ -5,6 +5,7 @@ from django.utils import timezone
 from registration.models import CustomUser
 import random, os
 from bicicleteiros.static.lists.country_list import country_list_values
+#ESto utilízoo para traducir os países da lista. Temos que por o _lazy porque estamos a traballar con modelos.
 from django.utils.translation import gettext_lazy as _
 #PAra o rich text do text field dos artigos no django/admin
 from ckeditor.fields import RichTextField
@@ -22,22 +23,22 @@ with open("bicicleteiros/static/lists/time_zone_list.txt", "r") as time_zone_lis
 
 # Create your models here.
 day_type_choices = (
-    ('resting','resting'),
-    ('cycling', 'cycling')
+    (_('resting'), _('resting')),
+    (_('cycling'), _('cycling'))
 )
 
 night_type_choices = (
-    ('outside', 'outside'),
-    ('accommodation', 'accommodation')
+    (_('outside'),       _('outside')      ),
+    (_('accommodation'), _('accommodation'))
 )
 #---------------------------
 expense_type_choices = (
-    ('supermarket_expense', 'supermarket_expense'),
-    ('restaurant_expense', 'restaurant_expense'),
-    ('accommodation_expense', 'accommodation_expense'),
-    ('transport_expense', 'transport_expense'),
-    ('bureaucracy_expense', 'bureaucracy_expense'),
-    ('other_expense', 'other_expense')
+    ( _('supermarket'),     'supermarket'),
+    ( _('restaurant'),      'restaurant'),
+    ( _('accommodation'),   'accommodation'),
+    ( _('transport'),       'transport'),
+    ( _('bureaucracy'),     'bureaucracy'),
+    ( _('other'),           'other')
 )
 
 #Modelo para os comentarios:
@@ -95,7 +96,7 @@ class country_information_model(models.Model):
     visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
     visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
     interesting_fact = models.CharField(max_length=255, blank=True, null=True)
-    song_spotify = models.CharField(max_length=255, blank=True, null=True)
+    song_spotify = models.CharField(max_length=255, blank=False, null=False)
 
     def __str__(self):
         return (self.country)
