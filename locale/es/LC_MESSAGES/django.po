@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-14 12:51+0100\n"
+"POT-Creation-Date: 2023-11-15 12:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -979,6 +979,38 @@ msgstr "Kilómetros"
 msgid "Videos and Pictures"
 msgstr "Vídeos y Fotos"
 
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:334
+#: .\terrameiga\static\templates\base\footer.html:30
+msgid "Made with &#10084 by"
+msgstr "Hecho con &#10084 por"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:335
+#: .\terrameiga\static\templates\base\footer.html:32
+msgid "All reserved rights:"
+msgstr "Todos los derechos reservados:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:337
+msgid "Galician"
+msgstr "Gallego"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:338
+msgid "Basque"
+msgstr "Euskera"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:339
+msgid "Catalan"
+msgstr "Catalán"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:340
+#: .\terrameiga\settings.py:154
+msgid "Spanish"
+msgstr "Castellano"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:341
+#: .\terrameiga\settings.py:153
+msgid "English"
+msgstr "Inglés"
+
 #: .\bicicleteiros\static\templates\bicicleteiros_videos.html:18
 #: .\terrameiga\static\templates\base\nav_bar.html:21
 msgid "Videos"
@@ -1219,39 +1251,39 @@ msgstr "email"
 msgid "Username"
 msgstr "Nombre"
 
-#: .\registration\templates\profile_account\personal_data.html:68
+#: .\registration\templates\profile_account\personal_data.html:66
 msgid "Language"
 msgstr "Idioma"
 
-#: .\registration\templates\profile_account\personal_data.html:78
+#: .\registration\templates\profile_account\personal_data.html:76
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:41
+#: .\registration\views.py:47
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:50 .\registration\views.py:139
-#: .\registration\views.py:222
+#: .\registration\views.py:56 .\registration\views.py:155
+#: .\registration\views.py:238
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:67
+#: .\registration\views.py:76
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:72
+#: .\registration\views.py:81
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:88
+#: .\registration\views.py:101
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:97
+#: .\registration\views.py:110
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -1259,57 +1291,49 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:114
+#: .\registration\views.py:130
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:119
+#: .\registration\views.py:135
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:132
+#: .\registration\views.py:148
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
 
-#: .\registration\views.py:160
+#: .\registration\views.py:176
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:165 .\registration\views.py:167
+#: .\registration\views.py:181 .\registration\views.py:183
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
 
-#: .\registration\views.py:193
+#: .\registration\views.py:209
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:196
+#: .\registration\views.py:212
 msgid "The email does not exist in our data base"
 msgstr "El email introducido no existe en nuestra base de datos"
 
-#: .\registration\views.py:200
+#: .\registration\views.py:216
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:217
+#: .\registration\views.py:233
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
-
-#: .\terrameiga\static\templates\base\footer.html:30
-msgid "Made with &#10084 by"
-msgstr "Hecho con &#10084 por"
 
 #: .\terrameiga\static\templates\base\footer.html:31
 msgid "No cookies are used on the site"
 msgstr "Este sitio web no utiliza cookies"
-
-#: .\terrameiga\static\templates\base\footer.html:32
-msgid "All reserved rights:"
-msgstr "Todos los derechos reservados:"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:18
 msgid "Home"
