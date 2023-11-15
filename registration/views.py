@@ -19,6 +19,8 @@ from django.utils.translation import gettext as _
 #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware (é un paquete que está no settings)
 from django.utils.translation import get_language
 
+from django.utils.translation import activate
+
 
 
 def sign_up_view(request):
@@ -31,7 +33,6 @@ def sign_up_view(request):
       email_form_str = sign_up_form_variable.cleaned_data.get('email')
       password_form = sign_up_form_variable.cleaned_data.get('password1')
       user = CustomUser.objects.create_user(user_name, email_form_str, password_form, language = str(get_language().rsplit("-")[0])) #Eiqui metémoslle o language que está habilitado no browser.
-      print(str(get_language().rsplit("-"))[0])
       #Con esto fago o usuario como non activo ata que confirme a súa conta de correo. Cando confime a conta o usario pasará a un estado de Activo.
       user.is_active = False
       user.save()
@@ -62,6 +63,9 @@ def sign_up_view(request):
 def sign_up_email_validation_confirmation_view (request, uidb64, token):
   uid = force_str(urlsafe_base64_decode(uidb64))
   user = CustomUser.objects.get(pk=uid)
+  #Cargamos a páxina no idioma que se gardou nas preferencias de usuario no momento que se fixo o sign_up. Recorda co email o único que fai é por en activo o usuario.
+  user_language = CustomUser.objects.get(email = user).language
+  activate(user_language)
   #Unha vez que clicka no link para verificar a súa conta, nos activamos o seu email.
   user.is_active = True
   user.save()
@@ -86,6 +90,10 @@ def sign_in_view(request):
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.
       email_form = sign_in_form_variable.cleaned_data.get('username')
       password_form = sign_in_form_variable.cleaned_data.get('password')
+      #Cando se faga o sign_in, vou buscar o idioma que ten o usuario configurado no seus datos (CustomUser model) e vouno activar.
+      #Non quero que me cambie o idioma ao do browser, quero que me pille o que ten gardado no seu perfil
+      user_language = CustomUser.objects.get(email = email_form).language
+      activate(user_language)
       #Authenticate user returns the email of the user
       user_auth = authenticate(request, email=email_form, password=password_form)
       if user_auth is not None:
@@ -111,12 +119,12 @@ def personal_data_view(request):
   current_user = CustomUser.objects.get(id=request.user.id)
   #Neste caso, ao personal_data_form pasámoslle a info do user que será a que vaia a aparecer no formulario
   form_personal_data = personal_data_form(request.POST or None, instance=current_user)
-
-  print(str(get_language().rsplit("-")[0]))
-
   if request.method == 'POST':
     if form_personal_data.is_valid():
       form_personal_data.save()
+      user_language = CustomUser.objects.get(email = current_user).language
+      #Con esto activo o idioma que o usuario seleccionou no seu user_settings.
+      activate(user_language)
       #Como o sistema me fai log_out, eu poño función para manter a sesión iniciada.
       login(request, current_user)
       messages.add_message(request, messages.SUCCESS, _("Your personal data has been updated"))

@@ -138,7 +138,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Then, if you change the language code to a language that you have made the translation, all the web, as well as the alerts will be transalated to the language you chose
 # However, MIDDLEWARE, there is 'django.middleware.locale.LocaleMiddleware', which detects the language of the browser and put the webiste in the same language
 # as the browser.
-# TESTE  QUE LER ESTO: http://djangobook.py3k.cn/chapter18/en/
+#COMO FUNCIONA O IDIOMA NA TÚA PÁXINA: IMPORTANTE - LÓXICA QUE APLICO
+#As urls https:terrameiga/en/ ou https:terrameiga/es mostraranse cada unha delas dependendo do idioma que teña configurado o user no browser.
+#Non obstante, se o usuario selecciona outra opción de idioma na home_page_nonregsitered (footer), o idioma do usuario modificarase no campo do language do modelo CustomUser e todas
+#as urls pasaran a estar no idioma que o user seleccionou, independientemente do idioma que teña configurado o user no browser.
+#Tamén, se o usuario vai a personal_data e decide cambiar o idioma, as urls modificaranse de acorde ao idioma que seleccione o usuario, independentemente do idioma que teña o usuario
+#no browser
+#OUTRA COUSA DO IDIOMA ENTRE O IDIOMA NO SIGN_IN E O SIGN_UP
+#No Sign_up gardo o idioma que está na url (que se cargou en fución do idiomado browser), nos datos do usuario, porque entendo que é o que quere utlizar.
+#No sign_in utilizo o idioma que o usuario ten na súa configuración. O usuario pode ter o browser en Español, pero se nas súas preferencias ten galeo, a páxina tras o sign_in estará en galego
 
 #Estes son os idiomas que vamos a permitir que a xente escolla. Solo é para lle dar a xente a opción de escoller.
 LANGUAGES = [
