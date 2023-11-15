@@ -166,7 +166,7 @@ country_list_values = (
     ("South Africa",_("South Africa")),
     ("South Korea",_("South Korea")),
     ("South Sudan",_("South Sudan")),
-    (_("Spain"),_("Spain")),
+    ("Spain",_("Spain")),
     ("Sri Lanka",_("Sri Lanka")),
     ("Sudan",_("Sudan")),
     ("Suriname",_("Suriname")),
@@ -198,5 +198,7 @@ country_list_values = (
     ("Zambia",_("Zambia")),
     ("Zimbabwe",_("Zimbabwe"))
 )
+
+
 
 

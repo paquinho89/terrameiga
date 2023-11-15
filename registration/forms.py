@@ -32,6 +32,12 @@ class sign_up_form_2(UserCreationForm):
         }
 
 class personal_data_form(forms.ModelForm):
+    def __init__(self, *args, sorted_country_list=None, **kwargs):
+        #Con esto inicio os argumentos da clase pai/mai que é forms.ModelForm
+        super().__init__(*args, **kwargs)
+        # Populate choices for 'country' field dynamically
+        self.fields['country'].widget.choices = sorted_country_list
+        
     class Meta:
         model = CustomUser
         fields = ('email', 'username', 'country', 'language')

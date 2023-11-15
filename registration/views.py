@@ -114,11 +114,17 @@ def sign_in_view(request):
   }
   return render (request, '1_sign_in.html', context)
 
+from bicicleteiros.static.lists.country_list import country_list_values
+
 def personal_data_view(request):
   #Collemos a info do usuario que está logeado para pola no formulario
   current_user = CustomUser.objects.get(id=request.user.id)
-  #Neste caso, ao personal_data_form pasámoslle a info do user que será a que vaia a aparecer no formulario
-  form_personal_data = personal_data_form(request.POST or None, instance=current_user)
+  #Con esto ordenase a lista de country list en fucnión do idioma que está actualmente na sesión. Senon fago esto, por exemplo se teño a páxina en español os países estarían ordenados
+  #basados no inglés e non no idioma que está activado na sesión
+  sorted_country_list = sorted(country_list_values, key=lambda x: str(x[1]))
+  #Neste caso, ao personal_data_form pasámoslle a info do user que será a que vaia a aparecer no formulario, e tamén definimos unha función en forms.py para pasarlle ao formulario
+  #a sorted_country_list. A función está debaixo da clase "personal_data_form".
+  form_personal_data = personal_data_form(request.POST or None, sorted_country_list=sorted_country_list, instance=current_user)
   if request.method == 'POST':
     if form_personal_data.is_valid():
       form_personal_data.save()

@@ -1,0 +1,8 @@
+DEPLOYMENT DO SITIO web
+PASOS
+
+1. Creamos o requiremnts.txt
+Neste caso vamos o directorio que no meu caso é: C:\Users\talle\Desktop\terrameiga
+E executo o seguinte comando: touch requirements.txt
+
+

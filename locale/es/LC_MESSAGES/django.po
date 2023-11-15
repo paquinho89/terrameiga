@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 12:31+0100\n"
+"POT-Creation-Date: 2023-11-15 13:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1002,12 +1002,12 @@ msgid "Catalan"
 msgstr "Catalán"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:340
-#: .\terrameiga\settings.py:154
+#: .\registration\models.py:14 .\terrameiga\settings.py:154
 msgid "Spanish"
 msgstr "Castellano"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:341
-#: .\terrameiga\settings.py:153
+#: .\registration\models.py:13 .\terrameiga\settings.py:153
 msgid "English"
 msgstr "Inglés"
 
