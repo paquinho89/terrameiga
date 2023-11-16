@@ -3,6 +3,39 @@ PASOS
 
 1. Creamos o requiremnts.txt
 Neste caso vamos o directorio que no meu caso é: C:\Users\talle\Desktop\terrameiga
-E executo o seguinte comando: touch requirements.txt
+E executo o seguinte comando: pip freeze > requirements.txt
+
+Creamos o Procfile. Creamos un archivo e non lle damos ningunha exetensión.
+Mira como está creado nalgún dos teus proxectos.
+
+Creamos o runtime.txt onde metemos a version de python. No meu caso sería:
+python-3.9.13
+Para ver a versión de python tes que facer "python --version"
+
+No proxecto creamos un novo settings.py que lle chamo "settings_deployment.py" e onde facemos toda a configuracion do deployment
+
+No "settings_deployment.py", poño un asterisco nos ALLOWED_HOSTS = ["*"]
+
+Vamos coller todos os arquivos estáticos do proxecto e vaise crear unha nova carpeta.
+Para eso facemos: "python manage.py collectstatic"
+
+no novo
+
+
+2. Creamos un proxecto en Railway e facemos o deploy en Raiwaly
+
+3. 
+4. Configuro a base de datos no settings_deployment.py:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': config('user_pg_railway'), 
+        'PASSWORD': config('password_pg_railway'),
+        'HOST': config('host_pg_railway'), 
+        'PORT': config('port_pg_railway'),
+    }
+}
+
 
 

@@ -1,3 +1,5 @@
+#¡¡¡¡¡¡¡¡¡¡¡¡  SETTINGS DEPLOYMENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 """
 Django settings for terrameiga project.
 
@@ -14,6 +16,8 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
 
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 print ("ruta do BASE_DIR", BASE_DIR)
@@ -27,7 +31,7 @@ SECRET_KEY = 'django-insecure-q=m#etp8+mf8)iu!a7+xs!*0$pc5j@_c5ndt^u77$vwq8+jwvc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 #Variable para activar o framework das alerts de django
 
@@ -102,8 +106,12 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres', 
+        'PASSWORD': 'Bb4EfGf*cF5FA--*gAdAcG645aFb463E',
+        'HOST': 'viaduct.proxy.rlwy.net', 
+        'PORT': '29802',
     }
 }
 
@@ -182,6 +190,9 @@ STATICFILES_DIRS=[
 ]
 
 print("ruta do static_dir" ,STATICFILES_DIRS)
+
+#Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #MEDIA FILES: Estes son arquivos que suben os usuarios da web
 MEDIA_URL = '/media/'

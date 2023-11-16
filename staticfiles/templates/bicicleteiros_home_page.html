@@ -1,0 +1,227 @@
+{% extends 'base/base_registered.html' %}
+<!--To load the Django library to translate your text.-->
+{% load i18n %}
+
+{% load static %}
+
+{% block content %} 
+
+
+<style>
+  h4, h5{
+    color: rgb(255, 255, 255, 0.8);
+  }
+  p{
+    color: rgb(255, 255, 255, 0.8);
+  }
+  #add_reply_button {
+    color: white;
+    background-color: rgb(83, 158, 138);
+  }
+  #add_reply_button:hover {
+    background-color: rgb(246, 158, 138);
+  }
+  .close {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 40px; /* Adjust the font size as needed */
+      color: white
+    }
+  #data_home_page{
+    color: rgb(255, 255, 255, 0.8);
+  }
+</style>
+
+<body>
+<!-- Page content-->
+<div class="row">
+  <div class="text-left card col-lg-3">
+    <ul>
+    <h4 class="mt-2">
+      <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
+      {% trans "WEEK" %} {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}<img style="float: right;" width="75" height="37" src='{{flag_url_html}}' alt="First slide">
+    </h4>
+    <hr>
+      <li id="data_home_page">{% trans "Km completed:" %} <strong>{{ total_km_html }} km </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ graph_total_money_html }} € </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Country:" %} <strong>{% trans current_country_html %} (#{{country_number_html}})</strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Capital:" %} <strong>{{ capital_city_html }}</strong></li>
+      <li id="data_home_page" class="mt-2">
+        {% trans "Visa:" %} <strong>{{ visa_required_html }}</strong>
+        {% if visa_required_html == "no" %}
+         <!--Valor en blanco--> 
+        {% else %}
+        <strong>({{ visa_price_html }} Euros)</strong>
+        {% endif %}
+      </li>
+      
+    <hr>
+    <h5>{% trans "Country Information:" %}</h5>
+    <hr>
+      <li id="data_home_page" class="mt-3">{% trans "Surface:" %} <strong>{{ surface_html }} km2 </strong><br> 
+        <label style="font-style: italic;">{% trans "(Spain: 505.994 km2)" %}</label></li>
+      <li id="data_home_page" class="mt-2">{% trans "Population:" %} <strong>{{ population_html }} {% trans "people" %} </strong> <br>
+        <label style="font-style: italic;">{% trans "(Spain: 48.300.000 people)" %}</label></li>
+      <li id="data_home_page" class="mt-2">{% trans "Density population:" %} <strong>{{ density_population_html }} km2 </strong> <br>
+        <label style="font-style: italic;">{% trans "(Spain: 94 people per km2)" %}</label> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Renta per capita:" %} <strong>{{ rent_per_capita_html }} €</strong> <br>
+        <label style="font-style: italic;">{% trans "(Spain: 27.870 €)" %}</label> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Currency:" %} <strong>{{ currency_html }}</strong> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Local Time:" %} <strong><label id="current-time"></label></strong> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Interesting fact:" %}</li>
+      <p style="font-style: italic;">{{interesting_fact_country_html}}</p>
+      <li id="data_home_page" class="mt-2">{% trans "The most listen song on Spotify:" %}</li>
+    </ul>
+    <div>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{spotify_song_code_html}}?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+  <div class="col-lg-9 mt-0">
+    <iframe src="https://www.komoot.es/tour/947537380/embed?profile=1" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+  </div>
+</div>
+  <!--ESTO É CÓDIGO DE JAVASCRIPT PARA CREAR UN RELOXO-->
+  <!--The timezones are get from this page (zone ID column): https://nodatime.org/TimeZones-->
+  <script>
+    let time = document.getElementById("current-time");
+    setInterval(()=>{
+      let d = new Date();
+      time.innerHTML = d.toLocaleTimeString('en-US', {timeZone: "{{time_zone_html}}", timeZoneName: "short", hour12: false })
+    },1000)
+  </script>
+<!--CHAT AREA-->
+<!-- Main Body -->
+<section>
+  <div class="container mt-12">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-12 pb-12 mt-4">
+        <h4>
+          {% trans "Highlights" %} ({{chat_number_comments_html}})
+        </h4>
+        {% for chat_comments in chat_comments_all_html %}
+        <ul class="list-unstyled" id="comments">
+          <li class="justify-content-between">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between p-3">
+                <!--<p class=" mb-0">
+                  {{ chat_comments.username_comment }}
+                </p>-->
+                <p class="text-muted small mb-0">
+                  {{ chat_comments.date_added }}
+                  {{current_language_browser_html}}
+                </p>
+              </div>
+              <div class="card-body">
+                <p class="mb-0">
+                  {% if 'en' in current_language_browser_html %}
+                    <!-- Eiqui tes que marcar o contido como seguro (safe) para que o rich text do artigos_content se che mostre na páxina-->
+                    {{ chat_comments.comentario_en|safe }}
+                  {% elif 'es' in current_language_browser_html %}
+                    {{ chat_comments.comentario_es|safe }}
+                  {% elif 'gl' in current_language_browser_html %}
+                    {{ chat_comments.comentario_gl|safe }}
+                  {% else %}
+                    {{ chat_comments.comentario_en|safe }}
+                  {% endif %}
+                </p>
+                <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
+                thanks to the function created in javascript (setCommentPK)-->
+                <button onclick="toggleComments({{ chat_comments.pk }})" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link text-muted small mb-0" style="color: rgb(255, 255, 255, 0.8);">
+                  {% trans "Add Comment / View Comments" %} ({{chat_comments.number_of_replies}})
+                </button>
+              </div>
+            </div>
+            <ul class="list-unstyled" id="comments">
+              <div id="commentsSection_{{ chat_comments.pk }}" style="display: none;" class="card">
+                <li class="justify-content-between">
+                  <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
+                    {% csrf_token %}
+                    <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
+                      Ten type='hidden' porque non quero que se mostre. Esto autopulase coa función de javascript (setCommentPK)-->
+                    <input type="hidden" name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">
+                    <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
+                    <!--{{ form_chat_reply_html.pk_original_comment }}-->
+                    {{ form_chat_reply_html.reply_text }}
+                    <button id="add_reply_button" type="submit" class="btn mt-3" onclick="setCommentPK({{chat_comments.pk}}); window.location.href='#commentsSection_{{ chat_comments.pk }}';">{% trans "Add Comment" %}</button>
+                    <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="mt-4">
+                      {% trans "Comments" %} ({{chat_comments.number_of_replies}}):
+                    </h5>
+                    {% for reply in replies_comments_all_html %}
+                    <div class="card" style="background-color:rgb(51, 51, 51); border: 1px;">
+                      <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
+                      {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
+                      <div class="card-header d-flex justify-content-between p-2" style="background-color: #28231D;">
+                      </div>
+                      <div class="card-header d-flex justify-content-between p-2">
+                        <p class="text-muted small mb-0">
+                          {{ reply.username_reply }}
+                        </p>
+                        <p class="text-muted small mb-0"><i class="far fa-clock"></i> 
+                            {{ reply.date_added }}
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        <p class="mb-0">
+                          {{ reply.reply_text }}
+                        </p>
+                      </div>
+                      {% endif %}
+                    </div>
+                    {% endfor %}
+                  </form>
+                </li>
+              </div>
+            </ul>
+          </li>
+        </ul>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+            
+</body>
+<!--This is the javascript function which captures the chat_comments.pk when the "Reply" button is clicked.-->
+<script>
+  function setCommentPK(pk) {
+      document.getElementById('comment-pk-' + pk).value = pk; //Con esta función asígnolle ao valor input(<input name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">), o pk do comentario cando se clica no botón "Reply/Show comments"
+  }
+
+  function toggleComments(chatCommentId) { //Con esto fago que ao clicar no botón the "reply/shos all commentes" me mostre os replies correspondientes a sección do comentario que estou clicando.
+        var commentsSection = document.getElementById('commentsSection_' + chatCommentId);
+        if (commentsSection.style.display === 'none') {
+            commentsSection.style.display = 'block';
+            //Esto é para establecer se a como true se a sección está aberta (modo block)
+            localStorage.setItem('comment_' + chatCommentId + '_isOpen', 'true');
+        } else {
+            commentsSection.style.display = 'none';
+            //Ou neste caso establecer como false a sección se está pechada. Estas variables serán utilizadas na seguinte función.
+            localStorage.setItem('comment_' + chatCommentId + '_isOpen', 'false');
+        }
+    }
+
+    //Esta función é para manter a sección dos comentarios da xente aberta despois de que se entregase o formulario ou se cargase a páxina.
+    //De esta forma o usuario pode ver na parte na que se cargou a súa mensaxe
+    document.addEventListener("DOMContentLoaded", function () {
+        {% for chat_comments in chat_comments_all_html %}
+        var storedState = localStorage.getItem('comment_{{ chat_comments.pk }}_isOpen');
+        var commentsSection = document.getElementById('commentsSection_{{ chat_comments.pk }}');
+        if (storedState === 'true') {
+            commentsSection.style.display = 'block';
+        } else {
+            commentsSection.style.display = 'none';
+        }
+        {% endfor %}
+    });
+</script>
+
+{% endblock content %}
