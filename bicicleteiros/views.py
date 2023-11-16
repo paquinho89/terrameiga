@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from .models import country_information_model, money_model, km_altitude_model, chat_comments_model, chat_comments_replies_model, CustomUser, videos_model, photos_model
+from .models import country_information_model, money_model, km_altitude_model, chat_comments_model, chat_comments_replies_model, videos_model, photos_model
+from registration.models import CustomUser
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
