@@ -2,7 +2,6 @@ from django.db import models
 import re
 from datetime import datetime
 from django.utils import timezone
-from registration.models import CustomUser
 import random, os
 from bicicleteiros.static.lists.country_list import country_list_values
 #ESto utilízoo para traducir os países da lista. Temos que por o _lazy porque estamos a traballar con modelos.
