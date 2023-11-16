@@ -9,12 +9,7 @@ from bicicleteiros.static.lists.country_list import country_list_values
 from django.utils.translation import gettext_lazy as _
 #PAra o rich text do text field dos artigos no django/admin
 from ckeditor.fields import RichTextField
-
-
-with open("bicicleteiros/static/lists/currency_list.txt", "r") as currency_list_file:
-    currency_list = tuple(currency_list_file)
-    #A regular expresion é para eliminar o salto de línea que contén toda a lista e que me funcione despois no formulario. Co [0] estou collendo o primer resultado da función re.search
-    currency_list_fixed = tuple(([re.search('[^\n]*',currency)[0],re.search('[^\n]*',currency)[0]]) for currency in currency_list)
+from bicicleteiros.static.lists.currency_list import currency_list_values
 
 with open("bicicleteiros/static/lists/time_zone_list.txt", "r") as time_zone_list_file:
     time_zone_list = tuple(time_zone_list_file)
@@ -23,22 +18,22 @@ with open("bicicleteiros/static/lists/time_zone_list.txt", "r") as time_zone_lis
 
 # Create your models here.
 day_type_choices = (
-    (_('resting'), _('resting')),
-    (_('cycling'), _('cycling'))
+    ('resting', 'resting'),
+    ('cycling', 'cycling')
 )
 
 night_type_choices = (
-    (_('outside'),       _('outside')      ),
-    (_('accommodation'), _('accommodation'))
+    ('outside',       'outside'      ),
+    ('accommodation', 'accommodation')
 )
 #---------------------------
 expense_type_choices = (
-    ( _('supermarket'),     'supermarket'),
-    ( _('restaurant'),      'restaurant'),
-    ( _('accommodation'),   'accommodation'),
-    ( _('transport'),       'transport'),
-    ( _('bureaucracy'),     'bureaucracy'),
-    ( _('other'),           'other')
+    ( 'supermarket',     'supermarket'),
+    ( 'restaurant',      'restaurant'),
+    ( 'accommodation',   'accommodation'),
+    ( 'transport',       'transport'),
+    ( 'bureaucracy',     'bureaucracy'),
+    ( 'other',           'other')
 )
 
 #Modelo para os comentarios:
@@ -49,9 +44,9 @@ class chat_comments_model(models.Model):
     #Teño que utilizar DateField e non podo utilizar o DateTimeField porque na base de datos de Postgress
     #de Railway non me acepta o datetime field.
     #date_added = models.DateField (default=datetime.now, blank=True, null=True)
-    date_added = models.DateTimeField (default=timezone.now, blank=True)
-    username_comment = models.CharField(max_length=33, blank=True, null=True, default="paquinho89")
-    number_of_replies = models.IntegerField(blank=False, null=True, default=0)
+    date_added = models.DateTimeField (default=timezone.now, blank=True, verbose_name='date_autofilled')
+    username_comment = models.CharField(max_length=33, blank=True, null=True, default="paquinho89", verbose_name="username_autofilled")
+    number_of_replies = models.IntegerField(blank=False, null=True, default=0, verbose_name="number_replies_autofilled")
 
     #Esto é para que me ordene os comentarios na páxina por data. Os comentarios máis recentes que se posicionen arriba
     class Meta:
@@ -76,7 +71,7 @@ class chat_comments_replies_model(models.Model):
 
 
 class currency(models.Model):
-    currency = models.CharField(max_length=50, choices= currency_list_fixed, blank=False, null=False)
+    currency = models.CharField(max_length=50, choices= currency_list_values, blank=False, null=False)
     currency_change_euro = models.DecimalField(max_digits=15, decimal_places=5, blank = False, null=False)
     
     def __str__(self):
@@ -94,7 +89,7 @@ class country_information_model(models.Model):
     currency = models.ForeignKey(currency, on_delete=models.PROTECT)
     time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
     visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
-    visa_price = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
+    visa_price = models.DecimalField(max_digits=15, decimal_places=0, blank = True, null=True, default=0)
     interesting_fact = models.CharField(max_length=255, blank=True, null=True)
     song_spotify = models.CharField(max_length=255, blank=False, null=False)
 
@@ -115,14 +110,14 @@ class money_model(models.Model):
     journey_day = models.IntegerField(default=int(day_in_the_journey), null=True)
     week = models.IntegerField(default=int(week_day), null=True) 
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
-    country_number = models.IntegerField(blank=True, null=True)
+    country_number = models.IntegerField(blank=True, null=True, verbose_name="country_number_autofilled")
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
     # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
     # De todos os xeitos o "country_name" calcúlase automáticamente xa que colle o mesmo valor que o country.
-    country_name = models.CharField(max_length=33, blank=True, null=True)
-    expense = models.DecimalField(max_digits=15, decimal_places=2, blank = True, null=True)
-    expense_type = models.CharField(max_length=33, choices=expense_type_choices, blank=True, null=True)
-    expense_euros = models.IntegerField(blank = True, null=True)
+    country_name = models.CharField(max_length=33, blank=True, null=True, verbose_name="country_name_autofilled")
+    expense = models.DecimalField(max_digits=15, decimal_places=2, blank = False, null=False)
+    expense_type = models.CharField(max_length=33, choices=expense_type_choices, blank=False, null=False)
+    expense_euros = models.IntegerField(blank = True, null=True, verbose_name="expense_euros_autofilled")
 
     #Convert the money into Euros base on the currency change of the "currency model".
     def save(self):
@@ -138,11 +133,11 @@ class km_altitude_model (models.Model):
     journey_day = models.IntegerField(default=int(day_in_the_journey), null=True)
     week = models.IntegerField(default=int(week_day), null=True)
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
-    country_number = models.IntegerField(blank=True, null=True)
+    country_number = models.IntegerField(blank=True, null=True, verbose_name="country_number_autofilled")
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
     # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
     # De todos os xeitos o "country_name" calcúlase automáticamente xa que colle o mesmo valor que o country.
-    country_name = models.CharField(max_length=33, blank=True, null=True) 
+    country_name = models.CharField(max_length=33, blank=True, null=True, verbose_name="country_name_autofilled") 
     km_day = models.IntegerField(blank = True, null=True)
     altitude_day = models.IntegerField(blank = True, null=True)
     day_type = models.CharField(max_length=33, choices=day_type_choices, blank=True, null=True)

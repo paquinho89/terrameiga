@@ -52,7 +52,15 @@
       <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ graph_total_money_html }} € </strong></li>
       <li id="data_home_page" class="mt-2">{% trans "Country:" %} <strong>{% trans current_country_html %} (#{{country_number_html}})</strong></li>
       <li id="data_home_page" class="mt-2">{% trans "Capital:" %} <strong>{{ capital_city_html }}</strong></li>
-      <li id="data_home_page" class="mt-2">{% trans "Visa:" %} <strong>{{ visa_required_html }} ({{ visa_price_html }} Euros)</strong></li>
+      <li id="data_home_page" class="mt-2">
+        {% trans "Visa:" %} <strong>{{ visa_required_html }}</strong>
+        {% if visa_required_html == "no" %}
+         <!--Valor en blanco--> 
+        {% else %}
+        <strong>({{ visa_price_html }} Euros)</strong>
+        {% endif %}
+      </li>
+      
     <hr>
     <h5>{% trans "Country Information:" %}</h5>
     <hr>
@@ -71,7 +79,7 @@
       <li id="data_home_page" class="mt-2">{% trans "The most listen song on Spotify:" %}</li>
     </ul>
     <div>
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{spotify_song_code_html}}?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{spotify_song_code_html}}?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   </div>
   <div class="col-lg-9 mt-0">

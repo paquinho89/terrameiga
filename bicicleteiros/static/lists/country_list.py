@@ -188,7 +188,7 @@ country_list_values = (
     ("Ukraine",_("Ukraine")),
     ("United Arab Emirates",_("United Arab Emirates")),
     ("United Kingdom",_("United Kingdom")),
-    ("United States of America",_("United States of America")),
+    ("United States",_("United States")),
     ("Uruguay",_("Uruguay")),
     ("Uzbekistan",_("Uzbekistan")),
     ("Vanuatu",_("Vanuatu")),

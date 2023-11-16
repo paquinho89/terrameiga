@@ -76,6 +76,7 @@ def country_data_view (request):
         #Da última entrada collemos o país
         #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
         current_country = str(all_entry_days_last.country)
+        print('eeeeeeeeeeeeeeeeeeee', current_country)
         country_number_country = country_information_model.objects.get(country= current_country).country_number
         visa_required = country_information_model.objects.get(country = current_country).visa_requerided
         visa_price = country_information_model.objects.get(country = current_country).visa_price

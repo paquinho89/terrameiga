@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-15 13:17+0100\n"
+"POT-Creation-Date: 2023-11-16 16:50+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,42 +21,6 @@ msgstr ""
 #: .\bicicleteiros\forms.py:18
 msgid "Write here your reply"
 msgstr "Escriba aqui su comentario"
-
-#: .\bicicleteiros\models.py:26
-msgid "resting"
-msgstr "descanso"
-
-#: .\bicicleteiros\models.py:27
-msgid "cycling"
-msgstr "pedaleando"
-
-#: .\bicicleteiros\models.py:31
-msgid "outside"
-msgstr "afuera"
-
-#: .\bicicleteiros\models.py:32 .\bicicleteiros\models.py:38
-msgid "accommodation"
-msgstr "hospedaje"
-
-#: .\bicicleteiros\models.py:36
-msgid "supermarket"
-msgstr "supermercado"
-
-#: .\bicicleteiros\models.py:37
-msgid "restaurant"
-msgstr "restaurante"
-
-#: .\bicicleteiros\models.py:39
-msgid "transport"
-msgstr "transporte"
-
-#: .\bicicleteiros\models.py:40
-msgid "bureaucracy"
-msgstr "burocracia"
-
-#: .\bicicleteiros\models.py:41
-msgid "other"
-msgstr "otro"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -795,7 +759,9 @@ msgid "United Kingdom"
 msgstr "Reino Unido"
 
 #: .\bicicleteiros\static\lists\country_list.py:191
-msgid "United States of America"
+#, fuzzy
+#| msgid "United States of America"
+msgid "United States"
 msgstr "Estados Unidos"
 
 #: .\bicicleteiros\static\lists\country_list.py:192
@@ -830,6 +796,122 @@ msgstr ""
 msgid "Zimbabwe"
 msgstr ""
 
+#: .\bicicleteiros\static\lists\currency_list.py:4
+msgid "Euro"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:5
+msgid "Lek"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:6
+msgid "Forint"
+msgstr "Florín"
+
+#: .\bicicleteiros\static\lists\currency_list.py:7
+msgid "Leu"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:8
+msgid "Serbian Dinar"
+msgstr "Dinar Serbio"
+
+#: .\bicicleteiros\static\lists\currency_list.py:9
+msgid "Lev"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:10
+msgid "Lira"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:11
+msgid "Iranian Rial"
+msgstr "Rial Iraní"
+
+#: .\bicicleteiros\static\lists\currency_list.py:12
+msgid "Lari"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:13
+msgid "Dram"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:14
+msgid "Azerbaijani Manat"
+msgstr "Manat Azerbaiyano"
+
+#: .\bicicleteiros\static\lists\currency_list.py:15
+msgid "Ruble"
+msgstr "Rublo"
+
+#: .\bicicleteiros\static\lists\currency_list.py:16
+msgid "Tenge"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:17
+msgid "Turkmenistani Manat"
+msgstr "Manat Turkmeno"
+
+#: .\bicicleteiros\static\lists\currency_list.py:18
+msgid "Sum"
+msgstr "Som Uzbeko"
+
+#: .\bicicleteiros\static\lists\currency_list.py:19
+msgid "Somoni"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:20
+msgid "Som"
+msgstr "Som Kirguís"
+
+#: .\bicicleteiros\static\lists\currency_list.py:21
+msgid "Pakistani Rupee"
+msgstr "Rupia Pakistaní"
+
+#: .\bicicleteiros\static\lists\currency_list.py:22
+msgid "Indian Rupee"
+msgstr "Rupia India"
+
+#: .\bicicleteiros\static\lists\currency_list.py:23
+msgid "Nepalese Rupee"
+msgstr "Rupia Nepalí"
+
+#: .\bicicleteiros\static\lists\currency_list.py:24
+msgid "Taka"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:25
+msgid "Kyat"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:26
+msgid "Baht"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:27
+msgid "Kip"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:28
+msgid "Dong"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:29
+msgid "Yuan"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:30
+msgid "Won"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:31
+msgid "Yen"
+msgstr ""
+
+#: .\bicicleteiros\static\lists\currency_list.py:32
+msgid "Dollar"
+msgstr "Dólar"
+
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:48
 msgid "WEEK"
 msgstr "Semana"
@@ -855,79 +937,79 @@ msgstr "País:"
 msgid "Capital:"
 msgstr "Capital:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:55
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:56
 msgid "Visa:"
 msgstr "Visa:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:57
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:65
 msgid "Country Information:"
 msgstr "Información del país:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:59
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:67
 msgid "Surface:"
 msgstr "Superficie:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:60
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:68
 msgid "(Spain: 505.994 km2)"
 msgstr "(España 505.994 km2)"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:61
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:69
 msgid "Population:"
 msgstr "Población"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:61
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:69
 msgid "people"
 msgstr "personas"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:62
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:70
 msgid "(Spain: 48.300.000 people)"
 msgstr "(España: 48.300.000 personas)"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:63
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:71
 msgid "Density population:"
 msgstr "Densidad poblacional:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:64
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:72
 msgid "(Spain: 94 people per km2)"
 msgstr "(España: 94 personas por km2)"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:65
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
 msgid "Renta per capita:"
 msgstr "Renta per capita:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:66
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:74
 msgid "(Spain: 27.870 €)"
 msgstr "(España: 27.870 €)"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:67
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:75
 msgid "Currency:"
 msgstr "Moneda:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:68
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:76
 msgid "Local Time:"
 msgstr "Hora local:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:69
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
 msgid "Interesting fact:"
 msgstr "Dato interesante:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:71
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:79
 msgid "The most listen song on Spotify:"
 msgstr "Canción más escuchada en Spotify:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:97
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:105
 msgid "Highlights"
 msgstr "Cosas a destacar"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:128
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:136
 msgid "Add Comment / View Comments"
 msgstr "Comentar / Ver comentarios"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:143
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:151
 msgid "Add Comment"
 msgstr "Comentar"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:148
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:156
 msgid "Comments"
 msgstr "Comentarios"
 
@@ -1016,16 +1098,16 @@ msgstr "Inglés"
 msgid "Videos"
 msgstr "Ví­deos"
 
-#: .\bicicleteiros\views.py:121
+#: .\bicicleteiros\views.py:122
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:130
+#: .\bicicleteiros\views.py:131
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:169
+#: .\bicicleteiros\views.py:170
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1033,7 +1115,7 @@ msgstr ""
 "Para poder acceder a este contenido, debe de registrarse en terrameiga.bike/"
 "sign_up/ "
 
-#: .\registration\forms.py:56
+#: .\registration\forms.py:62
 msgid "type \"terrameiga\". Lowercase and without quotes"
 msgstr "Escriba 'terrameiga' en minúsculas y sin comillas"
 
@@ -1055,6 +1137,7 @@ msgid "Did you forget your password?"
 msgstr "¿No recuerdas tu contraseña?"
 
 #: .\registration\templates\1_sign_in.html:61
+#: .\registration\templates\password_reset.html:37
 msgid "Would you like to create an account?"
 msgstr "¿Quieres crear una cuenta?"
 
@@ -1197,6 +1280,292 @@ msgstr ""
 "En caso de que no encuentre su correo electrónico, compruebe si está en la "
 "bandeja de correo no deseado."
 
+#: .\registration\templates\privacy_policy.html:6
+msgid "Effective Date: 01-Jan-2024"
+msgstr "En vigor a partir del 01-Enero-2024"
+
+#: .\registration\templates\privacy_policy.html:8
+msgid "1. Introduction"
+msgstr "1. Introducción"
+
+#: .\registration\templates\privacy_policy.html:10
+msgid ""
+"This Privacy Policy outlines how terrameiga.bike collects, uses, shares, and "
+"protects personal data as required by the General Data Protection Regulation "
+"(GDPR). By using our website terrameiga.bike, you consent to the practices "
+"described in this Privacy Policy."
+msgstr ""
+"Esta política de privacidad describe como terrameiga.bike obtiene, usa, "
+"comparte y proteje los datos personales según lo establecido en la GDPR "
+"(Reglamento General de Protección de Datos). Al usar nuestro sitio web "
+"(terrameiga.bike), aceptas las practicas que se describen en la política de "
+"privacidad."
+
+#: .\registration\templates\privacy_policy.html:12
+msgid "2. Definitions"
+msgstr "2. Definiciones"
+
+#: .\registration\templates\privacy_policy.html:14
+msgid ""
+"a. 'Personal Data' means any information that relates to an identified or "
+"identifiable natural person."
+msgstr ""
+"a. Datos Personales: información relativa a una persona física identificada "
+"o identificable."
+
+#: .\registration\templates\privacy_policy.html:17
+#, fuzzy
+#| msgid ""
+#| "b. Data Processing includes any operation or set of operations performed "
+#| "on personal data, such as collection, recording, organization, "
+#| "structuring, storage, adaptation, alteration, retrieval, consultation, "
+#| "use, disclosure, dissemination, alignment, combination, restriction, "
+#| "erasure, or destruction."
+msgid ""
+"b. 'Data Processing' includes any operation or set of operations performed "
+"on personal data, such as collection, recording, organization, structuring, "
+"storage, adaptation, alteration, retrieval, consultation, use, disclosure, "
+"dissemination, alignment, combination, restriction, erasure, or destruction."
+msgstr ""
+"b. 'Procesamiento de Datos': cualquier operación de recopilación, registro, "
+"organización, estructuración, almacenamiento, adaptación o alteración, "
+"recuperación, consulta, uso, divulgación mediante transmisión, difusión o "
+"puesta a disposición de otro modo, alineación o combinación, restricción, "
+"borrado o destrucción en los datos"
+
+#: .\registration\templates\privacy_policy.html:19
+msgid "3. Information We Collect"
+msgstr "3. Información que recopilamos"
+
+#: .\registration\templates\privacy_policy.html:21
+msgid ""
+"a. Personal Data: We may collect personal data, including but not limited to "
+"your name and email address."
+msgstr ""
+"a. Datos Personales: Podremos recopilar datos personales, como son tu nombre "
+"y dirección de correo electrónico "
+
+#: .\registration\templates\privacy_policy.html:24
+msgid ""
+"b. Usage Information: We automatically collect information about your usage "
+"of the Website, including browser type, device information, and pages "
+"visited."
+msgstr ""
+"b. Información de Uso: Automáticamente recopilamos información sobre el uso "
+"del sitio web, incluyendo el tipo de buscador, información del dispositivo y "
+"páginas visitadas"
+
+#: .\registration\templates\privacy_policy.html:27
+msgid "c. Cookies: On this site we do not use cookies."
+msgstr "c. Cookies: En este sitio web no se usan cookies."
+
+#: .\registration\templates\privacy_policy.html:29
+msgid "4. Legal Basis for Data Processing"
+msgstr "4. Base Legal para el Procesamiento de Datos"
+
+#: .\registration\templates\privacy_policy.html:31
+msgid ""
+"We may process personal data based on one or more of the following legal "
+"bases:"
+msgstr "Podremos procesar datos personales según las bases legales a seguir:"
+
+#: .\registration\templates\privacy_policy.html:34
+msgid "a. Consent: We may process data with your explicit consent."
+msgstr ""
+"a. Consentimiento: Podremos procesar datos con tú consentimiento explícito."
+
+#: .\registration\templates\privacy_policy.html:37
+msgid ""
+"b. Legal Obligation: We may process data to comply with legal obligations."
+msgstr ""
+"b. Obligación Legal: Podremos procesar datos para cumplir con obligaciones "
+"legales."
+
+#: .\registration\templates\privacy_policy.html:40
+msgid ""
+"c. Legitimate Interests: We may process data based on our legitimate "
+"interests, provided they do not override your rights and interests."
+msgstr ""
+"c. Intereses Legítimos: Podremos procesar datos por intereses legítimos, "
+"asegurando que nunca se sobrepasen sus derechos o intereses."
+
+#: .\registration\templates\privacy_policy.html:42
+msgid "5. Data Use"
+msgstr "5. Uso de los Datos"
+
+#: .\registration\templates\privacy_policy.html:44
+msgid "We may use personal data for the following purposes:"
+msgstr "Podremos usar sus datos personales debido a los siguientes propósitos:"
+
+#: .\registration\templates\privacy_policy.html:47
+msgid "a. To analyze usage patterns and conduct research."
+msgstr "a. Para analizar patrones de uso y realizar estudios posteriores"
+
+#: .\registration\templates\privacy_policy.html:50
+msgid "b. To comply with legal obligations."
+msgstr "b. Para cumplir con obligaciones legales."
+
+#: .\registration\templates\privacy_policy.html:52
+msgid "6. Data Sharing"
+msgstr "6. Intercambio de Datos"
+
+#: .\registration\templates\privacy_policy.html:54
+msgid ""
+"We do not sell or rent your personal data to third parties. However, we may "
+"share your data with:"
+msgstr ""
+"No vendemos o prestamos sus datos personales a terceros. No obstante, "
+"podremos compartir sus datos con:"
+
+#: .\registration\templates\privacy_policy.html:57
+msgid ""
+"a. Service Providers: We may share data with service providers who help us "
+"operate the Website and provide our services."
+msgstr ""
+"a. Proveedores: Podremos compartir sus datos con proveedores que nos ayuden "
+"a operar nuestra página web."
+
+#: .\registration\templates\privacy_policy.html:60
+msgid ""
+"b. Legal Compliance: We may disclose data to comply with legal requirements, "
+"protect our rights, or respond to a legal request."
+msgstr ""
+"b. Cumplimiento Legal: Podremos compartir sus datos por requerimientos "
+"legales, proteger nuestros derechos o responder a asuntos legales."
+
+#: .\registration\templates\privacy_policy.html:62
+msgid "7. Data Transfer"
+msgstr "7. Transferencida de los Datos"
+
+#: .\registration\templates\privacy_policy.html:64
+msgid ""
+"Your data may be transferred to, processed in, and stored in countries "
+"outside the European Economic Area (EEA). We ensure that such transfers "
+"comply with GDPR requirements and protect your data."
+msgstr ""
+"Sus datos pueden ser transferidos, procesados y almacenados en países "
+"situados fuera del Espacio Económico Común Europeo (EAA). No obstante, "
+"aseguraremos que dichas transferencias cumplen con los requerimientos de la "
+"GDPR."
+
+#: .\registration\templates\privacy_policy.html:66
+msgid "8. Data Retention"
+msgstr "8. Conservación de los Datos"
+
+#: .\registration\templates\privacy_policy.html:68
+msgid ""
+"We will retain your personal data for as long as you have an active account "
+"with us. Once you delete your account, we will delete all your Personal "
+"Identifiable Information (PII)."
+msgstr ""
+"Retendremos sus datos siempre que su cuenta esté activa. Una vez que elimine "
+"su cuenta, todos sus datos personales (PII) serán eliminados."
+
+#: .\registration\templates\privacy_policy.html:70
+msgid "9. Data Security"
+msgstr "9. Seguridad de los Datos"
+
+#: .\registration\templates\privacy_policy.html:72
+msgid ""
+"We implement appropriate security measures to protect your personal data "
+"from unauthorized access and disclosure. However, no data transmission or "
+"storage is entirely secure."
+msgstr ""
+"Implementamos medidas de seguridad para proteger sus datos personales del "
+"uso no autorizado de estos. No obstante, no existe ningún sistema infalible "
+"a los ataques."
+
+#: .\registration\templates\privacy_policy.html:74
+msgid "10. Your Rights"
+msgstr "10. Sus derechos"
+
+#: .\registration\templates\privacy_policy.html:76
+msgid "Under GDPR, you have rights regarding your personal data, including:"
+msgstr "Según la GDPR, usted tiene los siguientes derechos:"
+
+#: .\registration\templates\privacy_policy.html:79
+msgid "a. Right to Access: You can request access to your personal data."
+msgstr ""
+"a. Derecho de Acceso: Usted puede solicitar el acceso a sus datos personales."
+
+#: .\registration\templates\privacy_policy.html:82
+msgid ""
+"b. Right to Rectification: You can request the correction of inaccurate data."
+msgstr ""
+"b. Derecho de Modificación: Usted puede solicitar la corrección de datos "
+"incorrectos."
+
+#: .\registration\templates\privacy_policy.html:85
+msgid "c. Right to Erasure: You can request the deletion of your data."
+msgstr ""
+"c. Derecho de Destrucción: Usted puede exigir la destrucción de sus datos. "
+
+#: .\registration\templates\privacy_policy.html:88
+msgid ""
+"d. Right to Restriction of Processing: You can request limitations on data "
+"processing."
+msgstr ""
+"d. Derecho de Restricción en el procesamiento de datos: Usted puede "
+"establecer limitaciones a la hora de procesar sus datos."
+
+#: .\registration\templates\privacy_policy.html:91
+msgid ""
+"e. Right to Data Portability: You can request your data in a structured, "
+"commonly used format."
+msgstr ""
+"e. Derecho de Portabilidad: Usted puede solicitar sus datos en un formato "
+"estructurado y estándar."
+
+#: .\registration\templates\privacy_policy.html:94
+msgid "f. Right to Object: You can object to the processing of your data."
+msgstr "f. Derecho de Oposición: Puede oponerse al procesamiento de sus datos."
+
+#: .\registration\templates\privacy_policy.html:97
+msgid ""
+"g. Right to Withdraw Consent: If processing is based on consent, you can "
+"withdraw it at any time."
+msgstr ""
+"g. Derecho de Retirar el Consentimiento: El interesado tendrá derecho a "
+"retirar su consentimiento en cualquier momento."
+
+#: .\registration\templates\privacy_policy.html:100
+msgid "To exercise your rights, please contact us at paquinho89@gmail.com."
+msgstr ""
+"Para ejercer sus derechos, contáctenos en el siguiente correo electrónico: "
+"paquinho89@gmail.com"
+
+#: .\registration\templates\privacy_policy.html:102
+msgid "11. Contact Us"
+msgstr "11. Contacto"
+
+#: .\registration\templates\privacy_policy.html:104
+msgid ""
+"If you have questions or concerns about this Privacy Policy or our data "
+"practices, please contact us at paquinho89@gmail.com."
+msgstr ""
+"Si usted tiene cualquier pregunta sobre esta Política de Privacidad, "
+"contáctenos en la siguiente dirección de correo electrónico: "
+"paquinho89@gmail.com"
+
+#: .\registration\templates\privacy_policy.html:106
+msgid "12. Changes to this Privacy Policy"
+msgstr "12. Cambios en la Política de Privacidad."
+
+#: .\registration\templates\privacy_policy.html:108
+msgid ""
+"We reserve the right to modify this Privacy Policy at any time. Please "
+"review it periodically for updates."
+msgstr ""
+"Nos reservamos el derecho de modificar esta Política de Privacidad en "
+"cualquier momento. Por favor, revísela periódicamente en caso de nuevas "
+"actualizaciones."
+
+#: .\registration\templates\privacy_policy.html:110
+msgid "This Privacy Policy was last updated on 01-Jan-2024."
+msgstr ""
+"La fecha de la última actualización de esta Política de Privacidad es el: 01-"
+"Enero-2024"
+
 #: .\registration\templates\profile_account\delete_account.html:19
 #: .\registration\templates\profile_account\password_data.html:19
 #: .\registration\templates\profile_account\personal_data.html:19
@@ -1264,8 +1633,8 @@ msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:56 .\registration\views.py:155
-#: .\registration\views.py:238
+#: .\registration\views.py:56 .\registration\views.py:161
+#: .\registration\views.py:244
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
@@ -1291,43 +1660,46 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:130
+#: .\registration\views.py:136
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:135
+#: .\registration\views.py:141
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:148
+#: .\registration\views.py:154
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
 
-#: .\registration\views.py:176
+#: .\registration\views.py:182
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:181 .\registration\views.py:183
+#: .\registration\views.py:187 .\registration\views.py:189
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
 
-#: .\registration\views.py:209
+#: .\registration\views.py:215
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:212
-msgid "The email does not exist in our data base"
-msgstr "El email introducido no existe en nuestra base de datos"
+#: .\registration\views.py:218
+msgid ""
+"The email does not exist in our data base. Please, create a new account."
+msgstr ""
+"El email introducido no existe en nuestra base de datos. Cree una cuenta "
+"nueva."
 
-#: .\registration\views.py:216
+#: .\registration\views.py:222
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:233
+#: .\registration\views.py:239
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
 
@@ -1344,8 +1716,8 @@ msgid "Pictures"
 msgstr "Fotos"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:27
-msgid "Statistics"
-msgstr "Estadísticas"
+msgid "Data"
+msgstr "Datos"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:35
 msgid "Account Settings"
@@ -1354,6 +1726,36 @@ msgstr "Configuración"
 #: .\terrameiga\static\templates\base\nav_bar.html:40
 msgid "Log Out"
 msgstr "Salir"
+
+#~ msgid "Statistics"
+#~ msgstr "Estadísticas"
+
+#~ msgid "resting"
+#~ msgstr "descanso"
+
+#~ msgid "cycling"
+#~ msgstr "pedaleando"
+
+#~ msgid "outside"
+#~ msgstr "afuera"
+
+#~ msgid "accommodation"
+#~ msgstr "hospedaje"
+
+#~ msgid "supermarket"
+#~ msgstr "supermercado"
+
+#~ msgid "restaurant"
+#~ msgstr "restaurante"
+
+#~ msgid "transport"
+#~ msgstr "transporte"
+
+#~ msgid "bureaucracy"
+#~ msgstr "burocracia"
+
+#~ msgid "other"
+#~ msgstr "otro"
 
 #~ msgid "Write your text here"
 #~ msgstr "Escriba aqui su comentario"

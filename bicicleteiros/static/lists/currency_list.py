@@ -1,0 +1,33 @@
+from django.utils.translation import gettext_lazy as _
+
+currency_list_values = (
+    (_("Euro"),"Euro"),
+    (_("Lek"), "Lek - Albania"),
+    (_("Forint"), "Forint - Hungary"),
+    (_("Leu"), "Romanian Leu - Romania"),
+    (_("Serbian Dinar"), "Serbian Dinar - Serbia"),
+    (_("Lev"), "Bulgaria Lev - Bulgaria"),
+    (_("Lira"), "Turkey Lira - Turkey"),
+    (_("Iranian Rial"), "Iran Rial - Iran"),
+    (_("Lari"), "Georgian lari - Georgia"),
+    (_("Dram"), "Armenian dram - Armenia"),
+    (_("Azerbaijani Manat"), "Azerbaijani manat - Azerbaijan"),
+    (_("Ruble"), "Russian ruble - Russia"),
+    (_("Tenge"), "Kazakhstani tenge - Kazakhstan"),
+    (_("Turkmenistani Manat"), "Turkmenistani manat - Turkmenistan"),
+    (_("Sum"), "Uzbekistani sum - Uzbekistan"),
+    (_("Somoni"), "Tajikistani somoni - Tajikistan"),
+    (_("Som"), "Kyrgyz som - Kyrgyzstan"),
+    (_("Pakistani Rupee"), "Pakistani rupee - Pakistan"),
+    (_("Indian Rupee"), "Indian rupee - India"),
+    (_("Nepalese Rupee"), "Nepalese rupee - Nepal"),
+    (_("Taka"), "Bangladeshi taka - Bangladesh"),
+    (_("Kyat"), "Burmese kyat - Myanmar"),
+    (_("Baht"), "Thai baht - Thailand"),
+    (_("Kip"), "Lao kip - Laos"),
+    (_("Dong"), "Vietnamese dong - Vietnam"),
+    (_("Yuan"), "Renminbi - China"),
+    (_("Won"), "South Korean won - South Korea"),
+    (_("Yen"), "Japanese yen - Japan"),
+    (_("Dollar"), "United States dollar - US")
+)

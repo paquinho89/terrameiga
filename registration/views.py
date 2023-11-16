@@ -215,7 +215,7 @@ def password_reset_view(request):
         messages.add_message(request, messages.SUCCESS, _('An email was sent to your email inbox'))
         return redirect('password_reset_done')
       else:
-        messages.add_message(request, messages.ERROR, _('The email does not exist in our data base'))
+        messages.add_message(request, messages.ERROR, _('The email does not exist in our data base. Please, create a new account.'))
     else:
       for field, error in password_recovery_form_variable.errors.items():
         password_recovery_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
