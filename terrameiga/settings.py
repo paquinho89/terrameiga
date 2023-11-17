@@ -33,9 +33,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*'] 
 
-#Esto é para que non me de error a hora de completar os formularios no móbil nin en ningún outro dispositivo
-CSRF_TRUSTED_ORIGINS = ['https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
-CSRF_COOKIE_SECURE = False
+#Esto é para que non me de error a hora de completar os formularios no móbil ou no ordenador nin en ningún outro dispositivo, e para poder acceder o admin site sen problema.
+CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
+#CSRF_COOKIE_SECURE = False
 
 #Variable para activar o framework das alerts de django
 
@@ -138,7 +138,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-ADMIN_URL = 'admin/'
 
 # Internationalization
 # https://www.vitainbeta.org/how-to-install-homebrew-on-mac-linux-windows/
