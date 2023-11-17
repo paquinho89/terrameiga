@@ -31,7 +31,11 @@ SECRET_KEY = 'django-insecure-q=m#etp8+mf8)iu!a7+xs!*0$pc5j@_c5ndt^u77$vwq8+jwvc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://terrameiga-production.up.railway.app'] 
+ALLOWED_HOSTS = ['*'] 
+
+#Esto é para que non me de error a hora de completar os formularios no móbil nin en ningún outro dispositivo
+CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_COOKIE_SECURE = False
 
 #Variable para activar o framework das alerts de django
 
