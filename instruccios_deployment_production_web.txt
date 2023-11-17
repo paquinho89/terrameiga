@@ -1,7 +1,7 @@
 DEPLOYMENT DO SITIO web
 PASOS
 
-1. Creamos o requiremnts.txt
+ Creamos o requiremnts.txt
 Neste caso vamos o directorio que no meu caso é: C:\Users\talle\Desktop\terrameiga
 E executo o seguinte comando: pip freeze > requirements.txt
 
@@ -16,13 +16,9 @@ No proxecto creamos un novo settings.py que lle chamo "settings_deployment.py" e
 
 No "settings_deployment.py", poño un asterisco nos ALLOWED_HOSTS = ["*"]
 
+Creamos un proxecto en Railway
 
-
-
-
-2. Creamos un proxecto en Railway
-
-3. Creamos a base de datos en Raiwaw. Para eso doulle a New e doulle a "Database" e a Postgres (a do elefante)
+Creamos a base de datos en Raiwaw. Para eso doulle a New e doulle a "Database" e a Postgres (a do elefante)
 e a base de datos onde van a ir os arquivos estáticos está creada
 
 Configuramos a base de datos no settings_deployment.py. Para eso meto os credenciales da
