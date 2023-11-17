@@ -34,7 +34,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*'] 
 
 #Esto é para que non me de error a hora de completar os formularios no móbil nin en ningún outro dispositivo
-CSRF_TRUSTED_ORIGINS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
 CSRF_COOKIE_SECURE = False
 
 #Variable para activar o framework das alerts de django
