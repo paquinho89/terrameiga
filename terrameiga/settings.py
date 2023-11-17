@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['*']
 
 #Esto é para que non me de error a hora de completar os formularios no móbil ou no ordenador nin en ningún outro dispositivo, e para poder acceder o admin site sen problema.
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
-CSRF_COOKIE_SECURE = False
+#CSRF_COOKIE_SECURE = False
 
 #Variable para activar o framework das alerts de django
 
@@ -110,12 +110,12 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres', 
-        'PASSWORD': 'Bb4EfGf*cF5FA--*gAdAcG645aFb463E',
-        'HOST': 'viaduct.proxy.rlwy.net', 
-        'PORT': '29802',
+        'ENGINE': config('ENGINE'),
+        'NAME': config('NAME'),
+        'USER': config('USER'), 
+        'PASSWORD': config('PASSWORD'),
+        'HOST': config('HOST'), 
+        'PORT': config('PORT'),
     }
 }
 
