@@ -58,8 +58,8 @@ railway run python manage.py makemigrations
 --railway run python manage.py migrate registration
 
 railway run python manage.py migrate
-
 railway up
+
 
 ESTABAS CON ESTA PÁXINA:
 https://medium.com/@grbeno/deploying-django-project-from-heroku-to-railway-8ce65bf5c44
