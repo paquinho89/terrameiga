@@ -119,7 +119,16 @@ DATABASES = {
     }
 }
 
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'railway',
+#         'USER': 'postgres', 
+#         'PASSWORD': 'Bb4EfGf*cF5FA--*gAdAcG645aFb463E',
+#         'HOST': 'viaduct.proxy.rlwy.net', 
+#         'PORT': '29802',
+#     }
+# }
 
 
 # Password validation
