@@ -16,7 +16,7 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
 
-from decouple import config
+from decouple import Config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -110,12 +110,12 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': config('ENGINE'),
-        'NAME': config('NAME'),
-        'USER': config('USER'), 
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'), 
-        'PORT': config('PORT'),
+        'ENGINE': Config('ENGINE'),
+        'NAME': Config('NAME'),
+        'USER': Config('USER'), 
+        'PASSWORD': Config('PASSWORD'),
+        'HOST': Config('HOST'), 
+        'PORT': Config('PORT'),
     }
 }
 
