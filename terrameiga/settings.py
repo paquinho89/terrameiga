@@ -108,14 +108,25 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': config('ENGINE'),
+#         'NAME': config('NAME'),
+#         'USER': config('USER'), 
+#         'PASSWORD': config('PASSWORD'),
+#         'HOST': config('HOST'), 
+#         'PORT': config('PORT'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': config('ENGINE'),
-        'NAME': config('NAME'),
-        'USER': config('USER'), 
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'), 
-        'PORT': config('PORT'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres', 
+        'PASSWORD': 'Bb4EfGf*cF5FA--*gAdAcG645aFb463EEE',
+        'HOST': 'viaduct.proxy.rlwy.net', 
+        'PORT': '29802',
     }
 }
 
