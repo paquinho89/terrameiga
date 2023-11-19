@@ -18,21 +18,23 @@ No "settings_deployment.py", poño un asterisco nos ALLOWED_HOSTS = ["*"]
 
 Creamos un proxecto en Railway
 
-Creamos a base de datos en Raiwaw. Para eso doulle a New e doulle a "Database" e a Postgres (a do elefante)
+Creamos a base de datos en Railway. Para eso doulle a New e doulle a "Database" e a Postgres (a do elefante)
 e a base de datos onde van a ir os arquivos estáticos está creada
 
 Configuramos a base de datos no settings_deployment.py. Para eso meto os credenciales da
 base de datos no arquivo do settings. Bótalle un ollo ao vídeo que grabaches para ver como
 podes ocultar as variables: ( https://www.youtube.com/watch?v=NUqtNglEcCU ) á hora de configurar
 o arquivo "DATA_BASE".
+
+IMPORTANTE. O CALOR DO "ENGINE" TEN QUE ESTAR ASÍ, AO DESCUBERTO.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres', 
-        'PASSWORD': 'Bb4EfGf*cF5FA--*gAdAcG645aFb463E',
-        'HOST': 'viaduct.proxy.rlwy.net', 
-        'PORT': '29802',
+        'NAME': '*****',
+        'USER': '********', 
+        'PASSWORD': '*****************',
+        'HOST': '************', 
+        'PORT': '******',
     }
 }
 
@@ -59,9 +61,6 @@ railway up
 
 Despois no settings metinlle a seguinte liña para non ter problemas á hora de completar cualquer formulario:
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
-
-ESTABAS CON ESTA PÁXINA:
-https://medium.com/@grbeno/deploying-django-project-from-heroku-to-railway-8ce65bf5c44
 
 
 
