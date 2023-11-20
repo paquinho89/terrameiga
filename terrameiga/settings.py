@@ -210,8 +210,8 @@ AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #STATIC FILES
-STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
 STATIC_URL = 'https://terrameiga.s3.eu-west-3.amazonaws.com/staticfiles/'
+STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
 
 
 
