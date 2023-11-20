@@ -39,8 +39,9 @@ DATABASES = {
 }
 
 
-Vamos coller todos os arquivos estáticos do proxecto e vaise crear unha nova carpeta.
-Para eso facemos: "python manage.py collectstatic"
+Vamos coller todos os arquivos estáticos do proxecto e vaise crear unha nova carpeta chamada staticfiles. Esto é para telo todo xunto e despois é máis fácil subilo todo ao S3 (AWS)
+Para eso facemos: "python manage.py collectstatic". A carpeta chámase "staticfiles" por como denominaches o STATIC_ROOT no arquivo settings:
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 Facemos un git add . e git commit e git push para ter todo actualizado en GitHub.
 
