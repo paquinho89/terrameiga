@@ -198,7 +198,7 @@ STATICFILES_DIRS=[
 #Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC FILES
-STATIC_URL = 'https://terrameiga.s3.eu-west-3.amazonaws.com/staticfiles/'
+STATIC_URL = 'https://terrameiga/staticfiles/'
 STATICFILES_STORAGE =  'storages.backends.s3boto3.S3StaticStorage'
 
 
