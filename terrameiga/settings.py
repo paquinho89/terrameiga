@@ -199,24 +199,20 @@ print("ruta do static_dir" ,STATICFILES_DIRS)
 #Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#MEDIA FILES: Estes son arquivos que suben os usuarios da web
+#MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-print('MEDIA URLS')
-print(MEDIA_ROOT)
-print(MEDIA_URL)
-
-
-
 AWS_ACCESS_KEY_ID = 'AKIAYMHV2VTD3ADZHAID'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'terrameiga'
-
 AWS_S3_FILE_OVERWRITE = True #Quero que cando se suba un arquivo co mesmo nome este se reemplace"
 AWS_DEFAULT_ACL = None
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
+
+# STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_LOCATION = 'static'
+# STATIC_URL = f'https://terrameiga/{AWS_LOCATION}/'
 
 
 
