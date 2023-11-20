@@ -199,7 +199,7 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC FILES
 STATIC_URL = 'https://terrameiga.s3.eu-west-3.amazonaws.com/staticfiles/'
-STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE =  'storages.backends.s3boto3.S3StaticStorage'
 
 
 #MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
