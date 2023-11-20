@@ -1,4 +1,5 @@
-#¡¡¡¡¡¡¡¡¡¡¡¡  SETTINGS DEPLOYMENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#¡¡¡¡¡¡¡¡¡¡¡¡  SETTINGS LOCAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 """
 Django settings for terrameiga project.
@@ -16,8 +17,6 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
 
-from decouple import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 print ("ruta do BASE_DIR", BASE_DIR)
@@ -31,11 +30,7 @@ SECRET_KEY = 'django-insecure-q=m#etp8+mf8)iu!a7+xs!*0$pc5j@_c5ndt^u77$vwq8+jwvc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*'] 
-
-#Esto é para que non me de error a hora de completar os formularios no móbil ou no ordenador nin en ningún outro dispositivo, e para poder acceder o admin site sen problema.
-CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
-CSRF_COOKIE_SECURE = False
+ALLOWED_HOSTS = []
 
 #Variable para activar o framework das alerts de django
 
@@ -110,12 +105,8 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('NAME'),
-        'USER': config('USER'), 
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'), 
-        'PORT': config('PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -195,8 +186,6 @@ STATICFILES_DIRS=[
 
 print("ruta do static_dir" ,STATICFILES_DIRS)
 
-#Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #MEDIA FILES: Estes son arquivos que suben os usuarios da web
 MEDIA_URL = '/media/'
