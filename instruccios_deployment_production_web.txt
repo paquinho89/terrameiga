@@ -63,6 +63,11 @@ Despois no settings metinlle a seguinte liña para non ter problemas á hora de 
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
 
 
+CONFIGURACIÓN DE AWS PARA OS MEDIA FILES.
+
+
+
+
 
 
 
