@@ -49,9 +49,8 @@ def email_validation(self):
 
 #Function to send an email to confirm the email of the new user which just signed up
 def send_confirm_email (request, email, uidb64, token):
+    #Con esto o que fago e que o link seax dinámico e colla o 127.0.0.1:8000 cando estamos en local e o terrameiga.bike cando está en production
     current_site = get_current_site(request)
-    print('eeeeeeeeeeeeeeeeeeeeeeeee',current_site)
-
     subject = "TerraMeiga - Email Confirmation"
     # message = f'Click in the following link to confirm your email and create your account http://127.0.0.1:8000/account_confirmation_email_done/{uidb64}/{token}/'
     # IMPORTANTE: As imaxes non se van a renderizar no email porque o dominio (127.0.0.1:8000), é un dominio local. No momento que metas o dominio
