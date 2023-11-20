@@ -42,7 +42,7 @@ def sign_up_view(request):
       token = str(uuid.uuid4())
       #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
       uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
-      send_confirm_email (email_form, uidb64, token)
+      send_confirm_email (request, email_form, uidb64, token)
       #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
       messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
       return redirect('account_confirmation_email_sent')
