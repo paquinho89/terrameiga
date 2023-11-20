@@ -184,6 +184,7 @@ def photos_view (request):
             country_dict[country] = []
         #Append the file name to the list of each specific country
         country_dict[country].append(last_characters_file_name)
+    print(country_dict.items())
 
     context = {
         'country_dict_html' : country_dict

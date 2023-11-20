@@ -199,7 +199,7 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-#FILES STORAGE
+#FILES STORAGE configuración en AWS (S3)
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'terrameiga'
@@ -210,7 +210,7 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
 # Para que sepas, o media_files/Spain/664.jpg (por exemplo), venche da función que está no helpers.py que se chama "def upload_image_path"
 MEDIA_URL = 'https://terrameiga/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
 # AWS_LOCATION = 'static'
