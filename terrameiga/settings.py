@@ -205,8 +205,10 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 #MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
 # Para que sepas, o media_files/Spain/664.jpg (por exemplo), venche da función que está no helpers.py que se chama "def upload_image_path"
 #FILES STORAGE configuración en AWS (S3)
+#MEDIA_URL = 'https://terrameiga/'
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_MEDIA = 'media_files'
 AWS_STORAGE_BUCKET_NAME = 'terrameiga'
 AWS_S3_FILE_OVERWRITE = True #Quero que cando se suba un arquivo co mesmo nome este se reemplace"
 AWS_DEFAULT_ACL = None
