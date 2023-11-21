@@ -38,7 +38,7 @@ def country_data_no_registered_view (request):
     time_zone_value = country_information_model.objects.get(country = current_country).time_zone
     total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
-    flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
+    flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
     total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
     total_money = total_money_dict['expense_euros__sum']
     
