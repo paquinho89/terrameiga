@@ -55,10 +55,7 @@ INSTALLED_APPS = [
     'bicicleteiros',
     #Esto é para o rich text
     'ckeditor',
-    #Amazon Web Service Storage
     'storages',
-    #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles
-    'django.contrib.humanize',
 
 ]
 # This is to indicate to Django that the user model is now this custom model (CustomeUser) instead of the User model
@@ -186,32 +183,38 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+STATIC_URL = '/static/'
+
 #IMPORTANTE: o STATICFILES_DIRS é para indicar onde metes os arquivos estáticos. Ollo, non ten nada que ver con templates
-#A ruta aos templates indícase arriba no "TEMPLATES" para que vaia a buscar os templates.
+#A ruta aos templates indícase arriba no "TEMPLATES".
 STATICFILES_DIRS=[
    BASE_DIR / "terrameiga/static/"
 ]
 
+print("ruta do static_dir" ,STATICFILES_DIRS)
+
 #Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#STATIC FILES - Telo que facer así tal cual, porque senon non che vai a funcionar
-AWS_S3_CUSTOM_DOMAIN = 'terrameiga.s3.eu-west-3.amazonaws.com'  # Specify your custom domain here
-AWS_LOCATION = 'staticfiles'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-#MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
-#FILES STORAGE configuración en AWS (S3)
 #MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = 'AKIAYMHV2VTD3ADZHAID'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'terrameiga'
 AWS_S3_FILE_OVERWRITE = True #Quero que cando se suba un arquivo co mesmo nome este se reemplace"
 AWS_DEFAULT_ACL = None
+
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# STATICFILES_STORAGE =  'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_LOCATION = 'static'
+# STATIC_URL = f'https://terrameiga/{AWS_LOCATION}/'
+
+
 
 
 # Default primary key field type
@@ -229,8 +232,3 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-
-
-
-
-
