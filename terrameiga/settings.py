@@ -198,7 +198,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #STATIC FILES - Telo que facer así tal cual, porque senon non che vai a funcionar
 AWS_S3_CUSTOM_DOMAIN = 'terrameiga.s3.eu-west-3.amazonaws.com'  # Specify your custom domain here
 AWS_STATIC_LOCATION = 'staticfiles'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
