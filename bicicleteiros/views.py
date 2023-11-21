@@ -89,7 +89,7 @@ def country_data_view (request):
         time_zone_value = country_information_model.objects.get(country = current_country).time_zone
         total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
         total_km = total_km_dictionary['km_day__sum']
-        flag_url = str("/static/country_flags/" + str(current_country).lower() + "-flag.gif")
+        flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
         interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact
         spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
         spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
