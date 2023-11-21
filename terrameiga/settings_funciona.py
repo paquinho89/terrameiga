@@ -202,8 +202,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 #MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-AWS_ACCESS_KEY_ID = 'AKIAYMHV2VTD3ADZHAID'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'terrameiga'
 AWS_S3_FILE_OVERWRITE = True #Quero que cando se suba un arquivo co mesmo nome este se reemplace"
 AWS_DEFAULT_ACL = None
