@@ -57,6 +57,8 @@ INSTALLED_APPS = [
     'ckeditor',
     #Amazon Web Service Storage
     'storages',
+    #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles
+    'django.contrib.humanize',
 
 ]
 # This is to indicate to Django that the user model is now this custom model (CustomeUser) instead of the User model
