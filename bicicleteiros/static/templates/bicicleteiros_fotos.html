@@ -75,7 +75,9 @@
         {% for country, file_name in country_dict_html.items %}
         <div class="row d-flex justify-content-center mt-4">
           <div class="col-lg-6 text-center mb-4">
-            <h2><img src="{% static 'country_flags/'|add:country|add:'-flag.gif' %}" width="75" height="30"><strong>{{country}}</strong></h2>
+            
+            <h2><img src="{% static 'country_flags/'|add:country|lower|add:'-flag.gif' %}" width="75" height="30"><strong>{{country}}</strong></h2>
+            
           </div>
         </div>
       </div>
