@@ -189,7 +189,7 @@ USE_TZ = True
 #IMPORTANTE: o STATICFILES_DIRS é para indicar onde metes os arquivos estáticos. Ollo, non ten nada que ver con templates
 #A ruta aos templates indícase arriba no "TEMPLATES" para que vaia a buscar os templates.
 STATICFILES_DIRS=[
-   BASE_DIR 
+   BASE_DIR / "terrameiga/static/"
 ]
 
 #Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
@@ -197,7 +197,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #STATIC FILES - Telo que facer así tal cual, porque senon non che vai a funcionar
 AWS_S3_CUSTOM_DOMAIN = 'terrameiga.s3.eu-west-3.amazonaws.com'  # Specify your custom domain here
-#AWS_LOCATION = 'staticfiles'
+AWS_STATIC_LOCATION = 'staticfiles'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
