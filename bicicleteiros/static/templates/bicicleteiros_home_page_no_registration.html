@@ -255,8 +255,7 @@
                       <div class="card-body p-4">
                           <div class="text-center">
                             <h5 class="fw-bolder">{% trans "Country" %}</h5>
-                            <img class="mt-4" style="float: center;" width="75" height="37" src="{% static 'country_flags/{{flag_url_html}}' %}" alt="First slide">
-                            {% static 'country_flags/{{flag_url_html}}' %}
+                            <img class="mt-4" style="float: center;" width="75" height="37" src="{% static flag_url_html %}" alt="First slide">
                             <p>{% trans current_country_html %} #{{country_number_html}}</p>
                           </div>
                       </div>
