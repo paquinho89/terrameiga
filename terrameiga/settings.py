@@ -196,7 +196,7 @@ STATICFILES_DIRS=[
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 #STATIC FILES - Telo que facer así tal cual, porque senon non che vai a funcionar
-AWS_S3_CUSTOM_DOMAIN = 'terrameiga.s3.eu-west-3.amazonaws.com/staticfiles/'  # Specify your custom domain here
+AWS_S3_CUSTOM_DOMAIN = 'terrameiga.s3.eu-west-3.amazonaws.com/staticfiles'  # Specify your custom domain here
 AWS_STATIC_LOCATION = 'staticfiles'
 STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{AWS_STATIC_LOCATION}/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
