@@ -239,7 +239,7 @@
                 title: {
                     display: true,
                     color: 'rgba(191, 191, 191, 1)',
-                    text: 'Gasto por clases',
+                    text: 'Tipo de Gasto',
                     position: 'top',
                     align: 'center',
                     font: {
@@ -370,7 +370,7 @@
       labels: [{% for country in graph_km_altitud_per_country_html %} '{{country.country_name}}', {% endfor %}],
       datasets: [
         {
-          label: 'Km por día',
+          label: 'Km por país',
           data: [{% for km in graph_km_altitud_per_country_html %} '{{km.km_day__sum}}', {% endfor %}],
           type: 'bar',
           yAxisID: 'y',

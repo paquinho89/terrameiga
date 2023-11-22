@@ -999,7 +999,7 @@ msgstr "Canción más escuchada en Spotify:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:105
 msgid "Highlights"
-msgstr "Cosas a destacar"
+msgstr "Crónica del Viaje"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:136
 msgid "Add Comment / View Comments"
