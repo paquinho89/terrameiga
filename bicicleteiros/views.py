@@ -234,6 +234,8 @@ def estadistica_data_view (request):
         return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
     elif "es" in current_language_browser:
         return render (request, 'bicicleteiros_statics/bicicleteiros_statics_es.html', context)
+    elif "gl" in current_language_browser:
+        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_gl.html', context)
     else:
         return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
 

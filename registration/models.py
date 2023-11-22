@@ -11,7 +11,8 @@ from django.utils.translation import gettext_lazy as _
 
 language_choices = (
     ('en', _('English')),
-    ('es', _('Spanish'))
+    ('es', _('Spanish')),
+    ('gl', _('Galician'))
     )
 
 # Create your models here.
