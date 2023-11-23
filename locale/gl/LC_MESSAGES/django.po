@@ -1616,7 +1616,7 @@ msgstr "Actualizar datos"
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr ""
-"Por favor, vaia ao seu email e verifique a súa conta. Grazas polo apoio."
+"Por favor, vaia ao seu email e verifique a súa conta. Grazas polo apoio, "
 
 #: .\registration\views.py:56 .\registration\views.py:161
 #: .\registration\views.py:244

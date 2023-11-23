@@ -195,12 +195,12 @@ def delete_account_view (request):
 
 def password_reset_view(request):
   password_recovery_form_variable = password_reset_form (data=request.POST)
-  uid = request.user.id
-  print(uid)
   if request.method == "POST":
     if password_recovery_form_variable.is_valid():
       #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
       email_form_str = password_recovery_form_variable.cleaned_data.get('email')
+      user_language = CustomUser.objects.get(email = email_form_str).language
+      activate(user_language)
       #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
       email_form =  CustomUser.objects.filter(email=email_form_str).first()
       if CustomUser.objects.filter(email=email_form).exists():
@@ -208,7 +208,6 @@ def password_reset_view(request):
         token = str(uuid.uuid4())
         #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
         uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
-        print(uidb64)
         #uid = request.user.id
         #print(uid)
         send_reset_password_mail ( email_form, uidb64, token)
@@ -230,6 +229,8 @@ def password_reset_view(request):
 def password_new_password_view(request, uidb64, token):
   uid = force_str(urlsafe_base64_decode(uidb64))
   user = CustomUser.objects.get(pk=uid)
+  user_language = CustomUser.objects.get(pk = uid).language
+  activate(user_language)
   password_reset_form = password_new_form(user, data=request.POST)
   if request.method == 'POST':
     if password_reset_form.is_valid():
