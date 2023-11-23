@@ -112,9 +112,10 @@
   height: 35vh;
   width: 100vw;
 }
+/* Con esto axustamos a altura dos obxetos do caroussel cando a pantalla é grande */
 @media screen and (min-width: 768px) {
   .carousel {
-    height: 50vh; /* Adjust the height as needed */
+    height: 50vh; 
   }
 }
 .carousel-inner {
@@ -132,9 +133,9 @@
 .carousel-caption {
   object-fit: cover;
   object-position: center;
-  height: 50vh;
+  height: 47vh;
 }
-/* Con esto axústase o height dependendo do tamaño da pantalla  */
+/* Con esto axústase o height do texto cando a pantalla é grande  */
 @media screen and (min-width: 768px) {
   .carousel-caption {
     height: 30vh; /* Adjust the height as needed */
@@ -216,7 +217,7 @@
         <div class="mask"></div>
         <div class="carousel-caption">
             <p style="font-size: 1.1em">
-              {% trans "I am a bike traveller who has created this website for those ones who want to follow me. Do you want to be part of this adventure and see all the content?" %}
+              {% trans "I am a bike traveller who is cycling somewhere. Do you want to be part of this adventure and see all the content?" %}
             </p>
             <a class="btn btn-outline-light btn-md" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell">{% trans "Sign In" %}</a>
             <a class="btn btn-outline-light btn-md" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell">{% trans "Sign Up" %}</a>
@@ -227,7 +228,7 @@
             <div class="mask"></div>
             <div class="carousel-caption">
               <p style="font-size: 1.1em">
-                {% trans "I am a bike traveller who has created this website for those ones who want to follow me. Do you want to be part of this adventure and see all the content?" %}
+                {% trans "I am a bike traveller who is cycling somewhere. Do you want to be part of this adventure and see all the content?" %}
               </p>
               <a class="btn btn-outline-light btn-md" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell">{% trans "Sign In" %}</a>
               <a class="btn btn-outline-light btn-md" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell">{% trans "Sign Up" %}</a>
@@ -238,7 +239,7 @@
             <div class="mask"></div>
             <div class="carousel-caption">
               <p style="font-size: 1.1em">
-                {% trans "I am a bike traveller who has created this website for those ones who want to follow me. Do you want to be part of this adventure and see all the content?" %}
+                {% trans "I am a bike traveller who is cycling somewhere. Do you want to be part of this adventure and see all the content?" %}
               </p>
               <a class="btn btn-outline-light btn-md" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell">{% trans "Sign In" %}</a>
               <a class="btn btn-outline-light btn-md" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell">{% trans "Sign Up" %}</a>
