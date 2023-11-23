@@ -158,6 +158,8 @@ LANGUAGES = [
     ('en', _('English')),
     ('es', _('Spanish')),
     ('gl', _('Galician')),
+    ('ca', _('Catalan')),
+    ('eu', _('Basque')),
 
     ]
 #Language code is the defalut languages which is used when nothing is specified.

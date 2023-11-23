@@ -85,12 +85,16 @@ class country_information_model(models.Model):
     surface = models.IntegerField(blank=True, null=True)
     population = models.IntegerField(blank=True, null=True)
     population_density = models.IntegerField(blank=True, null=True)
-    rent_per_capita = models.IntegerField(blank=True, null=True)
+    life_expectancy = models.IntegerField(blank=True, null=True)
     currency = models.ForeignKey(currency, on_delete=models.PROTECT)
     time_zone = models.CharField(max_length=33, choices= time_zone_list_fixed, blank=True, null=True)
     visa_requerided = models.CharField(max_length=33, choices= (('yes', 'yes'), ('no','no')), blank=True, null=True)
     visa_price = models.DecimalField(max_digits=15, decimal_places=0, blank = True, null=True, default=0)
-    interesting_fact = models.CharField(max_length=255, blank=True, null=True)
+    interesting_fact_en = models.CharField(max_length=255, blank=True, null=True)
+    interesting_fact_es = models.CharField(max_length=255, blank=True, null=True)
+    interesting_fact_gl = models.CharField(max_length=255, blank=True, null=True)
+    interesting_fact_eu = models.CharField(max_length=255, blank=True, null=True)
+    interesting_fact_ca = models.CharField(max_length=255, blank=True, null=True)
     song_spotify = models.CharField(max_length=255, blank=False, null=False)
 
     def __str__(self):

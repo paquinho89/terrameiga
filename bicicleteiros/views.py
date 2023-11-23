@@ -27,15 +27,6 @@ def country_data_no_registered_view (request):
     #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
     current_country = str(all_entry_days_last.country)
     country_number_country = country_information_model.objects.get(country= current_country).country_number
-    visa_required = country_information_model.objects.get(country = current_country).visa_requerided
-    visa_price = country_information_model.objects.get(country = current_country).visa_price
-    capital_city = country_information_model.objects.get(country = current_country).capital_town
-    population_country = country_information_model.objects.get(country = current_country).population
-    population_dens = country_information_model.objects.get(country = current_country).population_density
-    rent_per_capita_country = country_information_model.objects.get(country = current_country).rent_per_capita
-    surface_country = country_information_model.objects.get(country = current_country).surface
-    currency_country = country_information_model.objects.get(country = current_country).currency
-    time_zone_value = country_information_model.objects.get(country = current_country).time_zone
     total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
     flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
@@ -49,16 +40,7 @@ def country_data_no_registered_view (request):
         'total_km_html' : total_km,
         'total_expenses_html' :total_money,
         'current_country_html' : current_country,
-        'visa_required_html' : visa_required,
-        'visa_price_html' : visa_price,
         'flag_url_html' : flag_url,
-        'capital_city_html' : capital_city,
-        'surface_html' : surface_country,
-        'population_html' : population_country,
-        'density_population_html' : population_dens,
-        'rent_per_capita_html' : rent_per_capita_country,
-        'currency_html' : currency_country,
-        'time_zone_html' : time_zone_value
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
 
@@ -83,14 +65,26 @@ def country_data_view (request):
         capital_city = country_information_model.objects.get(country = current_country).capital_town
         population_country = country_information_model.objects.get(country = current_country).population
         population_dens = country_information_model.objects.get(country = current_country).population_density
-        rent_per_capita_country = country_information_model.objects.get(country = current_country).rent_per_capita
+        life_expectancy_country = country_information_model.objects.get(country = current_country).life_expectancy
         surface_country = country_information_model.objects.get(country = current_country).surface
         currency_country = country_information_model.objects.get(country = current_country).currency
         time_zone_value = country_information_model.objects.get(country = current_country).time_zone
         total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
         total_km = total_km_dictionary['km_day__sum']
         flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
-        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact
+        if get_language() == "en":
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
+        elif get_language() == "es":
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
+        elif get_language() == "gl":
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
+        elif get_language() == "eu":
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_eu
+        elif get_language() == "ca":
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
+        else:
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
+            
         spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
         spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
         #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware no browser. Básicamente o idioma do browser.
@@ -150,7 +144,7 @@ def country_data_view (request):
             'surface_html' : surface_country,
             'population_html' : population_country,
             'density_population_html' : population_dens,
-            'rent_per_capita_html' : rent_per_capita_country,
+            'rent_per_capita_html' : life_expectancy_country,
             'currency_html' : currency_country,
             'time_zone_html' : time_zone_value,
             'interesting_fact_country_html' : interesting_fact_country,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 11:34+0100\n"
+"POT-Creation-Date: 2023-11-23 11:51+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 
 #: .\bicicleteiros\forms.py:18
 msgid "Write here your reply"
-msgstr "Escriba aquí a súa resposta"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
-msgstr "Afganistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:8
 msgid "Albania"
@@ -32,7 +32,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:9
 msgid "Algeria"
-msgstr "Alxeria"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:10
 msgid "Andorra"
@@ -44,11 +44,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:12
 msgid "Antigua and Barbuda"
-msgstr "Antiga e Barbuda"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:13
 msgid "Argentina"
-msgstr "Arxentina"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:14
 msgid "Armenia"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:17
 msgid "Azerbaijan"
-msgstr "Acerbaixán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:18
 msgid "Bahamas"
@@ -84,11 +84,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:22
 msgid "Belarus"
-msgstr "Belarús"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:23
 msgid "Belgium"
-msgstr "Bélxica"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:24
 msgid "Belize"
@@ -96,11 +96,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:25
 msgid "Benin"
-msgstr "Benín"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:26
 msgid "Bhutan"
-msgstr "Bután"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:27
 msgid "Bolivia"
@@ -108,7 +108,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:28
 msgid "Bosnia and Herzegovina"
-msgstr "Bosnia e Hercegovina"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:29
 msgid "Botswana"
@@ -116,7 +116,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:30
 msgid "Brazil"
-msgstr "Brasil"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:31
 msgid "Brunei"
@@ -136,7 +136,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:35
 msgid "Côte d'Ivoire"
-msgstr "Costa de Marfil"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:36
 msgid "Cabo Verde"
@@ -144,19 +144,19 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:37
 msgid "Cambodia"
-msgstr "Camboxa"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:38
 msgid "Cameroon"
-msgstr "Camerún"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:39
 msgid "Canada"
-msgstr "Canadá"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:40
 msgid "Central African Republic"
-msgstr "República Centroafricana"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:41
 msgid "Chad"
@@ -176,7 +176,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:45
 msgid "Comoros"
-msgstr "Comores"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:46
 msgid "Congo (Congo-Brazzaville)"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:48
 msgid "Croatia"
-msgstr "Croacia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:49
 msgid "Cuba"
@@ -196,23 +196,23 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:50
 msgid "Cyprus"
-msgstr "Chipre"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:51
 msgid "Czechia (Czech Republic)"
-msgstr "Chequia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:52
 msgid "Democratic Republic of the Congo"
-msgstr "República Democrática do Congo"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:53
 msgid "Denmark"
-msgstr "Dinamarca"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:54
 msgid "Djibouti"
-msgstr "Djibuti"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:55
 msgid "Dominica"
@@ -220,7 +220,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:56
 msgid "Dominican Republic"
-msgstr "República Dominicana"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:57
 msgid "Ecuador"
@@ -228,15 +228,15 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:58
 msgid "Egypt"
-msgstr "Exipto"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:59
 msgid "El Salvador"
-msgstr "O Salvador"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:60
 msgid "Equatorial Guinea"
-msgstr "Guinea Ecuatorial"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:61
 msgid "Eritrea"
@@ -252,7 +252,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:64
 msgid "Ethiopia"
-msgstr "Etiopía"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:65
 msgid "Fiji"
@@ -260,15 +260,15 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:66
 msgid "Finland"
-msgstr "Finlandia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:67
 msgid "France"
-msgstr "Francia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:68
 msgid "Gabon"
-msgstr "Gabón"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:69
 msgid "Gambia"
@@ -276,11 +276,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:70
 msgid "Georgia"
-msgstr "Xeorxia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:71
 msgid "Germany"
-msgstr "Alemaña"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:72
 msgid "Ghana"
@@ -288,11 +288,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:73
 msgid "Greece"
-msgstr "Grecia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:74
 msgid "Grenada"
-msgstr "Granada"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:75
 msgid "Guatemala"
@@ -312,11 +312,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:79
 msgid "Haiti"
-msgstr "Haití"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:80
 msgid "Holy See"
-msgstr "Cidade do Vaticano"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:81
 msgid "Honduras"
@@ -324,11 +324,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:82
 msgid "Hungary"
-msgstr "Hungría"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:83
 msgid "Iceland"
-msgstr "Islandia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:84
 msgid "India"
@@ -340,7 +340,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:86
 msgid "Iran"
-msgstr "Irán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:87
 msgid "Iraq"
@@ -348,7 +348,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:88
 msgid "Ireland"
-msgstr "Irlanda"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:89
 msgid "Israel"
@@ -356,23 +356,23 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:90
 msgid "Italy"
-msgstr "Italia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:91
 msgid "Jamaica"
-msgstr "Xamaica"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:92
 msgid "Japan"
-msgstr "Xapón"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:93
 msgid "Jordan"
-msgstr "Xordania"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:94
 msgid "Kazakhstan"
-msgstr "Casaquistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:95
 msgid "Kenya"
@@ -388,7 +388,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:98
 msgid "Kyrgyzstan"
-msgstr "Quirguicistán "
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:99
 msgid "Laos"
@@ -396,15 +396,15 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:100
 msgid "Latvia"
-msgstr "Letonia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:101
 msgid "Lebanon"
-msgstr "Líbano"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:102
 msgid "Lesotho"
-msgstr "Lesoto"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:103
 msgid "Liberia"
@@ -412,7 +412,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:104
 msgid "Libya"
-msgstr "Libia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:105
 msgid "Liechtenstein"
@@ -420,11 +420,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:106
 msgid "Lithuania"
-msgstr "Lituania"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:107
 msgid "Luxembourg"
-msgstr "Luxemburgo"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:108
 msgid "Madagascar"
@@ -432,19 +432,19 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:109
 msgid "Malawi"
-msgstr "Malaui"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:110
 msgid "Malaysia"
-msgstr "Malaisia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:111
 msgid "Maldives"
-msgstr "Maldivas"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:112
 msgid "Mali"
-msgstr "Malí"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:113
 msgid "Malta"
@@ -452,7 +452,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:114
 msgid "Marshall Islands"
-msgstr "Illas Marshall"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:115
 msgid "Mauritania"
@@ -460,11 +460,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:116
 msgid "Mauritius"
-msgstr "Mauricio"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:117
 msgid "Mexico"
-msgstr "México"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:118
 msgid "Micronesia"
@@ -472,11 +472,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:119
 msgid "Moldova"
-msgstr "Moldova"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:120
 msgid "Monaco"
-msgstr "Mónaco"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:121
 msgid "Mongolia"
@@ -488,7 +488,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:123
 msgid "Morocco"
-msgstr "Marrocos"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:124
 msgid "Mozambique"
@@ -512,15 +512,15 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:129
 msgid "Netherlands"
-msgstr "Países Baixos"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:130
 msgid "New Zealand"
-msgstr "Nova Zelandia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:131
 msgid "Nicaragua"
-msgstr "Nicaragua"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:132
 msgid "Niger"
@@ -528,11 +528,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:133
 msgid "Nigeria"
-msgstr "Níxer"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:134
 msgid "North Korea"
-msgstr "Corea do Norte"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:135
 msgid "Macedonia"
@@ -540,15 +540,15 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:136
 msgid "Norway"
-msgstr "Noruega"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:137
 msgid "Oman"
-msgstr "Omán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:138
 msgid "Pakistan"
-msgstr "Paquistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:139
 msgid "Palau"
@@ -556,31 +556,31 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:140
 msgid "Palestine"
-msgstr "Palestina"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:141
 msgid "Panama"
-msgstr "Panamá"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:142
 msgid "Papua New Guinea"
-msgstr "Papúa Nova Guinea"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:143
 msgid "Paraguay"
-msgstr "Paraguai"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:144
 msgid "Peru"
-msgstr "Perú"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:145
 msgid "Philippines"
-msgstr "Filipinas"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:146
 msgid "Poland"
-msgstr "Polonia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:147
 msgid "Portugal"
@@ -592,19 +592,19 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:149
 msgid "Romania"
-msgstr "Romanía"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:150
 msgid "Russia"
-msgstr "Rusia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:151
 msgid "Rwanda"
-msgstr "Ruanda"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:152
 msgid "Saint Lucia"
-msgstr "Santa Lucía"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:153
 msgid "Samoa"
@@ -616,11 +616,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:155
 msgid "Sao Tome and Principe"
-msgstr "San Tomé e Príncipe"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:156
 msgid "Saudi Arabia"
-msgstr "Arabia Saudita"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:157
 msgid "Senegal"
@@ -632,27 +632,27 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:159
 msgid "Seychelles"
-msgstr "Seixeles"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:160
 msgid "Sierra Leone"
-msgstr "Serra Leoa"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:161
 msgid "Singapore"
-msgstr "Singapur"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:162
 msgid "Slovakia"
-msgstr "Eslovaquia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:163
 msgid "Slovenia"
-msgstr "Eslovenia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:164
 msgid "Solomon Islands"
-msgstr "Illas Salomón"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:165
 msgid "Somalia"
@@ -660,19 +660,19 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:166
 msgid "South Africa"
-msgstr "Sudáfrica"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:167
 msgid "South Korea"
-msgstr "Corea do Sur"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:168
 msgid "South Sudan"
-msgstr "Sudán do Sur"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:169
 msgid "Spain"
-msgstr "España"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:170
 msgid "Sri Lanka"
@@ -680,7 +680,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:171
 msgid "Sudan"
-msgstr "Sudán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:172
 msgid "Suriname"
@@ -688,19 +688,19 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:173
 msgid "Sweden"
-msgstr "Suecia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:174
 msgid "Switzerland"
-msgstr "Suíza"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:175
 msgid "Syria"
-msgstr "Siria"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:176
 msgid "Tajikistan"
-msgstr "Taxiquistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:177
 msgid "Tanzania"
@@ -708,7 +708,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:178
 msgid "Thailand"
-msgstr "Tailandia"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:179
 msgid "Timor-Leste"
@@ -724,7 +724,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:182
 msgid "Trinidad and Tobago"
-msgstr "Trinidad e Tobago"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:183
 msgid "Tunisia"
@@ -732,11 +732,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:184
 msgid "Turkey"
-msgstr "Turquía"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:185
 msgid "Turkmenistan"
-msgstr "Turkmenistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:186
 msgid "Tuvalu"
@@ -748,27 +748,27 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:188
 msgid "Ukraine"
-msgstr "Ucraína"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:189
 msgid "United Arab Emirates"
-msgstr "Emiratos Árabes Unidos"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:190
 msgid "United Kingdom"
-msgstr "Reino Unido"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:191
 msgid "United States"
-msgstr "Estados Unidos"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:192
 msgid "Uruguay"
-msgstr "Uruguai"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:193
 msgid "Uzbekistan"
-msgstr "Uzbekistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:194
 msgid "Vanuatu"
@@ -784,7 +784,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:197
 msgid "Yemen"
-msgstr "Iemen"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:198
 msgid "Zambia"
@@ -792,7 +792,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\country_list.py:199
 msgid "Zimbabwe"
-msgstr "Cimbabue"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:4
 msgid "Euro"
@@ -804,7 +804,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:6
 msgid "Forint"
-msgstr "Florín"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:7
 msgid "Leu"
@@ -812,7 +812,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:8
 msgid "Serbian Dinar"
-msgstr "Dinar Serbio"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:9
 msgid "Lev"
@@ -824,7 +824,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:11
 msgid "Iranian Rial"
-msgstr "Rial Iraní"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:12
 msgid "Lari"
@@ -836,11 +836,11 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:14
 msgid "Azerbaijani Manat"
-msgstr "Manat Acerbaixano"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:15
 msgid "Ruble"
-msgstr "Rublo"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:16
 msgid "Tenge"
@@ -848,7 +848,7 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:17
 msgid "Turkmenistani Manat"
-msgstr "Manat Turcomenistán"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:18
 msgid "Sum"
@@ -864,15 +864,15 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:21
 msgid "Pakistani Rupee"
-msgstr "Rupia paquistaní"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:22
 msgid "Indian Rupee"
-msgstr "Rupia India"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:23
 msgid "Nepalese Rupee"
-msgstr "Rupia Nepalí"
+msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:24
 msgid "Taka"
@@ -908,28 +908,28 @@ msgstr ""
 
 #: .\bicicleteiros\static\lists\currency_list.py:32
 msgid "Dollar"
-msgstr "Dólar Americano"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:51
 msgid "WEEK"
-msgstr "Semana"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:51
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:259
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:260
 msgid "Day"
-msgstr "Día"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:54
 msgid "Km completed:"
-msgstr "Km completados:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:55
 msgid "Expenses:"
-msgstr "Gastos:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:56
 msgid "Country:"
-msgstr "País:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:57
 msgid "Capital:"
@@ -941,30 +941,30 @@ msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:68
 msgid "Country Information:"
-msgstr "Información do país"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:71
 msgid "Surface:"
-msgstr "Superficie"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:72
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:74
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:76
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:78
 msgid "Spain:"
-msgstr "España:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
 msgid "Population:"
-msgstr "Poboación:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
 msgid "people"
-msgstr "persoas"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:75
 msgid "Density population:"
-msgstr "Densidade de poboación:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
 msgid "Renta per capita:"
@@ -972,161 +972,147 @@ msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:79
 msgid "Currency:"
-msgstr "Moeda:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:80
 msgid "Local Time:"
-msgstr "Hora Local:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:81
 msgid "Interesting fact:"
-msgstr "Dato de interese:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:83
 msgid "The most listen song on Spotify:"
-msgstr "Canción máis escoitada no Spotify:"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:109
 msgid "Highlights"
-msgstr "Novas"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:139
 msgid "Add Comment / View Comments"
-msgstr "Engadir Comentario / Ver Comentarios"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:154
 msgid "Add Comment"
-msgstr "Engadir Comentario"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:159
 msgid "Comments"
-msgstr "Comentarios"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:199
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:221
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:232
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:243
-msgid "Sign In"
-msgstr "Inicio sesión"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:200
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:233
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
+msgid "Sign In"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:201
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:234
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:245
 #: .\registration\templates\2_sign_up.html:73
 msgid "Sign Up"
-msgstr "Rexistro"
+msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:219
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:220
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:231
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:242
 msgid ""
 "I am a bike traveller who is cycling somewhere. Do you want to be part of "
 "this adventure and see all the content?"
 msgstr ""
-"Son un cicloviaxeiro que está a dar unha volta. Queres ser parte desta aventura e desfrutar de todo o contido?"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:230
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:241
-#, fuzzy
-#| msgid ""
-#| "I am a bike traveller who is cycling somewhere. Do you want to be part of "
-#| "this adventure and see all the content?"
-msgid ""
-"I am a bike traveller who has created this website for those ones who want "
-"to follow me. Do you want to be part of this adventure and see all the "
-"content?"
-msgstr ""
-"Son un cicloviaxeiro que está a dar unha volta. Queres ser parte desta "
-"aventura e desfrutar de todo o contido?"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:259
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:260
 msgid "Week"
-msgstr "Semana"
+msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:272
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:273
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
-msgstr "País"
+msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:286
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:287
 msgid "Expenses"
-msgstr "Gastos"
+msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:300
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:301
 msgid "Km"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:314
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:315
 msgid "Videos & Pictures"
-msgstr "Vídeos e Fotos"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:349
-#: .\terrameiga\static\templates\base\footer.html:30
-msgid "Made with &#10084 by"
-msgstr "Feito con &#10084 por"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:350
+#: .\terrameiga\static\templates\base\footer.html:30
+msgid "Made with &#10084 by"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:351
 #: .\terrameiga\static\templates\base\footer.html:32
 msgid "All reserved rights:"
-msgstr "Todos os dereitos reservados:"
+msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:352
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:353
 #: .\registration\models.py:15 .\terrameiga\settings.py:171
 #: .\terrameiga\settings_local.py:160
 msgid "Galician"
-msgstr "Galego"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:353
-msgid "Basque"
-msgstr "Éuscaro"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:354
-msgid "Catalan"
-msgstr "Catalán"
+msgid "Basque"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:355
+#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
+msgid "Catalan"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:356
 #: .\registration\models.py:14 .\terrameiga\settings.py:170
 #: .\terrameiga\settings_funciona_eliminar.py:167
 #: .\terrameiga\settings_local.py:159
 msgid "Spanish"
-msgstr "Castelán"
+msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:356
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:357
 #: .\registration\models.py:13 .\terrameiga\settings.py:169
 #: .\terrameiga\settings_funciona_eliminar.py:166
 #: .\terrameiga\settings_local.py:158
 msgid "English"
-msgstr "Inglés"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_videos.html:18
 #: .\terrameiga\static\templates\base\nav_bar.html:23
 msgid "Videos"
-msgstr "Vídeos"
+msgstr ""
 
 #: .\bicicleteiros\views.py:122
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
-msgstr "Grazas por estar aí. O seu comentario foi engadido!"
+msgstr ""
 
 #: .\bicicleteiros\views.py:131
 msgid "Please, include some text in your reply"
-msgstr "Por favor, o comentario non pode estar baleiro"
+msgstr ""
 
 #: .\bicicleteiros\views.py:170
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
 msgstr ""
-"Vostede debe de estar rexistrado para ter acceso a este contido. Vaia a "
-"terrameiga.bike/sign_up/ e cree unha conta"
 
 #: .\registration\forms.py:62
 msgid "type \"terrameiga\". Lowercase and without quotes"
-msgstr "Escriba \"terrameiga\". En minúsculas e sen comiñas"
+msgstr ""
 
 #: .\registration\templates\1_sign_in.html:17
 #: .\registration\templates\1_sign_in.html:45
 msgid "Sign in"
-msgstr "Inicio sesión"
+msgstr ""
 
 #: .\registration\templates\1_sign_in.html:28
 #: .\registration\templates\2_sign_up.html:29
@@ -1134,75 +1120,73 @@ msgstr "Inicio sesión"
 #: .\registration\templates\profile_account\password_data.html:22
 #: .\registration\templates\profile_account\personal_data.html:22
 msgid "Password"
-msgstr "Contrasinal"
+msgstr ""
 
 #: .\registration\templates\1_sign_in.html:53
 msgid "Did you forget your password?"
-msgstr "Esqueciches o teu contrasinal?"
+msgstr ""
 
 #: .\registration\templates\1_sign_in.html:61
 #: .\registration\templates\password_reset.html:37
 msgid "Would you like to create an account?"
-msgstr "Gustaríache crear unha conta?"
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:16
 msgid "Account Creation"
-msgstr "Rexistro"
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:25
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:31
 msgid "Repeat Password"
-msgstr "Repita o contrasinal"
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:46
 msgid "Creating the account, you are accepting the"
-msgstr "Ao crear a conta, acepta a "
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:46
 #: .\registration\templates\2_sign_up.html:55
 msgid "Privacy Policy"
-msgstr "Política de Privacidade"
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:64
 msgid "Close"
-msgstr "Pechar"
+msgstr ""
 
 #: .\registration\templates\2_sign_up.html:79
 msgid "Do you have already an account? sign in into your account"
-msgstr "Ten xa unha conta? Inicie sesión na súa conta"
+msgstr ""
 
 #: .\registration\templates\account_confirm_email_sent.html:18
 msgid "Email confirmation"
-msgstr "Confirmación do Email"
+msgstr ""
 
 #: .\registration\templates\account_confirm_email_sent.html:20
 msgid ""
 "To complete your registration, go to your email, open the TerraMeiga email "
 "and click on the link."
 msgstr ""
-"Para completar o seu rexistro, vaia ao seu email, abra o correo de "
-"TerraMeiga e prema no enlace."
 
 #: .\registration\templates\account_confirm_email_sent.html:23
 msgid "In case you do not find it, check on the spam folder!"
-msgstr "No caso de non atopalo, comprobe o correo lixo"
+msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:7
 #: .\registration\templates\email_body_password.html:7
 msgid "Terra Meiga - Password Recovery"
-msgstr "TerraMeiga - Recuperar o Contrasinal"
+msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:14
 msgid "Email Confirmation"
-msgstr "Confirmación do Email"
+msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:22
 #: .\registration\templates\email_body_password.html:22
 msgid "Hello!"
-msgstr "Ola!"
+msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:23
 msgid ""
@@ -1210,86 +1194,77 @@ msgid ""
 "adventure. To complete your registration, please click the following link to "
 "confirm your email:"
 msgstr ""
-"Grazas por rexistrarse en TerraMeiga e apoiarme nesta aventura. Para "
-"completar o rexistro, prema no seguinte link:"
 
 #: .\registration\templates\email_body_confirmation.html:27
 msgid "Confirm Your Email"
-msgstr "Confirmar o seu Email"
+msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:28
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
 msgstr ""
-"No caso de que non se rexistrara con TerraMeiga, pode ignorar este email."
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
 msgid "Happy biking!"
-msgstr "Lume a bicicleta!"
+msgstr ""
 
 #: .\registration\templates\email_body_password.html:14
 #: .\registration\templates\password_reset.html:17
 #: .\registration\templates\password_reset_sent.html:18
 msgid "Password Recovery"
-msgstr "Recuperación Contrasinal"
+msgstr ""
 
 #: .\registration\templates\email_body_password.html:23
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
 msgstr ""
-"Solicitou a recuperación do seu contrasinal. Por favor, prema no seguinte "
-"enlace:"
 
 #: .\registration\templates\email_body_password.html:26
 msgid "Reset Password"
-msgstr "Recuperar o contrasinal"
+msgstr ""
 
 #: .\registration\templates\email_body_password.html:27
 msgid "If you didn't request this password reset, please ignore this email."
 msgstr ""
-"No caso de non ter solicitado a recuperación do contrasinal, ignore este "
-"correo."
 
 #: .\registration\templates\password_reset.html:32
 msgid "Get Password"
-msgstr "Obter o contrasinal"
+msgstr ""
 
 #: .\registration\templates\password_reset_complete.html:17
 #: .\registration\templates\password_reset_complete.html:24
 #: .\registration\templates\profile_account\password_data.html:49
 msgid "New Password"
-msgstr "Novo contrasinal"
+msgstr ""
 
 #: .\registration\templates\password_reset_complete.html:33
 #: .\registration\templates\profile_account\password_data.html:59
 msgid "Repeat New Password"
-msgstr "Repita o contrasinal"
+msgstr ""
 
 #: .\registration\templates\password_reset_complete.html:43
 msgid "Update Password"
-msgstr "Actualizar o contrasinal"
+msgstr ""
 
 #: .\registration\templates\password_reset_sent.html:20
 msgid ""
 "To recover your password, go to your email, open the 'TerraMeiga' email and "
 "click on the link."
 msgstr ""
-"Para recuperar o seu contrasinal, vaia ao seu email, abra o correo de "
-"TerraMeiga e prema no enlace."
 
 #: .\registration\templates\password_reset_sent.html:23
 msgid "In case you do not find the email, check on the spam folder!"
-msgstr "No caso de non atopar o email, comprobe o correo lixo"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:6
 msgid "Effective Date: 01-Jan-2024"
-msgstr "Data efectiva: 01-Xaneiro-2024"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:8
 msgid "1. Introduction"
-msgstr "1. Introdución"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:10
 msgid ""
@@ -1298,23 +1273,16 @@ msgid ""
 "(GDPR). By using our website terrameiga.bike, you consent to the practices "
 "described in this Privacy Policy."
 msgstr ""
-"Esta política de privacidade describe como terrameiga.bike obtén, usa, "
-"comparte e protexe os seus datos persoais segundo establece a GDPR "
-"(Regulamento Xeral de Protección de Datos). Ao usar o noso sitio web "
-"(terrameiga.bike), acepta as practicas que se describen na política de "
-"privacidade."
 
 #: .\registration\templates\privacy_policy.html:12
 msgid "2. Definitions"
-msgstr "2. Definicións"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:14
 msgid ""
 "a. 'Personal Data' means any information that relates to an identified or "
 "identifiable natural person."
 msgstr ""
-"a. Datos Persoais: información relativa a unha persoa física identificada ou "
-"identificable "
 
 #: .\registration\templates\privacy_policy.html:17
 msgid ""
@@ -1323,23 +1291,16 @@ msgid ""
 "storage, adaptation, alteration, retrieval, consultation, use, disclosure, "
 "dissemination, alignment, combination, restriction, erasure, or destruction."
 msgstr ""
-"b. 'Procesamento de Datos': calquera operación de recollida, rexistro, "
-"organización, estruturación, almacenaxe, adaptación ou alteración, "
-"recuperación, consulta, uso, divulgación mediante transmisión, difusión ou "
-"posta a disposición doutro modo, aliñación ou combinación, restrición, "
-"borrado ou destrucción dos datos"
 
 #: .\registration\templates\privacy_policy.html:19
 msgid "3. Information We Collect"
-msgstr "3. Información recollida"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:21
 msgid ""
 "a. Personal Data: We may collect personal data, including but not limited to "
 "your name and email address."
 msgstr ""
-"a. Datos Persoais: Podremos recoller datos persoais, como son o seu nome e "
-"enderezo de correo electrónico."
 
 #: .\registration\templates\privacy_policy.html:24
 msgid ""
@@ -1347,90 +1308,77 @@ msgid ""
 "of the Website, including browser type, device information, and pages "
 "visited."
 msgstr ""
-"b. Información de uso: De xeito automático, recollemos información sobre o "
-"uso do sitio web, incluíndo o tipo de buscador, información do dispositivo e "
-"as páxinas visistadas."
 
 #: .\registration\templates\privacy_policy.html:27
 msgid "c. Cookies: On this site we do not use cookies."
-msgstr "c. Cookies: Neste sitio web non usamos cookies."
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:29
 msgid "4. Legal Basis for Data Processing"
-msgstr "4. Bases legais para o procesamento de datos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:31
 msgid ""
 "We may process personal data based on one or more of the following legal "
 "bases:"
-msgstr "Podremos procesar datos persoais segundo as seguintes bases legais:"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:34
 msgid "a. Consent: We may process data with your explicit consent."
 msgstr ""
-"a. Consentimento: Podremos procesar datos co seu consentimento explícito."
 
 #: .\registration\templates\privacy_policy.html:37
 msgid ""
 "b. Legal Obligation: We may process data to comply with legal obligations."
 msgstr ""
-"b. Obrigas legais: Podremos procesar datos para cumprir con obrigas legais."
 
 #: .\registration\templates\privacy_policy.html:40
 msgid ""
 "c. Legitimate Interests: We may process data based on our legitimate "
 "interests, provided they do not override your rights and interests."
 msgstr ""
-"c. Intereses lexítimos: Podremos procesar datos por intereses lexítimos, "
-"asegurando que nunca se sobrepasen os seus dereitos ou intereses."
 
 #: .\registration\templates\privacy_policy.html:42
 msgid "5. Data Use"
-msgstr "5. Uso de datos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:44
 msgid "We may use personal data for the following purposes:"
-msgstr "Podremos facer uso dos seu datos persoais para os propósitos a seguir:"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:47
 msgid "a. To analyze usage patterns and conduct research."
-msgstr "a. Para analizar patróns de uso e relizar estudios posteriores"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:50
 msgid "b. To comply with legal obligations."
-msgstr "b. Para cumprir con obrigas legais."
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:52
 msgid "6. Data Sharing"
-msgstr "6. Intercambio de datos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:54
 msgid ""
 "We do not sell or rent your personal data to third parties. However, we may "
 "share your data with:"
 msgstr ""
-"Nós non vendemos ou prestamos os seus datos persoais a terceiros. Con todo, "
-"podremos compartir os seus datos con:"
 
 #: .\registration\templates\privacy_policy.html:57
 msgid ""
 "a. Service Providers: We may share data with service providers who help us "
 "operate the Website and provide our services."
 msgstr ""
-"a. Provedores: Podremos compartir datos cos provedores que nos axudan a "
-"operar o sitio web."
 
 #: .\registration\templates\privacy_policy.html:60
 msgid ""
 "b. Legal Compliance: We may disclose data to comply with legal requirements, "
 "protect our rights, or respond to a legal request."
 msgstr ""
-"b. Cumprimento Legal: Podremos compartir os seus datos por obrigas legais, "
-"protexer os nosos dereitos ou responder ante asuntos legais."
 
 #: .\registration\templates\privacy_policy.html:62
 msgid "7. Data Transfer"
-msgstr "7. Transferencia de Datos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:64
 msgid ""
@@ -1438,13 +1386,10 @@ msgid ""
 "outside the European Economic Area (EEA). We ensure that such transfers "
 "comply with GDPR requirements and protect your data."
 msgstr ""
-"Os seus datos poda que sexan transferidos, procesados ou alamcenados en "
-"países situados fora do Espazo Económico Común Europeo (EAA). Con todo, "
-"aseguraremos de que ditas transferencias cumpren cos requerimentos das GDPR."
 
 #: .\registration\templates\privacy_policy.html:66
 msgid "8. Data Retention"
-msgstr "8. Conservación dos datos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:68
 msgid ""
@@ -1452,13 +1397,10 @@ msgid ""
 "with us. Once you delete your account, we will delete all your Personal "
 "Identifiable Information (PII)."
 msgstr ""
-"Conservaremos os seus datos persoais sempre e cando teña unha conta activa "
-"con nós.Unha vez que vostede elimine a súa conta, todos os seus datos "
-"persoais serán eliminados"
 
 #: .\registration\templates\privacy_policy.html:70
 msgid "9. Data Security"
-msgstr "9. Seguridade dos datos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:72
 msgid ""
@@ -1466,105 +1408,83 @@ msgid ""
 "from unauthorized access and disclosure. However, no data transmission or "
 "storage is entirely secure."
 msgstr ""
-"Implementamos as medidas de seguridade apropiadas para protexer os seu datos "
-"persoais dun uso fraudulento. Con todo, non existe ningún sistema infalible "
-"aos ataques."
 
 #: .\registration\templates\privacy_policy.html:74
 msgid "10. Your Rights"
-msgstr "10. Os seus dereitos"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:76
 msgid "Under GDPR, you have rights regarding your personal data, including:"
-msgstr "Baixo as GDPR, vostede conta cos seguintes dereitos:"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:79
 msgid "a. Right to Access: You can request access to your personal data."
 msgstr ""
-"a. Dereito de acceso: Vostede pode solicitar acceso aos seus datos persoais."
 
 #: .\registration\templates\privacy_policy.html:82
 msgid ""
 "b. Right to Rectification: You can request the correction of inaccurate data."
 msgstr ""
-"b. Dereito de modificación: Vostede pode solicitar a corrección de datos "
-"incorrectos."
 
 #: .\registration\templates\privacy_policy.html:85
 msgid "c. Right to Erasure: You can request the deletion of your data."
 msgstr ""
-"c. Dereito de destrucción: Vostede pode solicitar a destrucción dos seus "
-"datos."
 
 #: .\registration\templates\privacy_policy.html:88
 msgid ""
 "d. Right to Restriction of Processing: You can request limitations on data "
 "processing."
 msgstr ""
-"d. Dereito de restrición á hora do procesamento: Vostede pode solicitar "
-"limitación no procesamento dos seus datos."
 
 #: .\registration\templates\privacy_policy.html:91
 msgid ""
 "e. Right to Data Portability: You can request your data in a structured, "
 "commonly used format."
 msgstr ""
-"e. Dereito de portabilidade: Vostede pode solicitar os seus datos dun xeito "
-"estruturado e nun formato estándar."
 
 #: .\registration\templates\privacy_policy.html:94
 msgid "f. Right to Object: You can object to the processing of your data."
 msgstr ""
-"f. Dereito de oposición: Vostede pode oporse ao procesamento dos seus datos."
 
 #: .\registration\templates\privacy_policy.html:97
 msgid ""
 "g. Right to Withdraw Consent: If processing is based on consent, you can "
 "withdraw it at any time."
 msgstr ""
-"g. Dereito de retirada do consentimento: O interesados pode retirar o seu "
-"consentimento en calquera momento."
 
 #: .\registration\templates\privacy_policy.html:100
 msgid "To exercise your rights, please contact us at paquinho89@gmail.com."
 msgstr ""
-"Para exercer os seus dereitos, póñase en contacto con nós a través do "
-"correo: paquinho89@gmail.com."
 
 #: .\registration\templates\privacy_policy.html:102
 msgid "11. Contact Us"
-msgstr "11. Contacto"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:104
 msgid ""
 "If you have questions or concerns about this Privacy Policy or our data "
 "practices, please contact us at paquinho89@gmail.com."
 msgstr ""
-"Se vostede ten algunha dúbida sobre esta Política de Privacidade ou o uso "
-"dos seus datos contáctenos no correo electrónico: paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:106
 msgid "12. Changes to this Privacy Policy"
-msgstr "12. Cambios na Política de Privacidade"
+msgstr ""
 
 #: .\registration\templates\privacy_policy.html:108
 msgid ""
 "We reserve the right to modify this Privacy Policy at any time. Please "
 "review it periodically for updates."
 msgstr ""
-"Reservámonos o dereito de modificar esta Política de Privacidade en calquera "
-"momento. Por favor, revísea periódicamente por se hai actualizacións."
 
 #: .\registration\templates\privacy_policy.html:110
 msgid "This Privacy Policy was last updated on 01-Jan-2024."
 msgstr ""
-"Esta Política de Privacidade foi actualizada o día 01 de Xaneiro de 2024."
 
 #: .\registration\templates\profile_account\delete_account.html:19
 #: .\registration\templates\profile_account\password_data.html:19
 #: .\registration\templates\profile_account\personal_data.html:19
 msgid "Personal Data"
-msgstr "Datos persoais"
+msgstr ""
 
 #: .\registration\templates\profile_account\delete_account.html:25
 #: .\registration\templates\profile_account\delete_account.html:37
@@ -1572,152 +1492,144 @@ msgstr "Datos persoais"
 #: .\registration\templates\profile_account\password_data.html:25
 #: .\registration\templates\profile_account\personal_data.html:25
 msgid "Delete Account"
-msgstr "Eliminar a conta"
+msgstr ""
 
 #: .\registration\templates\profile_account\delete_account.html:33
 msgid "Do you want to delete your account?"
-msgstr "Quere eliminar a súa conta?"
+msgstr ""
 
 #: .\registration\templates\profile_account\delete_account.html:48
 msgid "Are you sure you want to delete your account?"
-msgstr "Está seguro de que quere eliminar a súa conta?"
+msgstr ""
 
 #: .\registration\templates\profile_account\delete_account.html:54
 msgid "To delete your account type 'terrameiga'"
-msgstr "Para eliminar a súa conta escriba 'terrameiga'"
+msgstr ""
 
 #: .\registration\templates\profile_account\delete_account.html:58
 msgid "Cancel"
-msgstr "Cancelar"
+msgstr ""
 
 #: .\registration\templates\profile_account\password_data.html:33
 msgid "Do you want to update the password?"
-msgstr "Quere actualizar o seu contrasinal?"
+msgstr ""
 
 #: .\registration\templates\profile_account\password_data.html:39
 msgid "Current Password"
-msgstr "Contrasinal"
+msgstr ""
 
 #: .\registration\templates\profile_account\password_data.html:70
 msgid "Update the Password"
-msgstr "Actualizar o contrasinal"
+msgstr ""
 
 #: .\registration\templates\profile_account\personal_data.html:33
 msgid "Do you want to update your Personal Data?"
-msgstr "Quere actualizar os seus datos persoais?"
+msgstr ""
 
 #: .\registration\templates\profile_account\personal_data.html:39
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: .\registration\templates\profile_account\personal_data.html:48
 msgid "Username"
-msgstr "Nome de usuario"
+msgstr ""
 
 #: .\registration\templates\profile_account\personal_data.html:66
 msgid "Language"
-msgstr "Idioma"
+msgstr ""
 
 #: .\registration\templates\profile_account\personal_data.html:76
 msgid "Update your data"
-msgstr "Actualizar datos"
+msgstr ""
 
 #: .\registration\views.py:47
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr ""
-"Por favor, vaia ao seu email e verifique a súa conta. Grazas polo apoio, "
 
 #: .\registration\views.py:56 .\registration\views.py:161
 #: .\registration\views.py:245
 msgid "Check the below errors and try again!"
-msgstr "Comprobe os erros e inténteo de novo!"
+msgstr ""
 
 #: .\registration\views.py:76
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
-msgstr "A súa conta foi creada. Grazas por ser parte desta aventura!"
+msgstr ""
 
 #: .\registration\views.py:81
 msgid "You have been logged out!"
-msgstr "A súa sesión pechouse!"
+msgstr ""
 
 #: .\registration\views.py:101
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
-msgstr "Benvido! Agora é tempo de desfrutar de todo o contido da viaxe."
+msgstr ""
 
 #: .\registration\views.py:110
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
 msgstr ""
-"Non hai ningún usuario con esos credenciais. Inténteo de novo ou cree unha "
-"conta"
 
 #: .\registration\views.py:136
 msgid "Your personal data has been updated"
-msgstr "Os seus datos persois foron actualizados"
+msgstr ""
 
 #: .\registration\views.py:141
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
-"Os datos non se puderon actualizar. Por favor, comprobe os erros e inténteo "
-"de novo"
 
 #: .\registration\views.py:154
 msgid "Your password has been updated!"
-msgstr "Actualizouse o seu contrasinal!"
+msgstr ""
 
 #: .\registration\views.py:182
 msgid "Your account has been deleted. We hope see you back soon!"
-msgstr "Eliminouse a súa conta. Agardámolo velo pronto por aqui!"
+msgstr ""
 
 #: .\registration\views.py:187 .\registration\views.py:189
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
-"Por favor, escriba \"terrameiga\". O texto ten que estar en minúsculas e sen "
-"comiñas"
 
 #: .\registration\views.py:214
 msgid "An email was sent to your email inbox"
-msgstr "Acabamos de enviar un email ao seu correo"
+msgstr ""
 
 #: .\registration\views.py:217
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
-"O email non existe na nosa base de datos. Por favor, cree unha nova conta."
 
 #: .\registration\views.py:221
 msgid "The email is not valid"
-msgstr "O email non é válido"
+msgstr ""
 
 #: .\registration\views.py:240
 msgid "Your password has been changed"
-msgstr "O seu contrasinal foi modificado!"
+msgstr ""
 
 #: .\terrameiga\static\templates\base\footer.html:31
 msgid "No cookies are used on the site"
-msgstr "Neste sitio web non utilizamos cookies"
+msgstr ""
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
-msgstr "Inicio"
+msgstr ""
 
 #: .\terrameiga\static\templates\base\nav_bar.html:26
 msgid "Pictures"
-msgstr "Fotos"
+msgstr ""
 
 #: .\terrameiga\static\templates\base\nav_bar.html:29
 msgid "Data"
-msgstr "Datos"
+msgstr ""
 
 #: .\terrameiga\static\templates\base\nav_bar.html:37
 msgid "Account Settings"
-msgstr "Configuración"
+msgstr ""
 
 #: .\terrameiga\static\templates\base\nav_bar.html:42
 msgid "Log Out"
-msgstr "Sair"
+msgstr ""
