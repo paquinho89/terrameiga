@@ -48,8 +48,9 @@ urlpatterns =   i18n_patterns (
     # ou este vídeo: https://www.youtube.com/watch?v=sFPcd6myZrY
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),  name="password_reset_done"),
     path('password_recovery_update/<uidb64>/<token>/', password_new_password_view, name="password_recovery_update"),
-    path('log_out/', log_out_view, name="log_out"),  
-    
+    path('log_out/', log_out_view, name="log_out"),
+    #AGRADECEMENTOS
+    path('appreciation/', TemplateView.as_view(template_name = "base/agradecementos.html"), name="order"),  
     
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),

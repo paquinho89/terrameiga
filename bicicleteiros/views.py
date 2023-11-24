@@ -144,7 +144,7 @@ def country_data_view (request):
             'surface_html' : surface_country,
             'population_html' : population_country,
             'density_population_html' : population_dens,
-            'rent_per_capita_html' : life_expectancy_country,
+            'life_expectancy_country_html' : life_expectancy_country,
             'currency_html' : currency_country,
             'time_zone_html' : time_zone_value,
             'interesting_fact_country_html' : interesting_fact_country,

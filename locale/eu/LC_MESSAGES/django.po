@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 16:58+0100\n"
+"POT-Creation-Date: 2023-11-24 12:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -967,7 +967,12 @@ msgid "Density population:"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
-msgid "Renta per capita:"
+msgid "Life expectancy:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:78
+msgid "years"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:79
@@ -1057,31 +1062,30 @@ msgid "All reserved rights:"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:353
-#: .\registration\models.py:15 .\terrameiga\settings.py:171
-#: .\terrameiga\settings_local.py:160
+#: .\registration\models.py:15 .\terrameiga\settings.py:160
+#: .\terrameiga\settings_deployment.py:171
 msgid "Galician"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:354
+#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
 msgid "Basque"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:355
-#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
+#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
 msgid "Catalan"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:356
-#: .\registration\models.py:14 .\terrameiga\settings.py:170
-#: .\terrameiga\settings_funciona_eliminar.py:167
-#: .\terrameiga\settings_local.py:159
+#: .\registration\models.py:14 .\terrameiga\settings.py:159
+#: .\terrameiga\settings_deployment.py:170
 msgid "Spanish"
 msgstr ""
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:357
-#: .\registration\models.py:13 .\terrameiga\settings.py:169
-#: .\terrameiga\settings_funciona_eliminar.py:166
-#: .\terrameiga\settings_local.py:158
+#: .\registration\models.py:13 .\terrameiga\settings.py:158
+#: .\terrameiga\settings_deployment.py:169
 msgid "English"
 msgstr ""
 
@@ -1090,16 +1094,16 @@ msgstr ""
 msgid "Videos"
 msgstr ""
 
-#: .\bicicleteiros\views.py:122
+#: .\bicicleteiros\views.py:116
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr ""
 
-#: .\bicicleteiros\views.py:131
+#: .\bicicleteiros\views.py:125
 msgid "Please, include some text in your reply"
 msgstr ""
 
-#: .\bicicleteiros\views.py:170
+#: .\bicicleteiros\views.py:164
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
