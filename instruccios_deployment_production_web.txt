@@ -55,6 +55,8 @@ railway run python manage.py makemigrations
 --Tiveches que executar os seguintes comandos:
 --railway run python manage.py makemigrations registration
 --railway run python manage.py migrate registration
+--railway run python manage.py makemigrations bicicleteiros
+--railway run python manage.py migrate bicicleteiros
 --railway run python manage.py migrate --run-syncdb (Este comando túveno que facer porque senon non me cargaba as tablas en railway)
 
 railway run python manage.py migrate
