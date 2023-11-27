@@ -84,7 +84,7 @@ def log_out_view (request):
 # Create your views here.
 def sign_in_view(request):
   # If this is a POST request we need to process the form data (Todos os log-in dos clientes que nos cheguen serán POST)
-  sign_in_form_variable = sign_in_form_1(request, data=request.POST)
+  sign_in_form_variable = sign_in_form_1(data=request.POST)
   if request.method == 'POST':
     if sign_in_form_variable.is_valid():
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.

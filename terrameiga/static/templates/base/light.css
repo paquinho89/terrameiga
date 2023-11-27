@@ -1,0 +1,417 @@
+/*Esto é para darlle formato aos message.ERRORS porque por defecto non traen formato*/
+.alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    position:absolute;
+    position: sticky;
+    }
+    /*Esto é para darlle formato ao botón da cruz que pecha a alerta da mensaxe de error*/
+    .alert-error .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px; /* Adjust the font size as needed */
+        }
+    /*Esto é para darlle formato ao botón da cruz que pecha a alerta do mensxe de success*/
+    .alert-success .close {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px; /* Adjust the font size as needed */
+        }
+    #body_sign_in {
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+    /*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    #body_sign_up {
+    background-color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: auto;
+    /*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    /*Para asegurarme que o footer sempre se posiciona na parte inferior*/
+    footer {
+        color: black;
+        padding: 10px;
+        text-align: center;
+    }
+    ul{
+        color: white;
+        }
+    /*É vermello porque os erros que teñen que aparecer debaixo do cajetín son do tipo "li" e teñen que ser vermellos*/
+    li{
+        color: red;
+        list-style-type: none;
+        }
+    #copyright_text{
+        color: white;
+    }
+    a{
+        color: white;
+        }
+    i{
+        color: white;
+        }
+    h4{
+        color: white;
+        }
+    .card{
+        background-color: #28231D;
+        }
+    hr{
+        color: white;
+        }
+    #button_area_persoal {
+        color: rgb(83, 158, 138);
+        border-color: rgb(83, 158, 138);  
+        }
+    #button_area_persoal:hover {
+        color: white;
+        background-color: rgb(83, 158, 138);
+        }
+    #button_rexistro {
+        color: rgb(246, 158, 138);
+        border-color: rgb(246, 158, 138);
+        }
+    #button_rexistro:hover {
+        color: white;
+        background-color: rgb(246, 158, 138);
+        }
+    #map {
+        filter: blur(10px);
+        }
+    /*Esto é para posicionar o texto no medio e medio do mapa que está difuminado*/
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        }
+        
+    /*Con esto limito o número de comentarios que se poden ver*/
+    #chat_box {
+        max-height: 600px;
+        overflow: auto;
+    }
+    #button_postcomment {
+        color: white;
+        background-color: rgb(246, 158, 138);
+    }
+    #button_postcomment:hover {
+        background-color: rgb(83, 158, 138);
+    }
+    /*Con esto oculta a barra horizontal*/
+    body{
+        background-color: black;
+        overflow-x: hidden;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: auto;
+        /*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #background_sign_in {
+        background-color: black;
+    }
+    p { 
+        color: black; 
+    }
+    
+    label { 
+        color: black; 
+    }
+    /*Estes botós son da páxina de sign in*/
+    #sign_in_button {
+        color: rgb(246, 158, 138);
+        background-color: black;
+        white-space: nowrap; /*This is to mantain the text within the button in 1 line*/
+        }
+    #sign_in_button:hover {
+        background-color: rgb(83, 158, 138);
+        }
+    #sign_up_button{
+        color: white;
+        background-color: rgb(83, 158, 138);
+    }
+    #sign_up_button:hover{
+        color: white;
+        background-color: rgb(246, 158, 138);
+    }
+    /*Formato da ventana emerxente*/
+    .modal-header {
+        background-color:rgb(246, 158, 138);
+        color: rgb(83, 158, 138);
+    }
+    /*Esto é para darlle formato ao botón de pechar a ventana emerxente da "Privacy Policy" na páxina Sign Up*/
+    .modal-header .close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 40px; /* Adjust the font size as needed */
+    }
+    .modal-body {
+        background-color:#28231D;
+    }
+    .modal-footer {
+        background-color:#28231D;
+    }
+    #privacy_policy_close_button{
+        color: white;
+        background-color: rgb(83, 158, 138);
+    }
+    #privacy_policy_close_button:hover{
+        color: white;
+        background-color: rgb(246, 158, 138);
+    }
+    
+    /*Esto é para darlle formato aos message.ERRORS porque por defecto non traen formato*/
+    .alert-error {
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        position:absolute;
+        position: sticky;
+        top: 0
+        }
+    /*Esto é para darlle formato ao botón da cruz que pecha a alerta da mensaxe de error*/
+    .alert-error .close {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        padding: 5px;
+        background-color: transparent;
+        color:red;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 30px; /* Adjust the font size as needed */
+        }
+    /*Esto é para darlle formato ao botón da cruz que pecha a alerta do mensxe de success*/
+    .alert-success .close {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        padding: 5px;
+        background-color: transparent;
+        color: green;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 30px; /* Adjust the font size as needed */
+        }
+    body{
+        background-color:black;
+        overflow-x: hidden; /*Con esto oculto a barra de scroll down horizontal*/
+        margin-top: 0;
+        margin-bottom: 0;
+        height: auto;
+        overflow-x: hidden;
+    /*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    ul{
+        color: white;
+    }
+    /*Esto é para que as alertas de cando o formulario non se completa ben aparezcan en vermello*/
+    li{
+        color: red;
+        list-style-type: none;
+    }
+    #data_home_page{
+        color: white;
+    }
+    a{
+        color: white;
+    }
+    h4{
+        color: white;
+    }
+    h1{
+        color: white;
+    }
+    
+    hr{
+        color: white;
+    }
+    .card{
+        background-color: #28282B;
+    }
+    
+    #button_area_persoal {
+        color: rgb(83, 158, 138);
+        border-color: rgb(83, 158, 138);  
+    }
+    #button_area_persoal:hover {
+        color: white;
+        background-color: rgb(83, 158, 138);
+    }
+    #button_rexistro {
+        color: rgb(246, 158, 138);
+        border-color: rgb(246, 158, 138);
+    }
+    #button_rexistro:hover {
+        color: white;
+        background-color: rgb(246, 158, 138);
+    }
+    #button_postcomment {
+        color: white;
+        background-color: rgb(83, 158, 138);
+    }
+    #button_postcomment:hover {
+        background-color: rgb(246, 158, 138);
+    }
+    /*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
+    no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+    /*E esto é para cambiar o borde do botón. Neste caso, como non é unha imaxe svg, incido sobre o elemento do css*/
+    .navbar-toggler{
+        border: 1px solid rgb(246, 158, 138);
+    }
+    /*Con esto oculto a barra vertical do container do chat*/
+    #chat_box{
+        overflow-y: hidden;
+    }
+    #personal_data_section{
+        background-color: #28282B;
+        color: white;
+    }
+    #access_data_section{
+        background-color: #28282B;
+        color: white;
+    }
+    #delete_account_section{
+        background-color: #28282B;
+        color: white;
+    }
+    #navigation_personal_area_section{
+        background-color: #28282B;
+        color: white;
+    }
+    /*Esto é para darlle formato ao botón de pechar a ventana emerxente do modal de eliminar a conta*/
+    .modal-header .close {
+        position: absolute;
+        color: white;
+        top: -10px;
+        right: 0;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 40px; /* Adjust the font size as needed */
+        }
+    /*Estes botós son os botós para actualizar a información persoal*/
+    #update_personal_data_button {
+        color: white;
+        background-color: rgb(83, 158, 138);
+        }
+    #update_personal_data_button:hover {
+        background-color: rgb(246, 158, 138);
+        }
+    /*Estes botós son os botós para actualizar a password*/
+    #update_password_button {
+        color: white;
+        background-color: rgb(83, 158, 138);
+        }
+    #update_password_button:hover {
+        background-color: rgb(246, 158, 138);
+        }
+    /*Formatting the tab buttons of the personal area*/
+    #personal_area_tab.active {
+        color: white;
+        background-color: rgb(246, 158, 138);
+    }
+    #personal_area_tab {
+        color: rgb(246, 158, 138);
+    }
+    /*Esto é para os tamaños das fotos no html de bicicleteiros_fotos.html*/
+    #picture {
+            margin: 0;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0;
+          }
+    #picture_object{
+            width: 100%;
+            height: 200px;
+            object-fit: cover; /*Con esto a imaxe queda mellor e non se estira nin se estreita. Queda do se tamaño*/
+    }   
+    h2 { 
+        color: rgba(191, 191, 191, 1); 
+    }
+    /*Esto é para darlle tamaño ao vídeos*/
+    iframe{
+        width: 100%;
+        height: 200px;
+    }
+    /*Esto é para darlle un tamaño as fotos*/
+    #pictures{
+        width:  100%;
+        height: 200px;
+    }
+
+    /*Eye password:*/
+    #eye_password{
+        color: black;
+        font-size: 20px;
+    }
+
+    /*Footer*/
+    #social_media_div{
+        background-color: black;
+        margin: 0;
+        padding: 0;
+    }
+    
+   
+    #footer_page {
+        margin: 0;
+        padding: 0;    
+    }
+
+    #footer_box{
+        background-color: rgb(0,0,0,1);
+    }
+
+    #footer_text{
+        color: rgb(246, 158, 138);
+    }

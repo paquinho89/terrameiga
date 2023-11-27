@@ -16,7 +16,7 @@ class sign_in_form_1(AuthenticationForm):
             
         widgets = {
             'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
-            'password' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'min 8 caracteres'}),
+            'password' : forms.PasswordInput(attrs = {'class':'form-control', 'placeholder':'********'}),
         }
 
 class sign_up_form_2(UserCreationForm):

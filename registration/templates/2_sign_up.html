@@ -13,7 +13,8 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-left">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <p class="text-left h3 fw-bold mx-1 mt-2">{% trans "Account Creation" %}
+                  <p class="text-left h3 fw-bold mx-1 mt-2">
+                    {% trans "Account Creation" %}
                   </p>
                   <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
                     {% csrf_token %}
@@ -23,26 +24,37 @@
                             <br>
                             {% if forloop.counter == 1 %}
                             <label>{% trans "Name" %}</label>
+                              <div>
+                                {{ field }}
+                              </div>
                             {% elif forloop.counter == 2 %}
                             <label>Email</label>
+                              <div>
+                                {{ field }}
+                              </div>
                             {% elif forloop.counter == 3 %}
                             <label>{% trans "Password" %}</label>
+                              <div>
+                                {{ field }}
+                                <i style="font-size: 20px;" class="toggle-password far fa-eye" onclick="togglePasswordVisibility(this)"></i>
+                              </div>
                             {% elif forloop.counter == 4 %}
                             <label>{% trans "Repeat Password" %}</label>
+                              <!--Co div fago que a label aparezca xusto enriba do texto-->
+                              <div>
+                                {{ field }}
+                                <i style="font-size: 20px;" class="toggle-password far fa-eye" onclick="togglePasswordVisibility(this)"></i>
+                              </div>
                             {% endif %}
-                            <!--Co div fago que a label aparezca xusto enriba do texto-->
-                            <div>
-                            {{ field }}
-                            </div>
                             <!--Co "if messages" solo imprimo o error se hai alerta,se non hai non imprimo o erro-->
                             {% if messages %}
-                            <label id="label_error" style="color: red;">{{ field.errors }}</label>
+                              <label id="label_error" style="color: red;">{{ field.errors }}</label>
                             {% endif %}
                           </td>
                         </tr>
                       {% endfor %}   
                       <div class="d-flex">
-                        <p>
+                        <p class="mt-3">
                           {% trans "Creating the account, you are accepting the" %} <a href="#" data-toggle="modal" data-target="#exampleModalLong">{% trans "Privacy Policy" %}</a>
                         <p>
                           <!-- Button trigger modal -->

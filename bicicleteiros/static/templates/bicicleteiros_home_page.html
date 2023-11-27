@@ -68,13 +68,13 @@
     <h5>{% trans "Country Information:" %}</h5>
     <hr>
       <!--O intcomm é para que aparezca o número cos puntos e xa máis visible. Para eso tiveches que cargar o {% load humanize %} ao principio do html-->
-      <li id="data_home_page" class="mt-3">{% trans "Surface:" %} <strong>{{ surface_html|intcomma }} km2 </strong><br> 
+      <li id="data_home_page" class="mt-3">{% trans "Surface:" %} <strong>{{ surface_html|intcomma:False }} km2 </strong><br> 
         <label style="font-style: italic;">({% trans "Spain:" %} 505.994 km2)</label></li>
-      <li id="data_home_page" class="mt-2">{% trans "Population:" %} <strong>{{ population_html|intcomma }} {% trans "people" %} </strong> <br>
+      <li id="data_home_page" class="mt-2">{% trans "Population:" %} <strong>{{ population_html|intcomma:False }} {% trans "people" %} </strong> <br>
         <label style="font-style: italic;">({% trans "Spain:" %} 48.300.000 people)</label></li>
-      <li id="data_home_page" class="mt-2">{% trans "Density population:" %} <strong>{{ density_population_html|intcomma }} km2 </strong> <br>
+      <li id="data_home_page" class="mt-2">{% trans "Density population:" %} <strong>{{ density_population_html|intcomma:False }} km2 </strong> <br>
         <label style="font-style: italic;">({% trans "Spain:" %} 94 people per km2)</label> </li>
-      <li id="data_home_page" class="mt-2">{% trans "Life expectancy:" %} <strong>{{ life_expectancy_country_html|intcomma }} {% trans "years" %}</strong> <br>
+      <li id="data_home_page" class="mt-2">{% trans "Life expectancy:" %} <strong>{{ life_expectancy_country_html|intcomma:False }} {% trans "years" %}</strong> <br>
         <label style="font-style: italic;">({% trans "Spain:" %} 83 {% trans "years" %})</label> </li>
       <li id="data_home_page" class="mt-2">{% trans "Currency:" %} <strong>{{ currency_html }}</strong> </li>
       <li id="data_home_page" class="mt-2">{% trans "Local Time:" %} <strong><label id="current-time"></label></strong> </li>

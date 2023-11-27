@@ -14,29 +14,28 @@
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <p class="text-left h3 fw-bold mx-1 mt-2">{% trans "Sign in" %}
+                  <p class="text-left h3 fw-bold mx-1 mt-4">{% trans "Sign in" %}
                   </p>
-                  <form class=" mx-md-4" method="post" novalidate>
+                  <form class=" mx-md-4" method="POST" novalidate>
                     {% csrf_token %}
                       {% for field in sign_in_form.visible_fields %}
                         <tr>
                           <td>
                             <br>
-                            {% if forloop.counter == 1 %}
+                            {% if forloop.counter == 1 %}  
                             <label>Email</label>
-                            {% elif forloop.counter == 2 %}
+                              <div>
+                              <!--O div métollo para que me quede a barra de meter o texto debaixo da label-->
+                                {{ field }}
+                              </div>
+                            {% elif forloop.counter == 2 %}  
                             <label>{% trans "Password" %}</label>
-                            {% endif %}
-                            <!--O div métollo para que me quede a barra de meter o texto debaixo da label-->
                             <div>
-                            {{ field }}
-                            </div>
-                            <!--Co "if messages" solo imprimo o error se hai alerta,se non hai non imprimo o erro. Vouno comentar porque non quero que aparezca texto debaixo do cajetín-->
-                            <!--
-                            {% if messages %}
-                            <label style="color: red;">{{ field.errors }}</label>
+                              <!--O div métollo para que me quede a barra de meter o texto debaixo da label-->
+                                {{ field }}
+                                <i id="eye_password" class="toggle-password far fa-eye" onclick="togglePasswordVisibility(this)"></i>
+                              </div>
                             {% endif %}
-                            -->
                           </td>
                         </tr>
                       {% endfor %}
@@ -48,7 +47,7 @@
  
                     <div class="d-flex justify-content-left">
                       <label class="form-check-label mt-2" for="form2Example3">
-                        <a href="{% url 'reset_password' %}" class="text-dark">
+                        <a href="{% url 'reset_password' %}" class="text-dark" style="text-decoration: none;">
                           <p>
                             <strong>{% trans "Did you forget your password?" %}</strong>
                           </p>
@@ -58,7 +57,7 @@
 
                     <div class="d-flex justify-content-left">
                       <label class="form-check-label text-dark" for="form2Example3">
-                        <a href="{% url 'sign_up' %}" class="text-dark"><p><strong>{% trans "Would you like to create an account?" %}</strong></p></a>
+                        <a href="{% url 'sign_up' %}" class="text-dark" style="text-decoration: none;"><p><strong>{% trans "Would you like to create an account?" %}</strong></p></a>
                       </label>
                     </div>
                   </form>
@@ -70,9 +69,9 @@
                 </div>
               </div>
             </div>
-          
         </div>
       </div>
     </div>
   </body>
+
 {% endblock content %}
