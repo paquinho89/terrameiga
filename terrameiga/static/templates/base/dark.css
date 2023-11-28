@@ -55,7 +55,6 @@ justify-content: space-between;
 }
 /*Para asegurarme que o footer sempre se posiciona na parte inferior*/
 footer {
-    color: white;
     padding: 10px;
     text-align: center;
 }
@@ -77,6 +76,9 @@ i{
     color: white;
     }
 h4{
+    color: white;
+    }
+h5{
     color: white;
     }
 .card{
@@ -128,18 +130,18 @@ hr{
     background-color: rgb(83, 158, 138);
 }
 /*Con esto oculta a barra horizontal*/
-body{
+/*body{
     background-color: black;
     overflow-x: hidden;
     margin-top: 0;
     margin-bottom: 0;
     height: auto;
     /*Con esto o que conseguín foi que o footer esté sempre ao fondo da pantalla indendentemente se é grande ou máis pequena*/
-    min-height: 100vh;
+    /*min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+}*/
 #background_sign_in {
     background-color: black;
 }
@@ -153,19 +155,19 @@ label {
 /*Estes botós son da páxina de sign in*/
 #sign_in_button {
     color: white;
-    background-color: rgb(83, 158, 138);
+    background-color: rgb(246, 158, 138);
     white-space: nowrap; /*This is to mantain the text within the button in 1 line*/
     }
 #sign_in_button:hover {
-    background-color: rgb(246, 158, 138);
+    background-color: rgb(83, 158, 138);
     }
 #sign_up_button{
     color: white;
-    background-color: rgb(83, 158, 138);
+    background-color: rgb(246, 158, 138);
 }
 #sign_up_button:hover{
     color: white;
-    background-color: rgb(246, 158, 138);
+    background-color: rgb(83, 158, 138);
 }
 /*Formato da ventana emerxente*/
 .modal-header {
@@ -392,7 +394,7 @@ iframe{
 
 /*Eye password:*/
 #eye_password{
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
@@ -405,15 +407,27 @@ iframe{
 
 #footer_page{
     background-color:black;
-    color: rgba(191, 191, 191, 1);
 }
 
 #footer{
     background-color:black;
-    color: rgba(191, 191, 191, 1);
 }
 
 #footer_text{
-    color: rgba(191, 191, 191, 1);
+    color: rgb(246, 158, 138);
+}
+
+#body_privacy_policy{
+    color: white;
+}
+
+#email_icon{
+    color: white;
+    background-color: black;
+}
+
+#email_icon:hover{
+    color: white;
+    background-color: rgb(246, 158, 138);
 }
 

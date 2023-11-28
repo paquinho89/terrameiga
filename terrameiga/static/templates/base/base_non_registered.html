@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Esto é a folla de estilos css para o modo dark-->
-    <link rel="stylesheet"  href='{% static "templates/base/light.css" %}' >
+    <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/dark.css" %}' >
   </head>
 
 
@@ -60,6 +60,14 @@
 <!--Footer-->
 
 </html>
+
+<!--Esto é para cambiar de dark mode a light mode. E os botóns están no template do footer-->
+<script>
+  function swapStyle(sheet){
+    document.getElementById('mystylesheet').href = '{% static "templates/base/" %}' + sheet
+    localStorage.setItem('theme', '{% static "templates/base/" %}' + sheet)
+  }
+</script>
 
 <!-- JavaScript para o toggle do ollo no contrasinal e que mostre o contrasinal -->
 <script>

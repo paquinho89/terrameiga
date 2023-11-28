@@ -50,7 +50,7 @@ urlpatterns =   i18n_patterns (
     path('password_recovery_update/<uidb64>/<token>/', password_new_password_view, name="password_recovery_update"),
     path('log_out/', log_out_view, name="log_out"),
     #AGRADECEMENTOS
-    path('people/', TemplateView.as_view(template_name = "base/people.html"), name="people"),  
+    path('people/', TemplateView.as_view(template_name = "people.html"), name="people"),  
     
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),

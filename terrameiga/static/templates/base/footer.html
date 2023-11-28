@@ -3,9 +3,6 @@
 
 {% load static %}
 
-<!-- Esto é a folla de estilos css para o modo dark-->
-<link rel="stylesheet"  href='{% static "templates/base/light.css" %}' >
-
 <!-- FOOTER -->
 <div id="footer_box">
   <footer id="footer_page" class="text-center" >
@@ -33,7 +30,11 @@
       <!-- end Social Media -->
       <div id="footer" class="text-center">
         <ul style="list-style-type: none; margin: 0; padding: 0;">
-          <li id="footer_text">{% trans "No cookies are used on the site" %}&#127850</li>
+          <li class="mt-1">
+            <button class="btn btn-light btn-sm" style="background-color: rgb(246, 158, 138);" onclick="swapStyle('light.css')">Light Mode</button>
+            <button class="btn btn-dark btn-sm" onclick="swapStyle('dark.css')">Dark Mode</button>
+          </li>
+          <li id="footer_text" class="mt-3">{% trans "No cookies are used on the site" %}&#127850</li>
           <li id="footer_text">© 2024 {% trans "All reserved rights:" %} terrameiga.bike</li>
         </ul>
       </div>

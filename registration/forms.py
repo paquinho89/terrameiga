@@ -9,27 +9,39 @@ from .models import CustomUser
 #ESto son paquetes para traducir os textos. Eiqui o que quero traducir é o placeholder do formulario
 from django.utils.translation import gettext_lazy as _
 
-class sign_in_form_1(AuthenticationForm):
+
+#FAGO ESTO PORQUE TANTO O AuthenticationFor   E O UserCreatioForm son formularios que xa está predefinidos en Django e eu quer sobrescribir as súas clases.
+
+class CustomAuthenticationFormSignIn(AuthenticationForm):
+    #Con esto o que fago e resetear a clase que ten o AuthenticationForm e asignarmee a clase de bootstrap conocida como "form-control"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Update widget attributes for Bootstrap styling form-control
+        self.fields['username'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password'].widget.attrs.update({'class': 'form-control'})
+
+class sign_in_form_1(CustomAuthenticationFormSignIn):
     class Meta:
         model = CustomUser
-        fields = ('email', 'password')
-            
-        widgets = {
-            'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
-            'password' : forms.PasswordInput(attrs = {'class':'form-control', 'placeholder':'********'}),
-        }
 
-class sign_up_form_2(UserCreationForm):
+
+class CustomAuthenticationFormSignUp(UserCreationForm):
+    #Con esto o que fago e resetear a clase que ten o AuthenticationForm e asignarmee a clase de bootstrap conocida como "form-control"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Update widget attributes for Bootstrap styling form-control
+        self.fields['username'].widget.attrs.update({'class': 'form-control', 'width': '30px', 'height': '20px'})
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password1'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password2'].widget.attrs.update({'class': 'form-control'})
+                    
+
+class sign_up_form_2(CustomAuthenticationFormSignUp):
     class Meta:
         model = CustomUser
         fields = ('username', 'email', 'password1', 'password2')
             
-        widgets = {
-            'username' : forms.TextInput(attrs = {'class': 'form-control', 'placeholder':'Brasinda'}),
-            'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
-            'password1' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
-            'password2' : forms.PasswordInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
-        }
+        
 
 class personal_data_form(forms.ModelForm):
     def __init__(self, *args, sorted_country_list=None, **kwargs):
@@ -63,17 +75,27 @@ class delete_account_form(forms.Form):
     #captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
 
-class password_reset_form(PasswordResetForm):
+class CustomAuthenticationFormPasswordReset(PasswordResetForm):
+    #Con esto o que fago e resetear a clase que ten o AuthenticationForm e asignarmee a clase de bootstrap conocida como "form-control"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Update widget attributes for Bootstrap styling form-control
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+
+class password_reset_form(CustomAuthenticationFormPasswordReset):
     class Meta:
         model = CustomUser
-        fields = ('email')
-            
-        widgets = {
-            'email' : forms.EmailInput(attrs = {'class': 'form-control', 'placeholder':'brasinda@gmail.com'}),
-        }
-        #captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
-class password_new_form(SetPasswordForm):
+
+class CustomAuthenticationFormNewPassword (SetPasswordForm):
+    #Con esto o que fago e resetear a clase que ten o AuthenticationForm e asignarmee a clase de bootstrap conocida como "form-control"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Update widget attributes for Bootstrap styling form-control
+        self.fields['new_password1'].widget.attrs.update({'class': 'form-control'})
+        self.fields['new_password2'].widget.attrs.update({'class': 'form-control'})
+
+class password_new_form(CustomAuthenticationFormNewPassword):
     class Meta:
         model = CustomUser
         fields = ('new_password1', 'new_password2')
