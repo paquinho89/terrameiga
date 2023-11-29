@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- Esto é a folla de estilos css para o modo dark-->
-    <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/dark.css" %}' >
+    <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/light.css" %}' >
   </head>
 
 
@@ -63,6 +63,16 @@
 
 <!--Esto é para cambiar de dark mode a light mode. E os botóns están no template do footer-->
 <script>
+  //O que fai esta función é gardar o theme (light ou dark) se o hai na variable storedTheme
+  function applyStoredTheme() {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      document.getElementById('mystylesheet').href = storedTheme;
+    }
+  }
+  // Se hai theme gardado, aplicámolo a páxina
+  window.onload = applyStoredTheme;
+   //Esta función permíteme cambiar de theme ao darlle aos botóns de light // dark que están no footer.
   function swapStyle(sheet){
     document.getElementById('mystylesheet').href = '{% static "templates/base/" %}' + sheet
     localStorage.setItem('theme', '{% static "templates/base/" %}' + sheet)
