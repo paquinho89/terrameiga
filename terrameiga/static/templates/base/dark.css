@@ -527,6 +527,13 @@ iframe{
     height: 100%;
     background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for transparency */
     }
+/* Make the mask responsive */
+@media (max-width: 768px) {
+.mask {
+    width: 100%;
+    height: 80%; /* Set the aspect ratio to 1:1 for smaller screens */
+}
+}
 
 #language_footer{
     color: rgb(246, 158, 138);
@@ -538,6 +545,10 @@ iframe{
 }
 
 #home_page_no_registration_card_text{
+    color: rgb(246, 158, 138);
+}
+
+#h2_home_page_no_registration{
     color: rgb(246, 158, 138);
 }
 
