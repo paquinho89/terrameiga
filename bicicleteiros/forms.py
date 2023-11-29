@@ -14,8 +14,8 @@ class chat_replies_form(forms.ModelForm):
 #O attrs é CSS style
         widgets = {
             'reply_text': forms.Textarea (attrs = {'class': 'form-control', 
-                                                   'style': "background-color: #28282B; color:white", 
-                                                   'placeholder': _('Write here your reply'),
-                                                    'rows':1}),
+                                                   'placeholder': _('Write here your comment'),
+                                                    'rows':1,
+                                                    'id': 'add_comment_box'}),
             'pk_original_comment': forms.Textarea()
         }

@@ -62,7 +62,17 @@ class personal_data_form(forms.ModelForm):
         }
         #captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
-class password_update_form(PasswordChangeForm):
+class CustomAuthenticationFormPasswordChangeForm (PasswordChangeForm):
+    #Con esto o que fago e resetear a clase que ten o AuthenticationForm e asignarmee a clase de bootstrap conocida como "form-control"
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Update widget attributes for Bootstrap styling form-control
+        self.fields['old_password'].widget.attrs.update({'class': 'form-control'})
+        self.fields['new_password1'].widget.attrs.update({'class': 'form-control'})
+        self.fields['new_password2'].widget.attrs.update({'class': 'form-control'})
+
+
+class password_update_form(CustomAuthenticationFormPasswordChangeForm):
     class Meta:
         model = CustomUser
         #captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())

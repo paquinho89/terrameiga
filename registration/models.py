@@ -20,7 +20,6 @@ language_choices = (
 class CustomUser(AbstractUser):
     username = models.CharField(blank=False, null=False, max_length=75, unique=False)
     email = models.EmailField(unique=True)
-    #country = models.CharField(max_length=33, choices= country_list_values, blank=True, null=True)
     country = models.CharField(max_length=33, blank=True, null=True)
     language = models.CharField(max_length=33, blank=True, null=True, choices=language_choices)
     #theme = models.CharField (max_length=33, blank=True, null=True)

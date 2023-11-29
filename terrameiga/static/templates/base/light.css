@@ -75,14 +75,17 @@
     i{
         color: white;
         }
-    h4{
-        color: white;
-        }
+    
     .card{
-        background-color: #28231D;
+        background-color: rgb(249,249,249);
         }
+
+    #home_page_card{
+        background-color: rgb(248,248,248);
+    }
+
     hr{
-        color: white;
+        color: black;
         }
     #button_area_persoal {
         color: rgb(83, 158, 138);
@@ -259,26 +262,66 @@
         list-style-type: none;
     }
     #data_home_page{
-        color: white;
+        color: black;
     }
     a{
         color: black;
     }
+    h3{
+        color: black;
+    }
     h4{
+        color: black;
+    }
+    #h4_home_page{
+        color: rgb(54, 69, 79);
+    }
+    #h4_home_page_no_registration{
         color: white;
     }
-    h5{
+    #h5_home_page{
         color: rgb(54, 69, 79);
+    }
+    h5{
+        color: white;
         }
     h1{
-        color: white;
+        color: black;
     }
     
     hr{
-        color: white;
+        color: black;
     }
-    .card{
-        background-color: #28282B;
+
+    #add_reply_button {
+        color: rgb(246, 158, 138);
+        background-color: black;
+    }
+
+    #add_reply_button:hover {
+        color: white;
+        background-color: rgb(246, 158, 138);
+    }
+
+    #add_comment_box{
+        background-color: rgb(249,249,249);
+    }
+
+    .close {
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 40px; /* Adjust the font size as needed */
+        color: black
+      }
+    
+    #clock_comment {
+        color: rgb(54, 69, 79)
     }
     
     #button_area_persoal {
@@ -313,12 +356,15 @@
     .navbar-toggler{
         border: 1px solid rgb(246, 158, 138);
     }
+    .navbar{
+        background-color: black;
+    }
     /*Con esto oculto a barra vertical do container do chat*/
     #chat_box{
         overflow-y: hidden;
     }
     #personal_data_section{
-        background-color: #28282B;
+        background-color: rgb(248,248,248);
         color: white;
     }
     #access_data_section{
@@ -326,12 +372,12 @@
         color: white;
     }
     #delete_account_section{
-        background-color: #28282B;
+        background-color: rgb(248,248,248);
         color: white;
     }
     #navigation_personal_area_section{
-        background-color: #28282B;
-        color: white;
+        background-color: rgb(248,248,248);
+        color: black;
     }
     /*Esto é para darlle formato ao botón de pechar a ventana emerxente do modal de eliminar a conta*/
     .modal-header .close {
@@ -348,10 +394,11 @@
         }
     /*Estes botós son os botós para actualizar a información persoal*/
     #update_personal_data_button {
-        color: white;
-        background-color: rgb(83, 158, 138);
+        color: rgb(246, 158, 138);
+        background-color: black;
         }
     #update_personal_data_button:hover {
+        color: white;
         background-color: rgb(246, 158, 138);
         }
     /*Estes botós son os botós para actualizar a password*/
@@ -364,11 +411,11 @@
         }
     /*Formatting the tab buttons of the personal area*/
     #personal_area_tab.active {
-        color: white;
-        background-color: rgb(246, 158, 138);
+        color: rgb(246, 158, 138);
+        background-color: black;
     }
     #personal_area_tab {
-        color: rgb(246, 158, 138);
+        color: black;
     }
     /*Esto é para os tamaños das fotos no html de bicicleteiros_fotos.html*/
     #picture {
@@ -383,7 +430,7 @@
             object-fit: cover; /*Con esto a imaxe queda mellor e non se estira nin se estreita. Queda do se tamaño*/
     }   
     h2 { 
-        color: rgba(191, 191, 191, 1); 
+        color: black; 
     }
     /*Esto é para darlle tamaño ao vídeos*/
     iframe{
@@ -432,4 +479,81 @@
         color: white;
         background-color: rgb(246, 158, 138);
     }
+
+    #personal_area{
+        background-color: rgb(248,248,248);
+    }
+
+    /*--------------HOME_PAGE_NO_REGISTRATION-------------------------------*/
+
+    #button_sign_in_carossell:hover {
+        color: white;
+        background-color: rgb(83, 158, 138);  
+        }
+    
+    #button_sign_up_carossell:hover {
+        color: white;
+        background-color: rgb(246, 158, 138);
+        }
+    
+    .carousel {
+        object-fit: cover;
+        object-position: center;
+        height: 35vh;
+        width: 100vw;
+        }
+    /* Con esto axustamos a altura dos obxetos do caroussel cando a pantalla é grande */
+    @media screen and (min-width: 768px) {
+    .carousel {
+        height: 50vh; 
+    }
+    }
+    .carousel-inner {
+        object-fit: cover;
+        object-position: center;
+        height: 50vh;
+        width: 100vw;
+        }
+    .carousel-item {
+        object-fit: cover;
+        object-position: center;
+        height: 50vh;
+        width: 100vw;
+        }
+    .carousel-caption {
+        object-fit: cover;
+        object-position: center;
+        height: 47vh;
+        }
+    /* Con esto axústase o height do texto cando a pantalla é grande  */
+    @media screen and (min-width: 768px) {
+    .carousel-caption {
+        height: 30vh; /* Adjust the height as needed */
+    }
+    }
+    
+    .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for transparency */
+        }
+
+    #language_footer{
+        color: rgb(246, 158, 138);;
+        text-decoration: None;
+    }
+
+    #home_page_no_registration_card{
+        background-color: black;
+    }
+    
+    #home_page_no_registration_card_text{
+        color: rgb(246, 158, 138);
+    }
+
+
+    
   

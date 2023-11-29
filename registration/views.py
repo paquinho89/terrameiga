@@ -169,30 +169,6 @@ def password_update_view(request):
   return render (request, 'profile_account/password_data.html', context)
 
 
-def delete_account_view (request):
-  delete_account_form_variable = delete_account_form(data=request.POST)
-  if request.method == 'POST':
-    if delete_account_form_variable.is_valid():
-      #Getting the text which have typed on the form.
-      text_delete_form = delete_account_form_variable.cleaned_data.get('text_to_delete')
-      #Getting the user which is logged
-      current_user = CustomUser.objects.get(id=request.user.id)
-      if str(text_delete_form) == str("terrameiga"):
-        current_user.delete()
-        messages.add_message(request, messages.SUCCESS, _('Your account has been deleted. We hope see you back soon!'))
-        return redirect('home_page_no_registered')
-      else:
-        #Esto é para que se vacíe o formulario por se hai un erro
-        delete_account_form_variable = delete_account_form()
-        messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
-    else:
-      messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
-  context = {
-    'delete_form' : delete_account_form_variable
-  }
-  return render (request, 'profile_account/delete_account.html', context)
-
-
 def password_reset_view(request):
   password_recovery_form_variable = password_reset_form (data=request.POST)
   if request.method == "POST":
@@ -224,6 +200,31 @@ def password_reset_view(request):
     'email_recovery' : password_recovery_form_variable
   }
   return render (request, 'password_reset.html', context)
+
+
+def delete_account_view (request):
+  delete_account_form_variable = delete_account_form(data=request.POST)
+  if request.method == 'POST':
+    if delete_account_form_variable.is_valid():
+      #Getting the text which have typed on the form.
+      text_delete_form = delete_account_form_variable.cleaned_data.get('text_to_delete')
+      #Getting the user which is logged
+      current_user = CustomUser.objects.get(id=request.user.id)
+      if str(text_delete_form) == str("terrameiga"):
+        current_user.delete()
+        messages.add_message(request, messages.SUCCESS, _('Your account has been deleted. We hope see you back soon!'))
+        return redirect('home_page_no_registered')
+      else:
+        #Esto é para que se vacíe o formulario por se hai un erro
+        delete_account_form_variable = delete_account_form()
+        messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
+    else:
+      messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
+  context = {
+    'delete_form' : delete_account_form_variable
+  }
+  return render (request, 'profile_account/delete_account.html', context)
+
 
 #This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
 def password_new_password_view(request, uidb64, token):

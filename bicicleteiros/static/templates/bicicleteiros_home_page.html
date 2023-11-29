@@ -9,44 +9,12 @@
 <!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
 {% load humanize %}
 
-
-<style>
-  h4, h5{
-    color: rgb(255, 255, 255, 0.8);
-  }
-  p{
-    color: rgb(255, 255, 255, 0.8);
-  }
-  #add_reply_button {
-    color: white;
-    background-color: rgb(83, 158, 138);
-  }
-  #add_reply_button:hover {
-    background-color: rgb(246, 158, 138);
-  }
-  .close {
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      padding: 10px;
-      background-color: transparent;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 40px; /* Adjust the font size as needed */
-      color: white
-    }
-  #data_home_page{
-    color: rgb(255, 255, 255, 0.8);
-  }
-</style>
-
 <body>
 <!-- Page content-->
 <div class="row">
-  <div class="text-left card col-lg-3">
+  <div id="home_page_card" class="text-left col-lg-3">
     <ul>
-    <h4 class="mt-2">
+    <h4 id="h4_home_page" class="mt-2">
       <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
       {% trans "WEEK" %} {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}<img style="float: right;" width="75" height="37" src="{% static flag_url_html %}" alt="First slide">
     </h4>
@@ -63,9 +31,8 @@
         <strong>({{ visa_price_html }} Euros)</strong>
         {% endif %}
       </li>
-      
     <hr>
-    <h5>{% trans "Country Information:" %}</h5>
+    <h5 id="h5_home_page">{% trans "Country Information:" %}</h5>
     <hr>
       <!--O intcomm é para que aparezca o número cos puntos e xa máis visible. Para eso tiveches que cargar o {% load humanize %} ao principio do html-->
       <li id="data_home_page" class="mt-3">{% trans "Surface:" %} <strong>{{ surface_html|intcomma:False }} km2 </strong><br> 
@@ -79,7 +46,7 @@
       <li id="data_home_page" class="mt-2">{% trans "Currency:" %} <strong>{{ currency_html }}</strong> </li>
       <li id="data_home_page" class="mt-2">{% trans "Local Time:" %} <strong><label id="current-time"></label></strong> </li>
       <li id="data_home_page" class="mt-2">{% trans "Interesting fact:" %}</li>
-      <p style="font-style: italic;">{{interesting_fact_country_html}}</p>
+      <p id="data_home_page" style="font-style: italic;">{{interesting_fact_country_html}}</p>
       <li id="data_home_page" class="mt-2">{% trans "The most listen song on Spotify:" %}</li>
     </ul>
     <div>
@@ -120,7 +87,7 @@
                   {{ chat_comments.date_added }}
                 </p>
               </div>
-              <div class="card-body">
+              <div id="cronica_viaxe" class="card-body">
                 <p class="mb-0">
                   {% if 'en' in current_language_browser_html %}
                     <!-- Eiqui tes que marcar o contido como seguro (safe) para que o rich text do artigos_content se che mostre na páxina-->
@@ -151,28 +118,27 @@
                     <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
                     <!--{{ form_chat_reply_html.pk_original_comment }}-->
                     {{ form_chat_reply_html.reply_text }}
+                    
                     <button id="add_reply_button" type="submit" class="btn mt-3" onclick="setCommentPK({{chat_comments.pk}}); window.location.href='#commentsSection_{{ chat_comments.pk }}';">{% trans "Add Comment" %}</button>
                     <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="mt-4">
+                    <h5 id="h5_home_page" class="mt-4">
                       {% trans "Comments" %} ({{chat_comments.number_of_replies}}):
                     </h5>
                     {% for reply in replies_comments_all_html %}
-                    <div class="card" style="background-color:rgb(51, 51, 51); border: 1px;">
+                    <div class="card" border: 1px;">
                       <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
                       {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
-                      <div class="card-header d-flex justify-content-between p-2" style="background-color: #28282B;">
-                      </div>
                       <div class="card-header d-flex justify-content-between p-2">
                         <p class="text-muted small mb-0">
                           {{ reply.username_reply }}
                         </p>
-                        <p class="text-muted small mb-0"><i class="far fa-clock"></i> 
+                        <p class="text-muted small mb-0"><i id="clock_comment" class="far fa-clock"></i> 
                             {{ reply.date_added }}
                         </p>
                       </div>
-                      <div class="card-body">
+                      <div id="cronica_viaxe" class="card-body">
                         <p class="mb-0">
                           {{ reply.reply_text }}
                         </p>
