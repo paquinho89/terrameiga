@@ -8,44 +8,44 @@
 <body>
 
 <h2 class="py-4 text-center">
-  Journey Data
+  Datos da viaxe
 </h2>
 
 <!--CHART 1-->
-  <div class="row mt-3">
-  <div class="col-lg-12">
+  <div class="row mt-1">
+  <div class="col-lg-12 card">
     <div class="container-fluid mb-1" style="width: 100%; height: 50vh">
       <canvas id="money_per_week"  class="chart-container"></canvas>
     </div>
   </div>
 <!--CHART 2-->
-<div class="row mt-5">
-  <div class="col-lg-12">
+<div class="row mt-2">
+  <div class="col-lg-12 card">
     <div class="container-fluid" style="width: 100%; height: 50vh">
       <canvas id="money_per_country"  class="chart-container"></canvas>
     </div>
   </div>
 </div>
 <!--CHART 3-->
-<div class="row mt-5">
+<div class="row mt-2">
   <div class="col-lg-3"></div>
-  <div class="col-lg-6">
+  <div class="col-lg-6 card">
     <div class="container-fluid" style="width: 100%; height: 50vh">
       <canvas id="spent_type"  class="chart-container"></canvas>
     </div>
   </div>
 </div>
 <!--CHART 4-->
-<div class="row mt-5">
-  <div class="col-lg-12">
+<div class="row mt-2">
+  <div class="col-lg-12 card">
     <div class="container-fluid" style="width: 100%; height: 50vh">
       <canvas id="km_altitude_per_week"  class="chart-container"></canvas>
     </div>
   </div>
 </div>
   <!--CHART 5-->
-<div class="row mt-5">
-  <div class="col-lg-12">
+<div class="row mt-2">
+  <div class="col-lg-12 card mb-2">
     <div class="container-fluid" style="width: 100%; height: 50vh">
       <canvas id="km_altitude_per_country"  class="chart-container"></canvas>
     </div>
@@ -73,7 +73,7 @@
                 '{{money.expense_euros__sum}}', 
               {% endfor %}],
         borderWidth: 1,
-        backgroundColor: ['#dc3545']
+        backgroundColor: ['rgba(83, 158, 138, 1)']
       }]
     },
     options: {
@@ -82,7 +82,7 @@
       plugins: {
               title: {
                   display: true,
-                  text: "Expenses per week",
+                  text: "Gastos por semana",
                   color: 'rgba(191, 191, 191, 1)',
                   position: 'top',
                   align: 'center',
@@ -110,15 +110,14 @@
           },
           title:{
             display: true,
-            text: 'Week',
+            text: 'Semana',
             color: 'rgba(191, 191, 191)'
           } 
         },
         y: {
           beginAtZero: true,
           grid: {
-            display: true,
-            color: 'rgba(191, 191, 191)'
+            color: 'rgba(65, 56, 57)'
           },
           ticks: {
             color: 'rgba(191, 191, 191)'
@@ -134,6 +133,16 @@
   };
   const myChart = new Chart(var_money_per_day, chartConfig);
 
+  
+  const show_last_results_button = document.getElementById('show_last_results');
+  show_last_results_button.addEventListener('click', function() {
+      const last_labels = chartConfig.data.labels.slice(-5);
+      const last_data = chartConfig.data.datasets[0].data.slice(-5);
+
+      myChart.data.labels = last_labels;
+      myChart.data.datasets[0].data = last_data;
+      myChart.update();
+  });
 </script>
 
 <!--Script CHART 2-->
@@ -148,7 +157,7 @@
         data: [{% for money in graph_money_per_country_html %} '{{money.expense_euros__sum}}', {% endfor %}],
         borderWidth: 1,
         backgroundColor: [
-                          '#dc3545'
+                          'rgba(83, 158, 138, 1)'
                           ]
       }]
     },
@@ -158,7 +167,7 @@
       plugins: {
                title: {
                   display: true,
-                  text: 'Expenses per Country',
+                  text: 'Gastos por país',
                   color: 'rgba(191, 191, 191, 1)',
                   position: 'top',
                   align: 'center',
@@ -180,7 +189,7 @@
           beginAtZero: true,
           grid: {
             display: true,
-            color: 'rgba(191, 191, 191)'
+            color: 'rgba(65, 56, 57)'
           },
           ticks: {
             color: 'rgba(191, 191, 191)'
@@ -213,12 +222,13 @@
         data: [{% for money in graph_money_per_type_html %} '{{money.expense_euros__sum}}', {% endfor %}],
         
         backgroundColor: [
-                        '#dc3545', 
-                        'rgb(246, 158, 138)',
-                        'rgb(83, 158, 138)',
-                        '#20c997',
-                        '#6610f2',
-                        '#d63384'
+                        'rgba(255, 99, 132, 0.6)', 
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)',
+                        'rgba(12, 4, 4, 0.8)'
                     ]
       }]
     },
@@ -229,7 +239,7 @@
                 title: {
                     display: true,
                     color: 'rgba(191, 191, 191, 1)',
-                    text: 'Expenses by type',
+                    text: 'Tipo de Gasto',
                     position: 'top',
                     align: 'center',
                     font: {
@@ -264,20 +274,20 @@
       labels: [{% for week in graph_km_altitud_per_week_html %} '{{week.week}}', {% endfor %}],
       datasets: [
         {
-          label: 'Meters of climbing',
-          data: [{% for altitude in graph_km_altitud_per_week_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
-          type: 'line',
-          yAxisID: 'y1',
-          backgroundColor: 'rgb(83, 158, 138)',
-          borderColor: 'rgb(83, 158, 138)'
-        },
-        {
-          label: 'Km per week',
+          label: 'Km por semana',
           data: [{% for week in graph_km_altitud_per_week_html %} '{{week.km_day__sum}}', {% endfor %}],
           type: 'bar',
           yAxisID: 'y',
-          backgroundColor: 'rgb(246, 158, 138)'
+          backgroundColor: 'rgba(185, 74, 243, 0.6)'
         },
+        {
+          label: 'Metros de ascenso',
+          data: [{% for altitude in graph_km_altitud_per_week_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
+          type: 'line',
+          yAxisID: 'y1',
+          backgroundColor: 'rgba(251, 147, 69, 1)',
+          borderColor: 'rgba(251, 147, 69, 1)'
+        }
       ]
     },
     options: {
@@ -287,7 +297,7 @@
                title: {
                   display: true,
                   color: 'rgba(191, 191, 191, 1)',
-                  text: 'Km and Climbing per week',
+                  text: 'Km e ascenso por semana',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -310,7 +320,7 @@
           },
           title:{
             display: true,
-            text: 'Week',
+            text: 'Semana',
             color: 'rgba(191, 191, 191)'
           } 
         },
@@ -321,7 +331,7 @@
                 },
             grid: {
                 display: true,
-                color: 'rgba(191, 191, 191)'
+                color: 'rgba(65, 56, 57)'
               },
             position: 'left',
             beginAtZero: true,
@@ -337,14 +347,13 @@
                 color: 'rgba(191, 191, 191)'
               },
             grid: {
-              display: false,
-              color: 'rgba(191, 191, 191)'
+              display: false
               },
             position: 'right',
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Climbing meters',
+              text: 'Metros de ascenso',
               color: 'rgba(191, 191, 191)'
               }
           }
@@ -361,20 +370,20 @@
       labels: [{% for country in graph_km_altitud_per_country_html %} '{{country.country_name}}', {% endfor %}],
       datasets: [
         {
-          label: 'Meters of climbing',
-          data: [{% for altitude in graph_km_altitud_per_country_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
-          type: 'line',
-          yAxisID: 'y1',
-          backgroundColor: 'rgb(83, 158, 138)',
-          borderColor: 'rgb(83, 158, 138)',
-          
-        },
-        {
-          label: 'Km per day',
+          label: 'Km por país',
           data: [{% for km in graph_km_altitud_per_country_html %} '{{km.km_day__sum}}', {% endfor %}],
           type: 'bar',
           yAxisID: 'y',
-          backgroundColor: 'rgb(246, 158, 138)',
+          backgroundColor: 'rgba(185, 74, 243, 0.6)',
+          borderWidth: 1
+        },
+        {
+          label: 'Metros de ascenso',
+          data: [{% for altitude in graph_km_altitud_per_country_html %} '{{altitude.altitude_day__sum}}', {% endfor %}],
+          type: 'line',
+          yAxisID: 'y1',
+          backgroundColor: 'rgba(251, 147, 69, 1)',
+          borderColor: 'rgba(251, 147, 69, 1)',
           borderWidth: 1
         }
       ]
@@ -386,7 +395,7 @@
                title: {
                   display: true,
                   color: 'rgba(191, 191, 191, 1)',
-                  text: 'Km and Climbing per country',
+                  text: 'Km e ascenso por país',
                   position: 'top',
                   align: 'center',
                   font: {
@@ -428,13 +437,13 @@
               },
             grid: {
                 display: true,
-                color: 'rgba(191, 191, 191)'
+                color: 'rgba(65, 56, 57)'
               },
             position: 'right',
             beginAtZero: true,
             title: {
               display: true,
-              text: 'Climbing meters',
+              text: 'Metros de ascenso',
               color: 'rgba(191, 191, 191)'
               }
           }
