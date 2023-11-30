@@ -74,7 +74,7 @@
                               {% include 'privacy_policy.html' %}
                             </div>
                             <div class="modal-footer">
-                              <button id="privacy_policy_close_button" type="button" class="btn btn-secondary" data-dismiss="modal"><strong>{% trans "Close" %}</strong></button>
+                              <button id="privacy_policy_close_button" type="button" class="btn" data-dismiss="modal"><strong>{% trans "Close" %}</strong></button>
                             </div>
                           </div>
                         </div>
@@ -93,8 +93,8 @@
                       </label>
                     </div>
                 </div>
-
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center justify-content-center order-1 order-lg-2 mt-4">
+                <!--C d-none e o d-md-flex o que fago e non mostrar a imaxe cando a pantalla é pequena. Esto son propiedades do Bootstrap-->
+                <div class="col-md-10 col-lg-6 col-xl-7 d-none d-md-flex align-items-center justify-content-center order-1 order-lg-2 mt-4">
                   <img src='{% static "imaxes/sign_up.jpg" %}'
                     class="img-fluid" alt="Sample image">
                 </div>

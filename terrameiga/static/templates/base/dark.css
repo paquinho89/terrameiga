@@ -194,11 +194,11 @@ label {
 }
 #privacy_policy_close_button{
     color: white;
-    background-color: rgb(83, 158, 138);
+    background-color: rgb(246, 158, 138);
 }
 #privacy_policy_close_button:hover{
     color: white;
-    background-color: rgb(246, 158, 138);
+    background-color: rgb(83, 158, 138);
 }
 
 /*Esto é para darlle formato aos message.ERRORS porque por defecto non traen formato*/
