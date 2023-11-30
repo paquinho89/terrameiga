@@ -19,3 +19,15 @@ class chat_replies_form(forms.ModelForm):
                                                     'id': 'add_comment_box'}),
             'pk_original_comment': forms.Textarea()
         }
+
+
+
+
+class language_home_page_no_registration_form (forms.Form):
+    LANGUAGE_CHOICES = [
+        ('es', 'Spanish'),
+        ('en', 'English'),
+        ('gl', 'Galician'),
+    ]
+
+    language = forms.ChoiceField(choices=LANGUAGE_CHOICES, widget=forms.Select(attrs={'id':'language_form_home_page_no_registration'}))

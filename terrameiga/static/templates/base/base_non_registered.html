@@ -10,7 +10,7 @@
   <!--Esto é para que me imprima solo a última mensaxe das alertas que é a que se corresponde coa mensaxe de sucess-->
   <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
     {% if forloop.last %}
-    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
+    <div class="alert alert-{{ m.tags }} m-2 mt-4" id="msg" role="alert">
       <!--Esto é para que mostre un botón que permita pechar a mensaxe que se mostra-->
 		  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
       <strong>{{ m }}</strong>

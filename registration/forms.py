@@ -120,6 +120,10 @@ class password_new_form(CustomAuthenticationFormNewPassword):
 
 
 
+
+
+
+
         
 
 

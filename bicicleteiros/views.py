@@ -4,7 +4,7 @@ from registration.models import CustomUser
 from datetime import datetime, date
 from django.db.models import Sum, Count
 from django.http import JsonResponse
-from bicicleteiros.forms import chat_replies_form
+from bicicleteiros.forms import chat_replies_form, language_home_page_no_registration_form
 from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
@@ -13,6 +13,7 @@ import re
 from django.utils.translation import gettext_lazy as _
 #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware (é un paquete que está no settings)
 from django.utils.translation import get_language
+from django.utils.translation import activate
 
 # Create your views here.
 def country_data_no_registered_view (request):
@@ -32,6 +33,13 @@ def country_data_no_registered_view (request):
     flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
     total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
     total_money = total_money_dict['expense_euros__sum']
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
     
     context = {
         'journey_day_html' : current_journey_day ,
@@ -41,6 +49,7 @@ def country_data_no_registered_view (request):
         'total_expenses_html' :total_money,
         'current_country_html' : current_country,
         'flag_url_html' : flag_url,
+        'form_language_html' : form_language,
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
 

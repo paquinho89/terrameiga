@@ -512,32 +512,11 @@ iframe{
     object-position: center;
     height: 47vh;
     }
-/* Con esto axústase o height do texto cando a pantalla é grande  */
+/* Con esto axústase as marxes do texto cando a pantalla é grande. Cando a pantalla é grande o marxe por cima e máis e cando a pantalla é pequena a marxe por cima é menor  */
 @media screen and (min-width: 768px) {
 .carousel-caption {
     height: 30vh; /* Adjust the height as needed */
 }
-}
-
-.mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for transparency */
-    }
-/* Make the mask responsive */
-@media (max-width: 768px) {
-.mask {
-    width: 100%;
-    height: 80%; /* Set the aspect ratio to 1:1 for smaller screens */
-}
-}
-
-#language_footer{
-    color: rgb(246, 158, 138);
-    text-decoration: None;
 }
 
 #home_page_no_registration_card{
@@ -552,4 +531,14 @@ iframe{
     color: rgb(246, 158, 138);
 }
 
+/*---Language form of the home_page_no_registration---------*/
+#language_form_home_page_no_registration{
+    color: rgb(246, 158, 138);
+    background-color: transparent;
+    border: none;
+}
+
+#language_form_home_page_no_registration option {
+    color: black;
+}
 
