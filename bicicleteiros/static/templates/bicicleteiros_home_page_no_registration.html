@@ -20,6 +20,17 @@
     <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/light.css" %}' >
   </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLP81M7JQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3YLP81M7JQ');
+</script>
+
+
 <!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
 <div id="content" class="fixed-top">
   {% if messages %}

@@ -339,11 +339,11 @@ hr{
 /*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
 no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")!important;
 }
 /*E esto é para cambiar o borde do botón. Neste caso, como non é unha imaxe svg, incido sobre o elemento do css*/
 .navbar-toggler{
-    border: 1px solid rgb(246, 158, 138);
+    border: 1px solid rgb(246, 158, 138) !important;
 }
 /*Con esto oculto a barra vertical do container do chat*/
 #chat_box{
