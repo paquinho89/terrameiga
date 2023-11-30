@@ -535,21 +535,15 @@
     }
     }
     
-    .mask {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for transparency */
-        }
-    /* Make the mask responsive */
-    @media (max-width: 768px) {
-    .mask {
-        width: 100%;
-        height: 100%; /* Set the aspect ratio to 1:1 for smaller screens */
+    /* Customize carousel indicators */
+    #carouselExampleIndicators .carousel-indicators li:not(.active) {
+    background-color: rgb(246, 158, 138);
     }
-}
+
+    /* Customize active carousel indicators */
+    #carouselExampleIndicators .carousel-indicators .active {
+        background-color: rgb(246, 158, 138);
+    }
 
 
     #home_page_no_registration_card{
