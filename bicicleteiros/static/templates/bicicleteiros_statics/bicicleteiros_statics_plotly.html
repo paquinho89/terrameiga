@@ -1,0 +1,11 @@
+{% extends 'base/base_registered.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %} 
+<div id="background_graphs">
+    {{ bar_chart_html|safe }}
+</div>
+{% endblock content %}
+
+  

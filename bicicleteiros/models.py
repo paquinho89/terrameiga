@@ -36,6 +36,14 @@ expense_type_choices = (
     ( 'other',           'other')
 )
 
+#---------------------------
+continent_choices = (
+    ( 'Europe', 'Europe'),
+    ( 'Asia', 'Asia'),
+    ( 'America', 'America'),
+    ( 'Africa', 'Africa')
+)
+
 #Modelo para os comentarios:
 class chat_comments_model(models.Model):
     comentario_en = RichTextField()
@@ -80,6 +88,7 @@ class currency(models.Model):
     
 class country_information_model(models.Model):
     country = models.CharField(max_length=33, choices= country_list_values, blank=True, null=True, unique=True)
+    continent = models.CharField(max_length=33, choices= continent_choices, blank=True, null=True, default="Europe")
     country_number = models.IntegerField(blank=False, null=False)
     capital_town = models.CharField(max_length=33, blank=True, null=True)
     surface = models.IntegerField(blank=True, null=True)
@@ -114,6 +123,7 @@ class money_model(models.Model):
     journey_day = models.IntegerField(default=int(day_in_the_journey), null=True)
     week = models.IntegerField(default=int(week_day), null=True) 
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
+    continent = models.CharField(max_length=33, choices= continent_choices, blank=True, null=True, verbose_name="continent_autofilled")
     country_number = models.IntegerField(blank=True, null=True, verbose_name="country_number_autofilled")
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
     # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
@@ -128,6 +138,7 @@ class money_model(models.Model):
         self.expense_euros = sum([self.expense*self.country.currency.currency_change_euro])
         self.country_name = str(self.country)
         self.country_number = str(self.country.country_number)
+        self.continent = str(self.country.continent)
         return super().save()
 
     def __str__(self):

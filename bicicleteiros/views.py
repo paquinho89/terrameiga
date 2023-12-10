@@ -242,3 +242,62 @@ def estadistica_data_view (request):
     else:
         return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
 
+
+from plotly.offline import plot
+import plotly.express as px
+
+def estadistica_plotly_view(request):
+    # Define a dictionary mapping continents to desired colors
+    # continent_color_map = {
+    #     'Asia': 'rgb(83, 158, 138)',   # Replace with the desired color for Asia
+    #     'Europe': '#84b6f4', # Replace with the desired color for Europe
+    #     'America': 'rgb(246, 158, 138)', # Replace with the desired color for Europe
+    #     'Africa': 'rgb(83, 158, 138)', # Replace with the desired color for Africa
+    # }
+    qs = money_model.objects.values('week', 'continent').annotate(Sum('expense_euros'))
+
+    fig = px.bar(qs, 
+                 y='expense_euros__sum', 
+                 x='week', 
+                 color='continent',
+                 #Esto é para que aparece o dato na barra
+                 #text_auto='.2s',
+                 #color_discrete_map=continent_color_map,
+                 title="Expenses per Week",
+                 labels={'continent': 'Continent'})
+
+    # Force x-axis to be categorical
+    fig.update_xaxes(type='category')
+    #Esto é para cambiar o nome do eixo y
+    fig.update_yaxes(title_text='Euros', gridcolor='#808080', zerolinecolor='#808080')
+    # Change the hover label
+    fig.update_traces(hovertemplate='Week: %{x}<br>Expense: %{y:.} Euros')
+    # Change the title font size
+    fig.update_layout(title=dict(font=dict(size=20, color="#808080")))
+    # Change the background color
+    fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
+    # Adjust the position of the legend
+    fig.update_layout(
+        legend=dict(
+            x=0.35, 
+            y=1.15,
+            orientation='h',
+            title = ''
+        )
+    )
+    #Engadir ou eliminar o espazo entre as barras.
+    fig.update_layout(bargap=0, bargroupgap=0, font=dict(color="#808080"))
+    
+    # Use plotly.offline.plot with output_type='div' to get the HTML div
+    bar_chart = plot(fig, output_type='div')
+
+    context = {
+        'bar_chart_html': bar_chart
+    }
+
+    return render(request, 'bicicleteiros_statics/bicicleteiros_statics_plotly.html', context)
+
+
+
+
+
