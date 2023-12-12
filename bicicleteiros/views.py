@@ -15,11 +15,15 @@ from django.utils.translation import gettext_lazy as _
 from django.utils.translation import get_language
 from django.utils.translation import activate
 
+from plotly.offline import plot
+import plotly.express as px
+import plotly.graph_objects as go
+
 # Create your views here.
 def country_data_no_registered_view (request):
     all_entry_days= money_model.objects.all()
     #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
-    all_entry_days_last=all_entry_days.last()
+    all_entry_days_last=all_entry_days.first()
     #Da última entrada collemos do día collemos o día da viaxe na que estamos
     current_journey_day = all_entry_days_last.journey_day
     #Da última entrada collemos a semana
@@ -60,7 +64,7 @@ def country_data_view (request):
     if request.user.is_authenticated:
         all_entry_days= money_model.objects.all()
         #Collemos a última entrada do día para que así podas incluir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
-        all_entry_days_last=all_entry_days.last()
+        all_entry_days_last=all_entry_days.first()
         #Da última entrada collemos do día collemos o día da viaxe na que estamos
         current_journey_day = all_entry_days_last.journey_day
         #Da última entrada collemos a semana
@@ -80,6 +84,8 @@ def country_data_view (request):
         time_zone_value = country_information_model.objects.get(country = current_country).time_zone
         total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
         total_km = total_km_dictionary['km_day__sum']
+        total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
+        total_money = total_money_dict['expense_euros__sum']
         flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
         if get_language() == "en":
             interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
@@ -145,6 +151,7 @@ def country_data_view (request):
             'current_week_html' : current_week,
             'country_number_html' : country_number_country,
             'total_km_html' : total_km,
+            'total_money_html' : total_money,
             'current_country_html' : current_country,
             'visa_required_html' : visa_required,
             'visa_price_html' : visa_price,
@@ -243,56 +250,255 @@ def estadistica_data_view (request):
         return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
 
 
-from plotly.offline import plot
-import plotly.express as px
 
 def estadistica_plotly_view(request):
-    # Define a dictionary mapping continents to desired colors
-    # continent_color_map = {
-    #     'Asia': 'rgb(83, 158, 138)',   # Replace with the desired color for Asia
-    #     'Europe': '#84b6f4', # Replace with the desired color for Europe
-    #     'America': 'rgb(246, 158, 138)', # Replace with the desired color for Europe
-    #     'Africa': 'rgb(83, 158, 138)', # Replace with the desired color for Africa
-    # }
-    qs = money_model.objects.values('week', 'continent').annotate(Sum('expense_euros'))
+    #--------------Getting the global metrics ------------------------------------
+    total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
+    total_km = total_km_dictionary['km_day__sum']
+    total_climbing_dictionary = km_altitude_model.objects.aggregate(Sum('altitude_day'))
+    total_climbing = total_climbing_dictionary['altitude_day__sum']
+    all_entry_days_last= money_model.objects.all().first()
+    current_country = str(all_entry_days_last.country)
+    country_number_country = country_information_model.objects.get(country= current_country).country_number
+    current_journey_day = all_entry_days_last.journey_day
+    resting_days= km_altitude_model.objects.filter(day_type="resting").count()
+    cycling_days= km_altitude_model.objects.filter(day_type="cycling").count()
+    night_outside= km_altitude_model.objects.filter(night_type="outside").count()
+    night_inside= km_altitude_model.objects.filter(night_type="accommodation").count()
+    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
+    total_money = total_money_dict['expense_euros__sum']
 
-    fig = px.bar(qs, 
+    #--------------END Getting the global metrics ------------------------------------
+    continent_color_map = {
+        'Asia': '#EF553B',   
+        'Europe': '#636EFA', 
+        'America': '#00CC96',
+        'Africa': '#2CA02C', 
+    }
+    #-----------------GRAPH KIND OF EXPENSES - PIE CHART---------------------------------
+    qs_expenses_type = money_model.objects.values('expense_type').annotate(Sum('expense_euros'))
+
+    fig_expenses_type = px.pie(qs_expenses_type,
+                values='expense_euros__sum',  
+                names='expense_type',
+                title=str(_("Where does the money go?")),
+                hover_data=['expense_type']
+                )
+    
+    fig_expenses_type.update_traces(
+        textposition='inside', 
+        textinfo='percent+label+value',
+        texttemplate='%{label}<br>%{value:.0f} Euros<br>%{percent:.0%}',
+        hovertemplate='%{label}: %{value:.0f} Euros',
+        )
+
+    # Change the title font size
+    fig_expenses_type.update_layout(
+        title=dict(font=dict(size=20, color="#808080")),
+        title_x=0.5,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        font=dict(color="#808080"),
+        showlegend=False,
+        height=500  # Adjust the height as needed
+        )
+    # Use plotly.offline.plot with output_type='div' to get the HTML div
+    pie_chart_expenses_type = plot(fig_expenses_type, output_type='div')
+    #-----------------END GRAPH KIND OF EXPENSES - PIE CHART---------------------------------
+
+    #-----------------GRAPGH EXPENSES PER WEEK---------------------------------
+    qs_expenses_week = money_model.objects.values('week', 'continent').annotate(Sum('expense_euros'))
+
+    fig_expenses_week = px.bar(qs_expenses_week, 
                  y='expense_euros__sum', 
                  x='week', 
                  color='continent',
-                 #Esto é para que aparece o dato na barra
-                 #text_auto='.2s',
-                 #color_discrete_map=continent_color_map,
-                 title="Expenses per Week",
-                 labels={'continent': 'Continent'})
+                 #text_auto='.2s',#Esto é para que aparece o dato na barra
+                 color_discrete_map=continent_color_map,
+                 title=str(_("Expenses per Week"))
+                )
 
     # Force x-axis to be categorical
-    fig.update_xaxes(type='category')
+    fig_expenses_week.update_xaxes(type='category', title_text=str(_('Week')))
     #Esto é para cambiar o nome do eixo y
-    fig.update_yaxes(title_text='Euros', gridcolor='#808080', zerolinecolor='#808080')
+    fig_expenses_week.update_yaxes(title_text='Euros', showgrid=False, zeroline=False)
     # Change the hover label
-    fig.update_traces(hovertemplate='Week: %{x}<br>Expense: %{y:.} Euros')
+    fig_expenses_week.update_traces(hovertemplate=str(_('Week: %{x}<br>Expense: %{y:.} Euros')))
     # Change the title font size
-    fig.update_layout(title=dict(font=dict(size=20, color="#808080")))
-    # Change the background color
-    fig.update_layout(plot_bgcolor='rgba(0,0,0,0)', paper_bgcolor='rgba(0,0,0,0)')
-    # Adjust the position of the legend
-    fig.update_layout(
-        legend=dict(
-            x=0.35, 
-            y=1.15,
-            orientation='h',
-            title = ''
+    fig_expenses_week.update_layout(
+        title=dict(font=dict(size=20, color="#808080")),
+        title_x=0.5,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        legend=dict(x=0, y=-0.3, orientation='h',title = ''), # Adjust the position of the legend and change the title
+        bargap=0, #Engadir ou eliminar o espazo entre as barras.
+        bargroupgap=0,
+        font=dict(color="#808080")
+        )
+    bar_chart_expenses_week = plot(fig_expenses_week, output_type='div') # Use plotly.offline.plot with output_type='div' to get the HTML div
+    #-----------------END GRAPGH EXPENSES PER WEEK---------------------------------
+
+    #-----------------GRAPGH EXPENSES PER COUNTRY---------------------------------
+    qs_expenses_country = money_model.objects.values('country_name', 'continent').annotate(Sum('expense_euros'))
+
+    fig_expenses_country = px.bar(qs_expenses_country, 
+                 y='expense_euros__sum', 
+                 x='country_name', 
+                 color='continent',
+                 #Esto é para que aparece o dato na barra
+                 #text_auto='.2s',
+                 color_discrete_map=continent_color_map,
+                 title=str(_("Expenses per Country")))
+
+    #Esto é para cambiar o nome do eixo y
+    fig_expenses_country.update_xaxes(title_text=str(_('Country')))
+    #Esto é para cambiar o nome do eixo y
+    fig_expenses_country.update_yaxes(title_text='Euros', showgrid=False, zeroline=False)
+    # Change the hover label
+    fig_expenses_country.update_traces(hovertemplate=str(_('Country: %{x}<br>Expense: %{y:.} Euros')))
+    # Change the title font size
+    fig_expenses_country.update_layout(
+        title=dict(font=dict(size=20, color="#808080")),
+        title_x=0.5,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        legend=dict(x=0, y=-0.3, orientation='h',title = ''), # Adjust the position of the legend and change the title
+        bargap=0, #Engadir ou eliminar o espazo entre as barras.
+        bargroupgap=0,
+        font=dict(color="#808080")
+        )
+    # Use plotly.offline.plot with output_type='div' to get the HTML div
+    bar_chart_expenses_country = plot(fig_expenses_country, output_type='div')
+    #-----------------END GRAPGH EXPENSES PER COUNTRY---------------------------------
+
+    #-----------------GRAPGH KM AND ALTITUDE PER WEEK---------------------------------
+    qs_km_meters_week = km_altitude_model.objects.values('week', 'continent').annotate(Sum('km_day'),Sum('altitude_day'))
+
+    fig_km_meters_week = px.bar(qs_km_meters_week, 
+                 y='km_day__sum', 
+                 x='week', 
+                 color='continent',
+                 color_discrete_map=continent_color_map,
+                 title=str(_("Distance and altitude per week")),
+                 custom_data=['altitude_day__sum']
+                 )
+    
+    fig_km_meters_week.add_trace(
+                go.Scatter(
+                    x=[item['week'] for item in qs_km_meters_week], 
+                    y=[item['altitude_day__sum'] for item in qs_km_meters_week], 
+                    mode='lines', 
+                    name=str(_('Climb')),
+                    xaxis='x',  # Set the line chart to use the primary x-axis
+                    yaxis='y2',
+                    customdata=[[item['altitude_day__sum']] for item in qs_km_meters_week],
+                    line=dict(color='#56ff00')))
+
+    # Update layout to show the secondary y-axis
+    fig_km_meters_week.update_layout(
+        yaxis2=dict(
+        title=str(_('Climb (meters)')),
+        overlaying='y',
+        side='right'
         )
     )
-    #Engadir ou eliminar o espazo entre as barras.
-    fig.update_layout(bargap=0, bargroupgap=0, font=dict(color="#808080"))
-    
+    # Force x-axis to be categorical
+    fig_km_meters_week.update_xaxes(type='category')
+    #Esto é para cambiar o nome do eixo y
+    fig_km_meters_week.update_xaxes(title_text=str(_('Week')))
+    #Esto é para cambiar o nome do eixo y
+    fig_km_meters_week.update_layout(
+        yaxis=dict(title_text=str(_('Distance (Km)')), showgrid=False, zeroline=False),
+        yaxis2=dict(title_text=str(_('Climb (meters)')), overlaying='y', side='right', showgrid=False, zeroline=False)
+        )
+    # Change the hover label
+    fig_km_meters_week.update_traces(hovertemplate=str(_('Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters')))
+    # Change the title font size
+    fig_km_meters_week.update_layout(
+        title=dict(font=dict(size=20, color="#808080")),
+        title_x=0.5,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        legend=dict(x=0, y=-0.3, orientation='h',title = ''), # Adjust the position of the legend and change the title
+        bargap=0, #Engadir ou eliminar o espazo entre as barras.
+        bargroupgap=0,
+        font=dict(color="#808080")
+        )
     # Use plotly.offline.plot with output_type='div' to get the HTML div
-    bar_chart = plot(fig, output_type='div')
+    bar_km_meters_week = plot(fig_km_meters_week, output_type='div')
+    #-----------------END GRAPGH KM AND ALTITUDE PER WEEK---------------------------------
+
+    #-----------------GRAPGH KM AND ALTITUDE PER COUNTRY---------------------------------
+    qs_km_meters_country = km_altitude_model.objects.values('country_name', 'continent').annotate(Sum('km_day'),Sum('altitude_day'))
+    fig_km_meters_country = px.bar(qs_km_meters_country, 
+                 y='km_day__sum', 
+                 x='country_name', 
+                 color='continent',
+                 color_discrete_map=continent_color_map,
+                 title=str(_("Distance and climb per country")),
+                 custom_data=['altitude_day__sum']
+                 )
+    
+    fig_km_meters_country.add_trace(
+                go.Scatter(
+                    x=[item['country_name'] for item in qs_km_meters_country], 
+                    y=[item['altitude_day__sum'] for item in qs_km_meters_country], 
+                    mode='lines',
+                    name=str(_('Climb')),
+                    xaxis='x',  # Set the line chart to use the primary x-axis
+                    yaxis='y2',
+                    customdata=[[item['altitude_day__sum']] for item in qs_km_meters_country],
+                    line=dict(color='#56ff00')))
+
+    # Update layout to show the secondary y-axis
+    fig_km_meters_country.update_layout(
+        yaxis2=dict(
+        title=str(_('Climb (meters)')),
+        overlaying='y',
+        side='right'
+        )
+    )
+    #Esto é para cambiar o nome do eixo y
+    fig_km_meters_country.update_xaxes(title_text=str(_('Country')))
+    #Esto é para cambiar o nome do eixo y
+    fig_km_meters_country.update_layout(
+        yaxis=dict(title_text=str(_('Distance (Km)')), showgrid=False, zeroline=False),
+        yaxis2=dict(title_text=str(_('Climb (meters)')), overlaying='y', side='right', showgrid=False, zeroline=False)
+        )
+    # Change the hover label
+    fig_km_meters_country.update_traces(hovertemplate=str(_('Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters')))
+    # Change the title font size
+    fig_km_meters_country.update_layout(
+        title=dict(font=dict(size=20, color="#808080")),
+        title_x=0.5,
+        plot_bgcolor='rgba(0,0,0,0)',
+        paper_bgcolor='rgba(0,0,0,0)',
+        legend=dict(x=0, y=-0.3, orientation='h', title = ''), # Adjust the position of the legend and change the title
+        bargap=0, #Engadir ou eliminar o espazo entre as barras.
+        bargroupgap=0,
+        font=dict(color="#808080")
+        )
+    # Use plotly.offline.plot with output_type='div' to get the HTML div
+    bar_km_meters_country = plot(fig_km_meters_country, output_type='div')
+    #-----------------END GRAPGH KM AND ALTITUDE PER COUNTRY---------------------------------
 
     context = {
-        'bar_chart_html': bar_chart
+        'total_km_html' : total_km,
+        'total_climbing_html' : total_climbing,
+        'country_number_country_html' : country_number_country,
+        'current_journey_day_html' : current_journey_day,
+        'resting_days_html' : resting_days,
+        'cycling_days_html' : cycling_days,
+        'night_outside_html' : night_outside,
+        'night_inside_html' : night_inside,
+        'total_money_html' : total_money,
+
+        #CHARTS
+        'bar_chart__expenses_week_html': bar_chart_expenses_week,
+        'bar_chart_expenses_country_html' : bar_chart_expenses_country,
+        'pie_chart_expenses_type_html' : pie_chart_expenses_type,
+        'bar_km_meters_week_html' : bar_km_meters_week,
+        'bar_km_meters_country_html' : bar_km_meters_country
     }
 
     return render(request, 'bicicleteiros_statics/bicicleteiros_statics_plotly.html', context)

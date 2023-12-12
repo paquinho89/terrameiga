@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-24 11:48+0100\n"
+"POT-Creation-Date: 2023-12-12 19:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\bicicleteiros\forms.py:18
-msgid "Write here your reply"
+#: .\bicicleteiros\forms.py:17
+#, fuzzy
+#| msgid "Write here your reply"
+msgid "Write here your comment"
 msgstr "Escriba aquí a súa resposta"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
@@ -910,121 +912,121 @@ msgstr ""
 msgid "Dollar"
 msgstr "Dólar Americano"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:51
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:19
 msgid "WEEK"
 msgstr "Semana"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:51
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:260
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:19
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:130
 msgid "Day"
 msgstr "Día"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:54
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:22
 msgid "Km completed:"
 msgstr "Km completados:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:55
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:23
 msgid "Expenses:"
 msgstr "Gastos:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:56
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:24
 msgid "Country:"
 msgstr "País:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:57
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:25
 msgid "Capital:"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:59
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:27
 msgid "Visa:"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:68
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:35
 msgid "Country Information:"
 msgstr "Información do país"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:71
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:38
 msgid "Surface:"
 msgstr "Superficie"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:72
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:74
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:76
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:78
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:39
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:41
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:43
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:45
 msgid "Spain:"
 msgstr "España:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
 msgid "Population:"
 msgstr "Poboación:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
 msgid "people"
 msgstr "persoas"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:75
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
 msgid "Density population:"
 msgstr "Densidade de poboación:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:75
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:78
-msgid "years"
-msgstr "anos"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:44
 msgid "Life expectancy:"
 msgstr "Esperanza de vida"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:79
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:44
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:45
+msgid "years"
+msgstr "anos"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:46
 msgid "Currency:"
 msgstr "Moeda:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:80
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:47
 msgid "Local Time:"
 msgstr "Hora Local:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:81
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:48
 msgid "Interesting fact:"
 msgstr "Dato de interese:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:83
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:50
 msgid "The most listen song on Spotify:"
 msgstr "Canción máis escoitada no Spotify:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:109
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:76
 msgid "Highlights"
 msgstr "Novas"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:139
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:106
 msgid "Add Comment / View Comments"
 msgstr "Engadir Comentario / Ver Comentarios"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:154
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:122
 msgid "Add Comment"
 msgstr "Engadir Comentario"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:159
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:127
 msgid "Comments"
 msgstr "Comentarios"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:200
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:233
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:72
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:94
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:104
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:114
 msgid "Sign In"
 msgstr "Inicio sesión"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:201
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:234
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:245
-#: .\registration\templates\2_sign_up.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:95
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:105
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:115
+#: .\registration\templates\2_sign_up.html:86
 msgid "Sign Up"
 msgstr "Rexistro"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:220
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:231
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:242
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:92
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:102
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:112
 msgid ""
 "I am a bike traveller who is cycling somewhere. Do you want to be part of "
 "this adventure and see all the content?"
@@ -1032,80 +1034,99 @@ msgstr ""
 "Son un cicloviaxeiro que está a dar unha volta. Queres ser parte desta "
 "aventura e desfrutar de todo o contido?"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:260
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:130
+#: .\bicicleteiros\views.py:322 .\bicicleteiros\views.py:408
 msgid "Week"
 msgstr "Semana"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:273
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:143
+#: .\bicicleteiros\views.py:354 .\bicicleteiros\views.py:462
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:287
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:157
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:88
 msgid "Expenses"
 msgstr "Gastos"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:301
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:171
 msgid "Km"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:315
-msgid "Videos & Pictures"
-msgstr "Vídeos e Fotos"
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
+#: .\terrameiga\static\templates\base\footer.html:37
+msgid "No cookies are used on the site"
+msgstr "Neste sitio web non utilizamos cookies"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:350
-#: .\terrameiga\static\templates\base\footer.html:30
-msgid "Made with &#10084 by"
-msgstr "Feito con &#10084 por"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:351
-#: .\terrameiga\static\templates\base\footer.html:32
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
+#: .\terrameiga\static\templates\base\footer.html:38
 msgid "All reserved rights:"
 msgstr "Todos os dereitos reservados:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:353
-#: .\registration\models.py:15 .\terrameiga\settings.py:160
-#: .\terrameiga\settings_deployment.py:171
-msgid "Galician"
-msgstr "Galego"
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:13
+msgid "Data of the Journey"
+msgstr "Datos da viaxe"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:354
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
-msgid "Basque"
-msgstr "Éuscaro"
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:28
+#: .\bicicleteiros\views.py:391 .\bicicleteiros\views.py:447
+msgid "Climb"
+msgstr "Ascenso"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:355
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
-msgid "Catalan"
-msgstr "Catalán"
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:29
+msgid "meters"
+msgstr "metros"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:356
-#: .\registration\models.py:14 .\terrameiga\settings.py:159
-#: .\terrameiga\settings_deployment.py:170
-msgid "Spanish"
-msgstr "Castelán"
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:36
+msgid "Countries"
+msgstr "País"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:357
-#: .\registration\models.py:13 .\terrameiga\settings.py:158
-#: .\terrameiga\settings_deployment.py:169
-msgid "English"
-msgstr "Inglés"
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:46
+msgid "Total days"
+msgstr "Días"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:47
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:55
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:63
+msgid "days"
+msgstr "días"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:54
+msgid "Resting days"
+msgstr "Días descanso"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:62
+msgid "Cycling days"
+msgstr "Días en bici"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:72
+msgid "Nights outside"
+msgstr "Noites fora"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:81
+msgid "nights"
+msgstr "noites"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics\bicicleteiros_statics_plotly.html:80
+msgid "Accommodation"
+msgstr "Noites ao quente"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_videos.html:18
 #: .\terrameiga\static\templates\base\nav_bar.html:23
 msgid "Videos"
 msgstr "Vídeos"
 
-#: .\bicicleteiros\views.py:116
+#: .\bicicleteiros\views.py:131
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Grazas por estar aí. O seu comentario foi engadido!"
 
-#: .\bicicleteiros\views.py:125
+#: .\bicicleteiros\views.py:140
 msgid "Please, include some text in your reply"
 msgstr "Por favor, o comentario non pode estar baleiro"
 
-#: .\bicicleteiros\views.py:164
+#: .\bicicleteiros\views.py:180
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1113,66 +1134,130 @@ msgstr ""
 "Vostede debe de estar rexistrado para ter acceso a este contido. Vaia a "
 "terrameiga.bike/sign_up/ e cree unha conta"
 
-#: .\registration\forms.py:62
+#: .\bicicleteiros\views.py:284
+msgid "Where does the money go?"
+msgstr "Onde gasto os cartos?"
+
+#: .\bicicleteiros\views.py:318
+msgid "Expenses per Week"
+msgstr "Gastos por semana"
+
+#: .\bicicleteiros\views.py:326
+#, python-brace-format
+msgid "Week: %{x}<br>Expense: %{y:.} Euros"
+msgstr "Semana: %{x}<br>Gasto: %{y:.} Euros"
+
+#: .\bicicleteiros\views.py:351
+msgid "Expenses per Country"
+msgstr "Gastos por país"
+
+#: .\bicicleteiros\views.py:358
+#, python-brace-format
+msgid "Country: %{x}<br>Expense: %{y:.} Euros"
+msgstr "País: %{x}<br>Gasto: %{y:.} Euros"
+
+#: .\bicicleteiros\views.py:382
+msgid "Distance and altitude per week"
+msgstr "Distancia e ascenso por semana"
+
+#: .\bicicleteiros\views.py:400 .\bicicleteiros\views.py:412
+#: .\bicicleteiros\views.py:456 .\bicicleteiros\views.py:466
+msgid "Climb (meters)"
+msgstr "Ascenso (metros)"
+
+#: .\bicicleteiros\views.py:411 .\bicicleteiros\views.py:465
+msgid "Distance (Km)"
+msgstr "Distancia (km)"
+
+#: .\bicicleteiros\views.py:415
+#, python-brace-format
+msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
+msgstr "Semana: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
+
+#: .\bicicleteiros\views.py:438
+msgid "Distance and climb per country"
+msgstr "Distancia e ascenso por país"
+
+#: .\bicicleteiros\views.py:469
+#, python-brace-format
+msgid "Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
+msgstr "País: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
+
+#: .\registration\forms.py:84
 msgid "type \"terrameiga\". Lowercase and without quotes"
 msgstr "Escriba \"terrameiga\". En minúsculas e sen comiñas"
 
-#: .\registration\templates\1_sign_in.html:17
-#: .\registration\templates\1_sign_in.html:45
+#: .\registration\models.py:13 .\terrameiga\settings.py:158
+#: .\terrameiga\settings_deployment.py:169
+msgid "English"
+msgstr "Inglés"
+
+#: .\registration\models.py:14 .\terrameiga\settings.py:159
+#: .\terrameiga\settings_deployment.py:170
+msgid "Spanish"
+msgstr "Castelán"
+
+#: .\registration\models.py:15 .\terrameiga\settings.py:160
+#: .\terrameiga\settings_deployment.py:171
+msgid "Galician"
+msgstr "Galego"
+
+#: .\registration\templates\1_sign_in.html:16
+#: .\registration\templates\1_sign_in.html:43
 msgid "Sign in"
 msgstr "Inicio sesión"
 
-#: .\registration\templates\1_sign_in.html:28
-#: .\registration\templates\2_sign_up.html:29
+#: .\registration\templates\1_sign_in.html:31
+#: .\registration\templates\2_sign_up.html:36
 #: .\registration\templates\profile_account\delete_account.html:22
 #: .\registration\templates\profile_account\password_data.html:22
 #: .\registration\templates\profile_account\personal_data.html:22
 msgid "Password"
 msgstr "Contrasinal"
 
-#: .\registration\templates\1_sign_in.html:53
+#: .\registration\templates\1_sign_in.html:51
 msgid "Did you forget your password?"
 msgstr "Esqueciches o teu contrasinal?"
 
-#: .\registration\templates\1_sign_in.html:61
-#: .\registration\templates\password_reset.html:37
+#: .\registration\templates\1_sign_in.html:59
+#: .\registration\templates\password_reset.html:32
 msgid "Would you like to create an account?"
 msgstr "Gustaríache crear unha conta?"
 
-#: .\registration\templates\2_sign_up.html:16
+#: .\registration\templates\2_sign_up.html:17
 msgid "Account Creation"
 msgstr "Rexistro"
 
-#: .\registration\templates\2_sign_up.html:25
+#: .\registration\templates\2_sign_up.html:26
 msgid "Name"
 msgstr "Nome"
 
-#: .\registration\templates\2_sign_up.html:31
+#: .\registration\templates\2_sign_up.html:43
 msgid "Repeat Password"
 msgstr "Repita o contrasinal"
 
-#: .\registration\templates\2_sign_up.html:46
+#: .\registration\templates\2_sign_up.html:59
 msgid "Creating the account, you are accepting the"
 msgstr "Ao crear a conta, acepta a "
 
-#: .\registration\templates\2_sign_up.html:46
-#: .\registration\templates\2_sign_up.html:55
+#: .\registration\templates\2_sign_up.html:59
+#: .\registration\templates\2_sign_up.html:68
 msgid "Privacy Policy"
 msgstr "Política de Privacidade"
 
-#: .\registration\templates\2_sign_up.html:64
+#: .\registration\templates\2_sign_up.html:77
 msgid "Close"
 msgstr "Pechar"
 
-#: .\registration\templates\2_sign_up.html:79
+#: .\registration\templates\2_sign_up.html:92
 msgid "Do you have already an account? sign in into your account"
 msgstr "Ten xa unha conta? Inicie sesión na súa conta"
 
-#: .\registration\templates\account_confirm_email_sent.html:18
+#: .\registration\templates\account_confirm_email_sent.html:17
 msgid "Email confirmation"
 msgstr "Confirmación do Email"
 
-#: .\registration\templates\account_confirm_email_sent.html:20
+#: .\registration\templates\account_confirm_email_sent.html:19
 msgid ""
 "To complete your registration, go to your email, open the TerraMeiga email "
 "and click on the link."
@@ -1180,7 +1265,7 @@ msgstr ""
 "Para completar o seu rexistro, vaia ao seu email, abra o correo de "
 "TerraMeiga e prema no enlace."
 
-#: .\registration\templates\account_confirm_email_sent.html:23
+#: .\registration\templates\account_confirm_email_sent.html:22
 msgid "In case you do not find it, check on the spam folder!"
 msgstr "No caso de non atopalo, comprobe o correo lixo"
 
@@ -1224,7 +1309,7 @@ msgstr "Lume a bicicleta!"
 
 #: .\registration\templates\email_body_password.html:14
 #: .\registration\templates\password_reset.html:17
-#: .\registration\templates\password_reset_sent.html:18
+#: .\registration\templates\password_reset_sent.html:17
 msgid "Password Recovery"
 msgstr "Recuperación Contrasinal"
 
@@ -1246,26 +1331,26 @@ msgstr ""
 "No caso de non ter solicitado a recuperación do contrasinal, ignore este "
 "correo."
 
-#: .\registration\templates\password_reset.html:32
+#: .\registration\templates\password_reset.html:28
 msgid "Get Password"
 msgstr "Obter o contrasinal"
 
 #: .\registration\templates\password_reset_complete.html:17
-#: .\registration\templates\password_reset_complete.html:24
-#: .\registration\templates\profile_account\password_data.html:49
+#: .\registration\templates\password_reset_complete.html:22
+#: .\registration\templates\profile_account\password_data.html:53
 msgid "New Password"
 msgstr "Novo contrasinal"
 
 #: .\registration\templates\password_reset_complete.html:33
-#: .\registration\templates\profile_account\password_data.html:59
+#: .\registration\templates\profile_account\password_data.html:67
 msgid "Repeat New Password"
 msgstr "Repita o contrasinal"
 
-#: .\registration\templates\password_reset_complete.html:43
+#: .\registration\templates\password_reset_complete.html:45
 msgid "Update Password"
 msgstr "Actualizar o contrasinal"
 
-#: .\registration\templates\password_reset_sent.html:20
+#: .\registration\templates\password_reset_sent.html:19
 msgid ""
 "To recover your password, go to your email, open the 'TerraMeiga' email and "
 "click on the link."
@@ -1273,7 +1358,7 @@ msgstr ""
 "Para recuperar o seu contrasinal, vaia ao seu email, abra o correo de "
 "TerraMeiga e prema no enlace."
 
-#: .\registration\templates\password_reset_sent.html:23
+#: .\registration\templates\password_reset_sent.html:22
 msgid "In case you do not find the email, check on the spam folder!"
 msgstr "No caso de non atopar o email, comprobe o correo lixo"
 
@@ -1592,7 +1677,7 @@ msgstr "Quere actualizar o seu contrasinal?"
 msgid "Current Password"
 msgstr "Contrasinal"
 
-#: .\registration\templates\profile_account\password_data.html:70
+#: .\registration\templates\profile_account\password_data.html:82
 msgid "Update the Password"
 msgstr "Actualizar o contrasinal"
 
@@ -1623,7 +1708,7 @@ msgstr ""
 "Por favor, vaia ao seu email e verifique a súa conta. Grazas polo apoio, "
 
 #: .\registration\views.py:56 .\registration\views.py:161
-#: .\registration\views.py:245
+#: .\registration\views.py:246
 msgid "Check the below errors and try again!"
 msgstr "Comprobe os erros e inténteo de novo!"
 
@@ -1663,38 +1748,50 @@ msgstr ""
 msgid "Your password has been updated!"
 msgstr "Actualizouse o seu contrasinal!"
 
-#: .\registration\views.py:182
+#: .\registration\views.py:190
+msgid "An email was sent to your email inbox"
+msgstr "Acabamos de enviar un email ao seu correo"
+
+#: .\registration\views.py:193
+msgid ""
+"The email does not exist in our data base. Please, create a new account."
+msgstr ""
+"O email non existe na nosa base de datos. Por favor, cree unha nova conta."
+
+#: .\registration\views.py:197
+msgid "The email is not valid"
+msgstr "O email non é válido"
+
+#: .\registration\views.py:215
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Eliminouse a súa conta. Agardámolo velo pronto por aqui!"
 
-#: .\registration\views.py:187 .\registration\views.py:189
+#: .\registration\views.py:220 .\registration\views.py:222
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba \"terrameiga\". O texto ten que estar en minúsculas e sen "
 "comiñas"
 
-#: .\registration\views.py:214
-msgid "An email was sent to your email inbox"
-msgstr "Acabamos de enviar un email ao seu correo"
-
-#: .\registration\views.py:217
-msgid ""
-"The email does not exist in our data base. Please, create a new account."
-msgstr ""
-"O email non existe na nosa base de datos. Por favor, cree unha nova conta."
-
-#: .\registration\views.py:221
-msgid "The email is not valid"
-msgstr "O email non é válido"
-
-#: .\registration\views.py:240
+#: .\registration\views.py:241
 msgid "Your password has been changed"
 msgstr "O seu contrasinal foi modificado!"
 
-#: .\terrameiga\static\templates\base\footer.html:31
-msgid "No cookies are used on the site"
-msgstr "Neste sitio web non utilizamos cookies"
+#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
+msgid "Catalan"
+msgstr "Catalán"
+
+#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
+msgid "Basque"
+msgstr "Éuscaro"
+
+#: .\terrameiga\static\templates\base\footer.html:34
+msgid "Light Mode"
+msgstr "Modo Claro"
+
+#: .\terrameiga\static\templates\base\footer.html:35
+msgid "Dark Mode"
+msgstr "Modo Escuro"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
@@ -1705,25 +1802,18 @@ msgid "Pictures"
 msgstr "Fotos"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:29
+#: .\terrameiga\static\templates\base\nav_bar.html:35
 msgid "Data"
 msgstr "Datos"
 
-#: .\terrameiga\static\templates\base\nav_bar.html:37
+#: .\terrameiga\static\templates\base\nav_bar.html:32
+msgid "Team"
+msgstr "Equipo"
+
+#: .\terrameiga\static\templates\base\nav_bar.html:43
 msgid "Account Settings"
 msgstr "Configuración"
 
-#: .\terrameiga\static\templates\base\nav_bar.html:42
+#: .\terrameiga\static\templates\base\nav_bar.html:48
 msgid "Log Out"
 msgstr "Sair"
-
-#, fuzzy
-#~| msgid ""
-#~| "I am a bike traveller who is cycling somewhere. Do you want to be part "
-#~| "of this adventure and see all the content?"
-#~ msgid ""
-#~ "I am a bike traveller who has created this website for those ones who "
-#~ "want to follow me. Do you want to be part of this adventure and see all "
-#~ "the content?"
-#~ msgstr ""
-#~ "Son un cicloviaxeiro que está a dar unha volta. Queres ser parte desta "
-#~ "aventura e desfrutar de todo o contido?"

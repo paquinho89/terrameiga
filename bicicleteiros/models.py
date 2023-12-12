@@ -140,6 +140,9 @@ class money_model(models.Model):
         self.country_number = str(self.country.country_number)
         self.continent = str(self.country.continent)
         return super().save()
+    #Esto é para que me ordene as entradas de diñeiro pondo os máis recentes arriba na lista.
+    class Meta:
+        ordering = ['-journey_day']
 
     def __str__(self):
         return (str(self.journey_day) + ' days ' + self.expense_type + ' ' + self.country_name)
@@ -148,6 +151,7 @@ class km_altitude_model (models.Model):
     journey_day = models.IntegerField(default=int(day_in_the_journey), null=True)
     week = models.IntegerField(default=int(week_day), null=True)
     country = models.ForeignKey(country_information_model, on_delete=models.PROTECT)
+    continent = models.CharField(max_length=33, choices= continent_choices, blank=True, null=True, verbose_name="continent_autofilled")
     country_number = models.IntegerField(blank=True, null=True, verbose_name="country_number_autofilled")
     #Teño que duplicar o country_name porque á hora de tratar os datos, o country como ten un Foreign key móstrame un número no eixe x do gráfico e eu quero que me mostre o
     # nome do daís. E para que me mostre o nome do país o campo ten que ser un "CharField" e non un Foreign Key.
@@ -162,6 +166,7 @@ class km_altitude_model (models.Model):
     def save(self):
         self.country_name = str(self.country)
         self.country_number = str(self.country.country_number)
+        self.continent = str(self.country.continent)
         return super().save()
     
     def __str__(self):
