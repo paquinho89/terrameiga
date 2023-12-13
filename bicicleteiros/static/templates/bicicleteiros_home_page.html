@@ -19,8 +19,8 @@
       {% trans "WEEK" %} {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}<img style="float: right;" width="75" height="37" src="{% static flag_url_html %}" alt="First slide">
     </h4>
     <hr>
-      <li id="data_home_page">{% trans "Km completed:" %} <strong>{{ total_km_html }} km </strong></li>
-      <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ total_money_html }} € </strong></li>
+      <li id="data_home_page">{% trans "Km completed:" %} <strong>{{ total_km_html|intcomma }} km </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ total_money_html|intcomma }} € </strong></li>
       <li id="data_home_page" class="mt-2">{% trans "Country:" %} <strong>{% trans current_country_html %} (#{{country_number_html}})</strong></li>
       <li id="data_home_page" class="mt-2">{% trans "Capital:" %} <strong>{{ capital_city_html }}</strong></li>
       <li id="data_home_page" class="mt-2">
