@@ -4,7 +4,8 @@
 
 {% load static %}
 
-
+<!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
+{% load humanize %}
 
 <!doctype html>
 <html lang="en">
@@ -155,7 +156,7 @@
                       <div id="home_page_no_registration_card" class="card-body p-4">
                           <div class="text-center">
                             <h4 id="home_page_no_registration_card_text" class="fw-bolder">{% trans "Expenses" %}</h4>
-                            <h4 id="h4_home_page_no_registration" class="mt-4">{{ total_expenses_html }} €</h4>
+                            <h4 id="h4_home_page_no_registration" class="mt-4">{{ total_expenses_html|intcomma }} €</h4>
                           </div>
                       </div>
                   </div>
@@ -169,7 +170,7 @@
                           <div class="text-center">
                               <!-- Product name-->
                               <h4 id="home_page_no_registration_card_text" class="fw-bolder">{% trans "Km" %}</h4>
-                              <h4 id="h4_home_page_no_registration" class="mt-4">{{ total_km_html }} km </h4>
+                              <h4 id="h4_home_page_no_registration" class="mt-4">{{ total_km_html|intcomma }} km </h4>
                           </div>
                       </div>
                   </div>
@@ -210,7 +211,7 @@
           <!--Con "this.submit()" non hai necesidade de ter un submit button. No momento que se clica o idioma no drop down, automáticamente cambia-->
           <form method="post" id="languageForm" onchange="this.submit()">
             {% csrf_token %}
-            <p class="mt-1" style="color: rgb(246, 158, 138);">Language
+            <p class="mt-1" style="color: rgb(246, 158, 138);">{% trans "Language" %}
             {{ form_language_html.language }}</p>
             
           </form>

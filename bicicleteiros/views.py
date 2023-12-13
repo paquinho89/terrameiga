@@ -216,40 +216,6 @@ def videos_view (request):
 
     return render (request, 'bicicleteiros_videos.html', context)
 
-def estadistica_data_view (request):
-    all_entry_days= money_model.objects.all()
-    #annotate is the same as doing a 'group_by'
-    money_per_week = money_model.objects.values(str('week')).annotate(Sum('expense_euros'))
-    money_per_country = money_model.objects.values(str('country_name')).annotate(Sum('expense_euros')).order_by('country_number')
-    money_type = money_model.objects.values(str('expense_type')).annotate(Sum('expense_euros'))
-    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
-    total_money = total_money_dict['expense_euros__sum']
-    km_altitude_per_week = km_altitude_model.objects.values(str('week')).annotate(Sum('km_day'),Sum('altitude_day'))
-    km_altitude_per_country = km_altitude_model.objects.values(str('country_name')).annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number')
-    
-    context = {
-        'graph_money_per_week_html' : money_per_week,
-        'graph_money_per_country_html': money_per_country,
-        'graph_money_per_type_html': money_type,
-        'graph_total_money_html': total_money,
-        'graph_km_altitud_per_week_html': km_altitude_per_week,
-        'graph_km_altitud_per_country_html': km_altitude_per_country,
-        
-        'graph_money_type_html' :all_entry_days
-    }
-    #Como o arquivo de bicicleteiros_statics non o podo traducir e meter no .po file, teño que ter tantos html de statics como idiomas hai.
-    current_language_browser = get_language()
-
-    if "en" in current_language_browser:
-        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
-    elif "es" in current_language_browser:
-        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_es.html', context)
-    elif "gl" in current_language_browser:
-        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_gl.html', context)
-    else:
-        return render (request, 'bicicleteiros_statics/bicicleteiros_statics_en.html', context)
-
-
 
 def estadistica_plotly_view(request):
     #--------------Getting the global metrics ------------------------------------
@@ -501,7 +467,7 @@ def estadistica_plotly_view(request):
         'bar_km_meters_country_html' : bar_km_meters_country
     }
 
-    return render(request, 'bicicleteiros_statics/bicicleteiros_statics_plotly.html', context)
+    return render(request, 'bicicleteiros_statics_plotly.html', context)
 
 
 

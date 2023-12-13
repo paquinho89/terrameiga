@@ -19,7 +19,7 @@ from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
 from registration.views import sign_in_view, sign_up_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, sign_up_email_validation_confirmation_view
-from bicicleteiros.views import country_data_view, country_data_no_registered_view, photos_view, videos_view, estadistica_data_view, estadistica_plotly_view
+from bicicleteiros.views import country_data_view, country_data_no_registered_view, photos_view, videos_view, estadistica_plotly_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
 from django.contrib.auth import views as auth_views
 #Con esto fago que na url aparezca a url e o idioma. Por exemplo: terrameiga.bike/gl/
@@ -30,8 +30,7 @@ urlpatterns =   i18n_patterns (
     #BICICLETEIROS_URLs
     path('', country_data_no_registered_view, name="home_page_no_registered"),
     path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
-    path('bicicleteiros_estadísticas/', estadistica_data_view, name="bicleteiros_estadisticas"),
-    path('bicicleteiros_estadísticas_plotly/', estadistica_plotly_view, name="bicicleteiros_estadistica_plotly"),
+    path('bicicleteiros_statistics/', estadistica_plotly_view, name="bicicleteiros_estadistica_plotly"),
     path('bicicleteiros_pictures/', photos_view, name="bicicleteiros_photos"),
     path('bicicleteiros_videos/', videos_view, name="bicicleteiros_videos"),
     #PROFILE ACCOUNT

@@ -127,7 +127,7 @@
                       {% trans "Comments" %} ({{chat_comments.number_of_replies}}):
                     </h5>
                     {% for reply in replies_comments_all_html %}
-                    <div class="card" border: 1px;">
+                    <div class="card">
                       <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
                       {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
                       <div class="card-header d-flex justify-content-between p-2">

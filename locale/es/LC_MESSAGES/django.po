@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-12 19:10+0100\n"
+"POT-Creation-Date: 2023-12-13 10:01+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,21 @@ msgstr ""
 #| msgid "Write here your reply"
 msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
+
+#: .\bicicleteiros\forms.py:28 .\registration\models.py:14
+#: .\terrameiga\settings.py:159 .\terrameiga\settings_deployment.py:170
+msgid "Spanish"
+msgstr "Castellano"
+
+#: .\bicicleteiros\forms.py:29 .\registration\models.py:13
+#: .\terrameiga\settings.py:158 .\terrameiga\settings_deployment.py:169
+msgid "English"
+msgstr "Inglés"
+
+#: .\bicicleteiros\forms.py:30 .\registration\models.py:15
+#: .\terrameiga\settings.py:160 .\terrameiga\settings_deployment.py:171
+msgid "Galician"
+msgstr "Gallego"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -1056,6 +1071,11 @@ msgstr "Gastos"
 msgid "Km"
 msgstr ""
 
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:213
+#: .\registration\templates\profile_account\personal_data.html:66
+msgid "Language"
+msgstr "Idioma"
+
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
 #: .\terrameiga\static\templates\base\footer.html:37
 msgid "No cookies are used on the site"
@@ -1191,21 +1211,6 @@ msgstr "País: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 #: .\registration\forms.py:84
 msgid "type \"terrameiga\". Lowercase and without quotes"
 msgstr "Escriba 'terrameiga' en minúsculas y sin comillas"
-
-#: .\registration\models.py:13 .\terrameiga\settings.py:158
-#: .\terrameiga\settings_deployment.py:169
-msgid "English"
-msgstr "Inglés"
-
-#: .\registration\models.py:14 .\terrameiga\settings.py:159
-#: .\terrameiga\settings_deployment.py:170
-msgid "Spanish"
-msgstr "Castellano"
-
-#: .\registration\models.py:15 .\terrameiga\settings.py:160
-#: .\terrameiga\settings_deployment.py:171
-msgid "Galician"
-msgstr "Gallego"
 
 #: .\registration\templates\1_sign_in.html:16
 #: .\registration\templates\1_sign_in.html:43
@@ -1701,10 +1706,6 @@ msgstr "email"
 msgid "Username"
 msgstr "Nombre"
 
-#: .\registration\templates\profile_account\personal_data.html:66
-msgid "Language"
-msgstr "Idioma"
-
 #: .\registration\templates\profile_account\personal_data.html:76
 msgid "Update your data"
 msgstr "Actualizar los datos"
@@ -1824,11 +1825,3 @@ msgstr "Configuración"
 #: .\terrameiga\static\templates\base\nav_bar.html:48
 msgid "Log Out"
 msgstr "Salir"
-
-#~ msgid "Climbing (meters)"
-#~ msgstr "Ascenso (metros)"
-
-#, fuzzy
-#~| msgid "people"
-#~ msgid "People"
-#~ msgstr "personas"

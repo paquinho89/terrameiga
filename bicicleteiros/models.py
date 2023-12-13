@@ -169,6 +169,10 @@ class km_altitude_model (models.Model):
         self.continent = str(self.country.continent)
         return super().save()
     
+    #Esto é para que me ordene as entradas dos km e ascenso pondo os máis recentes arriba na lista.
+    class Meta:
+        ordering = ['-journey_day']
+    
     def __str__(self):
         return (str(self.journey_day) + ' days ' + self.country_name )
 
