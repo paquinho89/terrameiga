@@ -30,11 +30,11 @@ IMPORTANTE. O CALOR DO "ENGINE" TEN QUE ESTAR ASÍ, AO DESCUBERTO.
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '*****',
-        'USER': '********', 
-        'PASSWORD': '*****************',
-        'HOST': '************', 
-        'PORT': '******',
+        'PGNAME': '*****',
+        'PGUSER': '********', 
+        'PGPASSWORD': '*****************',
+        'PGHOST': '************', 
+        'PGPORT': '******',
     }
 }
 

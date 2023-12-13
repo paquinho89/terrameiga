@@ -115,11 +115,11 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('NAME'),
-        'USER': config('USER'), 
-        'PASSWORD': config('PASSWORD'),
-        'HOST': config('HOST'), 
-        'PORT': config('PORT'),
+        'PGNAME': config('PGNAME'),
+        'PGUSER': config('PGUSER'), 
+        'PGPASSWORD': config('PGPASSWORD'),
+        'PGHOST': config('PGHOST'), 
+        'PGPORT': config('PGPORT'),
     }
 }
 
