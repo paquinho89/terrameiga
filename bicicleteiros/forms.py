@@ -21,8 +21,6 @@ class chat_replies_form(forms.ModelForm):
         }
 
 
-
-
 class language_home_page_no_registration_form (forms.Form):
     LANGUAGE_CHOICES = [
         ('es', _('Spanish')),

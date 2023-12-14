@@ -16,7 +16,70 @@
 <h2 class="mt-3 text-center">{% trans "Speed Tool" %}</h2>
 <div id="background_graphs" class="row text-center" style="color: green;">
     <h2>{{speed_km_h_html}} km/h</h2>
+    <h2>{{force_back_wheel_html}} Newtons Forza roda traseira</h2>
+    <h2>{{force_slope_html}} Newtons Forza necesaria para subir a costa</h2>
+    <h2>{{slope_percentage_html}} Pendiente máxima que pode subir</h2>
 </div>
+       
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Dashboard</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Cassette 1</li>
+        </ol>
+        <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">What kind of cyclist are you?</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            {{ wattios_input_html.wattios }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Your weight</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            {{ weight_input_html.weight }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">Teeth of your plate</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            {{ teeth_plate_input_html.teeth_plate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">Teeth of your cassette</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            {{ teeth_cassette_input_html.teeth_cassette }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button id="update_personal_data_button" type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">Calculate</button>
+            </div>
+        </form>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table me-1"></i>
+                DataTable Example
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock content %}
 
   
