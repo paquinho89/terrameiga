@@ -48,9 +48,15 @@
                 </div>
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-success text-white mb-4">
-                        <div class="card-body">Teeth of your plate</div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            {{ teeth_plate_input_html.teeth_plate }}
+                        <div class="card-body">Teeth of your chainring
+                            <button id="1_chainring_button">1</button>
+                            <button id="2_chainring_button">2</button>
+                        </div>
+                        <div id="1_dropdown_chainring"  style="display: none;">
+                            {{ teeth_chainring_input_html.teeth_chainring }}
+                        </div>
+                        <div id="2_dropdown_chainring"  style="display: none;">
+                            {{ teeth_2chainring_input_html.teeth_2chainring }}
                         </div>
                     </div>
                 </div>
@@ -79,7 +85,132 @@
             </div>
         </div>
     </div>
+
+<label>
+    <ul id="ul_notes_tool">Assupmtions for the slope percent calculation:
+        <li id="li_notes_tool">Climbing constant speed: 3.6 km/h</li>
+        <li id="li_notes_tool">Surface: asphalt (there is always grip)</li>
+        <li id="li_notes_tool">Ignoring resistance forces in the pedal, chain, bearings, wind... Considering only rolling force</li>
+        <li id="li_notes_tool">Bike weight: 13 kg</li>
+        <li id="li_notes_tool">Diameter of the wheels: 700mm</li>
+        <li id="li_notes_tool">Wattios/kg measured for 5min:
+            <ul>
+                <li>Exceptional: 6.2 W/kg</li>
+                <li>Excelent: 5.6 W/kg</li>
+                <li>Very good: 5 W/kg</li>
+                <li>Good: 4.3 W/kg</li>
+                <li>Moderate 3.7 W/kg</li>
+                <li>Novice: 1.7 W/kg</li>
+            </ul>
+        </li>
+    </ul>
+    <ul id="ul_notes_tool">Assupmtions for maximun speed:
+        <li id="li_notes_tool">Distance from pedal to center of the chainring: 150mm</li>
+        <li id="li_notes_tool">Revolutions per minute: 130 rpm</li>
+    </ul>
+</label>
 </main>
+
+<!-- Include jQuery from CDN -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    jQuery(document).ready(function () {
+        // Function to update weight choices based on the selected wattios value
+        function updateWeightChoices() {
+            var selectedWattios = jQuery('#id_wattios_form').val();
+            var weightSelect = jQuery('#id_weight_form');
+            var newWeightChoices = [];
+
+            if (selectedWattios === '6.2') {
+                newWeightChoices = [
+                    { value: '60', text: '60' },
+                    { value: '65', text: '65' },
+                    { value: '70', text: '70' },
+                    { value: '75', text: '75' },
+                    { value: '80', text: '80' },
+                    { value: '85', text: '85' },
+                ];
+            } else if (selectedWattios === '5.6' ||  selectedWattios === '5') {
+                newWeightChoices = [
+                    { value: '60', text: '60' },
+                    { value: '65', text: '65' },
+                    { value: '70', text: '70' },
+                    { value: '75', text: '75' },
+                    { value: '80', text: '80' },
+                    { value: '85', text: '85' },
+                    { value: '90', text: '90' },
+                ];
+            } else if (selectedWattios === '4.3' || selectedWattios === '3.7' ) {
+                newWeightChoices = [
+                    { value: '50', text: '50' },
+                    { value: '55', text: '55' },
+                    { value: '60', text: '60' },
+                    { value: '65', text: '65' },
+                    { value: '70', text: '70' },
+                    { value: '75', text: '75' },
+                    { value: '80', text: '80' },
+                    { value: '85', text: '85' },
+                    { value: '90', text: '90' },
+                    { value: '95', text: '95' },
+                    { value: '100', text: '100' },
+                ];
+            } else if (selectedWattios === '1.7') {
+                newWeightChoices = [
+                    { value: '40', text: '40' },
+                    { value: '45', text: '45' },
+                    { value: '50', text: '50' },
+                    { value: '55', text: '55' },
+                    { value: '60', text: '60' },
+                    { value: '65', text: '65' },
+                    { value: '70', text: '70' },
+                    { value: '75', text: '75' },
+                    { value: '80', text: '80' },
+                    { value: '85', text: '85' },
+                    { value: '90', text: '90' },
+                    { value: '95', text: '95' },
+                    { value: '105', text: '105' },
+                    { value: '110', text: '110' },
+                    { value: '115', text: '115' },
+                    { value: '120', text: '120' },
+                    { value: '125', text: '125' },
+                    { value: '130', text: '130' },
+                    { value: '135', text: '135' },
+                    { value: '140', text: '140' },
+                    { value: '145', text: '145' },
+                    { value: '150', text: '150' },
+                ];
+            }
+            // Clear existing options and add new options
+            weightSelect.empty();
+            jQuery.each(newWeightChoices, function (index, item) {
+                weightSelect.append(jQuery('<option>', {
+                    value: item.value,
+                    text: item.text
+                }));
+            });
+        }
+        // Attach the update function to the change event of the wattios dropdown
+        jQuery('#id_wattios_form').change(updateWeightChoices);
+    });
+</script>
+
+<!--This script is to show the corresponding dropdown depending on the customer choice (1 chain ring or 2 chain rings)-->
+<script>
+    jQuery(document).ready(function () {
+        jQuery("#1_chainring_button").click(function (event) {
+            event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
+            jQuery("#1_dropdown_chainring").show();
+            jQuery("#2_dropdown_chainring").hide();
+        });
+
+        jQuery("#2_chainring_button").click(function (event) {
+            event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
+            jQuery("#1_dropdown_chainring").hide();
+            jQuery("#2_dropdown_chainring").show();
+        });
+    });
+</script>
+
 {% endblock content %}
 
   

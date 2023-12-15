@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from registration.views import sign_in_view, sign_up_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, sign_up_email_validation_confirmation_view
 from bicicleteiros.views import country_data_view, country_data_no_registered_view, photos_view, videos_view, estadistica_plotly_view, estadistica_plotly_view_full_report
-from tools.views import max_speed_view
+from tools.views import max_speed_slope_tool_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
 from django.contrib.auth import views as auth_views
 #Con esto fago que na url aparezca a url e o idioma. Por exemplo: terrameiga.bike/gl/
@@ -55,7 +55,7 @@ urlpatterns =   i18n_patterns (
     path('people/', TemplateView.as_view(template_name = "people.html"), name="people"),
 
     #TOOLS 
-    path('tools/', max_speed_view, name="tool_speed"),
+    path('tools/', max_speed_slope_tool_view, name="tool_speed"),
     
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),

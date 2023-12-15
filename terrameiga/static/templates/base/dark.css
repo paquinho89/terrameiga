@@ -546,4 +546,15 @@ iframe{
     color: black;
 }
 
+#ul_notes_tool {
+    color: rgba(191, 191, 191, 1);
+}
+
+#li_notes_tool{
+    color: rgba(191, 191, 191, 1);
+    list-style-type: disc;
+}
+
+
+
 

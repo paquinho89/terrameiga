@@ -569,6 +569,15 @@
         color: white;
     }
 
+    #ul_notes_tool {
+        color: rgb(54, 69, 79);
+    }
+    
+    #li_notes_tool{
+        color: rgb(54, 69, 79);
+        list-style-type: disc;
+    }
+
 
 
 
