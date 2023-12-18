@@ -61,12 +61,20 @@ class teeth_chainring_form (forms.Form):
 
 class teeth_2chainring_form (forms.Form):
     teeth_2chainring_choices = [
-        ((42.95,  152.2),   '9T/36T'),
-        ((42.95, 176.5),    '9T/42T'),
-        ((47, 107.75),      '10T/25T'),
-        ((47, 111.8),       '10T/26T'),
-        ((47, 115.85),      '10T/27T'),
-        ((47, 119.9),       '10T/28T')  
+        ((128, 192.7),          '30T/46T'),
+        ((132.05, 196.75),      '31T/47T'),
+        (( ),       '38T/28T'),
+        (( ),       '46T/30T'),
+        (( ),       '46T/33T'),
+        (( ),       '46T/34T'),
+        (( ),       '48T/31T'),
+        (( ),       '48T/35T'),
+        (( ),       '48T/34T'),
+        ((208.8, 144.2 ),       '50T/34T'),
+        (( ),       '50T/37T'),
+        ((216.9, 152.2 ),       '52T/36T'),
+        ((220.95, 164.35 ),     '53T/39T'),
+        (( ),       '54T/40T'),
         ]
     teeth_2chainring = forms.ChoiceField(choices=teeth_2chainring_choices, widget=forms.Select(attrs={'id':'id_teeth_2chainring_form'}))
 

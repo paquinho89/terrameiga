@@ -1,0 +1,296 @@
+{% extends 'base/base_non_registered.html' %}
+{% load static %}
+{% load i18n %}
+
+<!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
+{% load humanize %}
+
+{% block content %}
+<div class="d-flex">
+    <!-- Sidebar-->
+    <div>
+        <div class="list-group">
+            <a id="a_sidebar_classification" class="list-group-item list-group-item-action" data-toggle="collapse" href="#mtbOptions">MTB</a>
+            <div id="mtbOptions" class="collapse">
+                <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text">Sram</span></a>
+                <div id="Sram_options" class="collapse">
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">XX SL Eagle AXS</span></a>
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">XX Eagle AXS</span></a>
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">XX Eagle AXS E-Bike</span></a>
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">X0 Eagle AXS E-Bike</span></a>
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">X0 Eagle AXS</span></a>
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">GX Eagle</span></a>
+                    <a id="a_sidebar_brands" class="list-group-item list-group-item-action list-group-item-light" data-toggle="collapse" href="#Sram_options"><span class="text-type">GX Eagle AXS</span></a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Shimano_options">Shimano</a>
+                <div class="collapse" id="Shimano_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">XTR</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Deore XT</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">SLX</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Deore</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Saint</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Zee</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Cues</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Alivio</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Acera</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Altus</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Microshift_options">Microshift</a>
+                <div class="collapse" id="Microshift_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Advent X</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Advent</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Acolyte</a>
+                </div>
+            </div>
+    
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" data-toggle="collapse" href="#roadOptions">Road</a>
+            <div class="collapse" id="roadOptions">
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Sram_road_options">Sram</a>
+                <div class="collapse" id="Sram_road_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">RED eTap AXS</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Shimano_road_options">Shimano</a>
+                <div class="collapse" id="Shimano_road_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Dura-Ace</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Ultegra</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Shimano 105</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Tiagra</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Sora</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Claris</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Campagnolo_road_options">Campagnolo</a>
+                <div class="collapse" id="Campagnolo_road_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Super Record Wireless</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Super Record</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Record</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Chorus</a>
+                </div>
+            </div>
+    
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" data-toggle="collapse" href="#gravelOptions">Gravel</a>
+            <div class="collapse" id="gravelOptions">
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Sram_gravel_options">Sram</a>
+                <div class="collapse" id="Sram_gravel_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Force AXS</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Rival Etap AXS</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Apex</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Shimano_gravel_options">Shimano</a>
+                <div class="collapse" id="Shimano_gravel_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">GRX</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Campagnolo_gravel_options">Campagnolo</a>
+                <div class="collapse" id="Campagnolo_gravel_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Ekar</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#Microshift_gravel_options">Microshift</a>
+                <div class="collapse" id="Microshift_gravel_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">Sword</a>
+                </div>
+                <a class="list-group-item list-group-item-action list-group-item-light p-2" data-toggle="collapse" href="#State_gravel_options">State</a>
+                <div class="collapse" id="State_gravel_options">
+                    <a class="list-group-item list-group-item-action list-group-item-light p-1" href="#!">All Road</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper mt-5">
+        <!-- Page content-->
+        <div class="container-fluid">
+            <h1 class="mt-4">Información</h1>
+            <h1>Grupos</h1>
+
+            <h2>MTB Groups</h2>
+
+            <h3>Sram</h3>
+
+            <h4>XX SL Eagle AXS Transmission Groupset</h4>
+            <h5>Chain ring: 30T // 32T // 34T // 36T // 38T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h4>XX Eagle AXS Transmission Groupset</h4>
+            <h5>Chain ring: 30T // 32T // 34T // 36T // 38T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h4>XX Eagle AXS E-Bike Transmission Groupset</h4>
+            <h5>Chain ring: 30T // 32T // 34T // 36T // 38T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h4>X0 Eagle AXS E-Bike Transmission Groupset</h4>
+            <h5>Chain ring: 30T // 32T // 34T // 36T // 38T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h4>X0 Eagle AXS Transmission Groupset </h4>
+            <h5>Chain ring: 30T // 32T // 34T // 36T // 38T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h4>GX Eagle Transmission E-MTB Groupset</h4>
+            <h5>Chain ring: 30T // 32T // 34T // 36T // 38T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h4>GX Eagle AXS Transmission Groupset </h4>
+            <h5>Chain ring: 32T</h5>
+            <h5>Cassette: 10-52T</h5>
+
+            <h3>Shimano</h3>
+
+            <h4>XTR</h4>
+            <h5>Crankset: 30T // 32T // 34T // 36T // 38T // 38-28T</h5>
+            <h5>Cassette (12 speeds): 10-45T // 10-51T </h5>
+
+            <h4>Deore XT</h4>
+            <h5>Crankset: 36-26T // 28T // 30T // 32T // 34T // 36T  </h5>
+            <h5>Cassette (12 speeds): 10-45T // 10-51T  </h5>
+            <h5>Cassette (11 speeds): 11-50T  </h5>
+
+            <h4>SLX</h4>
+            <h5>Crankset: 36-26T // 30T // 32T // 34T   </h5>
+            <h5>Cassette (12 speeds): 10-45T // 10-51T</h5>
+
+            <h4>Deore</h4>
+            <h5>Crankset: 30T // 32T // 34T // 36-26T </h5>
+            <h5>Cassette (12 speeds): 10-51T </h5>
+            <h5>Cassette (11 speeds): 11-42T // 11-51T</h5>
+            <h5>Cassette (10 speeds): 11-36T // 11-42T</h5>
+
+            <h4>Saint</h4>
+            <h5>Chainring: 34T // 36T // 38T  </h5>
+            <h5>Cassette (10 speeds): 11-25T // 11-28T // 11-32T // 11-34T // 11-36T // 12-25T // 12-30T   </h5>
+
+            <h4>Zee</h4>
+            <h5>Chainring: 34T // 36T // 38T   </h5>
+            <h5>Cassette (10 speeds): 11-25T // 11-28T  </h5>
+
+            <h4>Cues</h4>
+            <h5>Chainring: 30T // 32T // 40T // 42T // 36-22T // 46-30T // 46-32T </h5>
+            <h5>Cassette (11 speeds): 11-32T // 11-34T // 11-36T // 11-45T // 11-50T  </h5>
+
+            <h4>Alivio</h4>
+            <h5>Chainring: 40-30-22T // 44-32-22T // 36-22T // 46-30T </h5>
+            <h5>Cassette (9 speeds): 11-25T // 11-32T // 11-34T // 11-36T   </h5>
+
+            <h4>Acera</h4>
+            <h5>Chainring: 40-30-22T // 44-32-22T // 36-22T // 46-30T</h5>
+            <h5>Cassette (9 speeds): 11-25T // 11-28T // 11-32T // 11-34T // 11-36T // 12-36T   </h5>
+
+            <h4>Altus</h4>
+            <h5>Chainring: 40-30-22T // 44-32-22T //  </h5>
+            <h5>Cassette (9 speeds): 11-32T // 11-34T // 11-36T   </h5>
+
+            <h3>Microshift</h3>
+
+            <h4>Advent X</h4>
+            <h5>Chainring: </h5>
+            <h5>Cassette (10 speeds): 11-48T </h5>
+
+            <h4>Advent</h4>
+            <h5>Chainring: </h5>
+            <h5>Cassette (9 speeds): 11-38T // 11-42T // 11-46T  </h5>
+
+            <h4>Acolyte</h4>
+            <h5>Chainring: </h5>
+            <h5>Cassette (8 speeds): 11-38T // 12-42T // 12-46T  </h5>
+
+            <h2>Road Groups</h2>
+
+            <h3>Sram</h3>
+
+            <h4>RED eTap AXS Groupset</h4>
+            <h5>Chain ring: 48-35T</h5>
+            <h5>Cassette: 10-26T</h5>
+
+            <h3>Shimano</h3>
+
+            <h4>Dura-Ace</h4>
+            <h5>Crankset: 46-36T // 50-34T // 52-36T // 54-40T</h5>
+            <h5>Cassette: 11-30T // 11-34T</h5>
+
+            <h4>Ultegra</h4>
+            <h5>Crankset: 46-36T // 50-34T // 52-36T</h5>
+            <h5>Cassette: 11-30T // 11-34T</h5>
+
+            <h4>Shimano 105</h4>
+            <h5>Crankset: 50-34T // 52-36T</h5>
+            <h5>Cassette (12 speeds): 11-34T // 11-36T</h5>
+
+            <h4>Tiagra</h4>
+            <h5>Crankset: 48-34T // 50-34T // 52-36T // 59-39-30T</h5>
+            <h5>Cassette (10 speeds): 11-25T // 11-32T // 11-34T // 12-28T</h5>
+
+            <h4>Sora</h4>
+            <h5>Crankset: 48-34T // 50-34T // 52-36T // 59-39-30T</h5>
+            <h5>Cassette (9 speeds): 11-30T // 12-25T // 13-25T // 14-25T</h5>
+
+            <h4>Claris</h4>
+            <h5>Crankset: 46-34T // 50-34T // 50-39-30T</h5>
+            <h5>Cassette (8 speeds): 11-28T // 11-30T // 11-32T // 11-34T // 12-23T // 12-25T // 13-26T</h5>
+
+            <h3>Campagnolo</h3>
+
+            <h4>Super Record Wireless</h4>
+            <h5>Crankset: 45-29T // 48-32T // 50-34T</h5>
+            <h5>Cassette (12 speeds): 10-25T // 10-27T // 10-29T</h5>
+
+            <h4>Super Record</h4>
+            <h5>Crankset: 34-50T // 36-52T // 39-53T</h5>
+            <h5>Cassette (12 speeds): 11-29T // 11-32T // 11-34T </h5>
+
+            <h4>Record</h4>
+            <h5>Crankset: 34-50T // 36-52T // 39-53T</h5>
+            <h5>Cassette (12 speeds): 11-29T // 11-32T // 11-34T </h5>
+
+            <h4>Chorus</h4>
+            <h5>Crankset: 32-48T // 34-50T // 36-52T</h5>
+            <h5>Cassette (12 speeds): 11-29T // 11-32T</h5>
+
+            <h2>Gravel Groups</h2>
+
+            <h3>Sram</h3>
+
+            <h4>Force AXS Groupset</h4>
+            <h5>Crankset: 43-30T // 46-33T // 48-35T // 50-37T</h5>
+            <h5>Crankset: 40T</h5>
+            <h5>Cassette: 10-28T // 10-30T // 10-33T // 10-36T // 10-44T</h5>
+
+            <h4>Rival Etap AXS</h4>
+            <h5>Crankset: 43-30T // 46-33T // 48-35T // 50-37T</h5>
+            <h5>Crankset: 33T // 35T // 38T // 40T // 42T // 43T // 44T // 46T // 48T</h5>
+            <h5>Cassette: 10-30T // 10-36T // 10-44T</h5>
+
+            <h4>Apex</h4>
+            <h5>Crankset: 40T // 42T</h5>
+            <h5>Cassette: 11-44T</h5>
+
+            <h3>Shimano</h3>
+
+            <h4>GRX</h4>
+            <h5>Crankset: 46-30T // 48-31T // 42T // 40T</h5>
+            <h5>Cassette (11 speeds): 11-25T // 11-28T // 11-30T // 11-32T // 11-34T // 11-40T // 11-42T // 11-46T // 12-25T // 14-28T</h5>
+            <h5>Cassette (10 speeds): 11-25T // 11-32T // 12-28T // 11-34T // 11-36T</h5>
+
+            <h3>Campagnolo</h3>
+
+            <h4>Ekar</h4>
+            <h5>Crankset: 38T // 40T // 42T // 44T</h5>
+            <h5>Cassette (13 speeds): 9-36T // 9-42T // 10-44T</h5>
+
+            <h3>Microshift</h3>
+
+            <h4>Sword</h4>
+            <h5>Chainring: 40T // 42T // 46-29T // 48-31T </h5>
+            <h5>Cassette (10 speeds): 11-38T // 11-48T </h5>
+
+            <h3>State</h3>
+
+            <h4>All Road</h4>
+            <h5>Chainring: 42T </h5>
+            <h5>Cassette (11 speeds): 11-42T </h5>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

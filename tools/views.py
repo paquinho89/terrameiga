@@ -41,11 +41,11 @@ def max_speed_slope_tool_view (request):
             speed_ms = 1  
             radio_chainring_m = teeth_chainring_value*0.001/2
             radio_cassete_m_big = teeth_cassette_value_big_mm*0.001/2
-            distance_pedal_m = 150*0.001
+            crankarm_m = 165*0.001
             radio_back_wheel_m = 700*0.001/2
             gravity = 9.8
             peso_exerce_ciclista = (wattios_kg*weight_person_kg)/(speed_ms*gravity)
-            tension_chain = ((distance_pedal_m)*peso_exerce_ciclista*gravity)/(radio_chainring_m)
+            tension_chain = ((crankarm_m)*peso_exerce_ciclista*gravity)/(radio_chainring_m)
             force_back_wheel = int(round(((radio_cassete_m_big)/(radio_back_wheel_m))*tension_chain, 0)) #Forza que se transmite ao chao pola roda traseira por un ciclista con 1.8W/kg
             print('forza_roda_traseira', force_back_wheel)
     

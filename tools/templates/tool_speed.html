@@ -52,7 +52,7 @@
                             <button id="1_chainring_button">1</button>
                             <button id="2_chainring_button">2</button>
                         </div>
-                        <div id="1_dropdown_chainring"  style="display: none;">
+                        <div id="1_dropdown_chainring"  >
                             {{ teeth_chainring_input_html.teeth_chainring }}
                         </div>
                         <div id="2_dropdown_chainring"  style="display: none;">
@@ -105,7 +105,7 @@
         </li>
     </ul>
     <ul id="ul_notes_tool">Assupmtions for maximun speed:
-        <li id="li_notes_tool">Distance from pedal to center of the chainring: 150mm</li>
+        <li id="li_notes_tool">Crankarm: 165mm</li>
         <li id="li_notes_tool">Revolutions per minute: 130 rpm</li>
     </ul>
 </label>
@@ -197,17 +197,27 @@
 <!--This script is to show the corresponding dropdown depending on the customer choice (1 chain ring or 2 chain rings)-->
 <script>
     jQuery(document).ready(function () {
+        var chainringDropdownState = sessionStorage.getItem('chainringDropdownState');
+
+        var showDropdown1 = chainringDropdownState === '1';
+        var showDropdown2 = chainringDropdownState === '2';
+
         jQuery("#1_chainring_button").click(function (event) {
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
             jQuery("#1_dropdown_chainring").show();
             jQuery("#2_dropdown_chainring").hide();
+            sessionStorage.setItem('chainringDropdownState', '1'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
 
         jQuery("#2_chainring_button").click(function (event) {
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
             jQuery("#1_dropdown_chainring").hide();
             jQuery("#2_dropdown_chainring").show();
+            sessionStorage.setItem('chainringDropdownState', '2'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
+        // Set initial visibility based on sessionStorage
+        jQuery("#1_dropdown_chainring").toggle(showDropdown1);
+        jQuery("#2_dropdown_chainring").toggle(showDropdown2);
     });
 </script>
 
