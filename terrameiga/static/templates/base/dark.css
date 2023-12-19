@@ -555,25 +555,14 @@ iframe{
     list-style-type: disc;
 }
 
-#a_sidebar_classification{
-    background-color: black;
-    color: rgb(246, 158, 138);
-    border-bottom: 1px solid #ccc;
+th{
+    color: white;
+}
+td{
+    color: white;
 }
 
-#a_sidebar_brands{
-    background-color: black;
-    color: rgb(246, 158, 138);
-    border-bottom: 1px solid #ccc;
-}
 
-#a_sidebar_brands .text{
-    margin-left: 10px;
-}
-
-#a_sidebar_brands .text-type{
-    margin-left: 20px;
-}
 
 
 
