@@ -578,6 +578,21 @@
         list-style-type: disc;
     }
 
+    .table th {
+        border-right: 1px solid rgba(191, 191, 191, 1); /* Add a vertical line to all th elements */
+        
+    }
+    .table tr {
+        border-bottom: 1px solid rgba(191, 191, 191, 1)
+    }
+    .table td {
+        border-right: 1px solid rgba(191, 191, 191, 1)
+    }
+
+    #li_table{
+        color: rgb(54, 69, 79);
+    }
+
 
 
 

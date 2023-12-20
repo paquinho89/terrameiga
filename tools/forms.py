@@ -78,6 +78,14 @@ class teeth_2chainring_form (forms.Form):
         ]
     teeth_2chainring = forms.ChoiceField(choices=teeth_2chainring_choices, widget=forms.Select(attrs={'id':'id_teeth_2chainring_form'}))
 
+class teeth_3chainring_form (forms.Form):
+    teeth_3chainring_choices = [
+        (( ),       '40/30/22T'),
+        (( ),       '44/32/22T'),
+        ((),          '59/39/30T')
+        ]
+    teeth_3chainring = forms.ChoiceField(choices=teeth_3chainring_choices, widget=forms.Select(attrs={'id':'id_teeth_3chainring_form'}))
+
 class teeth_cassette_form (forms.Form):
     teeth_cassette_choices = [
         ((42.95,  152.2),   '9T/36T'),

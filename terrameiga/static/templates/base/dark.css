@@ -555,12 +555,24 @@ iframe{
     list-style-type: disc;
 }
 
-th{
+.table th {
+    border-right: 1px solid #28282B; /* Add a vertical line to all th elements */
     color: white;
+    
 }
-td{
-    color: white;
+.table tr {
+    border-bottom: 1px solid #28282B;
+    color: rgba(191, 191, 191, 1);
 }
+.table td {
+    border-right: 1px solid #28282B;
+    color: rgba(191, 191, 191, 1);
+}
+
+#li_table{
+    color: rgba(191, 191, 191, 1);
+}
+                
 
 
 

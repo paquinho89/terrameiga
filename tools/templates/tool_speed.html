@@ -51,12 +51,16 @@
                         <div class="card-body">Teeth of your chainring
                             <button id="1_chainring_button">1</button>
                             <button id="2_chainring_button">2</button>
+                            <button id="3_chainring_button">3</button>
                         </div>
                         <div id="1_dropdown_chainring"  >
                             {{ teeth_chainring_input_html.teeth_chainring }}
                         </div>
                         <div id="2_dropdown_chainring"  style="display: none;">
                             {{ teeth_2chainring_input_html.teeth_2chainring }}
+                        </div>
+                        <div id="3_dropdown_chainring"  style="display: none;">
+                            {{ teeth_3chainring_input_html.teeth_3chainring }}
                         </div>
                     </div>
                 </div>
@@ -201,11 +205,13 @@
 
         var showDropdown1 = chainringDropdownState === '1';
         var showDropdown2 = chainringDropdownState === '2';
+        var showDropdown2 = chainringDropdownState === '3';
 
         jQuery("#1_chainring_button").click(function (event) {
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
             jQuery("#1_dropdown_chainring").show();
             jQuery("#2_dropdown_chainring").hide();
+            jQuery("#3_dropdown_chainring").hide();
             sessionStorage.setItem('chainringDropdownState', '1'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
 
@@ -213,11 +219,21 @@
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
             jQuery("#1_dropdown_chainring").hide();
             jQuery("#2_dropdown_chainring").show();
+            jQuery("#3_dropdown_chainring").hide();
             sessionStorage.setItem('chainringDropdownState', '2'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
+        });
+
+        jQuery("#3_chainring_button").click(function (event) {
+            event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
+            jQuery("#1_dropdown_chainring").hide();
+            jQuery("#2_dropdown_chainring").hide();
+            jQuery("#3_dropdown_chainring").show();
+            sessionStorage.setItem('chainringDropdownState', '3'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
         // Set initial visibility based on sessionStorage
         jQuery("#1_dropdown_chainring").toggle(showDropdown1);
         jQuery("#2_dropdown_chainring").toggle(showDropdown2);
+        jQuery("#3_dropdown_chainring").toggle(showDropdown3);
     });
 </script>
 
