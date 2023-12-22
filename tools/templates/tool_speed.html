@@ -30,7 +30,7 @@
         <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
         {% csrf_token %}
             <div class="row">
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-2 col-md-6">
                     <div class="card bg-primary text-white mb-4">
                         <div class="card-body">What kind of cyclist are you?</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-2 col-md-6">
                     <div class="card bg-warning text-white mb-4">
                         <div class="card-body">Your weight</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
@@ -46,25 +46,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Group Brand Name</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            {{ groupset_brand_input_html.groupset_brand }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Group Model</div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            {{ groupset_model_input_html.groupset_model }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-md-6">
                     <div class="card bg-success text-white mb-4">
                         <div class="card-body">Teeth of your chainring
-                            <button id="1_chainring_button">1</button>
-                            <button id="2_chainring_button">2</button>
-                            <button id="3_chainring_button">3</button>
+                            <button id="1_chainring_button" style="display: none;">1</button>
+                            <button id="2_chainring_button" style="display: none;">2</button>
+                            <button id="3_chainring_button" style="display: none;">3</button>
                         </div>
-                        <div id="1_dropdown_chainring"  >
-                            {{ teeth_chainring_input_html.teeth_chainring }}
+                        <div>
+                            {{ teeth_1chainring_input_html.teeth_1chainring }}
                         </div>
-                        <div id="2_dropdown_chainring"  style="display: none;">
-                            {{ teeth_2chainring_input_html.teeth_2chainring }}
+                        <div>
+                            {{ teeth_2chainring_input_html.teeth_2chainring }} 
                         </div>
-                        <div id="3_dropdown_chainring"  style="display: none;">
+                        <div>
                             {{ teeth_3chainring_input_html.teeth_3chainring }}
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6">
+                <div class="col-xl-2 col-md-6">
                     <div class="card bg-danger text-white mb-4">
                         <div class="card-body">Teeth of your cassette</div>
                         <div class="card-footer d-flex align-items-center justify-content-between">
@@ -77,6 +93,25 @@
                 <button id="update_personal_data_button" type="submit" class="btn btn-success btn-lg" id="deliveryNextBtn">Calculate</button>
             </div>
         </form>
+
+        <div style="display: flex;">
+            <div id="1_design_chainring" style="display: flex; align-items: center; margin-left: 50px;" class="mb-3">
+                <div style="border-left: 10px solid blue; height: 150px; margin-left: 10px;"> </div> 
+            </div>
+            
+            <div id="2_design_chainring" style="display: flex; align-items: center; margin-left: 50px;" class="mb-3">
+                <div style="border-left: 10px solid blue; height: 150px; margin-left: 10px;"> </div> 
+                <div style="border-left: 10px solid green; height: 300px; margin-left: 10px;"> </div> 
+            </div>
+            
+            <div id="3_design_chainring" style="display: flex; align-items: center; margin-left: 50px" class="mb-3">
+                <div style="border-left: 10px solid red; height: 75px;"> </div>
+                <div style="border-left: 10px solid blue; height: 150px; margin-left: 10px;"> </div> 
+                <div style="border-left: 10px solid green; height: 300px; margin-left: 10px;"> </div> 
+            </div>
+        </div>
+
+
         <div class="card mb-4">
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
@@ -198,6 +233,234 @@
     });
 </script>
 
+<!--This script connecs the groupset brand name with the group model name. Therefore if user selects Campagnolo, only groups from Campagnolo are showed up-->
+<script>
+    jQuery(document).ready(function () {
+        function update_groupset_choices() {
+            var select_groupset_brand = jQuery('#id_groupset_brand_form').val();
+            var select_groupset_model = jQuery('#id_groupset_model_form');
+            var new_groupset_choices = [];
+
+            if (select_groupset_brand === 'Campagnolo') {
+                new_groupset_choices = [
+                    { value: 0, text: 'Ekar' },
+                    { value: 0, text: 'Super Record Wireless' },
+                    { value: 0, text: 'Super Record' },
+                    { value: 0, text: 'Record' },
+                    { value: 0, text: 'Chorus' },
+                ];
+            } else if (select_groupset_brand === 'Shimano') {
+                new_groupset_choices = [
+                    { value: 0, text: 'GRX' },
+                    { value: 0, text: 'Dura-Ace' },
+                    { value: 0, text: 'Ultegra' },
+                    { value: 0, text: 'Shimano 105' },
+                    { value: 0, text: 'Tiagra' },
+                    { value: 0, text: 'Sora' },
+                    { value: 0, text: 'Claris' },
+                    { value: 0, text: 'XTR electronic'},
+                    { value: 0, text: 'XTR'},
+                    { value: 0, text: 'Deore XT electronic'},
+                    { value: 0, text: 'Deore'},
+                    { value: 0, text: 'SLX'},
+                    { value: 0, text: 'Cues'},
+                    { value: 0, text: 'Alivio'},
+                    { value: 0, text: 'Acera'},
+                    { value: 0, text: 'Altus'},
+                ];
+            } else if (select_groupset_brand === 'Sram' ) {
+                new_groupset_choices = [
+                    { value: 0, text:'Force eTap AXS (electronic)'},
+                    { value: 0, text:'Force'},
+                    { value: 0, text:'Rival Etap AXS (electronic)'},
+                    { value: 0, text:'Rival'},
+                    { value: 0, text:'Apex'},
+                    { value: 0, text: 'Red eTap AXS'},
+                    { value: 0, text: 'XX1 Eagle AXS electronic' },
+                    { value: 0, text: 'XX1 Eagle' },
+                    { value: 0, text: 'X01 Eagle AXS electronic' },
+                    { value: 0, text: 'X01 Eagle' },
+                    { value: 0, text: 'GX Eagle AXS electronic' },
+                    { value: 0, text: 'GX Eagle' },
+                    { value: 0, text: 'NX Eagle' },
+                    { value: 0, text: 'SX Eagle' },
+                ];
+            } else if (select_groupset_brand === 'Microshift') {
+                new_groupset_choices = [
+                    { value: 'Sword', text: 'Sword' },
+                    { value: 'Advent X', text: 'Advent X' },
+                    { value: 'Advent', text: 'Advent' },
+                    { value: 'Acolyte', text: 'Acolyte' },
+                ];
+            } else if (select_groupset_brand === 'State') {
+                new_groupset_choices = [
+                    { value: 'All Road', text: 'All Road' },
+                ];
+            }
+            // Clear existing options and add new options
+            select_groupset_model.empty();
+            jQuery.each(new_groupset_choices, function (index, item) {
+                select_groupset_model.append(jQuery('<option>', {
+                    value: item.value,
+                    text: item.text
+                }));
+            });
+        }
+        // Attach the update function to the change event of the wattios dropdown
+        jQuery('#id_groupset_brand_form').change(update_groupset_choices);
+    });
+</script>
+
+<!-- Actualizar os dropdowns do chainring 1 en fución do modelo de group set que se seleccione-->
+<script>
+    jQuery(document).ready(function () {
+        function update_dropdown_chainring_choices() {
+            var selected_model_groupset = jQuery('#id_groupset_model_form').val(); 
+            var teeth_chainring_1 = jQuery('#id_teeth_1chainring_form'); 
+            var new_teeth_choices = [];
+
+            if (selected_model_groupset === 'Ekar') {
+                new_teeth_choices = [
+                    { value: 0, text: '38T' },
+                    { value: 0, text: '40T' },
+                    { value: 0, text: '42T' },
+                    { value: 0, text: '44T' },
+                ];
+            }
+            if (selected_model_groupset === 'GRX' || selected_model_groupset === 'Apex') {
+                new_teeth_choices = [
+                    { value: 0, text: '40T' },
+                    { value: 0, text: '42T' },
+                ];
+            }
+            if (selected_model_groupset === 'Deore' || selected_model_groupset === 'SLX') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                ];
+            }
+            if (selected_model_groupset === 'Cues') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '40T' },
+                    { value: 0, text: '42T' },
+                ];
+            }
+            if (selected_model_groupset === 'Force eTap AXS (electronic)' || selected_model_groupset === 'Force') {
+                new_teeth_choices = [
+                    { value: 0, text: '40T' },
+                ];
+            }
+            if (selected_model_groupset === 'Rival eTap AXS (electronic)' || selected_model_groupset === 'Rival') {
+                new_teeth_choices = [
+                    { value: 0, text: '33T' },
+                    { value: 0, text: '35T' },
+                    { value: 0, text: '38T' },
+                    { value: 0, text: '40T' },
+                    { value: 0, text: '42T' },
+                    { value: 0, text: '43T' },
+                    { value: 0, text: '44T' },
+                    { value: 0, text: '46T' },
+                    { value: 0, text: '48T' },
+                ];
+            }
+            if (selected_model_groupset === 'XX1 Eagle AXS (electronic)') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                    { value: 0, text: '36T' },
+                    { value: 0, text: '38T' },
+                ];
+            }
+            // Clear existing options and add new options
+            teeth_chainring_1.empty();
+
+            jQuery.each(new_teeth_choices, function (index, item) {
+                teeth_chainring_1.append(jQuery('<option>', {
+                    value: item.value,
+                    text: item.text
+                }));
+            });
+        }
+        // Attach the update function to the change event of the groupset model dropdown
+        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);  // Update ID here
+    });
+</script>
+
+
+<!-- Actualizar os dropdowns do chainring 2 en función do modelo de group set que se seleccione-->
+<script>
+    jQuery(document).ready(function () {
+        function update_dropdown_chainring_choices() {
+            var selected_model_groupset = jQuery('#id_groupset_model_form').val(); 
+            var teeth_chainring_2 = jQuery('#id_teeth_2chainring_form'); 
+            var new_teeth_choices = [];
+
+            if (selected_model_groupset === 'Ekar') {
+                new_teeth_choices = [
+                    { value: 160.3, text: '38T/20T' },
+                    { value: 168.4, text: '40T/20T' },
+                ];
+            }
+            if (selected_model_groupset === 'GRX') {
+                new_teeth_choices = [
+                    { value: 168.4, text: '40T/20T' },
+                    { value: 168.4, text: '41T/20T' },
+                ];
+            }
+            // Clear existing options and add new options
+            teeth_chainring_2.empty();
+
+            jQuery.each(new_teeth_choices, function (index, item) {
+                teeth_chainring_2.append(jQuery('<option>', {
+                    value: item.value,
+                    text: item.text
+                }));
+            });
+        }
+        // Attach the update function to the change event of the groupset model dropdown
+        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);  // Update ID here
+    });
+</script>
+
+
+<!--Mostrar o correspondente dropdown para o chainring e o cassette dependendo do gruposet que se seleccione-->
+<script>
+    jQuery(document).ready(function(){
+        update_chainring_dropdown();
+        jQuery ('#id_groupset_model_form').on ('change', function(){
+            update_chainring_dropdown();
+        });
+        function update_chainring_dropdown () {
+        var selected_groupset_model = jQuery('#id_groupset_model_form').val();
+
+        if (selected_groupset_model === 'Ekar'){
+            jQuery("#1_chainring_button").hide();
+            jQuery("#id_teeth_1chainring_form").show();
+            jQuery("#1_design_chainring").show();
+            jQuery("#2_chainring_button").hide();
+            jQuery("#id_teeth_2chainring_form").hide();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#3_chainring_button").hide();
+            jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
+        }
+        else if (selected_groupset_model === 'GRX') {
+            jQuery("#1_chainring_button").show();
+            jQuery("#id_teeth_1chainring_form").show();
+            jQuery("#1_design_chainring").hide();
+            jQuery("#2_chainring_button").show();
+            jQuery("#id_teeth_2chainring_form").hide();
+            jQuery("#2_design_chainring").show();
+            jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
+        }
+    }})
+</script>
+
 <!--This script is to show the corresponding dropdown depending on the customer choice (1 chain ring or 2 chain rings)-->
 <script>
     jQuery(document).ready(function () {
@@ -207,33 +470,43 @@
         var showDropdown2 = chainringDropdownState === '2';
         var showDropdown2 = chainringDropdownState === '3';
 
+    
         jQuery("#1_chainring_button").click(function (event) {
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
-            jQuery("#1_dropdown_chainring").show();
-            jQuery("#2_dropdown_chainring").hide();
-            jQuery("#3_dropdown_chainring").hide();
+            jQuery("#id_teeth_1chainring_form").show();
+            jQuery("#1_design_chainring").show();
+            jQuery("#id_teeth_2chainring_form").hide();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
             sessionStorage.setItem('chainringDropdownState', '1'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
 
         jQuery("#2_chainring_button").click(function (event) {
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
-            jQuery("#1_dropdown_chainring").hide();
-            jQuery("#2_dropdown_chainring").show();
-            jQuery("#3_dropdown_chainring").hide();
+            jQuery("#id_teeth_1chainring_form").hide();
+            jQuery("#1_design_chainring").hide();
+            jQuery("#id_teeth_2chainring_form").show();
+            jQuery("#2_design_chainring").show();
+            jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
             sessionStorage.setItem('chainringDropdownState', '2'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
 
         jQuery("#3_chainring_button").click(function (event) {
             event.preventDefault();  // Con esto o formulario non se submite cando clico nalgún dos botóns do chainring para mostrar o dropdown correspondente
-            jQuery("#1_dropdown_chainring").hide();
-            jQuery("#2_dropdown_chainring").hide();
-            jQuery("#3_dropdown_chainring").show();
+            jQuery("#id_teeth_1chainring_form").hide();
+            jQuery("#1_design_chainring").hide();
+            jQuery("#id_teeth_2chainring_form").hide();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#id_teeth_3chainring_form").show();
+            jQuery("#3_design_chainring").show();
             sessionStorage.setItem('chainringDropdownState', '3'); //Con esto gardo o elemento na sesión para cando se me cargue a páxina sepa cal ten que aplicar. Ou dropdown 1 ou o 2
         });
         // Set initial visibility based on sessionStorage
-        jQuery("#1_dropdown_chainring").toggle(showDropdown1);
-        jQuery("#2_dropdown_chainring").toggle(showDropdown2);
-        jQuery("#3_dropdown_chainring").toggle(showDropdown3);
+        jQuery("#id_teeth_1chainring_form").toggle(showDropdown1);
+        jQuery("#id_teeth_2chainring_form").toggle(showDropdown2);
+        jQuery("#id_teeth_3chainring_form").toggle(showDropdown3);
     });
 </script>
 

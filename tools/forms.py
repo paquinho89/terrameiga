@@ -10,15 +10,69 @@ class wattios_form (forms.Form):
     (3.7, 'Cyclist Moderate'),
     (1.7, 'Cyclist Novice')
     ]
-
     wattios = forms.ChoiceField(choices=wattios_choices, widget=forms.Select(attrs={'id':'id_wattios_form'}))
 
 class weight_form (forms.Form):
     weight_choices = [(x,x) for x in range (30,200, 5)]
     weight = forms.ChoiceField(choices=weight_choices, widget=forms.Select(attrs={'id':'id_weight_form'}))
 
-class teeth_chainring_form (forms.Form):
-    teeth_chainring_choices = [
+class groupset_brand_form (forms.Form):
+    groupset_brand_choices = [
+    ('Campagnolo', 'Campagnolo'),
+    ('Shimano', 'Shimano'),
+    ('Sram', 'Sram'),
+    ('Microshift', 'Microshift'),
+    ('State', 'State')
+    ]
+    groupset_brand = forms.ChoiceField(choices=groupset_brand_choices, widget=forms.Select(attrs={'id':'id_groupset_brand_form'}))
+
+class groupset_model_form (forms.Form):
+    groupset_model_choices = [
+        ('Ekar', 'Ekar'),
+        ('GRX', 'GRX'),
+        ('Force eTap AXS', 'Force eTap AXS (electronic)'),
+        ('Force', 'Force'),
+        ('Rival Etap AXS', 'Rival Etap AXS (electronic)'),
+        ('Rival', 'Rival'),
+        ('Apex', 'Apex'),
+        ('Sword', 'Sword'),
+        ('All Road', 'All Road'),
+        ('Super Record Wireless', 'Super Record Wireless (electronic)'),
+        ('Super Record', 'Super Record'),
+        ('Record', 'Record'),
+        ('Chorus', 'Chorus'),
+        ('Dura-Ace', 'Dura-Ace (electronic)'),
+        ('Ultegra', 'Ultegra (electronic)'),
+        ('Shimano 105', 'Shimano 105 (electronic)'),
+        ('Tiagra', 'Tiagra'),
+        ('Sora', 'Sora'),
+        ('Claris', 'Claris'),
+        ('Red eTap AXS', 'Red eTap AXS (electronic)'),
+        ('XTR electronic', 'XTR (electronic)'),
+        ('XTR', 'XTR'),
+        ('Deore XT electronic', 'Deore XT'),
+        ('Deore', 'Deore'),
+        ('SLX', 'SLX'),
+        ('Cues', 'Cues'),
+        ('Alivio', 'Alivio'),
+        ('Acera', 'Acera'),
+        ('Altus', 'Altus'),
+        ('XX1 Eagle AXS', 'XX1 Eagle AXS (electronic)'),
+        ('XX1 Eagle', 'XX1 Eagle'),
+        ('X01 Eagle AXS', 'X01 Eagle AXS (electronic)'),
+        ('X01 Eagle', 'X01 Eagle'),
+        ('GX Eagle AXS', 'GX Eagle AXS (electronic)'),
+        ('GX Eagle', 'GX Eagle'),
+        ('NX Eagle', 'NX Eagle'),
+        ('SX Eagle', 'SX Eagle'),
+        ('Advent X', 'Advent X'),
+        ('Advent', 'Advent'),
+        ('Acolyte', 'Acolyte')
+    ]
+    groupset_model = forms.ChoiceField(choices=groupset_model_choices, widget=forms.Select(attrs={'id':'id_groupset_model_form'}))
+
+class teeth_1chainring_form (forms.Form):
+    teeth_1chainring_choices = [
             (87.5, '20T'),
             (91.55, '21T'),
             (95.6, '22T'),
@@ -57,7 +111,7 @@ class teeth_chainring_form (forms.Form):
             (229.05, '55T'),
             (233.1, '56T')  ]
     
-    teeth_chainring = forms.ChoiceField(choices=teeth_chainring_choices, widget=forms.Select(attrs={'id':'id_teeth_chainring_form'}))
+    teeth_1chainring = forms.ChoiceField(choices=teeth_1chainring_choices, widget=forms.Select(attrs={'id':'id_teeth_1chainring_form'}))
 
 class teeth_2chainring_form (forms.Form):
     teeth_2chainring_choices = [
