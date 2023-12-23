@@ -162,61 +162,59 @@
 
             if (selectedWattios === '6.2') {
                 newWeightChoices = [
-                    { value: '60', text: '60' },
-                    { value: '65', text: '65' },
-                    { value: '70', text: '70' },
-                    { value: '75', text: '75' },
-                    { value: '80', text: '80' },
-                    { value: '85', text: '85' },
+                    { value: 0, text: '60' },
+                    { value: 0, text: '65' },
+                    { value: 0, text: '70' },
+                    { value: 0, text: '75' },
+                    { value: 0, text: '80' },
+                    { value: 0, text: '85' },
                 ];
             } else if (selectedWattios === '5.6' ||  selectedWattios === '5') {
                 newWeightChoices = [
-                    { value: '60', text: '60' },
-                    { value: '65', text: '65' },
-                    { value: '70', text: '70' },
-                    { value: '75', text: '75' },
-                    { value: '80', text: '80' },
-                    { value: '85', text: '85' },
-                    { value: '90', text: '90' },
+                    { value: 0, text: '60' },
+                    { value: 0, text: '65' },
+                    { value: 0, text: '70' },
+                    { value: 0, text: '75' },
+                    { value: 0, text: '80' },
+                    { value: 0, text: '85' },
+                    { value: 0, text: '90' },
                 ];
             } else if (selectedWattios === '4.3' || selectedWattios === '3.7' ) {
                 newWeightChoices = [
-                    { value: '50', text: '50' },
-                    { value: '55', text: '55' },
-                    { value: '60', text: '60' },
-                    { value: '65', text: '65' },
-                    { value: '70', text: '70' },
-                    { value: '75', text: '75' },
-                    { value: '80', text: '80' },
-                    { value: '85', text: '85' },
-                    { value: '90', text: '90' },
-                    { value: '95', text: '95' },
-                    { value: '100', text: '100' },
+                    { value: 0, text: '50' },
+                    { value: 0, text: '55' },
+                    { value: 0, text: '60' },
+                    { value: 0, text: '65' },
+                    { value: 0, text: '70' },
+                    { value: 0, text: '75' },
+                    { value: 0, text: '80' },
+                    { value: 0, text: '85' },
+                    { value: 0, text: '90' },
+                    { value: 0, text: '95' },
+                    { value: 0, text: '100' },
                 ];
             } else if (selectedWattios === '1.7') {
                 newWeightChoices = [
-                    { value: '40', text: '40' },
-                    { value: '45', text: '45' },
-                    { value: '50', text: '50' },
-                    { value: '55', text: '55' },
-                    { value: '60', text: '60' },
-                    { value: '65', text: '65' },
-                    { value: '70', text: '70' },
-                    { value: '75', text: '75' },
-                    { value: '80', text: '80' },
-                    { value: '85', text: '85' },
-                    { value: '90', text: '90' },
-                    { value: '95', text: '95' },
-                    { value: '105', text: '105' },
-                    { value: '110', text: '110' },
-                    { value: '115', text: '115' },
-                    { value: '120', text: '120' },
-                    { value: '125', text: '125' },
-                    { value: '130', text: '130' },
-                    { value: '135', text: '135' },
-                    { value: '140', text: '140' },
-                    { value: '145', text: '145' },
-                    { value: '150', text: '150' },
+                    { value: 0, text: '45' },
+                    { value: 0, text: '50' },
+                    { value: 0, text: '55' },
+                    { value: 0, text: '60' },
+                    { value: 0, text: '65' },
+                    { value: 0, text: '70' },
+                    { value: 0, text: '75' },
+                    { value: 0, text: '80' },
+                    { value: 0, text: '85' },
+                    { value: 0, text: '90' },
+                    { value: 0, text: '95' },
+                    { value: 0, text: '105' },
+                    { value: 0, text: '110' },
+                    { value: 0, text: '115' },
+                    { value: 0, text: '120' },
+                    { value: 0, text: '125' },
+                    { value: 0, text: '130' },
+                    { value: 0, text: '135' },
+                    { value: 0, text: '140' },
+                    { value: 0, text: '145' }
                 ];
             }
             // Clear existing options and add new options
@@ -327,7 +325,7 @@
                     { value: 0, text: '44T' },
                 ];
             }
-            if (selected_model_groupset === 'GRX' || selected_model_groupset === 'Apex') {
+            if (selected_model_groupset === 'GRX' || selected_model_groupset === 'Apex' || selected_model_groupset === 'Sword') {
                 new_teeth_choices = [
                     { value: 0, text: '40T' },
                     { value: 0, text: '42T' },
@@ -375,6 +373,33 @@
                     { value: 0, text: '38T' },
                 ];
             }
+            if (selected_model_groupset === 'XX1 Eagle') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                    { value: 0, text: '36T' },
+                ];
+            }
+            if (selected_model_groupset === 'X01 Eagle AXS (electronic)') {
+                new_teeth_choices = [
+                    { value: 0, text: '32T' },
+                ];
+            }
+            if (selected_model_groupset === 'X01 Eagle') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                ];
+            }
+            if (selected_model_groupset === 'GX Eagle AXS (electronic)' || selected_model_groupset === 'GX Eagle' || selected_model_groupset === 'NX Eagle' || selected_model_groupset === 'SX Eagle' ||
+                selected_model_groupset === 'Advent' || selected_model_groupset === 'Acolyte' || selected_model_groupset === 'Advent X') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                ];
+            }
             // Clear existing options and add new options
             teeth_chainring_1.empty();
 
@@ -385,11 +410,10 @@
                 }));
             });
         }
-        // Attach the update function to the change event of the groupset model dropdown
-        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);  // Update ID here
+        // Attach the update function to the change event of the wattios dropdown
+        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);
     });
 </script>
-
 
 <!-- Actualizar os dropdowns do chainring 2 en función do modelo de group set que se seleccione-->
 <script>
@@ -399,16 +423,99 @@
             var teeth_chainring_2 = jQuery('#id_teeth_2chainring_form'); 
             var new_teeth_choices = [];
 
-            if (selected_model_groupset === 'Ekar') {
-                new_teeth_choices = [
-                    { value: 160.3, text: '38T/20T' },
-                    { value: 168.4, text: '40T/20T' },
-                ];
-            }
             if (selected_model_groupset === 'GRX') {
                 new_teeth_choices = [
-                    { value: 168.4, text: '40T/20T' },
-                    { value: 168.4, text: '41T/20T' },
+                    { value: 0, text: '40T/20T' },
+                    { value: 0, text: '41T/20T' },
+                ];
+            }
+            if (selected_model_groupset === 'Force eTap AXS (electronic)' || selected_model_groupset === 'Force' || selected_model_groupset=== 'Rival Etap AXS (electronic)' || selected_model_groupset=== 'Rival') {
+                new_teeth_choices = [
+                    { value: 0, text: '43T/30T' },
+                    { value: 0, text: '46T/33T' },
+                    { value: 0, text: '48T/35T' },
+                    { value: 0, text: '50T/37T' },
+                ];
+            }
+            if (selected_model_groupset === 'Sword') {
+                new_teeth_choices = [
+                    { value: 0, text: '46T/29T' },
+                    { value: 0, text: '48T/31T' },
+                ];
+            }
+            if (selected_model_groupset === 'Chorus') {
+                new_teeth_choices = [
+                    { value: 0, text: '48T/32T' },
+                    { value: 0, text: '50T/34T' },
+                    { value: 0, text: '52T/36T' },
+                ];
+            }
+            if (selected_model_groupset === 'Super Record Wireless (electronic)') {
+                new_teeth_choices = [
+                    { value: 0, text: '45T/29T' },
+                    { value: 0, text: '48T/32T' },
+                    { value: 0, text: '50T/34T' },
+                ];
+            }
+            if (selected_model_groupset === 'Super Record' || selected_model_groupset === 'Record') {
+                new_teeth_choices = [
+                    { value: 0, text: '50T/34T' },
+                    { value: 0, text: '52T/36T' },
+                    { value: 0, text: '53T/39T' },
+                ];
+            }
+            if (selected_model_groupset === 'Tiagra' || selected_model_groupset === 'Sora') {
+                new_teeth_choices = [
+                    { value: 0, text: '48T/34T' },
+                    { value: 0, text: '50T/34T' },
+                    { value: 0, text: '52T/36T' },
+                ];
+            }
+            if (selected_model_groupset === 'Claris') {
+                new_teeth_choices = [
+                    { value: 0, text: '46T/34T' },
+                    { value: 0, text: '50T/34T' },
+                ];
+            }
+            if (selected_model_groupset === 'Shimano 105 (electronic)' || selected_model_groupset === 'Shimano 105') {
+                new_teeth_choices = [
+                    { value: 0, text: '50T/34T' },
+                    { value: 0, text: '52T/36T' },
+                ];
+            }
+            if (selected_model_groupset === 'Dura-Ace (electronic)') {
+                new_teeth_choices = [
+                    { value: 0, text: '46T/36T' },
+                    { value: 0, text: '50T/34T' },
+                    { value: 0, text: '52T/36T' },
+                    { value: 0, text: '54T/40T' },
+                ];
+            }
+            if (selected_model_groupset === 'Ultegra (electronic)') {
+                new_teeth_choices = [
+                    { value: 0, text: '46T/36T' },
+                    { value: 0, text: '50T/34T' },
+                    { value: 0, text: '52T/36T' },
+                ];
+            }
+            if (selected_model_groupset === 'RED eTap AXS (electronic)') {
+                new_teeth_choices = [
+                    { value: 0, text: '46T/36T' },
+                    { value: 0, text: '48T/35T' },
+                    { value: 0, text: '50T/37T' },
+                    { value: 0, text: '52T/39T' },
+                    { value: 0, text: '54T/41T' },
+                    { value: 0, text: '56T/43T' },
+                ];
+            }
+            if (selected_model_groupset === 'XTR (electronic)' || selected_model_groupset === 'XTR') {
+                new_teeth_choices = [
+                    { value: 0, text: '38T/28T' },
+                ];
+            }
+            if (selected_model_groupset === 'Deore XT (electronic)' || selected_model_groupset === 'Deore') {
+                new_teeth_choices = [
+                    { value: 0, text: '36T/26T' },
                 ];
             }
             // Clear existing options and add new options
@@ -416,6 +523,42 @@
 
             jQuery.each(new_teeth_choices, function (index, item) {
                 teeth_chainring_2.append(jQuery('<option>', {
+                    value: item.value,
+                    text: item.text
+                }));
+            });
+        }
+        // Attach the update function to the change event of the groupset model dropdown
+        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);  // Update ID here
+    });
+</script>
+
+<!-- Actualizar os dropdowns do chainring 3 en función do modelo de group set que se seleccione-->
+<script>
+    jQuery(document).ready(function () {
+        function update_dropdown_chainring_choices() {
+            var selected_model_groupset = jQuery('#id_groupset_model_form').val(); 
+            var teeth_chainring_3 = jQuery('#id_teeth_3chainring_form'); 
+            var new_teeth_choices = [];
+
+            if (selected_model_groupset === 'Tiagra' || selected_model_groupset === 'Sora' || selected_model_groupset === 'Claris') {
+                new_teeth_choices = [
+                    { value: 0, text: '59T/39T/30T' },
+                ];
+            }
+            if (selected_model_groupset === 'Alivio' || selected_model_groupset === 'Acera' || selected_model_groupset === 'Altus') {
+                new_teeth_choices = [
+                    { value: 0, text: '40T/30T/22T' },
+                    { value: 0, text: '44T/32T/22T' },
+                    { value: 0, text: '59T/39T/30T' },
+                ];
+            }
+
+            // Clear existing options and add new options
+            teeth_chainring_3.empty();
+
+            jQuery.each(new_teeth_choices, function (index, item) {
+                teeth_chainring_3.append(jQuery('<option>', {
                     value: item.value,
                     text: item.text
                 }));
@@ -436,8 +579,11 @@
         });
         function update_chainring_dropdown () {
         var selected_groupset_model = jQuery('#id_groupset_model_form').val();
-
-        if (selected_groupset_model === 'Ekar'){
+        // Cambios que ofrecen 1 opción e esa é monoplato
+        if (selected_groupset_model === 'Ekar' || selected_groupset_model === 'Apex' || selected_groupset_model === 'All Road' || selected_groupset_model === 'SX Eagle' ||
+            selected_groupset_model === 'GX Eagle AXS (electronic)' || selected_groupset_model === 'GX Eagle' || selected_groupset_model === 'NX Eagle' ||
+            selected_groupset_model === 'XX1 Eagle AXS (electronic)' || selected_groupset_model === 'XX1 Eagle' || selected_groupset_model === 'X01 Eagle AXS (electronic)' ||
+            selected_groupset_model === 'X01 Eagle' || selected_groupset_model === 'Advent' || selected_groupset_model === 'Acolyte' || selected_groupset_model === 'Advent X'){
             jQuery("#1_chainring_button").hide();
             jQuery("#id_teeth_1chainring_form").show();
             jQuery("#1_design_chainring").show();
@@ -448,14 +594,58 @@
             jQuery("#id_teeth_3chainring_form").hide();
             jQuery("#3_design_chainring").hide();
         }
-        else if (selected_groupset_model === 'GRX') {
+        // Cambios que ofrecen 1 opción e esa é biplato
+        if (selected_groupset_model === 'Chorus' || selected_groupset_model === 'Super Record Wireless (electronic)' || selected_groupset_model === 'Super Record' || selected_groupset_model === 'Record' ||
+            selected_groupset_model === 'Shimano 105 (electronic)' || selected_groupset_model === 'Shimano 105' || selected_groupset_model === 'Dura-Ace (electronic)' || selected_groupset_model === 'Ultegra (electronic)' ||
+            selected_groupset_model === 'RED eTap AXS (electronic)')
+            {
+            jQuery("#1_chainring_button").hide();
+            jQuery("#id_teeth_1chainring_form").hide();
+            jQuery("#1_design_chainring").hide();
+            jQuery("#2_chainring_button").hide();
+            jQuery("#id_teeth_2chainring_form").show();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#3_chainring_button").hide();
+            jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
+            }
+        // Cambios que ofrecen 2 opcións: monoplato e biplato 
+        else if (selected_groupset_model === 'GRX' || selected_groupset_model === 'Force eTap AXS (electronic)' || selected_groupset_model === 'Force' || 
+                selected_groupset_model === 'Rival Etap AXS (electronic)' || selected_groupset_model === 'Rival' || selected_groupset_model === 'Sword' ||
+                selected_groupset_model === 'Deore' || selected_groupset_model === 'SLX' || selected_groupset_model === 'Cues' || selected_groupset_model === 'XTR (electronic)' || 
+                selected_groupset_model === 'XTR' || selected_groupset_model === 'Deore XT (electronic)' || selected_groupset_model === 'Deore XT') {
             jQuery("#1_chainring_button").show();
             jQuery("#id_teeth_1chainring_form").show();
             jQuery("#1_design_chainring").hide();
             jQuery("#2_chainring_button").show();
             jQuery("#id_teeth_2chainring_form").hide();
-            jQuery("#2_design_chainring").show();
+            jQuery("#2_design_chainring").hide();
             jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
+        }
+        // Cambios que ofrecen 2 opcións: biplato e triplato
+        else if (selected_groupset_model === 'Tiagra' || selected_groupset_model === 'Sora' || selected_groupset_model === 'Claris' || selected_groupset_model === 'Alivio' ||
+                selected_groupset_model === 'Acera') {
+            jQuery("#1_chainring_button").hide();
+            jQuery("#id_teeth_1chainring_form").hide();
+            jQuery("#1_design_chainring").hide();
+            jQuery("#2_chainring_button").show();
+            jQuery("#id_teeth_2chainring_form").show();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#3_chainring_button").show();
+            jQuery("#id_teeth_3chainring_form").hide();
+            jQuery("#3_design_chainring").hide();
+        }
+         // Cambios que ofrecen 1 opción: triplato
+         else if (selected_groupset_model === 'Altus') {
+            jQuery("#1_chainring_button").hide();
+            jQuery("#id_teeth_1chainring_form").hide();
+            jQuery("#1_design_chainring").hide();
+            jQuery("#2_chainring_button").hide();
+            jQuery("#id_teeth_2chainring_form").hide();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#3_chainring_button").hide();
+            jQuery("#id_teeth_3chainring_form").show();
             jQuery("#3_design_chainring").hide();
         }
     }})
