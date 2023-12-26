@@ -569,6 +569,125 @@
     });
 </script>
 
+<!--Que aparezcan os cassettes correspondentes dependendo do modelo que se escolla de cambio -->
+<script>
+    jQuery(document).ready(function () {
+        function update_groupset_choices() {
+            var select_groupset_model = jQuery('#id_groupset_model_form').val();
+            var select_cassete_teeth = jQuery('#id_teeth_cassette'); 
+            var new_cassette_choices = [];
+
+            if (select_groupset_model === 'Ekar') {
+                new_cassette_choices = [
+                    { value: 0, text: '9T/36T - 13 speeds' },
+                    { value: 0, text: '9T/42T - 13 speeds' },
+                    { value: 0, text: '10T/44T - 13 speeds'},
+                ];
+            } else if (select_groupset_model === 'GRX') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/25T - 10 speeds' },
+                    { value: 0, text: '11T/32T - 10 speeds' },
+                    { value: 0, text: '12T/28T - 10 speeds' },
+                    { value: 0, text: '11T/34T - 10 speeds' },
+                    { value: 0, text: '11T/36T - 10 speeds' },
+                    { value: 0, text: '11T/25T - 11 speeds' },
+                    { value: 0, text: '11T/28T - 11 speeds' },
+                    { value: 0, text: '11T/30T - 11 speeds'},
+                    { value: 0, text: '11T/32T - 11 speeds'},
+                    { value: 0, text: '11T/34T - 11 speeds'},
+                    { value: 0, text: '11T/40T - 11 speeds'},
+                    { value: 0, text: '11T/42T - 11 speeds'},
+                    { value: 0, text: '11T/46T - 11 speeds'},
+                    { value: 0, text: '12T/25T - 11 speeds'},
+                    { value: 0, text: '14T/28T - 11 speeds'},
+                    { value: 0, text: '10T/45T - 12 speeds'},
+                    { value: 0, text: '10T/51T - 12 speeds'},
+                    { value: 0, text: '11T/30T - 12 speeds'},
+                    { value: 0, text: '11T/34T - 12 speeds'},
+                ];
+            } else if (select_groupset_model === 'Apex' ) {
+                new_groupset_choices = [
+                    { value: 0, text:'11T/44T - 12 speeds)'},
+                ];
+            } else if (select_groupset_model === 'Force eTap AXS (electronic)' || select_groupset_model === 'Force') {
+                new_groupset_choices = [
+                    { value: 0, text:'10T/28T - 12 speeds'},
+                    { value: 0, text:'10T/30T - 12 speeds'},
+                    { value: 0, text:'10T/33T - 12 speeds'},
+                    { value: 0, text:'10T/36T - 12 speeds'},
+                    { value: 0, text:'10T/44T - 12 speeds'},
+                ];
+            } else if (select_groupset_model === 'Rival Etap AXS (electronic)' || select_groupset_model === 'Rival') {
+                new_groupset_choices = [
+                    { value: 0, text: '10T/30T - 12 speeds' },
+                    { value: 0, text: '10T/36T - 12 speeds' },
+                    { value: 0, text: '10T/44T - 12 speeds' },
+                ];
+            } else if (select_groupset_model === 'Sword') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/38T - 10 speeds' },
+                    { value: 0, text: '11T/48T - 10 speeds' },
+                ];
+            } else if (select_groupset_model === 'All Road') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/42T - 11 speeds' },
+                ];
+            } else if (select_groupset_model === 'Chorus' || select_groupset_model === 'Super Record' || select_groupset_model === 'Record') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/29T - 12 speeds' },
+                    { value: 0, text: '11T/32T - 12 speeds' },
+                    { value: 0, text: '11T/34T - 12 speeds' },
+                ];
+            } else if (select_groupset_model === 'Super Record Wireless (electronic)') {
+                new_groupset_choices = [
+                    { value: 0, text: '10T/25T - 12 speeds' },
+                    { value: 0, text: '10T/27T - 12 speeds' },
+                    { value: 0, text: '10T/29T - 12 speeds' },
+                ];
+            } else if (select_groupset_model === 'Tiagra') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/25T - 10 speeds' },
+                    { value: 0, text: '11T/32T - 10 speeds' },
+                    { value: 0, text: '11T/34T - 10 speeds' },
+                    { value: 0, text: '12T/28T - 10 speeds' },
+                ];
+            } else if (select_groupset_model === 'Sora') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/30T - 9 speeds' },
+                    { value: 0, text: '12T/25T - 9 speeds' },
+                    { value: 0, text: '13T/25T - 9 speeds' },
+                    { value: 0, text: '14T/25T - 9 speeds' },
+                ];
+            } else if (select_groupset_model === 'Claris') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/28T - 8 speeds' },
+                    { value: 0, text: '11T/30T - 8 speeds' },
+                    { value: 0, text: '11T/32T - 8 speeds' },
+                    { value: 0, text: '11T/34T - 8 speeds' },
+                    { value: 0, text: '12T/23T - 8 speeds' },
+                    { value: 0, text: '12T/25T - 8 speeds' },
+                    { value: 0, text: '13T/26T - 8 speeds' },
+                ];
+            } else if (select_groupset_model === 'Shimano 105 (electronic)' || select_groupset_model === 'Shimano 105') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/34T - 12 speeds_' },
+                    { value: 0, text: '11T/36T - 12 speeds' },
+                ];
+            }
+            // Clear existing options and add new options
+            select_groupset_model.empty();
+            jQuery.each(new_groupset_choices, function (index, item) {
+                select_groupset_model.append(jQuery('<option>', {
+                    value: item.value,
+                    text: item.text
+                }));
+            });
+        }
+        // Attach the update function to the change event of the wattios dropdown
+        jQuery('#id_groupset_brand_form').change(update_groupset_choices);
+    });
+</script>
+
 
 <!--Mostrar o correspondente dropdown para o chainring e o cassette dependendo do gruposet que se seleccione-->
 <script>
