@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect
 import math 
-from .forms import wattios_form, weight_form, groupset_brand_form, groupset_model_form, teeth_1chainring_form, teeth_2chainring_form, teeth_3chainring_form, teeth_cassette_form
+from .forms import wattios_form, weight_form, groupset_brand_form, groupset_model_form, teeth_chainring_form, teeth_cassette_form
 
 def max_speed_slope_tool_view (request):
     wattios_input = wattios_form(request.POST)
     weight_input = weight_form(request.POST)
     groupset_brand_input =  groupset_brand_form (request.POST)
     groupset_model_input = groupset_model_form (request.POST)
-    teeth_1chainring_input = teeth_1chainring_form(request.POST)
-    teeth_2chainring_input = teeth_2chainring_form(request.POST)
-    teeth_3chainring_input = teeth_3chainring_form(request.POST)
+    teeth_chainring_input = teeth_chainring_form(request.POST)
     teeth_cassette_input = teeth_cassette_form(request.POST)
     # Provide default values to avoid the errors
     speed_km_h = 0
@@ -27,7 +25,7 @@ def max_speed_slope_tool_view (request):
             print('eeeeeeeeoooooooooooooo', groupset_brand_value)
             groupset_model_value = groupset_model_input.cleaned_data.get('groupset_model')
             print('eeeeeeeeoooooooooooooo', groupset_model_value)
-            teeth_1chainring_value = float(teeth_1chainring_input.cleaned_data.get('teeth_1chainring'))
+            teeth_1chainring_value = float(teeth_chainring_input.cleaned_data.get('teeth_1chainring'))
             print('eeeeeeeeeeeeeeeeeeeoooooooooooooooooo', teeth_1chainring_value)
             #teeth_2chainring_value = teeth_2chainring_input.cleaned_data.get('teeth_2chainring')
             #print('eeeeeeeeeeeeeeeeeeeoooooooooooooooooo', teeth_2chainring_value)
@@ -80,9 +78,7 @@ def max_speed_slope_tool_view (request):
       'weight_input_html' : weight_input,
       'groupset_brand_input_html' : groupset_brand_input,
       'groupset_model_input_html' : groupset_model_input,
-      'teeth_1chainring_input_html' : teeth_1chainring_input,
-      'teeth_2chainring_input_html' : teeth_2chainring_input,
-      'teeth_3chainring_input_html' : teeth_3chainring_input,
+      'teeth_chainring_input_html' : teeth_chainring_input,
       'teeth_cassette_input_html' : teeth_cassette_input,
 
       'speed_km_h_html':speed_km_h,
