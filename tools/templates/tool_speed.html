@@ -673,6 +673,50 @@
                     { value: 0, text: '11T/34T - 12 speeds_' },
                     { value: 0, text: '11T/36T - 12 speeds' },
                 ];
+            } else if (select_groupset_model === 'Dura-Ace (electronic)' || select_groupset_model === 'Ultegra (electronic)') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/30T - 12 speeds' },
+                    { value: 0, text: '11T/34T - 12 speeds_' },
+                ];
+            } else if (select_groupset_model === 'RED eTap AXS (electronic)') {
+                new_groupset_choices = [
+                    { value: 0, text: '10T/26T - 12 speeds' },
+                    { value: 0, text: '10T/28T - 12 speeds' },
+                    { value: 0, text: '10T/33T - 12 speeds' },
+                    { value: 0, text: '10T/44T - 12 speeds' },
+                ];
+            } else if (select_groupset_model === 'Alivio' || select_groupset_model === 'Acera' || select_groupset_model === 'Altus') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/25T - 9 speeds' },
+                    { value: 0, text: '11T/32T - 9 speeds' },
+                    { value: 0, text: '11T/34T - 9 speeds' },
+                    { value: 0, text: '11T/36T - 9 speeds' },
+                ];
+            } else if (select_groupset_model === 'Deore') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/36T - 10 speeds' },
+                    { value: 0, text: '11T/42T - 10 speeds' },
+                    { value: 0, text: '11T/43T - 10 speeds' },
+                    { value: 0, text: '11T/42T - 11 speeds' },
+                    { value: 0, text: '11T/51T - 11 speeds' },
+                    { value: 0, text: '10T/51T - 12 speeds' },
+                ];
+            } else if (select_groupset_model === 'SLX' || select_groupset_model === 'XTR (electronic)' || select_groupset_model === 'XTR') {
+                new_groupset_choices = [
+                    { value: 0, text: '10T/45T - 12 speeds' },
+                    { value: 0, text: '10T/51T - 12 speeds' },
+                ];
+            } else if (select_groupset_model === 'Cues') {
+                new_groupset_choices = [
+                    { value: 0, text: '11T/45T - 11 speeds' },
+                    { value: 0, text: '11T/50T - 11 speeds' },
+                ];
+                //QUEDACHES EIQUI
+            } else if (select_groupset_model === 'Deore XT (electronic)' || select_groupset_model === 'Deore XT') {
+                new_groupset_choices = [
+                    { value: 0, text: '' },
+                    { value: 0, text: '' },
+                ];
             }
             // Clear existing options and add new options
             select_groupset_model.empty();
