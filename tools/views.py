@@ -14,64 +14,144 @@ def max_speed_slope_tool_view (request):
     force_back_wheel = 0
     force_slope = 0
     slope_percentage = 0
+    pendiente_por_cada_cassette = 0
     if request.method == 'POST':
-        print('POST')
-        if wattios_input.is_valid() and weight_input.is_valid() and groupset_brand_input.is_valid() and groupset_model_input.is_valid() and teeth_1chainring_input.is_valid():
-            print('É válido')
-            wattios_value = float(wattios_input.cleaned_data.get('wattios'))
-            weight_value = float(weight_input.cleaned_data.get('weight'))
-            print('eeeeeeeeeeooooooooooooooooooooo', weight_value)
+        if wattios_input.is_valid() and weight_input.is_valid() and groupset_brand_input.is_valid() and groupset_model_input.is_valid() and teeth_chainring_input.is_valid() and teeth_cassette_input.is_valid():
             groupset_brand_value = groupset_brand_input.cleaned_data.get('groupset_brand')
-            print('eeeeeeeeoooooooooooooo', groupset_brand_value)
             groupset_model_value = groupset_model_input.cleaned_data.get('groupset_model')
-            print('eeeeeeeeoooooooooooooo', groupset_model_value)
-            teeth_1chainring_value = float(teeth_chainring_input.cleaned_data.get('teeth_1chainring'))
-            print('eeeeeeeeeeeeeeeeeeeoooooooooooooooooo', teeth_1chainring_value)
-            #teeth_2chainring_value = teeth_2chainring_input.cleaned_data.get('teeth_2chainring')
-            #print('eeeeeeeeeeeeeeeeeeeoooooooooooooooooo', teeth_2chainring_value)
-            # teeth_2chainring_value_small_mm = float(teeth_2chainring_value.strip('()').split(',')[0])
-            # teeth_2chainring_value_big_mm = float(teeth_2chainring_value.strip('()').split(',')[1])
-            # teeth_cassette_value = teeth_cassette_input.cleaned_data.get('teeth_cassette')
-            # #Con esto covirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
-            # teeth_cassette_value_small_mm = float(teeth_cassette_value.strip('()').split(',')[0])
-            # teeth_cassette_value_big_mm = float(teeth_cassette_value.strip('()').split(',')[1])
-            # #-------------Calculo da velocidade máxima a unhas determinadas revolcuiós por min------------------------------------
-            # diameter_wheel_mm = 700
-            # rpm_chainring = 130
-            # diameter_chainring_mm =  teeth_1chainring_value
-            # diameter_cassete_small_mm = teeth_cassette_value_small_mm
-            # rpm_cassete = (diameter_chainring_mm * rpm_chainring)/diameter_cassete_small_mm # Revoluciós por minuto do ciclista
-            # distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
-            # meters_1_min = distance_metros*rpm_cassete # metros que se recorren en 1 minuto
-            # speed_km_h = (meters_1_min*60)/1000 # Velocidade en km/h
-            # #print(speed_km_h)
-            # #--------------------Calculo da pendiente máxima que o ciclista pode ascender---------------------------------------------
-            # wattios_kg = wattios_value
-            # weight_person_kg = weight_value
-            # speed_ms = 1  
-            # radio_chainring_m = teeth_1chainring_value*0.001/2
-            # radio_cassete_m_big = teeth_cassette_value_big_mm*0.001/2
-            # crankarm_m = 165*0.001
-            # radio_back_wheel_m = 700*0.001/2
-            # gravity = 9.8
-            # peso_exerce_ciclista = (wattios_kg*weight_person_kg)/(speed_ms*gravity)
-            # tension_chain = ((crankarm_m)*peso_exerce_ciclista*gravity)/(radio_chainring_m)
-            # force_back_wheel = int(round(((radio_cassete_m_big)/(radio_back_wheel_m))*tension_chain, 0)) #Forza que se transmite ao chao pola roda traseira por un ciclista con 1.8W/kg
-            # print('forza_roda_traseira', force_back_wheel)
-    
-            # slope_percentage = 0 #Sempre ten que ser cero
-            # weight_bike_kg = 13 #Supomos a bicicleta sen peso
-            # weight_bike_person = weight_person_kg + weight_bike_kg
-            # rolling_coefficient = 0.0085 #Este coeficiente é sobre asfalto
-            # force_slope = int(round((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient,0))
-            # #Calculamos a máxima pendiente que pode subir por aproximación
-            # while not math.isclose (force_slope, force_back_wheel):
-            #     #Newtons que fan falta para mover bicicleta+persoa por unha subida.
-            #     force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
-            #     slope_percentage= slope_percentage + 0.1
-            #     #print(slope_percentage)
-        else:
-            print('Not valid')
+            teeth_chainring_value = teeth_chainring_input.cleaned_data.get('teeth_chainring')
+            # Con esto covirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
+            teeth_chainring_value_list = teeth_chainring_value.strip('()').split(',')
+            #Convertimos os elementos da lista que son strings a floats.
+            teeth_chainring_value_list_float = [float(x) for x in teeth_chainring_value_list]
+            teeth_cassette_value = teeth_cassette_input.cleaned_data.get('teeth_cassette')
+            # Con esto convirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
+            teeth_cassette_value_list = teeth_cassette_value.strip('()').split(',')
+            #Eiqui tamén temos que convertir os elementos da lista que son strings a floats.
+            teeth_cassette_value_list_float = [float(x) for x in teeth_cassette_value_list]
+            # #-----------------------------Calculo da velocidade máxima a unhas determinadas revolcuiós por min------------------------------------
+            diameter_wheel_mm = 700
+            rpm_chainring = 130
+            #Fórmula para calcular o radio cos dentes do plato. s(é a distancia de punta a punta de cada dente. Vamos a supor 12,75mm). radio=s/2sen(pi/número dentes)
+            diameter_chainring_mm =  [(12.75/(2*math.sin(math.pi/x)))*2 for x in teeth_chainring_value_list_float]
+            diameter_cassete_mm = [(12.75/(2*math.sin(math.pi/x)))*2 for x in teeth_cassette_value_list_float]
+            #---------------------------------------------------Variables para calcular a máxima pendente que o cilcista pode subir---------------------------------------
+            wattios_kg_value = float(wattios_input.cleaned_data.get('wattios'))
+            weight_person_kg_value = float(weight_input.cleaned_data.get('weight'))
+            speed_ms = 1
+            crankarm_metros = 165*0.001
+            radio_back_wheel_metros = 700*0.001/2
+            gravity = 9.8
+            peso_exerce_ciclista = (wattios_kg_value*weight_person_kg_value)/(speed_ms*gravity)
+            weight_bike_kg = 13 #Peso que supomos da bicicleta
+            weight_bike_person = weight_person_kg_value + weight_bike_kg
+            rolling_coefficient = 0.0085 #Este coeficiente é sobre asfalto
+            force_slope = int(round((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient,0))
+
+            #Para monoplato
+            if len(diameter_chainring_mm) == 1:
+                #-------------------Revolucións do cassette ou da roda (é o mesmo)------------------------
+                rpm_cassette_1 = [(diameter_chainring_mm[0] * rpm_chainring)/x for x in diameter_cassete_mm] 
+                #---------------------------Calculo da velocidade-----------------------------------------------
+                distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
+                meters_min_1 = [distance_metros*x for x in rpm_cassette_1] # metros que se recorren en 1 minuto
+                speed_km_h = [round((x*60)/1000, 1) for x in meters_min_1] # Velocidade en km/h
+                #--------------------Cálculo da máxima pendente que o ciclista pode subir----------------------
+                radio_chainring_metros = (diameter_chainring_mm[0]*0.001)/2
+                radio_cassete_metros = [(x*0.001)/2 for x in diameter_cassete_mm]
+                tension_chain = (crankarm_metros*peso_exerce_ciclista*gravity)/radio_chainring_metros
+                force_back_wheel = [int(round(((x)/(radio_back_wheel_metros))*tension_chain, 0)) for x in radio_cassete_metros] #Forza que se transmite ao chao pola roda traseira por un ciclista
+                # Calculamos a máxima pendiente que pode subir por aproximación
+                pendiente_por_cada_cassette = []
+                slope_percentage = 0 #Sempre ten que ser cero para que comece a subir a pendiente de tal forma a buscar o valor de pendiente por aproximación
+                for x_force_back_wheel in force_back_wheel:
+                    while not math.isclose (force_slope, x_force_back_wheel):
+                        #Newtons que fan falta para mover bicicleta+persoa por unha subida.
+                        force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
+                        slope_percentage= slope_percentage + 0.1
+                    print(slope_percentage)
+                    pendiente_por_cada_cassette.append(round(slope_percentage,1))
+                print(pendiente_por_cada_cassette)
+            
+            #Con 2 platos
+            elif len(diameter_chainring_mm) == 2:
+                #-------------------Revolucións do cassette ou da roda (é o mesmo)------------------------
+                #Dividimos o cassette en duas divisións, xa que hai dous platos
+                marchas_cortas_cassette_mm = diameter_cassete_mm[:len(diameter_cassete_mm)//2]
+                marchas_largas_cassette_mm = diameter_cassete_mm[len(diameter_cassete_mm)//2:]
+                plato_pequeno_mm = diameter_chainring_mm[0]
+                plato_grande_mm = diameter_chainring_mm[1]
+                rpm_cassette_marchas_cortas = [(plato_pequeno_mm * rpm_chainring)/x for x in marchas_cortas_cassette_mm] # Revoluciós por minuto do ciclista
+                rpm_cassette_marchas_largas = [(plato_grande_mm * rpm_chainring)/x for x in marchas_largas_cassette_mm]
+                rpm_cassette_2 = rpm_cassette_marchas_cortas + rpm_cassette_marchas_largas
+                #---------------------------Calculo da velocidade-----------------------------------------------
+                distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
+                meters_min_2 = [distance_metros*x for x in rpm_cassette_2] # metros que se recorren en 1 minuto
+                speed_km_h = [round((x*60)/1000, 0) for x in meters_min_2] # Velocidade en km/h
+                #----------------------------Cálculo da máxima pendiente que o ciclista pode subir-----------------------
+                radio_plato_pequeno_metros = (plato_pequeno_mm*0.001)/2
+                radio_plato_grande_metros = (plato_grande_mm*0.001)/2
+                radio_cassette_metros_marchas_cortas = [(x*0.001)/2 for x in rpm_cassette_marchas_cortas]
+                radio_cassette_metros_marchas_largas = [(x*0.001)/2 for x in rpm_cassette_marchas_largas]
+                tension_chain_marchas_cortas = (crankarm_metros*peso_exerce_ciclista*gravity)/radio_plato_pequeno_metros
+                tension_chain_marchas_largas = (crankarm_metros*peso_exerce_ciclista*gravity)/radio_plato_grande_metros
+                force_back_wheel_marchas_cortas = [int(round(((x)/(radio_back_wheel_metros))*tension_chain_marchas_cortas, 0)) for x in radio_cassette_metros_marchas_cortas] #Forza que se transmite ao chao pola roda traseira por un ciclista
+                force_back_wheel_marchas_largas = [int(round(((x)/(radio_back_wheel_metros))*tension_chain_marchas_largas, 0)) for x in radio_cassette_metros_marchas_largas]
+                total_forces_back_wheel = sorted(force_back_wheel_marchas_cortas + force_back_wheel_marchas_largas)
+                # Calculamos a máxima pendiente que pode subir por aproximación
+                pendiente_por_cada_cassette = []
+                slope_percentage = 0 #Sempre ten que ser cero para que comece a subir a pendiente de tal forma a buscar o valor de pendiente por aproximación
+                for x_force_back_wheel in total_forces_back_wheel:
+                    while not math.isclose (force_slope, x_force_back_wheel):
+                        #Newtons que fan falta para mover bicicleta+persoa por unha subida.
+                        force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
+                        slope_percentage= slope_percentage + 0.1
+                    print(slope_percentage)
+                    pendiente_por_cada_cassette.append(round(slope_percentage,1))
+                print(pendiente_por_cada_cassette)
+            elif len(diameter_chainring_mm) == 3:
+                #-------------------Revolucións do cassette ou da roda (é o mesmo)------------------------
+                #Dividimos o cassette en 3 divisións, xa que hai 3 platos
+                marchas_cortas_cassette_mm_3 = diameter_cassete_mm [:len(diameter_cassete_mm)//3]
+                marchas_medias_cassette_mm_3 = diameter_cassete_mm [len(diameter_cassete_mm)//3:2*len(diameter_cassete_mm)//3]
+                marchas_largas_cassette_mm_3 = diameter_cassete_mm [2*len(diameter_cassete_mm)//3:]
+                plato_pequeno_mm_3 = diameter_chainring_mm [0]
+                plato_mediano_mm_3 = diameter_chainring_mm [1]
+                plato_grande_mm_3 = diameter_chainring_mm  [2]
+                rpm_cassette_marchas_cortas_3 = [(plato_pequeno_mm_3*rpm_chainring)/x for x in marchas_cortas_cassette_mm_3]
+                rpm_cassette_marchas_intermedias_3 = [(plato_mediano_mm_3*rpm_chainring)/x for x in marchas_medias_cassette_mm_3]
+                rpm_cassette_marchas_largas_3 = [(plato_grande_mm_3*rpm_chainring)/x for x in marchas_largas_cassette_mm_3]
+                rpm_cassette_3 = rpm_cassette_marchas_cortas_3 + rpm_cassette_marchas_intermedias_3 + rpm_cassette_marchas_largas_3
+                #---------------------------Calculo da velocidade-----------------------------------------------
+                distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
+                meters_min_3 = [distance_metros*x for x in rpm_cassette_3] # metros que se recorren en 1 minuto
+                speed_km_h = [round((x*60)/1000,0) for x in meters_min_3] # Velocidade en km/h
+                print(speed_km_h)
+                #----------------------------Cálculo da máxima pendiente que o ciclista pode subir-----------------------
+                radio_plato_pequeno_metros_3 = (plato_pequeno_mm_3*0.001)/2
+                radio_plato_mediano_metros_3 = (plato_mediano_mm_3*0.001)/2
+                radio_plato_grande_metros_3 = (plato_grande_mm_3*0.001)/2
+                radio_cassette_metros_marchas_cortas_3 = [(x*0.001)/2 for x in rpm_cassette_marchas_cortas_3]
+                radio_cassette_metros_marchas_intermedias_3 = [(x*0.001)/2 for x in rpm_cassette_marchas_intermedias_3]
+                radio_cassette_metros_marchas_largas_3 = [(x*0.001)/2 for x in rpm_cassette_marchas_largas_3]
+                tension_chain_marchas_cortas_3 = (crankarm_metros*peso_exerce_ciclista*gravity)/radio_plato_pequeno_metros_3
+                tension_chain_marchas_intermedias_3 = (crankarm_metros*peso_exerce_ciclista*gravity)/radio_plato_mediano_metros_3
+                tension_chain_marchas_largas_3 = (crankarm_metros*peso_exerce_ciclista*gravity)/radio_plato_grande_metros_3
+                force_back_wheel_marchas_cortas_3 = [int(round(((x)/(radio_back_wheel_metros))*tension_chain_marchas_cortas_3, 0)) for x in radio_cassette_metros_marchas_cortas_3] #Forza que se transmite ao chao pola roda traseira por un ciclista
+                force_back_wheel_marchas_intermedias_3 = [int(round(((x)/(radio_back_wheel_metros))*tension_chain_marchas_intermedias_3, 0)) for x in radio_cassette_metros_marchas_intermedias_3]
+                force_back_wheel_marchas_largas_3 = [int(round(((x)/(radio_back_wheel_metros))*tension_chain_marchas_largas_3, 0)) for x in radio_cassette_metros_marchas_largas_3]
+                total_forces_back_wheel_3 = sorted(force_back_wheel_marchas_cortas_3 + force_back_wheel_marchas_intermedias_3 + force_back_wheel_marchas_largas_3)
+                # Calculamos a máxima pendiente que pode subir por aproximación
+                pendiente_por_cada_cassette = []
+                slope_percentage = 0 #Sempre ten que ser cero para que comece a subir a pendiente de tal forma a buscar o valor de pendiente por aproximación
+                for x_force_back_wheel in total_forces_back_wheel_3:
+                    while not math.isclose (force_slope, x_force_back_wheel):
+                        #Newtons que fan falta para mover bicicleta + persoa por unha subida.
+                        force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
+                        slope_percentage= slope_percentage + 0.1
+                    print(slope_percentage)
+                    pendiente_por_cada_cassette.append(round(slope_percentage,1))
+                print(pendiente_por_cada_cassette)
   
     context = {
       'wattios_input_html': wattios_input,
@@ -84,7 +164,7 @@ def max_speed_slope_tool_view (request):
       'speed_km_h_html':speed_km_h,
       'force_back_wheel_html' : force_back_wheel,
       'force_slope_html': force_slope,
-      'slope_percentage_html': int(round(slope_percentage,0))
+      'pendiente_por_cada_cassette_html': pendiente_por_cada_cassette
     }
     return render (request, 'tool_speed.html', context)
          

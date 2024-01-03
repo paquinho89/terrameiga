@@ -18,7 +18,7 @@
     <h2>{{speed_km_h_html}} km/h</h2>
     <h2>{{force_back_wheel_html}} Newtons Forza roda traseira</h2>
     <h2>{{force_slope_html}} Newtons Forza necesaria para subir a costa</h2>
-    <h2>{{slope_percentage_html}} Pendiente máxima que pode subir</h2>
+    <h2>{{pendiente_por_cada_cassette_html}} Pendiente máxima que pode subir</h2>
 </div>
        
 <main>
@@ -301,7 +301,7 @@
     jQuery(document).ready(function () {
         function update_dropdown_chainring_choices() {
             var selected_model_groupset = jQuery('#id_groupset_model_form').val(); 
-            var teeth_chainring_ = jQuery('#id_teeth_chainring_form'); 
+            var teeth_chainring = jQuery('#id_teeth_chainring_form'); 
             var new_teeth_choices = [];
 
             if (selected_model_groupset === 'Ekar') {
@@ -356,6 +356,8 @@
                 new_teeth_choices = [
                     { value: 0, text: '40T' },
                     { value: 0, text: '42T' },
+                    { value: 0, text: '46T/29T' },
+                    { value: 0, text: '48T/31T' },
                 ];
             }
             else if (selected_model_groupset === 'All Road') {
@@ -463,31 +465,38 @@
                     { value: 0, text: '46T/32T' },
                 ];
             }
-            //eiqui quedaches
-            else if (selected_model_groupset === 'Force eTap AXS (electronic)' || selected_model_groupset === 'Force') {
+            else if (selected_model_groupset === 'XTR (electronic)' || selected_model_groupset === 'XTR') {
                 new_teeth_choices = [
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '43T/30T' },
-                    { value: 0, text: '46T/33T' },
-                    { value: 0, text: '48T/35T' },
-                    { value: 0, text: '50T/37T' },
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                    { value: 0, text: '36T' },
+                    { value: 0, text: '38T' },
+                    { value: 0, text: '38T/28T' },
                 ];
             }
-            else if (selected_model_groupset === 'Rival eTap AXS (electronic)' || selected_model_groupset === 'Rival') {
+            else if (selected_model_groupset === 'Deore XT (electronic)' || selected_model_groupset === 'Deore XT') {
                 new_teeth_choices = [
-                    { value: 0, text: '33T' },
-                    { value: 0, text: '35T' },
-                    { value: 0, text: '38T' },
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '43T' },
-                    { value: 0, text: '44T' },
-                    { value: 0, text: '46T' },
-                    { value: 0, text: '48T' },
-                    { value: 0, text: '43T/30T' },
-                    { value: 0, text: '46T/33T' },
-                    { value: 0, text: '48T/35T' },
-                    { value: 0, text: '50T/37T' },
+                    { value: 0, text: '28T' },
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                    { value: 0, text: '36T' },
+                    { value: 0, text: '36T/26T' },
+                ];
+            }
+            else if (selected_model_groupset === 'SX Eagle') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
+                ];
+            }
+            else if (selected_model_groupset === 'GX Eagle AXS (electronic)' || selected_model_groupset === 'GX Eagle' || selected_model_groupset === 'NX Eagle') {
+                new_teeth_choices = [
+                    { value: 0, text: '30T' },
+                    { value: 0, text: '32T' },
+                    { value: 0, text: '34T' },
                 ];
             }
             else if (selected_model_groupset === 'XX1 Eagle AXS (electronic)') {
@@ -518,8 +527,7 @@
                     { value: 0, text: '32T' },
                 ];
             }
-            if (selected_model_groupset === 'GX Eagle AXS (electronic)' || selected_model_groupset === 'GX Eagle' || selected_model_groupset === 'NX Eagle' || selected_model_groupset === 'SX Eagle' ||
-                selected_model_groupset === 'Advent' || selected_model_groupset === 'Acolyte' || selected_model_groupset === 'Advent X') {
+            else if (selected_model_groupset === 'Advent' || selected_model_groupset === 'Acolyte' || selected_model_groupset === 'Advent X') {
                 new_teeth_choices = [
                     { value: 0, text: '30T' },
                     { value: 0, text: '32T' },
@@ -527,16 +535,15 @@
                 ];
             }
             // Clear existing options and add new options
-            teeth_chainring_1.empty();
+            teeth_chainring.empty();
 
             jQuery.each(new_teeth_choices, function (index, item) {
-                teeth_chainring_1.append(jQuery('<option>', {
+                teeth_chainring.append(jQuery('<option>', {
                     value: item.value,
                     text: item.text
                 }));
             });
         }
-        // Attach the update function to the change event of the wattios dropdown
         jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);
     });
 </script>
@@ -546,7 +553,7 @@
     jQuery(document).ready(function () {
         function update_cassette_choices() {
             var select_groupset_model = jQuery('#id_groupset_model_form').val();
-            var select_cassete_teeth = jQuery('#id_teeth_cassette'); 
+            var cassete_teeth = jQuery('#id_teeth_cassette'); 
             var new_cassette_choices = [];
 
             if (select_groupset_model === 'Ekar') {
@@ -556,7 +563,7 @@
                     { value: 0, text: '10T/44T - 13 speeds'},
                 ];
             } else if (select_groupset_model === 'GRX') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/25T - 10 speeds' },
                     { value: 0, text: '11T/32T - 10 speeds' },
                     { value: 0, text: '12T/28T - 10 speeds' },
@@ -578,11 +585,11 @@
                     { value: 0, text: '11T/34T - 12 speeds'},
                 ];
             } else if (select_groupset_model === 'Apex' ) {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text:'11T/44T - 12 speeds)'},
                 ];
             } else if (select_groupset_model === 'Force eTap AXS (electronic)' || select_groupset_model === 'Force') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text:'10T/28T - 12 speeds'},
                     { value: 0, text:'10T/30T - 12 speeds'},
                     { value: 0, text:'10T/33T - 12 speeds'},
@@ -590,48 +597,48 @@
                     { value: 0, text:'10T/44T - 12 speeds'},
                 ];
             } else if (select_groupset_model === 'Rival Etap AXS (electronic)' || select_groupset_model === 'Rival') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/30T - 12 speeds' },
                     { value: 0, text: '10T/36T - 12 speeds' },
                     { value: 0, text: '10T/44T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Sword') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/38T - 10 speeds' },
                     { value: 0, text: '11T/48T - 10 speeds' },
                 ];
             } else if (select_groupset_model === 'All Road') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/42T - 11 speeds_' },
                 ];
             } else if (select_groupset_model === 'Chorus' || select_groupset_model === 'Super Record' || select_groupset_model === 'Record') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/29T - 12 speeds' },
                     { value: 0, text: '11T/32T - 12 speeds' },
                     { value: 0, text: '11T/34T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Super Record Wireless (electronic)') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/25T - 12 speeds' },
                     { value: 0, text: '10T/27T - 12 speeds' },
                     { value: 0, text: '10T/29T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Tiagra') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/25T - 10 speeds' },
                     { value: 0, text: '11T/32T - 10 speeds' },
                     { value: 0, text: '11T/34T - 10 speeds' },
                     { value: 0, text: '12T/28T - 10 speeds' },
                 ];
             } else if (select_groupset_model === 'Sora') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/30T - 9 speeds' },
                     { value: 0, text: '12T/25T - 9 speeds' },
                     { value: 0, text: '13T/25T - 9 speeds' },
                     { value: 0, text: '14T/25T - 9 speeds' },
                 ];
             } else if (select_groupset_model === 'Claris') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/28T - 8 speeds' },
                     { value: 0, text: '11T/30T - 8 speeds' },
                     { value: 0, text: '11T/32T - 8 speeds' },
@@ -641,31 +648,31 @@
                     { value: 0, text: '13T/26T - 8 speeds' },
                 ];
             } else if (select_groupset_model === 'Shimano 105 (electronic)' || select_groupset_model === 'Shimano 105') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/34T - 12 speeds_' },
                     { value: 0, text: '11T/36T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Dura-Ace (electronic)' || select_groupset_model === 'Ultegra (electronic)') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/30T - 12 speeds' },
                     { value: 0, text: '11T/34T - 12 speeds_' },
                 ];
             } else if (select_groupset_model === 'RED eTap AXS (electronic)') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/26T - 12 speeds' },
                     { value: 0, text: '10T/28T - 12 speeds' },
                     { value: 0, text: '10T/33T - 12 speeds' },
                     { value: 0, text: '10T/44T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Alivio' || select_groupset_model === 'Acera' || select_groupset_model === 'Altus') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/25T - 9 speeds' },
                     { value: 0, text: '11T/32T - 9 speeds' },
                     { value: 0, text: '11T/34T - 9 speeds' },
                     { value: 0, text: '11T/36T - 9 speeds' },
                 ];
             } else if (select_groupset_model === 'Deore') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/36T - 10 speeds' },
                     { value: 0, text: '11T/42T - 10 speeds' },
                     { value: 0, text: '11T/43T - 10 speeds' },
@@ -674,60 +681,60 @@
                     { value: 0, text: '10T/51T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'SLX' || select_groupset_model === 'XTR (electronic)' || select_groupset_model === 'XTR') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/45T - 12 speeds' },
                     { value: 0, text: '10T/51T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Cues') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/45T - 11 speeds' },
                     { value: 0, text: '11T/50T - 11 speeds' },
                 ];
             } else if (select_groupset_model === 'Deore XT (electronic)' || select_groupset_model === 'Deore XT') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/50T - 11 speeds' },
                     { value: 0, text: '10T/45T - 12 speeds' },
                     { value: 0, text: '10T/51T - 12 speeds' }
                 ];
             } else if (select_groupset_model === 'SX Eagle' || select_groupset_model === 'NX Eagle') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/50T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'GX Eagle AXS (electronic)' || select_groupset_model === 'GX Eagle' || select_groupset_model === 'XX1 Eagle' || select_groupset_model === 'X01 Eagle') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/52T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'XX1 Eagle AXS (electronic)') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/50T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'X01 Eagle AXS (electronic)') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '10T/50T - 12 speeds' },
                     { value: 0, text: '10T/52T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Advent') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/38T - 9 speeds' },
                     { value: 0, text: '11T/42T - 9 speeds' },
                     { value: 0, text: '11T/46T - 9 speeds' },
                 ];
             } else if (select_groupset_model === 'Acolyte') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/38T - 8 speeds' },
                     { value: 0, text: '12T/42T - 8 speeds' },
                     { value: 0, text: '12T/46T - 8 speeds' },
                 ];
             } else if (select_groupset_model === 'Advent X') {
-                new_groupset_choices = [
+                new_cassette_choices = [
                     { value: 0, text: '11T/48T - 10 speeds' },
                 ];
             }
 
             // Clear existing options and add new options
-            select_groupset_model.empty();
+            cassete_teeth.empty();
             jQuery.each(new_cassette_choices, function (index, item) {
-                select_cassete_teeth.append(jQuery('<option>', {
+                cassete_teeth.append(jQuery('<option>', {
                     value: item.value,
                     text: item.text
                 }));
@@ -743,85 +750,39 @@
 <script>
     jQuery(document).ready(function(){
         update_chainring_dropdown();
-        jQuery ('#id_groupset_model_form').on ('change', function(){
+        jQuery ('#id_teeth_chainring_form').on ('change', function(){
             update_chainring_dropdown();
         });
         function update_chainring_dropdown () {
-        var selected_groupset_model = jQuery('#id_groupset_model_form').val();
-        // Cambios que ofrecen 1 opción e esa é monoplato
-        if (selected_groupset_model === 'Ekar' || selected_groupset_model === 'Apex' || selected_groupset_model === 'All Road' || selected_groupset_model === 'SX Eagle' ||
-            selected_groupset_model === 'GX Eagle AXS (electronic)' || selected_groupset_model === 'GX Eagle' || selected_groupset_model === 'NX Eagle' ||
-            selected_groupset_model === 'XX1 Eagle AXS (electronic)' || selected_groupset_model === 'XX1 Eagle' || selected_groupset_model === 'X01 Eagle AXS (electronic)' ||
-            selected_groupset_model === 'X01 Eagle' || selected_groupset_model === 'Advent' || selected_groupset_model === 'Acolyte' || selected_groupset_model === 'Advent X'){
-            jQuery("#1_chainring_button").hide();
-            jQuery("#id_teeth_1chainring_form").show();
+        var selected_chainring = jQuery('#id_teeth_chainring_form').val();
+        // Opción de biplato
+        if (selected_chainring === '36T/22T' || selected_chainring === '36T/26T' || selected_chainring === '38T/28T' || selected_chainring === '43T/30T' || selected_chainring === '45T/29T' ||
+            selected_chainring === '46T/30T' || selected_chainring === '46T/32T' || selected_chainring === '46T/33T' || selected_chainring === '46T/34T' || selected_chainring === '46T/36T' ||
+            selected_chainring === '48T/31T' || selected_chainring === '48T/32T' || selected_chainring === '48T/34T' || selected_chainring === '48T/35T' || selected_chainring === '50T/34T' ||
+            selected_chainring === '50T/37T' || selected_chainring === '52T/36T' || selected_chainring === '52T/39T' || selected_chainring === '53T/39T' || selected_chainring === '54T/40T' ||
+            selected_chainring === '54T/41T' || selected_chainring === '56T/43T' ){
+            jQuery("#1_design_chainring").hide();
+            jQuery("#2_design_chainring").show();
+            jQuery("#3_design_chainring").hide();
+        }
+        // Opción de triple plato
+        else if (selected_chainring === '40/30/22T' || selected_chainring === '44/32/22T' || selected_chainring === '59/39/30T'){
+            jQuery("#1_design_chainring").hide();
+            jQuery("#2_design_chainring").hide();
+            jQuery("#3_design_chainring").show();
+        } 
+        // Opción monoplato
+        else {
             jQuery("#1_design_chainring").show();
-            jQuery("#2_chainring_button").hide();
-            jQuery("#id_teeth_2chainring_form").hide();
             jQuery("#2_design_chainring").hide();
-            jQuery("#3_chainring_button").hide();
-            jQuery("#id_teeth_3chainring_form").hide();
             jQuery("#3_design_chainring").hide();
         }
-        // Cambios que ofrecen 1 opción e esa é biplato
-        if (selected_groupset_model === 'Chorus' || selected_groupset_model === 'Super Record Wireless (electronic)' || selected_groupset_model === 'Super Record' || selected_groupset_model === 'Record' ||
-            selected_groupset_model === 'Shimano 105 (electronic)' || selected_groupset_model === 'Shimano 105' || selected_groupset_model === 'Dura-Ace (electronic)' || selected_groupset_model === 'Ultegra (electronic)' ||
-            selected_groupset_model === 'RED eTap AXS (electronic)')
-            {
-            jQuery("#1_chainring_button").hide();
-            jQuery("#id_teeth_1chainring_form").hide();
-            jQuery("#1_design_chainring").hide();
-            jQuery("#2_chainring_button").hide();
-            jQuery("#id_teeth_2chainring_form").show();
-            jQuery("#2_design_chainring").hide();
-            jQuery("#3_chainring_button").hide();
-            jQuery("#id_teeth_3chainring_form").hide();
-            jQuery("#3_design_chainring").hide();
-            }
-        // Cambios que ofrecen 2 opcións: monoplato e biplato 
-        else if (selected_groupset_model === 'GRX' || selected_groupset_model === 'Force eTap AXS (electronic)' || selected_groupset_model === 'Force' || 
-                selected_groupset_model === 'Rival Etap AXS (electronic)' || selected_groupset_model === 'Rival' || selected_groupset_model === 'Sword' ||
-                selected_groupset_model === 'Deore' || selected_groupset_model === 'SLX' || selected_groupset_model === 'Cues' || selected_groupset_model === 'XTR (electronic)' || 
-                selected_groupset_model === 'XTR' || selected_groupset_model === 'Deore XT (electronic)' || selected_groupset_model === 'Deore XT') {
-            jQuery("#1_chainring_button").show();
-            jQuery("#id_teeth_1chainring_form").show();
-            jQuery("#1_design_chainring").hide();
-            jQuery("#2_chainring_button").show();
-            jQuery("#id_teeth_2chainring_form").hide();
-            jQuery("#2_design_chainring").hide();
-            jQuery("#id_teeth_3chainring_form").hide();
-            jQuery("#3_design_chainring").hide();
-        }
-        // Cambios que ofrecen 2 opcións: biplato e triplato
-        else if (selected_groupset_model === 'Tiagra' || selected_groupset_model === 'Sora' || selected_groupset_model === 'Claris' || selected_groupset_model === 'Alivio' ||
-                selected_groupset_model === 'Acera') {
-            jQuery("#1_chainring_button").hide();
-            jQuery("#id_teeth_1chainring_form").hide();
-            jQuery("#1_design_chainring").hide();
-            jQuery("#2_chainring_button").show();
-            jQuery("#id_teeth_2chainring_form").show();
-            jQuery("#2_design_chainring").hide();
-            jQuery("#3_chainring_button").show();
-            jQuery("#id_teeth_3chainring_form").hide();
-            jQuery("#3_design_chainring").hide();
-        }
-         // Cambios que ofrecen 1 opción: triplato
-         else if (selected_groupset_model === 'Altus') {
-            jQuery("#1_chainring_button").hide();
-            jQuery("#id_teeth_1chainring_form").hide();
-            jQuery("#1_design_chainring").hide();
-            jQuery("#2_chainring_button").hide();
-            jQuery("#id_teeth_2chainring_form").hide();
-            jQuery("#2_design_chainring").hide();
-            jQuery("#3_chainring_button").hide();
-            jQuery("#id_teeth_3chainring_form").show();
-            jQuery("#3_design_chainring").hide();
-        }
-    }})
+    }});
 </script>
 
+<!--ESTO CREO QUE SE VAIA A PODER ELIMINAR-->
 <!--This script is to show the corresponding dropdown depending on the customer choice (1 chain ring or 2 chain rings)-->
-<script>
+<!--<script>
     jQuery(document).ready(function () {
         var chainringDropdownState = sessionStorage.getItem('chainringDropdownState');
 
@@ -867,7 +828,7 @@
         jQuery("#id_teeth_2chainring_form").toggle(showDropdown2);
         jQuery("#id_teeth_3chainring_form").toggle(showDropdown3);
     });
-</script>
+</script>-->
 
 {% endblock content %}
 

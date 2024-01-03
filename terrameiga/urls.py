@@ -53,6 +53,8 @@ urlpatterns =   i18n_patterns (
     path('log_out/', log_out_view, name="log_out"),
     #AGRADECEMENTOS
     path('people/', TemplateView.as_view(template_name = "people.html"), name="people"),
+    #BLOG
+    path('blog/', TemplateView.as_view(template_name = "blog/blog_2_let_the_cycling_begin.html"), name="blog_2"),
 
     #TOOLS 
     path('tools/', max_speed_slope_tool_view, name="tool_speed"),
