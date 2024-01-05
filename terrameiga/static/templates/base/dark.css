@@ -146,7 +146,8 @@ hr{
     background-color: black;
 }
 p { 
-    color: rgba(191, 191, 191, 1); 
+    color: rgba(191, 191, 191, 1);
+    font-size: 1.1em; 
 }
 
 label { 
@@ -553,6 +554,7 @@ iframe{
 #li_notes_tool{
     color: rgba(191, 191, 191, 1);
     list-style-type: disc;
+    font-size: 1.1em; 
 }
 
 .table th {

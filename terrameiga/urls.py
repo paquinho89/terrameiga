@@ -54,7 +54,10 @@ urlpatterns =   i18n_patterns (
     #AGRADECEMENTOS
     path('people/', TemplateView.as_view(template_name = "people.html"), name="people"),
     #BLOG
-    path('blog/', TemplateView.as_view(template_name = "blog/blog_2_let_the_cycling_begin.html"), name="blog_2"),
+    path('iz_blog/', TemplateView.as_view(template_name = "blog/blog_iz_zoe_portada.html"), name="iz_blog"),
+    path('iz_blog/let_the_cycling_begin/', TemplateView.as_view(template_name = "blog/blog_2_let_the_cycling_begin.html"), name="let_the_cycling_begin"),
+    path('the_journey_to_the_journey/', TemplateView.as_view(template_name = "blog/blog_1_the_journey_to_the_journey.html"), name="the_journey_to_the_journey"),
+    path('preparation_preparation_preparation/', TemplateView.as_view(template_name = "blog/blog_preparation_preparation.html"), name="preparation_preparation"),
 
     #TOOLS 
     path('tools/', max_speed_slope_tool_view, name="tool_speed"),

@@ -146,7 +146,8 @@
         background-color: black;
     }
     p { 
-        color: rgb(54, 69, 79); 
+        color: rgb(54, 69, 79);
+        font-size: 1.1em; 
     }
     
     label { 
@@ -576,6 +577,7 @@
     #li_notes_tool{
         color: rgb(54, 69, 79);
         list-style-type: disc;
+        font-size: 1.1em; 
     }
 
     .table th {
