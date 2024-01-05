@@ -1,4 +1,5 @@
-#¡¡¡¡¡¡¡¡¡¡¡¡  SETTINGS DEPLOYMENT !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+#¡¡¡¡¡¡¡¡¡¡¡¡  SETTINGS LOCAL !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 """
 Django settings for terrameiga project.
@@ -16,8 +17,6 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
 
-from decouple import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 print ("ruta do BASE_DIR", BASE_DIR)
@@ -31,11 +30,7 @@ SECRET_KEY = 'django-insecure-q=m#etp8+mf8)iu!a7+xs!*0$pc5j@_c5ndt^u77$vwq8+jwvc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*'] 
-
-#Esto é para que non me de error a hora de completar os formularios no móbil ou no ordenador nin en ningún outro dispositivo, e para poder acceder o admin site sen problema.
-CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
-CSRF_COOKIE_SECURE = False
+ALLOWED_HOSTS = []
 
 #Variable para activar o framework das alerts de django
 
@@ -56,8 +51,6 @@ INSTALLED_APPS = [
     'tools',
     #Esto é para o rich text
     'ckeditor',
-    #Amazon Web Service Storage
-    'storages',
     #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles
     'django.contrib.humanize',
 
@@ -116,12 +109,8 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'PGNAME': config('PGNAME'),
-        'PGUSER': config('PGUSER'), 
-        'PGPASSWORD': config('PGPASSWORD'),
-        'PGHOST': config('PGHOST'), 
-        'PGPORT': config('PGPORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -173,6 +162,7 @@ LANGUAGES = [
     ('gl', _('Galician')),
     ('ca', _('Catalan')),
     ('eu', _('Basque')),
+
     ]
 #Language code is the defalut languages which is used when nothing is specified.
 LANGUAGE_CODE = 'en-us'
@@ -191,8 +181,13 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/4.1/howto/static-files/
+
+STATIC_URL = '/static/'
+
 #IMPORTANTE: o STATICFILES_DIRS é para indicar onde metes os arquivos estáticos. Ollo, non ten nada que ver con templates
-#A ruta aos templates indícase arriba no "TEMPLATES" para que vaia a buscar os templates.
+#A ruta aos templates indícase arriba no "TEMPLATES".
 STATICFILES_DIRS=[
    BASE_DIR / "terrameiga/static/"
 ]
@@ -200,22 +195,13 @@ STATICFILES_DIRS=[
 #Esto é para asignarlle un sitio a carpeta que se crea cando se fai o "python manage.py collectstatic"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#STATIC FILES - Telo que facer así tal cual, porque senon non che vai a funcionar
-AWS_S3_CUSTOM_DOMAIN = 'terrameiga.s3.eu-west-3.amazonaws.com/staticfiles'  # Specify your custom domain here
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-#MEDIA FILES: Estes son arquivos que subo ou suben a app os usuarios e que se van a gardar no bucket de terrameiga en S3 que se chama: "media_files".
-AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'terrameiga'
-AWS_S3_FILE_OVERWRITE = True #Quero que cando se suba un arquivo co mesmo nome este se reemplace"
-AWS_DEFAULT_ACL = None
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
-
+#MEDIA FILES: Estes son arquivos que suben os usuarios da web
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+print('MEDIA URLS')
+print(MEDIA_ROOT)
+print(MEDIA_URL)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -230,8 +216,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = 'paquinho89@gmail.com'
+EMAIL_HOST_PASSWORD = 'lfalufgrrjwftmsp'
 
 
 
