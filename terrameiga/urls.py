@@ -18,8 +18,8 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from registration.views import sign_in_view, sign_up_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, sign_up_email_validation_confirmation_view
-from bicicleteiros.views import country_data_view, country_data_no_registered_view, photos_view, videos_view, estadistica_plotly_view, estadistica_plotly_view_full_report
+from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, sign_up_email_validation_confirmation_view
+from bicicleteiros.views import country_data_view, country_data_no_registered_view, iz_blog_portada_view, let_the_cycling_beging_blog_view, the_journey_to_the_journey_blog_view, preparation_preparation_blog_view, photos_view, videos_view, estadistica_plotly_view, estadistica_plotly_view_full_report
 from tools.views import max_speed_slope_tool_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
 from django.contrib.auth import views as auth_views
@@ -42,7 +42,7 @@ urlpatterns =   i18n_patterns (
     #REGISTRATION_URLs
     path('sign_in/', sign_in_view, name="sign_in"),
     path('sign_up/', sign_up_view, name="sign_up"),
-    path('account_confirmation_email_sent/', TemplateView.as_view(template_name = "account_confirm_email_sent.html"), name="account_confirmation_email_sent"),
+    path('account_confirmation_email_sent/', email_instructions_view, name="account_confirmation_email_sent"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),
     path('reset_password/', password_reset_view, name="reset_password"),
     #Para máis info sobre estas vistas perconfiguradas para manejar o reseteo de contraseñas, visita a documentación oficial de django
@@ -54,10 +54,10 @@ urlpatterns =   i18n_patterns (
     #AGRADECEMENTOS
     path('people/', TemplateView.as_view(template_name = "people.html"), name="people"),
     #BLOG
-    path('iz_blog/', TemplateView.as_view(template_name = "blog/blog_iz_zoe_portada.html"), name="iz_blog"),
-    path('iz_blog/let_the_cycling_begin/', TemplateView.as_view(template_name = "blog/blog_2_let_the_cycling_begin.html"), name="let_the_cycling_begin"),
-    path('the_journey_to_the_journey/', TemplateView.as_view(template_name = "blog/blog_1_the_journey_to_the_journey.html"), name="the_journey_to_the_journey"),
-    path('preparation_preparation_preparation/', TemplateView.as_view(template_name = "blog/blog_preparation_preparation.html"), name="preparation_preparation"),
+    path('iz_blog/', iz_blog_portada_view, name="iz_blog"),
+    path('iz_blog/let_the_cycling_begin/', let_the_cycling_beging_blog_view, name="let_the_cycling_begin"),
+    path('the_journey_to_the_journey/', the_journey_to_the_journey_blog_view, name="the_journey_to_the_journey"),
+    path('preparation_preparation_preparation/', preparation_preparation_blog_view, name="preparation_preparation"),
 
     #TOOLS 
     path('tools/', max_speed_slope_tool_view, name="tool_speed"),

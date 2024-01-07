@@ -4,6 +4,7 @@ from registration.forms import sign_in_form_1, sign_up_form_2, personal_data_for
 from django.contrib import messages
 #Esto carga un formulario que xa está preconfigurado para a autentificación do usuario
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
+from bicicleteiros.forms import language_home_page_no_registration_form
 #Esto é para que cargue un paquete que autentifique (para ver se o usuario está xa rexistrado na nosa base de datos), para que logee o usuario por nós e para lle faga log out
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User
@@ -24,9 +25,14 @@ from django.utils.translation import activate
 
 
 def sign_up_view(request):
+  #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+  form_language = language_home_page_no_registration_form(data = request.POST)
+  if request.method == 'POST' and form_language.is_valid():
+        selected_language = form_language.cleaned_data['language']
+        activate(selected_language)
   # create a form instance and populate it with data from the request:
   sign_up_form_variable = sign_up_form_2(data=request.POST)
-  if request.method == 'POST':
+  if request.method == 'POST' and not form_language.is_valid():
     if sign_up_form_variable.is_valid():
       user_name = sign_up_form_variable.cleaned_data.get('username')
       #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
@@ -56,9 +62,23 @@ def sign_up_view(request):
         messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
        
   context = {
+        'form_language_html': form_language,
         'sign_up_form':sign_up_form_variable
   }
   return render (request, '2_sign_up.html', context)
+
+def email_instructions_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'account_confirm_email_sent.html', context)
 
 def sign_up_email_validation_confirmation_view (request, uidb64, token):
   uid = force_str(urlsafe_base64_decode(uidb64))
@@ -83,10 +103,20 @@ def log_out_view (request):
 
 # Create your views here.
 def sign_in_view(request):
+  #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+  form_language = language_home_page_no_registration_form(data = request.POST)
+  if request.method == 'POST' and form_language.is_valid():
+        selected_language = form_language.cleaned_data['language']
+        activate(selected_language)
   # If this is a POST request we need to process the form data (Todos os log-in dos clientes que nos cheguen serán POST)
   sign_in_form_variable = sign_in_form_1(data=request.POST)
-  if request.method == 'POST':
+  #Con esto o que fago é que o sign_in_form se execute solo cando se clicka no sign_in_button do html. Se non se non hai click no botón esta parte da view non se executa.
+  #O que fago e que cando se executa o "Sign In" o form do idioma nunca vai ser válido, porque é un formulario que ten outro tipo de tigger. E entón pois esto so se vai executar
+  #cando o form_language non é valido e o sign si.
+  #Por outra parte, se eu executo solo o form language, ao ser este válido, o sign-in form non se vai a executar dentro da view
+  if request.method == 'POST' and not form_language.is_valid():
     if sign_in_form_variable.is_valid():
+      print(sign_in_form_variable)
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.
       email_form = sign_in_form_variable.cleaned_data.get('username')
       password_form = sign_in_form_variable.cleaned_data.get('password')
@@ -110,6 +140,7 @@ def sign_in_view(request):
       messages.add_message(request, messages.ERROR, _("There is no user with those credentials. Try again or create a TerraMeiga account"))
       return redirect('sign_in')
   context = {
+        "form_language_html" : form_language,
         "sign_in_form": sign_in_form_variable
   }
   return render (request, '1_sign_in.html', context)

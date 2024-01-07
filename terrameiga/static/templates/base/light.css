@@ -76,8 +76,14 @@
         color: white;
         }
     
+    
     .card{
-        background-color: rgb(249,249,249);
+        background-color: white;
+        border-color: rgb(0,0,0,0.2);
+    }
+    
+    .card_replies{
+        background-color: white;
         }
 
     #home_page_card{
@@ -161,14 +167,14 @@
         }
     #sign_in_button:hover {
         background-color: rgb(246, 158, 138);
-        color: white;
+        color: black;
         }
     #sign_up_button{
         color: rgb(246, 158, 138);
         background-color: black;
     }
     #sign_up_button:hover{
-        color: white;
+        color: black;
         background-color: rgb(246, 158, 138);
     }
     /*Formato da ventana emerxente*/
@@ -303,12 +309,13 @@
     }
 
     #add_reply_button:hover {
-        color: white;
+        color: black;
         background-color: rgb(246, 158, 138);
     }
 
     #add_comment_box{
         background-color: rgb(249,249,249);
+        color: black;
     }
 
     .close {

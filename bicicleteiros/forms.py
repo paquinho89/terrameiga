@@ -15,11 +15,11 @@ class chat_replies_form(forms.ModelForm):
         widgets = {
             'reply_text': forms.Textarea (attrs = {'class': 'form-control', 
                                                    'placeholder': _('Write here your comment'),
-                                                    'rows':1,
-                                                    'id': 'add_comment_box'}),
+                                                    'rows':2,
+                                                    'id': 'add_comment_box',
+                                                    'style': 'background-color: rgba(0, 0, 0, 0);'}),
             'pk_original_comment': forms.Textarea()
         }
-
 
 class language_home_page_no_registration_form (forms.Form):
     LANGUAGE_CHOICES = [

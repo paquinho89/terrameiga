@@ -57,6 +57,57 @@ def country_data_no_registered_view (request):
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
 
+def iz_blog_portada_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_iz_zoe_portada.html', context)
+
+def let_the_cycling_beging_blog_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_let_the_cycling_begin.html', context)
+
+def the_journey_to_the_journey_blog_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_the_journey_to_the_journey.html', context)
+
+def preparation_preparation_blog_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_preparation_preparation.html', context)
 
 def country_data_view (request):
     #Co request.user fago que solo os usuarios que están rexistrados podan acceder a páxina de bicicleteiros (na que se mostra a miña posición)

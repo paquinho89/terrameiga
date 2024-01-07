@@ -75,10 +75,6 @@ a{
 i{
     color: white;
     }
-
-.card{
-    background-color: #28282B;
-    }
     
 #home_page_card{
         background-color: #28282B;
@@ -145,7 +141,13 @@ hr{
 #background_sign_in {
     background-color: black;
 }
+
 p { 
+    color: white;
+    font-size: 1.1em; 
+}
+
+#p_blog{
     color: rgba(191, 191, 191, 1);
     font-size: 1.1em; 
 }
@@ -155,19 +157,20 @@ label {
 }
 /*Estes botós son da páxina de sign in*/
 #sign_in_button {
-    color: white;
+    color: black;
     background-color: rgb(246, 158, 138);
     white-space: nowrap; /*This is to mantain the text within the button in 1 line*/
     }
 #sign_in_button:hover {
+    color: black;
     background-color: rgb(83, 158, 138);
     }
 #sign_up_button{
-    color: white;
+    color: black;
     background-color: rgb(246, 158, 138);
 }
 #sign_up_button:hover{
-    color: white;
+    color: black;
     background-color: rgb(83, 158, 138);
 }
 /*Formato da ventana emerxente*/
@@ -279,12 +282,8 @@ hr{
     color: white;
 }
 
-#cronica_viaxe{
-    background-color: #28231D;
-}
-
 #add_reply_button {
-    color: white;
+    color: black;
     background-color: rgb(246, 158, 138);
 }
 
@@ -294,7 +293,8 @@ hr{
 }
 
 #add_comment_box{
-    background-color: #28282B;
+    color: white;
+    border-color: rgb(255,255,255,0.2);
 }
 
 .close {
@@ -311,6 +311,19 @@ hr{
   }
 
 .card{
+    background-color: black;
+    border-color: rgb(255,255,255,0.2);
+}
+
+#comment_text_white{
+    color: white !important;
+}
+
+.card_replies{
+    background-color: black;
+    }
+
+.card-header{
     background-color: #28282B;
 }
 
