@@ -63,6 +63,9 @@ urlpatterns =   i18n_patterns (
     path('tools/', max_speed_slope_tool_view, name="tool_speed"),
     path('gears/', TemplateView.as_view(template_name = "gear_blog.html"), name="gears"),
     path('info/', TemplateView.as_view(template_name = "info.html"), name="info"),
+
+    #PROJECT PRESENTATION
+    path('project_presentation/', TemplateView.as_view(template_name = "project_presentation.html"), name="project_presentation"),
     
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),

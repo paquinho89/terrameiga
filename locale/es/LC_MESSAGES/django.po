@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 18:17+0100\n"
+"POT-Creation-Date: 2024-01-07 17:24+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,18 +24,18 @@ msgstr ""
 msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
 
-#: .\bicicleteiros\forms.py:28 .\registration\models.py:14
-#: .\terrameiga\settings.py:160 .\terrameiga\settings_deployment.py:171
+#: .\bicicleteiros\forms.py:26 .\registration\models.py:14
+#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
 msgid "Spanish"
 msgstr "Castellano"
 
-#: .\bicicleteiros\forms.py:29 .\registration\models.py:13
-#: .\terrameiga\settings.py:159 .\terrameiga\settings_deployment.py:170
+#: .\bicicleteiros\forms.py:27 .\registration\models.py:13
+#: .\terrameiga\settings.py:160 .\terrameiga\settings_deployment.py:171
 msgid "English"
 msgstr "Inglés"
 
-#: .\bicicleteiros\forms.py:30 .\registration\models.py:15
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
+#: .\bicicleteiros\forms.py:28 .\registration\models.py:15
+#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
 msgid "Galician"
 msgstr "Gallego"
 
@@ -1018,11 +1018,11 @@ msgstr "Crónica del Viaje"
 msgid "Add Comment / View Comments"
 msgstr "Comentar / Ver comentarios"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:122
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:124
 msgid "Add Comment"
 msgstr "Comentar"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:127
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:126
 msgid "Comments"
 msgstr "Comentarios"
 
@@ -1052,21 +1052,21 @@ msgstr ""
 "aventura y disfrutar de todo el contenido?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
-#: .\bicicleteiros\views.py:290 .\bicicleteiros\views.py:380
-#: .\bicicleteiros\views.py:550 .\bicicleteiros\views.py:636
+#: .\bicicleteiros\views.py:341 .\bicicleteiros\views.py:431
+#: .\bicicleteiros\views.py:601 .\bicicleteiros\views.py:687
 msgid "Week"
 msgstr "Semana"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:144
-#: .\bicicleteiros\views.py:324 .\bicicleteiros\views.py:436
-#: .\bicicleteiros\views.py:582 .\bicicleteiros\views.py:690
+#: .\bicicleteiros\views.py:375 .\bicicleteiros\views.py:487
+#: .\bicicleteiros\views.py:633 .\bicicleteiros\views.py:741
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:158
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:88
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:88
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:91
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:91
 msgid "Expenses"
 msgstr "Gastos"
 
@@ -1074,88 +1074,113 @@ msgstr "Gastos"
 msgid "Km"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:214
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:183
+msgid "Cyclists on the route"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:197
+msgid "Written by Iz"
+msgstr "Escrito por Iz"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:198
+msgid "Read"
+msgstr "Leer"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:239
 #: .\registration\templates\profile_account\personal_data.html:66
+#: .\terrameiga\static\templates\base\footer_non_registration.html:37
 msgid "Language"
 msgstr "Idioma"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
-#: .\terrameiga\static\templates\base\footer.html:37
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
+#: .\terrameiga\static\templates\base\footer_non_registration.html:43
+#: .\terrameiga\static\templates\base\footer_registration.html:34
+msgid "Light Mode"
+msgstr "Modo Claro"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:247
+msgid "Supported by:"
+msgstr "Colaborador:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:249
+#: .\terrameiga\static\templates\base\footer_non_registration.html:46
+#: .\terrameiga\static\templates\base\footer_registration.html:37
 msgid "No cookies are used on the site"
 msgstr "Este sitio web no utiliza cookies"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:224
-#: .\terrameiga\static\templates\base\footer.html:38
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:250
+#: .\terrameiga\static\templates\base\footer_non_registration.html:47
+#: .\terrameiga\static\templates\base\footer_registration.html:38
 msgid "All reserved rights:"
 msgstr "Todos los derechos reservados:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:13
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:16
 msgid "Data of the Journey"
 msgstr "Datos del viaje"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:28
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:28
-#: .\bicicleteiros\views.py:363 .\bicicleteiros\views.py:421
-#: .\bicicleteiros\views.py:619 .\bicicleteiros\views.py:675
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:31
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:31
+#: .\bicicleteiros\views.py:414 .\bicicleteiros\views.py:472
+#: .\bicicleteiros\views.py:670 .\bicicleteiros\views.py:726
 msgid "Climb"
 msgstr "Ascenso"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:29
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:29
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:32
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:32
 msgid "meters"
 msgstr "metros"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:36
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:36
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:39
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:39
 msgid "Countries"
 msgstr "Países"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:46
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:46
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:49
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:49
 msgid "Total days"
 msgstr "Días"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:47
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:55
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:63
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:47
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:55
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:63
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:50
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:58
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:66
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:50
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:58
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:66
 msgid "days"
 msgstr "días"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:54
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:54
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:57
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:57
 msgid "Resting days"
 msgstr "Días de descanso"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:62
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:62
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:65
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:65
 msgid "Cycling days"
 msgstr "Días en bici"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:72
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:72
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:75
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:75
 msgid "Nights outside"
 msgstr "Noches afuera"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:73
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:81
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:73
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:81
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:76
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:84
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:76
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:84
 msgid "nights"
 msgstr "noches"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:80
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:80
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:83
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:83
 msgid "Accommodation"
 msgstr "Noches hospedado"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:117
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:120
 msgid "See full report"
 msgstr "Ver todo el reporte"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:13
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:16
 msgid "Data of the Journey - Full Report"
 msgstr "Datos del viaje - Reporte Completo"
 
@@ -1164,16 +1189,16 @@ msgstr "Datos del viaje - Reporte Completo"
 msgid "Videos"
 msgstr "Ví­deos"
 
-#: .\bicicleteiros\views.py:131
+#: .\bicicleteiros\views.py:182
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:140
+#: .\bicicleteiros\views.py:191
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:180
+#: .\bicicleteiros\views.py:231
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1181,55 +1206,55 @@ msgstr ""
 "Para poder acceder a este contenido, debe de registrarse en terrameiga.bike/"
 "sign_up/ "
 
-#: .\bicicleteiros\views.py:250 .\bicicleteiros\views.py:512
+#: .\bicicleteiros\views.py:301 .\bicicleteiros\views.py:563
 msgid "Where does the money go?"
 msgstr "¿Dónde gasto los dineros?"
 
-#: .\bicicleteiros\views.py:286 .\bicicleteiros\views.py:546
+#: .\bicicleteiros\views.py:337 .\bicicleteiros\views.py:597
 msgid "Expenses per Week"
 msgstr "Gastos por semana"
 
-#: .\bicicleteiros\views.py:294 .\bicicleteiros\views.py:554
+#: .\bicicleteiros\views.py:345 .\bicicleteiros\views.py:605
 #, python-brace-format
 msgid "Week: %{x}<br>Expense: %{y:.} Euros"
 msgstr "Semana: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:321 .\bicicleteiros\views.py:579
+#: .\bicicleteiros\views.py:372 .\bicicleteiros\views.py:630
 msgid "Expenses per Country"
 msgstr "Gastos por País"
 
-#: .\bicicleteiros\views.py:328 .\bicicleteiros\views.py:586
+#: .\bicicleteiros\views.py:379 .\bicicleteiros\views.py:637
 #, python-brace-format
 msgid "Country: %{x}<br>Expense: %{y:.} Euros"
 msgstr "País: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:354 .\bicicleteiros\views.py:610
+#: .\bicicleteiros\views.py:405 .\bicicleteiros\views.py:661
 msgid "Distance and altitude per week"
 msgstr "Distancia y ascenso acumulado por semana"
 
-#: .\bicicleteiros\views.py:372 .\bicicleteiros\views.py:384
-#: .\bicicleteiros\views.py:430 .\bicicleteiros\views.py:440
-#: .\bicicleteiros\views.py:628 .\bicicleteiros\views.py:640
-#: .\bicicleteiros\views.py:684 .\bicicleteiros\views.py:694
+#: .\bicicleteiros\views.py:423 .\bicicleteiros\views.py:435
+#: .\bicicleteiros\views.py:481 .\bicicleteiros\views.py:491
+#: .\bicicleteiros\views.py:679 .\bicicleteiros\views.py:691
+#: .\bicicleteiros\views.py:735 .\bicicleteiros\views.py:745
 msgid "Climb (meters)"
 msgstr "Ascenso (metros)"
 
-#: .\bicicleteiros\views.py:383 .\bicicleteiros\views.py:439
-#: .\bicicleteiros\views.py:639 .\bicicleteiros\views.py:693
+#: .\bicicleteiros\views.py:434 .\bicicleteiros\views.py:490
+#: .\bicicleteiros\views.py:690 .\bicicleteiros\views.py:744
 msgid "Distance (Km)"
 msgstr "Distancia (km)"
 
-#: .\bicicleteiros\views.py:387 .\bicicleteiros\views.py:643
+#: .\bicicleteiros\views.py:438 .\bicicleteiros\views.py:694
 #, fuzzy, python-brace-format
 #| msgid "Week: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
 msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "Semana: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\bicicleteiros\views.py:412 .\bicicleteiros\views.py:666
+#: .\bicicleteiros\views.py:463 .\bicicleteiros\views.py:717
 msgid "Distance and climb per country"
 msgstr "Distancia y ascenso acumulado por país"
 
-#: .\bicicleteiros\views.py:443 .\bicicleteiros\views.py:697
+#: .\bicicleteiros\views.py:494 .\bicicleteiros\views.py:748
 #, fuzzy, python-brace-format
 #| msgid ""
 #| "Country: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
@@ -1738,31 +1763,31 @@ msgstr "Nombre"
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:47
+#: .\registration\views.py:53
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:56 .\registration\views.py:161
-#: .\registration\views.py:246
+#: .\registration\views.py:62 .\registration\views.py:192
+#: .\registration\views.py:277
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:76
+#: .\registration\views.py:96
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:81
+#: .\registration\views.py:101
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:101
+#: .\registration\views.py:131
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:110
+#: .\registration\views.py:140
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -1770,62 +1795,59 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:136
+#: .\registration\views.py:167
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:141
+#: .\registration\views.py:172
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:154
+#: .\registration\views.py:185
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
 
-#: .\registration\views.py:190
+#: .\registration\views.py:221
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:193
+#: .\registration\views.py:224
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "El email introducido no existe en nuestra base de datos. Cree una cuenta "
 "nueva."
 
-#: .\registration\views.py:197
+#: .\registration\views.py:228
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:215
+#: .\registration\views.py:246
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:220 .\registration\views.py:222
+#: .\registration\views.py:251 .\registration\views.py:253
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
 
-#: .\registration\views.py:241
+#: .\registration\views.py:272
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
 
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
+#: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
 msgid "Catalan"
 msgstr "Catalán"
 
-#: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
+#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
 msgid "Basque"
 msgstr "Euskera"
 
-#: .\terrameiga\static\templates\base\footer.html:34
-msgid "Light Mode"
-msgstr "Modo Claro"
-
-#: .\terrameiga\static\templates\base\footer.html:35
+#: .\terrameiga\static\templates\base\footer_non_registration.html:44
+#: .\terrameiga\static\templates\base\footer_registration.html:35
 msgid "Dark Mode"
 msgstr "Modo Oscuro"
 
@@ -1852,3 +1874,7 @@ msgstr "Configuración"
 #: .\terrameiga\static\templates\base\nav_bar.html:45
 msgid "Log Out"
 msgstr "Salir"
+
+#: .\tools\templates\tool_speed.html:16
+msgid "Speed Tool"
+msgstr ""

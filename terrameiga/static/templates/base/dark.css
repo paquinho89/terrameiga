@@ -66,6 +66,13 @@ li{
     color: red;
     list-style-type: none;
     }
+
+#li_project_description{
+    color: rgba(191, 191, 191, 1);
+    list-style: circle;
+    font-size: 1.1em;
+    }
+
 #copyright_text{
     color: white;
 }
