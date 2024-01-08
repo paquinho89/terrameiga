@@ -129,7 +129,6 @@
 
   <div class="container marketing">
     <h2 id="h2_home_page_no_registration" class="text-center py-4"><strong>{% trans "Week" %}  {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}</strong></h2>
-    
     <!-- Section-->
     <section id="journey_characteristics">
       <div class="container px-4 px-lg-5">
@@ -176,11 +175,32 @@
                   </div>
               </div>
           </div>
-      </div>
-    </section>
+          <hr>
+          <!--Section for the Newsletter-->
+          <div class="text-center row" id="newsletter_area">
+            <div class="card-body">
+              <h5 id="h2_home_page_no_registration"><strong>Subscribe to the newsletter for updates</strong></h5>
+              <form method="post" novalidate class="mx-auto mt-3" style="max-width: 300px;">
+                {% csrf_token %}
+              <div class="form-group">
+              {{ newsletter_email_html.email_subscriptor }}
+              {% if messages %}
+              <label id="label_error" style="color: red;">{{ newsletter_email_html.email_subscriptor.errors }}</label>
+              {% endif %}
+              </div>
+              <button id="sign_in_button" type="submit" class="btn btn-outline-light btn-lg mt-3" onclick="location.href='#newsletter_area'">
+                Subscribe
+              </button>
+              </form>
+            </div>
+          </div>
+          <!-- END Section of the newsletter -->
+          <hr>
+        </div>
+      </section>
   </div><!-- /.container -->
 
-<h2 id="h2_home_page_no_registration" class="text-center py-4"><strong>{% trans "Cyclists on the route" %}</strong></h2>
+<h2 id="h2_home_page_no_registration" class="text-center py-4"><strong>{% trans "Blog Section" %}</strong></h2>
 <!-- Section-->
 <section id="journey_characteristics">
   <div class="container px-4 px-lg-5">

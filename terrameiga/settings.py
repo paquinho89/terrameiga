@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'products',
     'bicicleteiros',
     'tools',
+    'newsletter',
     #Esto é para o rich text
     'ckeditor',
     #Amazon Web Service Storage

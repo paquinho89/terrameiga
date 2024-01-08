@@ -19,6 +19,9 @@ from plotly.offline import plot
 import plotly.express as px
 import plotly.graph_objects as go
 
+#Form for the newsletter
+from newsletter.forms import form_newsletter
+
 # Create your views here.
 def country_data_no_registered_view (request):
     all_entry_days= money_model.objects.all()
@@ -45,6 +48,25 @@ def country_data_no_registered_view (request):
             #Activate the language which was selected on the dropdown
             activate(selected_language)
     
+    #Formulario da newsletter:
+    newsletter_email = form_newsletter(data=request.POST)
+    if request.method == 'POST' and not form_language.is_valid():
+        if newsletter_email.is_valid():
+            # Create Comment object and save it on the database
+            newsletter_email.save(commit=True)
+            #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
+            messages.success(request, 'Thanks for subscribe and being part of the bike travelling community')
+            #artigos_content e que para que me retorne a vista do blog. Vaste o archivo das urls e buscas a url que queiras que che retorne
+            return redirect('home_page_no_registered')
+        else:
+            # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+            # asigne o formato de error (O borde en vermello)
+            for field, errors in newsletter_email.errors.items():
+                newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+            #Esto imprime o error xusto debaixo do cajetín para inserir o correo
+            #messages.error(request, newsletter_email.errors)
+            messages.error(request, "Check the errors and try again!")
+    
     context = {
         'journey_day_html' : current_journey_day ,
         'current_week_html' : current_week,
@@ -54,60 +76,9 @@ def country_data_no_registered_view (request):
         'current_country_html' : current_country,
         'flag_url_html' : flag_url,
         'form_language_html' : form_language,
+        'newsletter_email_html' : newsletter_email,
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
-
-def iz_blog_portada_view (request):
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if request.method == "POST":
-        if form_language.is_valid():
-            selected_language = form_language.cleaned_data['language']
-            #Activate the language which was selected on the dropdown
-            activate(selected_language)
-    context = {
-        'form_language_html' : form_language,
-    }
-    return render (request, 'blog/blog_iz_zoe_portada.html', context)
-
-def let_the_cycling_beging_blog_view (request):
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if request.method == "POST":
-        if form_language.is_valid():
-            selected_language = form_language.cleaned_data['language']
-            #Activate the language which was selected on the dropdown
-            activate(selected_language)
-    context = {
-        'form_language_html' : form_language,
-    }
-    return render (request, 'blog/blog_let_the_cycling_begin.html', context)
-
-def the_journey_to_the_journey_blog_view (request):
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if request.method == "POST":
-        if form_language.is_valid():
-            selected_language = form_language.cleaned_data['language']
-            #Activate the language which was selected on the dropdown
-            activate(selected_language)
-    context = {
-        'form_language_html' : form_language,
-    }
-    return render (request, 'blog/blog_the_journey_to_the_journey.html', context)
-
-def preparation_preparation_blog_view (request):
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if request.method == "POST":
-        if form_language.is_valid():
-            selected_language = form_language.cleaned_data['language']
-            #Activate the language which was selected on the dropdown
-            activate(selected_language)
-    context = {
-        'form_language_html' : form_language,
-    }
-    return render (request, 'blog/blog_preparation_preparation.html', context)
 
 def country_data_view (request):
     #Co request.user fago que solo os usuarios que están rexistrados podan acceder a páxina de bicicleteiros (na que se mostra a miña posición)
@@ -781,6 +752,73 @@ def estadistica_plotly_view_full_report(request):
     }
 
     return render(request, 'bicicleteiros_statics_plotly_full_report.html', context)
+
+
+def iz_blog_portada_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_iz_zoe_portada.html', context)
+
+def let_the_cycling_beging_blog_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_let_the_cycling_begin.html', context)
+
+def the_journey_to_the_journey_blog_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_the_journey_to_the_journey.html', context)
+
+def preparation_preparation_blog_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'blog/blog_preparation_preparation.html', context)
+
+
+def project_presentation_view (request):
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if request.method == "POST":
+        if form_language.is_valid():
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+    context = {
+        'form_language_html' : form_language,
+    }
+    return render (request, 'project_presentation.html', context)
 
 
 

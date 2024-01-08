@@ -4,26 +4,26 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container mt-2">
     <div class="main-body">
           <div class="row gutters-sm">
             <div class="col-md-4 mb-3">
-              <div class="card">
+              <div class="card" style="border-color: rgb(246, 158, 138);">
                 <div class="card-body">
                   <div class="d-flex flex-column align-items-center text-center">
                     <img src='{% static "imaxes/me_project_presentation.jpg" %}' alt="Admin" class="rounded-circle" width="150">
                     <div class="mt-3">
                       <h4>Francisco</h4>
-                      <p id="p_blog" class="mb-1">Bike traveller & web developer</p>
+                      <p id="p_blog" class="mb-1">{% trans "Bike traveller & web developer" %}</p>
                       <p id="p_blog"  class="font-size-sm mb-1">Email: paquinho89@hotmail.com</p>
-                      <p id="p_blog" class="font-size-sm mb-1">Phone: 0034 687 494 294</p>
+                      <p id="p_blog" class="font-size-sm mb-1">{% trans "Phone: 0034 687 494 294" %}</p>
                       <p id="p_blog" class="font-size-sm">Verín - Galicia -Spain</p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="card mt-3">
-                <div class="card">
+                <div class="card" style="border-color: rgb(246, 158, 138);">
                     <div class="card-body">
                       <div class="d-flex flex-column">
                         <div>
@@ -61,19 +61,19 @@
                   </div>
               </div>
               <div class="card mt-3">
-                <div class="card">
+                <div class="card" style="border-color: rgb(246, 158, 138);">
                     <div class="card-body">
                       <div class="d-flex flex-column">
                         <div>
-                          <h4>Previous Experience</h4>
-                          <hr>
+                          <h4>{% trans "Previous Experience" %}</h4>
+                          <hr style="border-color: rgb(246, 158, 138);">
                           <ul>
                             <li class="mb-2" id="li_project_description">Verín - Madrid<br>
-                                 (2020, 2021, 2022 - commuting - 450km)</li>
-                            <li class="mb-2" id="li_project_description">Tanger - Sidi Ifni (Morrocco)<br> (2021: ultracycling race - 2.200km)</li>
-                            <li class="mb-2" id="li_project_description">Zurich - Tirana - Bari - Civitavecchia<br> (2022: Travel - 2.600km)</li>
-                            <li class="mb-2" id="li_project_description">Verín (Spain) - Blois (France) - Verín<br> (2023: Travel - 2.700km)</li>
-                            <li id="li_project_description">Multiple bikepacking travels in North Portugal and Galicia</li>
+                              {% trans "(2020, 2021, 2022 - commuting - 450km)" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Tanger - Sidi Ifni (Morrocco)" %}<br> {% trans "(2021: ultracycling race - 2.200km)" %}</li>
+                            <li class="mb-2" id="li_project_description">Zurich - Tirana - Bari - Civitavecchia<br> {% trans "(2022: Travel - 2.600km)" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Verín (Spain) - Blois (France) - Verín" %}<br> {% trans "(2023: Travel - 2.700km)" %}</li>
+                            <li id="li_project_description">{% trans "Several bikepacking travels in North Portugal and Galicia" %}</li>
                         </ul>
                         </div>
                       </div>
@@ -81,19 +81,19 @@
                   </div>
               </div>
               <div class="card mt-3">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card" style="border-color: rgb(246, 158, 138);">
+                    <div class="card-body" >
                       <div class="d-flex flex-column">
                         <div>
-                          <h4>Strong Points</h4>
-                          <hr>
+                          <h4>{% trans "Strong Points" %}</h4>
+                          <hr style="border-color: rgb(246, 158, 138);">
                           <ul>
-                            <li class="mb-2" id="li_project_description">Experience managing myself in tough situations</li>
-                            <li class="mb-2" id="li_project_description">Programming skills to make the project visible</li>
-                            <li class="mb-2" id="li_project_description">2 bike travellers will be with me on different sections of the route</li>
-                            <li class="mb-2" id="li_project_description">Support of my cousin on video editing</li>
-                            <li class="mb-2" id="li_project_description">Support of local media</li>
-                            <li class="mb-2" id="li_project_description">terrameiga.bike was translated in multiple languages (Spanish, Galician, Basque, Catalan and English)</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Experience managing myself in tough situations" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Programming skills to make the project visible" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "2 bike travellers will be with me on different sections of the route" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Support of my cousin on video editing" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Support of local media" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "terrameiga.bike was translated in multiple languages (Spanish, Galician, Basque, Catalan and English)" %}</li>
                         </ul>
                         </div>
                       </div>
@@ -101,15 +101,15 @@
                   </div>
               </div>
               <div class="card mt-3">
-                <div class="card">
+                <div class="card" style="border-color: rgb(246, 158, 138);">
                     <div class="card-body">
                       <div class="d-flex flex-column">
                         <div>
-                          <h4>Weak Points</h4>
-                          <hr>
+                          <h4>{% trans "Weak Points" %}</h4>
+                          <hr style="border-color: rgb(246, 158, 138);">
                           <ul>
-                            <li class="mb-2" id="li_project_description">Few followers on Social Media as no work has been done previously</li>
-                            <li class="mb-2" id="li_project_description">I have never done such a big trip</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Few followers on Social Media as no work has been done previously" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "I have never done such a big trip" %}</li>
                         </ul>
                         </div>
                       </div>
@@ -118,24 +118,24 @@
               </div>
             </div>
             <div class="col-md-8">
-              <div class="card mb-3">
+              <div class="card mb-3" style="border-color: rgb(83, 158, 138);">
                 <div class="card-body">
                   <div class="row">
-                    <h4>Travel Description</h4>
+                    <h4>{% trans "Travel Description" %}</h4>
                     <hr>
                     <div class="col-sm-12 text-secondary">
-                      <strong id="p_blog">Countries:</strong> 
+                      <strong id="p_blog">{% trans "Countries:" %}</strong> 
                       <span id="p_blog">
-                        Spain, France, Italy, Slovenia, Croatia, Bosnia, Croatia, Albania, Greece, Turkey, Georgia, Russia, Kazajstán, Kyrgyzstan, Kazajstán, China, Mongolia, China, South Korea, Japan, US.
+                        {% trans "Spain, France, Italy, Slovenia, Croatia, Bosnia, Croatia, Albania, Greece, Turkey, Georgia, Russia, Kazajstán, Kyrgyzstan, Kazajstán, China, Mongolia, China, South Korea, Japan, US." %}
                       </span>
                     </div>
                   </div>
                   <hr>
                   <div class="row">
                     <div class="col-sm-12 text-secondary">
-                      <strong id="p_blog">Duration:</strong>
+                      <strong id="p_blog">{% trans "Duration:" %}</strong>
                       <span id="p_blog">
-                      March - 2024 // December 2024
+                        {% trans "March - 2024 // December 2024" %}
                     </span>
                     </div>
                   </div>
@@ -149,27 +149,27 @@
                   <hr>
                   <div class="row">
                     <div class="col-sm-12 text-secondary">
-                      <strong id="p_blog">Video equipment:</strong>
+                      <strong id="p_blog">{% trans "Video equipment:" %}</strong>
                       <span id="p_blog">
-                      Drone, action camera, phone, laptop, tripod
+                        {% trans "Drone, action camera, phone, tripod" %}
                     </span>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-12">
-                <div class="card mb-3">
+                <div class="card mb-3" style="border-color: rgb(83, 158, 138);">
                   <div class="card-body">
                     <div class="row">
-                      <h4>Why?</h4>
+                      <h4>{% trans "Why?" %}</h4>
                       <hr>
                     </div>
                     <div class="row">
                       <div class="col-sm-12 text-secondary">
                         <ul>
-                        <li class="mb-2" id="li_project_description">Personal goal</li>
-                          <li class="mb-2" id="li_project_description">Create traffic to terrameiga.bike for Search Engine Optimization as an ecommerce will be created in the future<li>
-                          <li class="mb-2" id="li_project_description">Make myself known and gain more experience for future projects</li>
+                        <li class="mb-2" id="li_project_description">{% trans "Personal goal" %}</li>
+                          <li class="mb-2" id="li_project_description">{% trans "Creating traffic to terrameiga.bike for Search Engine Optimization as an e-commerce will be created in the future" %}<li>
+                          <li class="mb-2" id="li_project_description">{% trans "Making myself known and gain more experience for future projects" %}</li>
                         </ul>
                       </div>
                     </div>
@@ -177,82 +177,82 @@
                 </div>
               <div class="row gutters-sm">
                 <div class="col-sm-12 mb-3">
-                  <div class="card h-100">
+                  <div class="card h-100" style="border-color: rgb(83, 158, 138);">
                     <div class="card-body">
-                        <h4>How?</h4>
+                        <h4>{% trans "How?" %}</h4>
                         <hr>
                         <div class="col-sm-12 text-secondary">
-                            <p id="p_blog">Getting people attention through:</p>
+                            <p id="p_blog">{% trans "Getting people attention through:" %}</p>
                             <ul>
-                            <li class="mb-2" id="li_project_description">Real positioning by satellital mobile (GenSpot) on terrameiga.bike</li>
-                            <li class="mb-2" id="li_project_description">Daily update of km and altitude on terrameiga.bike</li>
-                            <li class="mb-2" id="li_project_description">Daily update of expenses on terrameiga.bike</li>
-                            <li class="mb-2" id="li_project_description">Information about the country where I am </li>
-                            <li class="mb-2" id="li_project_description">Commenting the travel on terrameiga.bike</li>
-                            <li class="mb-2" id="li_project_description">Upload videos on YouTube (1 video each second week). My cousin will edit and upload the videos</li>
-                            <li class="mb-2" id="li_project_description">Upload pictures on Facebook, Instagram and terrameiga.bike</li>
-                            <li class="mb-2" id="li_project_description">Have a blog section for other cyclist on the route</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Real positioning by satellital mobile (GenSpot) on terrameiga.bike" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Daily updates of km and altitude on terrameiga.bike" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Daily updates of expenses on terrameiga.bike" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Information about the country where I am" %} </li>
+                            <li class="mb-2" id="li_project_description">{% trans "Commenting the travel on terrameiga.bike" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Uploading videos on YouTube (1 video each second week). My cousin will edit and upload the videos" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Uploading pictures on Facebook, Instagram and terrameiga.bike" %}</li>
+                            <li class="mb-2" id="li_project_description">{% trans "Having a blog section for other cyclists on the route" %}</li>
                         </ul>
                         </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-sm-12 mb-3">
-                    <div class="card h-100">
+                    <div class="card h-100" style="border-color: rgb(83, 158, 138);">
                       <div class="card-body">
-                          <h4>My proposal for you</h4>
+                          <h4>{% trans "My proposal for you" %}</h4>
                           <hr>
                           <div class="col-sm-12 text-secondary">
                             <ul>
-                              <li class="mb-2" id="li_project_description">Company logos on the footer of all the terrameiga.bike sites</li>
-                              <li class="mb-2" id="li_project_description">Placing a picture of the bike and myself on terrameiga.bike home page and on social media profile pictures</li>
-                              <li class="mb-2" id="li_project_description">Making a video exclusively to talk about the bike</li>
-                              <li class="mb-2" id="li_project_description">Uploading pictures on Facebook, Instagram and terrameiga.bike with the bike</li>
-                              <li class="mb-2" id="li_project_description">The bike would appear in all the videos made each second week</li>
-                              <li class="mb-2" id="li_project_description">Visiting Milano headquarters with the bike for Social Media</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Company logos on the footer of all the terrameiga.bike sites" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Placing a picture of the bike and myself on terrameiga.bike home page and on social media profile pictures" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Making a video exclusively to talk about the bike" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Uploading pictures on Facebook, Instagram and terrameiga.bike with the bike" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "The bike would appear in all the videos made each second week" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Visiting Milano headquarters with the bike for Social Media" %}</li>
                             </ul>
                           </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-sm-12 mb-3">
-                    <div class="card h-100">
+                    <div class="card h-100" style="border-color: rgb(83, 158, 138);">
                       <div class="card-body">
-                          <h4>What do I ask for?</h4>
+                          <h4>{% trans "What do I ask for?" %}</h4>
                           <hr>
                           <div class="col-sm-12">
-                            <p id="p_blog">A bike with the following characteristics:</p>
+                            <p id="p_blog">{% trans "A bike with the following characteristics:" %}</p>
                             <ul>
-                              <li class="mb-2" id="li_project_description">Aluminium or steel frame</li>
-                              <li class="mb-2" id="li_project_description">Screw holes on: front fork, down tube, seat tube, and seat stays</li>
-                              <li class="mb-2" id="li_project_description">Mechanical disk brakes or mechanical rim brakes</li>
-                              <li class="mb-2" id="li_project_description">700 mm wheels</li>
-                              <li class="mb-2" id="li_project_description">33cc tyre or thicker</li>
-                              <li class="mb-2" id="li_project_description">Drop handelbar with rounded shape</li>
-                              <li class="mb-2" id="li_project_description">Cables outside of the frame</li>
-                              <li class="mb-2" id="li_project_description">If possible, a single chainring groupset</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Aluminium or steel frame" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Screw holes on: front fork, down tube, seat tube, and seat stays" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Mechanical disk brakes or mechanical rim brakes" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "700c - 29 inches wheels" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "33c tyre or thicker" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Drop handlebar with rounded shape" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Cables outside of the frame" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "If possible, a single chainring groupset" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Size: XL" %}</li>
                             </ul>
                           </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-sm-12 mb-3">
-                    <div class="card h-100">
+                    <div class="card h-100" style="border-color: rgb(83, 158, 138);">
                       <div class="card-body">
-                          <h4>Future projects</h4>
+                          <h4>{% trans "Future projects" %}</h4>
                           <hr>
                           <div class="col-sm-12 text-secondary">
                             <ul>
-                              <li class="mb-2" id="li_project_description">Crossing Africa by bike</li>
-                              <li class="mb-2" id="li_project_description">Crossing America by bike</li>
-                              <li class="mb-2" id="li_project_description">Creating the terrameiga.bike e-commerce</li>
-                              <li class="mb-2" id="li_project_description">Organizing ultracycling races between Galicia and Portugal</li>
-                              <li class="mb-2" id="li_project_description">Creating tools for the users</li>
-                              <p id="p_blog">A tool which gives you the max speed and max slope depending on the groupset chosen by the user
-                                (This tool is already developed, calculus and programmin is done, however the visualization part is missing)
-                                Visit the link to see how it looks like, however it has not finished yet. 
+                              <li class="mb-2" id="li_project_description">{% trans "Crossing Africa by bike" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Crossing America by bike" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Creating the terrameiga.bike e-commerce" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Organizing ultracycling races between Galicia and Portugal" %}</li>
+                              <li class="mb-2" id="li_project_description">{% trans "Creating tools for the users" %}</li>
+                              <p id="p_blog">
+                              {% trans "A tool which gives you the max speed and max slope depending on the groupset chosen by the user (This tool is already developed, calculated and programmed, however the visualization part is missing)" %}
                               </p>
-                              <p id="p_blog">A tools which analyze the agility, ergonomic and speed of the bike based on the frame geometry</p>
+                              <p id="p_blog">{% trans "A tool which analyze the agility, ergonomic and speed of the bike based on the frame geometry" %}</p>
                             </ul>
                           </div>
                       </div>

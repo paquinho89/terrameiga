@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'products',
     'bicicleteiros',
     'tools',
+    'newsletter',
     #Esto é para o rich text
     'ckeditor',
     #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles

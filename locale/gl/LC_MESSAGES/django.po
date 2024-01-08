@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 17:24+0100\n"
+"POT-Creation-Date: 2024-01-08 16:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1050,14 +1050,14 @@ msgstr ""
 "aventura e desfrutar de todo o contido?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
-#: .\bicicleteiros\views.py:341 .\bicicleteiros\views.py:431
-#: .\bicicleteiros\views.py:601 .\bicicleteiros\views.py:687
+#: .\bicicleteiros\views.py:289 .\bicicleteiros\views.py:379
+#: .\bicicleteiros\views.py:549 .\bicicleteiros\views.py:635
 msgid "Week"
 msgstr "Semana"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:144
-#: .\bicicleteiros\views.py:375 .\bicicleteiros\views.py:487
-#: .\bicicleteiros\views.py:633 .\bicicleteiros\views.py:741
+#: .\bicicleteiros\views.py:323 .\bicicleteiros\views.py:435
+#: .\bicicleteiros\views.py:581 .\bicicleteiros\views.py:689
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
@@ -1118,8 +1118,8 @@ msgstr "Datos da viaxe"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:31
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:31
-#: .\bicicleteiros\views.py:414 .\bicicleteiros\views.py:472
-#: .\bicicleteiros\views.py:670 .\bicicleteiros\views.py:726
+#: .\bicicleteiros\views.py:362 .\bicicleteiros\views.py:420
+#: .\bicicleteiros\views.py:618 .\bicicleteiros\views.py:674
 msgid "Climb"
 msgstr "Ascenso"
 
@@ -1189,16 +1189,327 @@ msgstr "Datos da viaxe - Reporte completo"
 msgid "Videos"
 msgstr "Vídeos"
 
-#: .\bicicleteiros\views.py:182
+#: .\bicicleteiros\static\templates\project_presentation.html:17
+msgid "Bike traveller & web developer"
+msgstr "Cicloviaxeiro de desarrollador web"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:19
+msgid "Phone: 0034 687 494 294"
+msgstr "Móbil: 0034 687 494 294"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:68
+msgid "Previous Experience"
+msgstr "Experiencia"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:72
+msgid "(2020, 2021, 2022 - commuting - 450km)"
+msgstr "(2020, 2021, 2022 - deprazamentos - 450km)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:73
+msgid "Tanger - Sidi Ifni (Morrocco)"
+msgstr "Tánxer - Sidi Ifni (Marrocos)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:73
+msgid "(2021: ultracycling race - 2.200km)"
+msgstr "(2021: carreira de ultraciclismo - 2.200km)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:74
+msgid "(2022: Travel - 2.600km)"
+msgstr "(2022: Viaxe - 2.600km)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:75
+msgid "Verín (Spain) - Blois (France) - Verín"
+msgstr "Verín (España) - Blois (Francia) - Verín"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:75
+msgid "(2023: Travel - 2.700km)"
+msgstr "(2023: Viaxe - 2.700km)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:76
+msgid "Several bikepacking travels in North Portugal and Galicia"
+msgstr "Varias viaxes de bikepacking no Norte de Portugal e Galicia"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:88
+msgid "Strong Points"
+msgstr "Puntos Fortes"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:91
+msgid "Experience managing myself in tough situations"
+msgstr "Experiencia afrontando situacións difíciles"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:92
+msgid "Programming skills to make the project visible"
+msgstr ""
+"Habilidades de desarrollo web que axudarán a dar visibilidade ao proxecto"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:93
+msgid "2 bike travellers will be with me on different sections of the route"
+msgstr "2 cicloviaxeiros acompañaránme en 2 puntos do traxecto"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:94
+msgid "Support of my cousin on video editing"
+msgstr "Apoio do meu primo para a edición dos vídeos"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:95
+msgid "Support of local media"
+msgstr "Apoio da prensa local"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:96
+msgid ""
+"terrameiga.bike was translated in multiple languages (Spanish, Galician, "
+"Basque, Catalan and English)"
+msgstr ""
+"terrameiga.bike estará dispoñible en varios idiomas (Castelán, Galego, "
+"Éuscaro, Catalán e Inglés)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:108
+msgid "Weak Points"
+msgstr "Puntos débiles"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:111
+msgid "Few followers on Social Media as no work has been done previously"
+msgstr ""
+"Poucos seguidores nas redes sociais posto que non se ten feito un traballo "
+"previo"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:112
+msgid "I have never done such a big trip"
+msgstr "Nunca fixen unha viaxe tan longa"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:124
+msgid "Travel Description"
+msgstr "Descripción da viaxe"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:127
+msgid "Countries:"
+msgstr "Países:"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:129
+msgid ""
+"Spain, France, Italy, Slovenia, Croatia, Bosnia, Croatia, Albania, Greece, "
+"Turkey, Georgia, Russia, Kazajstán, Kyrgyzstan, Kazajstán, China, Mongolia, "
+"China, South Korea, Japan, US."
+msgstr ""
+"España, Francia, Italia, Eslovenia, Croacia, Bosnia, Croacia, Albania, "
+"Grecia, Turquía, Xeorxia, Rusia, Kazajstán, Kyrgyzstan, Kazajstán, China, "
+"Mongolia, China, Corea do Sur, Xapón e Estados Unidos "
+
+#: .\bicicleteiros\static\templates\project_presentation.html:136
+msgid "Duration:"
+msgstr "Duración:"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:138
+msgid "March - 2024 // December 2024"
+msgstr "Marzo - 2024 // Decembro - 2024"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:152
+msgid "Video equipment:"
+msgstr "Equipo de vídeo:"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:154
+msgid "Drone, action camera, phone, tripod"
+msgstr "Dron, cámara deportiva, móbil, trípode"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:164
+msgid "Why?"
+msgstr "Por qué?"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:170
+msgid "Personal goal"
+msgstr "Obxetivo persoal"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:171
+msgid ""
+"Creating traffic to terrameiga.bike for Search Engine Optimization as an e-"
+"commerce will be created in the future"
+msgstr ""
+"Crear tráfico a terrameiga.bike para a optimización da páxina nos "
+"buscadores, xa que nun futuro albergará unha tenda online "
+
+#: .\bicicleteiros\static\templates\project_presentation.html:172
+msgid "Making myself known and gain more experience for future projects"
+msgstr "Darme a coñecer e gañar experiencia para futuros proxectos"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:182
+msgid "How?"
+msgstr "Cómo?"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:185
+msgid "Getting people attention through:"
+msgstr "Chamando a atención da xente:"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:187
+msgid "Real positioning by satellital mobile (GenSpot) on terrameiga.bike"
+msgstr ""
+"Posicionamento real en terrameiga.bike a través dun teléfono satelital (Sopt "
+"Gen)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:188
+msgid "Daily updates of km and altitude on terrameiga.bike"
+msgstr "Actualización diaria dos km e altura en terrameiga.bike"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:189
+msgid "Daily updates of expenses on terrameiga.bike"
+msgstr "Actualización diaria dos gastos en terrameiga.bike"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:190
+msgid "Information about the country where I am"
+msgstr "Información sobre o país onde me atopo"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:191
+msgid "Commenting the travel on terrameiga.bike"
+msgstr "Comentarios sobre a viaxe en terrameiga.bike"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:192
+msgid ""
+"Uploading videos on YouTube (1 video each second week). My cousin will edit "
+"and upload the videos"
+msgstr ""
+"Subida de vídeos en YouTube (1 vídeo cada segunda semana). Un primo meu será "
+"o encargado de editalos e da xestión da canle"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:193
+msgid "Uploading pictures on Facebook, Instagram and terrameiga.bike"
+msgstr "Subida de fotos en Facebook, Instagram e terrameiga.bike"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:194
+msgid "Having a blog section for other cyclists on the route"
+msgstr "Un blog a disposición de outras ciclistas que anden na ruta"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:203
+msgid "My proposal for you"
+msgstr "A miña proposta"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:207
+msgid "Company logos on the footer of all the terrameiga.bike sites"
+msgstr "Logos da compañía no pé da páxina de terrameiga.bike "
+
+#: .\bicicleteiros\static\templates\project_presentation.html:208
+msgid ""
+"Placing a picture of the bike and myself on terrameiga.bike home page and on "
+"social media profile pictures"
+msgstr ""
+"Por unha foto da bicicleta e miña na páxina de inicio de terrameiga.bike, e "
+"en todas as fotos de perfil das redes sociais"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:209
+msgid "Making a video exclusively to talk about the bike"
+msgstr "Gravación dun vídeo exclusivo no que solo se fale da bicicleta"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:210
+msgid ""
+"Uploading pictures on Facebook, Instagram and terrameiga.bike with the bike"
+msgstr ""
+"Subida de fotos a Facebook, Instagram e terrameiga.bike na que apareza a "
+"bicicleta"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:211
+msgid "The bike would appear in all the videos made each second week"
+msgstr ""
+"A bicicleta aparecerá en todos os vídeos que se fagan cada segunda semana"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:212
+msgid "Visiting Milano headquarters with the bike for Social Media"
+msgstr "Visita coa bicicleta á sede de Milán para a promoción da marca"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:221
+msgid "What do I ask for?"
+msgstr "Que pido?"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:224
+msgid "A bike with the following characteristics:"
+msgstr "Unha bicicleta coas seguintes características:"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:226
+msgid "Aluminium or steel frame"
+msgstr "Cuadro de aluminio ou aceiro"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:227
+msgid "Screw holes on: front fork, down tube, seat tube, and seat stays"
+msgstr ""
+"Ollais na: forcada, tubo inferior do cadro, tubo da sela e vaíñas traseiras"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:228
+msgid "Mechanical disk brakes or mechanical rim brakes"
+msgstr "Freos de disco mecánicos ou de zapata"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:229
+msgid "700c - 29 inches wheels"
+msgstr "rodas de 700c"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:230
+msgid "33c tyre or thicker"
+msgstr "neumáticos cun grosor superior a 33c"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:231
+msgid "Drop handlebar with rounded shape"
+msgstr "Guiador de carretera con forma redonda"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:232
+msgid "Cables outside of the frame"
+msgstr "Cables por fora do cadro"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:233
+msgid "If possible, a single chainring groupset"
+msgstr "Se é posible, monoplato"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:234
+msgid "Size: XL"
+msgstr "Talla: XL"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:243
+msgid "Future projects"
+msgstr "Proxectos para futuro"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:247
+msgid "Crossing Africa by bike"
+msgstr "Cruzar África en bicicleta"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:248
+msgid "Crossing America by bike"
+msgstr "Cruzar América en bicicleta"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:249
+msgid "Creating the terrameiga.bike e-commerce"
+msgstr "Crear unha tenda online en terrameiga.bike"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:250
+msgid "Organizing ultracycling races between Galicia and Portugal"
+msgstr "Organizar carreiras de ultraciclismo entre Galicia e Portugal"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:251
+msgid "Creating tools for the users"
+msgstr "Crear ferramentas para os usuarios"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:253
+msgid ""
+"A tool which gives you the max speed and max slope depending on the groupset "
+"chosen by the user (This tool is already developed, calculated and "
+"programmed, however the visualization part is missing)"
+msgstr ""
+"Unha ferramenta que proporcione a máxima velocidade e pendente que se pode "
+"subir cos desarrollos que os diferentes grupos do mercado ofrecen (Esta "
+"ferramenta xa está calculada e programada, sen embargo, falta a parte da "
+"visualización)"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:255
+msgid ""
+"A tool which analyze the agility, ergonomic and speed of the bike based on "
+"the frame geometry"
+msgstr ""
+"Unha ferramenta que analice a axilidade, ergonomía e velocidade da bicicleta "
+"basándonos na xeometría do cadro"
+
+#: .\bicicleteiros\views.py:130
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Grazas por estar aí. O seu comentario foi engadido!"
 
-#: .\bicicleteiros\views.py:191
+#: .\bicicleteiros\views.py:139
 msgid "Please, include some text in your reply"
 msgstr "Por favor, o comentario non pode estar baleiro"
 
-#: .\bicicleteiros\views.py:231
+#: .\bicicleteiros\views.py:179
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1206,54 +1517,54 @@ msgstr ""
 "Vostede debe de estar rexistrado para ter acceso a este contido. Vaia a "
 "terrameiga.bike/sign_up/ e cree unha conta"
 
-#: .\bicicleteiros\views.py:301 .\bicicleteiros\views.py:563
+#: .\bicicleteiros\views.py:249 .\bicicleteiros\views.py:511
 msgid "Where does the money go?"
 msgstr "Onde gasto os cartos?"
 
-#: .\bicicleteiros\views.py:337 .\bicicleteiros\views.py:597
+#: .\bicicleteiros\views.py:285 .\bicicleteiros\views.py:545
 msgid "Expenses per Week"
 msgstr "Gastos por semana"
 
-#: .\bicicleteiros\views.py:345 .\bicicleteiros\views.py:605
+#: .\bicicleteiros\views.py:293 .\bicicleteiros\views.py:553
 #, python-brace-format
 msgid "Week: %{x}<br>Expense: %{y:.} Euros"
 msgstr "Semana: %{x}<br>Gasto: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:372 .\bicicleteiros\views.py:630
+#: .\bicicleteiros\views.py:320 .\bicicleteiros\views.py:578
 msgid "Expenses per Country"
 msgstr "Gastos por país"
 
-#: .\bicicleteiros\views.py:379 .\bicicleteiros\views.py:637
+#: .\bicicleteiros\views.py:327 .\bicicleteiros\views.py:585
 #, python-brace-format
 msgid "Country: %{x}<br>Expense: %{y:.} Euros"
 msgstr "País: %{x}<br>Gasto: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:405 .\bicicleteiros\views.py:661
+#: .\bicicleteiros\views.py:353 .\bicicleteiros\views.py:609
 msgid "Distance and altitude per week"
 msgstr "Distancia e ascenso por semana"
 
-#: .\bicicleteiros\views.py:423 .\bicicleteiros\views.py:435
-#: .\bicicleteiros\views.py:481 .\bicicleteiros\views.py:491
-#: .\bicicleteiros\views.py:679 .\bicicleteiros\views.py:691
-#: .\bicicleteiros\views.py:735 .\bicicleteiros\views.py:745
+#: .\bicicleteiros\views.py:371 .\bicicleteiros\views.py:383
+#: .\bicicleteiros\views.py:429 .\bicicleteiros\views.py:439
+#: .\bicicleteiros\views.py:627 .\bicicleteiros\views.py:639
+#: .\bicicleteiros\views.py:683 .\bicicleteiros\views.py:693
 msgid "Climb (meters)"
 msgstr "Ascenso (metros)"
 
-#: .\bicicleteiros\views.py:434 .\bicicleteiros\views.py:490
-#: .\bicicleteiros\views.py:690 .\bicicleteiros\views.py:744
+#: .\bicicleteiros\views.py:382 .\bicicleteiros\views.py:438
+#: .\bicicleteiros\views.py:638 .\bicicleteiros\views.py:692
 msgid "Distance (Km)"
 msgstr "Distancia (km)"
 
-#: .\bicicleteiros\views.py:438 .\bicicleteiros\views.py:694
+#: .\bicicleteiros\views.py:386 .\bicicleteiros\views.py:642
 #, python-brace-format
 msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "Semana: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\bicicleteiros\views.py:463 .\bicicleteiros\views.py:717
+#: .\bicicleteiros\views.py:411 .\bicicleteiros\views.py:665
 msgid "Distance and climb per country"
 msgstr "Distancia e ascenso por país"
 
-#: .\bicicleteiros\views.py:494 .\bicicleteiros\views.py:748
+#: .\bicicleteiros\views.py:442 .\bicicleteiros\views.py:696
 #, python-brace-format
 msgid "Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "País: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
