@@ -179,18 +179,23 @@
           <!--Section for the Newsletter-->
           <div class="text-center row" id="newsletter_area">
             <div class="card-body">
-              <h5 id="h2_home_page_no_registration"><strong>Subscribe to the newsletter for updates</strong></h5>
+              <h5 id="h2_home_page_no_registration"><strong>{% trans "Subscribe to the newsletter for updates" %}</strong></h5>
               <form method="post" novalidate class="mx-auto mt-3" style="max-width: 300px;">
                 {% csrf_token %}
-              <div class="form-group">
-              {{ newsletter_email_html.email_subscriptor }}
-              {% if messages %}
-              <label id="label_error" style="color: red;">{{ newsletter_email_html.email_subscriptor.errors }}</label>
-              {% endif %}
-              </div>
-              <button id="sign_in_button" type="submit" class="btn btn-outline-light btn-lg mt-3" onclick="location.href='#newsletter_area'">
-                Subscribe
-              </button>
+                <!--Con esto asigno un valor 1 para diferenciar se o request.method == 'POST' ven do botón da newsletter ou do form do idioma.
+                se ven do formulario da newsletter asígnolle o valor 1 (pode ser outro calquera, é para que teña algún valor) e escondo o valor-->
+                <input type="hidden"  name="newsletter_submitted" value="1">
+                <div class="form-group">
+                {{ newsletter_email_html.email_subscriptor }}
+                <!--checking if the form has been submitted e se a submission ven do botón da subscripción e non do formulario do idioma
+                request.POST.newsletter_submitted: checks if the key "newsletter_submitted" is present in the request.POST dictionary. If this key is present and has a value (in this case, it's the string "1"), it indicates that the form submission is related to the newsletter subscription.-->
+                {% if newsletter_email_html.errors.email_subscriptor and request.method == 'POST' and request.POST.newsletter_submitted %}
+                  <label id="label_error" style="color: red;">{{ newsletter_email_html.email_subscriptor.errors }}</label>
+                {% endif %}
+                </div>
+                <button id="sign_in_button" type="submit" class="btn btn-outline-light btn-lg mt-3" onclick="location.href='#newsletter_area'">
+                  {% trans "Subscribe" %}
+                </button>
               </form>
             </div>
           </div>

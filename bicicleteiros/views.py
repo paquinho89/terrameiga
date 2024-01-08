@@ -44,28 +44,32 @@ def country_data_no_registered_view (request):
     form_language = language_home_page_no_registration_form(data = request.POST)
     if request.method == "POST":
         if form_language.is_valid():
+            #print(request.POST)
             selected_language = form_language.cleaned_data['language']
             #Activate the language which was selected on the dropdown
             activate(selected_language)
     
     #Formulario da newsletter:
     newsletter_email = form_newsletter(data=request.POST)
+    #Con esto o que fago é que o newsletter form se execute solo cando se clicka no subscribe button do html. Se non se non hai click no botón esta parte da view non se executa.
+    #O que fago e que cando se executa o "newsletter" o form do idioma nunca vai ser válido, porque é un formulario que ten outro tipo de tigger. E entón pois esto so se vai executar
+    #cando o form_language non é valido e o form da newsletter si.
+    #Por outra parte, se eu executo solo o form language, ao ser este válido, o newsletter form non se vai a executar dentro da view
     if request.method == 'POST' and not form_language.is_valid():
-        if newsletter_email.is_valid():
+        #Con esto asegúrome que o formulario da newsletter é executado solo cando ben do botón da subscription, comprobando que o 'newsletter_submitted" está presente no diccionario que nos da o request.POST.
+        if newsletter_email.is_valid() and 'newsletter_submitted' in request.POST:
+            #print(request.POST)
             # Create Comment object and save it on the database
             newsletter_email.save(commit=True)
             #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
             messages.success(request, 'Thanks for subscribe and being part of the bike travelling community')
-            #artigos_content e que para que me retorne a vista do blog. Vaste o archivo das urls e buscas a url que queiras que che retorne
             return redirect('home_page_no_registered')
         else:
             # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
             # asigne o formato de error (O borde en vermello)
             for field, errors in newsletter_email.errors.items():
                 newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-            #Esto imprime o error xusto debaixo do cajetín para inserir o correo
-            #messages.error(request, newsletter_email.errors)
-            messages.error(request, "Check the errors and try again!")
+            messages.error(request, _("Check the errors and try again!"))
     
     context = {
         'journey_day_html' : current_journey_day ,
