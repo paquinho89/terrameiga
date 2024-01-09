@@ -1199,7 +1199,7 @@ msgstr "Vídeos"
 
 #: .\bicicleteiros\static\templates\project_presentation.html:17
 msgid "Bike traveller & web developer"
-msgstr "Cicloviaxeiro de desarrollador web"
+msgstr "Cicloviaxeiro e desarrollador web"
 
 #: .\bicicleteiros\static\templates\project_presentation.html:19
 msgid "Phone: 0034 687 494 294"
