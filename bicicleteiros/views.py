@@ -299,7 +299,7 @@ def estadistica_plotly_view(request):
     #-----------------END GRAPH KIND OF EXPENSES - PIE CHART---------------------------------
 
     #-----------------GRAPGH EXPENSES PER WEEK---------------------------------
-    qs_expenses_week = money_model.objects.values('week', 'continent').annotate(Sum('expense_euros'))
+    qs_expenses_week = money_model.objects.values('week', 'continent').annotate(Sum('expense_euros')).order_by('week')
     #Collemos as últimas 17 entradas para mostrar no gráfico.PONO ACTIVO CANDO TEÑAS MOITOS VALORES
     #qs_expenses_week = qs_expenses_week[len(qs_expenses_week)-17:]
 
@@ -368,7 +368,7 @@ def estadistica_plotly_view(request):
     #-----------------END GRAPGH EXPENSES PER COUNTRY---------------------------------
 
     #-----------------GRAPGH KM AND ALTITUDE PER WEEK---------------------------------
-    qs_km_meters_week = km_altitude_model.objects.values('week', 'continent').annotate(Sum('km_day'),Sum('altitude_day'))
+    qs_km_meters_week = km_altitude_model.objects.values('week', 'continent').annotate(Sum('km_day'),Sum('altitude_day')).order_by('week')
     #Collemos as últimas 17 entradas para mostrar no gráfico. PONO ACTIVO CANDO TEÑAS MOITOS VALORES
     #qs_km_meters_week = qs_km_meters_week[len(qs_km_meters_week)-17:]
 
@@ -427,7 +427,7 @@ def estadistica_plotly_view(request):
     #-----------------END GRAPGH KM AND ALTITUDE PER WEEK---------------------------------
 
     #-----------------GRAPGH KM AND ALTITUDE PER COUNTRY---------------------------------
-    qs_km_meters_country = km_altitude_model.objects.values('country_name', 'continent').annotate(Sum('km_day'),Sum('altitude_day'))
+    qs_km_meters_country = km_altitude_model.objects.values('country_name', 'continent').annotate(Sum('km_day'),Sum('altitude_day')).order_by('country_number') #Se che da algún problema o orden dos países é porque o country_number é unha string
     #Collemos as últimas 15 entradas para mostrar no gráfico. PONO ACTIVO CANDO TEÑAS MOITOS VALORES
     #qs_km_meters_country = qs_km_meters_country[len(qs_km_meters_country)-15:]
     fig_km_meters_country = px.bar(qs_km_meters_country, 
