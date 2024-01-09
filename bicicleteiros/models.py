@@ -106,13 +106,17 @@ class country_information_model(models.Model):
     interesting_fact_ca = models.CharField(max_length=255, blank=True, null=True)
     song_spotify = models.CharField(max_length=255, blank=False, null=False)
 
+    #Esto é para que me ordene os países polo número de país
+    class Meta:
+        ordering = ['-country_number']
+
     def __str__(self):
         return (self.country)
 
 #Agora obteño a semana na que estou dependendo da data de inicio
 #We get the day of the year
 #IMPORTANTE!!!: Eiqui tes que cambiar a data e por a data na que comezas a viaxe.
-starting_day_of_year = datetime(2023,10,1).timetuple().tm_yday
+starting_day_of_year = datetime(2024,1,9).timetuple().tm_yday
 current_day_of_year = datetime.now().timetuple().tm_yday
 #Sumamos 1 para que o primer día me conte como o day 1
 day_in_the_journey = (current_day_of_year - starting_day_of_year)+1

@@ -42,9 +42,23 @@
     <!-- Esto é o Font Awesome do ollo do campo do contrasinal. Sen esto, o olliño da contraseña non aparece -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- Esto é a folla de estilos css para o modo dark-->
+    <!-- Esto é a folla de estilos css para o modo light e dark-->
     <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/light.css" %}' >
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href='{% static "imaxes/ico_favicon.ico" %}'>
   </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLP81M7JQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3YLP81M7JQ');
+</script>
+
 
 <!--Nav Bar-->
 {% include 'base/nav_bar.html' %}   
@@ -55,7 +69,7 @@
 {% endblock content %}
 
 <!--Footer-->
-{% include 'base/footer.html' %}
+{% include 'base/footer_registration.html' %}
 <!--Footer-->
 
 <!--Esto é para cambiar de dark mode a light mode. E os botóns están no template do footer-->

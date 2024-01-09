@@ -333,7 +333,7 @@ def estadistica_plotly_view(request):
     #-----------------END GRAPGH EXPENSES PER WEEK---------------------------------
 
     #-----------------GRAPGH EXPENSES PER COUNTRY---------------------------------
-    qs_expenses_country = money_model.objects.values('country_name', 'continent').annotate(Sum('expense_euros'))
+    qs_expenses_country = money_model.objects.values('country_name', 'continent').annotate(Sum('expense_euros')).order_by('country_number') #Se che da algún problema o orden dos países é porque o country_number é unha string
     #Collemos as últimas 15 entradas para mostrar no gráfico. PONO ACTIVO CANDO TEÑAS MOITOS VALORES
     #qs_expenses_country = qs_expenses_country[len(qs_expenses_country)-15:]
 

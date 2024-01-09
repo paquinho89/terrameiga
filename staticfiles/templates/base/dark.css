@@ -66,6 +66,13 @@ li{
     color: red;
     list-style-type: none;
     }
+
+#li_project_description{
+    color: rgba(191, 191, 191, 1);
+    list-style: circle;
+    font-size: 1.1em;
+    }
+
 #copyright_text{
     color: white;
 }
@@ -74,10 +81,6 @@ a{
     }
 i{
     color: white;
-    }
-
-.card{
-    background-color: #28282B;
     }
     
 #home_page_card{
@@ -145,8 +148,15 @@ hr{
 #background_sign_in {
     background-color: black;
 }
+
 p { 
-    color: rgba(191, 191, 191, 1); 
+    color: white;
+    font-size: 1.1em; 
+}
+
+#p_blog{
+    color: rgba(191, 191, 191, 1);
+    font-size: 1.1em; 
 }
 
 label { 
@@ -154,19 +164,20 @@ label {
 }
 /*Estes botós son da páxina de sign in*/
 #sign_in_button {
-    color: white;
+    color: black;
     background-color: rgb(246, 158, 138);
     white-space: nowrap; /*This is to mantain the text within the button in 1 line*/
     }
 #sign_in_button:hover {
+    color: black;
     background-color: rgb(83, 158, 138);
     }
 #sign_up_button{
-    color: white;
+    color: black;
     background-color: rgb(246, 158, 138);
 }
 #sign_up_button:hover{
-    color: white;
+    color: black;
     background-color: rgb(83, 158, 138);
 }
 /*Formato da ventana emerxente*/
@@ -278,12 +289,8 @@ hr{
     color: white;
 }
 
-#cronica_viaxe{
-    background-color: #28231D;
-}
-
 #add_reply_button {
-    color: white;
+    color: black;
     background-color: rgb(246, 158, 138);
 }
 
@@ -293,7 +300,8 @@ hr{
 }
 
 #add_comment_box{
-    background-color: #28282B;
+    color: white;
+    border-color: rgb(255,255,255,0.2);
 }
 
 .close {
@@ -310,6 +318,19 @@ hr{
   }
 
 .card{
+    background-color: black;
+    border-color: rgb(255,255,255,0.2);
+}
+
+#comment_text_white{
+    color: white !important;
+}
+
+.card_replies{
+    background-color: black;
+    }
+
+.card-header{
     background-color: #28282B;
 }
 
@@ -339,11 +360,11 @@ hr{
 /*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
 no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")!important;
 }
 /*E esto é para cambiar o borde do botón. Neste caso, como non é unha imaxe svg, incido sobre o elemento do css*/
 .navbar-toggler{
-    border: 1px solid rgb(246, 158, 138);
+    border: 1px solid rgb(246, 158, 138) !important;
 }
 /*Con esto oculto a barra vertical do container do chat*/
 #chat_box{
@@ -418,9 +439,14 @@ h2 {
     color: rgba(191, 191, 191, 1); 
 }
 /*Esto é para darlle tamaño ao vídeos*/
-iframe{
+#iframe_videos{
     width: 100%;
     height: 200px;
+}
+/*Esto é para o tamaño do mapa*/
+#iframe_mapa{
+    width: 100%;
+    height: 800px;
 }
 /*Esto é para darlle un tamaño as fotos*/
 #pictures{
@@ -541,4 +567,42 @@ iframe{
 #language_form_home_page_no_registration option {
     color: black;
 }
+
+#background_graphs{
+    color: black;
+}
+
+#ul_notes_tool {
+    color: rgba(191, 191, 191, 1);
+}
+
+#li_notes_tool{
+    color: rgba(191, 191, 191, 1);
+    list-style-type: disc;
+    font-size: 1.1em; 
+}
+
+.table th {
+    border-right: 1px solid #28282B; /* Add a vertical line to all th elements */
+    color: white;
+    
+}
+.table tr {
+    border-bottom: 1px solid #28282B;
+    color: rgba(191, 191, 191, 1);
+}
+.table td {
+    border-right: 1px solid #28282B;
+    color: rgba(191, 191, 191, 1);
+}
+
+#li_table{
+    color: rgba(191, 191, 191, 1);
+}
+                
+
+
+
+
+
 

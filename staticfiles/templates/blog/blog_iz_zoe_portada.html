@@ -1,0 +1,94 @@
+{% extends 'base/base_non_registered.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %} 
+
+<div class="container">
+    <section>
+        <h1 class="text-center mt-3"> Panniers and Montañas</h1>
+        <div class="col-md-12 mb-12 mb-5">
+          <p id="p_blog">
+            Starting in Santander, heading South for warmer weather in Morocco, North to Iz’s brother’s wedding in Sweden, and finally (if we’re feeling sensible) back home to the UK.
+            </p>
+            <p id="p_blog">
+            We are Iz and Zoe. We are now full time cycle tourers. We are both vegan and concerned about our impact on the planet. Our journey is plant powered and flight free!
+            </p>
+            <p id="p_blog">
+            Many people have wanted to keep updated with our adventures and misadventures – we have created this blog for you! Please excuse the clunky design – we have never made a website before, and we are mainly doing this from our phones.
+            </p>
+            <p id="p_blog">
+            We’re aiming for one post every month over the year. We will be writing about the background and preparation for the trip, the highs and lows of cycle touring, and a sprinkle of bike nerdery for anyone interested!
+            </p>
+            <p id="p_blog">
+            We hope you enjoy reading. And please send us DMs! I would love to hear from you through WhatsApp / Signal / Telegram / even email.
+            </p>
+        </div>
+      </section>
+      <h1 class="text-center">Iz's blog</h1>
+      <hr>
+    <section>
+        <!-- Post -->
+        <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="bg-image hover-overlay shadow-1-strong rounded" data-mdb-ripple-init data-mdb-ripple-color="light">
+            <img src='{% static "imaxes/blog_photos/blog_2_photo_7.jpg" %}' class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+            </div>
+        </div>
+        <div class="col-md-8 mb-4">
+            <h4 class="mb-3">Let the cycling begin! - December 2023</h4>
+            <p id="p_blog">
+            On the 7th December 2023 we set off from Nottingham railway station and took a 36 hour ferry from Portsmouth to Santander. 
+            Joining us for the first week, Matt (our first special guest!) met us in Portsmouth.
+            We zig zagged between the coast and inland, depending on where we could find Warm Showers1 hosts...
+            </p>
+            <a id="sign_in_button" class="btn btn-lg" href="{% url 'let_the_cycling_begin' %}" role="button">Read</a>
+        </div>
+        </div>
+        <hr>
+        <!-- Post -->
+        <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="bg-image hover-overlay shadow-1-strong rounded" data-mdb-ripple-init data-mdb-ripple-color="light">
+            <img src='{% static "imaxes/blog_photos/blog_2_photo_portada.webp" %}' class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+            </div>
+        </div>
+        <div class="col-md-8 mb-4">
+            <h4 class="mb-3"> The Journey to the Journey - November 2023</h4>
+            <p id="p_blog">
+            Before setting off Iz’s family spent an early Christmas weekend together – neither Iz, their brother or his partner were going to be in the country for Christmas 
+            day after all. Snow settled down on the Sunday morning and they went sledging down the hill at Wollaton Park. A true White Christmas!...
+            </p>
+            <a id="sign_in_button" class="btn btn-lg" href="{% url 'the_journey_to_the_journey' %}" role="button">Read</a>
+        </div>
+        </div>
+        <hr>
+        <!-- Post -->
+        <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="bg-image hover-overlay shadow-1-strong rounded" data-mdb-ripple-init data-mdb-ripple-color="light">
+            <img src='{% static "imaxes/blog_photos/blog_2_photo_11.jpeg" %}' class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+            </div>
+        </div>
+
+        <div class="col-md-8 mb-4">
+            <h4 class="mb-3">Preparation, preparation, preparation - August 2023</h4>
+            <p id="p_blog">
+            From the 1st August 2023 Iz had schedules to stick to, no need for alarms, no paid work or exams to revise for. Four whole months to get ready for an adventure. 
+            Chilling. Right?...
+            </p>
+            <a id="sign_in_button" class="btn btn-lg" href="{% url 'preparation_preparation' %}" role="button">Read</a>
+        </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}

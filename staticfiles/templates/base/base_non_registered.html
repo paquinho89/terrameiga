@@ -48,7 +48,22 @@
 
     <!-- Esto é a folla de estilos css para o modo dark-->
     <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/light.css" %}' >
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href='{% static "imaxes/ico_favicon.ico" %}'>
+
   </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLP81M7JQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3YLP81M7JQ');
+</script>
+
 
 
 {% block content %} 
@@ -56,7 +71,7 @@
 {% endblock content %}
 
 <!--Footer-->
-{% include 'base/footer.html' %}
+{% include 'base/footer_non_registration.html' %}
 <!--Footer-->
 
 </html>

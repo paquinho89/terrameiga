@@ -19,8 +19,8 @@
       {% trans "WEEK" %} {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}<img style="float: right;" width="75" height="37" src="{% static flag_url_html %}" alt="First slide">
     </h4>
     <hr>
-      <li id="data_home_page">{% trans "Km completed:" %} <strong>{{ total_km_html }} km </strong></li>
-      <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ graph_total_money_html }} € </strong></li>
+      <li id="data_home_page">{% trans "Km completed:" %} <strong>{{ total_km_html|intcomma }} km </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ total_money_html|intcomma }} € </strong></li>
       <li id="data_home_page" class="mt-2">{% trans "Country:" %} <strong>{% trans current_country_html %} (#{{country_number_html}})</strong></li>
       <li id="data_home_page" class="mt-2">{% trans "Capital:" %} <strong>{{ capital_city_html }}</strong></li>
       <li id="data_home_page" class="mt-2">
@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="col-lg-9 mt-0">
-    <iframe src="https://www.komoot.es/tour/947537380/embed?profile=1" width="100%" height="650" frameborder="0" scrolling="no"></iframe>
+    <iframe id="iframe_mapa" src="https://maps.google.com/?ll=23.135249,-82.359685&z=14&t=m&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
   </div>
 </div>
   <!--ESTO É CÓDIGO DE JAVASCRIPT PARA CREAR UN RELOXO-->
@@ -76,19 +76,19 @@
           {% trans "Highlights" %} ({{chat_number_comments_html}})
         </h4>
         {% for chat_comments in chat_comments_all_html %}
-        <ul class="list-unstyled" id="comments">
+        <ul class="list-unstyled">
           <li class="justify-content-between">
             <div class="card">
-              <div class="card-header d-flex justify-content-between p-3">
+              <div class="card-header d-flex justify-content-between">
                 <!--<p class=" mb-0">
                   {{ chat_comments.username_comment }}
                 </p>-->
-                <p class="text-muted small mb-0">
+                <p class="text-muted small mb-0" id="comment_text_white"> <i id="clock_comment" class="far fa-clock"></i>
                   {{ chat_comments.date_added }}
                 </p>
               </div>
-              <div id="cronica_viaxe" class="card-body">
-                <p class="mb-0">
+              <div class="card-body">
+                <p>
                   {% if 'en' in current_language_browser_html %}
                     <!-- Eiqui tes que marcar o contido como seguro (safe) para que o rich text do artigos_content se che mostre na páxina-->
                     {{ chat_comments.comentario_en|safe }}
@@ -102,54 +102,55 @@
                 </p>
                 <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
                 thanks to the function created in javascript (setCommentPK)-->
-                <button onclick="toggleComments({{ chat_comments.pk }})" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline mb-0 mt-2 btn btn-link text-muted small mb-0" style="color: rgb(255, 255, 255, 0.8);">
-                  {% trans "Add Comment / View Comments" %} ({{chat_comments.number_of_replies}})
+                <button onclick="toggleComments({{ chat_comments.pk }})" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline btn btn-link text-muted small">
+                  <p id="p_blog">{% trans "Add Comment / View Comments" %} ({{chat_comments.number_of_replies}})</p>
                 </button>
               </div>
-            </div>
-            <ul class="list-unstyled" id="comments">
-              <div id="commentsSection_{{ chat_comments.pk }}" style="display: none;" class="card">
-                <li class="justify-content-between">
-                  <form class="mx-1 mx-md-4 mt-3" method="POST" action="" novalidate>
-                    {% csrf_token %}
-                    <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
-                      Ten type='hidden' porque non quero que se mostre. Esto autopulase coa función de javascript (setCommentPK)-->
-                    <input type="hidden" name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">
-                    <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
-                    <!--{{ form_chat_reply_html.pk_original_comment }}-->
-                    {{ form_chat_reply_html.reply_text }}
-                    
-                    <button id="add_reply_button" type="submit" class="btn mt-3" onclick="setCommentPK({{chat_comments.pk}}); window.location.href='#commentsSection_{{ chat_comments.pk }}';">{% trans "Add Comment" %}</button>
-                    <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h5 id="h5_home_page" class="mt-4">
-                      {% trans "Comments" %} ({{chat_comments.number_of_replies}}):
-                    </h5>
-                    {% for reply in replies_comments_all_html %}
-                    <div class="card" border: 1px;">
+              <ul class="list-unstyled" id="comments">
+                <div id="commentsSection_{{ chat_comments.pk }}" style="display: none;" class="card_replies">
+                  <li class="justify-content-between">
+                    <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
+                      {% csrf_token %}
+                      <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
+                        Ten type='hidden' porque non quero que se mostre. Esto autopulase coa función de javascript (setCommentPK)-->
+                      <input type="hidden" name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">
+                      <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
+                      <!--{{ form_chat_reply_html.pk_original_comment }}-->
+                      {{ form_chat_reply_html.reply_text }}
+                      
+                      <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <button id="add_reply_button" type="submit" class="btn mt-3" onclick="setCommentPK({{chat_comments.pk}}); window.location.href='#commentsSection_{{ chat_comments.pk }}';">{% trans "Add Comment" %}</button>
+                      <h5 id="h5_home_page" class="mt-4">
+                        {% trans "Comments" %} ({{chat_comments.number_of_replies}}):
+                      </h5>
+                      {% for reply in replies_comments_all_html %}
+                      
                       <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
                       {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
-                      <div class="card-header d-flex justify-content-between p-2">
-                        <p class="text-muted small mb-0">
-                          {{ reply.username_reply }}
-                        </p>
-                        <p class="text-muted small mb-0"><i id="clock_comment" class="far fa-clock"></i> 
-                            {{ reply.date_added }}
-                        </p>
+                      <div class="card mb-2">
+                        <div class="card-header d-flex justify-content-between ">
+                          <p class="text-muted small mb-0" id="comment_text_white">
+                            {{ reply.username_reply }}
+                          </p>
+                          <p class="text-muted small mb-0" id="comment_text_white"><i id="clock_comment" class="far fa-clock"></i> 
+                              {{ reply.date_added }}
+                          </p>
+                        </div>
+                        <div id="cronica_viaxe" class="card-body">
+                          <p>
+                            {{ reply.reply_text }}
+                          </p>
+                        </div>
                       </div>
-                      <div id="cronica_viaxe" class="card-body">
-                        <p class="mb-0">
-                          {{ reply.reply_text }}
-                        </p>
-                      </div>
-                      {% endif %}
-                    </div>
-                    {% endfor %}
-                  </form>
-                </li>
-              </div>
-            </ul>
+                        {% endif %}
+                      {% endfor %}
+                    </form>
+                  </li>
+                </div>
+              </ul>
+            </div>
           </li>
         </ul>
         {% endfor %}

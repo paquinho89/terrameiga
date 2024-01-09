@@ -451,9 +451,14 @@
         color: black; 
     }
     /*Esto é para darlle tamaño ao vídeos*/
-    iframe{
+    #iframe_videos{
         width: 100%;
         height: 200px;
+    }
+    /*Esto é para o tamaño do mapa*/
+    #iframe_mapa{
+        width: 100%;
+        height: 800px;
     }
     /*Esto é para darlle un tamaño as fotos*/
     #pictures{

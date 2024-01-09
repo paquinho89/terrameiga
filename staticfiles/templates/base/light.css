@@ -66,6 +66,13 @@
         color: red;
         list-style-type: none;
         }
+    
+    #li_project_description{
+        color: rgb(54, 69, 79);
+        list-style: circle;
+        font-size: 1.1em;
+        }
+    
     #copyright_text{
         color: white;
     }
@@ -76,8 +83,14 @@
         color: white;
         }
     
+    
     .card{
-        background-color: rgb(249,249,249);
+        background-color: white;
+        border-color: rgb(0,0,0,0.2);
+    }
+    
+    .card_replies{
+        background-color: white;
         }
 
     #home_page_card{
@@ -146,11 +159,12 @@
         background-color: black;
     }
     p { 
-        color: rgb(54, 69, 79); 
+        color: rgb(54, 69, 79);
+        font-size: 1.1em; 
     }
     
     label { 
-        color: black; 
+        color: rgba(191, 191, 191, 1); 
     }
     /*Estes botós son da páxina de sign in*/
     #sign_in_button {
@@ -160,14 +174,14 @@
         }
     #sign_in_button:hover {
         background-color: rgb(246, 158, 138);
-        color: white;
+        color: black;
         }
     #sign_up_button{
         color: rgb(246, 158, 138);
         background-color: black;
     }
     #sign_up_button:hover{
-        color: white;
+        color: black;
         background-color: rgb(246, 158, 138);
     }
     /*Formato da ventana emerxente*/
@@ -286,7 +300,7 @@
         color: rgb(54, 69, 79);
     }
     h5{
-        color: white;
+        color: black;
         }
     h1{
         color: black;
@@ -302,12 +316,13 @@
     }
 
     #add_reply_button:hover {
-        color: white;
+        color: black;
         background-color: rgb(246, 158, 138);
     }
 
     #add_comment_box{
         background-color: rgb(249,249,249);
+        color: black;
     }
 
     .close {
@@ -353,11 +368,11 @@
     /*Esto é para cabmiar o color do toggler button (ou tamén chamado hamburguesa). Para cambiar o icono (as ralliñas), como é un svg teño que pillarme a ruta da imaxe e despois
     no STROKE configuro o color que me parece. O díxito final é a transparecia que lle queiras aplicar*/
     .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(246,197,190, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
     }
     /*E esto é para cambiar o borde do botón. Neste caso, como non é unha imaxe svg, incido sobre o elemento do css*/
     .navbar-toggler{
-        border: 1px solid rgb(246, 158, 138);
+        border: 1px solid rgb(246, 158, 138) !important;
     }
     .navbar{
         background-color: black;
@@ -436,9 +451,14 @@
         color: black; 
     }
     /*Esto é para darlle tamaño ao vídeos*/
-    iframe{
+    #iframe_videos{
         width: 100%;
         height: 200px;
+    }
+    /*Esto é para o tamaño do mapa*/
+    #iframe_mapa{
+        width: 100%;
+        height: 800px;
     }
     /*Esto é para darlle un tamaño as fotos*/
     #pictures{
@@ -564,6 +584,38 @@
     #language_form_home_page_no_registration option {
         color: black;
     }
+
+    #background_graphs{
+        color: white;
+    }
+
+    #ul_notes_tool {
+        color: rgb(54, 69, 79);
+    }
+    
+    #li_notes_tool{
+        color: rgb(54, 69, 79);
+        list-style-type: disc;
+        font-size: 1.1em; 
+    }
+
+    .table th {
+        border-right: 1px solid rgba(191, 191, 191, 1); /* Add a vertical line to all th elements */
+        
+    }
+    .table tr {
+        border-bottom: 1px solid rgba(191, 191, 191, 1)
+    }
+    .table td {
+        border-right: 1px solid rgba(191, 191, 191, 1)
+    }
+
+    #li_table{
+        color: rgb(54, 69, 79);
+    }
+
+
+
 
 
 
