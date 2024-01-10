@@ -1,0 +1,8 @@
+Páxina web para crear o logo e o favicon:
+https://formito.com/tools/favicon
+
+Colores do logo:
+Rosa: rgb(246, 158, 138)
+Verde: rgb(83, 158, 138)
+Negro: rgb(0,0,0)
+Blanco: rgb (255, 255, 255)
