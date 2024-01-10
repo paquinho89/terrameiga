@@ -28,4 +28,5 @@ class language_home_page_no_registration_form (forms.Form):
         ('gl', _('Galician')),
     ]
 
-    language = forms.ChoiceField(choices=LANGUAGE_CHOICES, widget=forms.Select(attrs={'id':'language_form_home_page_no_registration'}))
+    language = forms.ChoiceField(choices=LANGUAGE_CHOICES, widget=forms.Select(attrs={'id':'language_form_home_page_no_registration', 
+                                                                                      }))

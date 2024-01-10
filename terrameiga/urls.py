@@ -18,7 +18,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, sign_up_email_validation_confirmation_view
+from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, password_reset_sent_view, sign_up_email_validation_confirmation_view
 from bicicleteiros.views import country_data_view, country_data_no_registered_view, iz_blog_portada_view, let_the_cycling_beging_blog_view, the_journey_to_the_journey_blog_view, preparation_preparation_blog_view, project_presentation_view, photos_view, videos_view, estadistica_plotly_view, estadistica_plotly_view_full_report
 from tools.views import max_speed_slope_tool_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
@@ -48,7 +48,7 @@ urlpatterns =   i18n_patterns (
     #Para máis info sobre estas vistas perconfiguradas para manejar o reseteo de contraseñas, visita a documentación oficial de django
     #https://docs.djangoproject.com/en/4.2/topics/auth/default/
     # ou este vídeo: https://www.youtube.com/watch?v=sFPcd6myZrY
-    path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="password_reset_sent.html"),  name="password_reset_done"),
+    path('reset_password_sent/', password_reset_sent_view,  name="password_reset_done"),
     path('password_recovery_update/<uidb64>/<token>/', password_new_password_view, name="password_recovery_update"),
     path('log_out/', log_out_view, name="log_out"),
     #AGRADECEMENTOS

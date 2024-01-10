@@ -1417,8 +1417,8 @@ msgstr ""
 "A bicicleta aparecerá en todos os vídeos que se fagan cada segunda semana"
 
 #: .\bicicleteiros\static\templates\project_presentation.html:212
-msgid "Visiting Milano headquarters with the bike for Social Media"
-msgstr "Visita coa bicicleta á sede de Milán para a promoción da marca"
+msgid "Visiting the headquarters with the bike for Social Media"
+msgstr "Visita coa bicicleta á sede central para a promoción da marca"
 
 #: .\bicicleteiros\static\templates\project_presentation.html:221
 msgid "What do I ask for?"

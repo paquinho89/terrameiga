@@ -25,11 +25,16 @@ from django.utils.translation import activate
 
 
 def sign_up_view(request):
-  #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-  form_language = language_home_page_no_registration_form(data = request.POST)
-  if request.method == 'POST' and form_language.is_valid():
-        selected_language = form_language.cleaned_data['language']
-        activate(selected_language)
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST) 
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+    
   # create a form instance and populate it with data from the request:
   sign_up_form_variable = sign_up_form_2(data=request.POST)
   if request.method == 'POST' and not form_language.is_valid():
@@ -53,7 +58,6 @@ def sign_up_view(request):
       messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
       return redirect('account_confirmation_email_sent')
     else:
-      
       # Eiqui o que fago e que recorra os distintos fields do form e que lle 
       # asigne o formato de error (O borde en vermello)
        for field, error in sign_up_form_variable.errors.items():
@@ -68,17 +72,20 @@ def sign_up_view(request):
   return render (request, '2_sign_up.html', context)
 
 def email_instructions_view (request):
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
     form_language = language_home_page_no_registration_form(data = request.POST)
-    if request.method == "POST":
-        if form_language.is_valid():
-            selected_language = form_language.cleaned_data['language']
-            #Activate the language which was selected on the dropdown
-            activate(selected_language)
-    context = {
-        'form_language_html' : form_language,
-    }
-    return render (request, 'account_confirm_email_sent.html', context)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+    
+  context = {
+      'form_language_html' : form_language,
+  }
+  return render (request, 'account_confirm_email_sent.html', context)
 
 def sign_up_email_validation_confirmation_view (request, uidb64, token):
   uid = force_str(urlsafe_base64_decode(uidb64))
@@ -103,20 +110,25 @@ def log_out_view (request):
 
 # Create your views here.
 def sign_in_view(request):
-  #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-  form_language = language_home_page_no_registration_form(data = request.POST)
-  if request.method == 'POST' and form_language.is_valid():
-        selected_language = form_language.cleaned_data['language']
-        activate(selected_language)
-  # If this is a POST request we need to process the form data (Todos os log-in dos clientes que nos cheguen serán POST)
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+    form_language = language_home_page_no_registration_form(data = request.POST) 
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+    
   sign_in_form_variable = sign_in_form_1(data=request.POST)
   #Con esto o que fago é que o sign_in_form se execute solo cando se clicka no sign_in_button do html. Se non se non hai click no botón esta parte da view non se executa.
   #O que fago e que cando se executa o "Sign In" o form do idioma nunca vai ser válido, porque é un formulario que ten outro tipo de tigger. E entón pois esto so se vai executar
   #cando o form_language non é valido e o sign si.
   #Por outra parte, se eu executo solo o form language, ao ser este válido, o sign-in form non se vai a executar dentro da view
   if request.method == 'POST' and not form_language.is_valid():
+    sign_in_form_variable = sign_in_form_1(data=request.POST)
     if sign_in_form_variable.is_valid():
-      print(sign_in_form_variable)
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.
       email_form = sign_in_form_variable.cleaned_data.get('username')
       password_form = sign_in_form_variable.cleaned_data.get('password')
@@ -138,7 +150,7 @@ def sign_in_view(request):
         # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         #messages.add_message(request, messages.ERROR, error)
       messages.add_message(request, messages.ERROR, _("There is no user with those credentials. Try again or create a TerraMeiga account"))
-      return redirect('sign_in')
+      
   context = {
         "form_language_html" : form_language,
         "sign_in_form": sign_in_form_variable
@@ -201,13 +213,23 @@ def password_update_view(request):
 
 
 def password_reset_view(request):
+  #Formulario IDIOMA
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+  
   password_recovery_form_variable = password_reset_form (data=request.POST)
-  if request.method == "POST":
+  if request.method == "POST" and not form_language.is_valid():
+    password_recovery_form_variable = password_reset_form (data=request.POST)
     if password_recovery_form_variable.is_valid():
       #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
       email_form_str = password_recovery_form_variable.cleaned_data.get('email')
-      user_language = CustomUser.objects.get(email = email_form_str).language
-      activate(user_language)
       #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
       email_form =  CustomUser.objects.filter(email=email_form_str).first()
       if CustomUser.objects.filter(email=email_form).exists():
@@ -228,9 +250,64 @@ def password_reset_view(request):
         messages.add_message(request, messages.ERROR, _('The email is not valid'))
 
   context = {
+    'form_language_html': form_language,
     'email_recovery' : password_recovery_form_variable
   }
   return render (request, 'password_reset.html', context)
+
+def password_reset_sent_view (request):
+  #Formulario IDIOMA
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+
+  context = {
+      'form_language_html' : form_language,
+  }
+  return render (request, 'password_reset_sent.html', context)
+
+#------------------------------------EIQUI É ONDE QUEDACHES-------------------------
+#This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
+def password_new_password_view(request, uidb64, token):
+  #Neste caso o que fago e coller o idioma do usuario, porque como xa teño na vista anterior introducín o email, a url que se envía no email para resetear o contrasinal
+  #e que leva a esta vista, ten o email xa contido. Pois o que fago con ese email e ver o idioma que ten o usuario configurado para mostrarlle a páxina no idioma correcto.
+  uid = force_str(urlsafe_base64_decode(uidb64))
+  user = CustomUser.objects.get(pk=uid)
+  user_language = CustomUser.objects.get(pk = uid).language
+  initial_language = user_language
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  activate(initial_language)
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      print(selected_language)
+      activate(selected_language)
+  
+  password_reset_form = password_new_form(user, data=request.POST)
+  if request.method == 'POST' and not form_language.is_valid():
+    if password_reset_form.is_valid():
+      password_reset_form.save()
+      #Logeamos o usuario directamente
+      login(request, user)
+      messages.add_message(request, messages.SUCCESS, _('Your password has been changed'))
+      return redirect('bicleteiros_home_page')
+    else:
+      for field, error in password_reset_form.errors.items():
+        password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
+  context = {
+    'form_language_html' : form_language,
+    'reset_password_form' : password_reset_form
+  }
+  return render (request, 'password_reset_complete.html', context)
 
 
 def delete_account_view (request):
@@ -257,25 +334,4 @@ def delete_account_view (request):
   return render (request, 'profile_account/delete_account.html', context)
 
 
-#This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
-def password_new_password_view(request, uidb64, token):
-  uid = force_str(urlsafe_base64_decode(uidb64))
-  user = CustomUser.objects.get(pk=uid)
-  user_language = CustomUser.objects.get(pk = uid).language
-  activate(user_language)
-  password_reset_form = password_new_form(user, data=request.POST)
-  if request.method == 'POST':
-    if password_reset_form.is_valid():
-      password_reset_form.save()
-      #Logeamos o usuario directamente
-      login(request, user)
-      messages.add_message(request, messages.SUCCESS, _('Your password has been changed'))
-      return redirect('bicleteiros_home_page')
-    else:
-      for field, error in password_reset_form.errors.items():
-        password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
-  context = {
-    'reset_password_form' : password_reset_form
-  }
-  return render (request, 'password_reset_complete.html', context)    
+    

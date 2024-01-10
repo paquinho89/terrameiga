@@ -23,6 +23,7 @@ class CustomAuthenticationFormSignIn(AuthenticationForm):
 class sign_in_form_1(CustomAuthenticationFormSignIn):
     class Meta:
         model = CustomUser
+        fields = ('username', 'password')
 
 
 class CustomAuthenticationFormSignUp(UserCreationForm):

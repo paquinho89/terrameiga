@@ -40,9 +40,14 @@ def country_data_no_registered_view (request):
     flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
     total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
     total_money = total_money_dict['expense_euros__sum']
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-    form_language = language_home_page_no_registration_form(data = request.POST)
+
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
     if request.method == "POST":
+        #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
+        form_language = language_home_page_no_registration_form(data = request.POST)
         if form_language.is_valid():
             #print(request.POST)
             selected_language = form_language.cleaned_data['language']
@@ -812,13 +817,17 @@ def preparation_preparation_blog_view (request):
 
 
 def project_presentation_view (request):
-    #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if request.method == "POST":
+    #Formulario IDIOMA
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+    if request.method == 'POST':
+        form_language = language_home_page_no_registration_form(data = request.POST)
         if form_language.is_valid():
             selected_language = form_language.cleaned_data['language']
-            #Activate the language which was selected on the dropdown
             activate(selected_language)
+            
     context = {
         'form_language_html' : form_language,
     }
