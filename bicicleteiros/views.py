@@ -46,13 +46,17 @@ def country_data_no_registered_view (request):
     #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
     form_language = language_home_page_no_registration_form(initial={'language': initial_language})
     if request.method == "POST":
-        #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
         form_language = language_home_page_no_registration_form(data = request.POST)
         if form_language.is_valid():
             #print(request.POST)
             selected_language = form_language.cleaned_data['language']
             #Activate the language which was selected on the dropdown
             activate(selected_language)
+            #Nesta sección o que fago e cambiar o idioma na url
+            current_language = get_language()
+            current_url = request.build_absolute_uri()
+            new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+            return redirect(new_url)
     
     #Formulario da newsletter:
     newsletter_email = form_newsletter(data=request.POST)
@@ -67,7 +71,7 @@ def country_data_no_registered_view (request):
             # Create Comment object and save it on the database
             newsletter_email.save(commit=True)
             #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
-            messages.success(request, 'Thanks for subscribe and being part of the bike travelling community')
+            messages.success(request, _("Thanks for subscribe and being part of the bike travelling community"))
             return redirect('home_page_no_registered')
         else:
             # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
@@ -75,6 +79,9 @@ def country_data_no_registered_view (request):
             for field, errors in newsletter_email.errors.items():
                 newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
             messages.error(request, _("Check the errors and try again!"))
+            #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+            form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+            return redirect ('home_page_no_registered')
     
     context = {
         'journey_day_html' : current_journey_day ,

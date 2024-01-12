@@ -8,8 +8,47 @@
     <div class="container">
       <!--Section: Content 1-->
       <section>
-        <div class="row mb-4 mt-4">
-          <div class="col-md-6 gx-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 gx-5 mb-2 order-2 order-md-2 mt-3">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                <a href="">
+                  <img src='{% static "imaxes/amaia_mario.jpeg" %}' class="img-fluid" />
+                </a>
+              </div>
+      
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+                <a href="">
+                  <img src='{% static "imaxes/amaia_mario_2.jpeg" %}' class="img-fluid" />
+                </a>
+              </div>
+          </div>
+          <div class="col-md-6 gx-5 mb-2 order-1 order-md-1">
+            <a href="" style="text-decoration: none;">
+              <strong><h4 class="text-center"><strong>Amaia y Mario (multisport Verín) Amaia & Mario (multisport Verín)</strong></h4></strong>
+            </a>
+            <p>
+              Apasionados de la aventura y del deporte, le encanta viajar y adentrarse en la cultura del país. Tienen una espectacular tienda de deportes en
+              la que podrás equiparte para tú próxima aventura o para tu día a día.
+              {% trans "Sports and Adventure lovers, they like travelling and immerse themselves in the culture of the country. They own an amazing sports store where you can gear up for your
+              next adventure or for your day-to-day" %}
+            </p>
+            <p>
+              Actualmente colaboran en un proyecto solidario ("Association Amal Khamlia"), que promueve la igualdad entre niñas y niños en un pequeño pueblo del desierto
+              del Sáhara. Para más info del proyecto, <a href="https://www.facebook.com/reel/884080213266438" target="_blank">Ver vídeo.</a>
+              {% trans "They are currently collaborating on a solidarity project ("Association Amal Khamlia"), which promotes the gender equality between children in a small hamlet in the Sahara Desert.
+              For more information about the project, <a href="https://www.facebook.com/reel/884080213266438" target="_blank">Watch vídeo." %}</a>
+            </p>
+           <p>
+            Es uno de los colaboradores de este viaje, proporcionando el material necesario para no mojarse y no pasar frío por las noches.
+            {% trans "They are one of the contributors to this journey, providing the necessary gear to stay dry and warm during nights." %}
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content 1-->
+      <section>
+        <div class="row mb-4 mt-4 justify-content-center align-items-center">
+          <div class="col-md-6 gx-5 order-2 order-md-1">
             <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
                 <div style="background-color: rgba(251, 251, 251, 0.15);">
                 <a href="">
@@ -18,7 +57,7 @@
                 </div>
             </div>
           </div>
-          <div class="col-md-6 mb-2">
+          <div class="col-md-6 mb-2 order-1 order-md-2">
             <a href="" style="text-decoration: none;">
               <strong><h4 class="text-center mt-4"><strong>Óscar Calleja</strong></h4></strong>
             </a>
@@ -26,6 +65,8 @@
               Ambientólogo de formación, Técnico de Salud Pública y Epidemiología de profesión y escritor de relatos de fantasía y terror en sus ratos libres. 
               Lo puedes encontrar en <a href="https://x.com/Oscar_Calleja?s=20" target="_blank">Twitter/X como @Oscar_Calleja.</a> También puedes descargar gratis algunos de los libros en los que ha participado a través de 
               los siguientes enlaces:
+              {% trans "An environmental scientist by training, a Public Health and Epidemiology Technician by profession, and a writer of terror and fantasy stories in his free time.
+              You can find him on<a href="https://x.com/Oscar_Calleja?s=20" target="_blank">Twitter/X as @Oscar_Calleja.</a> You can also download some of the books he has been involved in for free clicking on the following links:" %}
             </p>
             <ul>
                 <li id="li_notes_tool">
@@ -41,42 +82,84 @@
             </ul>
            <p>
             Es el encargado de realizar las traducciones al euskera de terrameiga.bike
+            {% trans "He is responsible of Basque translations on terrameiga.bike" %}
             </p>
           </div>
         </div>
       </section>
       <!--Section: Content 1-->
-      <!--Section: Content 2-->
       <section>
-        <div class="row">
-          <div class="col-md-6 gx-5 mb-2 order-2 order-md-1">
-            <a href="" style="text-decoration: none;">
-              <strong><h4 class="text-center"><strong>Mario (multisport Verín)</strong></h4></strong>
-            </a>
-            <p>
-              Mario es klnklnkln
-            </p>
-           <p>
-              Es uno de los colaboradores de este viaje.
-            </p>
-            <p>
-              A edición física de "Rumbo NE" presentase en formato CD, onde se narra a historia dunha viaxe en barco na que a banda sonora son as propias cancións que forman o disco.
-            </p>
-          </div>
-          <div class="col-md-6 gx-5 mb-2 order-1 order-md-2">
-            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 gx-5 mb-2 order-2 order-md-2">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 mt-1" data-mdb-ripple-color="light">
                 <a href="">
-                  <img src='{% static "imaxes/multisport.jpg" %}' class="img-fluid" />
+                  <img src='{% static "imaxes/novaera.jpg" %}' class="img-fluid" />
                 </a>
               </div>
           </div>
+          <div class="col-md-6 gx-5 mb-2 order-1 order-md-1 justify-content-center align-items-center">
+            <a href="" style="text-decoration: none;">
+              <strong><h4 class="text-center"><strong>Banda de Gaitas Nova Era {% trans "Nova Era pipe band" %}</strong></h4></strong>
+            </a>
+            <p>
+              Agrupación musical que nació como una alternativa al estándar musical de las bandas de gaitas gallegas, 
+              diferenciándose principalmente en la instrumentación y repertorio.
+              {% trans "Musical ensemble that emerge as an alternative to the standard musical style of Galician pipe bands, mainly distinguishing itself in terms of instrumentation and repertoire." %} 
+            </p>
+            <p>
+              Cuentan con casi 10 años de historia en los que cabe destaca la edidión del CD rumbo NE e inumerables actuaciones y actividades que llevan a cabo en la villa donde están asentados.
+              {% trans "They have nearly 10 years of history, during which it's worth highlighting the release of the CD 'Rumbo NE' and countless performances and activities they carry out in the town where they are based." %}
+            </p>
+            <p>
+              Actualmente están inmersos en la creación de un documental conmemorativo de los 10 años de la banda que será estrenado en el
+              <a href="http://ficviaxiv.com/" target="_blank">"Festival de Curtas de Verín" de 2024 (FIC).</a>
+              Para más info: <a href="novaera.gal" target="_blank">novaera.gal</a>
+
+              {% trans "They are currently immersed in the creation of a commemorative documentary celebrating the band's 10-year anniversary, which will be premiere at the " %}
+              <a href="http://ficviaxiv.com/" target="_blank">Short Film Festival of Verín 2024 (FIC).</a>
+              {% trans "For more information visit:" %} <a href="novaera.gal" target="_blank">novaera.gal</a>
+            </p>
+           <p>
+            Es la encargada de poner la banda sonora a este viaje
+            {% trans "It is responsible for providing the soundtrack to this journey." %}
+            </p>
+          </div>
         </div>
       </section>
+      <!--Section: Content 1-->
+      <section>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-6 gx-5 mb-2 order-2 order-md-1">
+            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5 mt-1" data-mdb-ripple-color="light">
+                <a href="">
+                  <img src='{% static "imaxes/jaume.jpeg" %}' class="img-fluid" />
+                </a>
+              </div>
+          </div>
+          <div class="col-md-6 gx-5 mb-2 justify-content-center align-items-center order-1 order-md-2">
+            <a href="" style="text-decoration: none;">
+              <strong><h4 class="text-center"><strong>Jaume del Hoyo</strong></h4></strong>
+            </a>
+            <p>
+              {% trans "Jubilado de profesión, buen padre y mejor marido; Jaume es un apasionado de la bicicleta que formará parte del viaje en la zona de España-Francia." %}
+            </p>
+            <p>
+              {% trans "Le encanta el pádel, venir a Galicia con su furgo camperizada y hacer rutas de senderismo.
+              Jaume es todo un <strong>bicicleteiro</strong>, siendo la bici su principal medio de desplazamiento en la ciudad en la que reside." %}
+            </p>
+           <p>
+            {% trans "Es el encargado de las traducciones al catalán y de formar parte de la ruta por algún tiempo." %}
+            </p>
+          </div>
+        </div>
+      </section>
+      <!--Section: Content 1-->
+    
       <!--Section: Content 2-->
       <!--Section: Content 3-->
       <section>
         <div class="row mb-4">
-          <div class="col-md-6 gx-5">
+          <div class="col-md-6 gx-5 order-2 order-md-2">
             <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
                 <div style="background-color: rgba(251, 251, 251, 0.15);">
                 <a href="">
@@ -86,7 +169,7 @@
             </div>
           </div>
 
-          <div class="col-md-6 mb-2">
+          <div class="col-md-6 mb-2 order-1 order-md-1">
             <a href="" style="text-decoration: none;">
               <strong><h4 class="text-center mt-4"><strong>Alberto Salgado</strong></h4></strong>
             </a>
@@ -103,31 +186,6 @@
         </div>
       </section>
       <!--End Section: Content 2-->
-      <section>
-        <div class="row">
-          <div class="col-md-6 gx-5 mb-2 order-2 order-md-1">
-            <a href="" style="text-decoration: none;">
-              <strong><h4 class="text-center"><strong>Jaume del Hoyo</strong></h4></strong>
-            </a>
-            <p>
-              Jubilado de profesión, Jaume es un apasionado de la bicicleta que formará parte del viaje en la zona de España-Francia.
-            </p>
-           <p>
-                Es el encargado de las tradcciones al catalán de la página web.
-            </p>
-            <p>
-              A edición física de "Rumbo NE" presentase en formato CD, onde se narra a historia dunha viaxe en barco na que a banda sonora son as propias cancións que forman o disco.
-            </p>
-          </div>
-          <div class="col-md-6 gx-5 mb-2 order-1 order-md-2">
-            <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                <a href="">
-                  <img src='{% static "imaxes/jaume.jpeg" %}' class="img-fluid" />
-                </a>
-              </div>
-          </div>
-        </div>
-      </section>
     </div>
 
 {% endblock content %}

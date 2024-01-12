@@ -9,6 +9,7 @@ from bicicleteiros.forms import language_home_page_no_registration_form
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.models import User
 from .models import CustomUser
+import re
 #This is to generate a random token which will be used in the url which will be sent to the email user to reset the password
 import uuid
 #Importamos un paquete para codificar o user_id (o pk) que vai na url que se lle envía ao usuario ao correo para resetear o contrasinal. O force bytes tamén e para codificar o pk
@@ -120,6 +121,11 @@ def sign_in_view(request):
     if form_language.is_valid():
       selected_language = form_language.cleaned_data['language']
       activate(selected_language)
+      #Nesta sección o que fago e cambiar o idioma na url
+      current_language = get_language()
+      current_url = request.build_absolute_uri()
+      new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+      return redirect(new_url)
     
   sign_in_form_variable = sign_in_form_1(data=request.POST)
   #Con esto o que fago é que o sign_in_form se execute solo cando se clicka no sign_in_button do html. Se non se non hai click no botón esta parte da view non se executa.
@@ -150,6 +156,8 @@ def sign_in_view(request):
         # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         #messages.add_message(request, messages.ERROR, error)
       messages.add_message(request, messages.ERROR, _("There is no user with those credentials. Try again or create a TerraMeiga account"))
+      #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+      form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
       
   context = {
         "form_language_html" : form_language,

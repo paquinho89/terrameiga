@@ -1509,8 +1509,6 @@ msgstr ""
 "basándonos na xeometría do cadro"
 
 #: .\bicicleteiros\views.py:72
-#, fuzzy
-#| msgid "Check the below errors and try again!"
 msgid "Check the errors and try again!"
 msgstr "Comprobe os erros e inténteo de novo!"
 

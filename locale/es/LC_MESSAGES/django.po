@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-08 20:47+0100\n"
+"POT-Creation-Date: 2024-01-12 17:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1052,14 +1052,14 @@ msgstr ""
 "aventura y disfrutar de todo el contenido?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
-#: .\bicicleteiros\views.py:316 .\bicicleteiros\views.py:406
-#: .\bicicleteiros\views.py:576 .\bicicleteiros\views.py:662
+#: .\bicicleteiros\views.py:327 .\bicicleteiros\views.py:417
+#: .\bicicleteiros\views.py:587 .\bicicleteiros\views.py:673
 msgid "Week"
 msgstr "Semana"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:143
-#: .\bicicleteiros\views.py:350 .\bicicleteiros\views.py:462
-#: .\bicicleteiros\views.py:608 .\bicicleteiros\views.py:716
+#: .\bicicleteiros\views.py:361 .\bicicleteiros\views.py:473
+#: .\bicicleteiros\views.py:619 .\bicicleteiros\views.py:727
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
@@ -1128,8 +1128,8 @@ msgstr "Datos del viaje"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:31
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:31
-#: .\bicicleteiros\views.py:389 .\bicicleteiros\views.py:447
-#: .\bicicleteiros\views.py:645 .\bicicleteiros\views.py:701
+#: .\bicicleteiros\views.py:400 .\bicicleteiros\views.py:458
+#: .\bicicleteiros\views.py:656 .\bicicleteiros\views.py:712
 msgid "Climb"
 msgstr "Ascenso"
 
@@ -1506,22 +1506,24 @@ msgstr ""
 "Una herramienta que nos diga el grado de ergonomía, agilidad y rapidez de la "
 "bicicleta basándonos en la geometría del cuadro"
 
-#: .\bicicleteiros\views.py:72
-#, fuzzy
-#| msgid "Check the below errors and try again!"
+#: .\bicicleteiros\views.py:74
+msgid "Thanks for subscribe and being part of the bike travelling community"
+msgstr "Gracias por subscribirte y formar parte de la comunidad cicloviajera"
+
+#: .\bicicleteiros\views.py:81
 msgid "Check the errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\bicicleteiros\views.py:157
+#: .\bicicleteiros\views.py:168
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:166
+#: .\bicicleteiros\views.py:177
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:206
+#: .\bicicleteiros\views.py:217
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1529,67 +1531,67 @@ msgstr ""
 "Para poder acceder a este contenido, debe de registrarse en terrameiga.bike/"
 "sign_up/ "
 
-#: .\bicicleteiros\views.py:276 .\bicicleteiros\views.py:538
+#: .\bicicleteiros\views.py:287 .\bicicleteiros\views.py:549
 msgid "Where does the money go?"
 msgstr "¿Dónde gasto los dineros?"
 
-#: .\bicicleteiros\views.py:312 .\bicicleteiros\views.py:572
+#: .\bicicleteiros\views.py:323 .\bicicleteiros\views.py:583
 msgid "Expenses per Week"
 msgstr "Gastos por semana"
 
-#: .\bicicleteiros\views.py:320 .\bicicleteiros\views.py:580
+#: .\bicicleteiros\views.py:331 .\bicicleteiros\views.py:591
 #, python-brace-format
 msgid "Week: %{x}<br>Expense: %{y:.} Euros"
 msgstr "Semana: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:347 .\bicicleteiros\views.py:605
+#: .\bicicleteiros\views.py:358 .\bicicleteiros\views.py:616
 msgid "Expenses per Country"
 msgstr "Gastos por País"
 
-#: .\bicicleteiros\views.py:354 .\bicicleteiros\views.py:612
+#: .\bicicleteiros\views.py:365 .\bicicleteiros\views.py:623
 #, python-brace-format
 msgid "Country: %{x}<br>Expense: %{y:.} Euros"
 msgstr "País: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:380 .\bicicleteiros\views.py:636
+#: .\bicicleteiros\views.py:391 .\bicicleteiros\views.py:647
 msgid "Distance and altitude per week"
 msgstr "Distancia y ascenso acumulado por semana"
 
-#: .\bicicleteiros\views.py:398 .\bicicleteiros\views.py:410
-#: .\bicicleteiros\views.py:456 .\bicicleteiros\views.py:466
-#: .\bicicleteiros\views.py:654 .\bicicleteiros\views.py:666
-#: .\bicicleteiros\views.py:710 .\bicicleteiros\views.py:720
+#: .\bicicleteiros\views.py:409 .\bicicleteiros\views.py:421
+#: .\bicicleteiros\views.py:467 .\bicicleteiros\views.py:477
+#: .\bicicleteiros\views.py:665 .\bicicleteiros\views.py:677
+#: .\bicicleteiros\views.py:721 .\bicicleteiros\views.py:731
 msgid "Climb (meters)"
 msgstr "Ascenso (metros)"
 
-#: .\bicicleteiros\views.py:409 .\bicicleteiros\views.py:465
-#: .\bicicleteiros\views.py:665 .\bicicleteiros\views.py:719
+#: .\bicicleteiros\views.py:420 .\bicicleteiros\views.py:476
+#: .\bicicleteiros\views.py:676 .\bicicleteiros\views.py:730
 msgid "Distance (Km)"
 msgstr "Distancia (km)"
 
-#: .\bicicleteiros\views.py:413 .\bicicleteiros\views.py:669
+#: .\bicicleteiros\views.py:424 .\bicicleteiros\views.py:680
 #, fuzzy, python-brace-format
 #| msgid "Week: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
 msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "Semana: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\bicicleteiros\views.py:438 .\bicicleteiros\views.py:692
+#: .\bicicleteiros\views.py:449 .\bicicleteiros\views.py:703
 msgid "Distance and climb per country"
 msgstr "Distancia y ascenso acumulado por país"
 
-#: .\bicicleteiros\views.py:469 .\bicicleteiros\views.py:723
+#: .\bicicleteiros\views.py:480 .\bicicleteiros\views.py:734
 #, fuzzy, python-brace-format
 #| msgid ""
 #| "Country: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
 msgid "Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "País: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\registration\forms.py:84
+#: .\registration\forms.py:85
 msgid "type \"terrameiga\". Lowercase and without quotes"
 msgstr "Escriba 'terrameiga' en minúsculas y sin comillas"
 
 #: .\registration\templates\1_sign_in.html:16
-#: .\registration\templates\1_sign_in.html:43
+#: .\registration\templates\1_sign_in.html:47
 msgid "Sign in"
 msgstr "Iniciar Sesión"
 
@@ -1601,11 +1603,11 @@ msgstr "Iniciar Sesión"
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\registration\templates\1_sign_in.html:51
+#: .\registration\templates\1_sign_in.html:55
 msgid "Did you forget your password?"
 msgstr "¿No recuerdas tu contraseña?"
 
-#: .\registration\templates\1_sign_in.html:59
+#: .\registration\templates\1_sign_in.html:63
 #: .\registration\templates\password_reset.html:32
 msgid "Would you like to create an account?"
 msgstr "¿Quieres crear una cuenta?"
@@ -2086,31 +2088,31 @@ msgstr "Nombre"
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:53
+#: .\registration\views.py:58
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:62 .\registration\views.py:192
-#: .\registration\views.py:277
+#: .\registration\views.py:66 .\registration\views.py:204
+#: .\registration\views.py:305
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:96
+#: .\registration\views.py:103
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:101
+#: .\registration\views.py:108
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:131
+#: .\registration\views.py:143
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:140
+#: .\registration\views.py:152
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2118,48 +2120,48 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:167
+#: .\registration\views.py:179
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:172
+#: .\registration\views.py:184
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:185
+#: .\registration\views.py:197
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
 
-#: .\registration\views.py:221
+#: .\registration\views.py:243
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:224
+#: .\registration\views.py:246
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "El email introducido no existe en nuestra base de datos. Cree una cuenta "
 "nueva."
 
-#: .\registration\views.py:228
+#: .\registration\views.py:250
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:246
+#: .\registration\views.py:300
+msgid "Your password has been changed"
+msgstr "Su contraseña ha sido actualizada"
+
+#: .\registration\views.py:323
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:251 .\registration\views.py:253
+#: .\registration\views.py:328 .\registration\views.py:330
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
-
-#: .\registration\views.py:272
-msgid "Your password has been changed"
-msgstr "Su contraseña ha sido actualizada"
 
 #: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
 msgid "Catalan"

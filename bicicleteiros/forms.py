@@ -26,6 +26,7 @@ class language_home_page_no_registration_form (forms.Form):
         ('es', _('Spanish')),
         ('en', _('English')),
         ('gl', _('Galician')),
+        ('ca', _('Catalan')),
     ]
 
     language = forms.ChoiceField(choices=LANGUAGE_CHOICES, widget=forms.Select(attrs={'id':'language_form_home_page_no_registration', 
