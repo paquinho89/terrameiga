@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-24 12:02+0100\n"
+"POT-Creation-Date: 2024-01-13 13:47+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,9 +18,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\bicicleteiros\forms.py:18
-msgid "Write here your reply"
-msgstr ""
+#: .\bicicleteiros\forms.py:17
+msgid "Write here your comment"
+msgstr "Idatzi hemen zure iruzkina"
+
+#: .\bicicleteiros\forms.py:26 .\registration\models.py:14
+#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
+msgid "Spanish"
+msgstr "Kastellanoa"
+
+#: .\bicicleteiros\forms.py:27 .\registration\models.py:13
+#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
+msgid "English"
+msgstr "Ingelesa"
+
+#: .\bicicleteiros\forms.py:28 .\registration\models.py:15
+#: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
+msgid "Galician"
+msgstr "Galegoa"
+
+#: .\bicicleteiros\forms.py:29 .\registration\models.py:16
+#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
+msgid "Catalan"
+msgstr "Katalana"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -910,365 +930,903 @@ msgstr ""
 msgid "Dollar"
 msgstr "Dolarra"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:51
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:19
 msgid "WEEK"
 msgstr "Astea"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:51
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:260
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:19
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
 msgid "Day"
 msgstr "Eguna"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:54
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:22
 msgid "Km completed:"
-msgstr ""
+msgstr "Betetako km:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:55
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:23
 msgid "Expenses:"
-msgstr ""
+msgstr "Gastuak:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:56
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:24
 msgid "Country:"
-msgstr ""
+msgstr "Herrialdea:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:57
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:25
 msgid "Capital:"
-msgstr ""
+msgstr "Hiriburua:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:59
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:27
 msgid "Visa:"
-msgstr ""
+msgstr "Bisa:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:68
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:35
 msgid "Country Information:"
-msgstr ""
+msgstr "Herrialdearen informazioa:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:71
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:38
 msgid "Surface:"
 msgstr "Azalera:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:72
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:74
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:76
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:78
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:39
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:41
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:43
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:45
 msgid "Spain:"
 msgstr "Espainia:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
 msgid "Population:"
-msgstr ""
+msgstr "Biztanleria:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
 msgid "people"
-msgstr ""
+msgstr "pertsonak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:75
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
 msgid "Density population:"
-msgstr ""
+msgstr "Biztanleria-dentsitatea"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:44
 msgid "Life expectancy:"
-msgstr ""
+msgstr "Bizi-itxaropena"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:77
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:78
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:44
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:45
 msgid "years"
-msgstr ""
+msgstr "urteak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:79
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:46
 msgid "Currency:"
-msgstr ""
+msgstr "Dirua:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:80
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:47
 msgid "Local Time:"
-msgstr ""
+msgstr "Tokiko ordua:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:81
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:48
 msgid "Interesting fact:"
-msgstr ""
+msgstr "Datu interesgarriak:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:83
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:50
 msgid "The most listen song on Spotify:"
-msgstr ""
+msgstr "Abesti entzunena Spotify:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:109
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:76
 msgid "Highlights"
-msgstr ""
+msgstr "Bidaiaren kronika"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:139
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:106
 msgid "Add Comment / View Comments"
-msgstr ""
+msgstr "Komentatu/Ikusi komentarioak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:154
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:124
 msgid "Add Comment"
-msgstr ""
+msgstr "Komentatu"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:159
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:126
 msgid "Comments"
-msgstr ""
+msgstr "Komentarioak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:200
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:233
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:244
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:95
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:105
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:115
 msgid "Sign In"
-msgstr ""
+msgstr "Saioa hasi"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:201
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:234
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:245
-#: .\registration\templates\2_sign_up.html:73
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:74
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:96
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:106
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:116
+#: .\registration\templates\2_sign_up.html:86
 msgid "Sign Up"
-msgstr ""
+msgstr "Erregistratu"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:220
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:231
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:242
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:93
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:103
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:113
 msgid ""
 "I am a bike traveller who is cycling somewhere. Do you want to be part of "
 "this adventure and see all the content?"
 msgstr ""
+"Ziklo-bidaiari bat naiz, buelta bat ematen dabilena. Abenturan parte hartu "
+"nahi duzu eta eduki guztiaz gozatu?"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:260
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
+#: .\bicicleteiros\views.py:328 .\bicicleteiros\views.py:418
+#: .\bicicleteiros\views.py:588 .\bicicleteiros\views.py:674
 msgid "Week"
-msgstr ""
+msgstr "Astea"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:273
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:143
+#: .\bicicleteiros\views.py:362 .\bicicleteiros\views.py:474
+#: .\bicicleteiros\views.py:620 .\bicicleteiros\views.py:728
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
-msgstr ""
+msgstr "Herrialdea"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:287
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:157
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:91
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:91
 msgid "Expenses"
-msgstr ""
+msgstr "Gastuak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:301
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:171
 msgid "Km"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:315
-msgid "Videos & Pictures"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:182
+msgid "Subscribe to the newsletter for updates"
+msgstr "Buletinera harpidetu eguneraketentzako"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:350
-#: .\terrameiga\static\templates\base\footer.html:30
-msgid "Made with &#10084 by"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:197
+msgid "Subscribe"
+msgstr "Harpidetu"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:351
-#: .\terrameiga\static\templates\base\footer.html:32
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:208
+msgid "Blog Section"
+msgstr "Bloga"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:222
+msgid "Written by Iz"
+msgstr "Idatzia"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:223
+msgid "Read"
+msgstr "Irakurri"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:264
+#: .\registration\templates\profile_account\personal_data.html:66
+#: .\terrameiga\static\templates\base\footer_non_registration.html:37
+msgid "Language"
+msgstr "Hizkuntza"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:269
+#: .\terrameiga\static\templates\base\footer_non_registration.html:43
+#: .\terrameiga\static\templates\base\footer_registration.html:34
+msgid "Light Mode"
+msgstr "Argi"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:272
+msgid "Supported by:"
+msgstr "Lagunduta:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:274
+#: .\terrameiga\static\templates\base\footer_non_registration.html:46
+#: .\terrameiga\static\templates\base\footer_registration.html:37
+msgid "No cookies are used on the site"
+msgstr "Webgune honek ez du cookie-rik erabiltzen"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:275
+#: .\terrameiga\static\templates\base\footer_non_registration.html:47
+#: .\terrameiga\static\templates\base\footer_registration.html:38
 msgid "All reserved rights:"
-msgstr ""
+msgstr "Eskubide guztiak erreserbatuta:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:353
-#: .\registration\models.py:15 .\terrameiga\settings.py:160
-#: .\terrameiga\settings_deployment.py:171
-msgid "Galician"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:16
+msgid "Data of the Journey"
+msgstr "Bidaiaren Datuak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:354
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
-msgid "Basque"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:31
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:31
+#: .\bicicleteiros\views.py:401 .\bicicleteiros\views.py:459
+#: .\bicicleteiros\views.py:657 .\bicicleteiros\views.py:713
+msgid "Climb"
+msgstr "Igoera"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:355
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
-msgid "Catalan"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:32
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:32
+msgid "meters"
+msgstr "metroak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:356
-#: .\registration\models.py:14 .\terrameiga\settings.py:159
-#: .\terrameiga\settings_deployment.py:170
-msgid "Spanish"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:39
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:39
+msgid "Countries"
+msgstr "Herrialdeak"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:357
-#: .\registration\models.py:13 .\terrameiga\settings.py:158
-#: .\terrameiga\settings_deployment.py:169
-msgid "English"
-msgstr ""
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:49
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:49
+msgid "Total days"
+msgstr "Egun guztira"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:50
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:58
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:66
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:50
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:58
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:66
+msgid "days"
+msgstr "egunak"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:57
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:57
+msgid "Resting days"
+msgstr "Atsedeko egunak"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:65
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:65
+msgid "Cycling days"
+msgstr "Bizikletazko egunak"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:75
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:75
+msgid "Nights outside"
+msgstr "Kanpotik pasa diren gauak"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:76
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:84
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:76
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:84
+msgid "nights"
+msgstr "gauak"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:83
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:83
+msgid "Accommodation"
+msgstr "Alokairua"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:120
+msgid "See full report"
+msgstr "Informe osoa ikusi"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:16
+msgid "Data of the Journey - Full Report"
+msgstr "Bidaiaren Datuak - Informe Osoa"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_videos.html:18
 #: .\terrameiga\static\templates\base\nav_bar.html:23
 msgid "Videos"
+msgstr "Bideoak"
+
+#: .\bicicleteiros\static\templates\people.html:27
+msgid "Amaia & Mario"
+msgstr "Amaia eta Mario"
+
+#: .\bicicleteiros\static\templates\people.html:30
+msgid ""
+"Sports and Adventure lovers, they like travelling and immerse themselves in "
+"the culture of the country. They own an amazing sports store where you can "
+"gear up for your next adventure or for your day-to-day"
 msgstr ""
 
-#: .\bicicleteiros\views.py:116
+#: .\bicicleteiros\static\templates\people.html:33
+msgid ""
+"They are currently collaborating on a solidarity project ('Association Amal "
+"Khamlia'), which promotes the gender equality between children in a small "
+"hamlet in the Sahara Desert. For more information about the project,"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:34
+msgid "Watch vídeo."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:37
+msgid ""
+"They are one of the contributors to this journey, providing the necessary "
+"gear to stay dry and warm during nights."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:59
+msgid ""
+"An environmental scientist by training, a Public Health and Epidemiology "
+"Technician by profession, and a writer of terror and fantasy stories in his "
+"free time. You can find him on"
+msgstr ""
+"Ingurugiro Zientziak ikasitakoa, Osasun Publikoko eta Epidemiologiako "
+"teknikariaz lan egiten du eta bere tarte libreetan fantasiazko eta "
+"beldurrezko kondairak idazten ditu."
+
+#: .\bicicleteiros\static\templates\people.html:60
+msgid "Twitter/X as @Oscar_Calleja."
+msgstr "@Oscar_Calleja bezala aurki dezakezu Twitter/X-en."
+
+#: .\bicicleteiros\static\templates\people.html:61
+msgid ""
+"You can also download some of the books he has been involved in for free "
+"clicking on the following links:"
+msgstr ""
+"Halaber, parte hartu duen liburuetako batzuk doan deskarga ditzakezu "
+"hurrengo esteken bidez:"
+
+#: .\bicicleteiros\static\templates\people.html:76
+msgid "He is responsible of Basque translations on terrameiga.bike"
+msgstr "Euskarazko itzulpenak egitearen arduraduna da."
+
+#: .\bicicleteiros\static\templates\people.html:93
+msgid "Nova Era pipe band"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:96
+msgid ""
+"Musical ensemble that emerge as an alternative to the standard musical style "
+"of Galician pipe bands, mainly distinguishing itself in terms of "
+"instrumentation and repertoire."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:99
+msgid ""
+"They have nearly 10 years of history, during which it's worth highlighting "
+"the release of the CD 'Rumbo NE' and countless performances and activities "
+"they carry out in the town where they are based."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:102
+msgid ""
+"They are currently immersed in the creation of a commemorative documentary "
+"celebrating the band's 10-year anniversary, which will be premiere at the "
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:103
+msgid "Short Film Festival of Verín 2024 (FIC)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:104
+msgid "For more information visit:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:107
+msgid "It is responsible for providing the soundtrack to this journey."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:127
+msgid ""
+"Retired by profession, a loving father and evena better husband; Jaume is a "
+"passionate cyclist who wil be part of the journey in the Spain-France border"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:130
+msgid ""
+"He loves paddle tennis, going to Galicia in his camper van and going on "
+"hiking. Jaume is a true bike commuter, as it is his main way of "
+"transportation in the city he lives."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:133
+msgid ""
+"He is the responsible of catalan translation on terrameiga.bike and he will "
+"be part of the route for some time."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:17
+msgid "Bike traveller & web developer"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:19
+msgid "Phone: 0034 687 494 294"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:68
+msgid "Previous Experience"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:72
+msgid "(2020, 2021, 2022 - commuting - 450km)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:73
+msgid "Tanger - Sidi Ifni (Morrocco)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:73
+msgid "(2021: ultracycling race - 2.200km)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:74
+msgid "(2022: Travel - 2.600km)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:75
+msgid "Verín (Spain) - Blois (France) - Verín"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:75
+msgid "(2023: Travel - 2.700km)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:76
+msgid "Several bikepacking travels in North Portugal and Galicia"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:88
+msgid "Strong Points"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:91
+msgid "Experience managing myself in tough situations"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:92
+msgid "Programming skills to make the project visible"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:93
+msgid "2 bike travellers will be with me on different sections of the route"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:94
+msgid "Support of my cousin on video editing"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:95
+msgid "Support of local media"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:96
+msgid ""
+"terrameiga.bike was translated in multiple languages (Spanish, Galician, "
+"Basque, Catalan and English)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:108
+msgid "Weak Points"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:111
+msgid "Few followers on Social Media as no work has been done previously"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:112
+msgid "I have never done such a big trip"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:124
+msgid "Travel Description"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:127
+msgid "Countries:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:129
+msgid ""
+"Spain, France, Italy, Slovenia, Croatia, Bosnia, Croatia, Albania, Greece, "
+"Turkey, Georgia, Russia, Kazajstán, Kyrgyzstan, Kazajstán, China, Mongolia, "
+"China, South Korea, Japan, US."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:136
+msgid "Duration:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:138
+msgid "March - 2024 // December 2024"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:152
+msgid "Video equipment:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:154
+msgid "Drone, action camera, phone, tripod"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:164
+msgid "Why?"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:170
+msgid "Personal goal"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:171
+msgid ""
+"Creating traffic to terrameiga.bike for Search Engine Optimization as an e-"
+"commerce will be created in the future"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:172
+msgid "Making myself known and gain more experience for future projects"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:182
+msgid "How?"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:185
+msgid "Getting people attention through:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:187
+msgid "Real positioning by satellital mobile (GenSpot) on terrameiga.bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:188
+msgid "Daily updates of km and altitude on terrameiga.bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:189
+msgid "Daily updates of expenses on terrameiga.bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:190
+msgid "Information about the country where I am"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:191
+msgid "Commenting the travel on terrameiga.bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:192
+msgid ""
+"Uploading videos on YouTube (1 video each second week). My cousin will edit "
+"and upload the videos"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:193
+msgid "Uploading pictures on Facebook, Instagram and terrameiga.bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:194
+msgid "Having a blog section for other cyclists on the route"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:203
+msgid "My proposal for you"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:207
+msgid "Company logos on the footer of all the terrameiga.bike sites"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:208
+msgid ""
+"Placing a picture of the bike and myself on terrameiga.bike home page and on "
+"social media profile pictures"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:209
+msgid "Making a video exclusively to talk about the bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:210
+msgid ""
+"Uploading pictures on Facebook, Instagram and terrameiga.bike with the bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:211
+msgid "The bike would appear in all the videos made each second week"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:212
+msgid "Visiting the headquarters with the bike for Social Media"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:221
+msgid "What do I ask for?"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:224
+msgid "A bike with the following characteristics:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:226
+msgid "Aluminium or steel frame"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:227
+msgid "Screw holes on: front fork, down tube, seat tube, and seat stays"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:228
+msgid "Mechanical disk brakes or mechanical rim brakes"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:229
+msgid "700c - 29 inches wheels"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:230
+msgid "33c tyre or thicker"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:231
+msgid "Drop handlebar with rounded shape"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:232
+msgid "Cables outside of the frame"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:233
+msgid "If possible, a single chainring groupset"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:234
+msgid "Size: XL"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:243
+msgid "Future projects"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:247
+msgid "Crossing Africa by bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:248
+msgid "Crossing America by bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:249
+msgid "Creating the terrameiga.bike e-commerce"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:250
+msgid "Organizing ultracycling races between Galicia and Portugal"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:251
+msgid "Creating tools for the users"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:253
+msgid ""
+"A tool which gives you the max speed and max slope depending on the groupset "
+"chosen by the user (This tool is already developed, calculated and "
+"programmed, however the visualization part is missing)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\project_presentation.html:255
+msgid ""
+"A tool which analyze the agility, ergonomic and speed of the bike based on "
+"the frame geometry"
+msgstr ""
+
+#: .\bicicleteiros\views.py:74
+msgid "Thanks for subscribe and being part of the bike travelling community"
+msgstr "Eskerrik asko harpidetzeagatik eta bidaiaren komunitatearen parte izateagatik."
+
+#: .\bicicleteiros\views.py:81
+msgid "Check the errors and try again!"
+msgstr "Egiaztatu akatsak eta saiatu berriro!"
+
+#: .\bicicleteiros\views.py:169
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
-msgstr ""
+msgstr "Eskerrik asko parte hartzeagatik. Zure komentarioa sartu da!"
 
-#: .\bicicleteiros\views.py:125
+#: .\bicicleteiros\views.py:178
 msgid "Please, include some text in your reply"
-msgstr ""
+msgstr "Eremuan testua gehitu behar duzu"
 
-#: .\bicicleteiros\views.py:164
+#: .\bicicleteiros\views.py:218
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
-msgstr ""
+msgstr "Eduki honetara sartu ahal izateko, terrameiga.bike/sign_up/ linkean erregistratu behar zara"
 
-#: .\registration\forms.py:62
+#: .\bicicleteiros\views.py:288 .\bicicleteiros\views.py:550
+msgid "Where does the money go?"
+msgstr "Non gastatzen da dirua?"
+
+#: .\bicicleteiros\views.py:324 .\bicicleteiros\views.py:584
+msgid "Expenses per Week"
+msgstr "Asteko gastuak"
+
+#: .\bicicleteiros\views.py:332 .\bicicleteiros\views.py:592
+#, python-brace-format
+msgid "Week: %{x}<br>Expense: %{y:.} Euros"
+msgstr "Astea: %{x}<br>Gastu: %{y:.} Euroak"
+
+#: .\bicicleteiros\views.py:359 .\bicicleteiros\views.py:617
+msgid "Expenses per Country"
+msgstr "Gastuak Herrialdea bakoitzean"
+
+#: .\bicicleteiros\views.py:366 .\bicicleteiros\views.py:624
+#, python-brace-format
+msgid "Country: %{x}<br>Expense: %{y:.} Euros"
+msgstr "Herrialdea: %{x}<br>Gastua: %{y:.} Euroak"
+
+#: .\bicicleteiros\views.py:392 .\bicicleteiros\views.py:648
+msgid "Distance and altitude per week"
+msgstr "Tartea eta altuera asteko bakoitzean"
+
+#: .\bicicleteiros\views.py:410 .\bicicleteiros\views.py:422
+#: .\bicicleteiros\views.py:468 .\bicicleteiros\views.py:478
+#: .\bicicleteiros\views.py:666 .\bicicleteiros\views.py:678
+#: .\bicicleteiros\views.py:722 .\bicicleteiros\views.py:732
+msgid "Climb (meters)"
+msgstr "Igoera (metroak)"
+
+#: .\bicicleteiros\views.py:421 .\bicicleteiros\views.py:477
+#: .\bicicleteiros\views.py:677 .\bicicleteiros\views.py:731
+msgid "Distance (Km)"
+msgstr "Distantzia (km)"
+
+#: .\bicicleteiros\views.py:425 .\bicicleteiros\views.py:681
+#, python-brace-format
+msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
+msgstr "Astea: %{x}<br>Km: %{y:.} km<br>Igoera: %{customdata[0]:.} metroak"
+
+#: .\bicicleteiros\views.py:450 .\bicicleteiros\views.py:704
+msgid "Distance and climb per country"
+msgstr "Tartea eta igoera herrialde bakoitzean"
+
+#: .\bicicleteiros\views.py:481 .\bicicleteiros\views.py:735
+#, python-brace-format
+msgid "Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
+msgstr "Herrialdea: %{x}<br>Km: %{y:.} km<br>Igoera: %{customdata[0]:.} metroak"
+
+#: .\registration\forms.py:85
 msgid "type \"terrameiga\". Lowercase and without quotes"
-msgstr ""
+msgstr "Idatz ezazu 'terrameiga', minuskulaz eta komatxorik gabe"
 
-#: .\registration\templates\1_sign_in.html:17
-#: .\registration\templates\1_sign_in.html:45
+#: .\registration\templates\1_sign_in.html:16
+#: .\registration\templates\1_sign_in.html:47
 msgid "Sign in"
-msgstr ""
+msgstr "Saioa hasi"
 
-#: .\registration\templates\1_sign_in.html:28
-#: .\registration\templates\2_sign_up.html:29
+#: .\registration\templates\1_sign_in.html:31
+#: .\registration\templates\2_sign_up.html:36
 #: .\registration\templates\profile_account\delete_account.html:22
 #: .\registration\templates\profile_account\password_data.html:22
 #: .\registration\templates\profile_account\personal_data.html:22
 msgid "Password"
-msgstr ""
+msgstr "Pasahitza"
 
-#: .\registration\templates\1_sign_in.html:53
+#: .\registration\templates\1_sign_in.html:55
 msgid "Did you forget your password?"
-msgstr ""
+msgstr "Ez duzu pasahitza gogoratzen?"
 
-#: .\registration\templates\1_sign_in.html:61
-#: .\registration\templates\password_reset.html:37
+#: .\registration\templates\1_sign_in.html:63
+#: .\registration\templates\password_reset.html:32
 msgid "Would you like to create an account?"
-msgstr ""
+msgstr "Kontu bat sortu nahi duzu?"
 
-#: .\registration\templates\2_sign_up.html:16
+#: .\registration\templates\2_sign_up.html:17
 msgid "Account Creation"
-msgstr ""
+msgstr "Erregistroa"
 
-#: .\registration\templates\2_sign_up.html:25
+#: .\registration\templates\2_sign_up.html:26
 msgid "Name"
-msgstr ""
+msgstr "Izena"
 
-#: .\registration\templates\2_sign_up.html:31
+#: .\registration\templates\2_sign_up.html:43
 msgid "Repeat Password"
-msgstr ""
+msgstr "Pasahitza errepikatu"
 
-#: .\registration\templates\2_sign_up.html:46
+#: .\registration\templates\2_sign_up.html:59
 msgid "Creating the account, you are accepting the"
-msgstr ""
+msgstr "Kontua sortzerakoan onartzen duzu"
 
-#: .\registration\templates\2_sign_up.html:46
-#: .\registration\templates\2_sign_up.html:55
+#: .\registration\templates\2_sign_up.html:59
+#: .\registration\templates\2_sign_up.html:68
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politika eta Pribatutasuna"
 
-#: .\registration\templates\2_sign_up.html:64
+#: .\registration\templates\2_sign_up.html:77
 msgid "Close"
-msgstr ""
+msgstr "Itxi"
 
-#: .\registration\templates\2_sign_up.html:79
+#: .\registration\templates\2_sign_up.html:92
 msgid "Do you have already an account? sign in into your account"
-msgstr ""
+msgstr "Baduzu kontu bat? Hasi saioa"
 
-#: .\registration\templates\account_confirm_email_sent.html:18
+#: .\registration\templates\account_confirm_email_sent.html:17
 msgid "Email confirmation"
-msgstr ""
+msgstr "Emailaren konfirmazioa"
 
-#: .\registration\templates\account_confirm_email_sent.html:20
+#: .\registration\templates\account_confirm_email_sent.html:19
 msgid ""
 "To complete your registration, go to your email, open the TerraMeiga email "
 "and click on the link."
-msgstr ""
+msgstr "Erregistroa osatzeko, joan zure posta elektronikora, ireki helbide elektronikoa eta egin klik estekan."
 
-#: .\registration\templates\account_confirm_email_sent.html:23
+#: .\registration\templates\account_confirm_email_sent.html:22
 msgid "In case you do not find it, check on the spam folder!"
-msgstr ""
+msgstr "Aurkitzen ez baduzu, baliteke nahi ez duzun posta-karpetan egotea."
 
 #: .\registration\templates\email_body_confirmation.html:7
 #: .\registration\templates\email_body_password.html:7
 msgid "Terra Meiga - Password Recovery"
-msgstr ""
+msgstr "Terra Meiga - Pasahitza berreskuratu"
 
 #: .\registration\templates\email_body_confirmation.html:14
 msgid "Email Confirmation"
-msgstr ""
+msgstr "Email confirmazioa"
 
 #: .\registration\templates\email_body_confirmation.html:22
 #: .\registration\templates\email_body_password.html:22
 msgid "Hello!"
-msgstr ""
+msgstr "Kaixo!"
 
 #: .\registration\templates\email_body_confirmation.html:23
 msgid ""
 "Thank you for signing up with TerraMeiga and supporting me on this "
 "adventure. To complete your registration, please click the following link to "
 "confirm your email:"
-msgstr ""
+msgstr "Mila esker TerraMeigan erregistratzeagatik eta abentura honetan laguntzeagatik. Zure erregistroa osatzeko, klik egin behar duzu 'Berretsi zure emaila' botoian"
 
 #: .\registration\templates\email_body_confirmation.html:27
 msgid "Confirm Your Email"
-msgstr ""
+msgstr "Berretsi zure emaila"
 
 #: .\registration\templates\email_body_confirmation.html:28
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
-msgstr ""
+msgstr "TerraMeigan erregistratu ez bazara, ez duzu helbide elektroniko hau kontuan hartu behar."
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
 msgid "Happy biking!"
-msgstr ""
+msgstr "Gozatu bizikletarekin!"
 
 #: .\registration\templates\email_body_password.html:14
 #: .\registration\templates\password_reset.html:17
-#: .\registration\templates\password_reset_sent.html:18
+#: .\registration\templates\password_reset_sent.html:17
 msgid "Password Recovery"
-msgstr ""
+msgstr "Pasahitza berreskuratu"
 
 #: .\registration\templates\email_body_password.html:23
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
-msgstr ""
+msgstr "Pasahitza ahaztu baduzu, egin klik esteka honetan:"
 
 #: .\registration\templates\email_body_password.html:26
 msgid "Reset Password"
-msgstr ""
+msgstr "Berridatzi pasahitza"
 
 #: .\registration\templates\email_body_password.html:27
 msgid "If you didn't request this password reset, please ignore this email."
-msgstr ""
+msgstr "Pasahitza aldatzeko eskatu ez baduzu, ahaztu helbide elektroniko hau"
 
-#: .\registration\templates\password_reset.html:32
+#: .\registration\templates\password_reset.html:28
 msgid "Get Password"
-msgstr ""
+msgstr "Berridatzi pasahitza"
 
 #: .\registration\templates\password_reset_complete.html:17
-#: .\registration\templates\password_reset_complete.html:24
-#: .\registration\templates\profile_account\password_data.html:49
+#: .\registration\templates\password_reset_complete.html:22
+#: .\registration\templates\profile_account\password_data.html:53
 msgid "New Password"
-msgstr ""
+msgstr "Pasahitza berria"
 
 #: .\registration\templates\password_reset_complete.html:33
-#: .\registration\templates\profile_account\password_data.html:59
+#: .\registration\templates\profile_account\password_data.html:67
 msgid "Repeat New Password"
-msgstr ""
+msgstr "Errepikatu pasahitza"
 
-#: .\registration\templates\password_reset_complete.html:43
+#: .\registration\templates\password_reset_complete.html:45
 msgid "Update Password"
-msgstr ""
+msgstr "Eguneratu pasahitza"
 
-#: .\registration\templates\password_reset_sent.html:20
+#: .\registration\templates\password_reset_sent.html:19
 msgid ""
 "To recover your password, go to your email, open the 'TerraMeiga' email and "
 "click on the link."
-msgstr ""
+msgstr "Zure pasahitza berreskuratzeko, joan zure posta elektronikora, ireki TerraMeigaren posta eta egin klik estekan."
 
-#: .\registration\templates\password_reset_sent.html:23
+#: .\registration\templates\password_reset_sent.html:22
 msgid "In case you do not find the email, check on the spam folder!"
-msgstr ""
+msgstr "Posta elektronikoa aurkitzen ez baduzu, egiaztatu nahi ez duzun posta-erretiluan dagoen."
 
 #: .\registration\templates\privacy_policy.html:6
 msgid "Effective Date: 01-Jan-2024"
-msgstr ""
+msgstr "Indarrean 2024ko urtarrilaren 01etik aurrera"
 
 #: .\registration\templates\privacy_policy.html:8
 msgid "1. Introduction"
-msgstr ""
+msgstr "1. Hasiera"
 
 #: .\registration\templates\privacy_policy.html:10
 msgid ""
@@ -1277,16 +1835,17 @@ msgid ""
 "(GDPR). By using our website terrameiga.bike, you consent to the practices "
 "described in this Privacy Policy."
 msgstr ""
+"Pribatutasun-politika horrek terrameiga.bike gisa deskribatzen ditu datu pertsonalak, Datuak Babesteko Erregelamendu Orokorrean ezarritakoaren arabera. Gure webgunea erabiltzean (terrameiga.bike), pribatutasun-politikan deskribatzen diren praktikak onartzen dituzu."
 
 #: .\registration\templates\privacy_policy.html:12
 msgid "2. Definitions"
-msgstr ""
+msgstr "2. Definizioak"
 
 #: .\registration\templates\privacy_policy.html:14
 msgid ""
 "a. 'Personal Data' means any information that relates to an identified or "
 "identifiable natural person."
-msgstr ""
+msgstr "a. Datu pertsonalak: identifikatutako edo identifika daitekeen pertsona fisiko bati buruzko informazioa."
 
 #: .\registration\templates\privacy_policy.html:17
 msgid ""
@@ -1295,16 +1854,24 @@ msgid ""
 "storage, adaptation, alteration, retrieval, consultation, use, disclosure, "
 "dissemination, alignment, combination, restriction, erasure, or destruction."
 msgstr ""
+"b. Datuen prozesamendua': biltzeko, erregistratzeko edozein eragiketa, "
+"antolaketa, egituraketa, biltegiratzea, egokitzea edo aldatzea,"
+"berreskuratzea, kontsultatzea, erabiltzea, transmisio bidez zabaltzea, zabaltzea edo"
+"beste era batera jartzea eskura, lerrokadura edo konbinazioa, murrizketa,"
+"datuak ezabatzea edo suntsitzea"
+
 
 #: .\registration\templates\privacy_policy.html:19
 msgid "3. Information We Collect"
-msgstr ""
+msgstr "3. Biltzen dugun informazioa"
 
 #: .\registration\templates\privacy_policy.html:21
 msgid ""
 "a. Personal Data: We may collect personal data, including but not limited to "
 "your name and email address."
 msgstr ""
+"a. Datu pertsonalak: Datu pertsonalak bildu ahal izango ditugu, hala nola zure izena eta posta elektronikoko helbidea"
+
 
 #: .\registration\templates\privacy_policy.html:24
 msgid ""
@@ -1312,77 +1879,84 @@ msgid ""
 "of the Website, including browser type, device information, and pages "
 "visited."
 msgstr ""
+"b. Erabilerari buruzko informazioa: Automatikoki biltzen dugu erabilerari buruzko informazioa webgunetik; bilatzaile mota, gailuaren informazioa eta bisitatutako orriak barne."
 
 #: .\registration\templates\privacy_policy.html:27
 msgid "c. Cookies: On this site we do not use cookies."
-msgstr ""
+msgstr "c. Cookie-ak: Webgune honetan ez da cookie-rik erabiltzen."
 
 #: .\registration\templates\privacy_policy.html:29
 msgid "4. Legal Basis for Data Processing"
-msgstr ""
+msgstr "4. Datuak prozesatzeko lege-oinarria"
 
 #: .\registration\templates\privacy_policy.html:31
 msgid ""
 "We may process personal data based on one or more of the following legal "
 "bases:"
-msgstr ""
+msgstr "Datu pertsonalak prozesatu ahal izango ditugu, jarraitu beharreko lege-oinarrien arabera:"
 
 #: .\registration\templates\privacy_policy.html:34
 msgid "a. Consent: We may process data with your explicit consent."
-msgstr ""
+msgstr "a. Baimena: Datuak zure baimen esplizituarekin prozesatu ahal izango ditugu."
 
 #: .\registration\templates\privacy_policy.html:37
 msgid ""
 "b. Legal Obligation: We may process data to comply with legal obligations."
 msgstr ""
+"b. Legezko betebeharra: Datuak prozesatu ahal izango ditugu legezko betebeharrak betetzeko"
+
 
 #: .\registration\templates\privacy_policy.html:40
 msgid ""
 "c. Legitimate Interests: We may process data based on our legitimate "
 "interests, provided they do not override your rights and interests."
 msgstr ""
+"c. Interes legitimoak: Datuak interes legitimoen arabera prozesatu ahal izango ditugu, haien eskubideak edo interesak inoiz gainditzen ez direla ziurtatuz."
 
 #: .\registration\templates\privacy_policy.html:42
 msgid "5. Data Use"
-msgstr ""
+msgstr "5. Datuen erabilera"
 
 #: .\registration\templates\privacy_policy.html:44
 msgid "We may use personal data for the following purposes:"
-msgstr ""
+msgstr "Zure datu pertsonalak erabili ahal izango ditugu, honako helburu hauengatik:"
 
 #: .\registration\templates\privacy_policy.html:47
 msgid "a. To analyze usage patterns and conduct research."
-msgstr ""
+msgstr "a. Erabilera-ereduak aztertzeko eta ondoren ikerketak egiteko."
 
 #: .\registration\templates\privacy_policy.html:50
 msgid "b. To comply with legal obligations."
-msgstr ""
+msgstr "b. Legezko betebeharrak betetzeko."
 
 #: .\registration\templates\privacy_policy.html:52
 msgid "6. Data Sharing"
-msgstr ""
+msgstr "6. Datuak trukatzeko"
 
 #: .\registration\templates\privacy_policy.html:54
 msgid ""
 "We do not sell or rent your personal data to third parties. However, we may "
 "share your data with:"
 msgstr ""
+"Ez dizkiegu zure datu pertsonalak hirugarrenei saltzen edo uzten. Hala ere, zure datuak partekatu ahal izango ditugu:"
 
 #: .\registration\templates\privacy_policy.html:57
 msgid ""
 "a. Service Providers: We may share data with service providers who help us "
 "operate the Website and provide our services."
 msgstr ""
+"a. Hornitzaileak: Gure web orria erabiltzen lagunduko diguten hornitzaileekin partekatu ahal izango ditugu zuen datuak."
 
 #: .\registration\templates\privacy_policy.html:60
 msgid ""
 "b. Legal Compliance: We may disclose data to comply with legal requirements, "
 "protect our rights, or respond to a legal request."
 msgstr ""
+"b. Lege-betearazpena: Zure datuak partekatu ahal izango ditugu lege-eskakizunen arabera, gure eskubideak babesteko edo lege-gaiei erantzuteko."
 
 #: .\registration\templates\privacy_policy.html:62
 msgid "7. Data Transfer"
-msgstr ""
+msgstr "7. Datuak transferitzea"
 
 #: .\registration\templates\privacy_policy.html:64
 msgid ""
@@ -1390,10 +1964,13 @@ msgid ""
 "outside the European Economic Area (EEA). We ensure that such transfers "
 "comply with GDPR requirements and protect your data."
 msgstr ""
+"Zure datuak Europako Esparru Ekonomiko Bateratutik (EAA) kanpo dauden herrialdeetan transferitu, prozesatu eta gorde daitezke. Hala ere, transferentzia horiek"
+" GDPRren eskakizunak betetzen dituztela ziurtatuko dugu."
+
 
 #: .\registration\templates\privacy_policy.html:66
 msgid "8. Data Retention"
-msgstr ""
+msgstr "8. Datuak gordetzea"
 
 #: .\registration\templates\privacy_policy.html:68
 msgid ""
@@ -1401,10 +1978,13 @@ msgid ""
 "with us. Once you delete your account, we will delete all your Personal "
 "Identifiable Information (PII)."
 msgstr ""
+"Zure datuak gordeko ditugu zure kontua aktibo badago. Zure kontua ezabatzen "
+"duzunean, zure datu pertsonal guztiak (PII) ezabatu egingo dira."
+
 
 #: .\registration\templates\privacy_policy.html:70
 msgid "9. Data Security"
-msgstr ""
+msgstr "9. Datuen segurtasuna"
 
 #: .\registration\templates\privacy_policy.html:72
 msgid ""
@@ -1412,83 +1992,93 @@ msgid ""
 "from unauthorized access and disclosure. However, no data transmission or "
 "storage is entirely secure."
 msgstr ""
+"Segurtasun-neurriak ezartzen ditugu zure datu pertsonalak baimenik gabe "
+"erabiltzetik babesteko. Hala ere, ez dago erasoei huts egin ezin dien sistemarik."
+
 
 #: .\registration\templates\privacy_policy.html:74
 msgid "10. Your Rights"
-msgstr ""
+msgstr "10. Zure eskubideak"
 
 #: .\registration\templates\privacy_policy.html:76
 msgid "Under GDPR, you have rights regarding your personal data, including:"
-msgstr ""
+msgstr "GDPR-ren arabera, hurrengo eskubieak daukazu:"
 
 #: .\registration\templates\privacy_policy.html:79
 msgid "a. Right to Access: You can request access to your personal data."
-msgstr ""
+msgstr "a. Sarbide Eskubidea: Zure datu pertsonaletarako sarbidea eska dezakezu."
 
 #: .\registration\templates\privacy_policy.html:82
 msgid ""
 "b. Right to Rectification: You can request the correction of inaccurate data."
-msgstr ""
+msgstr "b. Aldaketa Eskubidea: Datu okerrak zuzentzeko eska dezakezu."
 
 #: .\registration\templates\privacy_policy.html:85
 msgid "c. Right to Erasure: You can request the deletion of your data."
-msgstr ""
+msgstr "c. Suntsitzeko eskubidea: Zure datuak suntsitzeko eska dezakezu."
 
 #: .\registration\templates\privacy_policy.html:88
 msgid ""
 "d. Right to Restriction of Processing: You can request limitations on data "
 "processing."
 msgstr ""
+"d. Datuak prozesatzeko murrizketa-eskubidea: Zure datuak prozesatzeko orduan"
+" mugak ezar ditzakezu."
+
 
 #: .\registration\templates\privacy_policy.html:91
 msgid ""
 "e. Right to Data Portability: You can request your data in a structured, "
 "commonly used format."
 msgstr ""
+"e. Portabilitate Eskubidea: Zure datuak eska ditzakezu formatu egituratu eta estandar batean."
 
 #: .\registration\templates\privacy_policy.html:94
 msgid "f. Right to Object: You can object to the processing of your data."
-msgstr ""
+msgstr "f. Aurka egiteko eskubidea: Zure datuak prozesatzearen aurka egin dezakezu."
 
 #: .\registration\templates\privacy_policy.html:97
 msgid ""
 "g. Right to Withdraw Consent: If processing is based on consent, you can "
 "withdraw it at any time."
-msgstr ""
+msgstr "g. Baimena kentzeko eskubidea: Interesatuak edozein unetan baimena kentzeko eskubidea izango du."
 
 #: .\registration\templates\privacy_policy.html:100
 msgid "To exercise your rights, please contact us at paquinho89@gmail.com."
-msgstr ""
+msgstr "Zure eskubideak erabiltzeko, jarri harremanetan helbide elektroniko honetan: paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:102
 msgid "11. Contact Us"
-msgstr ""
+msgstr "11. Kontaktua"
 
 #: .\registration\templates\privacy_policy.html:104
 msgid ""
 "If you have questions or concerns about this Privacy Policy or our data "
 "practices, please contact us at paquinho89@gmail.com."
 msgstr ""
+"Pribatutasun-politika honi buruzko galderarik baduzu, jar zaitez harremanetan helbide elektroniko honetan: paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:106
 msgid "12. Changes to this Privacy Policy"
-msgstr ""
+msgstr "12. Pribatutasun-politikaren aldaketak."
 
 #: .\registration\templates\privacy_policy.html:108
 msgid ""
 "We reserve the right to modify this Privacy Policy at any time. Please "
 "review it periodically for updates."
 msgstr ""
+"Pribatutasun-politika hau edozein unetan aldatzeko eskubidea gordetzen dugu. Mesedez, berrikusi aldian behin eguneratze berriak izanez gero."
+
 
 #: .\registration\templates\privacy_policy.html:110
 msgid "This Privacy Policy was last updated on 01-Jan-2024."
-msgstr ""
+msgstr "Pribatutasun-politika honen azken eguneraketaren data honako hau da: 2024ko urtarrilak 01"
 
 #: .\registration\templates\profile_account\delete_account.html:19
 #: .\registration\templates\profile_account\password_data.html:19
 #: .\registration\templates\profile_account\personal_data.html:19
 msgid "Personal Data"
-msgstr ""
+msgstr "Datu pertsonalak"
 
 #: .\registration\templates\profile_account\delete_account.html:25
 #: .\registration\templates\profile_account\delete_account.html:37
@@ -1496,144 +2086,154 @@ msgstr ""
 #: .\registration\templates\profile_account\password_data.html:25
 #: .\registration\templates\profile_account\personal_data.html:25
 msgid "Delete Account"
-msgstr ""
+msgstr "Kontua ezabatu"
 
 #: .\registration\templates\profile_account\delete_account.html:33
 msgid "Do you want to delete your account?"
-msgstr ""
+msgstr "Zure kontua ezabatu nahi duzu?"
 
 #: .\registration\templates\profile_account\delete_account.html:48
 msgid "Are you sure you want to delete your account?"
-msgstr ""
+msgstr "Ziur zaude zure kontua ezabatu nahi duzula?"
 
 #: .\registration\templates\profile_account\delete_account.html:54
 msgid "To delete your account type 'terrameiga'"
-msgstr ""
+msgstr "Zure kontua ezabatzeko 'terrameiga' idatzi behar duzu."
 
 #: .\registration\templates\profile_account\delete_account.html:58
 msgid "Cancel"
-msgstr ""
+msgstr "Bertan behera utzi"
 
 #: .\registration\templates\profile_account\password_data.html:33
 msgid "Do you want to update the password?"
-msgstr ""
+msgstr "Pasahitza aldatu nahi duzu?"
 
 #: .\registration\templates\profile_account\password_data.html:39
 msgid "Current Password"
-msgstr ""
+msgstr "Oraingo pasahitza"
 
-#: .\registration\templates\profile_account\password_data.html:70
+#: .\registration\templates\profile_account\password_data.html:82
 msgid "Update the Password"
-msgstr ""
+msgstr "Pasahitza eguneratu"
 
 #: .\registration\templates\profile_account\personal_data.html:33
 msgid "Do you want to update your Personal Data?"
-msgstr ""
+msgstr "Zure datuak eguneratu nahi dituzu?"
 
 #: .\registration\templates\profile_account\personal_data.html:39
 msgid "Email"
-msgstr ""
+msgstr "e-mail"
 
 #: .\registration\templates\profile_account\personal_data.html:48
 msgid "Username"
-msgstr ""
-
-#: .\registration\templates\profile_account\personal_data.html:66
-msgid "Language"
-msgstr ""
+msgstr "Izena"
 
 #: .\registration\templates\profile_account\personal_data.html:76
 msgid "Update your data"
-msgstr ""
+msgstr "Datuak eguneratu"
 
-#: .\registration\views.py:47
+#: .\registration\views.py:59
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr ""
+"Zoaz zure e-mailera eta egiaztatu zure kontua. Mila esker!"
 
-#: .\registration\views.py:56 .\registration\views.py:161
-#: .\registration\views.py:245
+#: .\registration\views.py:67 .\registration\views.py:212
+#: .\registration\views.py:313
 msgid "Check the below errors and try again!"
-msgstr ""
+msgstr "Egiaztatu akatsak eta saiatu berriro!"
 
-#: .\registration\views.py:76
+#: .\registration\views.py:104
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
-msgstr ""
+msgstr "Zure kontua sortu egin da. Eskerrik asko abentura honetan parte hartzeagatik!"
 
-#: .\registration\views.py:81
+#: .\registration\views.py:109
 msgid "You have been logged out!"
-msgstr ""
+msgstr "Zure saioa itxi egin da!"
 
-#: .\registration\views.py:101
+#: .\registration\views.py:149
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
-msgstr ""
+msgstr "Ongi etorri! Orain bidaiaren eduki guztiaz goza dezakezu."
 
-#: .\registration\views.py:110
+#: .\registration\views.py:158
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
-msgstr ""
+msgstr "Ez dago kredentzial horiek dituen erabiltzailerik. Saiatu berriro edo sortu kontu berri bat"
 
-#: .\registration\views.py:136
+#: .\registration\views.py:187
 msgid "Your personal data has been updated"
-msgstr ""
+msgstr "Zure datu pertsonalak eguneratu egin dira"
 
-#: .\registration\views.py:141
+#: .\registration\views.py:192
 msgid "The data could not be updated. Please check the below errors"
-msgstr ""
+msgstr "Datuak ezin izan dira eguneratu. Mesedez, akatzak konprobatu"
 
-#: .\registration\views.py:154
+#: .\registration\views.py:205
 msgid "Your password has been updated!"
-msgstr ""
+msgstr "Zure pasahitza eguneratu egin da!"
 
-#: .\registration\views.py:182
-msgid "Your account has been deleted. We hope see you back soon!"
-msgstr ""
-
-#: .\registration\views.py:187 .\registration\views.py:189
-msgid ""
-"Please, type \"terrameiga\". The text has to be lowercase and without quotes"
-msgstr ""
-
-#: .\registration\views.py:214
+#: .\registration\views.py:251
 msgid "An email was sent to your email inbox"
-msgstr ""
+msgstr "Email bat bidali dizugu zure posta elektronikora"
 
-#: .\registration\views.py:217
+#: .\registration\views.py:254
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
-msgstr ""
+msgstr "Sartutako helbide elektronikoa ez dago gure datu-basean. Sortu kontu berri bat."
 
-#: .\registration\views.py:221
+#: .\registration\views.py:258
 msgid "The email is not valid"
-msgstr ""
+msgstr "Sartutako emaila ez du balio"
 
-#: .\registration\views.py:240
+#: .\registration\views.py:308
 msgid "Your password has been changed"
-msgstr ""
+msgstr "Zure pasahitza eguneratu egin da"
 
-#: .\terrameiga\static\templates\base\footer.html:31
-msgid "No cookies are used on the site"
-msgstr ""
+#: .\registration\views.py:331
+msgid "Your account has been deleted. We hope see you back soon!"
+msgstr "Zure kontua ezabatu egin da. Espero dezagun laster hemen ikustea!"
+
+#: .\registration\views.py:336 .\registration\views.py:338
+msgid ""
+"Please, type \"terrameiga\". The text has to be lowercase and without quotes"
+msgstr "Mesedez, idatzi \"terrameiga\". Testuak letra xehez idatzita egon behar du, eta ez du komatxorik eraman behar."
+
+#: .\terrameiga\settings.py:165 .\terrameiga\settings_deployment.py:176
+msgid "Basque"
+msgstr "Euskera"
+
+#: .\terrameiga\static\templates\base\footer_non_registration.html:44
+#: .\terrameiga\static\templates\base\footer_registration.html:35
+msgid "Dark Mode"
+msgstr "Iluna"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
-msgstr ""
+msgstr "Hasiera"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:26
 msgid "Pictures"
-msgstr ""
+msgstr "Argazkiak"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:29
 msgid "Data"
-msgstr ""
+msgstr "Datuak"
 
-#: .\terrameiga\static\templates\base\nav_bar.html:37
+#: .\terrameiga\static\templates\base\nav_bar.html:32
+msgid "Team"
+msgstr "Taldea"
+
+#: .\terrameiga\static\templates\base\nav_bar.html:40
 msgid "Account Settings"
-msgstr ""
+msgstr "Konfigurazioa"
 
-#: .\terrameiga\static\templates\base\nav_bar.html:42
+#: .\terrameiga\static\templates\base\nav_bar.html:45
 msgid "Log Out"
+msgstr "Irten"
+
+#: .\tools\templates\tool_speed.html:16
+msgid "Speed Tool"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 17:46+0100\n"
+"POT-Creation-Date: 2024-01-13 18:28+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,16 @@ msgstr "Inglés"
 #: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
 msgid "Galician"
 msgstr "Gallego"
+
+#: .\bicicleteiros\forms.py:29 .\registration\models.py:16
+#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
+msgid "Catalan"
+msgstr "Catalán"
+
+#: .\bicicleteiros\forms.py:30 .\registration\models.py:17
+#: .\terrameiga\settings.py:165 .\terrameiga\settings_deployment.py:176
+msgid "Basque"
+msgstr "Euskera"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -1052,14 +1062,14 @@ msgstr ""
 "aventura y disfrutar de todo el contenido?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
-#: .\bicicleteiros\views.py:327 .\bicicleteiros\views.py:417
-#: .\bicicleteiros\views.py:587 .\bicicleteiros\views.py:673
+#: .\bicicleteiros\views.py:328 .\bicicleteiros\views.py:418
+#: .\bicicleteiros\views.py:588 .\bicicleteiros\views.py:674
 msgid "Week"
 msgstr "Semana"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:143
-#: .\bicicleteiros\views.py:361 .\bicicleteiros\views.py:473
-#: .\bicicleteiros\views.py:619 .\bicicleteiros\views.py:727
+#: .\bicicleteiros\views.py:362 .\bicicleteiros\views.py:474
+#: .\bicicleteiros\views.py:620 .\bicicleteiros\views.py:728
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
@@ -1106,6 +1116,12 @@ msgstr "Idioma"
 msgid "Light Mode"
 msgstr "Modo Claro"
 
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:270
+#: .\terrameiga\static\templates\base\footer_non_registration.html:44
+#: .\terrameiga\static\templates\base\footer_registration.html:35
+msgid "Dark Mode"
+msgstr "Modo Oscuro"
+
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:272
 msgid "Supported by:"
 msgstr "Colaborador:"
@@ -1128,8 +1144,8 @@ msgstr "Datos del viaje"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:31
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:31
-#: .\bicicleteiros\views.py:400 .\bicicleteiros\views.py:458
-#: .\bicicleteiros\views.py:656 .\bicicleteiros\views.py:712
+#: .\bicicleteiros\views.py:401 .\bicicleteiros\views.py:459
+#: .\bicicleteiros\views.py:657 .\bicicleteiros\views.py:713
 msgid "Climb"
 msgstr "Ascenso"
 
@@ -1196,6 +1212,155 @@ msgstr "Datos del viaje - Reporte Completo"
 #: .\terrameiga\static\templates\base\nav_bar.html:23
 msgid "Videos"
 msgstr "Ví­deos"
+
+#: .\bicicleteiros\static\templates\people.html:27
+msgid "Amaia & Mario"
+msgstr "Amaia y Mario"
+
+#: .\bicicleteiros\static\templates\people.html:30
+msgid ""
+"Sports and Adventure lovers, they like travelling and immerse themselves in "
+"the culture of the country. They own an amazing sports store where you can "
+"gear up for your next adventure or for your day-to-day"
+msgstr ""
+"Apasionados de la aventura y del deporte, le encanta viajar y adentrarse en "
+"la cultura del país. Tienen una espectacular tienda de deportes en la que "
+"podrás equiparte para tú próxima aventura o para tu día a día."
+
+#: .\bicicleteiros\static\templates\people.html:33
+msgid ""
+"They are currently collaborating on a solidarity project ('Association Amal "
+"Khamlia'), which promotes the gender equality between children in a small "
+"hamlet in the Sahara Desert. For more information about the project,"
+msgstr ""
+"Actualmente colaboran en un proyecto solidario ('Association Amal Khamlia'), "
+"que promueve la igualdad entre niñas y niños en un pequeño pueblo del del "
+"Sáhara. Para más info del proyecto,"
+
+#: .\bicicleteiros\static\templates\people.html:34
+msgid "Watch vídeo."
+msgstr "Ver vídeo."
+
+#: .\bicicleteiros\static\templates\people.html:37
+msgid ""
+"They are one of the contributors to this journey, providing the necessary "
+"gear to stay dry and warm during nights."
+msgstr ""
+"Es uno de los colaboradores de este viaje, proporcionando el material "
+"necesario para no mojarse y no pasar frío por las noches."
+
+#: .\bicicleteiros\static\templates\people.html:59
+msgid ""
+"An environmental scientist by training, a Public Health and Epidemiology "
+"Technician by profession, and a writer of terror and fantasy stories in his "
+"free time. You can find him on"
+msgstr ""
+"Ambientólogo de formación, Técnico de Salud Pública y Epidemiología de "
+"profesión y escritor de relatos de fantasía y terror en sus ratos libres. Lo "
+"puedes encontrar en"
+
+#: .\bicicleteiros\static\templates\people.html:60
+msgid "Twitter/X as @Oscar_Calleja."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:61
+msgid ""
+"You can also download some of the books he has been involved in for free "
+"clicking on the following links:"
+msgstr ""
+"También puedes descargar gratis algunos de los libros en los que ha "
+"participado a través de los siguientes enlaces:"
+
+#: .\bicicleteiros\static\templates\people.html:76
+msgid "He is responsible of Basque translations on terrameiga.bike"
+msgstr ""
+"Es el encargado de realizar las traducciones al euskera de terrameiga.bike"
+
+#: .\bicicleteiros\static\templates\people.html:93
+msgid "Nova Era pipe band"
+msgstr "Banda de Gaitas Nova Era"
+
+#: .\bicicleteiros\static\templates\people.html:96
+msgid ""
+"Musical ensemble that emerge as an alternative to the standard musical style "
+"of Galician pipe bands, mainly distinguishing itself in terms of "
+"instrumentation and repertoire."
+msgstr ""
+"Agrupación musical que nació como una alternativa al estándar musical de las "
+"bandas de gaitas gallegas, diferenciándose principalmente en la "
+"instrumentación y repertorio."
+
+#: .\bicicleteiros\static\templates\people.html:99
+msgid ""
+"They have nearly 10 years of history, during which it's worth highlighting "
+"the release of the CD 'Rumbo NE' and countless performances and activities "
+"they carry out in the town where they are based."
+msgstr ""
+"Cuentan con casi 10 años de historia en los que cabe destaca la edidión del "
+"CD rumbo NE e inumerables actuaciones y actividades que llevan a cabo en la "
+"villa donde están asentados."
+
+#: .\bicicleteiros\static\templates\people.html:102
+msgid ""
+"They are currently immersed in the creation of a commemorative documentary "
+"celebrating the band's 10-year anniversary, which will be premiere at the "
+msgstr ""
+"Actualmente están inmersos en la creación de un documental conmemorativo de "
+"los 10 años de la banda que será estrenado en el"
+
+#: .\bicicleteiros\static\templates\people.html:103
+msgid "Short Film Festival of Verín 2024 (FIC)"
+msgstr "Festival de Curtas de Verín de 2024 (FIC)"
+
+#: .\bicicleteiros\static\templates\people.html:104
+msgid "For more information visit:"
+msgstr "Para más info:"
+
+#: .\bicicleteiros\static\templates\people.html:107
+msgid "It is responsible for providing the soundtrack to this journey."
+msgstr "Es la encargada de poner la banda sonora a este viaje"
+
+#: .\bicicleteiros\static\templates\people.html:127
+msgid ""
+"Retired by profession, a loving father and evena better husband; Jaume is a "
+"passionate cyclist who wil be part of the journey in the Spain-France border"
+msgstr ""
+"Jubilado de profesión, buen padre y mejor marido; Jaume es un apasionado de "
+"la bicicleta que formará parte del viaje en la zona de España-Francia."
+
+#: .\bicicleteiros\static\templates\people.html:130
+msgid ""
+"He loves paddle tennis, going to Galicia in his camper van and going on "
+"hiking. Jaume is a true bike commuter, as it is his main way of "
+"transportation in the city he lives."
+msgstr ""
+"Le encanta el pádel, venir a Galicia con su furgo camperizada y hacer rutas "
+"de senderismo. Jaume es todo un bicicleteiro, siendo la bici su principal "
+"medio de desplazamiento en la ciudad en la que reside."
+
+#: .\bicicleteiros\static\templates\people.html:133
+msgid ""
+"He is the responsible of catalan translation on terrameiga.bike and he will "
+"be part of the route for some time."
+msgstr ""
+"Es el encargado de las traducciones al catalán y de formar parte de la ruta "
+"por algún tiempo."
+
+#: .\bicicleteiros\static\templates\people.html:160
+msgid "Responsible, organized, methodical and a big fan of Baskonia."
+msgstr "Responsable, organizado, metódico y gran seguidor del Baskonia."
+
+#: .\bicicleteiros\static\templates\people.html:164
+msgid ""
+"He has a dog named Bimba whom he takes for a walk every day and cares for "
+"with great affection."
+msgstr "Tiene una perra llamada Bimba a la que saca a pasear todos los días y que cuida con mucho cariño."
+
+#: .\bicicleteiros\static\templates\people.html:168
+msgid ""
+"Alberto is in charge of social media and the edition of the videos which "
+"will be released perdiodically"
+msgstr "Alberto es el encargado de las redes sociales y de la edición de los vídeos que se irán lanzando de forma periódica."
 
 #: .\bicicleteiros\static\templates\project_presentation.html:17
 msgid "Bike traveller & web developer"
@@ -1514,16 +1679,16 @@ msgstr "Gracias por subscribirte y formar parte de la comunidad cicloviajera"
 msgid "Check the errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\bicicleteiros\views.py:168
+#: .\bicicleteiros\views.py:169
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:177
+#: .\bicicleteiros\views.py:178
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:217
+#: .\bicicleteiros\views.py:218
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1531,55 +1696,55 @@ msgstr ""
 "Para poder acceder a este contenido, debe de registrarse en terrameiga.bike/"
 "sign_up/ "
 
-#: .\bicicleteiros\views.py:287 .\bicicleteiros\views.py:549
+#: .\bicicleteiros\views.py:288 .\bicicleteiros\views.py:550
 msgid "Where does the money go?"
 msgstr "¿Dónde gasto los dineros?"
 
-#: .\bicicleteiros\views.py:323 .\bicicleteiros\views.py:583
+#: .\bicicleteiros\views.py:324 .\bicicleteiros\views.py:584
 msgid "Expenses per Week"
 msgstr "Gastos por semana"
 
-#: .\bicicleteiros\views.py:331 .\bicicleteiros\views.py:591
+#: .\bicicleteiros\views.py:332 .\bicicleteiros\views.py:592
 #, python-brace-format
 msgid "Week: %{x}<br>Expense: %{y:.} Euros"
 msgstr "Semana: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:358 .\bicicleteiros\views.py:616
+#: .\bicicleteiros\views.py:359 .\bicicleteiros\views.py:617
 msgid "Expenses per Country"
 msgstr "Gastos por País"
 
-#: .\bicicleteiros\views.py:365 .\bicicleteiros\views.py:623
+#: .\bicicleteiros\views.py:366 .\bicicleteiros\views.py:624
 #, python-brace-format
 msgid "Country: %{x}<br>Expense: %{y:.} Euros"
 msgstr "País: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:391 .\bicicleteiros\views.py:647
+#: .\bicicleteiros\views.py:392 .\bicicleteiros\views.py:648
 msgid "Distance and altitude per week"
 msgstr "Distancia y ascenso acumulado por semana"
 
-#: .\bicicleteiros\views.py:409 .\bicicleteiros\views.py:421
-#: .\bicicleteiros\views.py:467 .\bicicleteiros\views.py:477
-#: .\bicicleteiros\views.py:665 .\bicicleteiros\views.py:677
-#: .\bicicleteiros\views.py:721 .\bicicleteiros\views.py:731
+#: .\bicicleteiros\views.py:410 .\bicicleteiros\views.py:422
+#: .\bicicleteiros\views.py:468 .\bicicleteiros\views.py:478
+#: .\bicicleteiros\views.py:666 .\bicicleteiros\views.py:678
+#: .\bicicleteiros\views.py:722 .\bicicleteiros\views.py:732
 msgid "Climb (meters)"
 msgstr "Ascenso (metros)"
 
-#: .\bicicleteiros\views.py:420 .\bicicleteiros\views.py:476
-#: .\bicicleteiros\views.py:676 .\bicicleteiros\views.py:730
+#: .\bicicleteiros\views.py:421 .\bicicleteiros\views.py:477
+#: .\bicicleteiros\views.py:677 .\bicicleteiros\views.py:731
 msgid "Distance (Km)"
 msgstr "Distancia (km)"
 
-#: .\bicicleteiros\views.py:424 .\bicicleteiros\views.py:680
+#: .\bicicleteiros\views.py:425 .\bicicleteiros\views.py:681
 #, fuzzy, python-brace-format
 #| msgid "Week: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
 msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "Semana: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\bicicleteiros\views.py:449 .\bicicleteiros\views.py:703
+#: .\bicicleteiros\views.py:450 .\bicicleteiros\views.py:704
 msgid "Distance and climb per country"
 msgstr "Distancia y ascenso acumulado por país"
 
-#: .\bicicleteiros\views.py:480 .\bicicleteiros\views.py:734
+#: .\bicicleteiros\views.py:481 .\bicicleteiros\views.py:735
 #, fuzzy, python-brace-format
 #| msgid ""
 #| "Country: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
@@ -2088,31 +2253,31 @@ msgstr "Nombre"
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:58
+#: .\registration\views.py:59
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:66 .\registration\views.py:204
-#: .\registration\views.py:305
+#: .\registration\views.py:67 .\registration\views.py:212
+#: .\registration\views.py:313
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:103
+#: .\registration\views.py:104
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:108
+#: .\registration\views.py:109
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:143
+#: .\registration\views.py:149
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:152
+#: .\registration\views.py:158
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2120,61 +2285,48 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:179
+#: .\registration\views.py:187
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:184
+#: .\registration\views.py:192
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:197
+#: .\registration\views.py:205
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
 
-#: .\registration\views.py:243
+#: .\registration\views.py:251
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:246
+#: .\registration\views.py:254
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "El email introducido no existe en nuestra base de datos. Cree una cuenta "
 "nueva."
 
-#: .\registration\views.py:250
+#: .\registration\views.py:258
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:300
+#: .\registration\views.py:308
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
 
-#: .\registration\views.py:323
+#: .\registration\views.py:331
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:328 .\registration\views.py:330
+#: .\registration\views.py:336 .\registration\views.py:338
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
-
-#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
-msgid "Catalan"
-msgstr "Catalán"
-
-#: .\terrameiga\settings.py:165 .\terrameiga\settings_deployment.py:176
-msgid "Basque"
-msgstr "Euskera"
-
-#: .\terrameiga\static\templates\base\footer_non_registration.html:44
-#: .\terrameiga\static\templates\base\footer_registration.html:35
-msgid "Dark Mode"
-msgstr "Modo Oscuro"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"

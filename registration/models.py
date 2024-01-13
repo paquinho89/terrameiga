@@ -13,7 +13,8 @@ language_choices = (
     ('en', _('English')),
     ('es', _('Spanish')),
     ('gl', _('Galician')),
-    ('ca', _('Catalan'))
+    ('ca', _('Catalan')),
+    ('eu', _('Basque')),
     )
 
 # Create your models here.
