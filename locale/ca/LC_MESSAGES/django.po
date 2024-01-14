@@ -1686,7 +1686,7 @@ msgstr "Recuperar la contrasenya"
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
-msgstr ""
+msgstr "Si heu oblidat la contrasenya, feu clic al següent enllaç:"
 
 #: .\registration\templates\email_body_password.html:26
 msgid "Reset Password"

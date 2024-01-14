@@ -259,7 +259,7 @@ def password_reset_view(request):
 
   context = {
     'form_language_html': form_language,
-    'email_recovery' : password_recovery_form_variable
+    'email_recovery_html' : password_recovery_form_variable
   }
   return render (request, 'password_reset.html', context)
 
