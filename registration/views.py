@@ -231,6 +231,11 @@ def password_reset_view(request):
     if form_language.is_valid():
       selected_language = form_language.cleaned_data['language']
       activate(selected_language)
+      #Nesta sección o que fago e cambiar o idioma na url
+      current_language = get_language()
+      current_url = request.build_absolute_uri()
+      new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+      return redirect(new_url)
   
   password_recovery_form_variable = password_reset_form (data=request.POST)
   if request.method == "POST" and not form_language.is_valid():
@@ -256,6 +261,8 @@ def password_reset_view(request):
       for field, error in password_recovery_form_variable.errors.items():
         password_recovery_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         messages.add_message(request, messages.ERROR, _('The email is not valid'))
+        #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+        form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
 
   context = {
     'form_language_html': form_language,
@@ -280,7 +287,6 @@ def password_reset_sent_view (request):
   }
   return render (request, 'password_reset_sent.html', context)
 
-#------------------------------------EIQUI É ONDE QUEDACHES-------------------------
 #This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
 def password_new_password_view(request, uidb64, token):
   #Neste caso o que fago e coller o idioma do usuario, porque como xa teño na vista anterior introducín o email, a url que se envía no email para resetear o contrasinal
