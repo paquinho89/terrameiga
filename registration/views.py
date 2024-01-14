@@ -205,8 +205,9 @@ def password_reset_view(request):
         #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
         uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
         #uid = request.user.id
-        #print(uid)
-        send_reset_password_mail (request, email_form, uidb64, token)
+        language = get_language()
+        print(language)
+        send_reset_password_mail (request, email_form, uidb64, token, language)
         messages.add_message(request, messages.SUCCESS, _('An email was sent to your email inbox'))
         return redirect('password_reset_done')
       else:
@@ -262,21 +263,23 @@ def password_new_password_view(request, uidb64, token):
       new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
       return redirect(new_url)
     
-  form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
   password_reset_form = password_new_form(user, data=request.POST)
   if request.method == 'POST' and not form_language.is_valid():
     if password_reset_form.is_valid():
       password_reset_form.save()
       #Logeamos o usuario directamente
       login(request, user)
+      #E activamos o idioma que ten o usuario configurado:
+      user_language = CustomUser.objects.get(email = user).language
+      activate(user_language)
       messages.add_message(request, messages.SUCCESS, _('Your password has been changed'))
       return redirect('bicleteiros_home_page')
     else:
       for field, error in password_reset_form.errors.items():
         password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
-      #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
-      form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+        #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+        form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
 
   context = {
     'form_language_html' : form_language,
