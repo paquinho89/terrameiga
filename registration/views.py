@@ -35,6 +35,11 @@ def sign_up_view(request):
     if form_language.is_valid():
       selected_language = form_language.cleaned_data['language']
       activate(selected_language)
+      #Nesta sección o que fago e cambiar o idioma na url
+      current_language = get_language()
+      current_url = request.build_absolute_uri()
+      new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+      return redirect(new_url)
     
   # create a form instance and populate it with data from the request:
   sign_up_form_variable = sign_up_form_2(data=request.POST)
@@ -65,6 +70,8 @@ def sign_up_view(request):
         sign_up_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         #Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
+        #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+        form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
        
   context = {
         'form_language_html': form_language,
@@ -167,6 +174,141 @@ def sign_in_view(request):
 
 from bicicleteiros.static.lists.country_list import country_list_values
 
+def password_reset_view(request):
+  #Formulario IDIOMA
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+      #Nesta sección o que fago e cambiar o idioma na url
+      current_language = get_language()
+      current_url = request.build_absolute_uri()
+      new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+      return redirect(new_url)
+  
+  password_recovery_form_variable = password_reset_form (data=request.POST)
+  if request.method == "POST" and not form_language.is_valid():
+    password_recovery_form_variable = password_reset_form (data=request.POST)
+    if password_recovery_form_variable.is_valid():
+      #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
+      email_form_str = password_recovery_form_variable.cleaned_data.get('email')
+      #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
+      email_form =  CustomUser.objects.filter(email=email_form_str).first()
+      if CustomUser.objects.filter(email=email_form).exists():
+        #This is to generate a random token to include in the link which will be sent to the customer and he/she will be able to reset the password.
+        token = str(uuid.uuid4())
+        #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
+        uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
+        #uid = request.user.id
+        #print(uid)
+        send_reset_password_mail (request, email_form, uidb64, token)
+        messages.add_message(request, messages.SUCCESS, _('An email was sent to your email inbox'))
+        return redirect('password_reset_done')
+      else:
+        messages.add_message(request, messages.ERROR, _('The email does not exist in our data base. Please, create a new account.'))
+    else:
+      for field, error in password_recovery_form_variable.errors.items():
+        password_recovery_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        messages.add_message(request, messages.ERROR, _('The email is not valid'))
+        #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+        form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+
+  context = {
+    'form_language_html': form_language,
+    'email_recovery' : password_recovery_form_variable
+  }
+  return render (request, 'password_reset.html', context)
+
+def password_reset_sent_view (request):
+  #Formulario IDIOMA
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+
+  context = {
+      'form_language_html' : form_language,
+  }
+  return render (request, 'password_reset_sent.html', context)
+
+#This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
+def password_new_password_view(request, uidb64, token):
+  #Neste caso o que fago e coller o idioma do usuario, porque como xa teño na vista anterior introducín o email, a url que se envía no email para resetear o contrasinal
+  #e que leva a esta vista, ten o email xa contido. Pois o que fago con ese email e ver o idioma que ten o usuario configurado para mostrarlle a páxina no idioma correcto.
+  uid = force_str(urlsafe_base64_decode(uidb64))
+  user = CustomUser.objects.get(pk=uid)
+  user_language = CustomUser.objects.get(pk = uid).language
+  initial_language = user_language
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+      #Nesta sección o que fago e cambiar o idioma na url
+      current_language = get_language()
+      current_url = request.build_absolute_uri()
+      new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+      return redirect(new_url)
+    
+  form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+  password_reset_form = password_new_form(user, data=request.POST)
+  if request.method == 'POST' and not form_language.is_valid():
+    if password_reset_form.is_valid():
+      password_reset_form.save()
+      #Logeamos o usuario directamente
+      login(request, user)
+      messages.add_message(request, messages.SUCCESS, _('Your password has been changed'))
+      return redirect('bicleteiros_home_page')
+    else:
+      for field, error in password_reset_form.errors.items():
+        password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
+      #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+      form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+
+  context = {
+    'form_language_html' : form_language,
+    'reset_password_form' : password_reset_form
+  }
+  return render (request, 'password_reset_complete.html', context)
+
+#-------------------------------------ESTAS SON AS VIEWS DA CONFIGURACIÓN DO USUARIO--------------------------------------------------------
+
+def delete_account_view (request):
+  delete_account_form_variable = delete_account_form(data=request.POST)
+  if request.method == 'POST':
+    if delete_account_form_variable.is_valid():
+      #Getting the text which have typed on the form.
+      text_delete_form = delete_account_form_variable.cleaned_data.get('text_to_delete')
+      #Getting the user which is logged
+      current_user = CustomUser.objects.get(id=request.user.id)
+      if str(text_delete_form) == str("terrameiga"):
+        current_user.delete()
+        messages.add_message(request, messages.SUCCESS, _('Your account has been deleted. We hope see you back soon!'))
+        return redirect('home_page_no_registered')
+      else:
+        #Esto é para que se vacíe o formulario por se hai un erro
+        delete_account_form_variable = delete_account_form()
+        messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
+    else:
+      messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
+  context = {
+    'delete_form' : delete_account_form_variable
+  }
+  return render (request, 'profile_account/delete_account.html', context)
+
 def personal_data_view(request):
   #Collemos a info do usuario que está logeado para pola no formulario
   current_user = CustomUser.objects.get(id=request.user.id)
@@ -218,134 +360,5 @@ def password_update_view(request):
       'password_update_form': form_password_update
   }
   return render (request, 'profile_account/password_data.html', context)
-
-
-def password_reset_view(request):
-  #Formulario IDIOMA
-  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
-  initial_language = request.LANGUAGE_CODE
-  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
-  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
-  if request.method == 'POST':
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if form_language.is_valid():
-      selected_language = form_language.cleaned_data['language']
-      activate(selected_language)
-      #Nesta sección o que fago e cambiar o idioma na url
-      current_language = get_language()
-      current_url = request.build_absolute_uri()
-      new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
-      return redirect(new_url)
-  
-  password_recovery_form_variable = password_reset_form (data=request.POST)
-  if request.method == "POST" and not form_language.is_valid():
-    password_recovery_form_variable = password_reset_form (data=request.POST)
-    if password_recovery_form_variable.is_valid():
-      #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
-      email_form_str = password_recovery_form_variable.cleaned_data.get('email')
-      #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
-      email_form =  CustomUser.objects.filter(email=email_form_str).first()
-      if CustomUser.objects.filter(email=email_form).exists():
-        #This is to generate a random token to include in the link which will be sent to the customer and he/she will be able to reset the password.
-        token = str(uuid.uuid4())
-        #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
-        uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
-        #uid = request.user.id
-        #print(uid)
-        send_reset_password_mail ( email_form, uidb64, token)
-        messages.add_message(request, messages.SUCCESS, _('An email was sent to your email inbox'))
-        return redirect('password_reset_done')
-      else:
-        messages.add_message(request, messages.ERROR, _('The email does not exist in our data base. Please, create a new account.'))
-    else:
-      for field, error in password_recovery_form_variable.errors.items():
-        password_recovery_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        messages.add_message(request, messages.ERROR, _('The email is not valid'))
-        #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
-        form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
-
-  context = {
-    'form_language_html': form_language,
-    'email_recovery' : password_recovery_form_variable
-  }
-  return render (request, 'password_reset.html', context)
-
-def password_reset_sent_view (request):
-  #Formulario IDIOMA
-  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
-  initial_language = request.LANGUAGE_CODE
-  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
-  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
-  if request.method == 'POST':
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if form_language.is_valid():
-      selected_language = form_language.cleaned_data['language']
-      activate(selected_language)
-
-  context = {
-      'form_language_html' : form_language,
-  }
-  return render (request, 'password_reset_sent.html', context)
-
-#This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
-def password_new_password_view(request, uidb64, token):
-  #Neste caso o que fago e coller o idioma do usuario, porque como xa teño na vista anterior introducín o email, a url que se envía no email para resetear o contrasinal
-  #e que leva a esta vista, ten o email xa contido. Pois o que fago con ese email e ver o idioma que ten o usuario configurado para mostrarlle a páxina no idioma correcto.
-  uid = force_str(urlsafe_base64_decode(uidb64))
-  user = CustomUser.objects.get(pk=uid)
-  user_language = CustomUser.objects.get(pk = uid).language
-  initial_language = user_language
-  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
-  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
-  activate(initial_language)
-  if request.method == 'POST':
-    form_language = language_home_page_no_registration_form(data = request.POST)
-    if form_language.is_valid():
-      selected_language = form_language.cleaned_data['language']
-      print(selected_language)
-      activate(selected_language)
-  
-  password_reset_form = password_new_form(user, data=request.POST)
-  if request.method == 'POST' and not form_language.is_valid():
-    if password_reset_form.is_valid():
-      password_reset_form.save()
-      #Logeamos o usuario directamente
-      login(request, user)
-      messages.add_message(request, messages.SUCCESS, _('Your password has been changed'))
-      return redirect('bicleteiros_home_page')
-    else:
-      for field, error in password_reset_form.errors.items():
-        password_reset_form[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-        messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
-  context = {
-    'form_language_html' : form_language,
-    'reset_password_form' : password_reset_form
-  }
-  return render (request, 'password_reset_complete.html', context)
-
-
-def delete_account_view (request):
-  delete_account_form_variable = delete_account_form(data=request.POST)
-  if request.method == 'POST':
-    if delete_account_form_variable.is_valid():
-      #Getting the text which have typed on the form.
-      text_delete_form = delete_account_form_variable.cleaned_data.get('text_to_delete')
-      #Getting the user which is logged
-      current_user = CustomUser.objects.get(id=request.user.id)
-      if str(text_delete_form) == str("terrameiga"):
-        current_user.delete()
-        messages.add_message(request, messages.SUCCESS, _('Your account has been deleted. We hope see you back soon!'))
-        return redirect('home_page_no_registered')
-      else:
-        #Esto é para que se vacíe o formulario por se hai un erro
-        delete_account_form_variable = delete_account_form()
-        messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
-    else:
-      messages.add_message(request, messages.ERROR, _('Please, type "terrameiga". The text has to be lowercase and without quotes'))
-  context = {
-    'delete_form' : delete_account_form_variable
-  }
-  return render (request, 'profile_account/delete_account.html', context)
-
 
     
