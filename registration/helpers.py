@@ -67,11 +67,13 @@ def send_confirm_email (request, email, uidb64, token):
     return True
 
 # Function to send the email to reset the password in case it has been forgotten.
-def send_reset_password_mail (email, uidb64,  token):
+def send_reset_password_mail (request, email, uidb64,  token):
+    #Con esto o que fago e que o link seax dinámico e colla o 127.0.0.1:8000 cando estamos en local e o terrameiga.bike cando está en production
+    current_site = get_current_site(request)
     subject = "TerraMeiga - Password Recovery"
     #message = f'Please, click on the link to reset your password http://127.0.0.1:8000/reset_password/{uidb64}/{token}/'
     message = render_to_string('email_body_password.html', {
-        'password_recovery_link': f'http://127.0.0.1:8000/password_recovery_update/{uidb64}/{token}/',
+        'password_recovery_link': f'http://{current_site}/password_recovery_update/{uidb64}/{token}/',
     })
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
