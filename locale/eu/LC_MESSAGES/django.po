@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-13 13:47+0100\n"
+"POT-Creation-Date: 2024-01-15 16:30+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,24 +23,29 @@ msgid "Write here your comment"
 msgstr "Idatzi hemen zure iruzkina"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
+#: .\terrameiga\settings.py:173 .\terrameiga\settings_local.py:162
 msgid "Spanish"
 msgstr "Kastellanoa"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
+#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
 msgid "English"
 msgstr "Ingelesa"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
+#: .\terrameiga\settings.py:174 .\terrameiga\settings_local.py:163
 msgid "Galician"
 msgstr "Galegoa"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
+#: .\terrameiga\settings.py:175 .\terrameiga\settings_local.py:164
 msgid "Catalan"
 msgstr "Katalana"
+
+#: .\bicicleteiros\forms.py:30 .\registration\models.py:17
+#: .\terrameiga\settings.py:176 .\terrameiga\settings_local.py:165
+msgid "Basque"
+msgstr "Euskera"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -979,6 +984,7 @@ msgid "Population:"
 msgstr "Biztanleria:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:41
 msgid "people"
 msgstr "pertsonak"
 
@@ -1107,6 +1113,12 @@ msgstr "Hizkuntza"
 msgid "Light Mode"
 msgstr "Argi"
 
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:270
+#: .\terrameiga\static\templates\base\footer_non_registration.html:44
+#: .\terrameiga\static\templates\base\footer_registration.html:35
+msgid "Dark Mode"
+msgstr "Iluna"
+
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:272
 msgid "Supported by:"
 msgstr "Lagunduta:"
@@ -1208,6 +1220,9 @@ msgid ""
 "the culture of the country. They own an amazing sports store where you can "
 "gear up for your next adventure or for your day-to-day"
 msgstr ""
+"Abentura eta kirola, bidaiatzea eta herrialdeko kulturan murgiltzea maite "
+"dute. Kirol denda ikusgarria dute, eta bertan hurrengo abentura edo zure "
+"egunerokotasunarako hornitu ahal izango duzu."
 
 #: .\bicicleteiros\static\templates\people.html:33
 msgid ""
@@ -1215,16 +1230,21 @@ msgid ""
 "Khamlia'), which promotes the gender equality between children in a small "
 "hamlet in the Sahara Desert. For more information about the project,"
 msgstr ""
+"Gaur egun, Saharako herri txiki batean neska-mutilen arteko berdintasuna "
+"sustatzen duen proiektu solidario batean ('Association Amal Khamlia') parte "
+"hartzen dute. Proiektuari buruzko informazio gehiago nahi izanez gero, "
 
 #: .\bicicleteiros\static\templates\people.html:34
 msgid "Watch vídeo."
-msgstr ""
+msgstr "Ikusi bideoa."
 
 #: .\bicicleteiros\static\templates\people.html:37
 msgid ""
 "They are one of the contributors to this journey, providing the necessary "
 "gear to stay dry and warm during nights."
 msgstr ""
+"Bidaia honen laguntzaileetako bat dira, ez bustitzeko eta gauetan hotzik ez "
+"pasatzeko beharrezko materiala ematen du."
 
 #: .\bicicleteiros\static\templates\people.html:59
 msgid ""
@@ -1254,7 +1274,7 @@ msgstr "Euskarazko itzulpenak egitearen arduraduna da."
 
 #: .\bicicleteiros\static\templates\people.html:93
 msgid "Nova Era pipe band"
-msgstr ""
+msgstr "Banda de Gaitas Nova Era"
 
 #: .\bicicleteiros\static\templates\people.html:96
 msgid ""
@@ -1262,6 +1282,8 @@ msgid ""
 "of Galician pipe bands, mainly distinguishing itself in terms of "
 "instrumentation and repertoire."
 msgstr ""
+"Galiziako gaita-banden musika-estandarraren alternatiba gisa sortu zen "
+"musika-taldea, instrumentazioan eta errepertorioan bereziki bereiziz."
 
 #: .\bicicleteiros\static\templates\people.html:99
 msgid ""
@@ -1269,30 +1291,37 @@ msgid ""
 "the release of the CD 'Rumbo NE' and countless performances and activities "
 "they carry out in the town where they are based."
 msgstr ""
+"Ia 10 urteko historia dute, eta nabarmentzekoa da NE norabideko CDaren "
+"eraikina eta kokatuta dauden herrian egiten dituzten jarduera eta jarduera "
+"amaigabeak."
 
 #: .\bicicleteiros\static\templates\people.html:102
 msgid ""
 "They are currently immersed in the creation of a commemorative documentary "
 "celebrating the band's 10-year anniversary, which will be premiere at the "
 msgstr ""
+"Gaur egun taldearen 10 urteak ospatzeko dokumental bat sortzen ari dira, eta "
+"estreinatuko dute."
 
 #: .\bicicleteiros\static\templates\people.html:103
 msgid "Short Film Festival of Verín 2024 (FIC)"
-msgstr ""
+msgstr "2024ko Veringo Curtas Jaialdian (FIC) eta estreinatuko dute"
 
 #: .\bicicleteiros\static\templates\people.html:104
 msgid "For more information visit:"
-msgstr ""
+msgstr "Informazio gehiagorako: "
 
 #: .\bicicleteiros\static\templates\people.html:107
 msgid "It is responsible for providing the soundtrack to this journey."
-msgstr ""
+msgstr "Bidaia honi soinu-banda jartzeaz arduratzen dira."
 
 #: .\bicicleteiros\static\templates\people.html:127
 msgid ""
 "Retired by profession, a loving father and evena better husband; Jaume is a "
 "passionate cyclist who wil be part of the journey in the Spain-France border"
 msgstr ""
+"Lanbidez erretiratua, aita ona eta senar onena; Jaume bizikletazale "
+"amorratua da eta Espainia-Frantzia inguruko bidaiaren parte izango da."
 
 #: .\bicicleteiros\static\templates\people.html:130
 msgid ""
@@ -1300,12 +1329,35 @@ msgid ""
 "hiking. Jaume is a true bike commuter, as it is his main way of "
 "transportation in the city he lives."
 msgstr ""
+"Padel-a, Galiziara bere furgoneta kanperizatuarekin etortzea eta mendi-"
+"ibiliak egitea maite du. Jaume bicicleteiro ikaragarria da, bizikleta baita "
+"bere garraiobide nagusia bizi den hirian."
 
 #: .\bicicleteiros\static\templates\people.html:133
 msgid ""
 "He is the responsible of catalan translation on terrameiga.bike and he will "
 "be part of the route for some time."
 msgstr ""
+"Katalanerako itzulpenez arduratzen da eta denboraldi batean ibilbideko "
+"partaide izango da."
+
+#: .\bicicleteiros\static\templates\people.html:159
+msgid "Responsible, organized, methodical and a big fan of Baskonia."
+msgstr "Arduratsua, antolatua, metodikoa eta Baskoniaren jarraitzaile sutsua."
+
+#: .\bicicleteiros\static\templates\people.html:162
+msgid ""
+"He has a dog named Bimba whom he takes for a walk every day and cares for "
+"with great affection."
+msgstr ""
+"Bimba izeneko txakur bat dauka, egunero paseatzera ateratzen duena eta maitasunez zaintzen duena."
+
+#: .\bicicleteiros\static\templates\people.html:165
+msgid ""
+"Alberto is in charge of social media and the edition of the videos which "
+"will be released perdiodically"
+msgstr ""
+"Alberto sare sozialen eta aldian-aldian argitaratuko diren bideoen edizioaren arduraduna da."
 
 #: .\bicicleteiros\static\templates\project_presentation.html:17
 msgid "Bike traveller & web developer"
@@ -1594,7 +1646,9 @@ msgstr ""
 
 #: .\bicicleteiros\views.py:74
 msgid "Thanks for subscribe and being part of the bike travelling community"
-msgstr "Eskerrik asko harpidetzeagatik eta bidaiaren komunitatearen parte izateagatik."
+msgstr ""
+"Eskerrik asko harpidetzeagatik eta bidaiaren komunitatearen parte "
+"izateagatik."
 
 #: .\bicicleteiros\views.py:81
 msgid "Check the errors and try again!"
@@ -1613,7 +1667,9 @@ msgstr "Eremuan testua gehitu behar duzu"
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
-msgstr "Eduki honetara sartu ahal izateko, terrameiga.bike/sign_up/ linkean erregistratu behar zara"
+msgstr ""
+"Eduki honetara sartu ahal izateko, terrameiga.bike/sign_up/ linkean "
+"erregistratu behar zara"
 
 #: .\bicicleteiros\views.py:288 .\bicicleteiros\views.py:550
 msgid "Where does the money go?"
@@ -1665,7 +1721,8 @@ msgstr "Tartea eta igoera herrialde bakoitzean"
 #: .\bicicleteiros\views.py:481 .\bicicleteiros\views.py:735
 #, python-brace-format
 msgid "Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
-msgstr "Herrialdea: %{x}<br>Km: %{y:.} km<br>Igoera: %{customdata[0]:.} metroak"
+msgstr ""
+"Herrialdea: %{x}<br>Km: %{y:.} km<br>Igoera: %{customdata[0]:.} metroak"
 
 #: .\registration\forms.py:85
 msgid "type \"terrameiga\". Lowercase and without quotes"
@@ -1730,7 +1787,9 @@ msgstr "Emailaren konfirmazioa"
 msgid ""
 "To complete your registration, go to your email, open the TerraMeiga email "
 "and click on the link."
-msgstr "Erregistroa osatzeko, joan zure posta elektronikora, ireki helbide elektronikoa eta egin klik estekan."
+msgstr ""
+"Erregistroa osatzeko, joan zure posta elektronikora, ireki helbide "
+"elektronikoa eta egin klik estekan."
 
 #: .\registration\templates\account_confirm_email_sent.html:22
 msgid "In case you do not find it, check on the spam folder!"
@@ -1755,7 +1814,10 @@ msgid ""
 "Thank you for signing up with TerraMeiga and supporting me on this "
 "adventure. To complete your registration, please click the following link to "
 "confirm your email:"
-msgstr "Mila esker TerraMeigan erregistratzeagatik eta abentura honetan laguntzeagatik. Zure erregistroa osatzeko, klik egin behar duzu 'Berretsi zure emaila' botoian"
+msgstr ""
+"Mila esker TerraMeigan erregistratzeagatik eta abentura honetan "
+"laguntzeagatik. Zure erregistroa osatzeko, klik egin behar duzu 'Berretsi "
+"zure emaila' botoian"
 
 #: .\registration\templates\email_body_confirmation.html:27
 msgid "Confirm Your Email"
@@ -1764,7 +1826,9 @@ msgstr "Berretsi zure emaila"
 #: .\registration\templates\email_body_confirmation.html:28
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
-msgstr "TerraMeigan erregistratu ez bazara, ez duzu helbide elektroniko hau kontuan hartu behar."
+msgstr ""
+"TerraMeigan erregistratu ez bazara, ez duzu helbide elektroniko hau kontuan "
+"hartu behar."
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
@@ -1814,11 +1878,15 @@ msgstr "Eguneratu pasahitza"
 msgid ""
 "To recover your password, go to your email, open the 'TerraMeiga' email and "
 "click on the link."
-msgstr "Zure pasahitza berreskuratzeko, joan zure posta elektronikora, ireki TerraMeigaren posta eta egin klik estekan."
+msgstr ""
+"Zure pasahitza berreskuratzeko, joan zure posta elektronikora, ireki "
+"TerraMeigaren posta eta egin klik estekan."
 
 #: .\registration\templates\password_reset_sent.html:22
 msgid "In case you do not find the email, check on the spam folder!"
-msgstr "Posta elektronikoa aurkitzen ez baduzu, egiaztatu nahi ez duzun posta-erretiluan dagoen."
+msgstr ""
+"Posta elektronikoa aurkitzen ez baduzu, egiaztatu nahi ez duzun posta-"
+"erretiluan dagoen."
 
 #: .\registration\templates\privacy_policy.html:6
 msgid "Effective Date: 01-Jan-2024"
@@ -1835,7 +1903,10 @@ msgid ""
 "(GDPR). By using our website terrameiga.bike, you consent to the practices "
 "described in this Privacy Policy."
 msgstr ""
-"Pribatutasun-politika horrek terrameiga.bike gisa deskribatzen ditu datu pertsonalak, Datuak Babesteko Erregelamendu Orokorrean ezarritakoaren arabera. Gure webgunea erabiltzean (terrameiga.bike), pribatutasun-politikan deskribatzen diren praktikak onartzen dituzu."
+"Pribatutasun-politika horrek terrameiga.bike gisa deskribatzen ditu datu "
+"pertsonalak, Datuak Babesteko Erregelamendu Orokorrean ezarritakoaren "
+"arabera. Gure webgunea erabiltzean (terrameiga.bike), pribatutasun-politikan "
+"deskribatzen diren praktikak onartzen dituzu."
 
 #: .\registration\templates\privacy_policy.html:12
 msgid "2. Definitions"
@@ -1845,7 +1916,9 @@ msgstr "2. Definizioak"
 msgid ""
 "a. 'Personal Data' means any information that relates to an identified or "
 "identifiable natural person."
-msgstr "a. Datu pertsonalak: identifikatutako edo identifika daitekeen pertsona fisiko bati buruzko informazioa."
+msgstr ""
+"a. Datu pertsonalak: identifikatutako edo identifika daitekeen pertsona "
+"fisiko bati buruzko informazioa."
 
 #: .\registration\templates\privacy_policy.html:17
 msgid ""
@@ -1856,10 +1929,9 @@ msgid ""
 msgstr ""
 "b. Datuen prozesamendua': biltzeko, erregistratzeko edozein eragiketa, "
 "antolaketa, egituraketa, biltegiratzea, egokitzea edo aldatzea,"
-"berreskuratzea, kontsultatzea, erabiltzea, transmisio bidez zabaltzea, zabaltzea edo"
-"beste era batera jartzea eskura, lerrokadura edo konbinazioa, murrizketa,"
-"datuak ezabatzea edo suntsitzea"
-
+"berreskuratzea, kontsultatzea, erabiltzea, transmisio bidez zabaltzea, "
+"zabaltzea edobeste era batera jartzea eskura, lerrokadura edo konbinazioa, "
+"murrizketa,datuak ezabatzea edo suntsitzea"
 
 #: .\registration\templates\privacy_policy.html:19
 msgid "3. Information We Collect"
@@ -1870,8 +1942,8 @@ msgid ""
 "a. Personal Data: We may collect personal data, including but not limited to "
 "your name and email address."
 msgstr ""
-"a. Datu pertsonalak: Datu pertsonalak bildu ahal izango ditugu, hala nola zure izena eta posta elektronikoko helbidea"
-
+"a. Datu pertsonalak: Datu pertsonalak bildu ahal izango ditugu, hala nola "
+"zure izena eta posta elektronikoko helbidea"
 
 #: .\registration\templates\privacy_policy.html:24
 msgid ""
@@ -1879,7 +1951,9 @@ msgid ""
 "of the Website, including browser type, device information, and pages "
 "visited."
 msgstr ""
-"b. Erabilerari buruzko informazioa: Automatikoki biltzen dugu erabilerari buruzko informazioa webgunetik; bilatzaile mota, gailuaren informazioa eta bisitatutako orriak barne."
+"b. Erabilerari buruzko informazioa: Automatikoki biltzen dugu erabilerari "
+"buruzko informazioa webgunetik; bilatzaile mota, gailuaren informazioa eta "
+"bisitatutako orriak barne."
 
 #: .\registration\templates\privacy_policy.html:27
 msgid "c. Cookies: On this site we do not use cookies."
@@ -1893,25 +1967,30 @@ msgstr "4. Datuak prozesatzeko lege-oinarria"
 msgid ""
 "We may process personal data based on one or more of the following legal "
 "bases:"
-msgstr "Datu pertsonalak prozesatu ahal izango ditugu, jarraitu beharreko lege-oinarrien arabera:"
+msgstr ""
+"Datu pertsonalak prozesatu ahal izango ditugu, jarraitu beharreko lege-"
+"oinarrien arabera:"
 
 #: .\registration\templates\privacy_policy.html:34
 msgid "a. Consent: We may process data with your explicit consent."
-msgstr "a. Baimena: Datuak zure baimen esplizituarekin prozesatu ahal izango ditugu."
+msgstr ""
+"a. Baimena: Datuak zure baimen esplizituarekin prozesatu ahal izango ditugu."
 
 #: .\registration\templates\privacy_policy.html:37
 msgid ""
 "b. Legal Obligation: We may process data to comply with legal obligations."
 msgstr ""
-"b. Legezko betebeharra: Datuak prozesatu ahal izango ditugu legezko betebeharrak betetzeko"
-
+"b. Legezko betebeharra: Datuak prozesatu ahal izango ditugu legezko "
+"betebeharrak betetzeko"
 
 #: .\registration\templates\privacy_policy.html:40
 msgid ""
 "c. Legitimate Interests: We may process data based on our legitimate "
 "interests, provided they do not override your rights and interests."
 msgstr ""
-"c. Interes legitimoak: Datuak interes legitimoen arabera prozesatu ahal izango ditugu, haien eskubideak edo interesak inoiz gainditzen ez direla ziurtatuz."
+"c. Interes legitimoak: Datuak interes legitimoen arabera prozesatu ahal "
+"izango ditugu, haien eskubideak edo interesak inoiz gainditzen ez direla "
+"ziurtatuz."
 
 #: .\registration\templates\privacy_policy.html:42
 msgid "5. Data Use"
@@ -1919,7 +1998,8 @@ msgstr "5. Datuen erabilera"
 
 #: .\registration\templates\privacy_policy.html:44
 msgid "We may use personal data for the following purposes:"
-msgstr "Zure datu pertsonalak erabili ahal izango ditugu, honako helburu hauengatik:"
+msgstr ""
+"Zure datu pertsonalak erabili ahal izango ditugu, honako helburu hauengatik:"
 
 #: .\registration\templates\privacy_policy.html:47
 msgid "a. To analyze usage patterns and conduct research."
@@ -1938,21 +2018,24 @@ msgid ""
 "We do not sell or rent your personal data to third parties. However, we may "
 "share your data with:"
 msgstr ""
-"Ez dizkiegu zure datu pertsonalak hirugarrenei saltzen edo uzten. Hala ere, zure datuak partekatu ahal izango ditugu:"
+"Ez dizkiegu zure datu pertsonalak hirugarrenei saltzen edo uzten. Hala ere, "
+"zure datuak partekatu ahal izango ditugu:"
 
 #: .\registration\templates\privacy_policy.html:57
 msgid ""
 "a. Service Providers: We may share data with service providers who help us "
 "operate the Website and provide our services."
 msgstr ""
-"a. Hornitzaileak: Gure web orria erabiltzen lagunduko diguten hornitzaileekin partekatu ahal izango ditugu zuen datuak."
+"a. Hornitzaileak: Gure web orria erabiltzen lagunduko diguten "
+"hornitzaileekin partekatu ahal izango ditugu zuen datuak."
 
 #: .\registration\templates\privacy_policy.html:60
 msgid ""
 "b. Legal Compliance: We may disclose data to comply with legal requirements, "
 "protect our rights, or respond to a legal request."
 msgstr ""
-"b. Lege-betearazpena: Zure datuak partekatu ahal izango ditugu lege-eskakizunen arabera, gure eskubideak babesteko edo lege-gaiei erantzuteko."
+"b. Lege-betearazpena: Zure datuak partekatu ahal izango ditugu lege-"
+"eskakizunen arabera, gure eskubideak babesteko edo lege-gaiei erantzuteko."
 
 #: .\registration\templates\privacy_policy.html:62
 msgid "7. Data Transfer"
@@ -1964,9 +2047,9 @@ msgid ""
 "outside the European Economic Area (EEA). We ensure that such transfers "
 "comply with GDPR requirements and protect your data."
 msgstr ""
-"Zure datuak Europako Esparru Ekonomiko Bateratutik (EAA) kanpo dauden herrialdeetan transferitu, prozesatu eta gorde daitezke. Hala ere, transferentzia horiek"
-" GDPRren eskakizunak betetzen dituztela ziurtatuko dugu."
-
+"Zure datuak Europako Esparru Ekonomiko Bateratutik (EAA) kanpo dauden "
+"herrialdeetan transferitu, prozesatu eta gorde daitezke. Hala ere, "
+"transferentzia horiek GDPRren eskakizunak betetzen dituztela ziurtatuko dugu."
 
 #: .\registration\templates\privacy_policy.html:66
 msgid "8. Data Retention"
@@ -1981,7 +2064,6 @@ msgstr ""
 "Zure datuak gordeko ditugu zure kontua aktibo badago. Zure kontua ezabatzen "
 "duzunean, zure datu pertsonal guztiak (PII) ezabatu egingo dira."
 
-
 #: .\registration\templates\privacy_policy.html:70
 msgid "9. Data Security"
 msgstr "9. Datuen segurtasuna"
@@ -1993,8 +2075,8 @@ msgid ""
 "storage is entirely secure."
 msgstr ""
 "Segurtasun-neurriak ezartzen ditugu zure datu pertsonalak baimenik gabe "
-"erabiltzetik babesteko. Hala ere, ez dago erasoei huts egin ezin dien sistemarik."
-
+"erabiltzetik babesteko. Hala ere, ez dago erasoei huts egin ezin dien "
+"sistemarik."
 
 #: .\registration\templates\privacy_policy.html:74
 msgid "10. Your Rights"
@@ -2006,7 +2088,8 @@ msgstr "GDPR-ren arabera, hurrengo eskubieak daukazu:"
 
 #: .\registration\templates\privacy_policy.html:79
 msgid "a. Right to Access: You can request access to your personal data."
-msgstr "a. Sarbide Eskubidea: Zure datu pertsonaletarako sarbidea eska dezakezu."
+msgstr ""
+"a. Sarbide Eskubidea: Zure datu pertsonaletarako sarbidea eska dezakezu."
 
 #: .\registration\templates\privacy_policy.html:82
 msgid ""
@@ -2022,30 +2105,35 @@ msgid ""
 "d. Right to Restriction of Processing: You can request limitations on data "
 "processing."
 msgstr ""
-"d. Datuak prozesatzeko murrizketa-eskubidea: Zure datuak prozesatzeko orduan"
-" mugak ezar ditzakezu."
-
+"d. Datuak prozesatzeko murrizketa-eskubidea: Zure datuak prozesatzeko orduan "
+"mugak ezar ditzakezu."
 
 #: .\registration\templates\privacy_policy.html:91
 msgid ""
 "e. Right to Data Portability: You can request your data in a structured, "
 "commonly used format."
 msgstr ""
-"e. Portabilitate Eskubidea: Zure datuak eska ditzakezu formatu egituratu eta estandar batean."
+"e. Portabilitate Eskubidea: Zure datuak eska ditzakezu formatu egituratu eta "
+"estandar batean."
 
 #: .\registration\templates\privacy_policy.html:94
 msgid "f. Right to Object: You can object to the processing of your data."
-msgstr "f. Aurka egiteko eskubidea: Zure datuak prozesatzearen aurka egin dezakezu."
+msgstr ""
+"f. Aurka egiteko eskubidea: Zure datuak prozesatzearen aurka egin dezakezu."
 
 #: .\registration\templates\privacy_policy.html:97
 msgid ""
 "g. Right to Withdraw Consent: If processing is based on consent, you can "
 "withdraw it at any time."
-msgstr "g. Baimena kentzeko eskubidea: Interesatuak edozein unetan baimena kentzeko eskubidea izango du."
+msgstr ""
+"g. Baimena kentzeko eskubidea: Interesatuak edozein unetan baimena kentzeko "
+"eskubidea izango du."
 
 #: .\registration\templates\privacy_policy.html:100
 msgid "To exercise your rights, please contact us at paquinho89@gmail.com."
-msgstr "Zure eskubideak erabiltzeko, jarri harremanetan helbide elektroniko honetan: paquinho89@gmail.com"
+msgstr ""
+"Zure eskubideak erabiltzeko, jarri harremanetan helbide elektroniko honetan: "
+"paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:102
 msgid "11. Contact Us"
@@ -2056,7 +2144,8 @@ msgid ""
 "If you have questions or concerns about this Privacy Policy or our data "
 "practices, please contact us at paquinho89@gmail.com."
 msgstr ""
-"Pribatutasun-politika honi buruzko galderarik baduzu, jar zaitez harremanetan helbide elektroniko honetan: paquinho89@gmail.com"
+"Pribatutasun-politika honi buruzko galderarik baduzu, jar zaitez "
+"harremanetan helbide elektroniko honetan: paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:106
 msgid "12. Changes to this Privacy Policy"
@@ -2067,18 +2156,21 @@ msgid ""
 "We reserve the right to modify this Privacy Policy at any time. Please "
 "review it periodically for updates."
 msgstr ""
-"Pribatutasun-politika hau edozein unetan aldatzeko eskubidea gordetzen dugu. Mesedez, berrikusi aldian behin eguneratze berriak izanez gero."
-
+"Pribatutasun-politika hau edozein unetan aldatzeko eskubidea gordetzen dugu. "
+"Mesedez, berrikusi aldian behin eguneratze berriak izanez gero."
 
 #: .\registration\templates\privacy_policy.html:110
 msgid "This Privacy Policy was last updated on 01-Jan-2024."
-msgstr "Pribatutasun-politika honen azken eguneraketaren data honako hau da: 2024ko urtarrilak 01"
+msgstr ""
+"Pribatutasun-politika honen azken eguneraketaren data honako hau da: 2024ko "
+"urtarrilak 01"
 
 #: .\registration\templates\profile_account\delete_account.html:19
 #: .\registration\templates\profile_account\password_data.html:19
 #: .\registration\templates\profile_account\personal_data.html:19
-msgid "Personal Data"
-msgstr "Datu pertsonalak"
+#: .\terrameiga\static\templates\base\nav_bar.html:29
+msgid "Data"
+msgstr "Datu"
 
 #: .\registration\templates\profile_account\delete_account.html:25
 #: .\registration\templates\profile_account\delete_account.html:37
@@ -2132,83 +2224,80 @@ msgstr "Izena"
 msgid "Update your data"
 msgstr "Datuak eguneratu"
 
-#: .\registration\views.py:59
+#: .\registration\views.py:64
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
-msgstr ""
-"Zoaz zure e-mailera eta egiaztatu zure kontua. Mila esker!"
+msgstr "Zoaz zure e-mailera eta egiaztatu zure kontua. Mila esker!"
 
-#: .\registration\views.py:67 .\registration\views.py:212
-#: .\registration\views.py:313
+#: .\registration\views.py:72 .\registration\views.py:280
+#: .\registration\views.py:357
 msgid "Check the below errors and try again!"
 msgstr "Egiaztatu akatsak eta saiatu berriro!"
 
-#: .\registration\views.py:104
+#: .\registration\views.py:111
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
-msgstr "Zure kontua sortu egin da. Eskerrik asko abentura honetan parte hartzeagatik!"
+msgstr ""
+"Zure kontua sortu egin da. Eskerrik asko abentura honetan parte hartzeagatik!"
 
-#: .\registration\views.py:109
+#: .\registration\views.py:116
 msgid "You have been logged out!"
 msgstr "Zure saioa itxi egin da!"
 
-#: .\registration\views.py:149
+#: .\registration\views.py:156
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "Ongi etorri! Orain bidaiaren eduki guztiaz goza dezakezu."
 
-#: .\registration\views.py:158
+#: .\registration\views.py:165
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
-msgstr "Ez dago kredentzial horiek dituen erabiltzailerik. Saiatu berriro edo sortu kontu berri bat"
+msgstr ""
+"Ez dago kredentzial horiek dituen erabiltzailerik. Saiatu berriro edo sortu "
+"kontu berri bat"
 
-#: .\registration\views.py:187
-msgid "Your personal data has been updated"
-msgstr "Zure datu pertsonalak eguneratu egin dira"
-
-#: .\registration\views.py:192
-msgid "The data could not be updated. Please check the below errors"
-msgstr "Datuak ezin izan dira eguneratu. Mesedez, akatzak konprobatu"
-
-#: .\registration\views.py:205
-msgid "Your password has been updated!"
-msgstr "Zure pasahitza eguneratu egin da!"
-
-#: .\registration\views.py:251
+#: .\registration\views.py:211
 msgid "An email was sent to your email inbox"
 msgstr "Email bat bidali dizugu zure posta elektronikora"
 
-#: .\registration\views.py:254
+#: .\registration\views.py:214
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
-msgstr "Sartutako helbide elektronikoa ez dago gure datu-basean. Sortu kontu berri bat."
+msgstr ""
+"Sartutako helbide elektronikoa ez dago gure datu-basean. Sortu kontu berri "
+"bat."
 
-#: .\registration\views.py:258
+#: .\registration\views.py:218
 msgid "The email is not valid"
 msgstr "Sartutako emaila ez du balio"
 
-#: .\registration\views.py:308
+#: .\registration\views.py:275
 msgid "Your password has been changed"
 msgstr "Zure pasahitza eguneratu egin da"
 
-#: .\registration\views.py:331
+#: .\registration\views.py:302
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Zure kontua ezabatu egin da. Espero dezagun laster hemen ikustea!"
 
-#: .\registration\views.py:336 .\registration\views.py:338
+#: .\registration\views.py:307 .\registration\views.py:309
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
-msgstr "Mesedez, idatzi \"terrameiga\". Testuak letra xehez idatzita egon behar du, eta ez du komatxorik eraman behar."
+msgstr ""
+"Mesedez, idatzi \"terrameiga\". Testuak letra xehez idatzita egon behar du, "
+"eta ez du komatxorik eraman behar."
 
-#: .\terrameiga\settings.py:165 .\terrameiga\settings_deployment.py:176
-msgid "Basque"
-msgstr "Euskera"
+#: .\registration\views.py:332
+msgid "Your personal data has been updated"
+msgstr "Zure datu pertsonalak eguneratu egin dira"
 
-#: .\terrameiga\static\templates\base\footer_non_registration.html:44
-#: .\terrameiga\static\templates\base\footer_registration.html:35
-msgid "Dark Mode"
-msgstr "Iluna"
+#: .\registration\views.py:337
+msgid "The data could not be updated. Please check the below errors"
+msgstr "Datuak ezin izan dira eguneratu. Mesedez, akatzak konprobatu"
+
+#: .\registration\views.py:350
+msgid "Your password has been updated!"
+msgstr "Zure pasahitza eguneratu egin da!"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
@@ -2217,10 +2306,6 @@ msgstr "Hasiera"
 #: .\terrameiga\static\templates\base\nav_bar.html:26
 msgid "Pictures"
 msgstr "Argazkiak"
-
-#: .\terrameiga\static\templates\base\nav_bar.html:29
-msgid "Data"
-msgstr "Datuak"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:32
 msgid "Team"

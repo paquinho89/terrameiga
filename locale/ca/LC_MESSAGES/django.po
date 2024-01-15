@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 20:43+0100\n"
+"POT-Creation-Date: 2024-01-15 16:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,24 +23,29 @@ msgid "Write here your comment"
 msgstr "Escrigui aquí el seu comentari"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
+#: .\terrameiga\settings.py:173 .\terrameiga\settings_local.py:162
 msgid "Spanish"
 msgstr "Espanyol"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
+#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
 msgid "English"
 msgstr "Anglès"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
+#: .\terrameiga\settings.py:174 .\terrameiga\settings_local.py:163
 msgid "Galician"
 msgstr "Gallec"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
+#: .\terrameiga\settings.py:175 .\terrameiga\settings_local.py:164
 msgid "Catalan"
 msgstr "Català"
+
+#: .\bicicleteiros\forms.py:30 .\registration\models.py:17
+#: .\terrameiga\settings.py:176 .\terrameiga\settings_local.py:165
+msgid "Basque"
+msgstr "Basc"
 
 #: .\bicicleteiros\static\lists\country_list.py:7
 msgid "Afghanistan"
@@ -979,6 +984,7 @@ msgid "Population:"
 msgstr "Població:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:41
 msgid "people"
 msgstr "persones"
 
@@ -1107,6 +1113,12 @@ msgstr "Llenguatge"
 msgid "Light Mode"
 msgstr "Mode de llum"
 
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:270
+#: .\terrameiga\static\templates\base\footer_non_registration.html:44
+#: .\terrameiga\static\templates\base\footer_registration.html:35
+msgid "Dark Mode"
+msgstr "Mode fosc"
+
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:272
 msgid "Supported by:"
 msgstr "Recolzat per:"
@@ -1197,6 +1209,126 @@ msgstr "Dades del viatge - Informe complet"
 #: .\terrameiga\static\templates\base\nav_bar.html:23
 msgid "Videos"
 msgstr "Vídeos"
+
+#: .\bicicleteiros\static\templates\people.html:27
+msgid "Amaia & Mario"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:30
+msgid ""
+"Sports and Adventure lovers, they like travelling and immerse themselves in "
+"the culture of the country. They own an amazing sports store where you can "
+"gear up for your next adventure or for your day-to-day"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:33
+msgid ""
+"They are currently collaborating on a solidarity project ('Association Amal "
+"Khamlia'), which promotes the gender equality between children in a small "
+"hamlet in the Sahara Desert. For more information about the project,"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:34
+msgid "Watch vídeo."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:37
+msgid ""
+"They are one of the contributors to this journey, providing the necessary "
+"gear to stay dry and warm during nights."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:59
+msgid ""
+"An environmental scientist by training, a Public Health and Epidemiology "
+"Technician by profession, and a writer of terror and fantasy stories in his "
+"free time. You can find him on"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:60
+msgid "Twitter/X as @Oscar_Calleja."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:61
+msgid ""
+"You can also download some of the books he has been involved in for free "
+"clicking on the following links:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:76
+msgid "He is responsible of Basque translations on terrameiga.bike"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:93
+msgid "Nova Era pipe band"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:96
+msgid ""
+"Musical ensemble that emerge as an alternative to the standard musical style "
+"of Galician pipe bands, mainly distinguishing itself in terms of "
+"instrumentation and repertoire."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:99
+msgid ""
+"They have nearly 10 years of history, during which it's worth highlighting "
+"the release of the CD 'Rumbo NE' and countless performances and activities "
+"they carry out in the town where they are based."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:102
+msgid ""
+"They are currently immersed in the creation of a commemorative documentary "
+"celebrating the band's 10-year anniversary, which will be premiere at the "
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:103
+msgid "Short Film Festival of Verín 2024 (FIC)"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:104
+msgid "For more information visit:"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:107
+msgid "It is responsible for providing the soundtrack to this journey."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:127
+msgid ""
+"Retired by profession, a loving father and evena better husband; Jaume is a "
+"passionate cyclist who wil be part of the journey in the Spain-France border"
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:130
+msgid ""
+"He loves paddle tennis, going to Galicia in his camper van and going on "
+"hiking. Jaume is a true bike commuter, as it is his main way of "
+"transportation in the city he lives."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:133
+msgid ""
+"He is the responsible of catalan translation on terrameiga.bike and he will "
+"be part of the route for some time."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:159
+msgid "Responsible, organized, methodical and a big fan of Baskonia."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:162
+msgid ""
+"He has a dog named Bimba whom he takes for a walk every day and cares for "
+"with great affection."
+msgstr ""
+
+#: .\bicicleteiros\static\templates\people.html:165
+msgid ""
+"Alberto is in charge of social media and the edition of the videos which "
+"will be released perdiodically"
+msgstr ""
 
 #: .\bicicleteiros\static\templates\project_presentation.html:17
 msgid "Bike traveller & web developer"
@@ -2010,8 +2142,9 @@ msgstr ""
 #: .\registration\templates\profile_account\delete_account.html:19
 #: .\registration\templates\profile_account\password_data.html:19
 #: .\registration\templates\profile_account\personal_data.html:19
-msgid "Personal Data"
-msgstr "Dades Personals"
+#: .\terrameiga\static\templates\base\nav_bar.html:29
+msgid "Data"
+msgstr "Dades"
 
 #: .\registration\templates\profile_account\delete_account.html:25
 #: .\registration\templates\profile_account\delete_account.html:37
@@ -2065,32 +2198,32 @@ msgstr "Nom"
 msgid "Update your data"
 msgstr "Actualitzar les dades"
 
-#: .\registration\views.py:59
+#: .\registration\views.py:64
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vagi al seu email i verifiqui el seu compte. ¡Gràcies!"
 
-#: .\registration\views.py:67 .\registration\views.py:212
-#: .\registration\views.py:313
+#: .\registration\views.py:72 .\registration\views.py:280
+#: .\registration\views.py:357
 msgid "Check the below errors and try again!"
 msgstr "¡Comprovi els errors i intenti-ho de nou!"
 
-#: .\registration\views.py:104
+#: .\registration\views.py:111
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr ""
 "El seu compte ha estat creat. ¡Gracies per formar part d’aquesta aventura!"
 
-#: .\registration\views.py:109
+#: .\registration\views.py:116
 msgid "You have been logged out!"
 msgstr "¡La seva sessió ha tancat!"
 
-#: .\registration\views.py:149
+#: .\registration\views.py:156
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Benvingut!, Ara pot gaudir de tot el contingut del viatge."
 
-#: .\registration\views.py:158
+#: .\registration\views.py:165
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2098,55 +2231,46 @@ msgstr ""
 "No existeix cap usuari amb aquests credencials. Intenti-ho de nou o creeu un "
 "compte nou."
 
-#: .\registration\views.py:187
-msgid "Your personal data has been updated"
-msgstr "Les vostres dades personals s’han actualitzat"
-
-#: .\registration\views.py:192
-msgid "The data could not be updated. Please check the below errors"
-msgstr "Les dades no s’han pogut actualitzar. Si us plau, comprovi els errors"
-
-#: .\registration\views.py:205
-msgid "Your password has been updated!"
-msgstr "La seva contrasenya ha estat actualitzada."
-
-#: .\registration\views.py:251
+#: .\registration\views.py:211
 msgid "An email was sent to your email inbox"
 msgstr "L’hi hem enviat un email al seu correu electrònic"
 
-#: .\registration\views.py:254
+#: .\registration\views.py:214
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "L’email introduït no existeix a la nostre base de dades. Creeu un compte nou."
 
-#: .\registration\views.py:258
+#: .\registration\views.py:218
 msgid "The email is not valid"
 msgstr "L’email introduït no és vàlid"
 
-#: .\registration\views.py:308
+#: .\registration\views.py:275
 msgid "Your password has been changed"
 msgstr "La vostre contrasenya ha estat actualizada"
 
-#: .\registration\views.py:331
+#: .\registration\views.py:302
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "El seu compte ha estat eliminat. Esperem veure-ho aviat per aquí"
 
-#: .\registration\views.py:336 .\registration\views.py:338
+#: .\registration\views.py:307 .\registration\views.py:309
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Si us plau, escrigui ‘terrameiga’. El text ha d’estar en minúscula i no ha "
 "de portar cometes"
 
-#: .\terrameiga\settings.py:165 .\terrameiga\settings_deployment.py:176
-msgid "Basque"
-msgstr "Basc"
+#: .\registration\views.py:332
+msgid "Your personal data has been updated"
+msgstr "Les vostres dades personals s’han actualitzat"
 
-#: .\terrameiga\static\templates\base\footer_non_registration.html:44
-#: .\terrameiga\static\templates\base\footer_registration.html:35
-msgid "Dark Mode"
-msgstr "Mode fosc"
+#: .\registration\views.py:337
+msgid "The data could not be updated. Please check the below errors"
+msgstr "Les dades no s’han pogut actualitzar. Si us plau, comprovi els errors"
+
+#: .\registration\views.py:350
+msgid "Your password has been updated!"
+msgstr "La seva contrasenya ha estat actualitzada."
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
@@ -2155,10 +2279,6 @@ msgstr "Inici"
 #: .\terrameiga\static\templates\base\nav_bar.html:26
 msgid "Pictures"
 msgstr "Fotos"
-
-#: .\terrameiga\static\templates\base\nav_bar.html:29
-msgid "Data"
-msgstr "Dades"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:32
 msgid "Team"

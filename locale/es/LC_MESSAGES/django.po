@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-13 18:28+0100\n"
+"POT-Creation-Date: 2024-01-15 16:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_deployment.py:173
+#: .\terrameiga\settings.py:173 .\terrameiga\settings_local.py:162
 msgid "Spanish"
 msgstr "Castellano"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_deployment.py:172
+#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
 msgid "English"
 msgstr "Inglés"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:163 .\terrameiga\settings_deployment.py:174
+#: .\terrameiga\settings.py:174 .\terrameiga\settings_local.py:163
 msgid "Galician"
 msgstr "Gallego"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:164 .\terrameiga\settings_deployment.py:175
+#: .\terrameiga\settings.py:175 .\terrameiga\settings_local.py:164
 msgid "Catalan"
 msgstr "Catalán"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:165 .\terrameiga\settings_deployment.py:176
+#: .\terrameiga\settings.py:176 .\terrameiga\settings_local.py:165
 msgid "Basque"
 msgstr "Euskera"
 
@@ -988,6 +988,7 @@ msgid "Population:"
 msgstr "Población"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:40
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:41
 msgid "people"
 msgstr "personas"
 
@@ -1346,21 +1347,25 @@ msgstr ""
 "Es el encargado de las traducciones al catalán y de formar parte de la ruta "
 "por algún tiempo."
 
-#: .\bicicleteiros\static\templates\people.html:160
+#: .\bicicleteiros\static\templates\people.html:159
 msgid "Responsible, organized, methodical and a big fan of Baskonia."
 msgstr "Responsable, organizado, metódico y gran seguidor del Baskonia."
 
-#: .\bicicleteiros\static\templates\people.html:164
+#: .\bicicleteiros\static\templates\people.html:162
 msgid ""
 "He has a dog named Bimba whom he takes for a walk every day and cares for "
 "with great affection."
-msgstr "Tiene una perra llamada Bimba a la que saca a pasear todos los días y que cuida con mucho cariño."
+msgstr ""
+"Tiene una perra llamada Bimba a la que saca a pasear todos los días y que "
+"cuida con mucho cariño."
 
-#: .\bicicleteiros\static\templates\people.html:168
+#: .\bicicleteiros\static\templates\people.html:165
 msgid ""
 "Alberto is in charge of social media and the edition of the videos which "
 "will be released perdiodically"
-msgstr "Alberto es el encargado de las redes sociales y de la edición de los vídeos que se irán lanzando de forma periódica."
+msgstr ""
+"Alberto es el encargado de las redes sociales y de la edición de los vídeos "
+"que se irán lanzando de forma periódica."
 
 #: .\bicicleteiros\static\templates\project_presentation.html:17
 msgid "Bike traveller & web developer"
@@ -1591,69 +1596,73 @@ msgstr "Qué pido?"
 msgid "A bike with the following characteristics:"
 msgstr "Una bicicleta con las siguientes características:"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:226
+#: .\bicicleteiros\static\templates\project_presentation.html:225
+msgid "700c wheelset"
+msgstr "un grupo de llantas de 700c"
+
+#: .\bicicleteiros\static\templates\project_presentation.html:227
 msgid "Aluminium or steel frame"
 msgstr "Cuadro de aluminio o acero"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:227
+#: .\bicicleteiros\static\templates\project_presentation.html:228
 msgid "Screw holes on: front fork, down tube, seat tube, and seat stays"
 msgstr ""
 "Ojales en: la horquilla, tubo inferior del cuadro, tubo del asiento, tubo "
 "superior del cuadro y vainas traseras"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:228
+#: .\bicicleteiros\static\templates\project_presentation.html:229
 msgid "Mechanical disk brakes or mechanical rim brakes"
 msgstr "Frenos de disco mecánicos o de zapata"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:229
+#: .\bicicleteiros\static\templates\project_presentation.html:230
 msgid "700c - 29 inches wheels"
 msgstr "Ruedas de 700c o 29 pulgadas"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:230
+#: .\bicicleteiros\static\templates\project_presentation.html:231
 msgid "33c tyre or thicker"
 msgstr "Neumáticos con un ancho superior a 33c"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:231
+#: .\bicicleteiros\static\templates\project_presentation.html:232
 msgid "Drop handlebar with rounded shape"
 msgstr "Manillar de carreras o de gravel con la forma redonda"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:232
+#: .\bicicleteiros\static\templates\project_presentation.html:233
 msgid "Cables outside of the frame"
 msgstr "Los cables deben de ir por fuera del cuadro"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:233
+#: .\bicicleteiros\static\templates\project_presentation.html:234
 msgid "If possible, a single chainring groupset"
 msgstr "Si es posible, monoplato"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:234
+#: .\bicicleteiros\static\templates\project_presentation.html:235
 msgid "Size: XL"
 msgstr "Talla: XL"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:243
+#: .\bicicleteiros\static\templates\project_presentation.html:244
 msgid "Future projects"
 msgstr "Proyectos para el futuro"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:247
+#: .\bicicleteiros\static\templates\project_presentation.html:248
 msgid "Crossing Africa by bike"
 msgstr "Cruzar África en bicicleta"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:248
+#: .\bicicleteiros\static\templates\project_presentation.html:249
 msgid "Crossing America by bike"
 msgstr "Cruzar América en bicicleta"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:249
+#: .\bicicleteiros\static\templates\project_presentation.html:250
 msgid "Creating the terrameiga.bike e-commerce"
 msgstr "Crear una tienda online en terrameiga.bike"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:250
+#: .\bicicleteiros\static\templates\project_presentation.html:251
 msgid "Organizing ultracycling races between Galicia and Portugal"
 msgstr "Organizar carreras de ultraciclismo entre Galicia y Portugal"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:251
+#: .\bicicleteiros\static\templates\project_presentation.html:252
 msgid "Creating tools for the users"
 msgstr "Crear herramientas para los usuarios"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:253
+#: .\bicicleteiros\static\templates\project_presentation.html:254
 msgid ""
 "A tool which gives you the max speed and max slope depending on the groupset "
 "chosen by the user (This tool is already developed, calculated and "
@@ -1663,7 +1672,7 @@ msgstr ""
 "puede llegar a subir el usuario con los diferentes desarrollos que ofrecen "
 "los fabricantes en sus grupos"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:255
+#: .\bicicleteiros\static\templates\project_presentation.html:256
 msgid ""
 "A tool which analyze the agility, ergonomic and speed of the bike based on "
 "the frame geometry"
@@ -2198,8 +2207,9 @@ msgstr ""
 #: .\registration\templates\profile_account\delete_account.html:19
 #: .\registration\templates\profile_account\password_data.html:19
 #: .\registration\templates\profile_account\personal_data.html:19
-msgid "Personal Data"
-msgstr "Datos Personales"
+#: .\terrameiga\static\templates\base\nav_bar.html:29
+msgid "Data"
+msgstr "Datos"
 
 #: .\registration\templates\profile_account\delete_account.html:25
 #: .\registration\templates\profile_account\delete_account.html:37
@@ -2253,31 +2263,31 @@ msgstr "Nombre"
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:59
+#: .\registration\views.py:64
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:67 .\registration\views.py:212
-#: .\registration\views.py:313
+#: .\registration\views.py:72 .\registration\views.py:280
+#: .\registration\views.py:357
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:104
+#: .\registration\views.py:111
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:109
+#: .\registration\views.py:116
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:149
+#: .\registration\views.py:156
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:158
+#: .\registration\views.py:165
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2285,48 +2295,48 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:187
-msgid "Your personal data has been updated"
-msgstr "Sus datos personales se han actualizado"
-
-#: .\registration\views.py:192
-msgid "The data could not be updated. Please check the below errors"
-msgstr ""
-"Los datos no se han podido actualizar. Por favor, compruebe los errores"
-
-#: .\registration\views.py:205
-msgid "Your password has been updated!"
-msgstr "Su contraseña ha sido actualizada."
-
-#: .\registration\views.py:251
+#: .\registration\views.py:211
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:254
+#: .\registration\views.py:214
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "El email introducido no existe en nuestra base de datos. Cree una cuenta "
 "nueva."
 
-#: .\registration\views.py:258
+#: .\registration\views.py:218
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:308
+#: .\registration\views.py:275
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
 
-#: .\registration\views.py:331
+#: .\registration\views.py:302
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:336 .\registration\views.py:338
+#: .\registration\views.py:307 .\registration\views.py:309
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
+
+#: .\registration\views.py:332
+msgid "Your personal data has been updated"
+msgstr "Sus datos personales se han actualizado"
+
+#: .\registration\views.py:337
+msgid "The data could not be updated. Please check the below errors"
+msgstr ""
+"Los datos no se han podido actualizar. Por favor, compruebe los errores"
+
+#: .\registration\views.py:350
+msgid "Your password has been updated!"
+msgstr "Su contraseña ha sido actualizada."
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
@@ -2335,10 +2345,6 @@ msgstr "Inicio"
 #: .\terrameiga\static\templates\base\nav_bar.html:26
 msgid "Pictures"
 msgstr "Fotos"
-
-#: .\terrameiga\static\templates\base\nav_bar.html:29
-msgid "Data"
-msgstr "Datos"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:32
 msgid "Team"
