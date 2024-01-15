@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-15 16:38+0100\n"
+"POT-Creation-Date: 2024-01-15 16:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:173 .\terrameiga\settings_local.py:162
+#: .\terrameiga\settings.py:162 .\terrameiga\settings_development.py:173
 msgid "Spanish"
 msgstr "Castellano"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
+#: .\terrameiga\settings.py:161 .\terrameiga\settings_development.py:172
 msgid "English"
 msgstr "Inglés"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:174 .\terrameiga\settings_local.py:163
+#: .\terrameiga\settings.py:163 .\terrameiga\settings_development.py:174
 msgid "Galician"
 msgstr "Gallego"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:175 .\terrameiga\settings_local.py:164
+#: .\terrameiga\settings.py:164 .\terrameiga\settings_development.py:175
 msgid "Catalan"
 msgstr "Catalán"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:176 .\terrameiga\settings_local.py:165
+#: .\terrameiga\settings.py:165 .\terrameiga\settings_development.py:176
 msgid "Basque"
 msgstr "Euskera"
 
@@ -995,6 +995,12 @@ msgstr "personas"
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
 msgid "Density population:"
 msgstr "Densidad poblacional:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:43
+#, fuzzy
+#| msgid "people"
+msgid "people per"
+msgstr "personas por"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:44
 msgid "Life expectancy:"
