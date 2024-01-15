@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-15 16:53+0100\n"
+"POT-Creation-Date: 2024-01-15 17:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:162 .\terrameiga\settings_development.py:173
+#: .\terrameiga\settings.py:173 .\terrameiga\settings_local.py:162
 msgid "Spanish"
 msgstr "Castellano"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:161 .\terrameiga\settings_development.py:172
+#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
 msgid "English"
 msgstr "Inglés"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:163 .\terrameiga\settings_development.py:174
+#: .\terrameiga\settings.py:174 .\terrameiga\settings_local.py:163
 msgid "Galician"
 msgstr "Gallego"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:164 .\terrameiga\settings_development.py:175
+#: .\terrameiga\settings.py:175 .\terrameiga\settings_local.py:164
 msgid "Catalan"
 msgstr "Catalán"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:165 .\terrameiga\settings_development.py:176
+#: .\terrameiga\settings.py:176 .\terrameiga\settings_local.py:165
 msgid "Basque"
 msgstr "Euskera"
 
@@ -1306,16 +1306,18 @@ msgstr ""
 "villa donde están asentados."
 
 #: .\bicicleteiros\static\templates\people.html:102
+#, fuzzy
+#| msgid ""
+#| "They are currently immersed in the creation of a commemorative "
+#| "documentary celebrating the band's 10-year anniversary, which will be "
+#| "premiere at the "
 msgid ""
 "They are currently immersed in the creation of a commemorative documentary "
 "celebrating the band's 10-year anniversary, which will be premiere at the "
+"Short Film Festival of Verín 2024"
 msgstr ""
 "Actualmente están inmersos en la creación de un documental conmemorativo de "
-"los 10 años de la banda que será estrenado en el"
-
-#: .\bicicleteiros\static\templates\people.html:103
-msgid "Short Film Festival of Verín 2024 (FIC)"
-msgstr "Festival de Curtas de Verín de 2024 (FIC)"
+"los 10 años de la banda que será estrenado en el Festival de Cortos de Verín 2024"
 
 #: .\bicicleteiros\static\templates\people.html:104
 msgid "For more information visit:"
@@ -1567,106 +1569,109 @@ msgid "Company logos on the footer of all the terrameiga.bike sites"
 msgstr "Logo de la compañía en todos los pies de página de terrameiga.bike"
 
 #: .\bicicleteiros\static\templates\project_presentation.html:208
+#, fuzzy
+#| msgid ""
+#| "Placing a picture of the bike and myself on terrameiga.bike home page and "
+#| "on social media profile pictures"
 msgid ""
-"Placing a picture of the bike and myself on terrameiga.bike home page and on "
-"social media profile pictures"
+"Placing a picture of the wheels and myself on terrameiga.bike home page and "
+"on social media profile pictures"
 msgstr ""
 "Foto de la bicicleta y mía en la página de inicio de terrameiga.bike y en "
 "las fotos de perfil de las redes sociales"
 
 #: .\bicicleteiros\static\templates\project_presentation.html:209
-msgid "Making a video exclusively to talk about the bike"
-msgstr "Grabación de un vídeo hablando solo de la bicicleta"
-
-#: .\bicicleteiros\static\templates\project_presentation.html:210
+#, fuzzy
+#| msgid ""
+#| "Uploading pictures on Facebook, Instagram and terrameiga.bike with the "
+#| "bike"
 msgid ""
-"Uploading pictures on Facebook, Instagram and terrameiga.bike with the bike"
+"Uploading pictures on Facebook, Instagram and terrameiga.bike with the wheels"
 msgstr "Fotos de la bicicleta y mía en Facebook, Instagram y terrameiga.bike"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:211
-msgid "The bike would appear in all the videos made each second week"
+#: .\bicicleteiros\static\templates\project_presentation.html:210
+#, fuzzy
+#| msgid "The bike would appear in all the videos made each second week"
+msgid ""
+"The wheels or the logo would appear in all the videos made each second week"
 msgstr ""
 "La bicicleta aparecerá en todos los vídeos que se suban cada segunda semana"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:212
-msgid "Visiting the headquarters with the bike for Social Media"
-msgstr "Visita con la bicicleta a la sede central"
-
-#: .\bicicleteiros\static\templates\project_presentation.html:221
+#: .\bicicleteiros\static\templates\project_presentation.html:219
 msgid "What do I ask for?"
 msgstr "Qué pido?"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:224
+#: .\bicicleteiros\static\templates\project_presentation.html:222
 msgid "A bike with the following characteristics:"
 msgstr "Una bicicleta con las siguientes características:"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:225
+#: .\bicicleteiros\static\templates\project_presentation.html:223
 msgid "700c wheelset"
 msgstr "un grupo de llantas de 700c"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:227
+#: .\bicicleteiros\static\templates\project_presentation.html:225
 msgid "Aluminium or steel frame"
 msgstr "Cuadro de aluminio o acero"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:228
+#: .\bicicleteiros\static\templates\project_presentation.html:226
 msgid "Screw holes on: front fork, down tube, seat tube, and seat stays"
 msgstr ""
 "Ojales en: la horquilla, tubo inferior del cuadro, tubo del asiento, tubo "
 "superior del cuadro y vainas traseras"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:229
+#: .\bicicleteiros\static\templates\project_presentation.html:227
 msgid "Mechanical disk brakes or mechanical rim brakes"
 msgstr "Frenos de disco mecánicos o de zapata"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:230
+#: .\bicicleteiros\static\templates\project_presentation.html:228
 msgid "700c - 29 inches wheels"
 msgstr "Ruedas de 700c o 29 pulgadas"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:231
+#: .\bicicleteiros\static\templates\project_presentation.html:229
 msgid "33c tyre or thicker"
 msgstr "Neumáticos con un ancho superior a 33c"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:232
+#: .\bicicleteiros\static\templates\project_presentation.html:230
 msgid "Drop handlebar with rounded shape"
 msgstr "Manillar de carreras o de gravel con la forma redonda"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:233
+#: .\bicicleteiros\static\templates\project_presentation.html:231
 msgid "Cables outside of the frame"
 msgstr "Los cables deben de ir por fuera del cuadro"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:234
+#: .\bicicleteiros\static\templates\project_presentation.html:232
 msgid "If possible, a single chainring groupset"
 msgstr "Si es posible, monoplato"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:235
+#: .\bicicleteiros\static\templates\project_presentation.html:233
 msgid "Size: XL"
 msgstr "Talla: XL"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:244
+#: .\bicicleteiros\static\templates\project_presentation.html:242
 msgid "Future projects"
 msgstr "Proyectos para el futuro"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:248
+#: .\bicicleteiros\static\templates\project_presentation.html:246
 msgid "Crossing Africa by bike"
 msgstr "Cruzar África en bicicleta"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:249
+#: .\bicicleteiros\static\templates\project_presentation.html:247
 msgid "Crossing America by bike"
 msgstr "Cruzar América en bicicleta"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:250
+#: .\bicicleteiros\static\templates\project_presentation.html:248
 msgid "Creating the terrameiga.bike e-commerce"
 msgstr "Crear una tienda online en terrameiga.bike"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:251
+#: .\bicicleteiros\static\templates\project_presentation.html:249
 msgid "Organizing ultracycling races between Galicia and Portugal"
 msgstr "Organizar carreras de ultraciclismo entre Galicia y Portugal"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:252
+#: .\bicicleteiros\static\templates\project_presentation.html:250
 msgid "Creating tools for the users"
 msgstr "Crear herramientas para los usuarios"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:254
+#: .\bicicleteiros\static\templates\project_presentation.html:252
 msgid ""
 "A tool which gives you the max speed and max slope depending on the groupset "
 "chosen by the user (This tool is already developed, calculated and "
@@ -1676,7 +1681,7 @@ msgstr ""
 "puede llegar a subir el usuario con los diferentes desarrollos que ofrecen "
 "los fabricantes en sus grupos"
 
-#: .\bicicleteiros\static\templates\project_presentation.html:256
+#: .\bicicleteiros\static\templates\project_presentation.html:254
 msgid ""
 "A tool which analyze the agility, ergonomic and speed of the bike based on "
 "the frame geometry"
