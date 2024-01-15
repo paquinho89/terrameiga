@@ -997,8 +997,6 @@ msgid "Density population:"
 msgstr "Densidad poblacional:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:43
-#, fuzzy
-#| msgid "people"
 msgid "people per"
 msgstr "personas por"
 
