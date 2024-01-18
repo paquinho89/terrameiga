@@ -11,8 +11,6 @@ from django.template.loader import render_to_string
 from django.contrib.sites.shortcuts import get_current_site
 
 
-
-
 #Estas 2 funcions son para cambiarlle o nome a foto do corredor e que aparezca guay no model do admin con outro nome
 
 def get_filename_extension (filepath):

@@ -1306,11 +1306,6 @@ msgstr ""
 "villa donde están asentados."
 
 #: .\bicicleteiros\static\templates\people.html:102
-#, fuzzy
-#| msgid ""
-#| "They are currently immersed in the creation of a commemorative "
-#| "documentary celebrating the band's 10-year anniversary, which will be "
-#| "premiere at the "
 msgid ""
 "They are currently immersed in the creation of a commemorative documentary "
 "celebrating the band's 10-year anniversary, which will be premiere at the "
@@ -1822,7 +1817,7 @@ msgstr "Cerrar"
 
 #: .\registration\templates\2_sign_up.html:92
 msgid "Do you have already an account? sign in into your account"
-msgstr "¿Ya tienes una cuenta? Incia sesión"
+msgstr "¿Ya tienes una cuenta? Inicia sesión"
 
 #: .\registration\templates\account_confirm_email_sent.html:17
 msgid "Email confirmation"

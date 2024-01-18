@@ -1302,11 +1302,6 @@ msgstr ""
 "amaigabeak."
 
 #: .\bicicleteiros\static\templates\people.html:102
-#, fuzzy
-#| msgid ""
-#| "They are currently immersed in the creation of a commemorative "
-#| "documentary celebrating the band's 10-year anniversary, which will be "
-#| "premiere at the "
 msgid ""
 "They are currently immersed in the creation of a commemorative documentary "
 "celebrating the band's 10-year anniversary, which will be premiere at the "
