@@ -1061,7 +1061,7 @@ msgid ""
 "this adventure and see all the content?"
 msgstr ""
 "Soc un cicloviatger que vaig fent un volt. ¿Vols formar part de l'aventura i "
-"gaudir de tot el contingut"
+"gaudir de tot el contingut?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
 #: .\bicicleteiros\views.py:328 .\bicicleteiros\views.py:418

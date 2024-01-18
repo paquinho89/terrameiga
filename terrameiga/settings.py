@@ -38,7 +38,6 @@ CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 
 CSRF_COOKIE_SECURE = False
 
 #Variable para activar o framework das alerts de django
-
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
 # Application definition
