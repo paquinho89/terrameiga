@@ -1217,7 +1217,7 @@ msgstr "Vídeos"
 
 #: .\bicicleteiros\static\templates\people.html:27
 msgid "Amaia & Mario"
-msgstr ""
+msgstr "Amaia i Mario"
 
 #: .\bicicleteiros\static\templates\people.html:30
 msgid ""
@@ -1225,6 +1225,8 @@ msgid ""
 "the culture of the country. They own an amazing sports store where you can "
 "gear up for your next adventure or for your day-to-day"
 msgstr ""
+"Apassionats de l’aventura i de l’esport, els encanta viatjar i endinsar-se en la cultura del país."
+"Tenen una espectacular botiga d’esports on podràs equipar-te per a la teva propera aventura o per el teu dia a dia."
 
 #: .\bicicleteiros\static\templates\people.html:33
 msgid ""
@@ -1232,16 +1234,19 @@ msgid ""
 "Khamlia'), which promotes the gender equality between children in a small "
 "hamlet in the Sahara Desert. For more information about the project,"
 msgstr ""
+"Actualment col-laboren en un projecte solidari (‘Association Amal Khamlia’) que promou la igualtat entre nenes i nens en un petit poble del Sàhara."
+"Per a més info del projecte" 
 
 #: .\bicicleteiros\static\templates\people.html:34
 msgid "Watch vídeo."
-msgstr ""
+msgstr "Veure vídeo"
 
 #: .\bicicleteiros\static\templates\people.html:37
 msgid ""
 "They are one of the contributors to this journey, providing the necessary "
 "gear to stay dry and warm during nights."
 msgstr ""
+"Es un dels col-laboradors d’aquest viatge, que proporciona el material necessari per no mullar-me i no passar fred a les nits" 
 
 #: .\bicicleteiros\static\templates\people.html:59
 msgid ""
@@ -1249,24 +1254,27 @@ msgid ""
 "Technician by profession, and a writer of terror and fantasy stories in his "
 "free time. You can find him on"
 msgstr ""
+"Ambientòlag de formació, Tècnic de Salut Pública i Epidemiologia de professió i escriptor de relats de fantasia i terror a les estones lliures. El pots trobar en"
 
 #: .\bicicleteiros\static\templates\people.html:60
 msgid "Twitter/X as @Oscar_Calleja."
-msgstr ""
+msgstr "Twitter/X como @Oscar_Calleja."
 
 #: .\bicicleteiros\static\templates\people.html:61
 msgid ""
 "You can also download some of the books he has been involved in for free "
 "clicking on the following links:"
 msgstr ""
+"També pots descarregar gratis alguns llibres en què ha participat a través dels següents enllaços:"
 
 #: .\bicicleteiros\static\templates\people.html:76
 msgid "He is responsible of Basque translations on terrameiga.bike"
 msgstr ""
+"És l’encarregat de fer les traduccions al euskera de terrameiga.bike"
 
 #: .\bicicleteiros\static\templates\people.html:93
 msgid "Nova Era pipe band"
-msgstr ""
+msgstr "Banda de Gaitas Nova Era"
 
 #: .\bicicleteiros\static\templates\people.html:96
 msgid ""
@@ -1274,6 +1282,7 @@ msgid ""
 "of Galician pipe bands, mainly distinguishing itself in terms of "
 "instrumentation and repertoire."
 msgstr ""
+"Agrupació musical que va néixer com una alternativa a l’estàndard musical de les bandes de gaites gallegues, diferenciant-se principalment en la instrumentació i el repertori."
 
 #: .\bicicleteiros\static\templates\people.html:99
 msgid ""
@@ -1281,30 +1290,33 @@ msgid ""
 "the release of the CD 'Rumbo NE' and countless performances and activities "
 "they carry out in the town where they are based."
 msgstr ""
+"Tenen gairabé 10 anys d’història en què cal destacar l’edició del CD rumb NE i inumerables actuacions i activitats que duen a terme a la vila on estan assentats."
 
 #: .\bicicleteiros\static\templates\people.html:102
 msgid ""
 "They are currently immersed in the creation of a commemorative documentary "
 "celebrating the band's 10-year anniversary, which will be premiere at the "
 msgstr ""
+"Actualment estan immersos en la creació d’un documental commemoratiu del 10 anys de la banda que serà estrenat al"
 
 #: .\bicicleteiros\static\templates\people.html:103
 msgid "Short Film Festival of Verín 2024 (FIC)"
-msgstr ""
+msgstr "Festival de Curtas de Verín de 2024 (FIC)"
 
 #: .\bicicleteiros\static\templates\people.html:104
 msgid "For more information visit:"
-msgstr ""
+msgstr "Per a mes info:"
 
 #: .\bicicleteiros\static\templates\people.html:107
 msgid "It is responsible for providing the soundtrack to this journey."
-msgstr ""
+msgstr "Es l’encarregada de posar la banda sonora d’aquest viatge."
 
 #: .\bicicleteiros\static\templates\people.html:127
 msgid ""
-"Retired by profession, a loving father and evena better husband; Jaume is a "
+"Retired by profession, a loving father and even a better husband; Jaume is a "
 "passionate cyclist who wil be part of the journey in the Spain-France border"
 msgstr ""
+"Veterà que gaudeix amb els esports a l’aire lliure. El Jaume és un apassionat de la bicicleta que formarà part del viatge a la zona d’Espanya-França."
 
 #: .\bicicleteiros\static\templates\people.html:130
 msgid ""
@@ -1312,28 +1324,33 @@ msgid ""
 "hiking. Jaume is a true bike commuter, as it is his main way of "
 "transportation in the city he lives."
 msgstr ""
+"Li encanta recòrrer Galicia amb la seva furgo camperitzada i fer rutes de senderisme."
+"El Jaume és tot un bicicleteiro, sent la bici el seu principal mitjà de desplaçament a la ciutat que resideix."
 
 #: .\bicicleteiros\static\templates\people.html:133
 msgid ""
 "He is the responsible of catalan translation on terrameiga.bike and he will "
 "be part of the route for some time."
 msgstr ""
+"Ell s’encarrega de las traduccions al català i formarà part de la ruta per algun temps"
 
 #: .\bicicleteiros\static\templates\people.html:159
 msgid "Responsible, organized, methodical and a big fan of Baskonia."
-msgstr ""
+msgstr "Responsable, organitzat, metòdic i gran seguidor del Baskonia."
 
 #: .\bicicleteiros\static\templates\people.html:162
 msgid ""
 "He has a dog named Bimba whom he takes for a walk every day and cares for "
 "with great affection."
 msgstr ""
+"Té una gossa anomanada Bimba a la qual treu a passejar cada dia i que cuida amb molt d’afecte."
 
 #: .\bicicleteiros\static\templates\people.html:165
 msgid ""
 "Alberto is in charge of social media and the edition of the videos which "
 "will be released perdiodically"
 msgstr ""
+"Alberto és l’encarregat de les xarxes socials i de l’edició dels videos que s’aniran llançant periòdicament."
 
 #: .\bicicleteiros\static\templates\project_presentation.html:17
 msgid "Bike traveller & web developer"

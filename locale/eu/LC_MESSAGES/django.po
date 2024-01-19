@@ -1319,7 +1319,7 @@ msgstr "Bidaia honi soinu-banda jartzeaz arduratzen dira."
 
 #: .\bicicleteiros\static\templates\people.html:127
 msgid ""
-"Retired by profession, a loving father and evena better husband; Jaume is a "
+"Retired by profession, a loving father and even a better husband; Jaume is a "
 "passionate cyclist who wil be part of the journey in the Spain-France border"
 msgstr ""
 "Lanbidez erretiratua, aita ona eta senar onena; Jaume bizikletazale "

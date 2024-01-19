@@ -1324,11 +1324,11 @@ msgstr "Es la encargada de poner la banda sonora a este viaje"
 
 #: .\bicicleteiros\static\templates\people.html:127
 msgid ""
-"Retired by profession, a loving father and evena better husband; Jaume is a "
+"Retired by profession, a loving father and even a better husband; Jaume is a "
 "passionate cyclist who wil be part of the journey in the Spain-France border"
 msgstr ""
-"Jubilado de profesión, buen padre y mejor marido; Jaume es un apasionado de "
-"la bicicleta que formará parte del viaje en la zona de España-Francia."
+"Veterano que disfruta con los deportes al aire libre;"
+"Jaume es un apasionado de la bicicleta que formará parte del viaje en la zona de España-Francia."
 
 #: .\bicicleteiros\static\templates\people.html:130
 msgid ""
@@ -1336,9 +1336,8 @@ msgid ""
 "hiking. Jaume is a true bike commuter, as it is his main way of "
 "transportation in the city he lives."
 msgstr ""
-"Le encanta el pádel, venir a Galicia con su furgo camperizada y hacer rutas "
-"de senderismo. Jaume es todo un bicicleteiro, siendo la bici su principal "
-"medio de desplazamiento en la ciudad en la que reside."
+"Le encanta recorrer Galicia con su furgo camperizada y hacer rutas de senderismo. "
+"Jaume es todo un bicicleteiro, siendo la bici su principal medio de desplazamiento en la ciudad en la que reside."
 
 #: .\bicicleteiros\static\templates\people.html:133
 msgid ""
