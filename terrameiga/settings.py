@@ -60,6 +60,9 @@ INSTALLED_APPS = [
     'storages',
     #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles
     'django.contrib.humanize',
+    #Esto é un archivo que está en terrameiga.middleware.py e que é o encargado de manexar errores que os customicei eu. Básicamente, cando hai un error redirixo a xente a 
+    #un html preparado por min (error.html)
+    'terrameiga.middleware.ErrorRedirectMiddleware',
 
 ]
 # This is to indicate to Django that the user model is now this custom model (CustomeUser) instead of the User model

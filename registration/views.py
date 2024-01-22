@@ -366,6 +366,6 @@ def password_update_view(request):
 
 
 
-def error_view(request, exception=None):
-    return render(request, 'error.html', status=404 if exception is None else 500)
+def error_view(request, language_code):
+    return render(request, 'error.html')
     
