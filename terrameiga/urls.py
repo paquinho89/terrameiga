@@ -18,7 +18,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, password_reset_sent_view, sign_up_email_validation_confirmation_view, error_view
+from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, password_reset_sent_view, sign_up_email_validation_confirmation_view
 from bicicleteiros.views import country_data_view, country_data_no_registered_view, iz_blog_portada_view, let_the_cycling_beging_blog_view, the_journey_to_the_journey_blog_view, preparation_preparation_blog_view, project_presentation_view, photos_view, videos_view, estadistica_plotly_view, estadistica_plotly_view_full_report
 from tools.views import max_speed_slope_tool_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
@@ -54,9 +54,6 @@ urlpatterns =   i18n_patterns (
     path('log_out/', log_out_view, name="log_out"),
     #AGRADECEMENTOS
     path('people/', TemplateView.as_view(template_name = "people.html"), name="people"),
-    #ERROR
-    #path('error/', TemplateView.as_view(template_name = "error.html"), name="error"),
-    path('error/', error_view, name='error_page'),
     #BLOG
     path('iz_blog/', iz_blog_portada_view, name="iz_blog"),
     path('iz_blog/let_the_cycling_begin/', let_the_cycling_beging_blog_view, name="let_the_cycling_begin"),

@@ -82,9 +82,6 @@ MIDDLEWARE = [
     # Failing that, it looks at the Accept-Language HTTP header. This header is sent by your browser and tells the server which language(s) you prefer, in order of priority. Django tries each language in the header until it finds one with available translations.
     # Failing that, it uses the global LANGUAGE_CODE setting.
     'django.middleware.locale.LocaleMiddleware',
-    #Esto é un archivo que está en terrameiga.middleware.py e que é o encargado de manexar errores que os customicei eu. Básicamente, cando hai un error redirixo a xente a 
-    #un html preparado por min (error.html)
-    'terrameiga.middleware.ErrorRedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'terrameiga.urls'

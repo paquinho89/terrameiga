@@ -363,9 +363,4 @@ def password_update_view(request):
       'password_update_form': form_password_update
   }
   return render (request, 'profile_account/password_data.html', context)
-
-
-
-def error_view(request, language_code):
-    return render(request, 'error.html')
     
