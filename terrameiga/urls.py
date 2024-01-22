@@ -25,11 +25,7 @@ from tools.views import max_speed_slope_tool_view
 from django.contrib.auth import views as auth_views
 #Con esto fago que na url aparezca a url e o idioma. Por exemplo: terrameiga.bike/gl/
 from django.conf.urls.i18n import i18n_patterns
-#Esto é para manexar os erros 404 e 500
-from django.conf.urls import handler404, handler500
 
-handler404 = 'registration.views.error_view'
-handler500 = 'registration.views.error_view'
 
 urlpatterns =   i18n_patterns (
     path('admin/', admin.site.urls),
