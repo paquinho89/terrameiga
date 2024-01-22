@@ -1,0 +1,42 @@
+{% extends 'base/base_non_registered.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<style>
+  .image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    
+  }
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: white;
+    width: 100%;
+    background: transparent;
+  }
+</style>
+
+<div class="image-container">
+  <img src='{% static "imaxes/error.jpg" %}' alt="First slide" style="filter: brightness(35%);">
+          <div class="text-overlay">
+              <h1 style="color: white;">{% trans "PAGE NOT FOUND!" %}</h1>
+              <h2 style="color: white;">
+                {% trans "Please, go back and try again!" %}
+              </h2>
+              <a class="btn btn-outline-light btn-lg" href="javascript:history.back()" role="button" id="sign_in_button"><strong>{% trans "Go Back" %}</strong></a>
+          </div>
+</div>
+{% endblock %} 
+
+  

@@ -364,4 +364,8 @@ def password_update_view(request):
   }
   return render (request, 'profile_account/password_data.html', context)
 
+
+
+def error_view(request, exception=None):
+    return render(request, 'error.html', status=404 if exception is None else 500)
     
