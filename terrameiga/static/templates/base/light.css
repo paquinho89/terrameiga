@@ -296,10 +296,10 @@
         color: rgb(54, 69, 79);
     }
     #h4_home_page_no_registration{
-        color: white;
+        color: black;
     }
     #p_home_page_no_registration{
-        color: white;
+        color: black;
     }
     #h5_home_page{
         color: rgb(54, 69, 79);
@@ -572,11 +572,11 @@
 
 
     #home_page_no_registration_card{
-        background-color: black;
+        background-color: white;
     }
     
     #home_page_no_registration_card_text{
-        color: rgb(246, 158, 138);
+        color: black;
     }
 
     /*---Language form of the home_page_no_registration---------*/

@@ -22,6 +22,7 @@ from django.utils.translation import gettext as _
 from django.utils.translation import get_language
 
 from django.utils.translation import activate
+from django.contrib.sites.shortcuts import get_current_site
 
 
 
@@ -59,7 +60,7 @@ def sign_up_view(request):
       token = str(uuid.uuid4())
       #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
       uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
-      send_confirm_email (request, email_form, uidb64, token)
+      send_confirm_email (request, email_form, user_name, uidb64, token)
       #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
       messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
       return redirect('account_confirmation_email_sent')
@@ -78,6 +79,15 @@ def sign_up_view(request):
         'sign_up_form':sign_up_form_variable
   }
   return render (request, '2_sign_up.html', context)
+
+def email_visualization_sign_up_view (request):
+  #Collemos os valores que veñen a través da url
+  nome = request.GET.get('username', None)
+
+  context = {
+    'username_html': nome,
+  }
+  return render(request, 'email_body_confirmation.html', context)
 
 def email_instructions_view (request):
   #Eiqui o que fago é coller o idioma da url que me ven a través do request.
@@ -242,7 +252,7 @@ def password_reset_sent_view (request):
   }
   return render (request, 'password_reset_sent.html', context)
 
-#This is a function which renders the vie of the Password Recovery when user has to introduce his/her new password. 
+#This is a function which renders the view of the Password Recovery when user has to introduce his/her new password. 
 def password_new_password_view(request, uidb64, token):
   #Neste caso o que fago e coller o idioma do usuario, porque como xa teño na vista anterior introducín o email, a url que se envía no email para resetear o contrasinal
   #e que leva a esta vista, ten o email xa contido. Pois o que fago con ese email e ver o idioma que ten o usuario configurado para mostrarlle a páxina no idioma correcto.
@@ -286,6 +296,22 @@ def password_new_password_view(request, uidb64, token):
     'reset_password_form' : password_reset_form
   }
   return render (request, 'password_reset_complete.html', context)
+
+
+def email_visualization_password_recovery_view (request):
+  #Collemos os valores que veñen a través da url
+  email_user = request.GET.get('email', None)
+  uidb64_user = request.GET.get('uidb64_url', None)
+  token_user =  request.GET.get('token_url', None)
+  language_user = request.GET.get('language_url', None)
+  current_site = get_current_site(request)
+  password_recovery_link = f'http://{current_site}/{language_user}/password_recovery_update/{uidb64_user}/{token_user}/'
+
+  context = {
+    'email_username_html': email_user,
+    'password_recovery_link_html': password_recovery_link
+  }
+  return render(request, 'email_body_password.html', context)
 
 #-------------------------------------ESTAS SON AS VIEWS DA CONFIGURACIÓN DO USUARIO--------------------------------------------------------
 

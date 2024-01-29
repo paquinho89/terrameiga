@@ -10,6 +10,8 @@ from django.conf import settings
 from django.template.loader import render_to_string
 from django.contrib.sites.shortcuts import get_current_site
 
+from django.urls import reverse
+
 
 #Estas 2 funcions son para cambiarlle o nome a foto da bandeira e que aparezca guay no model do admin con outro nome
 
@@ -46,7 +48,7 @@ def email_validation(self):
         
 
 #Function to send an email to confirm the email of the new user which just signed up
-def send_confirm_email (request, email, uidb64, token):
+def send_confirm_email (request, email, username, uidb64, token):
     #Con esto o que fago e que o link seax dinámico e colla o 127.0.0.1:8000 cando estamos en local e o terrameiga.bike cando está en production
     current_site = get_current_site(request)
     subject = "TerraMeiga - Email Confirmation"
@@ -56,7 +58,10 @@ def send_confirm_email (request, email, uidb64, token):
     # arquivo de helpers.px
     message = render_to_string('email_body_confirmation.html', {
         'confirmation_link': f'http://{current_site}/account_confirmation_email_done/{uidb64}/{token}/',
+        'visualization_email_link' : f'http://{current_site}' + reverse('email_visualization_url') + f'?username={username}',
+        'name':username,
     })
+    print(f'http://{current_site}' + reverse('email_visualization_url') + f'?username={username}')
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
     recipient_list = [email]
@@ -72,6 +77,8 @@ def send_reset_password_mail (request, email, uidb64,  token, language):
     #message = f'Please, click on the link to reset your password http://127.0.0.1:8000/reset_password/{uidb64}/{token}/'
     message = render_to_string('email_body_password.html', {
         'password_recovery_link': f'http://{current_site}/{language}/password_recovery_update/{uidb64}/{token}/',
+        #Pasamos a info necesaria para crear o link NO HTML que se visualiza cando se preme en (In case the email is not correctly displayed...) que me permita o reseteo da password.
+        'visualization_email_password_link' : f'http://{current_site}' + reverse('email_visualization_password_recovery_view') + f'?email={email}&uidb64_url={uidb64}&token_url={token}&language_url={language}',
     })
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
