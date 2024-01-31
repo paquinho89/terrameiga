@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
@@ -43,6 +43,8 @@ urlpatterns =   i18n_patterns (
     #REGISTRATION_URLs
     path('sign_in/', sign_in_view, name="sign_in"),
     path('sign_up/', sign_up_view, name="sign_up"),
+    #Google sign_up
+    path('accounts/', include('allauth.urls')),
     path('account_confirmation_email_sent/', email_instructions_view, name="account_confirmation_email_sent"),
     path('account_confirmation_email_done/', email_visualization_sign_up_view, name="email_visualization_url"),
     path('account_confirmation_email_done/<uidb64>/<token>/', sign_up_email_validation_confirmation_view, name="sign_up_email_validation_confirmation"),

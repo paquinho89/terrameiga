@@ -3,6 +3,8 @@
 {% load i18n %}
 
 {% load static %}
+<!--Esto é para a autenticación en Google-->
+{% load socialaccount %}
 
 {% block content %} 
 
@@ -86,6 +88,17 @@
                           <strong>{% trans "Sign Up" %}</strong>
                         </button>
                       </div>
+                      <!--Google sign up button-->
+                      <div class="justify-content-left">
+                        <button id="sign_up_button" type="submit" class="btn-lg" href="#" type="submit">
+                          <a href="{% provider_login_url 'google' %}">
+                            <i class="fab fa-google"></i>
+                            Login with Google
+                          </a>
+                        </button>
+                      </div>
+
+
                   </form>
                     <div class="form-check d-flex justify-content-left mt-3">
                       <label class="form-check-label" for="form2Example3">

@@ -60,7 +60,8 @@ def sign_up_view(request):
       token = str(uuid.uuid4())
       #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
       uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
-      send_confirm_email (request, email_form, user_name, uidb64, token)
+      language = get_language()
+      send_confirm_email (request, email_form, user_name, uidb64, token, language)
       #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
       messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
       return redirect('account_confirmation_email_sent')
@@ -82,10 +83,19 @@ def sign_up_view(request):
 
 def email_visualization_sign_up_view (request):
   #Collemos os valores que veñen a través da url
+  current_site = get_current_site(request)
+  email_user = request.GET.get('email', None)
   nome = request.GET.get('username', None)
+  uidb64_user = request.GET.get('uidb64_url', None)
+  token_user =  request.GET.get('token_url', None)
+  language_user = request.GET.get('language_url', None)
+
+  sign_up_confirmation_link = f'http://{current_site}/{language_user}/account_confirmation_email_done/{uidb64_user}/{token_user}/'
 
   context = {
+    'email_username_html': email_user,
     'username_html': nome,
+    'sign_up_confirmation_link_html': sign_up_confirmation_link
   }
   return render(request, 'email_body_confirmation.html', context)
 

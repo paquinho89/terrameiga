@@ -54,12 +54,40 @@ INSTALLED_APPS = [
     'ckeditor',
     #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles
     'django.contrib.humanize',
-
+    #Esto é para o GOOGLE Authentification
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
+
+#Esto é para o Google Authentification
+SITE_ID = 1
+SOCIALACCOUNT_LOGIN_ON_GET = True
+SOCIALACCOUNT_PROVIDERS = {
+    'google':{
+        'SCOPE':[
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS':{
+            'access_type': 'online',
+        }
+    }
+}
+
+
 # This is to indicate to Django that the user model is now this custom model (CustomeUser) instead of the User model
 #IMPORTANTE! No caso de que "python manage.py migrate" non che funcione, referencialo a app que sexa.
 # Algo como "python manage.py migrate registration"
 AUTH_USER_MODEL = 'registration.CustomUser'
+
+#Esto púxeno polo tema do Google Authentication
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,6 +105,8 @@ MIDDLEWARE = [
     # Failing that, it looks at the Accept-Language HTTP header. This header is sent by your browser and tells the server which language(s) you prefer, in order of priority. Django tries each language in the header until it finds one with available translations.
     # Failing that, it uses the global LANGUAGE_CODE setting.
     'django.middleware.locale.LocaleMiddleware',
+    #Esto é para a autenticación de Google
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'terrameiga.urls'
