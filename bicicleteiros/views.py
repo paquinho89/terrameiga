@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
 from django.contrib import messages
 import re
+from django.conf import settings
 #Paquete para traducir texto que se xenera nas view. Neste caso é o texto das alertas
 from django.utils.translation import gettext_lazy as _
 #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware (é un paquete que está no settings)
@@ -97,6 +98,19 @@ def country_data_no_registered_view (request):
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
 
 def country_data_view (request):
+    #PAra os que fan sign up con Google, cando se carga esta vista, gardo nos Account_settings o idioma que está na url sempre e cando o campo de language non esté baleiro.
+    #E que se non fago esto, o campo do language queda vacío se se fai o sing_up con Google.
+    current_user = CustomUser.objects.get(id=request.user.id)
+    user_language = CustomUser.objects.get(email = current_user).language
+    if user_language==None:
+        current_user.language = request.LANGUAGE_CODE
+        current_user.save()
+    #-----GOOGLE AUTH---------------
+    #Neste caso, como o usuario xa fixo log_in, eu vou coller o idioma que está nos seus Account Settings para meterllo a url e que se mostre todo no idioma correspondente
+    user_language_2 = CustomUser.objects.get(email = current_user).language
+    activate(user_language_2)
+    #----------End GOOGLE AUTH--------------
+
     #Co request.user fago que solo os usuarios que están rexistrados podan acceder a páxina de bicicleteiros (na que se mostra a miña posición)
     #No caso de que non estén rexistrados, mándoos a páxina de home_page_no_registered.
     if request.user.is_authenticated:
@@ -141,7 +155,7 @@ def country_data_view (request):
         spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
         spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
         #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware no browser. Básicamente o idioma do browser.
-        current_language_browser = get_language()   
+        current_language_browser = get_language()[:2]
         # REPLIES of the CHAT:
         form_chat_reply = chat_replies_form(data = request.POST)
         if request.method == 'POST':
@@ -213,6 +227,7 @@ def country_data_view (request):
             'graph_money_type_html' :all_entry_days
         }
         return render (request, 'bicicleteiros_home_page.html', context)
+        
     else:
         # User is not authenticated, redirect to the sign_in page
         messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))

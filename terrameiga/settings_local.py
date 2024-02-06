@@ -16,6 +16,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse_lazy
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,7 +57,6 @@ INSTALLED_APPS = [
     #ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles
     'django.contrib.humanize',
     #Esto é para o GOOGLE Authentification
-    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -77,7 +78,6 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-
 # This is to indicate to Django that the user model is now this custom model (CustomeUser) instead of the User model
 #IMPORTANTE! No caso de que "python manage.py migrate" non che funcione, referencialo a app que sexa.
 # Algo como "python manage.py migrate registration"
@@ -85,10 +85,14 @@ AUTH_USER_MODEL = 'registration.CustomUser'
 
 #Esto púxeno polo tema do Google Authentication
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
+    'django.contrib.auth.backends.ModelBackend',
 ]
 
+#Esta é a páxina onde unha vez logeado ou rexistrado con google se redirecciona ao usuario. Pero na view de sign_up e sing_in sobrescríbese xa que a url ten que cambiar de idioma.
+LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/es/bicicleteiros/"
+
+#------------------ End google Authentication----------------------------------
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.middleware.common.CommonMiddleware',

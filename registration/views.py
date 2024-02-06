@@ -10,6 +10,7 @@ from django.contrib.auth import authenticate, login, logout, update_session_auth
 from django.contrib.auth.models import User
 from .models import CustomUser
 import re
+from django.conf import settings
 #This is to generate a random token which will be used in the url which will be sent to the email user to reset the password
 import uuid
 #Importamos un paquete para codificar o user_id (o pk) que vai na url que se lle envía ao usuario ao correo para resetear o contrasinal. O force bytes tamén e para codificar o pk
@@ -23,12 +24,17 @@ from django.utils.translation import get_language
 
 from django.utils.translation import activate
 from django.contrib.sites.shortcuts import get_current_site
+from allauth.socialaccount.templatetags.socialaccount import provider_login_url
 
 
 
 def sign_up_view(request):
+  #-----GOOGLE AUTH---------------
   #Eiqui o que fago é coller o idioma da url que me ven a través do request.
   initial_language = request.LANGUAGE_CODE
+  # Override the LOGIN_REDIRECT_URL. IMPORTANTE!! Esto faise para cando se faga o login con google (GoogleAUTH), se redireccione a páxina de bicicleteiros co correspondente idioma na url.
+  settings.LOGIN_REDIRECT_URL = f"/{initial_language}/bicicleteiros/"
+  #----------End GOOGLE AUTH-----------------
   #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
   form_language = language_home_page_no_registration_form(initial={'language': initial_language})
   if request.method == 'POST':
@@ -74,6 +80,7 @@ def sign_up_view(request):
         messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
         #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
         form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+    
        
   context = {
         'form_language_html': form_language,
@@ -138,10 +145,8 @@ def log_out_view (request):
 
 # Create your views here.
 def sign_in_view(request):
-  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
-  initial_language = request.LANGUAGE_CODE
   #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
-  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
   if request.method == 'POST':
     #Esto é para o pequeno formulario do idioma que hay no footer da home_page_no_registration.
     form_language = language_home_page_no_registration_form(data = request.POST) 
@@ -359,6 +364,9 @@ def personal_data_view(request):
   form_personal_data = personal_data_form(request.POST or None, sorted_country_list=sorted_country_list, instance=current_user)
   if request.method == 'POST':
     if form_personal_data.is_valid():
+      #Ca conta do GoogleAuth tuven que por 2 backeds no settings file, con esto indico cal é o backend que
+      #ten que utilizar cando se garden/cambien os atributos do personal data
+      current_user.backend = 'django.contrib.auth.backends.ModelBackend'
       form_personal_data.save()
       user_language = CustomUser.objects.get(email = current_user).language
       #Con esto activo o idioma que o usuario seleccionou no seu user_settings.
@@ -399,4 +407,5 @@ def password_update_view(request):
       'password_update_form': form_password_update
   }
   return render (request, 'profile_account/password_data.html', context)
+
     

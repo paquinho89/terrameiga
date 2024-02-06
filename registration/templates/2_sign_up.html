@@ -2,9 +2,10 @@
 <!--To load the Django library to translate your text.-->
 {% load i18n %}
 
-{% load static %}
 <!--Esto é para a autenticación en Google-->
 {% load socialaccount %}
+
+{% load static %}
 
 {% block content %} 
 
@@ -88,16 +89,16 @@
                           <strong>{% trans "Sign Up" %}</strong>
                         </button>
                       </div>
-                      <!--Google sign up button-->
-                      <div class="justify-content-left">
-                        <button id="sign_up_button" type="submit" class="btn-lg" href="#" type="submit">
-                          <a href="{% provider_login_url 'google' %}">
-                            <i class="fab fa-google"></i>
-                            Login with Google
-                          </a>
-                        </button>
-                      </div>
 
+                      <!--Google sign up button-->
+                    <div class="justify-content-left mt-3">
+                      <button id="sign_up_button" type="submit" class="btn-lg" href="#" type="submit">
+                        <a id="sign_up_button" href="{% provider_login_url 'google' %}" style="text-decoration: none;">
+                          <i id="sign_up_button" class="fab fa-google"></i>
+                          <strong>{% trans "Continue with Google" %}</strong>
+                        </a>
+                      </button>
+                    </div>
 
                   </form>
                     <div class="form-check d-flex justify-content-left mt-3">

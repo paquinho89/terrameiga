@@ -4,6 +4,9 @@
 
 {% load static %}
 
+<!--Esto é para a autenticación en Google-->
+{% load socialaccount %}
+
 {% block content %} 
 
 <body id="body_sign_in">
@@ -42,9 +45,19 @@
                           </td>
                         </tr>
                       {% endfor %}
-                    <div class="d-flex justify-content-left mb-lg-4 mt-1">
+                    <div class="d-flex justify-content-left mb-lg-4">
                       <button id="sign_in_button" type="submit" class="btn-lg mt-2" href="#" type="submit">
                         <strong>{% trans "Sign in" %}</strong>
+                      </button>
+                    </div>
+
+                    <!--Google sign up button-->
+                    <div class="justify-content-left">
+                      <button id="sign_up_button" type="submit" class="btn-lg" href="#" type="submit">
+                        <a id="sign_up_button" href="{% provider_login_url 'google' %}" style="text-decoration: none;">
+                          <i id="sign_up_button" class="fab fa-google"></i>
+                          <strong>{% trans "Continue with Google" %}</strong>
+                        </a>
                       </button>
                     </div>
  

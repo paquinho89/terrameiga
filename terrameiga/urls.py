@@ -72,7 +72,6 @@ urlpatterns =   i18n_patterns (
 
     #PROJECT PRESENTATION
     path('project_presentation/', project_presentation_view, name="project_presentation"),
-    
 
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),
