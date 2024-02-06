@@ -94,7 +94,7 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 #Esta é a páxina onde unha vez logeado ou rexistrado con google se redirecciona ao usuario. Pero na view de sign_up e sing_in sobrescríbese xa que a url ten que cambiar de idioma.
-LOGIN_REDIRECT_URL = "http://127.0.0.1:8000/es/bicicleteiros/"
+LOGIN_REDIRECT_URL = "https://terrameiga.bike/es/bicicleteiros/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
