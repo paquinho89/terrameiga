@@ -619,6 +619,15 @@
         color: rgb(54, 69, 79);
     }
 
+    #text_google_auth{
+        color: rgb(246, 158, 138);
+    }
+
+    #text_google_auth:hover{
+        color: rgb(246, 158, 138);
+        background-color: black;
+    }
+
 
 
 
