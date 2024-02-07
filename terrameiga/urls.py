@@ -69,7 +69,8 @@ urlpatterns =   i18n_patterns (
     path('tools/', max_speed_slope_tool_view, name="tool_speed"),
     path('gears/', TemplateView.as_view(template_name = "gear_blog.html"), name="gears"),
     path('info/', TemplateView.as_view(template_name = "info.html"), name="info"),
-
+    #Google Search Registration
+    path('google_search_registration/', TemplateView.as_view(template_name = "google391d8b0b23a7a1e5.html"), name="google_search_registration"),
     #PROJECT PRESENTATION
     path('project_presentation/', project_presentation_view, name="project_presentation"),
 
