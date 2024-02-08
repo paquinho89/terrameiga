@@ -61,7 +61,6 @@ def send_confirm_email (request, email, username, uidb64, token, language):
         'visualization_email_link' : f'http://{current_site}' + reverse('email_visualization_url') + f'?username={username}&email={email}&uidb64_url={uidb64}&token_url={token}&language_url={language}',
         'name':username,
     })
-    print(f'http://{current_site}' + reverse('email_visualization_url') + f'?username={username}')
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"
     recipient_list = [email]
@@ -70,7 +69,7 @@ def send_confirm_email (request, email, username, uidb64, token, language):
     return True
 
 # Function to send the email to reset the password in case it has been forgotten.
-def send_reset_password_mail (request, email, uidb64,  token, language):
+def send_reset_password_mail (request, email, username, uidb64,  token, language):
     #Con esto o que fago e que o link seax dinámico e colla o 127.0.0.1:8000 cando estamos en local e o terrameiga.bike cando está en production
     current_site = get_current_site(request)
     subject = "TerraMeiga - Password Recovery"
@@ -78,7 +77,8 @@ def send_reset_password_mail (request, email, uidb64,  token, language):
     message = render_to_string('email_body_password.html', {
         'password_recovery_link': f'http://{current_site}/{language}/password_recovery_update/{uidb64}/{token}/',
         #Pasamos a info necesaria a través da url para crear o link NO HTML que se visualiza cando se preme en (In case the email is not correctly displayed...) que me permita o reseteo da password.
-        'visualization_email_password_link' : f'http://{current_site}' + reverse('email_visualization_password_recovery_view') + f'?email={email}&uidb64_url={uidb64}&token_url={token}&language_url={language}',
+        'visualization_email_password_link' : f'http://{current_site}' + reverse('email_visualization_password_recovery_view') + f'?email={email}&username={username}&uidb64_url={uidb64}&token_url={token}&language_url={language}',
+        'name':username
     })
     #Se escribo o sender_mail así, o que fago e que aparezca o nome de "TerraMeiga" e así non aparece a dirección de email cando se recibe a mensaxe.
     sender_email = "TerraMeiga <" + settings.EMAIL_HOST_USER + ">"

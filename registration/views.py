@@ -227,6 +227,7 @@ def password_reset_view(request):
       email_form_str = password_recovery_form_variable.cleaned_data.get('email')
       #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
       email_form =  CustomUser.objects.filter(email=email_form_str).first()
+      user_name = CustomUser.objects.get(email = email_form).username
       if CustomUser.objects.filter(email=email_form).exists():
         #This is to generate a random token to include in the link which will be sent to the customer and he/she will be able to reset the password.
         token = str(uuid.uuid4())
@@ -234,8 +235,7 @@ def password_reset_view(request):
         uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
         #uid = request.user.id
         language = get_language()
-        print(language)
-        send_reset_password_mail (request, email_form, uidb64, token, language)
+        send_reset_password_mail (request, email_form, user_name, uidb64, token, language)
         messages.add_message(request, messages.SUCCESS, _('An email was sent to your email inbox'))
         return redirect('password_reset_done')
       else:
@@ -249,7 +249,7 @@ def password_reset_view(request):
 
   context = {
     'form_language_html': form_language,
-    'email_recovery' : password_recovery_form_variable
+    'email_recovery' : password_recovery_form_variable,
   }
   return render (request, 'password_reset.html', context)
 
@@ -322,6 +322,7 @@ def password_new_password_view(request, uidb64, token):
 def email_visualization_password_recovery_view (request):
   #Collemos os valores que veñen a través da url
   email_user = request.GET.get('email', None)
+  user_name = request.GET.get('username', None)
   uidb64_user = request.GET.get('uidb64_url', None)
   token_user =  request.GET.get('token_url', None)
   language_user = request.GET.get('language_url', None)
@@ -329,7 +330,7 @@ def email_visualization_password_recovery_view (request):
   password_recovery_link = f'http://{current_site}/{language_user}/password_recovery_update/{uidb64_user}/{token_user}/'
 
   context = {
-    'email_username_html': email_user,
+    'username_html': user_name,
     'password_recovery_link_html': password_recovery_link
   }
   return render(request, 'email_body_password.html', context)

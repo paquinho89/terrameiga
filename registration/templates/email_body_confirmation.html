@@ -21,11 +21,11 @@
                 <table cellpadding="0" cellspacing="0" width="100%">
                     <tr>
                         <td>
-                            <p>{% trans "Hello!" %}</p>
+                            <p>{% trans "Hello" %}<strong>{{ name }} {{ username_html }},</strong></p>
                             <p>{% trans "Thank you for signing up with TerraMeiga and supporting me on this adventure. To complete your registration, please click the following link to confirm your email:" %}</p>
                             <a href="{{ confirmation_link }} {{sign_up_confirmation_link_html}}" style="color: rgb(83, 158, 138)"><strong>{% trans "Confirm Your Email" %}</strong></a>
                             <p style="margin-top: 10px;">{% trans "If you did not register on TerraMeiga, you can safely ignore this email." %}</p>
-                            <p>{% trans "Happy biking," %} {{ name }} {{ username_html }}!</p>
+                            <p>{% trans "Happy biking" %}!</p>
                             <p style="font-style: italic;">{% trans "In case the email is not displayed correctly, click in the " %}<a href="{{ visualization_email_link }}"><strong>{% trans "link" %}</strong></a></p>
                         </td>
                     </tr>
