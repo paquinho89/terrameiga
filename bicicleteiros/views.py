@@ -3,7 +3,6 @@ from .models import country_information_model, money_model, km_altitude_model, c
 from registration.models import CustomUser
 from datetime import datetime, date
 from django.db.models import Sum, Count
-from django.http import JsonResponse
 from bicicleteiros.forms import chat_replies_form, language_home_page_no_registration_form
 from django.shortcuts import render, redirect
 #Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.

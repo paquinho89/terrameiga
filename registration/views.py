@@ -97,7 +97,7 @@ def email_visualization_sign_up_view (request):
   token_user =  request.GET.get('token_url', None)
   language_user = request.GET.get('language_url', None)
 
-  sign_up_confirmation_link = f'http://{current_site}/{language_user}/account_confirmation_email_done/{uidb64_user}/{token_user}/'
+  sign_up_confirmation_link = f'https://{current_site}/{language_user}/account_confirmation_email_done/{uidb64_user}/{token_user}/'
 
   context = {
     'email_username_html': email_user,
@@ -320,7 +320,7 @@ def email_visualization_password_recovery_view (request):
   token_user =  request.GET.get('token_url', None)
   language_user = request.GET.get('language_url', None)
   current_site = get_current_site(request)
-  password_recovery_link = f'http://{current_site}/{language_user}/password_recovery_update/{uidb64_user}/{token_user}/'
+  password_recovery_link = f'https://{current_site}/{language_user}/password_recovery_update/{uidb64_user}/{token_user}/'
 
   context = {
     'email_username_html': email_user,
