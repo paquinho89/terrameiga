@@ -115,6 +115,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'terrameiga.urls'
 
+SESSION_COOKIE_SECURE = True
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

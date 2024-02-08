@@ -28,6 +28,8 @@ print ("ruta do BASE_DIR", BASE_DIR)
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-q=m#etp8+mf8)iu!a7+xs!*0$pc5j@_c5ndt^u77$vwq8+jwvc'
 
+SESSION_COOKIE_SECURE = True
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
