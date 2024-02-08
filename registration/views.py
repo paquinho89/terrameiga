@@ -328,6 +328,24 @@ def email_visualization_password_recovery_view (request):
   }
   return render(request, 'email_body_password.html', context)
 
+
+def privacy_policy_page_view (request):
+  #Formulario IDIOMA
+  #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+  initial_language = request.LANGUAGE_CODE
+  #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+  form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+  if request.method == 'POST':
+    form_language = language_home_page_no_registration_form(data = request.POST)
+    if form_language.is_valid():
+      selected_language = form_language.cleaned_data['language']
+      activate(selected_language)
+
+  context = {
+      'form_language_html' : form_language,
+  }
+  return render (request, 'privacy_policy_page.html', context)
+
 #-------------------------------------ESTAS SON AS VIEWS DA CONFIGURACIÓN DO USUARIO--------------------------------------------------------
 
 def delete_account_view (request):

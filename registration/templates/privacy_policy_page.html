@@ -1,5 +1,13 @@
+{% extends 'base/base_non_registered.html' %}
 <!--To load the Django library to translate your text.-->
 {% load i18n %}
+
+<!--Esto é para a autenticación en Google-->
+{% load socialaccount %}
+
+{% load static %}
+
+{% block content %}
 
 
 <body id = "body_privacy_policy">
@@ -108,5 +116,6 @@
    {% trans "We reserve the right to modify this Privacy Policy at any time. Please review it periodically for updates." %}
 </p>
 <p>{% trans "This Privacy Policy was last updated on 01-Jan-2024." %}</p>
-<a href="{% url 'privacy_policy' %}" target="_blank">More info</a>
 </body>
+
+{% endblock content %}

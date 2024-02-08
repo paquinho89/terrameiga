@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 from django.conf import settings
 from django.conf.urls.static import static
-from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, password_reset_sent_view, sign_up_email_validation_confirmation_view, email_visualization_sign_up_view, email_visualization_password_recovery_view
+from registration.views import sign_in_view, sign_up_view, email_instructions_view, log_out_view, personal_data_view, password_update_view, delete_account_view, password_reset_view, password_new_password_view, password_reset_sent_view, sign_up_email_validation_confirmation_view, email_visualization_sign_up_view, email_visualization_password_recovery_view, privacy_policy_page_view
 from bicicleteiros.views import country_data_view, country_data_no_registered_view, iz_blog_portada_view, let_the_cycling_beging_blog_view, the_journey_to_the_journey_blog_view, preparation_preparation_blog_view, project_presentation_view, photos_view, videos_view, estadistica_plotly_view, estadistica_plotly_view_full_report
 from tools.views import max_speed_slope_tool_view
 # Vamos a importar varias views que xa está preconfiguradas por Django para gestionar o reseteo do password para cando o usuario se esqueza.
@@ -43,6 +43,7 @@ urlpatterns =   i18n_patterns (
     #REGISTRATION_URLs
     path('sign_in/', sign_in_view, name="sign_in"),
     path('sign_up/', sign_up_view, name="sign_up"),
+    path('privacy_policy/', privacy_policy_page_view, name="privacy_policy"),
     #Google sign_up
     path('accounts/', include('allauth.urls')),
     path('account_confirmation_email_sent/', email_instructions_view, name="account_confirmation_email_sent"),
