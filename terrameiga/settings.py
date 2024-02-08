@@ -37,8 +37,9 @@ ALLOWED_HOSTS = ['terrameiga.up.railway.app', 'terrameiga.bike', 'www.terrameiga
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
 CSRF_COOKIE_SECURE = False
 
-IN_PRODUCTION = True
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https") if IN_PRODUCTION else None
+
+# IN_PRODUCTION = True
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https") if IN_PRODUCTION else None
 
 #Variable para activar o framework das alerts de django
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
