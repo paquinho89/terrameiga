@@ -97,7 +97,7 @@ def email_visualization_sign_up_view (request):
   token_user =  request.GET.get('token_url', None)
   language_user = request.GET.get('language_url', None)
 
-  sign_up_confirmation_link = f'https://{current_site}/{language_user}/account_confirmation_email_done/{uidb64_user}/{token_user}/'
+  sign_up_confirmation_link = f'http://{current_site}/{language_user}/account_confirmation_email_done/{uidb64_user}/{token_user}/'
 
   context = {
     'email_username_html': email_user,
@@ -295,6 +295,9 @@ def password_new_password_view(request, uidb64, token):
   if request.method == 'POST' and not form_language.is_valid():
     if password_reset_form.is_valid():
       password_reset_form.save()
+      #Ca conta do GoogleAuth tuven que por 2 backeds no settings file, con esto indico cal é o backend que
+      #ten que utilizar cando se garden/cambien os atributos do personal data
+      user.backend = 'django.contrib.auth.backends.ModelBackend'
       #Logeamos o usuario directamente
       login(request, user)
       #E activamos o idioma que ten o usuario configurado:
@@ -323,7 +326,7 @@ def email_visualization_password_recovery_view (request):
   token_user =  request.GET.get('token_url', None)
   language_user = request.GET.get('language_url', None)
   current_site = get_current_site(request)
-  password_recovery_link = f'https://{current_site}/{language_user}/password_recovery_update/{uidb64_user}/{token_user}/'
+  password_recovery_link = f'http://{current_site}/{language_user}/password_recovery_update/{uidb64_user}/{token_user}/'
 
   context = {
     'email_username_html': email_user,
