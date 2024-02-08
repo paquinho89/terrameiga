@@ -130,6 +130,9 @@ def sign_up_email_validation_confirmation_view (request, uidb64, token):
   activate(user_language)
   #Unha vez que clicka no link para verificar a súa conta, nos activamos o seu email.
   user.is_active = True
+  #Ca conta do GoogleAuth tuven que por 2 backeds no settings file, con esto indico cal é o backend que
+  #ten que utilizar cando se garden/cambien os atributos do personal data
+  user.backend = 'django.contrib.auth.backends.ModelBackend'
   user.save()
   #NOTA interesante. Se queres coller algún atributo do usuario bastaría con escribir "user.password" ou "user.name"....
   #Con esta función fago log-in sen necesidade de introducir a contraseña. Ten en conta que eu nesta función non teño contraseña porque Django encríptaa e

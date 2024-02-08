@@ -1840,20 +1840,18 @@ msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:28
 #: .\registration\templates\email_body_password.html:27
-#, fuzzy
-#| msgid "Happy biking!"
 msgid "Happy biking,"
 msgstr "Gozatu bizikletarekin!"
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
 msgid "In case the email is not displayed correctly, click in the "
-msgstr ""
+msgstr "Email-a ez bada ongi erakutsi, egin klik estekan "
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
 msgid "link"
-msgstr ""
+msgstr "esteka"
 
 #: .\registration\templates\email_body_password.html:8
 msgid "Terra Meiga - Password Recovery"
