@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-15 17:27+0100\n"
+"POT-Creation-Date: 2024-02-08 20:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:173 .\terrameiga\settings_local.py:162
+#: .\terrameiga\settings.py:210 .\terrameiga\settings_local.py:196
 msgid "Spanish"
 msgstr "Castellano"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:172 .\terrameiga\settings_local.py:161
+#: .\terrameiga\settings.py:209 .\terrameiga\settings_local.py:195
 msgid "English"
 msgstr "Inglés"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:174 .\terrameiga\settings_local.py:163
+#: .\terrameiga\settings.py:211 .\terrameiga\settings_local.py:197
 msgid "Galician"
 msgstr "Gallego"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:175 .\terrameiga\settings_local.py:164
+#: .\terrameiga\settings.py:212 .\terrameiga\settings_local.py:198
 msgid "Catalan"
 msgstr "Catalán"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:176 .\terrameiga\settings_local.py:165
+#: .\terrameiga\settings.py:213 .\terrameiga\settings_local.py:199
 msgid "Basque"
 msgstr "Euskera"
 
@@ -1052,7 +1052,7 @@ msgstr "Iniciar Sesión"
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:96
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:106
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:116
-#: .\registration\templates\2_sign_up.html:86
+#: .\registration\templates\2_sign_up.html:89
 msgid "Sign Up"
 msgstr "Registrarse"
 
@@ -1067,14 +1067,14 @@ msgstr ""
 "aventura y disfrutar de todo el contenido?"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:131
-#: .\bicicleteiros\views.py:328 .\bicicleteiros\views.py:418
-#: .\bicicleteiros\views.py:588 .\bicicleteiros\views.py:674
+#: .\bicicleteiros\views.py:342 .\bicicleteiros\views.py:432
+#: .\bicicleteiros\views.py:602 .\bicicleteiros\views.py:688
 msgid "Week"
 msgstr "Semana"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page_no_registration.html:143
-#: .\bicicleteiros\views.py:362 .\bicicleteiros\views.py:474
-#: .\bicicleteiros\views.py:620 .\bicicleteiros\views.py:728
+#: .\bicicleteiros\views.py:376 .\bicicleteiros\views.py:488
+#: .\bicicleteiros\views.py:634 .\bicicleteiros\views.py:742
 #: .\registration\templates\profile_account\personal_data.html:57
 msgid "Country"
 msgstr "País"
@@ -1149,8 +1149,8 @@ msgstr "Datos del viaje"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly.html:31
 #: .\bicicleteiros\static\templates\bicicleteiros_statics_plotly_full_report.html:31
-#: .\bicicleteiros\views.py:401 .\bicicleteiros\views.py:459
-#: .\bicicleteiros\views.py:657 .\bicicleteiros\views.py:713
+#: .\bicicleteiros\views.py:415 .\bicicleteiros\views.py:473
+#: .\bicicleteiros\views.py:671 .\bicicleteiros\views.py:727
 msgid "Climb"
 msgstr "Ascenso"
 
@@ -1312,7 +1312,8 @@ msgid ""
 "Short Film Festival of Verín 2024"
 msgstr ""
 "Actualmente están inmersos en la creación de un documental conmemorativo de "
-"los 10 años de la banda que será estrenado en el Festival de Cortos de Verín 2024"
+"los 10 años de la banda que será estrenado en el Festival de Cortos de Verín "
+"2024"
 
 #: .\bicicleteiros\static\templates\people.html:104
 msgid "For more information visit:"
@@ -1327,8 +1328,8 @@ msgid ""
 "Retired by profession, a loving father and even a better husband; Jaume is a "
 "passionate cyclist who wil be part of the journey in the Spain-France border"
 msgstr ""
-"Veterano que disfruta con los deportes al aire libre;"
-"Jaume es un apasionado de la bicicleta que formará parte del viaje en la zona de España-Francia."
+"Veterano que disfruta con los deportes al aire libre;Jaume es un apasionado "
+"de la bicicleta que formará parte del viaje en la zona de España-Francia."
 
 #: .\bicicleteiros\static\templates\people.html:130
 msgid ""
@@ -1336,8 +1337,9 @@ msgid ""
 "hiking. Jaume is a true bike commuter, as it is his main way of "
 "transportation in the city he lives."
 msgstr ""
-"Le encanta recorrer Galicia con su furgo camperizada y hacer rutas de senderismo. "
-"Jaume es todo un bicicleteiro, siendo la bici su principal medio de desplazamiento en la ciudad en la que reside."
+"Le encanta recorrer Galicia con su furgo camperizada y hacer rutas de "
+"senderismo. Jaume es todo un bicicleteiro, siendo la bici su principal medio "
+"de desplazamiento en la ciudad en la que reside."
 
 #: .\bicicleteiros\static\templates\people.html:133
 msgid ""
@@ -1691,16 +1693,16 @@ msgstr "Gracias por subscribirte y formar parte de la comunidad cicloviajera"
 msgid "Check the errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\bicicleteiros\views.py:169
+#: .\bicicleteiros\views.py:182
 msgid ""
 "Thanks for your participation. Your reply has been successfully included!"
 msgstr "Gracias por participar. ¡Su comentario ha sido incluído!"
 
-#: .\bicicleteiros\views.py:178
+#: .\bicicleteiros\views.py:191
 msgid "Please, include some text in your reply"
 msgstr "Tiene que añadir texto en el campo"
 
-#: .\bicicleteiros\views.py:218
+#: .\bicicleteiros\views.py:232
 msgid ""
 "You must be registered to access to this content. Go to terrameiga.bike/"
 "sign_up/ and create an account."
@@ -1708,55 +1710,55 @@ msgstr ""
 "Para poder acceder a este contenido, debe de registrarse en terrameiga.bike/"
 "sign_up/ "
 
-#: .\bicicleteiros\views.py:288 .\bicicleteiros\views.py:550
+#: .\bicicleteiros\views.py:302 .\bicicleteiros\views.py:564
 msgid "Where does the money go?"
 msgstr "¿Dónde gasto los dineros?"
 
-#: .\bicicleteiros\views.py:324 .\bicicleteiros\views.py:584
+#: .\bicicleteiros\views.py:338 .\bicicleteiros\views.py:598
 msgid "Expenses per Week"
 msgstr "Gastos por semana"
 
-#: .\bicicleteiros\views.py:332 .\bicicleteiros\views.py:592
+#: .\bicicleteiros\views.py:346 .\bicicleteiros\views.py:606
 #, python-brace-format
 msgid "Week: %{x}<br>Expense: %{y:.} Euros"
 msgstr "Semana: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:359 .\bicicleteiros\views.py:617
+#: .\bicicleteiros\views.py:373 .\bicicleteiros\views.py:631
 msgid "Expenses per Country"
 msgstr "Gastos por País"
 
-#: .\bicicleteiros\views.py:366 .\bicicleteiros\views.py:624
+#: .\bicicleteiros\views.py:380 .\bicicleteiros\views.py:638
 #, python-brace-format
 msgid "Country: %{x}<br>Expense: %{y:.} Euros"
 msgstr "País: %{x}<br>Gastos: %{y:.} Euros"
 
-#: .\bicicleteiros\views.py:392 .\bicicleteiros\views.py:648
+#: .\bicicleteiros\views.py:406 .\bicicleteiros\views.py:662
 msgid "Distance and altitude per week"
 msgstr "Distancia y ascenso acumulado por semana"
 
-#: .\bicicleteiros\views.py:410 .\bicicleteiros\views.py:422
-#: .\bicicleteiros\views.py:468 .\bicicleteiros\views.py:478
-#: .\bicicleteiros\views.py:666 .\bicicleteiros\views.py:678
-#: .\bicicleteiros\views.py:722 .\bicicleteiros\views.py:732
+#: .\bicicleteiros\views.py:424 .\bicicleteiros\views.py:436
+#: .\bicicleteiros\views.py:482 .\bicicleteiros\views.py:492
+#: .\bicicleteiros\views.py:680 .\bicicleteiros\views.py:692
+#: .\bicicleteiros\views.py:736 .\bicicleteiros\views.py:746
 msgid "Climb (meters)"
 msgstr "Ascenso (metros)"
 
-#: .\bicicleteiros\views.py:421 .\bicicleteiros\views.py:477
-#: .\bicicleteiros\views.py:677 .\bicicleteiros\views.py:731
+#: .\bicicleteiros\views.py:435 .\bicicleteiros\views.py:491
+#: .\bicicleteiros\views.py:691 .\bicicleteiros\views.py:745
 msgid "Distance (Km)"
 msgstr "Distancia (km)"
 
-#: .\bicicleteiros\views.py:425 .\bicicleteiros\views.py:681
+#: .\bicicleteiros\views.py:439 .\bicicleteiros\views.py:695
 #, fuzzy, python-brace-format
 #| msgid "Week: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
 msgid "Week: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "Semana: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\bicicleteiros\views.py:450 .\bicicleteiros\views.py:704
+#: .\bicicleteiros\views.py:464 .\bicicleteiros\views.py:718
 msgid "Distance and climb per country"
 msgstr "Distancia y ascenso acumulado por país"
 
-#: .\bicicleteiros\views.py:481 .\bicicleteiros\views.py:735
+#: .\bicicleteiros\views.py:495 .\bicicleteiros\views.py:749
 #, fuzzy, python-brace-format
 #| msgid ""
 #| "Country: %{x}<br>Km: %{y:.} km<br>Climbing: %{customdata[0]:.} meters"
@@ -1767,54 +1769,59 @@ msgstr "País: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 msgid "type \"terrameiga\". Lowercase and without quotes"
 msgstr "Escriba 'terrameiga' en minúsculas y sin comillas"
 
-#: .\registration\templates\1_sign_in.html:16
-#: .\registration\templates\1_sign_in.html:47
+#: .\registration\templates\1_sign_in.html:19
+#: .\registration\templates\1_sign_in.html:50
 msgid "Sign in"
 msgstr "Iniciar Sesión"
 
-#: .\registration\templates\1_sign_in.html:31
-#: .\registration\templates\2_sign_up.html:36
+#: .\registration\templates\1_sign_in.html:34
+#: .\registration\templates\2_sign_up.html:39
 #: .\registration\templates\profile_account\delete_account.html:22
 #: .\registration\templates\profile_account\password_data.html:22
 #: .\registration\templates\profile_account\personal_data.html:22
 msgid "Password"
 msgstr "Contraseña"
 
-#: .\registration\templates\1_sign_in.html:55
+#: .\registration\templates\1_sign_in.html:57
+#: .\registration\templates\2_sign_up.html:96
+msgid "Continue with Google"
+msgstr "Continuar con Google"
+
+#: .\registration\templates\1_sign_in.html:65
 msgid "Did you forget your password?"
 msgstr "¿No recuerdas tu contraseña?"
 
-#: .\registration\templates\1_sign_in.html:63
+#: .\registration\templates\1_sign_in.html:73
 #: .\registration\templates\password_reset.html:32
 msgid "Would you like to create an account?"
 msgstr "¿Quieres crear una cuenta?"
 
-#: .\registration\templates\2_sign_up.html:17
+#: .\registration\templates\2_sign_up.html:20
 msgid "Account Creation"
 msgstr "Registro"
 
-#: .\registration\templates\2_sign_up.html:26
+#: .\registration\templates\2_sign_up.html:29
 msgid "Name"
 msgstr "Nombre"
 
-#: .\registration\templates\2_sign_up.html:43
+#: .\registration\templates\2_sign_up.html:46
 msgid "Repeat Password"
 msgstr "Repita la contraseña"
 
-#: .\registration\templates\2_sign_up.html:59
+#: .\registration\templates\2_sign_up.html:62
 msgid "Creating the account, you are accepting the"
 msgstr "Al crear la cuenta aceptas la"
 
-#: .\registration\templates\2_sign_up.html:59
-#: .\registration\templates\2_sign_up.html:68
+#: .\registration\templates\2_sign_up.html:62
+#: .\registration\templates\2_sign_up.html:71
 msgid "Privacy Policy"
 msgstr "Política de Privacidad"
 
-#: .\registration\templates\2_sign_up.html:77
+#: .\registration\templates\2_sign_up.html:80
 msgid "Close"
 msgstr "Cerrar"
 
-#: .\registration\templates\2_sign_up.html:92
+#: .\registration\templates\2_sign_up.html:103
 msgid "Do you have already an account? sign in into your account"
 msgstr "¿Ya tienes una cuenta? Inicia sesión"
 
@@ -1836,21 +1843,22 @@ msgstr ""
 "En el caso de que no lo encuentre, puede que esté en la carpeta de correo no "
 "deseado."
 
-#: .\registration\templates\email_body_confirmation.html:7
-#: .\registration\templates\email_body_password.html:7
-msgid "Terra Meiga - Password Recovery"
-msgstr "Terra Meiga - Password Recovery"
+#: .\registration\templates\email_body_confirmation.html:9
+#, fuzzy
+#| msgid "Email Confirmation"
+msgid "Terra Meiga - Email Confirmation"
+msgstr "Confirmación del email"
 
-#: .\registration\templates\email_body_confirmation.html:14
+#: .\registration\templates\email_body_confirmation.html:16
 msgid "Email Confirmation"
 msgstr "Confirmación del email"
 
-#: .\registration\templates\email_body_confirmation.html:22
-#: .\registration\templates\email_body_password.html:22
+#: .\registration\templates\email_body_confirmation.html:24
+#: .\registration\templates\email_body_password.html:23
 msgid "Hello!"
 msgstr "¡Hola!"
 
-#: .\registration\templates\email_body_confirmation.html:23
+#: .\registration\templates\email_body_confirmation.html:25
 msgid ""
 "Thank you for signing up with TerraMeiga and supporting me on this "
 "adventure. To complete your registration, please click the following link to "
@@ -1859,38 +1867,54 @@ msgstr ""
 "Gracias por registrarse en TerraMeiga y apoyarme en esta aventura. Para "
 "completar su registro debes de hacer click en 'Confirma tu email' "
 
-#: .\registration\templates\email_body_confirmation.html:27
+#: .\registration\templates\email_body_confirmation.html:26
 msgid "Confirm Your Email"
 msgstr "Confirma tu email"
 
-#: .\registration\templates\email_body_confirmation.html:28
+#: .\registration\templates\email_body_confirmation.html:27
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
 msgstr ""
 "En caso de que no se haya registrado en TerraMeiga, puede ignorar este email."
 
-#: .\registration\templates\email_body_confirmation.html:29
-#: .\registration\templates\email_body_password.html:28
-msgid "Happy biking!"
+#: .\registration\templates\email_body_confirmation.html:28
+#: .\registration\templates\email_body_password.html:27
+#, fuzzy
+#| msgid "Happy biking!"
+msgid "Happy biking,"
 msgstr "¡Qué Disfrutes con la bici!"
 
-#: .\registration\templates\email_body_password.html:14
+#: .\registration\templates\email_body_confirmation.html:29
+#: .\registration\templates\email_body_password.html:28
+msgid "In case the email is not displayed correctly, click in the "
+msgstr ""
+
+#: .\registration\templates\email_body_confirmation.html:29
+#: .\registration\templates\email_body_password.html:28
+msgid "link"
+msgstr ""
+
+#: .\registration\templates\email_body_password.html:8
+msgid "Terra Meiga - Password Recovery"
+msgstr "Terra Meiga - Password Recovery"
+
+#: .\registration\templates\email_body_password.html:15
 #: .\registration\templates\password_reset.html:17
 #: .\registration\templates\password_reset_sent.html:17
 msgid "Password Recovery"
 msgstr "Recuperar la contraseña"
 
-#: .\registration\templates\email_body_password.html:23
+#: .\registration\templates\email_body_password.html:24
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
 msgstr "Si has olvidado su contraseña, haga click en el siguiente enlace:"
 
-#: .\registration\templates\email_body_password.html:26
+#: .\registration\templates\email_body_password.html:25
 msgid "Reset Password"
 msgstr "Resetear contraseña"
 
-#: .\registration\templates\email_body_password.html:27
+#: .\registration\templates\email_body_password.html:26
 msgid "If you didn't request this password reset, please ignore this email."
 msgstr ""
 "En caso de que no haya solicitado el cambio de contraseña, ignore este email"
@@ -1929,14 +1953,17 @@ msgstr ""
 "bandeja de correo no deseado."
 
 #: .\registration\templates\privacy_policy.html:6
+#: .\registration\templates\privacy_policy_page.html:14
 msgid "Effective Date: 01-Jan-2024"
 msgstr "En vigor a partir del 01-Enero-2024"
 
 #: .\registration\templates\privacy_policy.html:8
+#: .\registration\templates\privacy_policy_page.html:16
 msgid "1. Introduction"
 msgstr "1. Introducción"
 
 #: .\registration\templates\privacy_policy.html:10
+#: .\registration\templates\privacy_policy_page.html:18
 msgid ""
 "This Privacy Policy outlines how terrameiga.bike collects, uses, shares, and "
 "protects personal data as required by the General Data Protection Regulation "
@@ -1950,10 +1977,12 @@ msgstr ""
 "privacidad."
 
 #: .\registration\templates\privacy_policy.html:12
+#: .\registration\templates\privacy_policy_page.html:20
 msgid "2. Definitions"
 msgstr "2. Definiciones"
 
 #: .\registration\templates\privacy_policy.html:14
+#: .\registration\templates\privacy_policy_page.html:22
 msgid ""
 "a. 'Personal Data' means any information that relates to an identified or "
 "identifiable natural person."
@@ -1962,6 +1991,7 @@ msgstr ""
 "o identificable."
 
 #: .\registration\templates\privacy_policy.html:17
+#: .\registration\templates\privacy_policy_page.html:25
 msgid ""
 "b. 'Data Processing' includes any operation or set of operations performed "
 "on personal data, such as collection, recording, organization, structuring, "
@@ -1975,10 +2005,12 @@ msgstr ""
 "borrado o destrucción en los datos"
 
 #: .\registration\templates\privacy_policy.html:19
+#: .\registration\templates\privacy_policy_page.html:27
 msgid "3. Information We Collect"
 msgstr "3. Información que recopilamos"
 
 #: .\registration\templates\privacy_policy.html:21
+#: .\registration\templates\privacy_policy_page.html:29
 msgid ""
 "a. Personal Data: We may collect personal data, including but not limited to "
 "your name and email address."
@@ -1987,6 +2019,7 @@ msgstr ""
 "y dirección de correo electrónico "
 
 #: .\registration\templates\privacy_policy.html:24
+#: .\registration\templates\privacy_policy_page.html:32
 msgid ""
 "b. Usage Information: We automatically collect information about your usage "
 "of the Website, including browser type, device information, and pages "
@@ -1997,25 +2030,30 @@ msgstr ""
 "páginas visitadas"
 
 #: .\registration\templates\privacy_policy.html:27
+#: .\registration\templates\privacy_policy_page.html:35
 msgid "c. Cookies: On this site we do not use cookies."
 msgstr "c. Cookies: En este sitio web no se usan cookies."
 
 #: .\registration\templates\privacy_policy.html:29
+#: .\registration\templates\privacy_policy_page.html:37
 msgid "4. Legal Basis for Data Processing"
 msgstr "4. Base Legal para el Procesamiento de Datos"
 
 #: .\registration\templates\privacy_policy.html:31
+#: .\registration\templates\privacy_policy_page.html:39
 msgid ""
 "We may process personal data based on one or more of the following legal "
 "bases:"
 msgstr "Podremos procesar datos personales según las bases legales a seguir:"
 
 #: .\registration\templates\privacy_policy.html:34
+#: .\registration\templates\privacy_policy_page.html:42
 msgid "a. Consent: We may process data with your explicit consent."
 msgstr ""
 "a. Consentimiento: Podremos procesar datos con tú consentimiento explícito."
 
 #: .\registration\templates\privacy_policy.html:37
+#: .\registration\templates\privacy_policy_page.html:45
 msgid ""
 "b. Legal Obligation: We may process data to comply with legal obligations."
 msgstr ""
@@ -2023,6 +2061,7 @@ msgstr ""
 "legales."
 
 #: .\registration\templates\privacy_policy.html:40
+#: .\registration\templates\privacy_policy_page.html:48
 msgid ""
 "c. Legitimate Interests: We may process data based on our legitimate "
 "interests, provided they do not override your rights and interests."
@@ -2031,26 +2070,32 @@ msgstr ""
 "asegurando que nunca se sobrepasen sus derechos o intereses."
 
 #: .\registration\templates\privacy_policy.html:42
+#: .\registration\templates\privacy_policy_page.html:50
 msgid "5. Data Use"
 msgstr "5. Uso de los Datos"
 
 #: .\registration\templates\privacy_policy.html:44
+#: .\registration\templates\privacy_policy_page.html:52
 msgid "We may use personal data for the following purposes:"
 msgstr "Podremos usar sus datos personales debido a los siguientes propósitos:"
 
 #: .\registration\templates\privacy_policy.html:47
+#: .\registration\templates\privacy_policy_page.html:55
 msgid "a. To analyze usage patterns and conduct research."
 msgstr "a. Para analizar patrones de uso y realizar estudios posteriores"
 
 #: .\registration\templates\privacy_policy.html:50
+#: .\registration\templates\privacy_policy_page.html:58
 msgid "b. To comply with legal obligations."
 msgstr "b. Para cumplir con obligaciones legales."
 
 #: .\registration\templates\privacy_policy.html:52
+#: .\registration\templates\privacy_policy_page.html:60
 msgid "6. Data Sharing"
 msgstr "6. Intercambio de Datos"
 
 #: .\registration\templates\privacy_policy.html:54
+#: .\registration\templates\privacy_policy_page.html:62
 msgid ""
 "We do not sell or rent your personal data to third parties. However, we may "
 "share your data with:"
@@ -2059,6 +2104,7 @@ msgstr ""
 "podremos compartir sus datos con:"
 
 #: .\registration\templates\privacy_policy.html:57
+#: .\registration\templates\privacy_policy_page.html:65
 msgid ""
 "a. Service Providers: We may share data with service providers who help us "
 "operate the Website and provide our services."
@@ -2067,6 +2113,7 @@ msgstr ""
 "a operar nuestra página web."
 
 #: .\registration\templates\privacy_policy.html:60
+#: .\registration\templates\privacy_policy_page.html:68
 msgid ""
 "b. Legal Compliance: We may disclose data to comply with legal requirements, "
 "protect our rights, or respond to a legal request."
@@ -2075,10 +2122,12 @@ msgstr ""
 "legales, proteger nuestros derechos o responder a asuntos legales."
 
 #: .\registration\templates\privacy_policy.html:62
+#: .\registration\templates\privacy_policy_page.html:70
 msgid "7. Data Transfer"
 msgstr "7. Transferencida de los Datos"
 
 #: .\registration\templates\privacy_policy.html:64
+#: .\registration\templates\privacy_policy_page.html:72
 msgid ""
 "Your data may be transferred to, processed in, and stored in countries "
 "outside the European Economic Area (EEA). We ensure that such transfers "
@@ -2090,10 +2139,12 @@ msgstr ""
 "GDPR."
 
 #: .\registration\templates\privacy_policy.html:66
+#: .\registration\templates\privacy_policy_page.html:74
 msgid "8. Data Retention"
 msgstr "8. Conservación de los Datos"
 
 #: .\registration\templates\privacy_policy.html:68
+#: .\registration\templates\privacy_policy_page.html:76
 msgid ""
 "We will retain your personal data for as long as you have an active account "
 "with us. Once you delete your account, we will delete all your Personal "
@@ -2103,10 +2154,12 @@ msgstr ""
 "su cuenta, todos sus datos personales (PII) serán eliminados."
 
 #: .\registration\templates\privacy_policy.html:70
+#: .\registration\templates\privacy_policy_page.html:78
 msgid "9. Data Security"
 msgstr "9. Seguridad de los Datos"
 
 #: .\registration\templates\privacy_policy.html:72
+#: .\registration\templates\privacy_policy_page.html:80
 msgid ""
 "We implement appropriate security measures to protect your personal data "
 "from unauthorized access and disclosure. However, no data transmission or "
@@ -2117,19 +2170,23 @@ msgstr ""
 "a los ataques."
 
 #: .\registration\templates\privacy_policy.html:74
+#: .\registration\templates\privacy_policy_page.html:82
 msgid "10. Your Rights"
 msgstr "10. Sus derechos"
 
 #: .\registration\templates\privacy_policy.html:76
+#: .\registration\templates\privacy_policy_page.html:84
 msgid "Under GDPR, you have rights regarding your personal data, including:"
 msgstr "Según la GDPR, usted tiene los siguientes derechos:"
 
 #: .\registration\templates\privacy_policy.html:79
+#: .\registration\templates\privacy_policy_page.html:87
 msgid "a. Right to Access: You can request access to your personal data."
 msgstr ""
 "a. Derecho de Acceso: Usted puede solicitar el acceso a sus datos personales."
 
 #: .\registration\templates\privacy_policy.html:82
+#: .\registration\templates\privacy_policy_page.html:90
 msgid ""
 "b. Right to Rectification: You can request the correction of inaccurate data."
 msgstr ""
@@ -2137,11 +2194,13 @@ msgstr ""
 "incorrectos."
 
 #: .\registration\templates\privacy_policy.html:85
+#: .\registration\templates\privacy_policy_page.html:93
 msgid "c. Right to Erasure: You can request the deletion of your data."
 msgstr ""
 "c. Derecho de Destrucción: Usted puede exigir la destrucción de sus datos. "
 
 #: .\registration\templates\privacy_policy.html:88
+#: .\registration\templates\privacy_policy_page.html:96
 msgid ""
 "d. Right to Restriction of Processing: You can request limitations on data "
 "processing."
@@ -2150,6 +2209,7 @@ msgstr ""
 "establecer limitaciones a la hora de procesar sus datos."
 
 #: .\registration\templates\privacy_policy.html:91
+#: .\registration\templates\privacy_policy_page.html:99
 msgid ""
 "e. Right to Data Portability: You can request your data in a structured, "
 "commonly used format."
@@ -2158,10 +2218,12 @@ msgstr ""
 "estructurado y estándar."
 
 #: .\registration\templates\privacy_policy.html:94
+#: .\registration\templates\privacy_policy_page.html:102
 msgid "f. Right to Object: You can object to the processing of your data."
 msgstr "f. Derecho de Oposición: Puede oponerse al procesamiento de sus datos."
 
 #: .\registration\templates\privacy_policy.html:97
+#: .\registration\templates\privacy_policy_page.html:105
 msgid ""
 "g. Right to Withdraw Consent: If processing is based on consent, you can "
 "withdraw it at any time."
@@ -2170,16 +2232,19 @@ msgstr ""
 "retirar su consentimiento en cualquier momento."
 
 #: .\registration\templates\privacy_policy.html:100
+#: .\registration\templates\privacy_policy_page.html:108
 msgid "To exercise your rights, please contact us at paquinho89@gmail.com."
 msgstr ""
 "Para ejercer sus derechos, contáctenos en el siguiente correo electrónico: "
 "paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:102
+#: .\registration\templates\privacy_policy_page.html:110
 msgid "11. Contact Us"
 msgstr "11. Contacto"
 
 #: .\registration\templates\privacy_policy.html:104
+#: .\registration\templates\privacy_policy_page.html:112
 msgid ""
 "If you have questions or concerns about this Privacy Policy or our data "
 "practices, please contact us at paquinho89@gmail.com."
@@ -2189,10 +2254,12 @@ msgstr ""
 "paquinho89@gmail.com"
 
 #: .\registration\templates\privacy_policy.html:106
+#: .\registration\templates\privacy_policy_page.html:114
 msgid "12. Changes to this Privacy Policy"
 msgstr "12. Cambios en la Política de Privacidad."
 
 #: .\registration\templates\privacy_policy.html:108
+#: .\registration\templates\privacy_policy_page.html:116
 msgid ""
 "We reserve the right to modify this Privacy Policy at any time. Please "
 "review it periodically for updates."
@@ -2202,6 +2269,7 @@ msgstr ""
 "actualizaciones."
 
 #: .\registration\templates\privacy_policy.html:110
+#: .\registration\templates\privacy_policy_page.html:118
 msgid "This Privacy Policy was last updated on 01-Jan-2024."
 msgstr ""
 "La fecha de la última actualización de esta Política de Privacidad es el: 01-"
@@ -2266,31 +2334,30 @@ msgstr "Nombre"
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:64
+#: .\registration\views.py:72
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:72 .\registration\views.py:280
-#: .\registration\views.py:357
+#: .\registration\views.py:80 .\registration\views.py:305
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:111
+#: .\registration\views.py:138
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:116
+#: .\registration\views.py:143
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:156
+#: .\registration\views.py:181
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:165
+#: .\registration\views.py:190
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2298,48 +2365,54 @@ msgstr ""
 "No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
 "una cuenta nueva"
 
-#: .\registration\views.py:211
+#: .\registration\views.py:236
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:214
+#: .\registration\views.py:239
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "El email introducido no existe en nuestra base de datos. Cree una cuenta "
 "nueva."
 
-#: .\registration\views.py:218
+#: .\registration\views.py:243
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:275
+#: .\registration\views.py:300
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
 
-#: .\registration\views.py:302
+#: .\registration\views.py:361
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:307 .\registration\views.py:309
+#: .\registration\views.py:366 .\registration\views.py:368
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
 
-#: .\registration\views.py:332
+#: .\registration\views.py:394
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:337
+#: .\registration\views.py:399
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:350
+#: .\registration\views.py:412
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
+
+#: .\registration\views.py:419
+msgid ""
+"Check the below errors and try again! If you signed up with GOOGLE, "
+"terrameiga.bike is not managing your password"
+msgstr "Comprueba los errores e inténtelo de nuevo! Si te registraste con GOOGLE, terrameiga.bike no gestiona tu contraseña"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
@@ -2360,6 +2433,20 @@ msgstr "Configuración"
 #: .\terrameiga\static\templates\base\nav_bar.html:45
 msgid "Log Out"
 msgstr "Salir"
+
+#: .\terrameiga\static\templates\error_non_se_usa.html:33
+msgid "PAGE NOT FOUND!"
+msgstr ""
+
+#: .\terrameiga\static\templates\error_non_se_usa.html:35
+#, fuzzy
+#| msgid "Check the errors and try again!"
+msgid "Please, go back and try again!"
+msgstr "¡Compruebe los errores e inténtelo de nuevo!"
+
+#: .\terrameiga\static\templates\error_non_se_usa.html:37
+msgid "Go Back"
+msgstr ""
 
 #: .\tools\templates\tool_speed.html:16
 msgid "Speed Tool"

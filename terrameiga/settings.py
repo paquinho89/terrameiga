@@ -37,7 +37,8 @@ ALLOWED_HOSTS = ['terrameiga.up.railway.app', 'terrameiga.bike', 'www.terrameiga
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
 CSRF_COOKIE_SECURE = False
 
-
+#IMPORTANTE.Esto é necesario porque senon o Google Auth dache unha url de callback de http, e eso non che vale. Ten que ser https para por o Google Auth en producción.
+#Fixen este vídeo para aclarame: https://youtu.be/192iwYd8y-8
 IN_PRODUCTION = True
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https") if IN_PRODUCTION else None
 

@@ -416,7 +416,7 @@ def password_update_view(request):
         # asigne o formato de error (O borde en vermello)
         for field, error in form_password_update.errors.items():
           form_password_update[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-          messages.add_message(request, messages.ERROR, _("Check the below errors and try again!"))
+          messages.add_message(request, messages.ERROR, _("Check the below errors and try again! If you signed up with GOOGLE, terrameiga.bike is not managing your password"))
   else:
         # If it's a GET request, create an empty form
         form_password_update = password_update_form(request.user)
