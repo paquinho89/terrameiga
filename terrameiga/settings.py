@@ -93,6 +93,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+API_KEY = 'AIzaSyAUV2VpBpX0qAkWUZ-Hzok0Jhf3rpkklC8'
+
 #Esta é a páxina onde unha vez logeado ou rexistrado con google se redirecciona ao usuario. Pero na view de sign_up e sing_in sobrescríbese xa que a url ten que cambiar de idioma.
 LOGIN_REDIRECT_URL = "https://terrameiga.bike/es/bicicleteiros/"
 
