@@ -35,7 +35,9 @@ ALLOWED_HOSTS = ['terrameiga.up.railway.app', 'terrameiga.bike', 'www.terrameiga
 
 #Esto é para que non me de error a hora de completar os formularios no móbil ou no ordenador nin en ningún outro dispositivo, e para poder acceder o admin site sen problema.
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
-CSRF_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
 
 #Variable para activar o framework das alerts de django
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
