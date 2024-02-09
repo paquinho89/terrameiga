@@ -270,7 +270,9 @@
           <button class="btn btn-dark btn-sm" onclick="swapStyle('dark.css')">{% trans "Dark Mode" %}</button>
         </li>
         <li id="footer_text" class="mt-2 mb-2">{% trans "Supported by:" %}</li>
-        <img src='{% static "imaxes/multisport.jpg" %}'  class="d-inline-block align-top" alt="">
+        <a href="http://www.multisport.es" target="_blank">
+          <img src='{% static "imaxes/multisport.jpg" %}'  class="d-inline-block align-top" alt="">
+        </a>
         <li id="footer_text" class="mt-3">{% trans "No cookies are used on the site" %}&#127850</li>
         <li id="footer_text">© 2024 {% trans "All reserved rights:" %} terrameiga.bike</li>
   </footer>

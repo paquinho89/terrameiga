@@ -1853,8 +1853,8 @@ msgstr "Confirmación do Email"
 
 #: .\registration\templates\email_body_confirmation.html:24
 #: .\registration\templates\email_body_password.html:23
-msgid "Hello!"
-msgstr "Ola!"
+msgid "Hello"
+msgstr "Ola"
 
 #: .\registration\templates\email_body_confirmation.html:25
 msgid ""
@@ -1877,13 +1877,13 @@ msgstr ""
 
 #: .\registration\templates\email_body_confirmation.html:28
 #: .\registration\templates\email_body_password.html:27
-msgid "Happy biking,"
-msgstr "Lume a bicicleta!"
+msgid "Happy biking"
+msgstr "Lume a bicicleta"
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
 msgid "In case the email is not displayed correctly, click in the "
-msgstr "No caso de que non vexa ben o email, prema no seguinte "
+msgstr "Se ten problemas coa visualización do email, prema no seguinte "
 
 #: .\registration\templates\email_body_confirmation.html:29
 #: .\registration\templates\email_body_password.html:28
