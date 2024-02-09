@@ -26,14 +26,6 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 5px;
-      align-items: center;
-    }
-
     h1 {
       color: #000; /* Black text */
     }
@@ -52,7 +44,7 @@
 <body>
   <div class="container">
     <div style="padding: 15px; text-align: center;">
-        <strong style="color: rgb(246, 158, 138);">TerraMeiga</strong>
+        <img src='{% static "imaxes/favicon_oficial.png" %}' width="50" height="50" class="d-inline-block align-top" alt="">
     </div>
     <h1 style="text-align: center;">{% trans "Email Confirmation" %}</h1>
     <p>{% trans "Hello" %} <strong>{{ name }}{{ username_html }},</strong></p>
