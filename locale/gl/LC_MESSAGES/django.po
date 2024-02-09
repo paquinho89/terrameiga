@@ -1842,8 +1842,6 @@ msgid "In case you do not find it, check on the spam folder!"
 msgstr "No caso de non atopalo, comprobe o correo lixo"
 
 #: .\registration\templates\email_body_confirmation.html:9
-#, fuzzy
-#| msgid "Email Confirmation"
 msgid "Terra Meiga - Email Confirmation"
 msgstr "Confirmación do Email"
 
