@@ -1827,7 +1827,7 @@ msgstr "Ten xa unha conta? Inicie sesión na súa conta"
 
 #: .\registration\templates\account_confirm_email_sent.html:17
 msgid "Email confirmation"
-msgstr "Confirmación do Email"
+msgstr "Confirmación email"
 
 #: .\registration\templates\account_confirm_email_sent.html:19
 msgid ""

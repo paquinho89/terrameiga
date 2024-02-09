@@ -1803,8 +1803,6 @@ msgid "In case you do not find it, check on the spam folder!"
 msgstr "Aurkitzen ez baduzu, baliteke nahi ez duzun posta-karpetan egotea."
 
 #: .\registration\templates\email_body_confirmation.html:9
-#, fuzzy
-#| msgid "Email Confirmation"
 msgid "Terra Meiga - Email Confirmation"
 msgstr "Email confirmazioa"
 

@@ -1789,7 +1789,7 @@ msgstr "¿Ja tens compte? Inicia sessió"
 
 #: .\registration\templates\account_confirm_email_sent.html:17
 msgid "Email confirmation"
-msgstr "Confirmació de l’email"
+msgstr "Confirmació email"
 
 #: .\registration\templates\account_confirm_email_sent.html:19
 msgid ""

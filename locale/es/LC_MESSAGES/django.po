@@ -1827,7 +1827,7 @@ msgstr "¿Ya tienes una cuenta? Inicia sesión"
 
 #: .\registration\templates\account_confirm_email_sent.html:17
 msgid "Email confirmation"
-msgstr "Confirmación del email"
+msgstr "Confirmación email"
 
 #: .\registration\templates\account_confirm_email_sent.html:19
 msgid ""
