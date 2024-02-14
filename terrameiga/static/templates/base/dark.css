@@ -52,6 +52,8 @@ min-height: 100vh;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+/*Con esto fago que o footer non se sobrepoña sobre o formulario que suele ocurrir nalgúns móbiles*/
+padding-bottom: 100px;
 }
 /*Para asegurarme que o footer sempre se posiciona na parte inferior*/
 footer {
@@ -498,15 +500,26 @@ h2 {
 }
 
 /*--------------HOME_PAGE_NO_REGISTRATION-------------------------------*/
-    
+#button_sign_in_carossell{
+    color: white;
+    border-color: white;
+    background-color: rgb(83, 158, 138);
+}
+
 #button_sign_in_carossell:hover {
     color: white;
-    background-color: rgb(83, 158, 138);  
+    background-color: transparent;
     }
+
+#button_sign_up_carossell{
+    color: white;
+    border-color: white;
+    background-color: rgb(246, 158, 138);
+}
 
 #button_sign_up_carossell:hover {
     color: white;
-    background-color: rgb(246, 158, 138);
+    background-color: transparent;
     }
 
 .carousel {

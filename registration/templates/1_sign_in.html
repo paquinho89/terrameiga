@@ -46,7 +46,7 @@
                         </tr>
                       {% endfor %}
                     <div class="d-flex justify-content-left mb-lg-4">
-                      <button id="sign_in_button" type="submit" class="btn-lg mt-2" href="#" type="submit">
+                      <button id="sign_in_button" type="submit" class="btn-lg mt-4" href="#" type="submit">
                         <strong>{% trans "Sign in" %}</strong>
                       </button>
                     </div>
@@ -76,7 +76,8 @@
                   </form>
   
                 </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center justify-content-center order-1 order-lg-2 mt-4">
+                <!--C d-none e o d-md-flex o que fago e non mostrar a imaxe cando a pantalla é pequena. Esto son propiedades do Bootstrap-->
+                <div class="col-md-10 col-lg-6 col-xl-7 d-none d-md-flex d-flex align-items-center justify-content-center order-1 order-lg-2 mt-4">
                   <img src='{% static "imaxes/sign_in.jpg" %}'
                     class="img-fluid" alt="Sample image">
                 </div>

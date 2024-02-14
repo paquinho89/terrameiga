@@ -23,7 +23,7 @@ class CustomUser(AbstractUser):
     username = models.CharField(blank=False, null=False, max_length=75, unique=False)
     email = models.EmailField(unique=True)
     country = models.CharField(max_length=33, blank=True, null=True)
-    language = models.CharField(max_length=33, blank=True, null=True, choices=language_choices)
+    language = models.CharField(max_length=33, choices=language_choices, default='en')
     
     #This sets the field that will act as a unique identifier of the User model. We are setting it to the email field.
     USERNAME_FIELD = 'email'

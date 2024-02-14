@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 20:20+0100\n"
+"POT-Creation-Date: 2024-02-13 18:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,27 +23,27 @@ msgid "Write here your comment"
 msgstr "Idatzi hemen zure iruzkina"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:210 .\terrameiga\settings_local.py:196
+#: .\terrameiga\settings.py:196 .\terrameiga\settings_development.py:210
 msgid "Spanish"
 msgstr "Kastellanoa"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:209 .\terrameiga\settings_local.py:195
+#: .\terrameiga\settings.py:195 .\terrameiga\settings_development.py:209
 msgid "English"
 msgstr "Ingelesa"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:211 .\terrameiga\settings_local.py:197
+#: .\terrameiga\settings.py:197 .\terrameiga\settings_development.py:211
 msgid "Galician"
 msgstr "Galegoa"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:212 .\terrameiga\settings_local.py:198
+#: .\terrameiga\settings.py:198 .\terrameiga\settings_development.py:212
 msgid "Catalan"
 msgstr "Katalana"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:213 .\terrameiga\settings_local.py:199
+#: .\terrameiga\settings.py:199 .\terrameiga\settings_development.py:213
 msgid "Basque"
 msgstr "Euskera"
 
@@ -945,28 +945,28 @@ msgid "Day"
 msgstr "Eguna"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:22
-msgid "Km completed:"
-msgstr "Betetako km:"
+msgid "Km done:"
+msgstr "Km eginak:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:23
 msgid "Expenses:"
 msgstr "Gastuak:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:24
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:25
+msgid "Country Information:"
+msgstr "Herrialdearen informazioa:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:28
 msgid "Country:"
 msgstr "Herrialdea:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:25
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:29
 msgid "Capital:"
 msgstr "Hiriburua:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:27
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:31
 msgid "Visa:"
 msgstr "Bisa:"
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:35
-msgid "Country Information:"
-msgstr "Herrialdearen informazioa:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:38
 msgid "Surface:"
@@ -989,12 +989,14 @@ msgid "people"
 msgstr "pertsonak"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
-msgid "Density population:"
-msgstr "Biztanleria-dentsitatea"
+msgid "Population density:"
+msgstr "Biztanleria:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
+msgid "ppl per km<sup>2</sup>"
+msgstr "px por km<sup>2</sup>"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:43
-#, fuzzy
-#| msgid "people"
 msgid "people per"
 msgstr "pertsona"
 
@@ -1802,20 +1804,20 @@ msgstr ""
 msgid "In case you do not find it, check on the spam folder!"
 msgstr "Aurkitzen ez baduzu, baliteke nahi ez duzun posta-karpetan egotea."
 
-#: .\registration\templates\email_body_confirmation.html:9
+#: .\registration\templates\email_body_confirmation.html:10
 msgid "Terra Meiga - Email Confirmation"
 msgstr "Email confirmazioa"
 
-#: .\registration\templates\email_body_confirmation.html:16
+#: .\registration\templates\email_body_confirmation.html:49
 msgid "Email Confirmation"
 msgstr "Email confirmazioa"
 
-#: .\registration\templates\email_body_confirmation.html:24
-#: .\registration\templates\email_body_password.html:23
-msgid "Hello!"
+#: .\registration\templates\email_body_confirmation.html:50
+#: .\registration\templates\email_body_password.html:51
+msgid "Hello"
 msgstr "Kaixo!"
 
-#: .\registration\templates\email_body_confirmation.html:25
+#: .\registration\templates\email_body_confirmation.html:51
 msgid ""
 "Thank you for signing up with TerraMeiga and supporting me on this "
 "adventure. To complete your registration, please click the following link to "
@@ -1825,53 +1827,55 @@ msgstr ""
 "laguntzeagatik. Zure erregistroa osatzeko, klik egin behar duzu 'Berretsi "
 "zure emaila' botoian"
 
-#: .\registration\templates\email_body_confirmation.html:26
+#: .\registration\templates\email_body_confirmation.html:52
 msgid "Confirm Your Email"
 msgstr "Berretsi zure emaila"
 
-#: .\registration\templates\email_body_confirmation.html:27
+#: .\registration\templates\email_body_confirmation.html:53
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
 msgstr ""
 "TerraMeigan erregistratu ez bazara, ez duzu helbide elektroniko hau kontuan "
 "hartu behar."
 
-#: .\registration\templates\email_body_confirmation.html:28
-#: .\registration\templates\email_body_password.html:27
-msgid "Happy biking,"
+#: .\registration\templates\email_body_confirmation.html:54
+#: .\registration\templates\email_body_password.html:55
+#, fuzzy
+#| msgid "Happy biking,"
+msgid "Happy biking"
 msgstr "Gozatu bizikletarekin!"
 
-#: .\registration\templates\email_body_confirmation.html:29
-#: .\registration\templates\email_body_password.html:28
+#: .\registration\templates\email_body_confirmation.html:55
+#: .\registration\templates\email_body_password.html:57
 msgid "In case the email is not displayed correctly, click in the "
 msgstr "Email-a ez bada ongi erakutsi, egin klik estekan "
 
-#: .\registration\templates\email_body_confirmation.html:29
-#: .\registration\templates\email_body_password.html:28
+#: .\registration\templates\email_body_confirmation.html:55
+#: .\registration\templates\email_body_password.html:57
 msgid "link"
 msgstr "esteka"
 
-#: .\registration\templates\email_body_password.html:8
+#: .\registration\templates\email_body_password.html:10
 msgid "Terra Meiga - Password Recovery"
 msgstr "Terra Meiga - Pasahitza berreskuratu"
 
-#: .\registration\templates\email_body_password.html:15
+#: .\registration\templates\email_body_password.html:50
 #: .\registration\templates\password_reset.html:17
 #: .\registration\templates\password_reset_sent.html:17
 msgid "Password Recovery"
 msgstr "Pasahitza berreskuratu"
 
-#: .\registration\templates\email_body_password.html:24
+#: .\registration\templates\email_body_password.html:52
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
 msgstr "Pasahitza ahaztu baduzu, egin klik esteka honetan:"
 
-#: .\registration\templates\email_body_password.html:25
+#: .\registration\templates\email_body_password.html:53
 msgid "Reset Password"
 msgstr "Berridatzi pasahitza"
 
-#: .\registration\templates\email_body_password.html:26
+#: .\registration\templates\email_body_password.html:54
 msgid "If you didn't request this password reset, please ignore this email."
 msgstr "Pasahitza aldatzeko eskatu ez baduzu, ahaztu helbide elektroniko hau"
 
@@ -2293,26 +2297,26 @@ msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Zoaz zure e-mailera eta egiaztatu zure kontua. Mila esker!"
 
-#: .\registration\views.py:80 .\registration\views.py:305
+#: .\registration\views.py:80 .\registration\views.py:311
 msgid "Check the below errors and try again!"
 msgstr "Egiaztatu akatsak eta saiatu berriro!"
 
-#: .\registration\views.py:138
+#: .\registration\views.py:141
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr ""
 "Zure kontua sortu egin da. Eskerrik asko abentura honetan parte hartzeagatik!"
 
-#: .\registration\views.py:143
+#: .\registration\views.py:146
 msgid "You have been logged out!"
 msgstr "Zure saioa itxi egin da!"
 
-#: .\registration\views.py:181
+#: .\registration\views.py:184
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "Ongi etorri! Orain bidaiaren eduki guztiaz goza dezakezu."
 
-#: .\registration\views.py:190
+#: .\registration\views.py:193
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2320,53 +2324,55 @@ msgstr ""
 "Ez dago kredentzial horiek dituen erabiltzailerik. Saiatu berriro edo sortu "
 "kontu berri bat"
 
-#: .\registration\views.py:236
+#: .\registration\views.py:239
 msgid "An email was sent to your email inbox"
 msgstr "Email bat bidali dizugu zure posta elektronikora"
 
-#: .\registration\views.py:239
+#: .\registration\views.py:242
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "Sartutako helbide elektronikoa ez dago gure datu-basean. Sortu kontu berri "
 "bat."
 
-#: .\registration\views.py:243
+#: .\registration\views.py:246
 msgid "The email is not valid"
 msgstr "Sartutako emaila ez du balio"
 
-#: .\registration\views.py:300
+#: .\registration\views.py:306
 msgid "Your password has been changed"
 msgstr "Zure pasahitza eguneratu egin da"
 
-#: .\registration\views.py:361
+#: .\registration\views.py:368
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Zure kontua ezabatu egin da. Espero dezagun laster hemen ikustea!"
 
-#: .\registration\views.py:366 .\registration\views.py:368
+#: .\registration\views.py:373 .\registration\views.py:375
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Mesedez, idatzi \"terrameiga\". Testuak letra xehez idatzita egon behar du, "
 "eta ez du komatxorik eraman behar."
 
-#: .\registration\views.py:394
+#: .\registration\views.py:401
 msgid "Your personal data has been updated"
 msgstr "Zure datu pertsonalak eguneratu egin dira"
 
-#: .\registration\views.py:399
+#: .\registration\views.py:406
 msgid "The data could not be updated. Please check the below errors"
 msgstr "Datuak ezin izan dira eguneratu. Mesedez, akatzak konprobatu"
 
-#: .\registration\views.py:412
+#: .\registration\views.py:419
 msgid "Your password has been updated!"
 msgstr "Zure pasahitza eguneratu egin da!"
 
-#: .\registration\views.py:419
+#: .\registration\views.py:426
 msgid ""
 "Check the below errors and try again! If you signed up with GOOGLE, "
 "terrameiga.bike is not managing your password"
-msgstr "Egiaztatu akatsak eta saiatu berriro! GOOGLE bidez erregistratu bazara, terrameiga.bike ez da zure pasahitza kudeatzen"
+msgstr ""
+"Egiaztatu akatsak eta saiatu berriro! GOOGLE bidez erregistratu bazara, "
+"terrameiga.bike ez da zure pasahitza kudeatzen"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"

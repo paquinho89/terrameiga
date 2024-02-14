@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-08 20:25+0100\n"
+"POT-Creation-Date: 2024-02-13 18:07+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,27 +23,27 @@ msgid "Write here your comment"
 msgstr "Escrigui aquí el seu comentari"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:210 .\terrameiga\settings_local.py:196
+#: .\terrameiga\settings.py:196 .\terrameiga\settings_development.py:210
 msgid "Spanish"
 msgstr "Espanyol"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:209 .\terrameiga\settings_local.py:195
+#: .\terrameiga\settings.py:195 .\terrameiga\settings_development.py:209
 msgid "English"
 msgstr "Anglès"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:211 .\terrameiga\settings_local.py:197
+#: .\terrameiga\settings.py:197 .\terrameiga\settings_development.py:211
 msgid "Galician"
 msgstr "Gallec"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:212 .\terrameiga\settings_local.py:198
+#: .\terrameiga\settings.py:198 .\terrameiga\settings_development.py:212
 msgid "Catalan"
 msgstr "Català"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:213 .\terrameiga\settings_local.py:199
+#: .\terrameiga\settings.py:199 .\terrameiga\settings_development.py:213
 msgid "Basque"
 msgstr "Basc"
 
@@ -945,28 +945,28 @@ msgid "Day"
 msgstr "Dia"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:22
-msgid "Km completed:"
-msgstr "Km completats:"
+msgid "Km done:"
+msgstr "km recorreguts:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:23
 msgid "Expenses:"
 msgstr "Despeses:"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:24
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:25
+msgid "Country Information:"
+msgstr "Informació del país:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:28
 msgid "Country:"
 msgstr "País"
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:25
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:29
 msgid "Capital:"
 msgstr ""
 
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:27
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:31
 msgid "Visa:"
-msgstr ""
-
-#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:35
-msgid "Country Information:"
-msgstr "Informació del país:"
+msgstr "Visat"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:38
 msgid "Surface:"
@@ -989,8 +989,12 @@ msgid "people"
 msgstr "persones"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
-msgid "Density population:"
-msgstr "Densitat poblacional:"
+msgid "Population density:"
+msgstr "densitat de població:"
+
+#: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
+msgid "ppl per km<sup>2</sup>"
+msgstr "px per km<sup>2</sup>"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:43
 msgid "people per"
@@ -1805,22 +1809,22 @@ msgstr ""
 "En el cas que no el trobi, pot ser que estigui en la carpeta de correu no "
 "desitjat"
 
-#: .\registration\templates\email_body_confirmation.html:9
+#: .\registration\templates\email_body_confirmation.html:10
 #, fuzzy
 #| msgid "Email Confirmation"
 msgid "Terra Meiga - Email Confirmation"
 msgstr "Confirmació de l’email"
 
-#: .\registration\templates\email_body_confirmation.html:16
+#: .\registration\templates\email_body_confirmation.html:49
 msgid "Email Confirmation"
 msgstr "Confirmació de l’email"
 
-#: .\registration\templates\email_body_confirmation.html:24
-#: .\registration\templates\email_body_password.html:23
-msgid "Hello!"
+#: .\registration\templates\email_body_confirmation.html:50
+#: .\registration\templates\email_body_password.html:51
+msgid "Hello"
 msgstr "¡Hola!"
 
-#: .\registration\templates\email_body_confirmation.html:25
+#: .\registration\templates\email_body_confirmation.html:51
 msgid ""
 "Thank you for signing up with TerraMeiga and supporting me on this "
 "adventure. To complete your registration, please click the following link to "
@@ -1830,52 +1834,54 @@ msgstr ""
 "aventura. Per completar el seu registre has de fer clic en ‘Confirma el teu "
 "email’"
 
-#: .\registration\templates\email_body_confirmation.html:26
+#: .\registration\templates\email_body_confirmation.html:52
 msgid "Confirm Your Email"
 msgstr "Confirma el teu email"
 
-#: .\registration\templates\email_body_confirmation.html:27
+#: .\registration\templates\email_body_confirmation.html:53
 msgid ""
 "If you did not register on TerraMeiga, you can safely ignore this email."
 msgstr ""
 "En el cas de que no s’hagi registrat en TerraMeiga, pot ignorar aquest email."
 
-#: .\registration\templates\email_body_confirmation.html:28
-#: .\registration\templates\email_body_password.html:27
-msgid "Happy biking,"
+#: .\registration\templates\email_body_confirmation.html:54
+#: .\registration\templates\email_body_password.html:55
+#, fuzzy
+#| msgid "Happy biking,"
+msgid "Happy biking"
 msgstr "¡Que gaudeixis amb la bici!"
 
-#: .\registration\templates\email_body_confirmation.html:29
-#: .\registration\templates\email_body_password.html:28
+#: .\registration\templates\email_body_confirmation.html:55
+#: .\registration\templates\email_body_password.html:57
 msgid "In case the email is not displayed correctly, click in the "
 msgstr "En cas que l'email no es mostri correctament, feu clic al "
 
-#: .\registration\templates\email_body_confirmation.html:29
-#: .\registration\templates\email_body_password.html:28
+#: .\registration\templates\email_body_confirmation.html:55
+#: .\registration\templates\email_body_password.html:57
 msgid "link"
 msgstr "enllaç"
 
-#: .\registration\templates\email_body_password.html:8
+#: .\registration\templates\email_body_password.html:10
 msgid "Terra Meiga - Password Recovery"
 msgstr "Terra Meiga - Recuperació de la Contrasenya"
 
-#: .\registration\templates\email_body_password.html:15
+#: .\registration\templates\email_body_password.html:50
 #: .\registration\templates\password_reset.html:17
 #: .\registration\templates\password_reset_sent.html:17
 msgid "Password Recovery"
 msgstr "Recuperar la contrasenya"
 
-#: .\registration\templates\email_body_password.html:24
+#: .\registration\templates\email_body_password.html:52
 msgid ""
 "You have requested a password reset for your account. To reset your "
 "password, please click the following link:"
 msgstr "Si heu oblidat la contrasenya, feu clic al següent enllaç:"
 
-#: .\registration\templates\email_body_password.html:25
+#: .\registration\templates\email_body_password.html:53
 msgid "Reset Password"
 msgstr "Resetejar contrasenya"
 
-#: .\registration\templates\email_body_password.html:26
+#: .\registration\templates\email_body_password.html:54
 msgid "If you didn't request this password reset, please ignore this email."
 msgstr ""
 "En cas que no hagi sol-licitat el canvi de contrasenya, ignori aquest email"
@@ -2298,26 +2304,26 @@ msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vagi al seu email i verifiqui el seu compte. ¡Gràcies!"
 
-#: .\registration\views.py:80 .\registration\views.py:305
+#: .\registration\views.py:80 .\registration\views.py:311
 msgid "Check the below errors and try again!"
 msgstr "¡Comprovi els errors i intenti-ho de nou!"
 
-#: .\registration\views.py:138
+#: .\registration\views.py:141
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr ""
 "El seu compte ha estat creat. ¡Gracies per formar part d’aquesta aventura!"
 
-#: .\registration\views.py:143
+#: .\registration\views.py:146
 msgid "You have been logged out!"
 msgstr "¡La seva sessió ha tancat!"
 
-#: .\registration\views.py:181
+#: .\registration\views.py:184
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Benvingut!, Ara pot gaudir de tot el contingut del viatge."
 
-#: .\registration\views.py:190
+#: .\registration\views.py:193
 msgid ""
 "There is no user with those credentials. Try again or create a TerraMeiga "
 "account"
@@ -2325,52 +2331,54 @@ msgstr ""
 "No existeix cap usuari amb aquests credencials. Intenti-ho de nou o creeu un "
 "compte nou."
 
-#: .\registration\views.py:236
+#: .\registration\views.py:239
 msgid "An email was sent to your email inbox"
 msgstr "L’hi hem enviat un email al seu correu electrònic"
 
-#: .\registration\views.py:239
+#: .\registration\views.py:242
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "L’email introduït no existeix a la nostre base de dades. Creeu un compte nou."
 
-#: .\registration\views.py:243
+#: .\registration\views.py:246
 msgid "The email is not valid"
 msgstr "L’email introduït no és vàlid"
 
-#: .\registration\views.py:300
+#: .\registration\views.py:306
 msgid "Your password has been changed"
 msgstr "La vostre contrasenya ha estat actualizada"
 
-#: .\registration\views.py:361
+#: .\registration\views.py:368
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "El seu compte ha estat eliminat. Esperem veure-ho aviat per aquí"
 
-#: .\registration\views.py:366 .\registration\views.py:368
+#: .\registration\views.py:373 .\registration\views.py:375
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Si us plau, escrigui ‘terrameiga’. El text ha d’estar en minúscula i no ha "
 "de portar cometes"
 
-#: .\registration\views.py:394
+#: .\registration\views.py:401
 msgid "Your personal data has been updated"
 msgstr "Les vostres dades personals s’han actualitzat"
 
-#: .\registration\views.py:399
+#: .\registration\views.py:406
 msgid "The data could not be updated. Please check the below errors"
 msgstr "Les dades no s’han pogut actualitzar. Si us plau, comprovi els errors"
 
-#: .\registration\views.py:412
+#: .\registration\views.py:419
 msgid "Your password has been updated!"
 msgstr "La seva contrasenya ha estat actualitzada."
 
-#: .\registration\views.py:419
+#: .\registration\views.py:426
 msgid ""
 "Check the below errors and try again! If you signed up with GOOGLE, "
 "terrameiga.bike is not managing your password"
-msgstr "¡Comprovi els errors i intenti-ho de nou! Si t'has registrat amb GOOGLE, terrameiga.bike no gestiona la teva contrasenya"
+msgstr ""
+"¡Comprovi els errors i intenti-ho de nou! Si t'has registrat amb GOOGLE, "
+"terrameiga.bike no gestiona la teva contrasenya"
 
 #: .\terrameiga\static\templates\base\nav_bar.html:20
 msgid "Home"
@@ -2409,6 +2417,3 @@ msgstr ""
 #: .\tools\templates\tool_speed.html:16
 msgid "Speed Tool"
 msgstr ""
-
-#~ msgid "Short Film Festival of Verín 2024"
-#~ msgstr "Festival de Curtas de Verín de 2024"

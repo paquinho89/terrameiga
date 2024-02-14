@@ -4,6 +4,7 @@
 from django.utils.translation import gettext_lazy as _
 
 country_list_values = (
+    ("------", "-------"),
     ("Afghanistan",_("Afghanistan")),
     ("Albania",_("Albania")),
     ("Algeria",_("Algeria")),
