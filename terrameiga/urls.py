@@ -64,6 +64,7 @@ urlpatterns =   i18n_patterns (
     path('iz_blog/let_the_cycling_begin/', let_the_cycling_beging_blog_view, name="let_the_cycling_begin"),
     path('the_journey_to_the_journey/', the_journey_to_the_journey_blog_view, name="the_journey_to_the_journey"),
     path('preparation_preparation_preparation/', preparation_preparation_blog_view, name="preparation_preparation"),
+    path('how_we_got_here/', TemplateView.as_view(template_name = "blog/how_we_got_here_july.html"), name="how_we_got_here"),
     path('new_year_country_plans/', TemplateView.as_view(template_name = "blog/blog_new_year_january.html"), name="new_year_country_plans_january_2024"),
 
     #TOOLS 

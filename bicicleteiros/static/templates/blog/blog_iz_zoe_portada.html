@@ -110,6 +110,27 @@
             <a id="sign_in_button" class="btn btn-lg" href="{% url 'preparation_preparation' %}" role="button" target="_blank">Read</a>
         </div>
         </div>
+        <hr>
+        <!-- Post -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="bg-image hover-overlay shadow-1-strong rounded" data-mdb-ripple-init data-mdb-ripple-color="light">
+                <img src='{% static "imaxes/blog_photos/january_photo_21.jpg" %}' class="img-fluid" />
+                <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </a>
+                </div>
+            </div>
+    
+            <div class="col-md-8 mb-4">
+                <h4 class="mb-3">How we got here - July 2023</h4>
+                <p id="p_blog">
+                Just a few days before I set off I realised even my mum wasn’t sure why I wa sdoing this trip! Feel free to skip to the next section for the cycling-y bits. 
+                But if you want the background please read on! (...)
+                </p>
+                <a id="sign_in_button" class="btn btn-lg" href="{% url 'how_we_got_here' %}" role="button" target="_blank">Read</a>
+            </div>
+            </div>
     </section>
 </div>
 {% endblock content %}
