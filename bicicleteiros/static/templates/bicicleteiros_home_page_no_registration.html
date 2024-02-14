@@ -123,7 +123,7 @@
 
   <div class="container marketing">
     <h2 class="text-center py-4 mt-5">
-      <a class="btn btn-lg" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell"><strong>{% trans "Sign In" %}</strong></a>
+      <a class="btn btn-lg mb-1" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell"><strong>{% trans "Sign In" %}</strong></a>
       <a class="btn btn-lg" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell"><strong>{% trans "Sign Up" %}</strong></a>
     </h2>
     <h2 id="h2_home_page_no_registration" class="text-center py-3">{% trans "Week" %}  {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }} - {{ total_km_html|intcomma }} km</h2>
