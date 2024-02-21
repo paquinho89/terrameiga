@@ -1,0 +1,6 @@
+COLOR BRANDING TERRA MEIGA:
+Pink: rgb (246, 197, 190)
+Green: rgb (83, 158, 138)
+
+
+

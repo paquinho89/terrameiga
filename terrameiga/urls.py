@@ -75,6 +75,7 @@ urlpatterns =   i18n_patterns (
     #PROJECT PRESENTATION
     path('project_presentation/', project_presentation_view, name="project_presentation"),
 
+    path('spot_map/', TemplateView.as_view(template_name = "spot_map.html"), name="spot_map"),
     path('account/order/', TemplateView.as_view(template_name = "profile_account/order.html"), name="order"),
     path('account/returns/', TemplateView.as_view(template_name = "profile_account/returns.html"), name="returns"),
     path('product_1/', TemplateView.as_view(template_name = "product_detail.html"), name = "product_1"),
