@@ -123,7 +123,8 @@
 
   <div class="container marketing">
     <div class="text-center py-4 mt-4">
-      
+      <a class="btn btn-lg mt-2" href="{% url 'sign_in' %}" role="button" id="button_sign_in_carossell"><strong>{% trans "Sign In" %}</strong></a>
+      <a class="btn btn-lg mt-2" href="{% url 'sign_up' %}" role="button" id="button_sign_up_carossell"><strong>{% trans "Sign Up" %}</strong></a>
       <form class="d-flex-danger" role="search">
         <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}" type="submit"><strong>{% trans "Sign In" %}</strong></a>
         <a class="btn btn-lg mt-2" id="button_sign_up_carossell" href="{% url 'sign_up' %}" type="submit"><strong>{% trans "Sign Up" %}</strong></a>
