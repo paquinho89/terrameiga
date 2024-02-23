@@ -501,7 +501,7 @@ h2 {
 
 /*--------------HOME_PAGE_NO_REGISTRATION-------------------------------*/
 #button_sign_in_carossell{
-    color: white;
+    color: black;
     border-color: white;
     background-color: rgb(83, 158, 138);
 }
@@ -512,7 +512,7 @@ h2 {
     }
 
 #button_sign_up_carossell{
-    color: white;
+    color: black;
     border-color: white;
     background-color: rgb(246, 158, 138);
 }
