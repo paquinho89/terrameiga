@@ -123,12 +123,14 @@
 
   <div class="container marketing">
     <div class="text-center py-4 mt-4">
-      <form class="d-flex-danger">
-        <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}" type="submit"><strong>{% trans "Sign In" %}</strong></a>
-        <!--<a class="btn btn-lg mt-2" id="button_sign_up_carossell" href="{% url 'sign_up' %}" type="submit"><strong>{% trans "Sign Up" %}</strong></a>-->
-        <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}" type="submit"><strong>{% trans "Sign In" %}</strong></a>
-        <a class="btn btn-lg mt-2" id="button_sign_up_carossell" href="{% url 'sign_up' %}" type="submit"><strong>{% trans "Sign Up" %}</strong></a>
-      </form>
+      <div class="btn-group-vertical" role="group" aria-label="Sign in and Sign up">
+        <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}">
+            <strong>{% trans "Sign In" %}</strong>
+        </a>
+        <a class="btn btn-lg mt-2" id="button_sign_up_carossell" href="{% url 'sign_up' %}">
+            <strong>{% trans "Sign Up" %}</strong>
+        </a>
+      </div>
     </div>
     <h2 id="h2_home_page_no_registration" class="text-center py-3">{% trans "Week" %}  {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }} - {{ total_km_html|intcomma }} km</h2>
     <!-- Section-->
