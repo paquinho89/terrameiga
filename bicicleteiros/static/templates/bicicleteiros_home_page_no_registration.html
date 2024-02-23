@@ -123,7 +123,7 @@
 
   <div class="container marketing">
     <div class="text-center py-4 mt-4">
-      <div class="btn-group-vertical" role="group" aria-label="Sign in and Sign up">
+      <div role="group" aria-label="Sign in and Sign up">
         <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}">
             <strong>{% trans "Sign In" %}</strong>
         </a>
@@ -166,7 +166,7 @@
       </section>
   </div><!-- /.container -->
 
-<h2 id="h2_home_page_no_registration" class="text-center py-4">{% trans "Blog Section" %}</h2>
+<h2 class="text-center py-4"><a id="h2_home_page_no_registration" href="{% url 'iz_blog' %}" target="_blank" style="text-decoration: none;">{% trans "Blog Section" %}</a></h2>
 <!-- Section-->
 <section id="journey_characteristics">
   <div class="container px-4 px-lg-5">
@@ -180,7 +180,7 @@
                 <div id="home_page_no_registration_card" class="card-body p-4">
                     <div class="text-center">
                         <!-- Product name-->
-                        <h4 id="home_page_no_registration_card_text">Iz & Zoe</h4>
+                        <h4><a id="home_page_no_registration_card_text" href="{% url 'iz_blog' %}" target="_blank" style="text-decoration: none;">Iz & Zoe</a></h4>
                         <label> {% trans "Written by Iz" %} </label>
                         <h4 class="mt-3"><a class="btn btn-outline-light btn-lg" href="{% url 'iz_blog' %}" role="button" target="_blank" id="sign_in_button">{% trans "Read" %}</a> </h4>
                     </div>

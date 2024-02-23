@@ -277,10 +277,12 @@ a{
 h4{
     color: white;
     }
+#h5_delete_account{
+    color: black;
+    }
 h5{
     color: white;
-    }
-    
+    }  
 h1{
     color: white;
 }
