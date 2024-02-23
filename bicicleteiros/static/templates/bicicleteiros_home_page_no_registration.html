@@ -123,13 +123,17 @@
 
   <div class="container marketing">
     <div class="text-center py-4 mt-4">
-      <div class="btn-group-horizontal" role="group" aria-label="Sign in and Sign up">
-        <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}">
-            <strong>{% trans "Sign In" %}</strong>
-        </a>
-        <a class="btn btn-lg mt-2" id="button_sign_up_carossell" href="{% url 'sign_up' %}">
-            <strong>{% trans "Sign Up" %}</strong>
-        </a>
+      <div class="row">
+        <div class="col-md-6">
+            <a class="btn btn-lg mt-2 btn-block" id="button_sign_in_carossell" href="{% url 'sign_in' %}">
+                <strong>{% trans "Sign In" %}</strong>
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-lg mt-2 btn-block" id="button_sign_up_carossell" href="{% url 'sign_up' %}">
+                <strong>{% trans "Sign Up" %}</strong>
+            </a>
+        </div>
       </div>
     </div>
     <h2 id="h2_home_page_no_registration" class="text-center py-3">{% trans "Week" %}  {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }} - {{ total_km_html|intcomma }} km</h2>
