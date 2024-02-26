@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 13:28+0100\n"
+"POT-Creation-Date: 2024-02-26 16:26+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,27 +25,27 @@ msgid "Write here your comment"
 msgstr "Escriba aqui su comentario"
 
 #: .\bicicleteiros\forms.py:26 .\registration\models.py:14
-#: .\terrameiga\settings.py:210 .\terrameiga\settings_local.py:196
+#: .\terrameiga\settings.py:196 .\terrameiga\settings_development.py:210
 msgid "Spanish"
 msgstr "Castellano"
 
 #: .\bicicleteiros\forms.py:27 .\registration\models.py:13
-#: .\terrameiga\settings.py:209 .\terrameiga\settings_local.py:195
+#: .\terrameiga\settings.py:195 .\terrameiga\settings_development.py:209
 msgid "English"
 msgstr "Inglés"
 
 #: .\bicicleteiros\forms.py:28 .\registration\models.py:15
-#: .\terrameiga\settings.py:211 .\terrameiga\settings_local.py:197
+#: .\terrameiga\settings.py:197 .\terrameiga\settings_development.py:211
 msgid "Galician"
 msgstr "Gallego"
 
 #: .\bicicleteiros\forms.py:29 .\registration\models.py:16
-#: .\terrameiga\settings.py:212 .\terrameiga\settings_local.py:198
+#: .\terrameiga\settings.py:198 .\terrameiga\settings_development.py:212
 msgid "Catalan"
 msgstr "Catalán"
 
 #: .\bicicleteiros\forms.py:30 .\registration\models.py:17
-#: .\terrameiga\settings.py:213 .\terrameiga\settings_local.py:199
+#: .\terrameiga\settings.py:199 .\terrameiga\settings_development.py:213
 msgid "Basque"
 msgstr "Euskera"
 
@@ -2335,81 +2335,85 @@ msgstr "Nombre"
 msgid "Update your data"
 msgstr "Actualizar los datos"
 
-#: .\registration\views.py:73
+#: .\registration\views.py:64
+msgid "Please, try again with a different username"
+msgstr "Inténtelo de nuevo con un nombre de usuario diferente"
+
+#: .\registration\views.py:79
 msgid ""
 "Please, go to your email and verify your account. Thanks for your support, "
 msgstr "Vaya a su email y verifique su cuenta. ¡Gracias!"
 
-#: .\registration\views.py:81 .\registration\views.py:325
+#: .\registration\views.py:87 .\registration\views.py:331
 msgid "Check the below errors and try again!"
 msgstr "¡Compruebe los errores e inténtelo de nuevo!"
 
-#: .\registration\views.py:142
+#: .\registration\views.py:148
 msgid ""
 "Your account was succesfully created. Thanks for being part of this "
 "adventure!"
 msgstr "Su cuenta ha sido creada. ¡Gracias por formar parte de esta aventura!"
 
-#: .\registration\views.py:147
+#: .\registration\views.py:153
 msgid "You have been logged out!"
 msgstr "¡Su sesión se ha cerrado!"
 
-#: .\registration\views.py:187 .\registration\views.py:198
+#: .\registration\views.py:193 .\registration\views.py:204
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "¡Bienvenido!, Ahora puede disfrutar de todo el contenido del viaje."
 
-#: .\registration\views.py:207
+#: .\registration\views.py:213
 msgid ""
-"There is no user with those credentials. Try again or create a TerraMeiga "
-"account"
+"The email or the password are not correct. Try again, recover password or "
+"create a new TerraMeiga account"
 msgstr ""
-"No existe ningún usuario con esos credenciales. Inténtelo de nuevo o cree "
-"una cuenta nueva"
+"El email o la contraseña no son correctos. Inténtelo de nuevo, recupere la "
+"contraseña o cree una nueva cuenta en terrameiga"
 
-#: .\registration\views.py:253
+#: .\registration\views.py:259
 msgid "An email was sent to your email inbox"
 msgstr "Le hemos enviado un email a su correo electrónico"
 
-#: .\registration\views.py:256
+#: .\registration\views.py:262
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "El email introducido no existe en nuestra base de datos. Cree una cuenta "
 "nueva."
 
-#: .\registration\views.py:260
+#: .\registration\views.py:266
 msgid "The email is not valid"
 msgstr "El email introducido no es válido"
 
-#: .\registration\views.py:320
+#: .\registration\views.py:326
 msgid "Your password has been changed"
 msgstr "Su contraseña ha sido actualizada"
 
-#: .\registration\views.py:382
+#: .\registration\views.py:388
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Su cuenta ha sido eliminada. Esperemos verlo pronto por aqui"
 
-#: .\registration\views.py:387 .\registration\views.py:389
+#: .\registration\views.py:393 .\registration\views.py:395
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba 'terrameiga'. El texto tiene que estar en minúsculas y no "
 "debe de llevar comillas"
 
-#: .\registration\views.py:415
+#: .\registration\views.py:421
 msgid "Your personal data has been updated"
 msgstr "Sus datos personales se han actualizado"
 
-#: .\registration\views.py:420
+#: .\registration\views.py:426
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Los datos no se han podido actualizar. Por favor, compruebe los errores"
 
-#: .\registration\views.py:433
+#: .\registration\views.py:439
 msgid "Your password has been updated!"
 msgstr "Su contraseña ha sido actualizada."
 
-#: .\registration\views.py:440
+#: .\registration\views.py:446
 msgid ""
 "Check the below errors and try again! If you signed up with GOOGLE, "
 "terrameiga.bike is not managing your password"

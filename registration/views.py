@@ -57,21 +57,27 @@ def sign_up_view(request):
       #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
       email_form_str = sign_up_form_variable.cleaned_data.get('email')
       password_form = sign_up_form_variable.cleaned_data.get('password1')
-      user = CustomUser.objects.create_user(user_name, email_form_str, password_form, language = str(get_language().rsplit("-")[0])) #Eiqui metémoslle o language que está habilitado no browser.
-      #Con esto fago o usuario como non activo ata que confirme a súa conta de correo. Cando confime a conta o usario pasará a un estado de Activo.
-      user.is_active = False
-      user.save()
-      #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
-      email_form =  CustomUser.objects.filter(email=email_form_str).first()
-      #This is to generate a random token to include in the link which will be sent to the customer and he/she will be able to reset the password.
-      token = str(uuid.uuid4())
-      #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
-      uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
-      language = get_language()
-      send_confirm_email (request, email_form, user_name, uidb64, token, language)
-      #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
-      messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
-      return redirect('account_confirmation_email_sent')
+      #Verficamos que o nome de usuario sexa único porque se quero que a xente tamén se logee con él, teño que facer que sexa único, igual que o email, que tamén é único
+      all_user_names_list = CustomUser.objects.values_list('username', flat=True)
+      if user_name in list(all_user_names_list):
+        sign_up_form_variable['username'].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+        messages.add_message(request, messages.ERROR, _("Please, try again with a different username"))
+      else:
+        user = CustomUser.objects.create_user(user_name, email_form_str, password_form, language = str(get_language().rsplit("-")[0])) #Eiqui metémoslle o language que está habilitado no browser.
+        #Con esto fago o usuario como non activo ata que confirme a súa conta de correo. Cando confime a conta o usario pasará a un estado de Activo.
+        user.is_active = False
+        user.save()
+        #Con esto obtemos o email introducido no formulario pero este é do tipo "registration.models.CustomUser" que me vale para obter o pk do email
+        email_form =  CustomUser.objects.filter(email=email_form_str).first()
+        #This is to generate a random token to include in the link which will be sent to the customer and he/she will be able to reset the password.
+        token = str(uuid.uuid4())
+        #Con esto codificamos o user_id (pk) correspondente ao email incluido no formulario
+        uidb64=urlsafe_base64_encode(force_bytes(email_form.pk))
+        language = get_language()
+        send_confirm_email (request, email_form, user_name, uidb64, token, language)
+        #Esto é para que me mostre a mensaxe de que se fixo log-in correctamente
+        messages.add_message(request, messages.SUCCESS, _("Please, go to your email and verify your account. Thanks for your support, ") + user_name)
+        return redirect('account_confirmation_email_sent')
     else:
       # Eiqui o que fago e que recorra os distintos fields do form e que lle 
       # asigne o formato de error (O borde en vermello)
@@ -204,7 +210,7 @@ def sign_in_view(request):
         #sign_in_form_variable[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
         # Solo me interesa o error, e eiqui é o que estou collerndo, a frase dos errores
         #messages.add_message(request, messages.ERROR, error)
-      messages.add_message(request, messages.ERROR, _("There is no user with those credentials. Try again or create a TerraMeiga account"))
+      messages.add_message(request, messages.ERROR, _("The email or the password are not correct. Try again, recover password or create a new TerraMeiga account"))
       #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
       form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
       
