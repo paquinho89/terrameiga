@@ -25,6 +25,7 @@ from django.utils.translation import get_language
 from django.utils.translation import activate
 from django.contrib.sites.shortcuts import get_current_site
 from allauth.socialaccount.templatetags.socialaccount import provider_login_url
+from django.db.models import Q
 
 
 
@@ -171,18 +172,31 @@ def sign_in_view(request):
     sign_in_form_variable = sign_in_form_1(data=request.POST)
     if sign_in_form_variable.is_valid():
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.
-      email_form = sign_in_form_variable.cleaned_data.get('username')
+      email_or_username_form = sign_in_form_variable.cleaned_data.get('username')
       password_form = sign_in_form_variable.cleaned_data.get('password')
-      #Cando se faga o sign_in, vou buscar o idioma que ten o usuario configurado no seus datos (CustomUser model) e vouno activar.
-      #Non quero que me cambie o idioma ao do browser, quero que me pille o que ten gardado no seu perfil
-      user_language = CustomUser.objects.get(email = email_form).language
-      activate(user_language)
-      #Authenticate user returns the email of the user
-      user_auth = authenticate(request, email=email_form, password=password_form)
-      if user_auth is not None:
-        login(request, user_auth)
-        messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
-        return redirect('bicleteiros_home_page')
+      #Para a xente que se logea co email
+      if "@" in str(email_or_username_form):
+        #Cando se faga o sign_in, vou buscar o idioma que ten o usuario configurado no seus datos (CustomUser model) e vouno activar.
+        #Non quero que me cambie o idioma ao do browser, quero que me pille o que ten gardado no seu perfil
+        user_language = CustomUser.objects.get(email = email_or_username_form).language
+        activate(user_language)
+        #Authenticate user returns the email of the user
+        user_auth = authenticate(request, email=email_or_username_form, password=password_form)
+        if user_auth is not None:
+          login(request, user_auth)
+          messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
+          return redirect('bicleteiros_home_page')
+      #Para a xente que se logea co nome de usuario, collemos o seu nome de usario introducido e con eso sacamos o email para logearse.
+      else:
+        email_user = CustomUser.objects.get(username = email_or_username_form).email
+        user_language = CustomUser.objects.get(email = email_user).language
+        activate(user_language)
+        #Authenticate user returns the email of the user
+        user_auth = authenticate(request, email=email_user, password=password_form)
+        if user_auth is not None:
+          login(request, user_auth)
+          messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
+          return redirect('bicleteiros_home_page')
     else:
       #Comento esto porque para o formulario que hai de AuthenticationForm preconfigurado por Django esto non me funciona.
       #for field, error in sign_in_form_variable.errors.items():
