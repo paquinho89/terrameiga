@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-26 16:27+0100\n"
+"POT-Creation-Date: 2024-03-01 18:39+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1763,7 +1763,7 @@ msgstr "Distancia e ascenso por país"
 msgid "Country: %{x}<br>Km: %{y:.} km<br>Climb: %{customdata[0]:.} meters"
 msgstr "País: %{x}<br>Km: %{y:.} km<br>Ascenso: %{customdata[0]:.} metros"
 
-#: .\registration\forms.py:85
+#: .\registration\forms.py:97
 msgid "type \"terrameiga\". Lowercase and without quotes"
 msgstr "Escriba \"terrameiga\". En minúsculas e sen comiñas"
 
@@ -1803,8 +1803,9 @@ msgid "Account Creation"
 msgstr "Rexistro"
 
 #: .\registration\templates\2_sign_up.html:29
-msgid "Name"
-msgstr "Nome"
+#: .\registration\templates\profile_account\personal_data.html:48
+msgid "Username"
+msgstr "Nome de usuario"
 
 #: .\registration\templates\2_sign_up.html:46
 msgid "Repeat Password"
@@ -2321,10 +2322,6 @@ msgstr "Quere actualizar os seus datos persoais?"
 msgid "Email"
 msgstr "Email"
 
-#: .\registration\templates\profile_account\personal_data.html:48
-msgid "Username"
-msgstr "Nome de usuario"
-
 #: .\registration\templates\profile_account\personal_data.html:76
 msgid "Update your data"
 msgstr "Actualizar datos"
@@ -2339,7 +2336,7 @@ msgid ""
 msgstr ""
 "Por favor, vaia ao seu email e verifique a súa conta. Grazas polo apoio, "
 
-#: .\registration\views.py:87 .\registration\views.py:331
+#: .\registration\views.py:87 .\registration\views.py:332
 msgid "Check the below errors and try again!"
 msgstr "Comprobe os erros e inténteo de novo!"
 
@@ -2353,11 +2350,11 @@ msgstr "A súa conta foi creada. Grazas por ser parte desta aventura!"
 msgid "You have been logged out!"
 msgstr "A súa sesión pechouse!"
 
-#: .\registration\views.py:193 .\registration\views.py:204
+#: .\registration\views.py:194 .\registration\views.py:205
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "Benvido! Agora é tempo de desfrutar de todo o contido da viaxe."
 
-#: .\registration\views.py:213
+#: .\registration\views.py:214
 #, fuzzy
 #| msgid ""
 #| "There is no user with those credentials. Try again or create a TerraMeiga "
@@ -2369,50 +2366,50 @@ msgstr ""
 "O email ou o contrasinal non son correctos. Inténteo de novo, recupere o "
 "contrasinal ou cree unha nova conta en TerraMeiga"
 
-#: .\registration\views.py:259
+#: .\registration\views.py:260
 msgid "An email was sent to your email inbox"
 msgstr "Acabamos de enviar un email ao seu correo"
 
-#: .\registration\views.py:262
+#: .\registration\views.py:263
 msgid ""
 "The email does not exist in our data base. Please, create a new account."
 msgstr ""
 "O email non existe na nosa base de datos. Por favor, cree unha nova conta."
 
-#: .\registration\views.py:266
+#: .\registration\views.py:267
 msgid "The email is not valid"
 msgstr "O email non é válido"
 
-#: .\registration\views.py:326
+#: .\registration\views.py:327
 msgid "Your password has been changed"
 msgstr "O seu contrasinal foi modificado!"
 
-#: .\registration\views.py:388
+#: .\registration\views.py:389
 msgid "Your account has been deleted. We hope see you back soon!"
 msgstr "Eliminouse a súa conta. Agardámolo velo pronto por aqui!"
 
-#: .\registration\views.py:393 .\registration\views.py:395
+#: .\registration\views.py:394 .\registration\views.py:396
 msgid ""
 "Please, type \"terrameiga\". The text has to be lowercase and without quotes"
 msgstr ""
 "Por favor, escriba \"terrameiga\". O texto ten que estar en minúsculas e sen "
 "comiñas"
 
-#: .\registration\views.py:421
+#: .\registration\views.py:422
 msgid "Your personal data has been updated"
 msgstr "Os seus datos persois foron actualizados"
 
-#: .\registration\views.py:426
+#: .\registration\views.py:427
 msgid "The data could not be updated. Please check the below errors"
 msgstr ""
 "Os datos non se puderon actualizar. Por favor, comprobe os erros e inténteo "
 "de novo"
 
-#: .\registration\views.py:439
+#: .\registration\views.py:440
 msgid "Your password has been updated!"
 msgstr "Actualizouse o seu contrasinal!"
 
-#: .\registration\views.py:446
+#: .\registration\views.py:447
 msgid ""
 "Check the below errors and try again! If you signed up with GOOGLE, "
 "terrameiga.bike is not managing your password"

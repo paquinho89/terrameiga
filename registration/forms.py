@@ -19,6 +19,18 @@ class CustomAuthenticationFormSignIn(AuthenticationForm):
         # Update widget attributes for Bootstrap styling form-control
         self.fields['username'].widget.attrs.update({'class': 'form-control'})
         self.fields['password'].widget.attrs.update({'class': 'form-control'})
+    
+    #Fago esto no formulario porque se hai algunha maísucula no email o formulario preconfigurado para o email non é válido
+    # e a verificicación is_valid() do formulario sign_in_form_variable non vai adiante. (Ver función "sign_in_view" do archivo registration.views)
+    #Para o username, non quero que sexa case sensitive.
+    def clean_username(self):
+        # Convert the username to lowercase before validation
+        if "@" in str(self):
+            username = self.cleaned_data['username']
+            return username.lower()
+        else:
+            username = self.cleaned_data['username']
+            return username
 
 class sign_in_form_1(CustomAuthenticationFormSignIn):
     class Meta:

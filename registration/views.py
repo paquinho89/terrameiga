@@ -54,8 +54,8 @@ def sign_up_view(request):
   if request.method == 'POST' and not form_language.is_valid():
     if sign_up_form_variable.is_valid():
       user_name = sign_up_form_variable.cleaned_data.get('username')
-      #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk
-      email_form_str = sign_up_form_variable.cleaned_data.get('email')
+      #Con esto obtemos o email introducido no formulario, pero é o do tipo string e non me vale para obter o pk. É convertimolo a minúscula para que non de problemas.
+      email_form_str = sign_up_form_variable.cleaned_data.get('email').lower()
       password_form = sign_up_form_variable.cleaned_data.get('password1')
       #Verficamos que o nome de usuario sexa único porque se quero que a xente tamén se logee con él, teño que facer que sexa único, igual que o email, que tamén é único
       all_user_names_list = CustomUser.objects.values_list('username', flat=True)
@@ -179,6 +179,7 @@ def sign_in_view(request):
     if sign_in_form_variable.is_valid():
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.
       email_or_username_form = sign_in_form_variable.cleaned_data.get('username')
+      print('EEEEEEEEEEOOOOOOOOOOOOO', email_or_username_form)
       password_form = sign_in_form_variable.cleaned_data.get('password')
       #Para a xente que se logea co email
       if "@" in str(email_or_username_form):
@@ -194,11 +195,12 @@ def sign_in_view(request):
           return redirect('bicleteiros_home_page')
       #Para a xente que se logea co nome de usuario, collemos o seu nome de usario introducido e con eso sacamos o email para logearse.
       else:
-        email_user = CustomUser.objects.get(username = email_or_username_form).email
-        user_language = CustomUser.objects.get(email = email_user).language
+        # Collemos o email na base de datos a través do username pero con un case insensitive.
+        username_form = CustomUser.objects.filter(username__iexact=email_or_username_form).first()
+        user_language = CustomUser.objects.get(email = username_form).language
         activate(user_language)
         #Authenticate user returns the email of the user
-        user_auth = authenticate(request, email=email_user, password=password_form)
+        user_auth = authenticate(request, email=username_form, password=password_form)
         if user_auth is not None:
           login(request, user_auth)
           messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
