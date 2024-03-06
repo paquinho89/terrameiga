@@ -149,7 +149,7 @@ def country_data_view (request):
         elif get_language() == "ca":
             interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
         else:
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
+            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
             
         spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
         spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]

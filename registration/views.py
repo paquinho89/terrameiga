@@ -179,7 +179,6 @@ def sign_in_view(request):
     if sign_in_form_variable.is_valid():
       #Non entendo mui ben porque para coller o email teño que collelo do username no form, pero ten que ser así para que funcione.
       email_or_username_form = sign_in_form_variable.cleaned_data.get('username')
-      print('EEEEEEEEEEOOOOOOOOOOOOO', email_or_username_form)
       password_form = sign_in_form_variable.cleaned_data.get('password')
       #Para a xente que se logea co email
       if "@" in str(email_or_username_form):

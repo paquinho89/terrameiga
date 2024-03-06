@@ -61,7 +61,7 @@ class chat_comments_model(models.Model):
         ordering = ['-date_added']
 
     def __str__(self):
-        return (str(self.pk))
+        return (str(self.comentario_gl))
     
 #Modelo no que se gardarán as replies dos comentarios
 class chat_comments_replies_model(models.Model):
@@ -116,7 +116,7 @@ class country_information_model(models.Model):
 #Agora obteño a semana na que estou dependendo da data de inicio
 #We get the day of the year
 #IMPORTANTE!!!: Eiqui tes que cambiar a data e por a data na que comezas a viaxe.
-starting_day_of_year = datetime(2024,1,9).timetuple().tm_yday
+starting_day_of_year = datetime(2024,1,3).timetuple().tm_yday
 current_day_of_year = datetime.now().timetuple().tm_yday
 #Sumamos 1 para que o primer día me conte como o day 1
 day_in_the_journey = (current_day_of_year - starting_day_of_year)+1
