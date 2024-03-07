@@ -213,6 +213,10 @@
                 }));
             });
         }
+
+        // Esto é para cando a páxina se carga por primeira vez, aparezcan os pesos ben en función do tipo de ciclista que está seleccionado ao cargar a páxina por primeira vez.
+        updateWeightChoices();
+
         // Attach the update function to the change event of the wattios dropdown
         jQuery('#id_wattios_form').change(updateWeightChoices);
     });
@@ -225,6 +229,9 @@
             var select_groupset_brand = jQuery('#id_groupset_brand_form').val();
             var select_groupset_model = jQuery('#id_groupset_model_form');
             var new_groupset_choices = [];
+
+            // Clear existing options
+            select_groupset_model.empty();
 
             if (select_groupset_brand === 'Campagnolo') {
                 new_groupset_choices = [
@@ -291,6 +298,9 @@
                 }));
             });
         }
+        // Esto é para cando a páxina se carga por primeira vez, aparezca os modelos xa ben en función do que hai na mara do grupo (Group Brand Name)
+        update_groupset_choices();
+
         // Attach the update function to the change event of the wattios dropdown
         jQuery('#id_groupset_brand_form').change(update_groupset_choices);
     });
@@ -301,7 +311,7 @@
     jQuery(document).ready(function () {
         function update_dropdown_chainring_choices() {
             var selected_model_groupset = jQuery('#id_groupset_model_form').val(); 
-            var teeth_chainring = jQuery('#id_teeth_chainring_form'); 
+            var teeth_chainring = jQuery('#id_teeth_chainring_form');
             var new_teeth_choices = [];
 
             if (selected_model_groupset === 'Ekar') {
@@ -312,7 +322,7 @@
                     { value: 0, text: '44T' },
                 ];
             }
-            else if (selected_model_groupset === 'GRX') {
+            /*else if (selected_model_groupset === 'GRX') {
                 new_teeth_choices = [
                     { value: 0, text: '40T' },
                     { value: 0, text: '42T' },
@@ -350,14 +360,6 @@
                     { value: 0, text: '46T/33T' },
                     { value: 0, text: '48T/35T' },
                     { value: 0, text: '50T/37T' },
-                ];
-            }
-            else if (selected_model_groupset === 'Sword') {
-                new_teeth_choices = [
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '46T/29T' },
-                    { value: 0, text: '48T/31T' },
                 ];
             }
             else if (selected_model_groupset === 'All Road') {
@@ -526,6 +528,15 @@
                     { value: 0, text: '30T' },
                     { value: 0, text: '32T' },
                 ];
+            }*/
+            
+            else if (selected_model_groupset === 'Sword') {
+                new_teeth_choices = [
+                    { value: 0, text: '40T' },
+                    { value: 0, text: '42T' },
+                    { value: 0, text: '46T/29T' },
+                    { value: 0, text: '48T/31T' },
+                ];
             }
             else if (selected_model_groupset === 'Advent' || selected_model_groupset === 'Acolyte' || selected_model_groupset === 'Advent X') {
                 new_teeth_choices = [
@@ -534,9 +545,14 @@
                     { value: 0, text: '34T' },
                 ];
             }
+            else if (selected_model_groupset === 'All Road') {
+                new_teeth_choices = [
+                    { value: 0, text: '42T' },
+                ];
+            }
+            
             // Clear existing options and add new options
             teeth_chainring.empty();
-
             jQuery.each(new_teeth_choices, function (index, item) {
                 teeth_chainring.append(jQuery('<option>', {
                     value: item.value,
@@ -544,7 +560,11 @@
                 }));
             });
         }
+        //Con esto fai que cando se carga a páxina por primeira vez, mostre xa ben os valores do "Teeth of your chainring" dependendo do modelo que está seleccionado.
+        update_dropdown_chainring_choices()
+
         jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);
+        
     });
 </script>
 
