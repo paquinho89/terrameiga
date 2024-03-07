@@ -61,7 +61,7 @@ class chat_comments_model(models.Model):
         ordering = ['-date_added']
 
     def __str__(self):
-        return (str(self.date_added))
+        return (str(self.pk))
     
 #Modelo no que se gardarán as replies dos comentarios
 class chat_comments_replies_model(models.Model):
