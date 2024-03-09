@@ -15,8 +15,10 @@
 
 <h2 class="mt-3 text-center">{% trans "Speed Tool" %}</h2>
 <div id="background_graphs" class="row text-center" style="color: green;">
+    <h2>{{groupset_brand_value_html}}</h2>
+    <h2>{{groupset_model_value_html}}</h2>
     <h2>{{speed_km_h_html}} km/h</h2>
-    <h2>{{force_back_wheel_html}} Newtons Forza roda traseira</h2>
+    <h2>{{force_back_wheel_html}} {{total_forces_back_wheel_html}} {{total_forces_back_wheel_3_html}} Newtons Forza roda traseira</h2>
     <h2>{{force_slope_html}} Newtons Forza necesaria para subir a costa</h2>
     <h2>{{pendiente_por_cada_cassette_html}} Pendiente máxima que pode subir</h2>
 </div>
@@ -149,59 +151,59 @@
 
             if (selectedWattios === '6.2') {
                 newWeightChoices = [
-                    { value: 0, text: '60' },
-                    { value: 0, text: '65' },
-                    { value: 0, text: '70' },
-                    { value: 0, text: '75' },
-                    { value: 0, text: '80' },
-                    { value: 0, text: '85' },
+                    { value: 60, text: '60' },
+                    { value: 65, text: '65' },
+                    { value: 70, text: '70' },
+                    { value: 75, text: '75' },
+                    { value: 80, text: '80' },
+                    { value: 85, text: '85' },
                 ];
             } else if (selectedWattios === '5.6' ||  selectedWattios === '5') {
                 newWeightChoices = [
-                    { value: 0, text: '60' },
-                    { value: 0, text: '65' },
-                    { value: 0, text: '70' },
-                    { value: 0, text: '75' },
-                    { value: 0, text: '80' },
-                    { value: 0, text: '85' },
-                    { value: 0, text: '90' },
+                    { value: 60, text: '60' },
+                    { value: 65, text: '65' },
+                    { value: 70, text: '70' },
+                    { value: 75, text: '75' },
+                    { value: 80, text: '80' },
+                    { value: 85, text: '85' },
+                    { value: 90, text: '90' },
                 ];
             } else if (selectedWattios === '4.3' || selectedWattios === '3.7' ) {
                 newWeightChoices = [
-                    { value: 0, text: '50' },
-                    { value: 0, text: '55' },
-                    { value: 0, text: '60' },
-                    { value: 0, text: '65' },
-                    { value: 0, text: '70' },
-                    { value: 0, text: '75' },
-                    { value: 0, text: '80' },
-                    { value: 0, text: '85' },
-                    { value: 0, text: '90' },
-                    { value: 0, text: '95' },
-                    { value: 0, text: '100' },
+                    { value: 50, text: '50' },
+                    { value: 55, text: '55' },
+                    { value: 60, text: '60' },
+                    { value: 65, text: '65' },
+                    { value: 70, text: '70' },
+                    { value: 75, text: '75' },
+                    { value: 80, text: '80' },
+                    { value: 85, text: '85' },
+                    { value: 90, text: '90' },
+                    { value: 95, text: '95' },
+                    { value: 100, text: '100' },
                 ];
             } else if (selectedWattios === '1.7') {
                 newWeightChoices = [
-                    { value: 0, text: '45' },
-                    { value: 0, text: '50' },
-                    { value: 0, text: '55' },
-                    { value: 0, text: '60' },
-                    { value: 0, text: '65' },
-                    { value: 0, text: '70' },
-                    { value: 0, text: '75' },
-                    { value: 0, text: '80' },
-                    { value: 0, text: '85' },
-                    { value: 0, text: '90' },
-                    { value: 0, text: '95' },
-                    { value: 0, text: '105' },
-                    { value: 0, text: '110' },
-                    { value: 0, text: '115' },
-                    { value: 0, text: '120' },
-                    { value: 0, text: '125' },
-                    { value: 0, text: '130' },
-                    { value: 0, text: '135' },
-                    { value: 0, text: '140' },
-                    { value: 0, text: '145' }
+                    { value: 45, text: '45' },
+                    { value: 50, text: '50' },
+                    { value: 55, text: '55' },
+                    { value: 60, text: '60' },
+                    { value: 65, text: '65' },
+                    { value: 70, text: '70' },
+                    { value: 75, text: '75' },
+                    { value: 80, text: '80' },
+                    { value: 85, text: '85' },
+                    { value: 90, text: '90' },
+                    { value: 95, text: '95' },
+                    { value: 105, text: '105' },
+                    { value: 110, text: '110' },
+                    { value: 115, text: '115' },
+                    { value: 120, text: '120' },
+                    { value: 125, text: '125' },
+                    { value: 130, text: '130' },
+                    { value: 135, text: '135' },
+                    { value: 140, text: '140' },
+                    { value: 145, text: '145' }
                 ];
             }
             // Clear existing options and add new options
@@ -235,47 +237,47 @@
 
             if (select_groupset_brand === 'Campagnolo') {
                 new_groupset_choices = [
-                    { value: 0, text: 'Ekar' },
-                    { value: 0, text: 'Super Record Wireless' },
-                    { value: 0, text: 'Super Record' },
-                    { value: 0, text: 'Record' },
-                    { value: 0, text: 'Chorus' },
+                    { value: 'Ekar', text: 'Ekar' },
+                    { value: 'Super Record Wireless (electronic)', text: 'Super Record Wireless (electronic)' },
+                    { value: 'Super Record', text: 'Super Record' },
+                    { value: 'Record', text: 'Record' },
+                    { value: 'Chorus', text: 'Chorus' },
                 ];
             } else if (select_groupset_brand === 'Shimano') {
                 new_groupset_choices = [
-                    { value: 0, text: 'GRX' },
-                    { value: 0, text: 'Dura-Ace' },
-                    { value: 0, text: 'Ultegra' },
-                    { value: 0, text: 'Shimano 105' },
-                    { value: 0, text: 'Tiagra' },
-                    { value: 0, text: 'Sora' },
-                    { value: 0, text: 'Claris' },
-                    { value: 0, text: 'XTR electronic'},
-                    { value: 0, text: 'XTR'},
-                    { value: 0, text: 'Deore XT electronic'},
-                    { value: 0, text: 'Deore'},
-                    { value: 0, text: 'SLX'},
-                    { value: 0, text: 'Cues'},
-                    { value: 0, text: 'Alivio'},
-                    { value: 0, text: 'Acera'},
-                    { value: 0, text: 'Altus'},
+                    { value: 'GRX', text: 'GRX' },
+                    { value: 'Dura-Ace (electronic)', text: 'Dura-Ace (electronic)' },
+                    { value: 'Ultegra (electronic)', text: 'Ultegra (electronic)' },
+                    { value: 'Shimano 105', text: 'Shimano 105' },
+                    { value: 'Tiagra', text: 'Tiagra' },
+                    { value: 'Sora', text: 'Sora' },
+                    { value: 'Claris', text: 'Claris' },
+                    { value: 'XTR (electronic)', text: 'XTR (electronic)'},
+                    { value: 'XTR', text: 'XTR'},
+                    { value: 'Deore XT (electronic)', text: 'Deore XT (electronic)'},
+                    { value: 'Deore', text: 'Deore'},
+                    { value: 'SLX', text: 'SLX'},
+                    { value: 'Cues', text: 'Cues'},
+                    { value: 'Alivio', text: 'Alivio'},
+                    { value: 'Acera', text: 'Acera'},
+                    { value: 'Altus', text: 'Altus'},
                 ];
             } else if (select_groupset_brand === 'Sram' ) {
                 new_groupset_choices = [
-                    { value: 0, text:'Force eTap AXS (electronic)'},
-                    { value: 0, text:'Force'},
-                    { value: 0, text:'Rival Etap AXS (electronic)'},
-                    { value: 0, text:'Rival'},
-                    { value: 0, text:'Apex'},
-                    { value: 0, text: 'Red eTap AXS'},
-                    { value: 0, text: 'XX1 Eagle AXS electronic' },
-                    { value: 0, text: 'XX1 Eagle' },
-                    { value: 0, text: 'X01 Eagle AXS electronic' },
-                    { value: 0, text: 'X01 Eagle' },
-                    { value: 0, text: 'GX Eagle AXS electronic' },
-                    { value: 0, text: 'GX Eagle' },
-                    { value: 0, text: 'NX Eagle' },
-                    { value: 0, text: 'SX Eagle' },
+                    { value: 'Force eTap AXS (electronic)', text:'Force eTap AXS (electronic)'},
+                    { value: 'Force', text:'Force'},
+                    { value: 'Rival Etap AXS (electronic)', text:'Rival Etap AXS (electronic)'},
+                    { value: 'Rival', text:'Rival'},
+                    { value: 'Apex', text:'Apex'},
+                    { value: 'Red eTap AXS (electronic)', text: 'Red eTap AXS (electronic)'},
+                    { value: 'XX1 Eagle AXS (electronic)', text: 'XX1 Eagle AXS (electronic)' },
+                    { value: 'XX1 Eagle', text: 'XX1 Eagle' },
+                    { value: 'X01 Eagle AXS (electronic)', text: 'X01 Eagle AXS (electronic)' },
+                    { value: 'X01 Eagle', text: 'X01 Eagle' },
+                    { value: 'GX Eagle AXS (electronic)', text: 'GX Eagle AXS (electronic)' },
+                    { value: 'GX Eagle', text: 'GX Eagle' },
+                    { value: 'NX Eagle', text: 'NX Eagle' },
+                    { value: 'SX Eagle', text: 'SX Eagle' },
                 ];
             } else if (select_groupset_brand === 'Microshift') {
                 new_groupset_choices = [
@@ -301,7 +303,7 @@
         // Esto é para cando a páxina se carga por primeira vez, aparezca os modelos xa ben en función do que hai na mara do grupo (Group Brand Name)
         update_groupset_choices();
 
-        // Attach the update function to the change event of the wattios dropdown
+        // Attach the update function to the change event of the gropset model dropdown
         jQuery('#id_groupset_brand_form').change(update_groupset_choices);
     });
 </script>
@@ -316,238 +318,237 @@
 
             if (selected_model_groupset === 'Ekar') {
                 new_teeth_choices = [
-                    { value: 0, text: '38T' },
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '44T' },
+                    { value: '38', text: '38T' },
+                    { value: '40', text: '40T' },
+                    { value: '42', text: '42T' },
+                    { value: '44', text: '44T' }
                 ];
             }
-            /*else if (selected_model_groupset === 'GRX') {
+            else if (selected_model_groupset === 'GRX') {
                 new_teeth_choices = [
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '46T/30T' },
-                    { value: 0, text: '48T/31T' },
+                    { value: '40', text: '40T' },
+                    { value: '42', text: '42T' },
+                    { value: '46-30', text: '46T-30T' },
+                    { value: '48-31', text: '48T-31T' },
                 ];
             }
             else if (selected_model_groupset === 'Apex') {
                 new_teeth_choices = [
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
+                    { value: '40', text: '40T' },
+                    { value: '42', text: '42T' },
                 ];
             }
             else if (selected_model_groupset === 'Force eTap AXS (electronic)' || selected_model_groupset === 'Force') {
                 new_teeth_choices = [
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '43T/30T' },
-                    { value: 0, text: '46T/33T' },
-                    { value: 0, text: '48T/35T' },
-                    { value: 0, text: '50T/37T' },
+                    { value: '40', text: '40T' },
+                    { value: '43-30', text: '43T-30T' },
+                    { value: '46-33', text: '46T-33T' },
+                    { value: '48-35', text: '48T-35T' },
+                    { value: '50-37', text: '50T-37T' },
                 ];
             }
             else if (selected_model_groupset === 'Rival Etap AXS (electronic)' || selected_model_groupset === 'Rival') {
                 new_teeth_choices = [
-                    { value: 0, text: '33T' },
-                    { value: 0, text: '35T' },
-                    { value: 0, text: '38T' },
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '43T' },
-                    { value: 0, text: '44T' },
-                    { value: 0, text: '46T' },
-                    { value: 0, text: '48T' },
-                    { value: 0, text: '43T/30T' },
-                    { value: 0, text: '46T/33T' },
-                    { value: 0, text: '48T/35T' },
-                    { value: 0, text: '50T/37T' },
+                    { value: '33', text: '33T' },
+                    { value: '35', text: '35T' },
+                    { value: '38', text: '38T' },
+                    { value: '40', text: '40T' },
+                    { value: '42', text: '42T' },
+                    { value: '43', text: '43T' },
+                    { value: '44', text: '44T' },
+                    { value: '46', text: '46T' },
+                    { value: '48', text: '48T' },
+                    { value: '43-30', text: '43T-30T' },
+                    { value: '46-33', text: '46T-33T' },
+                    { value: '48-35', text: '48T-35T' },
+                    { value: '50-37', text: '50T-37T' },
                 ];
             }
             else if (selected_model_groupset === 'All Road') {
                 new_teeth_choices = [
-                    { value: 0, text: '42T' },
+                    { value: '42', text: '42T' },
                 ];
             }
             else if (selected_model_groupset === 'Chorus') {
                 new_teeth_choices = [
-                    { value: 0, text: '48T/32T' },
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '52T/36T' },
+                    { value: '48-32', text: '48T-32T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '52-36', text: '52T-36T' },
                 ];
             }
             else if (selected_model_groupset === 'Super Record Wireless (electronic)') {
                 new_teeth_choices = [
-                    { value: 0, text: '45T/29T' },
-                    { value: 0, text: '48T/32T' },
-                    { value: 0, text: '50T/34T' },
+                    { value: '45-29', text: '45T-29T' },
+                    { value: '48-32', text: '48T-32T' },
+                    { value: '50-34', text: '50T-34T' },
                 ];
             }
             else if (selected_model_groupset === 'Super Record' || selected_model_groupset === 'Record') {
                 new_teeth_choices = [
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '52T/36T' },
-                    { value: 0, text: '53T/39T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '52-36', text: '52T-36T' },
+                    { value: '53-39', text: '53T-39T' },
                 ];
             }
             else if (selected_model_groupset === 'Tiagra' || selected_model_groupset === 'Sora') {
                 new_teeth_choices = [
-                    { value: 0, text: '48T/34T' },
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '52T/36T' },
-                    { value: 0, text: '59/39/30T' },
+                    { value: '48-34', text: '48T-34T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '52-36', text: '52T-36T' },
+                    { value: '59-39-30', text: '59-39-30T' },
                 ];
             }
             else if (selected_model_groupset === 'Claris') {
                 new_teeth_choices = [
-                    { value: 0, text: '46T/34T' },
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '59/39/30T' },
+                    { value: '46-34', text: '46T-34T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '59-39-30', text: '59-39-30T' },
                 ];
             }
             else if (selected_model_groupset === 'Shimano 105 (electronic)' || selected_model_groupset === 'Shimano 105') {
                 new_teeth_choices = [
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '52T/36T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '52-36', text: '52T-36T' },
                 ];
             }
             else if (selected_model_groupset === 'Dura-Ace (electronic)') {
                 new_teeth_choices = [
-                    { value: 0, text: '46T/36T' },
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '52T/36T' },
-                    { value: 0, text: '54T/40T' },
+                    { value: '46-36', text: '46T-36T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '52-36', text: '52T-36T' },
+                    { value: '54-40', text: '54T-40T' },
                 ];
             }
             else if (selected_model_groupset === 'Ultegra (electronic)') {
                 new_teeth_choices = [
-                    { value: 0, text: '46T/36T' },
-                    { value: 0, text: '50T/34T' },
-                    { value: 0, text: '52T/36T' },
+                    { value: '46-36', text: '46T-36T' },
+                    { value: '50-34', text: '50T-34T' },
+                    { value: '52-36', text: '52T-36T' },
                 ];
             }
             else if (selected_model_groupset === 'Red eTap AXS (electronic)') {
                 new_teeth_choices = [
-                    { value: 0, text: '46T/33T' },
-                    { value: 0, text: '48T/35T' },
-                    { value: 0, text: '50T/37T' },
-                    { value: 0, text: '52T/39T' },
-                    { value: 0, text: '54T/41T' },
-                    { value: 0, text: '56T/43T' },
+                    { value: '46-33', text: '46T-33T' },
+                    { value: '48-35', text: '48T-35T' },
+                    { value: '50-37', text: '50T-37T' },
+                    { value: '52-39', text: '52T-39T' },
+                    { value: '54-41', text: '54T-41T' },
+                    { value: '56-43', text: '56T-43T' },
                 ];
             }
             else if (selected_model_groupset === 'Alivio' || selected_model_groupset === 'Acera') {
                 new_teeth_choices = [
-                    { value: 0, text: '36T/22T' },
-                    { value: 0, text: '46T/30T' },
-                    { value: 0, text: '40/30/22T' },
-                    { value: 0, text: '44/32/22T' },
+                    { value: '36-22', text: '36T-22T' },
+                    { value: '46-30', text: '46T-30T' },
+                    { value: '40-30-22', text: '40-30-22T' },
+                    { value: '44-32-22', text: '44-32-22T' },
                 ];
             }
             else if (selected_model_groupset === 'Altus') {
                 new_teeth_choices = [
-                    { value: 0, text: '40/30/22T' },
-                    { value: 0, text: '44/32/22T' },
+                    { value: '40-30-22', text: '40-30-22T' },
+                    { value: '44-32-22', text: '44-32-22T' },
                 ];
             }
             else if (selected_model_groupset === 'Deore' || selected_model_groupset === 'SLX') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
-                    { value: 0, text: '36T/26T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
+                    { value: '36-26', text: '36T-26T' },
                 ];
             }
             else if (selected_model_groupset === 'Cues') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '36T/22T' },
-                    { value: 0, text: '46T/30T' },
-                    { value: 0, text: '46T/32T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '40', text: '40T' },
+                    { value: '42', text: '42T' },
+                    { value: '36-22', text: '36T-22T' },
+                    { value: '46-30', text: '46T-30T' },
+                    { value: '46-32', text: '46T-32T' },
                 ];
             }
             else if (selected_model_groupset === 'XTR (electronic)' || selected_model_groupset === 'XTR') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
-                    { value: 0, text: '36T' },
-                    { value: 0, text: '38T' },
-                    { value: 0, text: '38T/28T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
+                    { value: '36', text: '36T' },
+                    { value: '38', text: '38T' },
+                    { value: '38-28', text: '38T-28T' },
                 ];
             }
             else if (selected_model_groupset === 'Deore XT (electronic)' || selected_model_groupset === 'Deore XT') {
                 new_teeth_choices = [
-                    { value: 0, text: '28T' },
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
-                    { value: 0, text: '36T' },
-                    { value: 0, text: '36T/26T' },
+                    { value: '28', text: '28T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
+                    { value: '36', text: '36T' },
+                    { value: '36-26', text: '36T-26T' },
                 ];
             }
             else if (selected_model_groupset === 'SX Eagle') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
                 ];
             }
             else if (selected_model_groupset === 'GX Eagle AXS (electronic)' || selected_model_groupset === 'GX Eagle' || selected_model_groupset === 'NX Eagle') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
                 ];
             }
             else if (selected_model_groupset === 'XX1 Eagle AXS (electronic)') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
-                    { value: 0, text: '36T' },
-                    { value: 0, text: '38T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
+                    { value: '36', text: '36T' },
+                    { value: '38', text: '38T' },
                 ];
             }
             else if (selected_model_groupset === 'XX1 Eagle') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
-                    { value: 0, text: '36T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
+                    { value: '36', text: '36T' },
                 ];
             }
             else if (selected_model_groupset === 'X01 Eagle AXS (electronic)') {
                 new_teeth_choices = [
-                    { value: 0, text: '32T' },
+                    { value: '32', text: '32T' },
                 ];
             }
             else if (selected_model_groupset === 'X01 Eagle') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
                 ];
-            }*/
-            
+            }
             else if (selected_model_groupset === 'Sword') {
                 new_teeth_choices = [
-                    { value: 0, text: '40T' },
-                    { value: 0, text: '42T' },
-                    { value: 0, text: '46T/29T' },
-                    { value: 0, text: '48T/31T' },
+                    { value: '40', text: '40T' },
+                    { value: '42', text: '42T' },
+                    { value: '46-29', text: '46T-29T' },
+                    { value: '48-31', text: '48T-31T' },
                 ];
             }
             else if (selected_model_groupset === 'Advent' || selected_model_groupset === 'Acolyte' || selected_model_groupset === 'Advent X') {
                 new_teeth_choices = [
-                    { value: 0, text: '30T' },
-                    { value: 0, text: '32T' },
-                    { value: 0, text: '34T' },
+                    { value: '30', text: '30T' },
+                    { value: '32', text: '32T' },
+                    { value: '34', text: '34T' },
                 ];
             }
             else if (selected_model_groupset === 'All Road') {
                 new_teeth_choices = [
-                    { value: 0, text: '42T' },
+                    { value: '42', text: '42T' },
                 ];
             }
             
@@ -560,11 +561,14 @@
                 }));
             });
         }
+        
+
+        //Esto é para que cando exista un cambio do groupset_model_form ou no groupset_brand_form, o formulario do chairing se actualice.
+        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);
+        jQuery('#id_groupset_brand_form').change(update_dropdown_chainring_choices);
+
         //Con esto fai que cando se carga a páxina por primeira vez, mostre xa ben os valores do "Teeth of your chainring" dependendo do modelo que está seleccionado.
         update_dropdown_chainring_choices()
-
-        jQuery('#id_groupset_model_form').change(update_dropdown_chainring_choices);
-        
     });
 </script>
 
@@ -578,176 +582,176 @@
 
             if (select_groupset_model === 'Ekar') {
                 new_cassette_choices = [
-                    { value: 0, text: '9T/36T - 13 speeds' },
-                    { value: 0, text: '9T/42T - 13 speeds' },
-                    { value: 0, text: '10T/44T - 13 speeds'},
+                    { value: '9-10-11-12-13-14-16-18-20-23-27-31-36', text: '9T-36T - 13 speeds' },
+                    { value: '9-10-11-12-13-14-16-18-21-25-30-36-42', text: '9T-42T - 13 speeds' },
+                    { value: '10-11-12-13-14-15-17-20-23-27-32-38-44', text: '10T-44T - 13 speeds'},
                 ];
             } else if (select_groupset_model === 'GRX') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/25T - 10 speeds' },
-                    { value: 0, text: '11T/32T - 10 speeds' },
-                    { value: 0, text: '12T/28T - 10 speeds' },
-                    { value: 0, text: '11T/34T - 10 speeds' },
-                    { value: 0, text: '11T/36T - 10 speeds' },
-                    { value: 0, text: '11T/25T - 11 speeds' },
-                    { value: 0, text: '11T/28T - 11 speeds' },
-                    { value: 0, text: '11T/30T - 11 speeds'},
-                    { value: 0, text: '11T/32T - 11 speeds'},
-                    { value: 0, text: '11T/34T - 11 speeds'},
-                    { value: 0, text: '11T/40T - 11 speeds'},
-                    { value: 0, text: '11T/42T - 11 speeds'},
-                    { value: 0, text: '11T/46T - 11 speeds'},
-                    { value: 0, text: '12T/25T - 11 speeds'},
-                    { value: 0, text: '14T/28T - 11 speeds'},
-                    { value: 0, text: '10T/45T - 12 speeds'},
-                    { value: 0, text: '10T/51T - 12 speeds'},
-                    { value: 0, text: '11T/30T - 12 speeds'},
-                    { value: 0, text: '11T/34T - 12 speeds'},
+                    { value: '11-12-13-14-15-17-19-21-23-25', text: '11T-25T - 10 speeds' },
+                    { value: '11-12-14-16-18-20-22-25-28-32', text: '11T-32T - 10 speeds' },
+                    { value: '12-13-14-15-17-19-21-23-25-28', text: '12T-28T - 10 speeds' },
+                    { value: '11-13-15-17-19-21-23-26-30-34', text: '11T-34T - 10 speeds' },
+                    { value: '11-13-15-17-19-21-24-28-32-36', text: '11T-36T - 10 speeds' },
+                    { value: '11-12-13-14-15-16-17-19-21-23-25', text: '11T-25T - 11 speeds' },
+                    { value: '11-12-13-14-15-17-19-21-23-25-28', text: '11T-28T - 11 speeds' },
+                    { value: '11-12-13-14-15-17-19-21-24-27-30', text: '11T-30T - 11 speeds'},
+                    { value: '11-12-13-14-16-18-20-22-25-28-32', text: '11T-32T - 11 speeds'},
+                    { value: '11-13-15-17-19-21-23-25-27-30-34', text: '11T-34T - 11 speeds'},
+                    { value: '11-13-15-17-19-21-24-27-31-35-40', text: '11T-40T - 11 speeds'},
+                    { value: '11-13-15-17-19-21-24-28-32-37-42', text: '11T-42T - 11 speeds'},
+                    { value: '11-13-15-17-19-21-24-28-32-37-46', text: '11T-46T - 11 speeds'},
+                    { value: '12-13-14-15-16-17-18-19-21-23-25', text: '12T-25T - 11 speeds'},
+                    { value: '14-15-16-17-18-19-20-21-23-25-28', text: '14T-28T - 11 speeds'},
+                    { value: '10-12-14-16-18-21-24-28-32-36-40-45', text: '10T-45T - 12 speeds'},
+                    { value: '10-12-14-16-18-21-24-28-33-39-45-51', text: '10T-51T - 12 speeds'},
+                    { value: '11-12-13-14-15-16-17-19-21-24-27-30', text: '11T-30T - 12 speeds'},
+                    { value: '11-12-13-14-15-17-19-21-24-27-30-34', text: '11T-34T - 12 speeds_'},
                 ];
             } else if (select_groupset_model === 'Apex' ) {
                 new_cassette_choices = [
-                    { value: 0, text:'11T/44T - 12 speeds)'},
+                    { value: '11-12-13-15-17-19-21-24-28-32-38-44', text:'11T-44T - 12 speeds'},
                 ];
             } else if (select_groupset_model === 'Force eTap AXS (electronic)' || select_groupset_model === 'Force') {
                 new_cassette_choices = [
-                    { value: 0, text:'10T/28T - 12 speeds'},
-                    { value: 0, text:'10T/30T - 12 speeds'},
-                    { value: 0, text:'10T/33T - 12 speeds'},
-                    { value: 0, text:'10T/36T - 12 speeds'},
-                    { value: 0, text:'10T/44T - 12 speeds'},
+                    { value: '10-11-12-13-14-15-16-17-19-21-24-28', text:'10T-28T - 12 speeds'},
+                    { value: '10-11-12-13-14-15-17-19-21-24-27-30', text:'10T-30T - 12 speeds'},
+                    { value: '10-11-12-13-14-15-17-19-21-24-28-33', text:'10T-33T - 12 speeds'},
+                    { value: '10-11-12-13-15-17-19-21-24-28-32-36', text:'10T-36T - 12 speeds'},
+                    { value: '10-11-13-15-17-19-21-24-28-32-38-44', text:'10T-44T - 12 speeds'},
                 ];
             } else if (select_groupset_model === 'Rival Etap AXS (electronic)' || select_groupset_model === 'Rival') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/30T - 12 speeds' },
-                    { value: 0, text: '10T/36T - 12 speeds' },
-                    { value: 0, text: '10T/44T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-17-19-21-24-27-30', text: '10T-30T - 12 speeds' },
+                    { value: '10-11-12-13-15-17-19-21-24-28-32-36', text: '10T-36T - 12 speeds' },
+                    { value: '10-11-13-15-17-19-21-24-28-32-38-44', text: '10T-44T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Sword') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/38T - 10 speeds' },
-                    { value: 0, text: '11T/48T - 10 speeds' },
+                    { value: '11-13-15-17-19-21-24-28-32-38', text: '11T-38T - 10 speeds' },
+                    { value: '11-13-15-18-21-24-28-34-40-48', text: '11T-48T - 10 speeds' },
                 ];
             } else if (select_groupset_model === 'All Road') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/42T - 11 speeds_' },
+                    { value: '11-13-15-17-19-21-24-28-32-36-42', text: '11T-42T - 11 speeds_' },
                 ];
             } else if (select_groupset_model === 'Chorus' || select_groupset_model === 'Super Record' || select_groupset_model === 'Record') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/29T - 12 speeds' },
-                    { value: 0, text: '11T/32T - 12 speeds' },
-                    { value: 0, text: '11T/34T - 12 speeds' },
+                    { value: '11-12-13-14-15-16-17-19-21-23-26-29', text: '11T-29T - 12 speeds' },
+                    { value: '11-12-13-14-15-16-17-19-22-25-28-32', text: '11T-32T - 12 speeds' },
+                    { value: '11-12-13-14-15-16-17-19-22-25-29-34', text: '11T-34T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Super Record Wireless (electronic)') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/25T - 12 speeds' },
-                    { value: 0, text: '10T/27T - 12 speeds' },
-                    { value: 0, text: '10T/29T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-16-17-19-21-23-25', text: '10T-25T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-16-17-19-21-24-27', text: '10T-27T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-16-18-20-23-26-29', text: '10T-29T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Tiagra') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/25T - 10 speeds' },
-                    { value: 0, text: '11T/32T - 10 speeds' },
-                    { value: 0, text: '11T/34T - 10 speeds' },
-                    { value: 0, text: '12T/28T - 10 speeds' },
+                    { value: '11-12-13-14-15-17-19-21-23-25', text: '11T-25T - 10 speeds' },
+                    { value: '11-12-14-16-18-20-22-25-28-32', text: '11T-32T - 10 speeds' },
+                    { value: '11-13-15-17-19-21-23-26-30-34', text: '11T-34T - 10 speeds' },
+                    { value: '12-13-14-15-17-19-21-23-25-28', text: '12T-28T - 10 speeds' },
                 ];
             } else if (select_groupset_model === 'Sora') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/30T - 9 speeds' },
-                    { value: 0, text: '12T/25T - 9 speeds' },
-                    { value: 0, text: '13T/25T - 9 speeds' },
-                    { value: 0, text: '14T/25T - 9 speeds' },
+                    { value: '11-12-14-16-18-20-23-26-30', text: '11T-30T - 9 speeds' },
+                    { value: '12-13-14-15-17-19-21-23-25', text: '12T-25T - 9 speeds' },
+                    { value: '13-14-15-16-17-19-21-23-25', text: '13T-25T - 9 speeds' },
+                    { value: '14-15-16-17-18-19-21-23-25', text: '14T-25T - 9 speeds' },
                 ];
             } else if (select_groupset_model === 'Claris') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/28T - 8 speeds' },
-                    { value: 0, text: '11T/30T - 8 speeds' },
-                    { value: 0, text: '11T/32T - 8 speeds' },
-                    { value: 0, text: '11T/34T - 8 speeds' },
-                    { value: 0, text: '12T/23T - 8 speeds' },
-                    { value: 0, text: '12T/25T - 8 speeds' },
-                    { value: 0, text: '13T/26T - 8 speeds' },
+                    { value: '11-13-15-17-19-21-24-28', text: '11T-28T - 8 speeds' },
+                    { value: '11-13-15-17-20-23-26-30', text: '11T-30T - 8 speeds' },
+                    { value: '11-13-15-18-21-24-28-32', text: '11T-32T - 8 speeds' },
+                    { value: '11-13-15-18-21-24-28-34', text: '11T-34T - 8 speeds' },
+                    { value: '12-13-14-15-17-19-21-23', text: '12T-23T - 8 speeds' },
+                    { value: '12-13-15-17-19-21-23-25', text: '12T-25T - 8 speeds' },
+                    { value: '13-14-15-17-19-21-23-26', text: '13T-26T - 8 speeds' },
                 ];
             } else if (select_groupset_model === 'Shimano 105 (electronic)' || select_groupset_model === 'Shimano 105') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/34T - 12 speeds_' },
-                    { value: 0, text: '11T/36T - 12 speeds' },
+                    { value: '11-12-13-14-15-17-19-21-24-27-30-34', text: '11T-34T - 12 speeds_' },
+                    { value: '11-12-13-14-15-17-19-21-24-28-32-36', text: '11T-36T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Dura-Ace (electronic)' || select_groupset_model === 'Ultegra (electronic)') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/30T - 12 speeds' },
-                    { value: 0, text: '11T/34T - 12 speeds_' },
+                    { value: '11-12-13-14-15-16-17-19-21-24-27-30', text: '11T-30T - 12 speeds' },
+                    { value: '11-12-13-14-15-17-19-21-24-27-30-34', text: '11T-34T - 12 speeds_' },
                 ];
-            } else if (select_groupset_model === 'RED eTap AXS (electronic)') {
+            } else if (select_groupset_model === 'Red eTap AXS (electronic)') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/26T - 12 speeds' },
-                    { value: 0, text: '10T/28T - 12 speeds' },
-                    { value: 0, text: '10T/33T - 12 speeds' },
-                    { value: 0, text: '10T/44T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-16-17-19-21-23-26', text: '10T-26T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-16-17-19-21-24-28', text: '10T-28T - 12 speeds' },
+                    { value: '10-11-12-13-14-15-17-19-21-24-28-33', text: '10T-33T - 12 speeds' },
+                    { value: '10-11-13-15-17-19-21-24-28-32-38-44', text: '10T-44T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Alivio' || select_groupset_model === 'Acera' || select_groupset_model === 'Altus') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/25T - 9 speeds' },
-                    { value: 0, text: '11T/32T - 9 speeds' },
-                    { value: 0, text: '11T/34T - 9 speeds' },
-                    { value: 0, text: '11T/36T - 9 speeds' },
+                    { value: '11-12-13-15-17-19-21-23-25', text: '11T-25T - 9 speeds' },
+                    { value: '11-13-15-17-19-21-24-28-32', text: '11T-32T - 9 speeds' },
+                    { value: '11-13-15-17-20-23-26-30-34', text: '11T-34T - 9 speeds' },
+                    { value: '11-13-15-17-20-23-26-30-36', text: '11T-36T - 9 speeds' },
                 ];
             } else if (select_groupset_model === 'Deore') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/36T - 10 speeds' },
-                    { value: 0, text: '11T/42T - 10 speeds' },
-                    { value: 0, text: '11T/43T - 10 speeds' },
-                    { value: 0, text: '11T/42T - 11 speeds' },
-                    { value: 0, text: '11T/51T - 11 speeds' },
-                    { value: 0, text: '10T/51T - 12 speeds' },
+                    { value: '11-13-15-17-19-21-24-28-32-36', text: '11T-36T - 10 speeds' },
+                    { value: '11-13-15-18-21-24-28-32-37-42', text: '11T-42T - 10 speeds' },
+                    { value: '11-13-15-17-20-23-26-30-36-43', text: '11T-43T - 10 speeds' },
+                    { value: '11-13-15-17-19-21-24-28-32-37-42', text: '11T-42T - 11 speeds' },
+                    { value: '11-13-15-18-21-24-28-33-39-45-51', text: '11T-51T - 11 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-33-39-45-51', text: '10T-51T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'SLX' || select_groupset_model === 'XTR (electronic)' || select_groupset_model === 'XTR') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/45T - 12 speeds' },
-                    { value: 0, text: '10T/51T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-32-36-40-45', text: '10T-45T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-33-39-45-51', text: '10T-51T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Cues') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/45T - 11 speeds' },
-                    { value: 0, text: '11T/50T - 11 speeds' },
+                    { value: '11-13-15-17-20-23-26-30-34-39-45', text: '11T-45T - 11 speeds' },
+                    { value: '11-13-15-17-20-23-26-30-36-43-50', text: '11T-50T - 11 speeds' },
                 ];
             } else if (select_groupset_model === 'Deore XT (electronic)' || select_groupset_model === 'Deore XT') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/50T - 11 speeds' },
-                    { value: 0, text: '10T/45T - 12 speeds' },
-                    { value: 0, text: '10T/51T - 12 speeds' }
+                    { value: '11-13-15-17-20-23-26-30-36-43-50', text: '11T-50T - 11 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-32-36-40-45', text: '10T-45T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-33-39-45-51', text: '10T-51T - 12 speeds' }
                 ];
             } else if (select_groupset_model === 'SX Eagle' || select_groupset_model === 'NX Eagle') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/50T - 12 speeds' },
+                    { value: '11-13-15-17-19-22-25-28-32-36-42-50', text: '11T-50T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'GX Eagle AXS (electronic)' || select_groupset_model === 'GX Eagle' || select_groupset_model === 'XX1 Eagle' || select_groupset_model === 'X01 Eagle') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/52T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-32-36-42-52', text: '10T-52T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'XX1 Eagle AXS (electronic)') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/50T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-32-36-42-50', text: '10T-50T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'X01 Eagle AXS (electronic)') {
                 new_cassette_choices = [
-                    { value: 0, text: '10T/50T - 12 speeds' },
-                    { value: 0, text: '10T/52T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-32-36-42-50', text: '10T-50T - 12 speeds' },
+                    { value: '10-12-14-16-18-21-24-28-32-36-42-52', text: '10T-52T - 12 speeds' },
                 ];
             } else if (select_groupset_model === 'Advent') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/38T - 9 speeds' },
-                    { value: 0, text: '11T/42T - 9 speeds' },
-                    { value: 0, text: '11T/46T - 9 speeds' },
+                    { value: '11-13-15-18-21-24-28-32-38', text: '11T-38T - 9 speeds' },
+                    { value: '11-13-15-18-21-24-28-34-42', text: '11T-42T - 9 speeds' },
+                    { value: '11-13-15-18-21-24-30-37-46', text: '11T-46T - 9 speeds' },
                 ];
             } else if (select_groupset_model === 'Acolyte') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/38T - 8 speeds' },
-                    { value: 0, text: '12T/42T - 8 speeds' },
-                    { value: 0, text: '12T/46T - 8 speeds' },
+                    { value: '11-13-15-18-21-24-30-38', text: '11T-38T - 8 speeds' },
+                    { value: '12-15-18-21-24-28-34-42', text: '12T-42T - 8 speeds' },
+                    { value: '12-15-18-21-24-30-37-46', text: '12T-46T - 8 speeds' },
                 ];
             } else if (select_groupset_model === 'Advent X') {
                 new_cassette_choices = [
-                    { value: 0, text: '11T/48T - 10 speeds' },
+                    { value: '11-13-15-18-21-24-28-34-40-48', text: '11T-48T - 10 speeds' },
                 ];
             }
 
@@ -760,6 +764,11 @@
                 }));
             });
         }
+        //Con esto fai que cando se carga a páxina por primeira vez, mostre xa ben os valores do "Teeth of your chainring" dependendo do modelo que está seleccionado.
+        update_cassette_choices()
+
+        //Esto é para que cando exista un cambio do groupset_model_form ou no groupset_brand_form, o formulario do chairing se actualice.
+        jQuery('#id_groupset_brand_form').change(update_cassette_choices);
         // Attach the update function to the change event of the wattios dropdown
         jQuery('#id_groupset_model_form').change(update_cassette_choices);
     });

@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 import math 
 from .forms import wattios_form, weight_form, groupset_brand_form, groupset_model_form, teeth_chainring_form, teeth_cassette_form
+#Este paquete é para mostrar as alertas (mensaxes) unha vez se completa un campo como é debido.
+from django.contrib import messages
 
 def max_speed_slope_tool_view (request):
     wattios_input = wattios_form(request.POST)
@@ -12,33 +14,46 @@ def max_speed_slope_tool_view (request):
     # Provide default values to avoid the errors
     speed_km_h = 0
     force_back_wheel = 0
+    total_forces_back_wheel = 0
+    total_forces_back_wheel_3 = 0
     force_slope = 0
     slope_percentage = 0
     pendiente_por_cada_cassette = 0
+    print('WEEEEEEEEEEEEEEEEEEEEEEEEEFunciona')
     if request.method == 'POST':
+        print('WEEEEEEEEEEEEEEEEEEEEEEEEEFunciona')
         if wattios_input.is_valid() and weight_input.is_valid() and groupset_brand_input.is_valid() and groupset_model_input.is_valid() and teeth_chainring_input.is_valid() and teeth_cassette_input.is_valid():
+        #if weight_input.is_valid() and weight_input.is_valid() and teeth_chainring_input.is_valid():
+            print('WEEEEEEEEEEEEEEEEEEEEEEEEEFunciona')
+            m = teeth_chainring_input.cleaned_data.get('teeth_chainring')
+            p=m.split('-')
+            print(type(p))
+            s=int(p[0])
+            print(s)
+            print(type(s))
+            print(s*2)
             groupset_brand_value = groupset_brand_input.cleaned_data.get('groupset_brand')
             groupset_model_value = groupset_model_input.cleaned_data.get('groupset_model')
             teeth_chainring_value = teeth_chainring_input.cleaned_data.get('teeth_chainring')
             # Con esto covirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
-            teeth_chainring_value_list = teeth_chainring_value.strip('()').split(',')
-            #Convertimos os elementos da lista que son strings a floats.
+            teeth_chainring_value_list = teeth_chainring_value.split('-')
+            # Convertimos os elementos da lista que son strings a floats.
             teeth_chainring_value_list_float = [float(x) for x in teeth_chainring_value_list]
             teeth_cassette_value = teeth_cassette_input.cleaned_data.get('teeth_cassette')
             # Con esto convirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
-            teeth_cassette_value_list = teeth_cassette_value.strip('()').split(',')
-            #Eiqui tamén temos que convertir os elementos da lista que son strings a floats.
+            teeth_cassette_value_list = teeth_cassette_value.split('-')
+            # Eiqui tamén temos que convertir os elementos da lista que son strings a floats.
             teeth_cassette_value_list_float = [float(x) for x in teeth_cassette_value_list]
-            # #-----------------------------Calculo da velocidade máxima a unhas determinadas revolcuiós por min------------------------------------
+            # # #-----------------------------Calculo da velocidade máxima a unhas determinadas revolcuiós por min------------------------------------
             diameter_wheel_mm = 700
             rpm_chainring = 130
-            #Fórmula para calcular o radio cos dentes do plato. s(é a distancia de punta a punta de cada dente. Vamos a supor 12,75mm). radio=s/2sen(pi/número dentes)
+            # Fórmula para calcular o radio cos dentes do plato. s(é a distancia de punta a punta de cada dente. Vamos a supor 12,75mm). radio=s/2sen(pi/número dentes)
             diameter_chainring_mm =  [(12.75/(2*math.sin(math.pi/x)))*2 for x in teeth_chainring_value_list_float]
             diameter_cassete_mm = [(12.75/(2*math.sin(math.pi/x)))*2 for x in teeth_cassette_value_list_float]
-            #---------------------------------------------------Variables para calcular a máxima pendente que o cilcista pode subir---------------------------------------
+            # #---------------------------------------------------Variables para calcular a máxima pendente que o cilcista pode subir---------------------------------------
             wattios_kg_value = float(wattios_input.cleaned_data.get('wattios'))
             weight_person_kg_value = float(weight_input.cleaned_data.get('weight'))
-            speed_ms = 1
+            speed_ms = 1 #3.6 km/h
             crankarm_metros = 165*0.001
             radio_back_wheel_metros = 700*0.001/2
             gravity = 9.8
@@ -48,7 +63,7 @@ def max_speed_slope_tool_view (request):
             rolling_coefficient = 0.0085 #Este coeficiente é sobre asfalto
             force_slope = int(round((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient,0))
 
-            #Para monoplato
+            # #Para monoplato
             if len(diameter_chainring_mm) == 1:
                 #-------------------Revolucións do cassette ou da roda (é o mesmo)------------------------
                 rpm_cassette_1 = [(diameter_chainring_mm[0] * rpm_chainring)/x for x in diameter_cassete_mm] 
@@ -152,19 +167,26 @@ def max_speed_slope_tool_view (request):
                     print(slope_percentage)
                     pendiente_por_cada_cassette.append(round(slope_percentage,1))
                 print(pendiente_por_cada_cassette)
+        else:
+            messages.error(request, 'Please, check again as there is an error on the forms')
   
     context = {
-      'wattios_input_html': wattios_input,
-      'weight_input_html' : weight_input,
-      'groupset_brand_input_html' : groupset_brand_input,
-      'groupset_model_input_html' : groupset_model_input,
-      'teeth_chainring_input_html' : teeth_chainring_input,
-      'teeth_cassette_input_html' : teeth_cassette_input,
+        'groupset_brand_value_html': groupset_brand_value,
+        'groupset_model_value_html': groupset_model_value,
 
-      'speed_km_h_html':speed_km_h,
-      'force_back_wheel_html' : force_back_wheel,
-      'force_slope_html': force_slope,
-      'pendiente_por_cada_cassette_html': pendiente_por_cada_cassette
+        'wattios_input_html': wattios_input,
+        'weight_input_html' : weight_input,
+        'groupset_brand_input_html' : groupset_brand_input,
+        'groupset_model_input_html' : groupset_model_input,
+        'teeth_chainring_input_html' : teeth_chainring_input,
+        'teeth_cassette_input_html' : teeth_cassette_input,
+
+        'speed_km_h_html':speed_km_h,
+        'force_back_wheel_html' : force_back_wheel,
+        'total_forces_back_wheel_html' : total_forces_back_wheel,
+        'total_forces_back_wheel_3_html' : total_forces_back_wheel_3,
+        'force_slope_html': force_slope,
+        'pendiente_por_cada_cassette_html': pendiente_por_cada_cassette
     }
     return render (request, 'tool_speed.html', context)
          
