@@ -12,6 +12,8 @@ def max_speed_slope_tool_view (request):
     teeth_chainring_input = teeth_chainring_form(request.POST)
     teeth_cassette_input = teeth_cassette_form(request.POST)
     # Provide default values to avoid the errors
+    groupset_brand_value = "Valor por defecto"
+    groupset_model_value = "Valor por defecto"
     speed_km_h = 0
     force_back_wheel = 0
     total_forces_back_wheel = 0
@@ -19,19 +21,8 @@ def max_speed_slope_tool_view (request):
     force_slope = 0
     slope_percentage = 0
     pendiente_por_cada_cassette = 0
-    print('WEEEEEEEEEEEEEEEEEEEEEEEEEFunciona')
     if request.method == 'POST':
-        print('WEEEEEEEEEEEEEEEEEEEEEEEEEFunciona')
         if wattios_input.is_valid() and weight_input.is_valid() and groupset_brand_input.is_valid() and groupset_model_input.is_valid() and teeth_chainring_input.is_valid() and teeth_cassette_input.is_valid():
-        #if weight_input.is_valid() and weight_input.is_valid() and teeth_chainring_input.is_valid():
-            print('WEEEEEEEEEEEEEEEEEEEEEEEEEFunciona')
-            m = teeth_chainring_input.cleaned_data.get('teeth_chainring')
-            p=m.split('-')
-            print(type(p))
-            s=int(p[0])
-            print(s)
-            print(type(s))
-            print(s*2)
             groupset_brand_value = groupset_brand_input.cleaned_data.get('groupset_brand')
             groupset_model_value = groupset_model_input.cleaned_data.get('groupset_model')
             teeth_chainring_value = teeth_chainring_input.cleaned_data.get('teeth_chainring')
@@ -168,7 +159,7 @@ def max_speed_slope_tool_view (request):
                     pendiente_por_cada_cassette.append(round(slope_percentage,1))
                 print(pendiente_por_cada_cassette)
         else:
-            messages.error(request, 'Please, check again as there is an error on the forms')
+            messages.error(request, 'Please, select an option in all the dropdowns')
   
     context = {
         'groupset_brand_value_html': groupset_brand_value,
