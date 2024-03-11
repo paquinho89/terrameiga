@@ -66,6 +66,7 @@ urlpatterns =   i18n_patterns (
     path('preparation_preparation_preparation/', preparation_preparation_blog_view, name="preparation_preparation"),
     path('how_we_got_here/', TemplateView.as_view(template_name = "blog/how_we_got_here_july.html"), name="how_we_got_here"),
     path('new_year_country_plans/', TemplateView.as_view(template_name = "blog/blog_new_year_january.html"), name="new_year_country_plans_january_2024"),
+    path('warmer_weather/', TemplateView.as_view(template_name = "blog/warmer_weather_february.html"), name="warmer_weather_february_2024"),
 
     #TOOLS 
     path('tools/', max_speed_slope_tool_view, name="tool_speed"),
