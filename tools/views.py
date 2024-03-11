@@ -14,13 +14,16 @@ def max_speed_slope_tool_view (request):
     # Provide default values to avoid the errors
     groupset_brand_value = "Valor por defecto"
     groupset_model_value = "Valor por defecto"
-    speed_km_h = 0
+    speed_km_h = []
     force_back_wheel = 0
     total_forces_back_wheel = 0
     total_forces_back_wheel_3 = 0
     force_slope = 0
     slope_percentage = 0
-    pendiente_por_cada_cassette = 0
+    teeth_chainring_value_list = []
+    teeth_cassette_value_list = []
+    pendiente_por_cada_cassette = []
+    numero_celdas_tabla = 0
     if request.method == 'POST':
         if wattios_input.is_valid() and weight_input.is_valid() and groupset_brand_input.is_valid() and groupset_model_input.is_valid() and teeth_chainring_input.is_valid() and teeth_cassette_input.is_valid():
             groupset_brand_value = groupset_brand_input.cleaned_data.get('groupset_brand')
@@ -53,6 +56,8 @@ def max_speed_slope_tool_view (request):
             weight_bike_person = weight_person_kg_value + weight_bike_kg
             rolling_coefficient = 0.0085 #Este coeficiente é sobre asfalto
             force_slope = int(round((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient,0))
+            #Dividindo a lonxitude da lista do cassette entre a lonxitude da lista do chainring para que cada teeth do chainring colla o número de casillas na tabla de html (tool_speed.html) que lle corresponda.
+            numero_celdas_tabla = int(len(teeth_cassette_value_list) / len(teeth_chainring_value_list))
 
             # #Para monoplato
             if len(diameter_chainring_mm) == 1:
@@ -61,7 +66,7 @@ def max_speed_slope_tool_view (request):
                 #---------------------------Calculo da velocidade-----------------------------------------------
                 distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
                 meters_min_1 = [distance_metros*x for x in rpm_cassette_1] # metros que se recorren en 1 minuto
-                speed_km_h = [round((x*60)/1000, 1) for x in meters_min_1] # Velocidade en km/h
+                speed_km_h = [int((x*60)/1000) for x in meters_min_1] # Velocidade en km/h
                 #--------------------Cálculo da máxima pendente que o ciclista pode subir----------------------
                 radio_chainring_metros = (diameter_chainring_mm[0]*0.001)/2
                 radio_cassete_metros = [(x*0.001)/2 for x in diameter_cassete_mm]
@@ -75,9 +80,7 @@ def max_speed_slope_tool_view (request):
                         #Newtons que fan falta para mover bicicleta+persoa por unha subida.
                         force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
                         slope_percentage= slope_percentage + 0.1
-                    print(slope_percentage)
-                    pendiente_por_cada_cassette.append(round(slope_percentage,1))
-                print(pendiente_por_cada_cassette)
+                    pendiente_por_cada_cassette.append(int(slope_percentage))
             
             #Con 2 platos
             elif len(diameter_chainring_mm) == 2:
@@ -93,7 +96,7 @@ def max_speed_slope_tool_view (request):
                 #---------------------------Calculo da velocidade-----------------------------------------------
                 distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
                 meters_min_2 = [distance_metros*x for x in rpm_cassette_2] # metros que se recorren en 1 minuto
-                speed_km_h = [round((x*60)/1000, 0) for x in meters_min_2] # Velocidade en km/h
+                speed_km_h = [int((x*60)/1000) for x in meters_min_2] # Velocidade en km/h
                 #----------------------------Cálculo da máxima pendiente que o ciclista pode subir-----------------------
                 radio_plato_pequeno_metros = (plato_pequeno_mm*0.001)/2
                 radio_plato_grande_metros = (plato_grande_mm*0.001)/2
@@ -112,9 +115,7 @@ def max_speed_slope_tool_view (request):
                         #Newtons que fan falta para mover bicicleta+persoa por unha subida.
                         force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
                         slope_percentage= slope_percentage + 0.1
-                    print(slope_percentage)
-                    pendiente_por_cada_cassette.append(round(slope_percentage,1))
-                print(pendiente_por_cada_cassette)
+                    pendiente_por_cada_cassette.append(int(slope_percentage))
             elif len(diameter_chainring_mm) == 3:
                 #-------------------Revolucións do cassette ou da roda (é o mesmo)------------------------
                 #Dividimos o cassette en 3 divisións, xa que hai 3 platos
@@ -131,8 +132,7 @@ def max_speed_slope_tool_view (request):
                 #---------------------------Calculo da velocidade-----------------------------------------------
                 distance_metros = 2*math.pi*(diameter_wheel_mm/2)/1000 # Distancia que se recorre cando a roda da unha volta
                 meters_min_3 = [distance_metros*x for x in rpm_cassette_3] # metros que se recorren en 1 minuto
-                speed_km_h = [round((x*60)/1000,0) for x in meters_min_3] # Velocidade en km/h
-                print(speed_km_h)
+                speed_km_h = [int((x*60)/1000) for x in meters_min_3] # Velocidade en km/h
                 #----------------------------Cálculo da máxima pendiente que o ciclista pode subir-----------------------
                 radio_plato_pequeno_metros_3 = (plato_pequeno_mm_3*0.001)/2
                 radio_plato_mediano_metros_3 = (plato_mediano_mm_3*0.001)/2
@@ -155,9 +155,7 @@ def max_speed_slope_tool_view (request):
                         #Newtons que fan falta para mover bicicleta + persoa por unha subida.
                         force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
                         slope_percentage= slope_percentage + 0.1
-                    print(slope_percentage)
-                    pendiente_por_cada_cassette.append(round(slope_percentage,1))
-                print(pendiente_por_cada_cassette)
+                    pendiente_por_cada_cassette.append(int(slope_percentage))
         else:
             messages.error(request, 'Please, select an option in all the dropdowns')
   
@@ -172,6 +170,10 @@ def max_speed_slope_tool_view (request):
         'teeth_chainring_input_html' : teeth_chainring_input,
         'teeth_cassette_input_html' : teeth_cassette_input,
 
+        'numero_celdas_tabla_html' : numero_celdas_tabla,
+        
+        'teeth_chainring_value_list_html' : teeth_chainring_value_list,
+        'teeth_cassette_value_list_html' : teeth_cassette_value_list,
         'speed_km_h_html':speed_km_h,
         'force_back_wheel_html' : force_back_wheel,
         'total_forces_back_wheel_html' : total_forces_back_wheel,

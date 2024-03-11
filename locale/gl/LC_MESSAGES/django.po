@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 18:39+0100\n"
+"POT-Creation-Date: 2024-03-10 17:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -992,7 +992,7 @@ msgstr "persoas"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
 msgid "Population density:"
-msgstr "Densidade poblacional:"
+msgstr "Densidade poboacional:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:42
 msgid "ppl per km<sup>2</sup>"
@@ -2350,7 +2350,7 @@ msgstr "A súa conta foi creada. Grazas por ser parte desta aventura!"
 msgid "You have been logged out!"
 msgstr "A súa sesión pechouse!"
 
-#: .\registration\views.py:194 .\registration\views.py:205
+#: .\registration\views.py:193 .\registration\views.py:205
 msgid "Welcome! Now it's time to enjoy all the content from the journey."
 msgstr "Benvido! Agora é tempo de desfrutar de todo o contido da viaxe."
 
