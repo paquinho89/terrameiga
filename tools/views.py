@@ -32,18 +32,23 @@ def max_speed_slope_tool_view (request):
             # Con esto covirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
             teeth_chainring_value_list = teeth_chainring_value.split('-')
             # Convertimos os elementos da lista que son strings a floats.
-            teeth_chainring_value_list_float = [float(x) for x in teeth_chainring_value_list]
+            teeth_chainring_value_list_float = ([int(x) for x in teeth_chainring_value_list])
+            print('EEEEEEEEEEEEEEEEEEEEEEEE', teeth_chainring_value_list_float)
             teeth_cassette_value = teeth_cassette_input.cleaned_data.get('teeth_cassette')
             # Con esto convirto a teeth_cassette_value que é unha string a unha tupla para poder acceder aos seus valores
             teeth_cassette_value_list = teeth_cassette_value.split('-')
             # Eiqui tamén temos que convertir os elementos da lista que son strings a floats.
-            teeth_cassette_value_list_float = [float(x) for x in teeth_cassette_value_list]
+            teeth_cassette_value_list_float = [int(x) for x in teeth_cassette_value_list]
+            #teeth_cassette_value_list_float = sorted(teeth_cassette_value_list_float)
+            print('EEEEEEEEEEEEEEE', teeth_cassette_value_list_float)
             # # #-----------------------------Calculo da velocidade máxima a unhas determinadas revolcuiós por min------------------------------------
             diameter_wheel_mm = 700
             rpm_chainring = 130
             # Fórmula para calcular o radio cos dentes do plato. s(é a distancia de punta a punta de cada dente. Vamos a supor 12,75mm). radio=s/2sen(pi/número dentes)
             diameter_chainring_mm =  [(12.75/(2*math.sin(math.pi/x)))*2 for x in teeth_chainring_value_list_float]
+            print('diameter_chainring_mm', diameter_chainring_mm)
             diameter_cassete_mm = [(12.75/(2*math.sin(math.pi/x)))*2 for x in teeth_cassette_value_list_float]
+            print('diameter_cassete_mm', diameter_cassete_mm)
             # #---------------------------------------------------Variables para calcular a máxima pendente que o cilcista pode subir---------------------------------------
             wattios_kg_value = float(wattios_input.cleaned_data.get('wattios'))
             weight_person_kg_value = float(weight_input.cleaned_data.get('weight'))
@@ -74,12 +79,13 @@ def max_speed_slope_tool_view (request):
                 force_back_wheel = [int(round(((x)/(radio_back_wheel_metros))*tension_chain, 0)) for x in radio_cassete_metros] #Forza que se transmite ao chao pola roda traseira por un ciclista
                 # Calculamos a máxima pendiente que pode subir por aproximación
                 pendiente_por_cada_cassette = []
-                slope_percentage = 0 #Sempre ten que ser cero para que comece a subir a pendiente de tal forma a buscar o valor de pendiente por aproximación
+                slope_percentage = 200 #Sempre ten que ser cero para que comece a subir a pendiente de tal forma a buscar o valor de pendiente por aproximación
                 for x_force_back_wheel in force_back_wheel:
                     while not math.isclose (force_slope, x_force_back_wheel):
                         #Newtons que fan falta para mover bicicleta+persoa por unha subida.
                         force_slope = int((weight_bike_person*gravity*math.sin(math.atan(slope_percentage/100)))+(weight_bike_person*gravity*math.cos(math.atan(slope_percentage/100)))*rolling_coefficient)
-                        slope_percentage= slope_percentage + 0.1
+                        slope_percentage= slope_percentage - 0.1
+                        print(slope_percentage)
                     pendiente_por_cada_cassette.append(int(slope_percentage))
             
             #Con 2 platos
