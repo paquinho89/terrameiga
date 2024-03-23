@@ -259,8 +259,9 @@ def videos_view (request):
     list_link_last_characters = []
     for str_link in all_links:
         #Collemos solo o final do link de YoutTube que é onde está o código que me interesa.
-        last_characters = str_link.rsplit('=',1)[1]
-        list_link_last_characters.append(last_characters)
+        #last_characters = str_link.rsplit('-',1)[1]
+        #last_characters = str_link.rsplit(Convert.ToChar(61), 1)(1)
+        list_link_last_characters.append(str_link)
         
     context={
         'all_links_last_characters_html' : list_link_last_characters
