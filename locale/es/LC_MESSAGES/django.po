@@ -1026,7 +1026,7 @@ msgid "Interesting fact:"
 msgstr "Dato interesante:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:50
-msgid "The most listen song on Spotify:"
+msgid "The most listened to song on Spotify:"
 msgstr "Canción más escuchada en Spotify:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:63
