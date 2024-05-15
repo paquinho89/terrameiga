@@ -1022,7 +1022,7 @@ msgid "Interesting fact:"
 msgstr "Datu interesgarriak:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:50
-msgid "The most listen song on Spotify:"
+msgid "The most listened to song on Spotify:"
 msgstr "Abesti entzunena Spotify:"
 
 #: .\bicicleteiros\static\templates\bicicleteiros_home_page.html:63
