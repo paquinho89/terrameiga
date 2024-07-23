@@ -29,5 +29,6 @@ currency_list_values = (
     (_("Yuan"), "Renminbi - China"),
     (_("Won"), "South Korean won - South Korea"),
     (_("Yen"), "Japanese yen - Japan"),
-    (_("Dollar"), "United States dollar - US")
+    (_("Dollar"), "United States dollar - US"),
+    (_("Tugrik"), "Mongol Tugrik - Mongolia") 
 )
