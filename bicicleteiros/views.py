@@ -408,16 +408,16 @@ def estadistica_plotly_view(request):
                  custom_data=['altitude_day__sum']
                  )
     
-    fig_km_meters_week.add_trace(
-                go.Scatter(
-                    x=[item['week'] for item in qs_km_meters_week], 
-                    y=[item['altitude_day__sum'] for item in qs_km_meters_week], 
-                    mode='lines', 
-                    name=str(_('Climb')),
-                    xaxis='x',  # Set the line chart to use the primary x-axis
-                    yaxis='y2',
-                    customdata=[[item['altitude_day__sum']] for item in qs_km_meters_week],
-                    line=dict(color='#56ff00')))
+    #fig_km_meters_week.add_trace(
+                #go.Scatter(
+                    #x=[item['week'] for item in qs_km_meters_week], 
+                    #y=[item['altitude_day__sum'] for item in qs_km_meters_week], 
+                    #mode='lines', 
+                    #name=str(_('Climb')),
+                    #xaxis='x',  # Set the line chart to use the primary x-axis
+                    #yaxis='y2',
+                    #customdata=[[item['altitude_day__sum']] for item in qs_km_meters_week],
+                    #line=dict(color='#56ff00')))
 
     # Update layout to show the secondary y-axis
     fig_km_meters_week.update_layout(
