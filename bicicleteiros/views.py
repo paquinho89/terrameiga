@@ -466,16 +466,16 @@ def estadistica_plotly_view(request):
                  custom_data=['altitude_day__sum']
                  )
     
-    fig_km_meters_country.add_trace(
-                go.Scatter(
-                    x=[item['country_name'] for item in qs_km_meters_country], 
-                    y=[item['altitude_day__sum'] for item in qs_km_meters_country], 
-                    mode='lines',
-                    name=str(_('Climb')),
-                    xaxis='x',  # Set the line chart to use the primary x-axis
-                    yaxis='y2',
-                    customdata=[[item['altitude_day__sum']] for item in qs_km_meters_country],
-                    line=dict(color='#56ff00')))
+    #fig_km_meters_country.add_trace(
+                #go.Scatter(
+                    #x=[item['country_name'] for item in qs_km_meters_country], 
+                    #y=[item['altitude_day__sum'] for item in qs_km_meters_country], 
+                    #mode='lines',
+                    #name=str(_('Climb')),
+                    #xaxis='x',  # Set the line chart to use the primary x-axis
+                    #yaxis='y2',
+                    #customdata=[[item['altitude_day__sum']] for item in qs_km_meters_country],
+                    #line=dict(color='#56ff00')))
 
     # Update layout to show the secondary y-axis
     fig_km_meters_country.update_layout(
