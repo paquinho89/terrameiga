@@ -40,6 +40,7 @@ expense_type_choices = (
 continent_choices = (
     ( 'Europe', 'Europe'),
     ( 'Asia', 'Asia'),
+    ( 'Oceania', 'Oceania'),
     ( 'America', 'America'),
     ( 'Africa', 'Africa')
 )
