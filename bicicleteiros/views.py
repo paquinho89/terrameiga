@@ -190,12 +190,12 @@ def country_data_view (request):
                 form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
             messages.error(request, _('Please, include some text in your reply'))
 
-        #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
-        chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
-        #Contamos o número total de comentarios para polo na páxina
-        number_comments=chat_comments_model.objects.all().count()
-        #Eiqui collo as replies dos cometarios
-        replies_comments_all = chat_comments_replies_model.objects.all()
+    #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
+    chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
+    #Contamos o número total de comentarios para polo na páxina
+    number_comments=chat_comments_model.objects.all().count()
+    #Eiqui collo as replies dos cometarios
+    replies_comments_all = chat_comments_replies_model.objects.all()
 
     context = {
         'journey_day_html' : current_journey_day ,
