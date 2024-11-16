@@ -112,83 +112,83 @@ def country_data_view (request):
 
     #Co request.user fago que solo os usuarios que están rexistrados podan acceder a páxina de bicicleteiros (na que se mostra a miña posición)
     #No caso de que non estén rexistrados, mándoos a páxina de home_page_no_registered.
-    if request.user.is_authenticated:
-        all_entry_days= money_model.objects.all()
-        #Collemos a última entrada do día para que así podas incluir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
-        all_entry_days_last=all_entry_days.first()
-        #Da última entrada collemos do día collemos o día da viaxe na que estamos
-        current_journey_day = all_entry_days_last.journey_day
-        #Da última entrada collemos a semana
-        current_week = all_entry_days_last.week
-        #Da última entrada collemos o país
-        #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
-        current_country = str(all_entry_days_last.country)
-        country_number_country = country_information_model.objects.get(country= current_country).country_number
-        visa_required = country_information_model.objects.get(country = current_country).visa_requerided
-        visa_price = country_information_model.objects.get(country = current_country).visa_price
-        capital_city = country_information_model.objects.get(country = current_country).capital_town
-        population_country = country_information_model.objects.get(country = current_country).population
-        population_dens = country_information_model.objects.get(country = current_country).population_density
-        life_expectancy_country = country_information_model.objects.get(country = current_country).life_expectancy
-        surface_country = country_information_model.objects.get(country = current_country).surface
-        currency_country = country_information_model.objects.get(country = current_country).currency
-        time_zone_value = country_information_model.objects.get(country = current_country).time_zone
-        total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
-        total_km = total_km_dictionary['km_day__sum']
-        total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
-        total_money = total_money_dict['expense_euros__sum']
-        flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
-        if get_language() == "en":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
-        elif get_language() == "es":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
-        elif get_language() == "gl":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
-        elif get_language() == "eu":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_eu
-        elif get_language() == "ca":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
+    #if request.user.is_authenticated:
+    all_entry_days= money_model.objects.all()
+    #Collemos a última entrada do día para que así podas incluir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
+    all_entry_days_last=all_entry_days.first()
+    #Da última entrada collemos do día collemos o día da viaxe na que estamos
+    current_journey_day = all_entry_days_last.journey_day
+    #Da última entrada collemos a semana
+    current_week = all_entry_days_last.week
+    #Da última entrada collemos o país
+    #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
+    current_country = str(all_entry_days_last.country)
+    country_number_country = country_information_model.objects.get(country= current_country).country_number
+    visa_required = country_information_model.objects.get(country = current_country).visa_requerided
+    visa_price = country_information_model.objects.get(country = current_country).visa_price
+    capital_city = country_information_model.objects.get(country = current_country).capital_town
+    population_country = country_information_model.objects.get(country = current_country).population
+    population_dens = country_information_model.objects.get(country = current_country).population_density
+    life_expectancy_country = country_information_model.objects.get(country = current_country).life_expectancy
+    surface_country = country_information_model.objects.get(country = current_country).surface
+    currency_country = country_information_model.objects.get(country = current_country).currency
+    time_zone_value = country_information_model.objects.get(country = current_country).time_zone
+    total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
+    total_km = total_km_dictionary['km_day__sum']
+    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
+    total_money = total_money_dict['expense_euros__sum']
+    flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
+    if get_language() == "en":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
+    elif get_language() == "es":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
+    elif get_language() == "gl":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
+    elif get_language() == "eu":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_eu
+    elif get_language() == "ca":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
+    else:
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
+        
+    spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
+    spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
+    #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware no browser. Básicamente o idioma do browser.
+    current_language_browser = get_language()[:2]
+    # REPLIES of the CHAT:
+    form_chat_reply = chat_replies_form(data = request.POST)
+    if request.method == 'POST':
+        #Check whether it is valid:
+        if form_chat_reply.is_valid():
+            #Collemos o texto do reply
+            reply_text_var = form_chat_reply.cleaned_data.get('reply_text')
+            #Collemos o pk que está gardado no campo 'pk_original_comment' do formulario 'form_chat_reply', porque no html coa axuda de Javascript autocompletaros o 'pk_original_comment'
+            # do formulario co pk do comentario orixinal. Esto é algo que se fai no html (bicicleteiros_home_page.html)
+            pk_original_comment_var = form_chat_reply.cleaned_data.get('pk_original_comment')
+            # ESto é para que se asigne o reply ao comentario raíz. Fago que o 'original_comment' do modelo 'chat_comments_replies_model' sexa igual que o "comentario" do 'chat_comments_model'
+            #Gardo os datos no modelo "chat_comments_replies_model". Nota, para o original_comment que é o campo común entre os 2 modelos ('chat_comments_replies_model' & 'chat_comments_model')
+            #teño que meter o post_comment que é unha variable que collo anteriormente que ten o texto do comentario raíz
+            new_instance_reply = chat_comments_replies_model (reply_text= reply_text_var, username_reply = request.user.username, pk_original_comment = pk_original_comment_var)
+            new_instance_reply.save()
+            #Filtramos polo pk_original comment para contar cantas replies hay de cada comentario raíz
+            number_replies_per_comment = chat_comments_replies_model.objects.filter(pk_original_comment=new_instance_reply.pk_original_comment).count()
+            #E despois actualizamos o modelo chat_comments_model co número de replies que ten cada comentario
+            pk_of_the_comment_to_update=str(new_instance_reply.pk_original_comment)
+            comment_entry_to_update = chat_comments_model.objects.filter(pk=pk_of_the_comment_to_update).first()
+            #Actualizamos o comentario
+            comment_entry_to_update.number_of_replies = number_replies_per_comment
+            comment_entry_to_update.save()
+            #Esto é para que me mostre a mensaxe de que se engadiu o reply
+            messages.success(request, _('Thanks for your participation. Your reply has been successfully included!'))
+            #artigos_content e que para que me retorne a vista do blog
+            return redirect('bicleteiros_home_page')
+        
         else:
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
-            
-        spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
-        spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
-        #Con esto obteño o language que está identificando a función de django.middleware.locale.LocaleMiddleware no browser. Básicamente o idioma do browser.
-        current_language_browser = get_language()[:2]
-        # REPLIES of the CHAT:
-        form_chat_reply = chat_replies_form(data = request.POST)
-        if request.method == 'POST':
-            #Check whether it is valid:
-            if form_chat_reply.is_valid():
-                #Collemos o texto do reply
-                reply_text_var = form_chat_reply.cleaned_data.get('reply_text')
-                #Collemos o pk que está gardado no campo 'pk_original_comment' do formulario 'form_chat_reply', porque no html coa axuda de Javascript autocompletaros o 'pk_original_comment'
-                # do formulario co pk do comentario orixinal. Esto é algo que se fai no html (bicicleteiros_home_page.html)
-                pk_original_comment_var = form_chat_reply.cleaned_data.get('pk_original_comment')
-                # ESto é para que se asigne o reply ao comentario raíz. Fago que o 'original_comment' do modelo 'chat_comments_replies_model' sexa igual que o "comentario" do 'chat_comments_model'
-                #Gardo os datos no modelo "chat_comments_replies_model". Nota, para o original_comment que é o campo común entre os 2 modelos ('chat_comments_replies_model' & 'chat_comments_model')
-                #teño que meter o post_comment que é unha variable que collo anteriormente que ten o texto do comentario raíz
-                new_instance_reply = chat_comments_replies_model (reply_text= reply_text_var, username_reply = request.user.username, pk_original_comment = pk_original_comment_var)
-                new_instance_reply.save()
-                #Filtramos polo pk_original comment para contar cantas replies hay de cada comentario raíz
-                number_replies_per_comment = chat_comments_replies_model.objects.filter(pk_original_comment=new_instance_reply.pk_original_comment).count()
-                #E despois actualizamos o modelo chat_comments_model co número de replies que ten cada comentario
-                pk_of_the_comment_to_update=str(new_instance_reply.pk_original_comment)
-                comment_entry_to_update = chat_comments_model.objects.filter(pk=pk_of_the_comment_to_update).first()
-                #Actualizamos o comentario
-                comment_entry_to_update.number_of_replies = number_replies_per_comment
-                comment_entry_to_update.save()
-                #Esto é para que me mostre a mensaxe de que se engadiu o reply
-                messages.success(request, _('Thanks for your participation. Your reply has been successfully included!'))
-                #artigos_content e que para que me retorne a vista do blog
-                return redirect('bicleteiros_home_page')
-            
-            else:
-                # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
-                # asigne o formato de error (O borde en vermello)
-                for field, errors in form_chat_reply.errors.items():
-                    form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-                messages.error(request, _('Please, include some text in your reply'))
+            # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+            # asigne o formato de error (O borde en vermello)
+            for field, errors in form_chat_reply.errors.items():
+                form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+            messages.error(request, _('Please, include some text in your reply'))
 
         #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
         chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
