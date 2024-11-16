@@ -225,7 +225,7 @@ def country_data_view (request):
             
             'graph_money_type_html' :all_entry_days
         }
-        return render (request, 'bicicleteiros_home_page.html', context)
+    return render (request, 'bicicleteiros_home_page.html', context)
         
     #else:
         # User is not authenticated, redirect to the sign_in page
