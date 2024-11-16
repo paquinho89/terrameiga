@@ -183,12 +183,12 @@ def country_data_view (request):
             #artigos_content e que para que me retorne a vista do blog
             return redirect('bicleteiros_home_page')
             
-            #else:
-                # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
-                # asigne o formato de error (O borde en vermello)
-                #for field, errors in form_chat_reply.errors.items():
-                    #form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
-                #messages.error(request, _('Please, include some text in your reply'))
+        else:
+            # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+            # asigne o formato de error (O borde en vermello)
+            for field, errors in form_chat_reply.errors.items():
+                form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+            messages.error(request, _('Please, include some text in your reply'))
 
         #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
         chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
@@ -227,10 +227,10 @@ def country_data_view (request):
         }
         return render (request, 'bicicleteiros_home_page.html', context)
         
-    else:
+    #else:
         # User is not authenticated, redirect to the sign_in page
-        messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
-        return redirect('sign_in')  # Change 'login' to your actual login URL name
+        #messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
+        #return redirect('sign_in')  # Change 'login' to your actual login URL name
 
 def photos_view (request):
     #Collemos todos os links das imaxes que temos
