@@ -227,10 +227,10 @@ def country_data_view (request):
         }
         return render (request, 'bicicleteiros_home_page.html', context)
         
-        else:
-            # User is not authenticated, redirect to the sign_in page
-            messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
-            return redirect('sign_in')  # Change 'login' to your actual login URL name
+    else:
+        # User is not authenticated, redirect to the sign_in page
+        messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
+        return redirect('sign_in')  # Change 'login' to your actual login URL name
 
 def photos_view (request):
     #Collemos todos os links das imaxes que temos
