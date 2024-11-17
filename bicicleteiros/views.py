@@ -190,47 +190,47 @@ def country_data_view (request):
                     form_chat_reply[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
                 messages.error(request, _('Please, include some text in your reply'))
     
-            #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
-            chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
-            #Contamos o número total de comentarios para polo na páxina
-            number_comments=chat_comments_model.objects.all().count()
-            #Eiqui collo as replies dos cometarios
-            replies_comments_all = chat_comments_replies_model.objects.all()
+        #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
+        chat_comments_all = chat_comments_model.objects.all().order_by('-date_added')
+        #Contamos o número total de comentarios para polo na páxina
+        number_comments=chat_comments_model.objects.all().count()
+        #Eiqui collo as replies dos cometarios
+        replies_comments_all = chat_comments_replies_model.objects.all()
+
+        context = {
+            'journey_day_html' : current_journey_day ,
+            'current_week_html' : current_week,
+            'country_number_html' : country_number_country,
+            'total_km_html' : total_km,
+            'total_money_html' : total_money,
+            'current_country_html' : current_country,
+            'visa_required_html' : visa_required,
+            'visa_price_html' : visa_price,
+            'flag_url_html' : flag_url,
+            'capital_city_html' : capital_city,
+            'surface_html' : surface_country,
+            'population_html' : population_country,
+            'density_population_html' : population_dens,
+            'life_expectancy_country_html' : life_expectancy_country,
+            'currency_html' : currency_country,
+            'time_zone_html' : time_zone_value,
+            'interesting_fact_country_html' : interesting_fact_country,
+            'spotify_song_code_html' : spotify_song_code_country,
     
-            context = {
-                'journey_day_html' : current_journey_day ,
-                'current_week_html' : current_week,
-                'country_number_html' : country_number_country,
-                'total_km_html' : total_km,
-                'total_money_html' : total_money,
-                'current_country_html' : current_country,
-                'visa_required_html' : visa_required,
-                'visa_price_html' : visa_price,
-                'flag_url_html' : flag_url,
-                'capital_city_html' : capital_city,
-                'surface_html' : surface_country,
-                'population_html' : population_country,
-                'density_population_html' : population_dens,
-                'life_expectancy_country_html' : life_expectancy_country,
-                'currency_html' : currency_country,
-                'time_zone_html' : time_zone_value,
-                'interesting_fact_country_html' : interesting_fact_country,
-                'spotify_song_code_html' : spotify_song_code_country,
+            'chat_comments_all_html' : chat_comments_all,
+            'chat_number_comments_html' : number_comments,
+            'form_chat_reply_html' : form_chat_reply,
+            'replies_comments_all_html' : replies_comments_all,
+            'current_language_browser_html' : current_language_browser,
+            
+            'graph_money_type_html' :all_entry_days
+        }
+        return render (request, 'bicicleteiros_home_page.html', context)
         
-                'chat_comments_all_html' : chat_comments_all,
-                'chat_number_comments_html' : number_comments,
-                'form_chat_reply_html' : form_chat_reply,
-                'replies_comments_all_html' : replies_comments_all,
-                'current_language_browser_html' : current_language_browser,
-                
-                'graph_money_type_html' :all_entry_days
-            }
-            return render (request, 'bicicleteiros_home_page.html', context)
-        
-        else:
-            # User is not authenticated, redirect to the sign_in page
-            messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
-            return redirect('sign_in')  # Change 'login' to your actual login URL name
+    else:
+        # User is not authenticated, redirect to the sign_in page
+        messages.error(request, _('You must be registered to access to this content. Go to terrameiga.bike/sign_up/ and create an account.'))
+        return redirect('sign_in')  # Change 'login' to your actual login URL name
 
 def photos_view (request):
     #Collemos todos os links das imaxes que temos
