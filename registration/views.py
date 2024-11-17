@@ -190,7 +190,7 @@ def sign_in_view(request):
         user_auth = authenticate(request, email=email_or_username_form, password=password_form)
         if user_auth is not None:
           login(request, user_auth)
-          messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
+          #messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
           return redirect('bicleteiros_home_page')
       #Para a xente que se logea co nome de usuario, collemos o seu nome de usario introducido e con eso sacamos o email para logearse.
       else:
@@ -202,7 +202,7 @@ def sign_in_view(request):
         user_auth = authenticate(request, email=username_form, password=password_form)
         if user_auth is not None:
           login(request, user_auth)
-          messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
+          #messages.success(request, _("Welcome! Now it's time to enjoy all the content from the journey."))
           return redirect('bicleteiros_home_page')
     else:
       #Comento esto porque para o formulario que hai de AuthenticationForm preconfigurado por Django esto non me funciona.
