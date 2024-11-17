@@ -30,7 +30,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns =   i18n_patterns (
     path('admin/', admin.site.urls),
     #BICICLETEIROS_URLs
-    #path('', country_data_no_registered_view, name="home_page_no_registered"),
+    path('proba', country_data_no_registered_view, name="home_page_no_registered"),
     path('', country_data_view, name="home_page_no_registered"),
     #path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
     path('bicicleteiros_statistics/', estadistica_plotly_view, name="bicicleteiros_estadistica_plotly"),
