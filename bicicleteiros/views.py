@@ -150,9 +150,9 @@ def country_data_no_registered_view (request):
     elif get_language() == "gl":
         interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
     elif get_language() == "eu":
-        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_eu
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
     elif get_language() == "ca":
-        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
     else:
         interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
             
