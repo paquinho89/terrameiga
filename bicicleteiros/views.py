@@ -364,6 +364,8 @@ def photos_view (request):
     return render(request, 'bicicleteiros_fotos.html', context)
 
 def videos_view (request):
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
     #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
     form_language = language_home_page_no_registration_form(initial={'language': initial_language})
     if request.method == "POST":
@@ -396,6 +398,8 @@ def videos_view (request):
 
 
 def estadistica_plotly_view(request):
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
     #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
     form_language = language_home_page_no_registration_form(initial={'language': initial_language})
     if request.method == "POST":
@@ -673,6 +677,8 @@ def estadistica_plotly_view(request):
 
 
 def estadistica_plotly_view_full_report(request):
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
     #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
     form_language = language_home_page_no_registration_form(initial={'language': initial_language})
     if request.method == "POST":
@@ -994,6 +1000,8 @@ def preparation_preparation_blog_view (request):
 
 
 def project_presentation_view (request):
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
     #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
     form_language = language_home_page_no_registration_form(initial={'language': initial_language})
     if request.method == "POST":
