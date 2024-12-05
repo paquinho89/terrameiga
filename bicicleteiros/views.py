@@ -364,6 +364,20 @@ def photos_view (request):
     return render(request, 'bicicleteiros_fotos.html', context)
 
 def videos_view (request):
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+    if request.method == "POST":
+        form_language = language_home_page_no_registration_form(data = request.POST)
+        if form_language.is_valid():
+            #print(request.POST)
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+            #Nesta sección o que fago e cambiar o idioma na url
+            current_language = get_language()
+            current_url = request.build_absolute_uri()
+            new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+            return redirect(new_url)
     #Co values_list e o flat=True obteño solo os links de YouTube que é o que me interesa.
     all_links = videos_model.objects.values_list('youtube_link', flat=True)
     list_link_last_characters = []
@@ -374,6 +388,7 @@ def videos_view (request):
         list_link_last_characters.append(str_link)
         
     context={
+        'form_language_html' : form_language,
         'all_links_last_characters_html' : list_link_last_characters
     }
 
@@ -381,6 +396,20 @@ def videos_view (request):
 
 
 def estadistica_plotly_view(request):
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+    if request.method == "POST":
+        form_language = language_home_page_no_registration_form(data = request.POST)
+        if form_language.is_valid():
+            #print(request.POST)
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+            #Nesta sección o que fago e cambiar o idioma na url
+            current_language = get_language()
+            current_url = request.build_absolute_uri()
+            new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+            return redirect(new_url)
     #--------------Getting the global metrics ------------------------------------
     total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
@@ -620,6 +649,7 @@ def estadistica_plotly_view(request):
     #-----------------END GRAPGH KM AND ALTITUDE PER COUNTRY---------------------------------
 
     context = {
+        'form_language_html' : form_language,
         'total_km_html' : total_km,
         'total_climbing_html' : total_climbing,
         'country_number_country_html' : country_number_country,
@@ -643,6 +673,20 @@ def estadistica_plotly_view(request):
 
 
 def estadistica_plotly_view_full_report(request):
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+    if request.method == "POST":
+        form_language = language_home_page_no_registration_form(data = request.POST)
+        if form_language.is_valid():
+            #print(request.POST)
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+            #Nesta sección o que fago e cambiar o idioma na url
+            current_language = get_language()
+            current_url = request.build_absolute_uri()
+            new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+            return redirect(new_url)
     #--------------Getting the global metrics ------------------------------------
     total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
     total_km = total_km_dictionary['km_day__sum']
@@ -874,6 +918,7 @@ def estadistica_plotly_view_full_report(request):
     #-----------------END GRAPGH KM AND ALTITUDE PER COUNTRY---------------------------------
 
     context = {
+        'form_language_html' : form_language,
         'total_km_html' : total_km,
         'total_climbing_html' : total_climbing,
         'country_number_country_html' : country_number_country,
@@ -949,6 +994,20 @@ def preparation_preparation_blog_view (request):
 
 
 def project_presentation_view (request):
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+    if request.method == "POST":
+        form_language = language_home_page_no_registration_form(data = request.POST)
+        if form_language.is_valid():
+            #print(request.POST)
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+            #Nesta sección o que fago e cambiar o idioma na url
+            current_language = get_language()
+            current_url = request.build_absolute_uri()
+            new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+            return redirect(new_url)
     #Formulario IDIOMA
     #Eiqui o que fago é coller o idioma da url que me ven a través do request.
     initial_language = request.LANGUAGE_CODE
