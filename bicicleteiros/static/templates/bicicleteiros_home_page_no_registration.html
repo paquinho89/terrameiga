@@ -8,266 +8,203 @@
 <!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
 {% load humanize %}
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block content %} 
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
+{% load humanize %}
 
-    <!-- Esto é a folla de estilos css para o modo dark-->
-    <link id="mystylesheet" rel="stylesheet" type="text/css"  href='{% static "templates/base/light.css" %}' >
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href='{% static "imaxes/ico_favicon.ico" %}'>
-  </head>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3YLP81M7JQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3YLP81M7JQ');
-</script>
-
-
-<!--Esto utilízase para imprimir as mensaxes de cando unha acción foi completada-->
-<div id="content" class="fixed-top">
-  {% if messages %}
-  {% for m in messages %}
-  <!--Esto é para que me imprima solo a última mensaxe das alertas que é a que se corresponde coa mensaxe de sucess-->
-  <!--As Primeriras mensaxes son relativas a errores que pudo haber no formulario de sign in-->
-    {% if forloop.last %}
-    <div class="alert alert-{{ m.tags }} m-2 mt-1" id="msg" role="alert">
-        <!--Esto é para que mostre un botón que permita pechar a mensaxe que se mostra-->
-		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <strong>{{ m }}</strong>
+<html>
+<body>
+<!-- Page content-->
+<div class="row">
+  <div id="home_page_card" class="text-left col-lg-3">
+    <ul>
+    <h4 id="h4_home_page" class="mt-2">
+      <!--Para poder meterlle a variable country teño que escribir a url deste xeito-->
+      {% trans "WEEK" %} {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }}
+    </h4>
+    <hr>
+      <li id="data_home_page">{% trans "Km done:" %} <strong>{{ total_km_html|intcomma }} km </strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Expenses:" %} <strong>{{ total_money_html|intcomma }} € </strong></li>
+    <hr>
+    <h5 id="h5_home_page" style="display: flex; align-items: center; justify-content: space-between;">{% trans "Country Information:" %}<img style="float: right;" width="75" height="37" src="{% static flag_url_html %}" alt="First slide"></h5>
+    <hr>
+      <!--O intcomm é para que aparezca o número cos puntos e xa máis visible. Para eso tiveches que cargar o {% load humanize %} ao principio do html-->
+      <li id="data_home_page" class="mt-2">{% trans "Country:" %} <strong>{% trans current_country_html %} (#{{country_number_html}})</strong></li>
+      <li id="data_home_page" class="mt-2">{% trans "Capital:" %} <strong>{{ capital_city_html }}</strong></li>
+      <li id="data_home_page" class="mt-2">
+        {% trans "Visa:" %} <strong>{{ visa_required_html }}</strong>
+        {% if visa_required_html == "no" %}
+         <!--Valor en blanco--> 
+        {% else %}
+        <strong>({{ visa_price_html }} Euros)</strong>
+        {% endif %}
+      </li>
+      <li id="data_home_page" class="mt-3">{% trans "Surface:" %} <strong>{{ surface_html|intcomma:False }} km<sup>2</sup> </strong><br> 
+        <label style="font-style: italic;">({% trans "Spain:" %} 506.030 km<sup>2</sup>)</label></li>
+      <li id="data_home_page" class="mt-2">{% trans "Population:" %} <strong>{{ population_html|intcomma:False }} {% trans "people" %} </strong> <br>
+        <label style="font-style: italic;">({% trans "Spain:" %} 47.495.285 {% trans "people" %})</label></li>
+      <li id="data_home_page" class="mt-2">{% trans "Population density:" %} <strong>{{ density_population_html|intcomma:False }} {% trans "ppl per km<sup>2</sup>" %} </strong> <br>
+        <label style="font-style: italic;">({% trans "Spain:" %} 95 {% trans "people per" %} km<sup>2</sup>)</label> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Life expectancy:" %} <strong>{{ life_expectancy_country_html|intcomma:False }} {% trans "years" %}</strong> <br>
+        <label style="font-style: italic;">({% trans "Spain:" %} 83 {% trans "years" %})</label> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Currency:" %} <strong>{{ currency_html }}</strong> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Local Time:" %} <strong id="current-time"></strong> </li>
+      <li id="data_home_page" class="mt-2">{% trans "Interesting fact:" %}<br> <strong>{{interesting_fact_country_html}}</strong>
+      </li>
+      <li id="data_home_page" class="mt-2">{% trans "The most listened to song on Spotify:" %}</li>
+    </ul>
+    <div class="mb-3">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/{{spotify_song_code_html}}?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
-    {% endif %}
-  {% endfor %}
-{% endif %}
+  </div>
+  <div class="col-lg-9 mt-0">
+    <!-- Esta e a shared view vella src="https://maps.findmespot.com/s/2V28" -->
+    <iframe id="iframe_mapa" src="https://maps.findmespot.com/s/2V28" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
 </div>
-<!--Eiqui estou decindo canto tempo ten que estar a alerta unha vez que se completou a acción-->
-<!--O 9000 está a endicar o tempo que está a alerta visible. Despois a alerta desaparece.-->
-<script>
-  setTimeout(function(){
-      if ($('#msg').length > 0) {
-          $('#msg').remove();
-      }
-  }, 7000)
-</script>
-
-<body id="body_home_page">
-<header>
-    <nav class="navbar navbar-expand-md">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'sign_up' %}">
-            <img src='{% static "imaxes/favicon_oficial.png" %}' width="40" height="40" class="d-inline-block align-top" alt="">
-              <strong style="color: rgb(246, 158, 138);">TerraMeiga</strong>
-          </a>
-          <!--<form class="d-flex-danger" role="search">
-            <a class="btn btn-outline-light" id="button_area_persoal" href="{% url 'sign_in' %}" type="submit"><strong>{% trans "Sign In" %}</strong></a>
-            <a class="btn btn-outline-light" id="button_rexistro" href="{% url 'sign_up' %}" type="submit"><strong>{% trans "Sign Up" %}</strong></a>
-          </form>-->
-        </div>
-    </nav>
-</header>
-
-
-<div id="carouselExampleIndicators" class="carousel" data-ride="carousel" data-interval ="6000">
-    <ol class="carousel-indicators">
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-        <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src='{% static "imaxes/home_page_no_registration_1.jpg" %}' alt="First slide" style="filter: brightness(30%);">
-        <div class="carousel-caption">
-            <p style="color: white;">
-              {% trans "I am a bike traveller who is cycling somewhere. Do you want to be part of this adventure and see all the content?" %}
-            </p>
-        </div>
-      </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src='{% static "imaxes/home_page_no_registration_2.jpg" %}' alt="Second slide" style="filter: brightness(30%);">
-            <div class="carousel-caption">
-              <p style="color: white;">
-                {% trans "I am a bike traveller who is cycling somewhere. Do you want to be part of this adventure and see all the content?" %}
-              </p>
-          </div>
-        </div>
-        <div class="carousel-item">
-            <img class="d-block w-100" src='{% static "imaxes/home_page_no_registration_3.jpg" %}' alt="Third slide" style="filter: brightness(30%);">
-            <div class="carousel-caption">
-              <p style="color: white;">
-                {% trans "I am a bike traveller who is cycling somewhere. Do you want to be part of this adventure and see all the content?" %}
-              </p>
-          </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only"></span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only"></span>
-    </a>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-9 text-center mt-4">
+    <h4><a href="https://maps.findmespot.com/s/2V28" target="_blank">{% trans "Full screen map mode" %}</a></h4>
+  </div>
 </div>
-
-  <div class="container marketing">
-    <div class="text-center py-4 mt-4">
-      <div class="btn-group" role="group" aria-label="Sign in and Sign up">
-        <a class="btn btn-lg mt-2" id="button_sign_in_carossell" href="{% url 'sign_in' %}">
-            <strong>{% trans "Sign In" %}</strong>
-        </a>
-        <a class="btn btn-lg mt-2" id="button_sign_up_carossell" href="{% url 'sign_up' %}">
-            <strong>{% trans "Sign Up" %}</strong>
-        </a>
-      </div>
-    </div>
-    <h2 id="h2_home_page_no_registration" class="text-center py-3">{% trans "Week" %}  {{current_week_html}} - {% trans "Day" %} {{ journey_day_html }} - {{ total_km_html|intcomma }} km</h2>
-    <!-- Section-->
-    <section id="journey_characteristics">
-      <div class="container px-4 px-lg-5">
-          <!--Section for the Newsletter-->
-          <!--<div class="text-center row" id="newsletter_area">
-            <div class="card-body">
-              <h5 id="h2_home_page_no_registration"><strong>{% trans "Subscribe to the newsletter for updates" %}</strong></h5>
-              <form method="post" novalidate class="mx-auto mt-3" style="max-width: 300px;">
-                {% csrf_token %}-->
-                <!--Con esto asigno un valor 1 para diferenciar se o request.method == 'POST' ven do botón da newsletter ou do form do idioma.
-                se ven do formulario da newsletter asígnolle o valor 1 (pode ser outro calquera, é para que teña algún valor) e escondo o valor-->
-                <!--<input type="hidden"  name="newsletter_submitted" value="1">
-                <div class="form-group">
-                {{ newsletter_email_html.email_subscriptor }}-->
-                <!--checking if the form has been submitted e se a submission ven do botón da subscripción e non do formulario do idioma
-                request.POST.newsletter_submitted: checks if the key "newsletter_submitted" is present in the request.POST dictionary. If this key is present and has a value (in this case, it's the string "1"), it indicates that the form submission is related to the newsletter subscription.-->
-                <!--{% if newsletter_email_html.errors.email_subscriptor and request.method == 'POST' and request.POST.newsletter_submitted %}
-                  <label id="label_error" style="color: red;">{{ newsletter_email_html.email_subscriptor.errors }}</label>
-                {% endif %}
-                </div>
-                <button id="sign_in_button" type="submit" class="btn btn-outline-light btn-lg mt-3" onclick="location.href='#newsletter_area'">
-                  {% trans "Subscribe" %}
+  <!--ESTO É CÓDIGO DE JAVASCRIPT PARA CREAR UN RELOXO-->
+  <!--The timezones are get from this page (zone ID column): https://nodatime.org/TimeZones-->
+  <script>
+    let time = document.getElementById("current-time");
+    setInterval(()=>{
+      let d = new Date();
+      time.innerHTML = d.toLocaleTimeString('en-US', {timeZone: "{{time_zone_html}}", timeZoneName: "short", hour12: false })
+    },1000)
+  </script>
+<!--CHAT AREA-->
+<!-- Main Body -->
+<section>
+  <div class="container mt-12">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-12 pb-12 mt-4">
+        <h4>
+          {% trans "Highlights" %} ({{chat_number_comments_html}})
+        </h4>
+        {% for chat_comments in chat_comments_all_html %}
+        <ul class="list-unstyled">
+          <li class="justify-content-between">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between">
+                <!--<p class=" mb-0">
+                  {{ chat_comments.username_comment }}
+                </p>-->
+                <p class="text-muted small mb-0" id="comment_text_white"> <i id="clock_comment" class="far fa-clock"></i>
+                  {{ chat_comments.date_added }}
+                </p>
+              </div>
+              <div class="card-body">
+                <p>
+                  {% if 'en' in current_language_browser_html %}
+                    <!-- Eiqui tes que marcar o contido como seguro (safe) para que o rich text do artigos_content se che mostre na páxina-->
+                    {{ chat_comments.comentario_en|safe }}
+                  {% elif 'es' in current_language_browser_html %}
+                    {{ chat_comments.comentario_es|safe }}
+                  {% elif 'gl' in current_language_browser_html %}
+                    {{ chat_comments.comentario_gl|safe }}
+                  {% else %}
+                    {{ chat_comments.comentario_es|safe }}
+                  {% endif %}
+                </p>
+                <!--When the button is clicked, the input field in the modal section (id=comment-pk) is going to be auto-populated with the chat_comments.pk
+                thanks to the function created in javascript (setCommentPK)-->
+                <button onclick="toggleComments({{ chat_comments.pk }})" id="showCommentsBtn_{{ chat_comments.pk }}" class="text-decoration-underline btn btn-link text-muted small">
+                  <p id="p_blog">{% trans "Add Comment / View Comments" %} ({{chat_comments.number_of_replies}})</p>
                 </button>
-              </form>
-            </div>
-          </div>
-          -->
-          <!-- END Section of the newsletter -->
-          <hr>
-        </div>
-      </section>
-  </div><!-- /.container -->
-
-<!--<h2 class="text-center py-4"><a id="h2_home_page_no_registration" href="{% url 'iz_blog' %}" target="_blank" style="text-decoration: none;">{% trans "Blog Section" %}</a></h2>
-<!-- Section-->
-<!--<section id="journey_characteristics">
-  <div class="container px-4 px-lg-5">
-      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-        <div class="col mb-5">
-          <a href="{% url 'iz_blog' %}" target="_blank" style="text-decoration: none;">
-            <div class="card h-100">
-                <!-- Product image-->
-                <!--<img class="card-img-top" src='{% static "imaxes/iz_zoe.jpeg" %}' alt="..." />
-                <!-- Product details-->
-                <!--<div id="home_page_no_registration_card" class="card-body p-4">
-                    <div class="text-center">
-                        <!-- Product name-->
-                        <!--<h4><a id="home_page_no_registration_card_text" href="{% url 'iz_blog' %}" target="_blank" style="text-decoration: none;">Iz & Zoe</a></h4>
-                        <label> The blog is not update it anymore on this page.</label>
-			<label><a href="https://drive.google.com/drive/folders/1HpV0XBfVkfZlRU6WBC2l9g7iZkbN5eCv" target="_blank"> This is the new link</a></label>
-                        <h4 class="mt-3"><a class="btn btn-outline-light btn-lg" href="{% url 'iz_blog' %}" role="button" target="_blank" id="sign_in_button">{% trans "Read" %}</a> </h4>
-                    </div>
+              </div>
+              <ul class="list-unstyled" id="comments">
+                <div id="commentsSection_{{ chat_comments.pk }}" style="display: none;" class="card_replies">
+                  <li class="justify-content-between">
+                    <form class="mx-1 mx-md-4" method="POST" action="" novalidate>
+                      {% csrf_token %}
+                      <!--IMPORTANTE: o que está facendo o input eiqui é autopopulando o 'pk_original_comment' field do formulario 'chat_replies_form'
+                        Ten type='hidden' porque non quero que se mostre. Esto autopulase coa función de javascript (setCommentPK)-->
+                      <input type="hidden" name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">
+                      <!--Deixo o {{ form_chat_reply_html.pk_original_comment }} comentado para que sepas que o chat_comments.pk estase a gardar aí.-->
+                      <!--{{ form_chat_reply_html.pk_original_comment }}-->
+                      {{ form_chat_reply_html.reply_text }}
+                      
+                      <button type="button" class="close" onclick="toggleComments({{ chat_comments.pk }})" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <button id="add_reply_button" type="submit" class="btn mt-3" onclick="setCommentPK({{chat_comments.pk}}); window.location.href='#commentsSection_{{ chat_comments.pk }}';">{% trans "Add Comment" %}</button>
+                      <h5 id="h5_home_page" class="mt-4">
+                        {% trans "Comments" %} ({{chat_comments.number_of_replies}}):
+                      </h5>
+                      {% for reply in replies_comments_all_html %}
+                      
+                      <!--string format is to convert and ensure both values are strings, because if they do not have the same type, a igualdade non funciona-->
+                      {% if chat_comments.pk|stringformat:"s" == reply.pk_original_comment|stringformat:"s" %}
+                      <div class="card mb-2">
+                        <div class="card-header d-flex justify-content-between ">
+                          <p class="text-muted small mb-0" id="comment_text_white">
+                            {{ reply.username_reply }}
+                          </p>
+                          <p class="text-muted small mb-0" id="comment_text_white"><i id="clock_comment" class="far fa-clock"></i> 
+                              {{ reply.date_added }}
+                          </p>
+                        </div>
+                        <div id="cronica_viaxe" class="card-body">
+                          <p>
+                            {{ reply.reply_text }}
+                          </p>
+                        </div>
+                      </div>
+                        {% endif %}
+                      {% endfor %}
+                    </form>
+                  </li>
                 </div>
+              </ul>
             </div>
-          </a>
-        </div>
+          </li>
+        </ul>
+        {% endfor %}
       </div>
+    </div>
   </div>
 </section>
-</div><!-- /.container -->
-
-<!-- FOOTER -->
-<div id="footer_box">
-  <footer id="footer_page" class="text-center" >
-    <!-- Social Media -->
-    <div id="social_media_div" class="text-center">
-      <a href="https://www.youtube.com/channel/UCfP_-drls7WGjtNk3K0cjiA" class="btn m-1" role="button"
-        rel="nofollow" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(246, 158, 138)" class="bi bi-youtube" viewBox="0 0 16 16">
-          <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/terrameiga89/" class="btn m-1" role="button" rel="nofollow"
-        target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(246, 158, 138)" class="bi bi-instagram" viewBox="0 0 16 16">
-          <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
-        </svg>
-      </a>
-      <a href="https://www.facebook.com/paquinho.alvarez/" class="btn m-1" role="button" rel="nofollow"
-        target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(246, 158, 138)" class="bi bi-facebook" viewBox="0 0 16 16">
-          <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-        </svg>
-      </a>
-    </div>
-    <!-- end Social Media -->
-    <div id="footer" class="text-center">
-      <ul style="list-style-type: none; margin: 0; padding: 0;">
-        <li id="footer_text mt-4">
-          <!--Con "this.submit()" non hai necesidade de ter un submit button. No momento que se clica o idioma no drop down, automáticamente cambia-->
-          <form method="post" id="languageForm" onchange="this.submit()">
-            {% csrf_token %}
-            <p class="mt-1" style="color: rgb(246, 158, 138);">{% trans "Language" %}
-            {{ form_language_html.language }}</p>
-          </form>
-        </li>
-        <li class="mt-2">
-          <button class="btn btn-sm" style="background-color: rgb(246, 158, 138);" onclick="swapStyle('light.css')">{% trans "Light Mode" %}</button>
-          <button class="btn btn-dark btn-sm" onclick="swapStyle('dark.css')">{% trans "Dark Mode" %}</button>
-        </li>
-        <li id="footer_text" class="mt-2 mb-2">{% trans "Supported by:" %}</li>
-          <img src='{% static "imaxes/multisport.jpg" %}'  class="d-inline-block align-top" alt="">
-        <li id="footer_text" class="mt-3">{% trans "No cookies are used on the site" %}&#127850</li>
-        <li id="footer_text">© 2024 {% trans "All reserved rights:" %} terrameiga.bike</li>
-  </footer>
             
-         
-
-<!--Esto é para cambiar de dark mode a light mode. E os botóns están no template do footer-->
+</body>
+<!--This is the javascript function which captures the chat_comments.pk when the "Reply" button is clicked.-->
 <script>
-  //O que fai esta función é gardar o theme (light ou dark) se o hai na variable storedTheme
-  function applyStoredTheme() {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      document.getElementById('mystylesheet').href = storedTheme;
-    }
+  function setCommentPK(pk) {
+      document.getElementById('comment-pk-' + pk).value = pk; //Con esta función asígnolle ao valor input(<input name="pk_original_comment" id="comment-pk-{{ chat_comments.pk }}">), o pk do comentario cando se clica no botón "Reply/Show comments"
   }
-  // Se hai theme gardado, aplicámolo a páxina
-  window.onload = applyStoredTheme;
 
-   //Esta función permíteme cambiar de theme ao darlle aos botóns de light // dark que están no footer.
-  function swapStyle(sheet){
-    document.getElementById('mystylesheet').href = '{% static "templates/base/" %}' + sheet
-    localStorage.setItem('theme', '{% static "templates/base/" %}' + sheet)
-  }
+  function toggleComments(chatCommentId) { //Con esto fago que ao clicar no botón the "reply/shos all commentes" me mostre os replies correspondientes a sección do comentario que estou clicando.
+        var commentsSection = document.getElementById('commentsSection_' + chatCommentId);
+        if (commentsSection.style.display === 'none') {
+            commentsSection.style.display = 'block';
+            //Esto é para establecer se a como true se a sección está aberta (modo block)
+            localStorage.setItem('comment_' + chatCommentId + '_isOpen', 'true');
+        } else {
+            commentsSection.style.display = 'none';
+            //Ou neste caso establecer como false a sección se está pechada. Estas variables serán utilizadas na seguinte función.
+            localStorage.setItem('comment_' + chatCommentId + '_isOpen', 'false');
+        }
+    }
+
+    //Esta función é para manter a sección dos comentarios da xente aberta despois de que se entregase o formulario ou se cargase a páxina.
+    //De esta forma o usuario pode ver na parte na que se cargou a súa mensaxe
+    document.addEventListener("DOMContentLoaded", function () {
+        {% for chat_comments in chat_comments_all_html %}
+        var storedState = localStorage.getItem('comment_{{ chat_comments.pk }}_isOpen');
+        var commentsSection = document.getElementById('commentsSection_{{ chat_comments.pk }}');
+        if (storedState === 'true') {
+            commentsSection.style.display = 'block';
+        } else {
+            commentsSection.style.display = 'none';
+        }
+        {% endfor %}
+    });
 </script>
 
-
-  <!--Esto son as scripts para que os diferentes elementos de bootstrap funcionen: carousel, botóns, cuadros de texto...-->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <!--Con esto funcionache o botón da navbar cando a pantalla é pequena. Sen esto o botón da navbar non funciona-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
-
+{% endblock content %}
 </html>
