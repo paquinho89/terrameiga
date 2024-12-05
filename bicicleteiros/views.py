@@ -23,7 +23,7 @@ import plotly.graph_objects as go
 from newsletter.forms import form_newsletter
 
 # Create your views here.
-def country_data_no_registered_view (request):
+def country_data_no_registered_view_ORIGINAL (request):
     all_entry_days= money_model.objects.all()
     #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
     all_entry_days_last=all_entry_days.first()
@@ -90,6 +90,101 @@ def country_data_no_registered_view (request):
         'total_km_html' : total_km,
         'total_expenses_html' :total_money,
         'current_country_html' : current_country,
+        'flag_url_html' : flag_url,
+        'form_language_html' : form_language,
+        'newsletter_email_html' : newsletter_email,
+    }
+    return render (request, 'bicicleteiros_home_page_no_registration.html', context)
+
+# Create your views here.
+def country_data_no_registered_view (request):
+    all_entry_days= money_model.objects.all()
+    #Collemos a última entrada do día para que así podas incuir máis entradas co mesmo día. Podes ter dúas entradas de datos con día 41 porque nun mesmo día podes estar en máis dun país.
+    all_entry_days_last=all_entry_days.first()
+    #Da última entrada collemos do día collemos o día da viaxe na que estamos
+    current_journey_day = all_entry_days_last.journey_day
+    #Da última entrada collemos a semana
+    current_week = all_entry_days_last.week
+    #Da última entrada collemos o país
+    #Teño que facer que sexa unha string porque senon dame problemas á hora de traducir o nome do país
+    current_country = str(all_entry_days_last.country)
+    country_number_country = country_information_model.objects.get(country= current_country).country_number
+    visa_required = country_information_model.objects.get(country = current_country).visa_requerided
+    visa_price = country_information_model.objects.get(country = current_country).visa_price
+    capital_city = country_information_model.objects.get(country = current_country).capital_town
+    population_country = country_information_model.objects.get(country = current_country).population
+    population_dens = country_information_model.objects.get(country = current_country).population_density
+    life_expectancy_country = country_information_model.objects.get(country = current_country).life_expectancy
+    surface_country = country_information_model.objects.get(country = current_country).surface
+    currency_country = country_information_model.objects.get(country = current_country).currency
+    time_zone_value = country_information_model.objects.get(country = current_country).time_zone
+    total_km_dictionary = km_altitude_model.objects.aggregate(Sum('km_day'))
+    total_km = total_km_dictionary['km_day__sum']
+    total_money_dict = money_model.objects.aggregate(Sum('expense_euros'))
+    total_money = total_money_dict['expense_euros__sum']
+    flag_url = str("country_flags/" + str(current_country).lower() + "-flag.gif")
+
+    #Eiqui o que fago é coller o idioma da url que me ven a través do request.
+    initial_language = request.LANGUAGE_CODE
+    #Esto ponme no formulario do idioma, co mesmo idioma que hai na url
+    form_language = language_home_page_no_registration_form(initial={'language': initial_language})
+    if request.method == "POST":
+        form_language = language_home_page_no_registration_form(data = request.POST)
+        if form_language.is_valid():
+            #print(request.POST)
+            selected_language = form_language.cleaned_data['language']
+            #Activate the language which was selected on the dropdown
+            activate(selected_language)
+            #Nesta sección o que fago e cambiar o idioma na url
+            current_language = get_language()
+            current_url = request.build_absolute_uri()
+            new_url = re.sub(r'/[a-z]{2}/', f'/{current_language}/', current_url)
+            return redirect(new_url)
+    
+    #Formulario da newsletter:
+    newsletter_email = form_newsletter(data=request.POST)
+    #Con esto o que fago é que o newsletter form se execute solo cando se clicka no subscribe button do html. Se non se non hai click no botón esta parte da view non se executa.
+    #O que fago e que cando se executa o "newsletter" o form do idioma nunca vai ser válido, porque é un formulario que ten outro tipo de tigger. E entón pois esto so se vai executar
+    #cando o form_language non é valido e o form da newsletter si.
+    #Por outra parte, se eu executo solo o form language, ao ser este válido, o newsletter form non se vai a executar dentro da view
+    if request.method == 'POST' and not form_language.is_valid():
+        #Con esto asegúrome que o formulario da newsletter é executado solo cando ben do botón da subscription, comprobando que o 'newsletter_submitted" está presente no diccionario que nos da o request.POST.
+        if newsletter_email.is_valid() and 'newsletter_submitted' in request.POST:
+            #print(request.POST)
+            # Create Comment object and save it on the database
+            newsletter_email.save(commit=True)
+            #Esto é para que me mostre a mensaxe de que se gardou/enviou a solicitude de contratación
+            messages.success(request, _("Thanks for subscribe and being part of the bike travelling community"))
+            return redirect('home_page_no_registered')
+        else:
+            # Eiqui o que fago e que recorra os distintos fields do form ("neste caso solo un") e que lle 
+            # asigne o formato de error (O borde en vermello)
+            for field, errors in newsletter_email.errors.items():
+                newsletter_email[field].field.widget.attrs.update({'style': 'border-color:red; border-width: medium'})
+            messages.error(request, _("Check the errors and try again!"))
+            #Cando o formulario ten un erro temos que volver cargar o idioma que o pillamos da url, polo tanto esto ponme no formulario do idioma, o mesmo idioma que hai na url
+            form_language = language_home_page_no_registration_form(initial={'language': request.LANGUAGE_CODE})
+            return redirect ('home_page_no_registered')
+    
+    context = {
+        'journey_day_html' : current_journey_day ,
+        'current_week_html' : current_week,
+        'country_number_html' : country_number_country,
+        'total_km_html' : total_km,
+        'total_money_html' : total_money,
+        'current_country_html' : current_country,
+        'visa_required_html' : visa_required,
+        'visa_price_html' : visa_price,
+        'flag_url_html' : flag_url,
+        'capital_city_html' : capital_city,
+        'surface_html' : surface_country,
+        'population_html' : population_country,
+        'density_population_html' : population_dens,
+        'life_expectancy_country_html' : life_expectancy_country,
+        'currency_html' : currency_country,
+        'time_zone_html' : time_zone_value,
+        'interesting_fact_country_html' : interesting_fact_country,
+        'spotify_song_code_html' : spotify_song_code_country,
         'flag_url_html' : flag_url,
         'form_language_html' : form_language,
         'newsletter_email_html' : newsletter_email,
