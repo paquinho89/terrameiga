@@ -7,7 +7,7 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #0C0404;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'bicleteiros_home_page' %}" style="color: rgb(246, 158, 138);">
+        <a class="navbar-brand" href="{% url 'home_page_no_registered' %}" style="color: rgb(246, 158, 138);">
           <img src='{% static "imaxes/favicon_oficial.png" %}' width="40" height="40" class="d-inline-block align-top" alt="">
             <strong>TerraMeiga</strong>
         </a>
@@ -17,14 +17,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'bicleteiros_home_page' %}" style = "margin-left: 10px; color: rgb(246, 158, 138)">{% trans "Home" %}</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home_page_no_registered' %}" style = "margin-left: 10px; color: rgb(246, 158, 138)">{% trans "Home" %}</a>
             </li>
             <li class="nav-item">
               <a type="button" class="nav-link" href="{% url 'bicicleteiros_videos' %}" style = "margin-left: 10px; color: rgb(246, 158, 138)">{% trans "Videos" %}</a>
             </li>
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a type="button" class="nav-link" href="{% url 'bicicleteiros_photos' %}" style = "margin-left: 10px; color: rgb(246, 158, 138)">{% trans "Pictures" %}</a>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a type="button" class="nav-link" href="{% url 'bicicleteiros_estadistica_plotly' %}" style = "margin-left: 10px; color: rgb(246, 158, 138)">{% trans "Data" %}</a>
             </li>
