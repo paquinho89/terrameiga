@@ -144,17 +144,17 @@ def country_data_no_registered_view (request):
     #Formulario da newsletter:
     newsletter_email = form_newsletter(data=request.POST)
     if get_language() == "en":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
-        elif get_language() == "es":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
-        elif get_language() == "gl":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
-        elif get_language() == "eu":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_eu
-        elif get_language() == "ca":
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
-        else:
-            interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_en
+    elif get_language() == "es":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
+    elif get_language() == "gl":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_gl
+    elif get_language() == "eu":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_eu
+    elif get_language() == "ca":
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
+    else:
+        interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
             
     spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
     spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
