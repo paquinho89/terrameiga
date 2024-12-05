@@ -182,6 +182,7 @@ def country_data_no_registered_view (request):
             return redirect ('home_page_no_registered')
     #Eiqui o que fago e coller todos os comentarios que hai para mostralos na páxina eordénoos pondo os primeiros os máis recientes e despois xa tiro cos máis antigos
     chat_comments_all = chat_comments_model.objects.all().first()
+    current_language_browser = get_language()[:2]
     
     context = {
         'journey_day_html' : current_journey_day ,
@@ -205,6 +206,7 @@ def country_data_no_registered_view (request):
         'flag_url_html' : flag_url,
         'form_language_html' : form_language,
         'newsletter_email_html' : newsletter_email,
+        'current_language_browser_html' : current_language_browser,
         'chat_comments_all_html' : chat_comments_all,
     }
     return render (request, 'bicicleteiros_home_page_no_registration.html', context)
