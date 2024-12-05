@@ -30,10 +30,20 @@
       <!-- end Social Media -->
       <div id="footer" class="text-center">
         <ul style="list-style-type: none; margin: 0; padding: 0;">
+          <li id="footer_text mt-4">
+            <!--Con "this.submit()" non hai necesidade de ter un submit button. No momento que se clica o idioma no drop down, automáticamente cambia-->
+            <form method="post" id="languageForm" onchange="this.submit()">
+              {% csrf_token %}
+              <p class="mt-1" style="color: rgb(246, 158, 138);">{% trans "Language" %}
+              {{ form_language_html.language }}</p>
+            </form>
+          </li>
           <li class="mt-2">
             <button class="btn btn-sm" style="background-color: rgb(246, 158, 138);" onclick="swapStyle('light.css')">{% trans "Light Mode" %}</button>
             <button class="btn btn-dark btn-sm" onclick="swapStyle('dark.css')">{% trans "Dark Mode" %}</button>
           </li>
+          <li id="footer_text" class="mt-2 mb-2">{% trans "Supported by:" %}</li>
+            <img src='{% static "imaxes/multisport.jpg" %}'  class="d-inline-block align-top" alt="">
           <li id="footer_text" class="mt-3">{% trans "No cookies are used on the site" %}&#127850</li>
           <li id="footer_text">© 2024 {% trans "All reserved rights:" %} terrameiga.bike</li>
         </ul>
