@@ -155,6 +155,9 @@ def country_data_no_registered_view (request):
             interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_ca
         else:
             interesting_fact_country = country_information_model.objects.get(country = current_country).interesting_fact_es
+            
+    spotify_song_country = country_information_model.objects.get(country = current_country).song_spotify
+    spotify_song_code_country = spotify_song_country.rsplit("/",1)[1]
     #Con esto o que fago é que o newsletter form se execute solo cando se clicka no subscribe button do html. Se non se non hai click no botón esta parte da view non se executa.
     #O que fago e que cando se executa o "newsletter" o form do idioma nunca vai ser válido, porque é un formulario que ten outro tipo de tigger. E entón pois esto so se vai executar
     #cando o form_language non é valido e o form da newsletter si.
