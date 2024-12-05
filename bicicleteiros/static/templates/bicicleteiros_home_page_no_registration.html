@@ -1,19 +1,14 @@
-<!--VOU A SUPRIMIR ESTE CODIGO DE MOMENTO PORQUE A PAXINA VAI MUI LENTA E SOLO VOU MANTER A PAXINA DO INICIO-->
+{% extends 'base/base_registered.html' %}
 <!--To load the Django library to translate your text.-->
 {% load i18n %}
 
-
 {% load static %}
-
-<!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
-{% load humanize %}
 
 {% block content %} 
 
 <!--ESto é para que aparezan os puntos nos datos dos países e os números sexan máis visibles-->
 {% load humanize %}
 
-<html>
 <body>
 <!-- Page content-->
 <div class="row">
@@ -207,4 +202,3 @@
 </script>
 
 {% endblock content %}
-</html>
