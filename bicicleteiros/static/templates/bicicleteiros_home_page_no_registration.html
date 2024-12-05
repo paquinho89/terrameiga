@@ -135,19 +135,7 @@
         }
     }
 
-    //Esta función é para manter a sección dos comentarios da xente aberta despois de que se entregase o formulario ou se cargase a páxina.
-    //De esta forma o usuario pode ver na parte na que se cargou a súa mensaxe
-    document.addEventListener("DOMContentLoaded", function () {
-        {% for chat_comments in chat_comments_all_html %}
-        var storedState = localStorage.getItem('comment_{{ chat_comments.pk }}_isOpen');
-        var commentsSection = document.getElementById('commentsSection_{{ chat_comments.pk }}');
-        if (storedState === 'true') {
-            commentsSection.style.display = 'block';
-        } else {
-            commentsSection.style.display = 'none';
-        }
-        {% endfor %}
-    });
+    
 </script>
 
 {% endblock content %}
