@@ -25,7 +25,6 @@ currency_list_values = (
     (_("Kyat"), "Burmese kyat - Myanmar"),
     (_("Baht"), "Thai baht - Thailand"),
     (_("Kip"), "Lao kip - Laos"),
-    (_("Rupiah"), "Indonesia - Rupiah"),
     (_("Dong"), "Vietnamese dong - Vietnam"),
     (_("Yuan"), "Renminbi - China"),
     (_("Won"), "South Korean won - South Korea"),
