@@ -31,8 +31,7 @@ SECRET_KEY = 'django-insecure-q=m#etp8+mf8)iu!a7+xs!*0$pc5j@_c5ndt^u77$vwq8+jwvc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['terrameiga.up.railway.app', 'terrameiga.bike', 'www.terrameiga.bike'] 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['terrameiga.up.railway.app', 'terrameiga.bike', 'www.terrameiga.bike'] 
 
 #Esto é para que non me de error a hora de completar os formularios no móbil ou no ordenador nin en ningún outro dispositivo, e para poder acceder o admin site sen problema.
 CSRF_TRUSTED_ORIGINS = ['https://terrameiga.bike', 'https://*.terrameiga.bike', 'https://terrameiga-production.up.railway.app', 'https://terrameiga-production.up.railway.app*']
