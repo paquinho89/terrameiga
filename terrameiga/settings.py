@@ -184,7 +184,7 @@ DATABASES = {
         'USER': config('PGUSER'),  # This should be 'USER', not 'PGUSER'
         'PASSWORD': config('PGPASSWORD'),  # This should be 'PASSWORD'
         'HOST': config('PGHOST'),  # Correct
-        'PORT': '54865',  # This is fine for testing, but better to use config('PGPORT')
+        'PORT': config('PGPORT'),  # This is fine for testing, but better to use config('PGPORT')
     }
 }
 
