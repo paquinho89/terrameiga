@@ -17,7 +17,6 @@ RUN apt-get update && \
     libpq-dev && \
     apt-get clean
 
-
 # Install dependencies
 COPY requirements.txt .
 RUN pip install --upgrade pip && pip install -r requirements.txt
@@ -26,5 +25,5 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . .
 
 # Run migrations and start Gunicorn
-CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "terrameiga.wsgi:application", "--bind", "0.0.0.0:8000"]
 
