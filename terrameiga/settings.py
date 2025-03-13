@@ -166,16 +166,28 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+#DATABASES = {
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': config('PGNAME'),
+    #    'PGUSER': config('PGUSER'), 
+     #   'PGPASSWORD': config('PGPASSWORD'),
+      #  'PGHOST': config('PGHOST'), 
+       # 'PGPORT': '54865',
+   # }
+#}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('PGNAME'),
-        'PGUSER': config('PGUSER'), 
-        'PGPASSWORD': config('PGPASSWORD'),
-        'PGHOST': config('PGHOST'), 
-        'PGPORT': '54865',
+        'USER': config('PGUSER'),  # This should be 'USER', not 'PGUSER'
+        'PASSWORD': config('PGPASSWORD'),  # This should be 'PASSWORD'
+        'HOST': config('PGHOST'),  # Correct
+        'PORT': '54865',  # This is fine for testing, but better to use config('PGPORT')
     }
 }
+
 
 
 # Password validation
