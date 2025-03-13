@@ -26,9 +26,15 @@ from django.contrib.auth import views as auth_views
 #Con esto fago que na url aparezca a url e o idioma. Por exemplo: terrameiga.bike/gl/
 from django.conf.urls.i18n import i18n_patterns
 
+from django.http import JsonResponse
+
+def health_check(request):
+    return JsonResponse({"status": "ok"})
 
 urlpatterns =   i18n_patterns (
     path('admin/', admin.site.urls),
+    #Para ver os problemas co erro 502 que tantos problemas che est'a a dar
+    path('health/', health_check),
     #BICICLETEIROS_URLs
     path('', country_data_no_registered_view, name="home_page_no_registered"),
     path('bicicleteiros/', country_data_view, name="bicleteiros_home_page"),
