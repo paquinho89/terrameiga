@@ -103,6 +103,20 @@ API_KEY = 'AIzaSyAUV2VpBpX0qAkWUZ-Hzok0Jhf3rpkklC8'
 
 #Esta é a páxina onde unha vez logeado ou rexistrado con google se redirecciona ao usuario. Pero na view de sign_up e sing_in sobrescríbese xa que a url ten que cambiar de idioma.
 LOGIN_REDIRECT_URL = "https://terrameiga.bike/es/bicicleteiros/"
+#ESto e porque me esta dando o erro 502 de bad gateway. Ao mellor non fai falta e podese eliminar.
+LOGGING = {  
+    'version': 1,  
+    'handlers': {  
+        'console': {  
+            'class': 'logging.StreamHandler',  
+        },  
+    },  
+    'root': {  
+        'handlers': ['console'],  
+        'level': 'DEBUG',  
+    },  
+}  
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
