@@ -3,6 +3,7 @@ nixPkgs = ["openssl", "postgresql", "gcc","python310", "python310Packages.pip"]
 
 [phases.build]
 cmd = "python manage.py migrate"
+cmd = "pip install -r requirements.txt"
 
 [phases.start]
 cmd = "gunicorn myproject.wsgi:application"
