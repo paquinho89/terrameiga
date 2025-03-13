@@ -173,7 +173,7 @@ DATABASES = {
         'PGUSER': config('PGUSER'), 
         'PGPASSWORD': config('PGPASSWORD'),
         'PGHOST': config('PGHOST'), 
-        'PGPORT': config('PGPORT'),
+        'PGPORT': '54865',
     }
 }
 
