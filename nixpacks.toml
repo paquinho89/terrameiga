@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["openssl", "postgresql", "gcc"]
+nixPkgs = ["openssl", "postgresql", "gcc","python310", "python310Packages.pip"]
 
 [phases.build]
 cmd = "python manage.py migrate"
