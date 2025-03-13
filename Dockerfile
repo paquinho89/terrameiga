@@ -11,8 +11,12 @@ WORKDIR /app
 
 # Install system dependencies
 RUN apt-get update && \
-    apt-get install -y build-essential && \
+    apt-get install -y \
+    build-essential \
+    python3-dev \
+    libpq-dev && \
     apt-get clean
+
 
 # Install dependencies
 COPY requirements.txt .
@@ -23,3 +27,4 @@ COPY . .
 
 # Run migrations and start Gunicorn
 CMD ["gunicorn", "myproject.wsgi:application", "--bind", "0.0.0.0:8000"]
+
