@@ -25,9 +25,15 @@ from tools.views import max_speed_slope_tool_view
 from django.contrib.auth import views as auth_views
 #Con esto fago que na url aparezca a url e o idioma. Por exemplo: terrameiga.bike/gl/
 from django.conf.urls.i18n import i18n_patterns
+from django.http import HttpResponse
+#ESto e para ver que pasa e porque me esta a dar o erro 502 de bad way
+def health_check(request):
+    return HttpResponse("OK")
 
 
 urlpatterns =   i18n_patterns (
+    #ESto e para ver que pasa e porque me esta a dar o erro 502 de bad way
+    path('health/', health_check),
     path('admin/', admin.site.urls),
     #BICICLETEIROS_URLs
     path('', country_data_no_registered_view, name="home_page_no_registered"),
