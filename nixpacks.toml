@@ -5,7 +5,7 @@ nixPkgs = ["openssl", "postgresql", "gcc", "python310", "python310Packages.pip"]
 cmd = "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput"
 
 [phases.start]
-cmd = "gunicorn myproject.wsgi:application --workers=3 --threads=2 --bind 0.0.0.0:8000 --log-level=debug"
+cmd = "gunicorn myproject.wsgi:application --workers=3 --threads=2 --bind 0.0.0.0:${PORT} --log-level=debug"
 
 [checks]
 healthcheck = "/health/"
