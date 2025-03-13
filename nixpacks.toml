@@ -6,4 +6,3 @@ cmd = "pip install -r requirements.txt && python manage.py migrate && python man
 
 [phases.start]
 cmd = "gunicorn myproject.wsgi:application --workers=3 --threads=2 --bind 0.0.0.0:${PORT} --log-level=debug"
-
