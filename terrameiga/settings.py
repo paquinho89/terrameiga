@@ -188,7 +188,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('PGNAME', default='production'),
         'USER': config('PGUSER', default='Postgres'),
-        'PASSWORD': config('PGPASSWORD'),
+        'PASSWORD': 'g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3',
         'HOST': 'postgres.railway.internal',
         'PORT': '5432',
     }
