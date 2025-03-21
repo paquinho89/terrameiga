@@ -175,6 +175,7 @@ DATABASES = {
     'PGHOST': 'postgres.railway.internal', 
     'PGPORT': '5432',
     'PGDATABASE': 'production',
+    'DATABASE_URL': 'postgresql://Postgres:g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3@postgres.railway.internal:5432/production',
     }
 }
 
