@@ -168,10 +168,10 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASE_URL = os.getenv("RAILWAY_PRIVATE_DOMAIN") or os.getenv("DATABASE_URL")
+#DATABASE_URL = os.getenv("RAILWAY_PRIVATE_DOMAIN") or os.getenv("DATABASE_URL")
 
-if not DATABASE_URL:
-    raise ImproperlyConfigured("DATABASE_URL or RAILWAY_PRIVATE_DOMAIN must be set")
+#if not DATABASE_URL:
+    #raise ImproperlyConfigured("DATABASE_URL or RAILWAY_PRIVATE_DOMAIN must be set")
 
 #DATABASES = {
  #   'default': dj_database_url.config(
