@@ -168,31 +168,24 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASE_URL = os.getenv("RAILWAY_PRIVATE_DOMAIN") or os.getenv("DATABASE_URL")
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL'),
+        conn_max_age=600
+    )
+}
 
-#if not DATABASE_URL:
-    #raise ImproperlyConfigured("DATABASE_URL or RAILWAY_PRIVATE_DOMAIN must be set")
 
 #DATABASES = {
- #   'default': dj_database_url.config(
-  #      default=config('DATABASE_URL', default='postgresql://Postgres:g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3@postgres.railway.internal:5432/production'),
-   #     conn_max_age=600
-    #)
+ #   'default': {
+  #      'ENGINE': 'django.db.backends.postgresql',
+   #     'NAME': config('PGNAME', default='production'),
+    #    'USER': config('PGUSER', default='Postgres'),
+     #   'PASSWORD': 'g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3',
+      #  'HOST': 'postgres.railway.internal',
+       # 'PORT': '5432',
+    #}
 #}
-# Allow DATABASE_URL to override settings (recommended for production)
-#DATABASES['default'] = dj_database_url.config(default=DATABASE_URL, conn_max_age=600)
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('PGNAME', default='production'),
-        'USER': config('PGUSER', default='Postgres'),
-        'PASSWORD': 'g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3',
-        'HOST': 'postgres.railway.internal',
-        'PORT': '5432',
-    }
-}
 
 
 
