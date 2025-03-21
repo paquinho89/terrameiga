@@ -174,8 +174,13 @@ if not DATABASE_URL:
     raise ImproperlyConfigured("DATABASE_URL or RAILWAY_PRIVATE_DOMAIN must be set")
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'), conn_max_age=600)
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL', default='postgresql://Postgres:g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3@postgres.railway.internal:5432/production'),
+        conn_max_age=600
+    )
 }
+
+
 
 #DATABASES = {
  #   'default': {
