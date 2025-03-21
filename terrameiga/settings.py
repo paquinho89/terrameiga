@@ -176,7 +176,7 @@ DATABASES = {
         'USER': config('PGUSER', default='postgres'),
         'PASSWORD': config('PGPASSWORD'),
         'HOST': 'postgres.railway.internal',
-        'PORT': '5432',
+        'PORT': config('PGPORT'),
     }
 }
 
