@@ -168,20 +168,13 @@ WSGI_APPLICATION = 'terrameiga.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
- #   'default': dj_database_url.config(
-  #      default=config('DATABASE_URL'),
-   #     conn_max_age=600
-    #)
-#}
-
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('PGNAME', default='production'),
         'USER': config('PGUSER', default='postgres'),
-        'PASSWORD': 'g*CEG2aa*d4DFFfa1DGaCACFc*d2F6d3',
+        'PASSWORD': config('PGPASSWORD'),
         'HOST': 'postgres.railway.internal',
         'PORT': '5432',
     }
