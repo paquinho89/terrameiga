@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["openssl", "postgresql", "gcc", "python310", "python310Packages.pip"]
+nixPkgs = ["openssl", "postgresql_16", "gcc", "python39", "python310Packages.pip"]
 
 [phases.build]
 cmd = "pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput"
