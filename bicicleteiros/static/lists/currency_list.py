@@ -26,13 +26,13 @@ currency_list_values = (
     (_("Baht"), "Thai baht - Thailand"),
     (_("Kip"), "Lao kip - Laos"),
     (_("Rupiah"), "Indonesian rupiah - Indonesia"),
-    (_("Dollar"), "Singapore dollar - Singapore"),
+    (_("Dollar Singapore"), "Singapore dollar - Singapore"),
     (_("Yuan"), "Renminbi - China"),
     (_("Won"), "South Korean won - South Korea"),
     (_("Yen"), "Japanese yen - Japan"),
     (_("Aud"), "Australia dollar - Australia"),
     (_("Dollar"), "United States dollar - US"),
     (_("Dinar"), "Iraq - IQ"),
-    (_("Pound"), "Syria - SY"),
+    (_("Pound Syria"), "Syria - SY"),
     (_("Tugrik"), "Mongol Tugrik - Mongolia") 
 )
