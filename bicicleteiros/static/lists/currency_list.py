@@ -32,5 +32,7 @@ currency_list_values = (
     (_("Yen"), "Japanese yen - Japan"),
     (_("Aud"), "Australia dollar - Australia"),
     (_("Dollar"), "United States dollar - US"),
+    (_("Dinar"), "Iraq - IQ"),
+    (_("Pound"), "Syria - SY"),
     (_("Tugrik"), "Mongol Tugrik - Mongolia") 
 )
