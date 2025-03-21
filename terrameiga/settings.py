@@ -174,6 +174,7 @@ DATABASES = {
     'PGPASSWORD': config('PGPASSWORD'),
     'PGHOST': 'postgres.railway.internal', 
     'PGPORT': '5432',
+    'PGDATABASE': 'production',
     }
 }
 
