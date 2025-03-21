@@ -172,7 +172,7 @@ DATABASES = {
     'NAME': config('PGNAME'),
     'PGUSER': config('PGUSER'), 
     'PGPASSWORD': config('PGPASSWORD'),
-    'PGHOST': config('PGHOST'), 
+    'PGHOST': 'postgres.railway.internal', 
     'PGPORT': '5432',
     }
 }
