@@ -34,6 +34,6 @@ currency_list_values = (
     (_("Dollar"), "United States dollar - US"),
     (_("Dinar"), "Iraq - IQ"),
     (_("Pound Syria"), "Syria - SY"),
-    (_("Ringgit"), "Malasya - MY"),
+    (_("Ringgit"), "Malaysia - MY"),
     (_("Tugrik"), "Mongol Tugrik - Mongolia") 
 )
