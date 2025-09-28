@@ -2,6 +2,7 @@ from django.utils.translation import gettext_lazy as _
 
 currency_list_values = (
     (_("Euro"),"Euro"),
+    (_("Marco Convertible"), "Marco - Bosnia"),
     (_("Lek"), "Lek - Albania"),
     (_("Forint"), "Forint - Hungary"),
     (_("Leu"), "Romanian Leu - Romania"),
